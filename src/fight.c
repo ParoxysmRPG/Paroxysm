@@ -7614,6 +7614,20 @@ return;
     return ch && IS_NPC(ch) && IS_FLAG(ch->act, ACT_CORTEX_ENFORCER);
   }
 
+  int cortex_encounter_count(CHAR_DATA *ch) {
+    return number_range(1, UMIN(6, URANGE(1, get_tier(ch), 5) + 2));
+  }
+
+  void cortex_scale_enforcer(CHAR_DATA *mob, CHAR_DATA *target, int difficulty) {
+    // Tier sets the baseline; encounter strength and individual training vary independently.
+    const int scale = (40 + 20 * URANGE(1, get_tier(target), 5))
+        * difficulty_mod(difficulty) / 100 * number_range(75, 125) / 100;
+    for (int i = 0; i < discipline_table_count; ++i) {
+      int &value = mob->disciplines[discipline_table[i].vnum];
+      if (value > 0) value = UMAX(1, value * scale / 100);
+    }
+  }
+
   bool cortex_alarm(CHAR_DATA *ch, int amount) {
     if (state_of_emergency()) return FALSE;
     if (!ch || IS_NPC(ch) || !ch->pcdata || amount <= 0) return FALSE;
@@ -7623,6 +7637,17 @@ return;
         || !ch->desc || IS_FLAG(ch->comm, COMM_AFK)
         || IS_FLAG(ch->act, PLR_SHROUD) || IS_FLAG(ch->act, PLR_DEEPSHROUD)
         || dissent_in_room(ch->in_room) || number_percent() > 10) return FALSE;
+    if (!cortex_send_enforcers(ch)) return FALSE;
+    act("A squad of Cortex enforcers arrives in response to the alarm and attacks!", ch, NULL, NULL, TO_CHAR);
+    act("A squad of Cortex enforcers arrives and attacks $n!", ch, NULL, NULL, TO_ROOM);
+    char rumor[MSL];
+    snprintf(rumor, sizeof(rumor), "%s was seen fighting Cortex enforcers near %s after causing a public alarm.", ch->name, ch->in_room->name);
+    gossip(rumor);
+    return TRUE;
+  }
+
+  bool cortex_send_enforcers(CHAR_DATA *ch) {
+    if (!ch || IS_NPC(ch) || !ch->pcdata || !ch->in_room) return FALSE;
     for (CHAR_DATA *mob : char_list) {
       if (cortex_enforcer(mob) && mob->ttl > 0 && !str_cmp(mob->aggression, ch->name))
         return FALSE;
@@ -7630,7 +7655,7 @@ return;
     MOB_INDEX_DATA *index = get_mob_index(CORTEX_SOLDIER);
     if (!index) return FALSE;
     const int difficulty = number_range(1, 10);
-    const int count = number_range(2, 4);
+    const int count = cortex_encounter_count(ch);
     for (int n = 0; n < count; ++n) {
       CHAR_DATA *mob = create_mobile(index);
       SET_FLAG(mob->act, ACT_CORTEX_ENFORCER);
@@ -7647,21 +7672,13 @@ return;
       mob->description = str_dup("Heavy armor and Cortex insignia identify this armed enforcer.\n\r");
       free_string(mob->aggression);
       mob->aggression = str_dup(ch->name);
-      for (int i = 0; i < discipline_table_count; ++i) {
-        int &value = mob->disciplines[discipline_table[i].vnum];
-        if (value > 0) value = UMAX(1, value * difficulty_mod(difficulty) / 100);
-      }
+      cortex_scale_enforcer(mob, ch, difficulty);
       char_to_room(mob, ch->in_room);
       mob->x = number_range(0, ch->in_room->size);
       mob->y = number_range(0, ch->in_room->size);
       mob->hit = max_hp(mob);
       start_fight(mob, ch);
     }
-    act("A squad of Cortex enforcers arrives in response to the alarm and attacks!", ch, NULL, NULL, TO_CHAR);
-    act("A squad of Cortex enforcers arrives and attacks $n!", ch, NULL, NULL, TO_ROOM);
-    char rumor[MSL];
-    snprintf(rumor, sizeof(rumor), "%s was seen fighting Cortex enforcers near %s after causing a public alarm.", ch->name, ch->in_room->name);
-    gossip(rumor);
     return TRUE;
   }
 
@@ -7743,6 +7760,54 @@ return;
     act("A monster bursts through a breach in the Cortex's defenses!", ch, NULL, NULL, TO_CHAR);
     act("A monster bursts through a breach in the Cortex's defenses!", ch, NULL, NULL, TO_ROOM);
     if (forced) start_fight(mob, ch);
+    return TRUE;
+  }
+
+  bool cortex_offworld_ambush(CHAR_DATA *ch) {
+    if (!ch || IS_NPC(ch) || !ch->pcdata || !ch->in_room || !ch->in_room->area
+        || ch->fcore != FACTION_CORTEX || in_world(ch) < WORLD_OTHER || in_world(ch) > WORLD_HELL
+        || room_level(ch->in_room) <= 0 || ch->in_room->vnum <= 300
+        || is_gm(ch) || is_ghost(ch) || higher_power(ch) || guestmonster(ch)
+        || is_helpless(ch) || in_fight(ch) || battleground(ch->in_room)
+        || !ch->desc || IS_FLAG(ch->comm, COMM_AFK)
+        || IS_FLAG(ch->act, PLR_SHROUD) || IS_FLAG(ch->act, PLR_DEEPSHROUD)
+        || ch->pcdata->patrol_status == PATROL_HUNTING
+        || ch->pcdata->spawned_monsters > 0 || event_cleanse == 1
+        || number_percent() > 5) return FALSE;
+
+    const int tier = URANGE(1, get_tier(ch), 5);
+    const int difficulty = number_range(1, 10);
+    const int count = number_range(1, UMIN(4, tier + 1));
+    const int limit = UMAX(10, tier * 10 * difficulty_mod(difficulty) / 100);
+    int candidates[100], available = 0, weakest = -1, weakest_level = INT_MAX;
+    for (int i = 0; i < 100 && monster_table[i].world != -1; ++i) {
+      if (monster_table[i].world != in_world(ch) || !get_mob_index(monster_table[i].vnum)) continue;
+      const int level = get_demon_lvl(i);
+      if (level < weakest_level) { weakest = i; weakest_level = level; }
+      if (level <= limit) candidates[available++] = i;
+    }
+    if (!available && weakest >= 0) candidates[available++] = weakest;
+    if (!available) return FALSE;
+
+    act("Hostile creatures recognize your Cortex allegiance and spring an ambush!", ch, NULL, NULL, TO_CHAR);
+    act("Hostile creatures spring an ambush on $n!", ch, NULL, NULL, TO_ROOM);
+    for (int n = 0; n < count; ++n) {
+      const int chosen = candidates[number_range(0, available - 1)];
+      CHAR_DATA *mob = create_mobile(get_mob_index(monster_table[chosen].vnum));
+      // Reuse breach combat handling so these attackers can fight outside forests.
+      SET_FLAG(mob->act, ACT_CORTEX_BREACH);
+      REMOVE_FLAG(mob->act, ACT_SENTINEL);
+      mob->ttl = 12;
+      cortex_scale_enforcer(mob, ch, difficulty);
+      free_string(mob->aggression);
+      mob->aggression = str_dup(ch->name);
+      char_to_room(mob, ch->in_room);
+      mob->x = number_range(0, ch->in_room->size);
+      mob->y = number_range(0, ch->in_room->size);
+      mob->hit = max_hp(mob);
+      start_fight(mob, ch);
+    }
+    ch->pcdata->spawned_monsters = 12;
     return TRUE;
   }
 

@@ -24,11 +24,17 @@ rules permit combat. Explicit `ROOM_PUBLIC` target exclusions remain in place;
 the dissenting crowd is their only new exception. Existing breach/enforcer
 exceptions remain intact. Public vehicle attack restrictions are unchanged.
 
-Starting an eligible public fight brings two to four Cortex enforcers to defend
+Starting an eligible public fight brings one to six Cortex enforcers to defend
 the person attacked. They target only the original attacker, subdue them without
 increasing their wounds, then withdraw. The attacker remains unconscious in the
 same location at the defender's mercy. This response does not heal the attacker
 or trigger a public-alarm auction.
+
+Squad size is rolled from one to min(6, tier + 2). Combat disciplines scale by
+the target's tier (60/80/100/120/140% of the template at tiers 1-5), the existing
+random difficulty 1-10 multiplier (41-249%), and an independent 75-125% roll for
+each NPC. Public alarms and blood-sale stings use the same count and discipline
+rules. Arrest/auction and public-defense defeat outcomes remain distinct.
 
 Public alarms still summon Cortex enforcers. If those enforcers defeat the
 character, they hand that character over to the syndicate for auction instead

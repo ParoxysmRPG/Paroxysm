@@ -2537,7 +2537,7 @@ extern "C" {
       ch->pcdata->dream_exit = -1;
     }
 
-    const bool cortex_ambush = !follow && cortex_monster_ambush(ch);
+    const bool cortex_ambush = !follow && (cortex_offworld_ambush(ch) || cortex_monster_ambush(ch));
     if (!cortex_ambush && room_level(to_room) > 0 && number_percent() % 5 == 0 && !IS_NPC(ch) && !follow && !higher_power(ch) && !in_fight(ch) && ch->pcdata->spawned_monsters <= 0 && !IS_FLAG(ch->act, PLR_DEEPSHROUD) && ch->pcdata->patrol_status != PATROL_HUNTING) {
       populate_warren(ch);
     }
@@ -4367,7 +4367,30 @@ extern "C" {
     return FALSE;
   }
 
+  bool finish_overdue_walk(CHAR_DATA *ch) {
+    if (!ch || IS_NPC(ch) || !ch->pcdata) return false;
+    if (ch->walking != 1 || !ch->destination || !ch->destination->area || !ch->in_room) {
+      ch->walk_started_at = 0;
+      return false;
+    }
+    if (ch->walk_started_at == 0) ch->walk_started_at = current_time;
+    if (ch->destination == ch->in_room || current_time - ch->walk_started_at <= 10 * 60)
+      return false;
+
+    ROOM_INDEX_DATA *destination = ch->destination;
+    ch->walking = 0;
+    ch->destination = NULL;
+    ch->walk_started_at = 0;
+    ch->pcdata->driving_around = FALSE;
+    char_from_room(ch);
+    char_to_room(ch, destination);
+    send_to_char("After a long walk, you finally reach your destination.\n\r", ch);
+    do_function(ch, &do_look, "auto");
+    return true;
+  }
+
   _DOFUN(do_walk) {
+    if (!ch || IS_NPC(ch) || !ch->pcdata || !ch->in_room) return;
     char arg1[MSL];
     int desti;
     ROOM_INDEX_DATA *room;
@@ -4378,6 +4401,7 @@ extern "C" {
     if (!str_cmp(argument, "stop") || !str_cmp(argument, "")) {
       ch->destination = NULL;
       ch->walking = 0;
+      ch->walk_started_at = 0;
       send_to_char("You stop walking.\n\r", ch);
       return;
     }
@@ -4413,126 +4437,35 @@ extern "C" {
       }
       return;
     }
-    ch->pcdata->driving_around = FALSE;
+    room = NULL;
     int dnumber = landmark_vnum(argument, ch);
-    if (dnumber > 0) {
-      room = get_room_index(dnumber);
-      ch->destination = room;
-      ch->walking = 1;
-      send_to_char("You start walking.\n\r", ch);
-      if (IS_AFFECTED(ch, AFF_LURED) && get_room_index(ch->pcdata->lured_room) != NULL)
-      ch->destination = get_room_index(ch->pcdata->lured_room);
+    if (dnumber > 0) room = get_room_index(dnumber);
+    if (!room) {
+      for (i = 0; i < 10; ++i) {
+        if (!str_cmp(argument, ch->pcdata->drivenames[i]) && ch->pcdata->driveloc[i] > 0) {
+          room = get_room_index(ch->pcdata->driveloc[i]);
+          if (room) break;
+        }
+      }
+    }
+    if (!room && is_number(argument)) {
+      desti = atoi(argument);
+      if (desti >= 1 && desti <= MAX_TAXIS)
+        room = get_room_index(taxi_table[desti - 1].vnum);
+    }
+    if (!room) {
+      send_to_char("No such walking destination. Use walk list.\n\r", ch);
       return;
     }
-    if (!str_cmp(argument, ch->pcdata->drivenames[0]) && ch->pcdata->driveloc[0] > 0 && get_room_index(ch->pcdata->driveloc[0]) != NULL) {
-      room = get_room_index(ch->pcdata->driveloc[0]);
-      ch->destination = room;
-      ch->walking = 1;
-      send_to_char("You start walking.\n\r", ch);
-      if (IS_AFFECTED(ch, AFF_LURED) && get_room_index(ch->pcdata->lured_room) != NULL)
-      ch->destination = get_room_index(ch->pcdata->lured_room);
-      return;
+    if (IS_AFFECTED(ch, AFF_LURED) && ch->pcdata->lured_room > 0) {
+      ROOM_INDEX_DATA *lured_room = get_room_index(ch->pcdata->lured_room);
+      if (lured_room) room = lured_room;
     }
-    if (!str_cmp(argument, ch->pcdata->drivenames[1]) && ch->pcdata->driveloc[1] > 0 && get_room_index(ch->pcdata->driveloc[1]) != NULL) {
-      room = get_room_index(ch->pcdata->driveloc[1]);
-      ch->destination = room;
-      ch->walking = 1;
-      send_to_char("You start walking.\n\r", ch);
-      if (IS_AFFECTED(ch, AFF_LURED) && get_room_index(ch->pcdata->lured_room) != NULL)
-      ch->destination = get_room_index(ch->pcdata->lured_room);
-      return;
-    }
-    if (!str_cmp(argument, ch->pcdata->drivenames[2]) && ch->pcdata->driveloc[2] > 0 && get_room_index(ch->pcdata->driveloc[2]) != NULL) {
-      room = get_room_index(ch->pcdata->driveloc[2]);
-      ch->destination = room;
-      ch->walking = 1;
-      send_to_char("You start walking.\n\r", ch);
-      if (IS_AFFECTED(ch, AFF_LURED) && get_room_index(ch->pcdata->lured_room) != NULL)
-      ch->destination = get_room_index(ch->pcdata->lured_room);
-      return;
-    }
-    if (!str_cmp(argument, ch->pcdata->drivenames[3]) && ch->pcdata->driveloc[3] > 0 && get_room_index(ch->pcdata->driveloc[3]) != NULL) {
-      room = get_room_index(ch->pcdata->driveloc[3]);
-      ch->destination = room;
-      ch->walking = 1;
-      send_to_char("You start walking.\n\r", ch);
-      if (IS_AFFECTED(ch, AFF_LURED) && get_room_index(ch->pcdata->lured_room) != NULL)
-      ch->destination = get_room_index(ch->pcdata->lured_room);
-      return;
-    }
-    if (!str_cmp(argument, ch->pcdata->drivenames[4]) && ch->pcdata->driveloc[4] > 0 && get_room_index(ch->pcdata->driveloc[4]) != NULL) {
-      room = get_room_index(ch->pcdata->driveloc[4]);
-      ch->destination = room;
-      ch->walking = 1;
-      send_to_char("You start walking.\n\r", ch);
-      if (IS_AFFECTED(ch, AFF_LURED) && get_room_index(ch->pcdata->lured_room) != NULL)
-      ch->destination = get_room_index(ch->pcdata->lured_room);
-      return;
-    }
-    if (!str_cmp(argument, ch->pcdata->drivenames[5]) && ch->pcdata->driveloc[5] > 0 && get_room_index(ch->pcdata->driveloc[5]) != NULL) {
-      room = get_room_index(ch->pcdata->driveloc[5]);
-      ch->destination = room;
-      ch->walking = 1;
-      send_to_char("You start walking.\n\r", ch);
-      if (IS_AFFECTED(ch, AFF_LURED) && get_room_index(ch->pcdata->lured_room) != NULL)
-      ch->destination = get_room_index(ch->pcdata->lured_room);
-      return;
-    }
-    if (!str_cmp(argument, ch->pcdata->drivenames[6]) && ch->pcdata->driveloc[6] > 0 && get_room_index(ch->pcdata->driveloc[6]) != NULL) {
-      room = get_room_index(ch->pcdata->driveloc[6]);
-      ch->destination = room;
-      ch->walking = 1;
-      send_to_char("You start walking.\n\r", ch);
-      if (IS_AFFECTED(ch, AFF_LURED) && get_room_index(ch->pcdata->lured_room) != NULL)
-      ch->destination = get_room_index(ch->pcdata->lured_room);
-      return;
-    }
-    if (!str_cmp(argument, ch->pcdata->drivenames[7]) && ch->pcdata->driveloc[7] > 0 && get_room_index(ch->pcdata->driveloc[7]) != NULL) {
-      room = get_room_index(ch->pcdata->driveloc[7]);
-      ch->destination = room;
-      ch->walking = 1;
-      send_to_char("You start walking.\n\r", ch);
-      if (IS_AFFECTED(ch, AFF_LURED) && get_room_index(ch->pcdata->lured_room) != NULL)
-      ch->destination = get_room_index(ch->pcdata->lured_room);
-      return;
-    }
-    if (!str_cmp(argument, ch->pcdata->drivenames[8]) && ch->pcdata->driveloc[8] > 0 && get_room_index(ch->pcdata->driveloc[8]) != NULL) {
-      room = get_room_index(ch->pcdata->driveloc[8]);
-      ch->destination = room;
-      ch->walking = 1;
-      send_to_char("You start walking.\n\r", ch);
-      if (IS_AFFECTED(ch, AFF_LURED) && get_room_index(ch->pcdata->lured_room) != NULL)
-      ch->destination = get_room_index(ch->pcdata->lured_room);
-      return;
-    }
-    if (!str_cmp(argument, ch->pcdata->drivenames[9]) && ch->pcdata->driveloc[9] > 0 && get_room_index(ch->pcdata->driveloc[9]) != NULL) {
-      room = get_room_index(ch->pcdata->driveloc[9]);
-      ch->destination = room;
-      ch->walking = 1;
-      send_to_char("You start walking.\n\r", ch);
-      if (IS_AFFECTED(ch, AFF_LURED) && get_room_index(ch->pcdata->lured_room) != NULL)
-      ch->destination = get_room_index(ch->pcdata->lured_room);
-      return;
-    }
-
-    desti = atoi(argument);
-
-    if (desti < 0 || desti > 100000) {
-      send_to_char("walk (number)\n\r", ch);
-      return;
-    }
-
-    if (desti <= MAX_TAXIS) {
-      room = get_room_index(taxi_table[desti - 1].vnum);
-    }
-    else {
-      return;
-    }
+    ch->pcdata->driving_around = FALSE;
     ch->destination = room;
     ch->walking = 1;
+    ch->walk_started_at = current_time;
     send_to_char("You start walking.\n\r", ch);
-    if (IS_AFFECTED(ch, AFF_LURED) && get_room_index(ch->pcdata->lured_room) != NULL)
-    ch->destination = get_room_index(ch->pcdata->lured_room);
   }
 
   _DOFUN(do_pass) {

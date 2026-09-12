@@ -8615,9 +8615,9 @@
       "applied_sha256": "6f7e96f1a933139cafff642d47f1af08ac88c354c79a8c160354533f675b6a02"
     },
     "dream.are:390262": {
-      "name": "White Oak Reception Lobby",
+      "name": "Cortex Academy of Civic Integration Reception Lobby",
       "kind": "foyer",
-      "description": "The busiest line across the reception floor has been worn to a dull sheen. A `wwaiting bench`x rests against the wall, with seats softened by brief visits and long delays. The clear center gives arrivals a moment to take in the room before joining anyone already settled along the edge. White Oak's pale finishes meet in meticulously kept seams, a clinical neatness that leaves even a small scuff conspicuous.",
+      "description": "The busiest line across the reception floor has been worn to a dull sheen. A `wwaiting bench`x rests against the wall, with seats softened by brief visits and long delays. The clear center gives arrivals a moment to take in the room before joining anyone already settled along the edge. Cortex Academy of Civic Integration's pale finishes meet in meticulously kept seams, a clinical neatness that leaves even a small scuff conspicuous.",
       "places": [
         [
           "waiting bench",
@@ -9668,9 +9668,9 @@
       "applied_sha256": "61cd865de6ec78a10cde6bba648dd8e4f7304f45e156f8832e4b68c99217b725"
     },
     "dream.are:390539": {
-      "name": "The White Oak Technical Institute",
+      "name": "The Cortex Academy of Civic Integration",
       "kind": "clinic",
-      "description": "Orderly institutional finishes frame a broad reception area. Pale surfaces and precisely spaced `wwaiting chairs`x give White Oak's interior the deliberate, controlled character.",
+      "description": "Orderly institutional finishes frame a broad reception area. Pale surfaces and precisely spaced `wwaiting chairs`x give Cortex Academy of Civic Integration's interior the deliberate, controlled character.",
       "places": [
         [
           "waiting chairs",
@@ -24433,7 +24433,7 @@
       "applied_sha256": "8325017a663e9feb9b89218bb410a2e3749e46cf395516884bfc4745c5573bf4"
     },
     "hvntown.are:8730": {
-      "name": "the White Oak Biodome",
+      "name": "the Cortex Academy of Civic Integration Biodome",
       "kind": "garden",
       "description": "Curving structural ribs divide the biodome enclosure above cultivated ground. Beds of vegetation occupy the space within the framework, their irregular leaves set against the deliberate geometry of the `wdomed shell`x. A narrow border follows the left-hand planting, with pale grit filling the intervals between the roots. The edge is carefully tended without being perfectly straight, retaining the small irregularities of growing things. The plants provide the focus here, leaving the ordinary gaps between them as part of the setting.",
       "places": [],
@@ -24864,7 +24864,7 @@
       "applied_sha256": "d85157671b79d85deb36d2283b56a902088ee5e71f6d165a74f595210669176d"
     },
     "hvntown.are:8752": {
-      "name": "the White Oak Biodome",
+      "name": "the Cortex Academy of Civic Integration Biodome",
       "kind": "garden",
       "description": "Curving structural ribs divide the biodome enclosure above cultivated ground. Beds of vegetation occupy the space within the framework, their irregular leaves set against the deliberate geometry of the `wdomed shell`x. A small break in the left-hand planting reveals green moss beneath a close screen of stems. The worked soil changes color around the nearest roots, revealing the different places moisture settles. The arrangement is deliberate but never quite rigid; each plant has found a slightly different way to occupy it.",
       "places": [],
@@ -25181,7 +25181,7 @@
       "applied_sha256": "8de44f585fd76e6e5d81c4439a141caf991aacad48266cd94652a60489980725"
     },
     "hvntown.are:8762": {
-      "name": "the White Oak Biodome",
+      "name": "the Cortex Academy of Civic Integration Biodome",
       "kind": "garden",
       "description": "Curving structural ribs divide the biodome enclosure above cultivated ground. Beds of vegetation occupy the space within the framework, their irregular leaves set against the deliberate geometry of the `wdomed shell`x. A narrow border follows the far planting, with rust-colored earth filling the intervals between the roots. A curling tendril has wound around an older stem, repeating the same tight spiral several times. The arrangement is deliberate but never quite rigid; each plant has found a slightly different way to occupy it.",
       "places": [],
@@ -25252,7 +25252,7 @@
       "applied_sha256": "52a2132508a5886199cafe35241e0be2b1fa01077839ea7f73c350d72486fba0"
     },
     "hvntown.are:8764": {
-      "name": "the White Oak Biodome",
+      "name": "the Cortex Academy of Civic Integration Biodome",
       "kind": "garden",
       "description": "Curving structural ribs divide the biodome enclosure above cultivated ground. Beds of vegetation occupy the space within the framework, their irregular leaves set against the deliberate geometry of the `wdomed shell`x. A low ridge of rust-colored earth divides the far growth into two differently textured drifts. A small marker leans among the stems, almost lost at the height of the lower leaves. The plants provide the focus here, leaving the ordinary gaps between them as part of the setting.",
       "places": [],
@@ -25374,7 +25374,7 @@
       "applied_sha256": "ba098a533868a8ff4c1725c78b0622eeac24230d7c20197a215ee3e5f89a538f"
     },
     "hvntown.are:8768": {
-      "name": "the White Oak Biodome",
+      "name": "the Cortex Academy of Civic Integration Biodome",
       "kind": "garden",
       "description": "Curving structural ribs divide the biodome enclosure above cultivated ground. Beds of vegetation occupy the space within the framework, their irregular leaves set against the deliberate geometry of the `wdomed shell`x. The left-hand planting curves around a shallow bed of fine gravel, breaking the cultivated ground into a softer outline. Newer shoots have a softer color than the tougher growth beneath them. The arrangement is deliberate but never quite rigid; each plant has found a slightly different way to occupy it.",
       "places": [],
@@ -29115,9 +29115,9 @@
       "applied_sha256": "02351e10b0188d77b3a0931d737feb0e6fb982aa8a68a5d20edc62a903753393"
     },
     "hvntown.are:9038": {
-      "name": "Room 5 of House Queenson at White Oak Dormitory",
+      "name": "Room 5 of House Queenson at Cortex Academy of Civic Integration Dormitory",
       "kind": "bedroom",
-      "description": "Soft creases and the faint smell of laundered fabric distinguish the sleeping area from the rest of the room. Wear gathers around the furniture, tracing familiar steps across the floor. A `wbed`x occupies the quieter half, the creased bedding softening the room around a place to rest or talk in low voices. White Oak's pale finishes meet in meticulously kept seams, a clinical neatness that leaves even a small scuff conspicuous.",
+      "description": "Soft creases and the faint smell of laundered fabric distinguish the sleeping area from the rest of the room. Wear gathers around the furniture, tracing familiar steps across the floor. A `wbed`x occupies the quieter half, the creased bedding softening the room around a place to rest or talk in low voices. Cortex Academy of Civic Integration's pale finishes meet in meticulously kept seams, a clinical neatness that leaves even a small scuff conspicuous.",
       "places": [
         [
           "bed",
@@ -32721,7 +32721,7 @@
       "applied_sha256": "85cec7b9701c4c173f308e78da90df1433f0d63a9b16e68a68356aba0eccbd8c"
     },
     "hvntown.are:3419": {
-      "name": "White Oak Biodome",
+      "name": "Cortex Academy of Civic Integration Biodome",
       "kind": "garden",
       "description": "Curving structural ribs divide the biodome enclosure above cultivated ground. Beds of vegetation occupy the space within the framework, their irregular leaves set against the deliberate geometry of the `wdomed shell`x. A low ridge of green moss divides the far growth into two differently textured drifts. Newer shoots have a softer color than the tougher growth beneath them. The cultivated ground smells richly of earth, with a greener trace where leaves and stems meet at close quarters.",
       "places": [],
@@ -32750,7 +32750,7 @@
       "applied_sha256": "ef3599bee38fad2bb9bd16967fb872f5cbe25b16a59fd021801966c3ea25466f"
     },
     "hvntown.are:9568": {
-      "name": "the White Oak Biodome",
+      "name": "the Cortex Academy of Civic Integration Biodome",
       "kind": "garden",
       "description": "Curving structural ribs divide the biodome enclosure above cultivated ground. Beds of vegetation occupy the space within the framework, their irregular leaves set against the deliberate geometry of the `wdomed shell`x. A low ridge of fine gravel divides the far growth into two differently textured drifts. A small marker leans among the stems, almost lost at the height of the lower leaves. The cultivated ground smells richly of earth, with a greener trace where leaves and stems meet at close quarters.",
       "places": [],
@@ -33067,7 +33067,7 @@
       "applied_sha256": "5543ab48df1e6b68509be757ee711d039e6f3cc780547529686a6e12e40fbf7b"
     },
     "hvntown.are:9615": {
-      "name": "the White Oak Biodome",
+      "name": "the Cortex Academy of Civic Integration Biodome",
       "kind": "garden",
       "description": "Curving structural ribs divide the biodome enclosure above cultivated ground. Beds of vegetation occupy the space within the framework, their irregular leaves set against the deliberate geometry of the `wdomed shell`x. The near stems gather around a broad patch of green moss, their smaller leaves overlapping above the soil. The worked soil changes color around the nearest roots, revealing the different places moisture settles. The cultivated ground smells richly of earth, with a greener trace where leaves and stems meet at close quarters.",
       "places": [],
@@ -33300,7 +33300,7 @@
       "applied_sha256": "f71d58a511e3c184a1cebbdf2cbea8f0029d3a6ee2d92c80b80c27bdd1a27061"
     },
     "hvntown.are:9650": {
-      "name": "the White Oak Biodome",
+      "name": "the Cortex Academy of Civic Integration Biodome",
       "kind": "garden",
       "description": "Curving structural ribs divide the biodome enclosure above cultivated ground. Beds of vegetation occupy the space within the framework, their irregular leaves set against the deliberate geometry of the `wdomed shell`x. A narrow border follows the near planting, with fine gravel filling the intervals between the roots. One low plant carries a pale border around each leaf, making a delicate pattern close to the ground. The cultivated ground smells richly of earth, with a greener trace where leaves and stems meet at close quarters.",
       "places": [],
@@ -33350,7 +33350,7 @@
       "applied_sha256": "3389736a4da125b8e10410e20be87329387dbbd58e7986095216da53d18b67ec"
     },
     "hvntown.are:9654": {
-      "name": "the White Oak Biodome",
+      "name": "the Cortex Academy of Civic Integration Biodome",
       "kind": "garden",
       "description": "Curving structural ribs divide the biodome enclosure above cultivated ground. Beds of vegetation occupy the space within the framework, their irregular leaves set against the deliberate geometry of the `wdomed shell`x. The far bed steps up gently, exposing a darker band of silver-gray roots beneath the lower leaves. The worked soil changes color around the nearest roots, revealing the different places moisture settles. The plants provide the focus here, leaving the ordinary gaps between them as part of the setting.",
       "places": [],
@@ -33366,7 +33366,7 @@
       "applied_sha256": "44537a1a2562b7222f7a918c9499f7d64c3e4ed5484824b6a65d28dbf1d9845e"
     },
     "hvntown.are:9655": {
-      "name": "the White Oak Biodome",
+      "name": "the Cortex Academy of Civic Integration Biodome",
       "kind": "garden",
       "description": "Curving structural ribs divide the biodome enclosure above cultivated ground. Beds of vegetation occupy the space within the framework, their irregular leaves set against the deliberate geometry of the `wdomed shell`x. The right-hand planting curves around a shallow bed of dark leaf mold, breaking the cultivated ground into a softer outline. The worked soil changes color around the nearest roots, revealing the different places moisture settles. The arrangement is deliberate but never quite rigid; each plant has found a slightly different way to occupy it.",
       "places": [],
@@ -33374,7 +33374,7 @@
       "applied_sha256": "ebb6e7fd3ae1210766ec10ecd403f2066e5ec86bccf56014584066485188f3d2"
     },
     "hvntown.are:9656": {
-      "name": "the White Oak Biodome",
+      "name": "the Cortex Academy of Civic Integration Biodome",
       "kind": "garden",
       "description": "Curving structural ribs divide the biodome enclosure above cultivated ground. Beds of vegetation occupy the space within the framework, their irregular leaves set against the deliberate geometry of the `wdomed shell`x. The far stems gather around a broad patch of dark leaf mold, their smaller leaves overlapping above the soil. The edge is carefully tended without being perfectly straight, retaining the small irregularities of growing things. The cultivated ground smells richly of earth, with a greener trace where leaves and stems meet at close quarters.",
       "places": [],
@@ -33395,7 +33395,7 @@
       "applied_sha256": "c847aeba7821fef634c5cbcf8e125a41dd2b890728a05e22b54a2fa00c57e3d1"
     },
     "hvntown.are:9657": {
-      "name": "the White Oak Biodome",
+      "name": "the Cortex Academy of Civic Integration Biodome",
       "kind": "garden",
       "description": "Curving structural ribs divide the biodome enclosure above cultivated ground. Beds of vegetation occupy the space within the framework, their irregular leaves set against the deliberate geometry of the `wdomed shell`x. A low ridge of rust-colored earth divides the left-hand growth into two differently textured drifts. The worked soil changes color around the nearest roots, revealing the different places moisture settles. The arrangement is deliberate but never quite rigid; each plant has found a slightly different way to occupy it.",
       "places": [],
@@ -33403,7 +33403,7 @@
       "applied_sha256": "e5730ed6b75d856be45b881ecfda134e3427042cd77837eb22018800e6b00e0a"
     },
     "hvntown.are:9658": {
-      "name": "the White Oak Biodome",
+      "name": "the Cortex Academy of Civic Integration Biodome",
       "kind": "garden",
       "description": "Curving structural ribs divide the biodome enclosure above cultivated ground. Beds of vegetation occupy the space within the framework, their irregular leaves set against the deliberate geometry of the `wdomed shell`x. A low ridge of pale grit divides the near growth into two differently textured drifts. A curling tendril has wound around an older stem, repeating the same tight spiral several times. The plants provide the focus here, leaving the ordinary gaps between them as part of the setting.",
       "places": [],
@@ -33411,7 +33411,7 @@
       "applied_sha256": "663944a3ee99e2c6391c63f41cc39057366267f4e74b1cb43aabacc50e32e07a"
     },
     "hvntown.are:9659": {
-      "name": "the entrance to the White Oak biodome",
+      "name": "the entrance to the Cortex Academy of Civic Integration biodome",
       "kind": "garden",
       "description": "A narrow border follows the far planting, with fine gravel filling the intervals between the roots. Newer shoots have a softer color than the tougher growth beneath them. The cultivated ground smells richly of earth, with a greener trace where leaves and stems meet at close quarters.",
       "places": [],
@@ -33492,7 +33492,7 @@
       "applied_sha256": "493cc397f189f5ec9cafe513fcbec5340650e43d9fe4fcd2808fa07d4ec2ad35"
     },
     "hvntown.are:9664": {
-      "name": "the airlock of the White Oak biodome",
+      "name": "the airlock of the Cortex Academy of Civic Integration biodome",
       "kind": "airlock",
       "description": "Close metal panels enclose a compact transition chamber. Hard seals and repeated structural seams distinguish the airlock from the planted environment it serves. Small fastenings sit in a precise line around the nearest access cover. The floor has a fine raised texture for grip, with smooth channels at the edges.",
       "places": [],
@@ -33513,7 +33513,7 @@
       "applied_sha256": "f31ab0258a7e4164273568ccb1f728613c78e5ef6904a0592f27d8f58f98c6bf"
     },
     "hvntown.are:1472": {
-      "name": "the White Oak Biodome",
+      "name": "the Cortex Academy of Civic Integration Biodome",
       "kind": "garden",
       "description": "Curving structural ribs divide the biodome enclosure above cultivated ground. Beds of vegetation occupy the space within the framework, their irregular leaves set against the deliberate geometry of the `wdomed shell`x. The right-hand bed steps up gently, exposing a darker band of fine gravel beneath the lower leaves. The worked soil changes color around the nearest roots, revealing the different places moisture settles. The arrangement is deliberate but never quite rigid; each plant has found a slightly different way to occupy it.",
       "places": [],
@@ -33521,7 +33521,7 @@
       "applied_sha256": "5df033c9a6bc5846e8dcb724096fddc85c7995da4039e99a61de7a77d6d7491b"
     },
     "hvntown.are:9665": {
-      "name": "the White Oak Biodome",
+      "name": "the Cortex Academy of Civic Integration Biodome",
       "kind": "garden",
       "description": "Curving structural ribs divide the biodome enclosure above cultivated ground. Beds of vegetation occupy the space within the framework, their irregular leaves set against the deliberate geometry of the `wdomed shell`x. A small break in the far planting reveals silver-gray roots beneath a close screen of stems. One low plant carries a pale border around each leaf, making a delicate pattern close to the ground. The arrangement is deliberate but never quite rigid; each plant has found a slightly different way to occupy it.",
       "places": [],
@@ -33529,7 +33529,7 @@
       "applied_sha256": "2e55f2270cff0ac63b9b800beaf425e70c0cfb29432a84ed27d8cc9ca2d69ca1"
     },
     "hvntown.are:9666": {
-      "name": "White Oak Biodome",
+      "name": "Cortex Academy of Civic Integration Biodome",
       "kind": "garden",
       "description": "Curving structural ribs divide the biodome enclosure above cultivated ground. Beds of vegetation occupy the space within the framework, their irregular leaves set against the deliberate geometry of the `wdomed shell`x. A low ridge of dark leaf mold divides the right-hand growth into two differently textured drifts. Fine leaves make a feathery texture beside broader, waxier blades. The arrangement is deliberate but never quite rigid; each plant has found a slightly different way to occupy it.",
       "places": [],
@@ -33537,7 +33537,7 @@
       "applied_sha256": "57832dbc4afc5bc6b5ccff4903affc2f64bb408f9153213aaa7feb95aee745dd"
     },
     "hvntown.are:1474": {
-      "name": "the White Oak Biodome",
+      "name": "the Cortex Academy of Civic Integration Biodome",
       "kind": "garden",
       "description": "Curving structural ribs divide the biodome enclosure above cultivated ground. Beds of vegetation occupy the space within the framework, their irregular leaves set against the deliberate geometry of the `wdomed shell`x. The right-hand stems gather around a broad patch of chalky dust, their smaller leaves overlapping above the soil. The worked soil changes color around the nearest roots, revealing the different places moisture settles. The planting rewards a slow look, offering different textures at the scale of a hand rather than a whole landscape.",
       "places": [],
@@ -33545,7 +33545,7 @@
       "applied_sha256": "29b1c9ce227476ff0e4c2e3853f6bb64b94722fe0228b99b14a509e02ad57ca1"
     },
     "hvntown.are:9667": {
-      "name": "the White Oak Biodome",
+      "name": "the Cortex Academy of Civic Integration Biodome",
       "kind": "garden",
       "description": "Curving structural ribs divide the biodome enclosure above cultivated ground. Beds of vegetation occupy the space within the framework, their irregular leaves set against the deliberate geometry of the `wdomed shell`x. A low ridge of pale grit divides the far growth into two differently textured drifts. The planting leaves an irregular gap around a stone rather than concealing it. The planting rewards a slow look, offering different textures at the scale of a hand rather than a whole landscape.",
       "places": [],
@@ -33553,7 +33553,7 @@
       "applied_sha256": "3d38c3811c825b7065829e6c43fcfd98f61d61abccdbf8aedc95ab4cc6220e11"
     },
     "hvntown.are:9668": {
-      "name": "the White Oak Biodome",
+      "name": "the Cortex Academy of Civic Integration Biodome",
       "kind": "garden",
       "description": "Curving structural ribs divide the biodome enclosure above cultivated ground. Beds of vegetation occupy the space within the framework, their irregular leaves set against the deliberate geometry of the `wdomed shell`x. A low ridge of pale grit divides the right-hand growth into two differently textured drifts. One low plant carries a pale border around each leaf, making a delicate pattern close to the ground. The arrangement is deliberate but never quite rigid; each plant has found a slightly different way to occupy it.",
       "places": [],
@@ -33561,7 +33561,7 @@
       "applied_sha256": "139e2c6bb7a698a906aab009c349992e7345f7a65647b656e2940226ea60f7c2"
     },
     "hvntown.are:9669": {
-      "name": "the White Oak Biodome",
+      "name": "the Cortex Academy of Civic Integration Biodome",
       "kind": "garden",
       "description": "Curving structural ribs divide the biodome enclosure above cultivated ground. Beds of vegetation occupy the space within the framework, their irregular leaves set against the deliberate geometry of the `wdomed shell`x. A small break in the right-hand planting reveals pale grit beneath a close screen of stems. The planting leaves an irregular gap around a stone rather than concealing it. The plants provide the focus here, leaving the ordinary gaps between them as part of the setting.",
       "places": [],
@@ -33608,7 +33608,7 @@
       "applied_sha256": "bd34c75b7b952f62e5b3f0412b12aeefce12993f1aae69734856020836dc1570"
     },
     "hvntown.are:9671": {
-      "name": "the White Oak Biodome",
+      "name": "the Cortex Academy of Civic Integration Biodome",
       "kind": "garden",
       "description": "Curving structural ribs divide the biodome enclosure above cultivated ground. Beds of vegetation occupy the space within the framework, their irregular leaves set against the deliberate geometry of the `wdomed shell`x. A small break in the near planting reveals dark leaf mold beneath a close screen of stems. The edge is carefully tended without being perfectly straight, retaining the small irregularities of growing things. The cultivated ground smells richly of earth, with a greener trace where leaves and stems meet at close quarters.",
       "places": [],
@@ -33629,7 +33629,7 @@
       "applied_sha256": "b11d77c1c202dd7dfd4238f0b6b663b786ef8c45b8860cc86797872d81feaefa"
     },
     "hvntown.are:9672": {
-      "name": "the entrance to the White Oak biodome",
+      "name": "the entrance to the Cortex Academy of Civic Integration biodome",
       "kind": "garden",
       "description": "A narrow border follows the left-hand planting, with silver-gray roots filling the intervals between the roots. Fine leaves make a feathery texture beside broader, waxier blades. The arrangement is deliberate but never quite rigid; each plant has found a slightly different way to occupy it.",
       "places": [],
@@ -33658,7 +33658,7 @@
       "applied_sha256": "468295d26b4c1fde24092e14df5104bd7fd2182dbf436df86e984407dbd7ee32"
     },
     "hvntown.are:9675": {
-      "name": "the airlock of the White Oak biodome",
+      "name": "the airlock of the Cortex Academy of Civic Integration biodome",
       "kind": "airlock",
       "description": "Close metal panels enclose a compact transition chamber. Hard seals and repeated structural seams distinguish the airlock from the planted environment it serves. A narrow indicator plate lies flush with the surrounding finish, the engraved labels small and restrained. The fitted corners are rounded, leaving very little unused space between the panels.",
       "places": [],
@@ -33666,7 +33666,7 @@
       "applied_sha256": "d49085b4c64576a05f5229fa32ae7ad4f8d5715c99aca44058f51bcacf08bd0c"
     },
     "hvntown.are:9676": {
-      "name": "the White Oak Biodome",
+      "name": "the Cortex Academy of Civic Integration Biodome",
       "kind": "garden",
       "description": "Curving structural ribs divide the biodome enclosure above cultivated ground. Beds of vegetation occupy the space within the framework, their irregular leaves set against the deliberate geometry of the `wdomed shell`x. A narrow border follows the far planting, with weathered bark filling the intervals between the roots. One low plant carries a pale border around each leaf, making a delicate pattern close to the ground. The arrangement is deliberate but never quite rigid; each plant has found a slightly different way to occupy it.",
       "places": [],
@@ -33682,7 +33682,7 @@
       "applied_sha256": "fcf7fc1761cf98a9d212c2c77f9f4b5ebd3261013ed1f791fd84c70f02e148c9"
     },
     "hvntown.are:9677": {
-      "name": "the White Oak Biodome",
+      "name": "the Cortex Academy of Civic Integration Biodome",
       "kind": "garden",
       "description": "Curving structural ribs divide the biodome enclosure above cultivated ground. Beds of vegetation occupy the space within the framework, their irregular leaves set against the deliberate geometry of the `wdomed shell`x. The left-hand stems gather around a broad patch of chalky dust, their smaller leaves overlapping above the soil. The planting leaves an irregular gap around a stone rather than concealing it. The cultivated ground smells richly of earth, with a greener trace where leaves and stems meet at close quarters.",
       "places": [],
@@ -33690,7 +33690,7 @@
       "applied_sha256": "a6c34205237eb9b0941ff0aaf890ea2f97621b35f4763da3aad0494aa31b6652"
     },
     "hvntown.are:9678": {
-      "name": "the White Oak Biodome",
+      "name": "the Cortex Academy of Civic Integration Biodome",
       "kind": "garden",
       "description": "Curving structural ribs divide the biodome enclosure above cultivated ground. Beds of vegetation occupy the space within the framework, their irregular leaves set against the deliberate geometry of the `wdomed shell`x. A small break in the right-hand planting reveals weathered bark beneath a close screen of stems. A curling tendril has wound around an older stem, repeating the same tight spiral several times. The cultivated ground smells richly of earth, with a greener trace where leaves and stems meet at close quarters.",
       "places": [],
@@ -33857,7 +33857,7 @@
       "applied_sha256": "3bee09cf450599ca984ef80ea9dce886f96dfb753c7275af35f778fa0f1344f1"
     },
     "hvntown.are:1496": {
-      "name": "the White Oak Biodome",
+      "name": "the Cortex Academy of Civic Integration Biodome",
       "kind": "garden",
       "description": "Curving structural ribs divide the biodome enclosure above cultivated ground. Beds of vegetation occupy the space within the framework, their irregular leaves set against the deliberate geometry of the `wdomed shell`x. The left-hand planting curves around a shallow bed of dark leaf mold, breaking the cultivated ground into a softer outline. The planting leaves an irregular gap around a stone rather than concealing it. The plants provide the focus here, leaving the ordinary gaps between them as part of the setting.",
       "places": [],
@@ -33865,7 +33865,7 @@
       "applied_sha256": "c5bd7d8fc7d572dbd4249649dc57747c3b87af7ea60c9ee912221bfc17a400ed"
     },
     "hvntown.are:9689": {
-      "name": "the White Oak Biodome",
+      "name": "the Cortex Academy of Civic Integration Biodome",
       "kind": "garden",
       "description": "Curving structural ribs divide the biodome enclosure above cultivated ground. Beds of vegetation occupy the space within the framework, their irregular leaves set against the deliberate geometry of the `wdomed shell`x. The near stems gather around a broad patch of silver-gray roots, their smaller leaves overlapping above the soil. A curling tendril has wound around an older stem, repeating the same tight spiral several times. The cultivated ground smells richly of earth, with a greener trace where leaves and stems meet at close quarters.",
       "places": [],
@@ -33894,9 +33894,9 @@
       "applied_sha256": "1a7ad2568151b5a3dfdafdd5072278c9e425aba31f5c88480a65dc930fbb1657"
     },
     "hvntown.are:1498": {
-      "name": "White Oak Greenhouse",
+      "name": "Cortex Academy of Civic Integration Greenhouse",
       "kind": "garden",
-      "description": "Leaves overlap above carefully worked soil, their shapes ranging from fine, feathered sprays to broad green blades. The planting beds carry a rich smell of damp earth and bruised stems. Small weeds test the borders of the cultivated ground, softening the neat divisions wherever tending has missed a corner. White Oak's pale finishes meet in meticulously kept seams, a clinical neatness that leaves even a small scuff conspicuous.",
+      "description": "Leaves overlap above carefully worked soil, their shapes ranging from fine, feathered sprays to broad green blades. The planting beds carry a rich smell of damp earth and bruised stems. Small weeds test the borders of the cultivated ground, softening the neat divisions wherever tending has missed a corner. Cortex Academy of Civic Integration's pale finishes meet in meticulously kept seams, a clinical neatness that leaves even a small scuff conspicuous.",
       "places": [],
       "source_sha256": "e7bb59f5fb348a8f7e8ae457fc9c48c4ec9aa114267d70f999bbe768bde80966",
       "applied_sha256": "e7bb59f5fb348a8f7e8ae457fc9c48c4ec9aa114267d70f999bbe768bde80966"
@@ -34991,7 +34991,7 @@
       "applied_sha256": "c29393af2872935869f8999978eb5046e3adf6e820459e297d5191871b76aee4"
     },
     "hvntown.are:1594": {
-      "name": "the White Oak Biodome",
+      "name": "the Cortex Academy of Civic Integration Biodome",
       "kind": "garden",
       "description": "Curving structural ribs divide the biodome enclosure above cultivated ground. Beds of vegetation occupy the space within the framework, their irregular leaves set against the deliberate geometry of the `wdomed shell`x. A narrow border follows the left-hand planting, with weathered bark filling the intervals between the roots. A curling tendril has wound around an older stem, repeating the same tight spiral several times. The plants provide the focus here, leaving the ordinary gaps between them as part of the setting.",
       "places": [],
@@ -35210,9 +35210,9 @@
       "applied_sha256": "79b3bad088a0117095fd1e641f5b93bd91a8754d4ca0c25117833af193f93a6c"
     },
     "hvntown.are:9799": {
-      "name": "the Master of the Clinic's Office of the White Oak Institute",
+      "name": "the Master of the Clinic's Office of the Cortex Academy of Civic Integration",
       "kind": "office",
-      "description": "The `wdesk`x faces the left-hand half of the room beneath a restrained band of brushed steel. A small blotter marks a precise rectangle on the working surface, leaving a broad margin around it. The cleared working edge gives every meeting the same quiet starting point. White Oak's pale finishes meet in meticulously kept seams, a clinical neatness that leaves even a small scuff conspicuous. Precisely placed working surfaces give the administrative offices the restrained air of a building kept on schedule.",
+      "description": "The `wdesk`x faces the left-hand half of the room beneath a restrained band of brushed steel. A small blotter marks a precise rectangle on the working surface, leaving a broad margin around it. The cleared working edge gives every meeting the same quiet starting point. Cortex Academy of Civic Integration's pale finishes meet in meticulously kept seams, a clinical neatness that leaves even a small scuff conspicuous. Precisely placed working surfaces give the administrative offices the restrained air of a building kept on schedule.",
       "places": [
         [
           "desk",
@@ -35632,7 +35632,7 @@
       "applied_sha256": "a8624c58604ee68496d94fc93ebfbb5d14c54831a5ea7db54aa80b84633678d9"
     },
     "hvntown.are:1631": {
-      "name": "the White Oak Biodome",
+      "name": "the Cortex Academy of Civic Integration Biodome",
       "kind": "garden",
       "description": "Curving structural ribs divide the biodome enclosure above cultivated ground. Beds of vegetation occupy the space within the framework, their irregular leaves set against the deliberate geometry of the `wdomed shell`x. The near stems gather around a broad patch of silver-gray roots, their smaller leaves overlapping above the soil. A curling tendril has wound around an older stem, repeating the same tight spiral several times. The plants provide the focus here, leaving the ordinary gaps between them as part of the setting.",
       "places": [],
@@ -35640,7 +35640,7 @@
       "applied_sha256": "400f7614cdea51aed19442bc397875999e50663d85de934caad1fbcb67cb5708"
     },
     "hvntown.are:9823": {
-      "name": "the White Oak Biodome",
+      "name": "the Cortex Academy of Civic Integration Biodome",
       "kind": "garden",
       "description": "Curving structural ribs divide the biodome enclosure above cultivated ground. Beds of vegetation occupy the space within the framework, their irregular leaves set against the deliberate geometry of the `wdomed shell`x. The right-hand bed steps up gently, exposing a darker band of rust-colored earth beneath the lower leaves. The edge is carefully tended without being perfectly straight, retaining the small irregularities of growing things. The arrangement is deliberate but never quite rigid; each plant has found a slightly different way to occupy it.",
       "places": [],
@@ -35648,7 +35648,7 @@
       "applied_sha256": "d3eca7add50b30627dbcdc7b7d1e2179f7b7d1bd5fbd3995a441b0c5026f4b12"
     },
     "hvntown.are:9824": {
-      "name": "the White Oak Biodome",
+      "name": "the Cortex Academy of Civic Integration Biodome",
       "kind": "garden",
       "description": "Curving structural ribs divide the biodome enclosure above cultivated ground. Beds of vegetation occupy the space within the framework, their irregular leaves set against the deliberate geometry of the `wdomed shell`x. The near planting curves around a shallow bed of rust-colored earth, breaking the cultivated ground into a softer outline. Fine leaves make a feathery texture beside broader, waxier blades. The plants provide the focus here, leaving the ordinary gaps between them as part of the setting.",
       "places": [],
@@ -35669,7 +35669,7 @@
       "applied_sha256": "544c6711d84b4d9e65cc008e5f507fe5c98eab5e7fd7bf1f02eb2fd1ceb85ed9"
     },
     "hvntown.are:9825": {
-      "name": "the White Oak Biodome",
+      "name": "the Cortex Academy of Civic Integration Biodome",
       "kind": "garden",
       "description": "Curving structural ribs divide the biodome enclosure above cultivated ground. Beds of vegetation occupy the space within the framework, their irregular leaves set against the deliberate geometry of the `wdomed shell`x. A low ridge of dark leaf mold divides the near growth into two differently textured drifts. A small marker leans among the stems, almost lost at the height of the lower leaves. The plants provide the focus here, leaving the ordinary gaps between them as part of the setting.",
       "places": [],
@@ -35703,7 +35703,7 @@
       "applied_sha256": "2a2afbf0e9615f11da5bebb9c100b4ad3d7bae47908f9f8940a2a3cc4803ecb5"
     },
     "hvntown.are:9827": {
-      "name": "White Oak Biodome",
+      "name": "Cortex Academy of Civic Integration Biodome",
       "kind": "garden",
       "description": "Curving structural ribs divide the biodome enclosure above cultivated ground. Beds of vegetation occupy the space within the framework, their irregular leaves set against the deliberate geometry of the `wdomed shell`x. The near stems gather around a broad patch of rust-colored earth, their smaller leaves overlapping above the soil. One low plant carries a pale border around each leaf, making a delicate pattern close to the ground. The arrangement is deliberate but never quite rigid; each plant has found a slightly different way to occupy it.",
       "places": [],
@@ -35724,7 +35724,7 @@
       "applied_sha256": "59384c36ae0ca069cefdf9cb9220070036d0175181bc1ba8a4cdc1bd90319790"
     },
     "hvntown.are:9829": {
-      "name": "White Oak Biodome",
+      "name": "Cortex Academy of Civic Integration Biodome",
       "kind": "garden",
       "description": "Curving structural ribs divide the biodome enclosure above cultivated ground. Beds of vegetation occupy the space within the framework, their irregular leaves set against the deliberate geometry of the `wdomed shell`x. A low ridge of green moss divides the right-hand growth into two differently textured drifts. Fine leaves make a feathery texture beside broader, waxier blades. The cultivated ground smells richly of earth, with a greener trace where leaves and stems meet at close quarters.",
       "places": [],
@@ -36023,7 +36023,7 @@
       "applied_sha256": "e3a821db1293a3989a51360aa1e7a13c17ac6a5ae1fdb624d05cc4653327f458"
     },
     "hvntown.are:9860": {
-      "name": "White Oak Biodome",
+      "name": "Cortex Academy of Civic Integration Biodome",
       "kind": "garden",
       "description": "Curving structural ribs divide the biodome enclosure above cultivated ground. Beds of vegetation occupy the space within the framework, their irregular leaves set against the deliberate geometry of the `wdomed shell`x. A narrow border follows the left-hand planting, with pale grit filling the intervals between the roots. The worked soil changes color around the nearest roots, revealing the different places moisture settles. The planting rewards a slow look, offering different textures at the scale of a hand rather than a whole landscape.",
       "places": [],
@@ -36079,7 +36079,7 @@
       "applied_sha256": "6bc9ba61e769f8b5ac77af691ea67d0038c0314f0faea134923e454aa1af2c10"
     },
     "hvntown.are:9866": {
-      "name": "White Oak Biodome",
+      "name": "Cortex Academy of Civic Integration Biodome",
       "kind": "garden",
       "description": "Curving structural ribs divide the biodome enclosure above cultivated ground. Beds of vegetation occupy the space within the framework, their irregular leaves set against the deliberate geometry of the `wdomed shell`x. The far bed steps up gently, exposing a darker band of green moss beneath the lower leaves. The edge is carefully tended without being perfectly straight, retaining the small irregularities of growing things. The arrangement is deliberate but never quite rigid; each plant has found a slightly different way to occupy it.",
       "places": [],
@@ -36181,7 +36181,7 @@
       "applied_sha256": "34f8c9ce7adf04cc5478aa0b491616e0880b69ce450c88e2e5d6b33e5acdf25e"
     },
     "hvntown.are:9872": {
-      "name": "White Oak Biodome",
+      "name": "Cortex Academy of Civic Integration Biodome",
       "kind": "garden",
       "description": "Curving structural ribs divide the biodome enclosure above cultivated ground. Beds of vegetation occupy the space within the framework, their irregular leaves set against the deliberate geometry of the `wdomed shell`x. A low ridge of dark leaf mold divides the left-hand growth into two differently textured drifts. A small marker leans among the stems, almost lost at the height of the lower leaves. The arrangement is deliberate but never quite rigid; each plant has found a slightly different way to occupy it.",
       "places": [],
@@ -36197,7 +36197,7 @@
       "applied_sha256": "1878bac730b2a4279aa9b9307c0086cc7f97d077f567a307091fe98f23caa7e1"
     },
     "hvntown.are:9873": {
-      "name": "White Oak Biodome",
+      "name": "Cortex Academy of Civic Integration Biodome",
       "kind": "garden",
       "description": "Curving structural ribs divide the biodome enclosure above cultivated ground. Beds of vegetation occupy the space within the framework, their irregular leaves set against the deliberate geometry of the `wdomed shell`x. A small break in the far planting reveals dark leaf mold beneath a close screen of stems. The edge is carefully tended without being perfectly straight, retaining the small irregularities of growing things. The plants provide the focus here, leaving the ordinary gaps between them as part of the setting.",
       "places": [],
@@ -36205,7 +36205,7 @@
       "applied_sha256": "092061ec85c2da51acff182c43e693f7e0ff6371db07bc9126eb6361e3dec6e4"
     },
     "hvntown.are:9874": {
-      "name": "White Oak Biodome",
+      "name": "Cortex Academy of Civic Integration Biodome",
       "kind": "garden",
       "description": "Curving structural ribs divide the biodome enclosure above cultivated ground. Beds of vegetation occupy the space within the framework, their irregular leaves set against the deliberate geometry of the `wdomed shell`x. The far planting curves around a shallow bed of green moss, breaking the cultivated ground into a softer outline. The worked soil changes color around the nearest roots, revealing the different places moisture settles. The arrangement is deliberate but never quite rigid; each plant has found a slightly different way to occupy it.",
       "places": [],
@@ -36281,7 +36281,7 @@
       "applied_sha256": "cf25584a0365ac14bbeb89f2ba6f146786645d177fd1903dc238103d96929b73"
     },
     "hvntown.are:9879": {
-      "name": "White Oak Biodome",
+      "name": "Cortex Academy of Civic Integration Biodome",
       "kind": "garden",
       "description": "Curving structural ribs divide the biodome enclosure above cultivated ground. Beds of vegetation occupy the space within the framework, their irregular leaves set against the deliberate geometry of the `wdomed shell`x. A small break in the left-hand planting reveals chalky dust beneath a close screen of stems. The worked soil changes color around the nearest roots, revealing the different places moisture settles. The arrangement is deliberate but never quite rigid; each plant has found a slightly different way to occupy it.",
       "places": [],
@@ -36318,7 +36318,7 @@
       "applied_sha256": "6d983a6fc1696f3331788a06f0dbf70ac1582af3043c8a9b76b9c597fd49f123"
     },
     "hvntown.are:9882": {
-      "name": "White Oak Biodome",
+      "name": "Cortex Academy of Civic Integration Biodome",
       "kind": "garden",
       "description": "Curving structural ribs divide the biodome enclosure above cultivated ground. Beds of vegetation occupy the space within the framework, their irregular leaves set against the deliberate geometry of the `wdomed shell`x. The right-hand planting curves around a shallow bed of rust-colored earth, breaking the cultivated ground into a softer outline. The worked soil changes color around the nearest roots, revealing the different places moisture settles. The arrangement is deliberate but never quite rigid; each plant has found a slightly different way to occupy it.",
       "places": [],
@@ -36411,7 +36411,7 @@
       "applied_sha256": "6b317154361f59a5521b4d6e0b5d971a8c0d89818ccd9b24bb836c4ab9fcb5dc"
     },
     "hvntown.are:9888": {
-      "name": "White Oak Biodome",
+      "name": "Cortex Academy of Civic Integration Biodome",
       "kind": "garden",
       "description": "Curving structural ribs divide the biodome enclosure above cultivated ground. Beds of vegetation occupy the space within the framework, their irregular leaves set against the deliberate geometry of the `wdomed shell`x. The left-hand bed steps up gently, exposing a darker band of weathered bark beneath the lower leaves. The edge is carefully tended without being perfectly straight, retaining the small irregularities of growing things. The plants provide the focus here, leaving the ordinary gaps between them as part of the setting.",
       "places": [],
@@ -36542,7 +36542,7 @@
       "applied_sha256": "a61e6316ad1cf4d91d3e7520442bce4e01c420b4e3ba8b9424eef9550cab6a15"
     },
     "hvntown.are:9895": {
-      "name": "White Oak Biodome",
+      "name": "Cortex Academy of Civic Integration Biodome",
       "kind": "garden",
       "description": "Curving structural ribs divide the biodome enclosure above cultivated ground. Beds of vegetation occupy the space within the framework, their irregular leaves set against the deliberate geometry of the `wdomed shell`x. A narrow border follows the near planting, with rust-colored earth filling the intervals between the roots. The worked soil changes color around the nearest roots, revealing the different places moisture settles. The plants provide the focus here, leaving the ordinary gaps between them as part of the setting.",
       "places": [],
@@ -36563,7 +36563,7 @@
       "applied_sha256": "eb3234bf5a33ae60da2d43062eb0b7f2e234c9912f8f501f36e91e33675e9b48"
     },
     "hvntown.are:9897": {
-      "name": "White Oak Biodome",
+      "name": "Cortex Academy of Civic Integration Biodome",
       "kind": "garden",
       "description": "Curving structural ribs divide the biodome enclosure above cultivated ground. Beds of vegetation occupy the space within the framework, their irregular leaves set against the deliberate geometry of the `wdomed shell`x. A narrow border follows the near planting, with silver-gray roots filling the intervals between the roots. One low plant carries a pale border around each leaf, making a delicate pattern close to the ground. The planting rewards a slow look, offering different textures at the scale of a hand rather than a whole landscape.",
       "places": [],
@@ -36600,7 +36600,7 @@
       "applied_sha256": "8b75efc5d26ebfdf9dca3857c32306e42b75cfbb5d72ce610d0cafc958329bae"
     },
     "hvntown.are:9899": {
-      "name": "White Oak Biodome",
+      "name": "Cortex Academy of Civic Integration Biodome",
       "kind": "garden",
       "description": "Curving structural ribs divide the biodome enclosure above cultivated ground. Beds of vegetation occupy the space within the framework, their irregular leaves set against the deliberate geometry of the `wdomed shell`x. A narrow border follows the left-hand planting, with chalky dust filling the intervals between the roots. One low plant carries a pale border around each leaf, making a delicate pattern close to the ground. The plants provide the focus here, leaving the ordinary gaps between them as part of the setting.",
       "places": [],
@@ -36679,7 +36679,7 @@
       "applied_sha256": "23fb0eb2a1215496e3c3d2c96466254925ab2f0093e4d2ae03c2f5074e871feb"
     },
     "hvntown.are:9903": {
-      "name": "White Oak Biodome",
+      "name": "Cortex Academy of Civic Integration Biodome",
       "kind": "garden",
       "description": "Curving structural ribs divide the biodome enclosure above cultivated ground. Beds of vegetation occupy the space within the framework, their irregular leaves set against the deliberate geometry of the `wdomed shell`x. A low ridge of pale grit divides the far growth into two differently textured drifts. A curling tendril has wound around an older stem, repeating the same tight spiral several times. The planting rewards a slow look, offering different textures at the scale of a hand rather than a whole landscape.",
       "places": [],
@@ -36703,7 +36703,7 @@
       "applied_sha256": "bce62c240219af1650286fcf7ddcc435a3e671d0f7127e02494f5c4ca557e8e3"
     },
     "hvntown.are:9906": {
-      "name": "White Oak Biodome",
+      "name": "Cortex Academy of Civic Integration Biodome",
       "kind": "garden",
       "description": "Curving structural ribs divide the biodome enclosure above cultivated ground. Beds of vegetation occupy the space within the framework, their irregular leaves set against the deliberate geometry of the `wdomed shell`x. A low ridge of chalky dust divides the far growth into two differently textured drifts. The edge is carefully tended without being perfectly straight, retaining the small irregularities of growing things. The arrangement is deliberate but never quite rigid; each plant has found a slightly different way to occupy it.",
       "places": [],
@@ -36711,7 +36711,7 @@
       "applied_sha256": "6b023a2ae0d08879bb88f16326ece5f18741f840a91d7bb8d4567ca696b156c3"
     },
     "hvntown.are:9907": {
-      "name": "White Oak Biodome",
+      "name": "Cortex Academy of Civic Integration Biodome",
       "kind": "garden",
       "description": "Curving structural ribs divide the biodome enclosure above cultivated ground. Beds of vegetation occupy the space within the framework, their irregular leaves set against the deliberate geometry of the `wdomed shell`x. The near bed steps up gently, exposing a darker band of dark leaf mold beneath the lower leaves. Fine leaves make a feathery texture beside broader, waxier blades. The arrangement is deliberate but never quite rigid; each plant has found a slightly different way to occupy it.",
       "places": [],
@@ -36740,7 +36740,7 @@
       "applied_sha256": "67142eef6b0ccba4b247fe2d14c16fac3208a2b47a91228b2350e72aef10b7a7"
     },
     "hvntown.are:9908": {
-      "name": "White Oak Biodome",
+      "name": "Cortex Academy of Civic Integration Biodome",
       "kind": "garden",
       "description": "Curving structural ribs divide the biodome enclosure above cultivated ground. Beds of vegetation occupy the space within the framework, their irregular leaves set against the deliberate geometry of the `wdomed shell`x. The far bed steps up gently, exposing a darker band of pale grit beneath the lower leaves. Fine leaves make a feathery texture beside broader, waxier blades. The arrangement is deliberate but never quite rigid; each plant has found a slightly different way to occupy it.",
       "places": [],
@@ -39781,7 +39781,7 @@
       "applied_sha256": "458a72e9c283b8bb24ccd8c6e0abd2cd4b2fffb32002a9691589626e71c58ab3"
     },
     "hvntown.are:5961": {
-      "name": "the White Oak Biodome",
+      "name": "the Cortex Academy of Civic Integration Biodome",
       "kind": "garden",
       "description": "Curving structural ribs divide the biodome enclosure above cultivated ground. Beds of vegetation occupy the space within the framework, their irregular leaves set against the deliberate geometry of the `wdomed shell`x. A narrow border follows the right-hand planting, with silver-gray roots filling the intervals between the roots. The worked soil changes color around the nearest roots, revealing the different places moisture settles. The arrangement is deliberate but never quite rigid; each plant has found a slightly different way to occupy it.",
       "places": [],

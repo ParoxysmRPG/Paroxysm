@@ -63,6 +63,7 @@ bool higher_power(CHAR_DATA *) { return false; }
 bool free_to_act(CHAR_DATA *ch) { return ch->in_room && !ch->in_fight; }
 bool is_helpless(CHAR_DATA *ch) { return !IS_NPC(ch) && ch->pcdata->sleeping > 0; }
 int number_range(int a, int) { return a; }
+int get_tier(CHAR_DATA *) { return 3; }
 int max_hp(CHAR_DATA *ch) { return ch->disciplines[DIS_TOUGHNESS] * 5 + 25; }
 void set_combat_state(CHAR_DATA *ch, bool state) { ch->in_fight = state; }
 bool in_fight(CHAR_DATA *ch) { return ch->in_fight; }
@@ -234,7 +235,7 @@ int main() {
   street.room_flags = 0; // A public street without the explicit ROOM_PUBLIC exclusion.
   assert(!public_target_excluded(&attacker, &defender));
   cortex_public_response(&attacker, &defender);
-  assert(char_list.size() == 5 && fights == 2);
+  assert(char_list.size() == 4 && fights == 1);
   CHAR_DATA *enforcer = nullptr;
   for (auto *ch : char_list) if (cortex_public_enforcer(ch)) {
     enforcer = ch; assert(!IS_FLAG(ch->act, ACT_SENTINEL));
@@ -242,7 +243,7 @@ int main() {
     assert(!strcmp(ch->protecting, defender.name));
   }
   assert(enforcer);
-  cortex_public_response(&attacker, &defender); assert(char_list.size() == 5);
+  cortex_public_response(&attacker, &defender); assert(char_list.size() == 4);
   attacker.wounds = 2; attacker.hit = 0;
   cortex_enforcer_defeat(enforcer, &attacker);
   assert(apc.sleeping >= 240 && attacker.hit == 0 && attacker.wounds == 2);

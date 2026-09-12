@@ -2242,7 +2242,7 @@ extern "C" {
         return;
       }
 
-      send_to_char("You enroll at White Oak, a special school for young supernaturals and those connected to their world. Its Civic Educators promise guidance and protection through responsible service. (White Oak's purpose is to condition students into Cortex sympathizers and loyalists; see help White Oak and help Student.)\n\r", ch);
+      send_to_char("You enroll at Cortex Academy of Civic Integration, a special school for young supernaturals and those connected to their world. Its Civic Educators promise guidance and protection through responsible service. (Cortex Academy of Civic Integration's purpose is to condition students into Cortex sympathizers and loyalists; see help Cortex Academy of Civic Integration and help Student.)\n\r", ch);
       if(ch->sex == SEX_MALE)
       {
         send_to_char("You now have the option of joining a fraternity for free on campus housing, to do so use 'college join fraternity (Alpha Gamma Omega/Sigma Lambda Pi)'\n\r", ch);

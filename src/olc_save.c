@@ -707,14 +707,16 @@ Called by:	save_area(olc_save.c).
           if (pRoomIndex->description_decorated) fprintf(fp, "B 1\n");
 
           int x = 0;
-          for (pEd = pRoomIndex->extra_descr; pEd && x < 20; pEd = pEd->next) {
+          for (pEd = pRoomIndex->extra_descr; pEd; pEd = pEd->next) {
+            // Camera timers/owners must survive even when later room edits
+            // push their metadata beyond the ordinary description limit.
+            if (x++ >= 20 && !is_name("!bugs", pEd->keyword)) continue;
             char tmp[MSL];
             sprintf(tmp, "temporary1000temp");
             if (safe_strlen(pEd->keyword) > 1 && str_cmp(pEd->keyword, "!sleepers") && str_cmp(pEd->keyword, tmp)) {
               sprintf(tmp, "%s", pEd->keyword);
               fprintf(fp, "E\n%s~\n%s~\n", pEd->keyword, fix_string(pEd->description));
             }
-            x++;
           }
           x = 0;
           for (pEd = pRoomIndex->places; pEd && x < 10; pEd = pEd->next) {

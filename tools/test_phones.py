@@ -39,6 +39,11 @@ int get_animal_genus(CHAR_DATA *, int) { return 0; }
 int get_skill(CHAR_DATA *, int) { return 5; }
 int get_trust(CHAR_DATA *ch) { return ch->level; }
 bool is_town_blackout() { return false; }
+bool is_blind(CHAR_DATA *) { return false; }
+bool is_dreaming(CHAR_DATA *) { return false; }
+bool cell_signal(CHAR_DATA *) { return true; }
+bool can_see(CHAR_DATA *, CHAR_DATA *) { return true; }
+CHAR_DATA *get_char_room(CHAR_DATA *, ROOM_INDEX_DATA *, char *) { return nullptr; }
 bool at_workshop(CHAR_DATA *) { return true; }
 bool at_jeweler(CHAR_DATA *) { return true; }
 void maketownmap(CHAR_DATA *) {}
@@ -70,6 +75,7 @@ void printf_to_char(CHAR_DATA *, char *fmt, ...) {
 }
 void act_new(const char *, CHAR_DATA *, const void *, const void *, int, int) {}
 void save_char_obj(CHAR_DATA *ch, bool, bool) { ++saves; saved_character = ch; }
+void do_hangup(CHAR_DATA *, char *) { assert(false); } // No calls in this unit fixture.
 EXTRA_DESCR_DATA *new_extra_descr() {
   auto *ed = new EXTRA_DESCR_DATA{};
   ed->description = str_dup(""); return ed;
@@ -169,9 +175,26 @@ int main() {
   command("off"); assert(IS_SET(phones[0].extra_flags, ITEM_OFF));
   command("on"); assert(!IS_SET(phones[0].extra_flags, ITEM_OFF));
   command("signalboost"); assert(phones[0].extra_descr && IS_FLAG(sender.comm, COMM_RACIAL));
+  auto loudspeaker = [&]() {
+    for (auto *ed = phones[0].extra_descr; ed; ed = ed->next)
+      if (!str_cmp(ed->keyword, "+loudspeaker")) return true;
+    return false;
+  };
+  command("loudspeaker"); assert(loudspeaker());
+  command("loudspeaker on"); assert(loudspeaker());
+  command("loudspeaker invalid"); assert(loudspeaker());
+  command("loudspeaker off"); assert(!loudspeaker());
+  command("loudspeaker off"); assert(!loudspeaker());
+  command("loudspeaker on"); assert(loudspeaker());
+  command("loudspeaker"); assert(!loudspeaker());
+  assert(phones[0].extra_descr && !str_cmp(phones[0].extra_descr->keyword, "+signalboost"));
   command("signalboost"); assert(phones[0].extra_descr); // Cooldown does not mutate the phone.
   REMOVE_FLAG(sender.comm, COMM_RACIAL);
   command("signalboost"); assert(!phones[0].extra_descr);
+  phones[0].wear_loc = WEAR_BODY_1;
+  secondary.wear_loc = WEAR_NONE;
+  command("off"); assert(IS_SET(phones[0].extra_flags, ITEM_OFF));
+  command("on"); assert(!IS_SET(phones[0].extra_flags, ITEM_OFF));
   for (auto &phone : phones) free_string(phone.material);
   puts("PASS: scheme windows, random single copies, exclusions, inbox/history bounds, phone lookup and controls");
 }

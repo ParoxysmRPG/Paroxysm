@@ -16,6 +16,7 @@
 #include "merc.h"
 #include <unordered_map>
 #include "text_format.h"
+#include "spy_camera.h"
 #include "olc.h"
 #include "gsn.h"
 #include "recycle.h"
@@ -11156,23 +11157,68 @@ extern "C" {
   _DOFUN(do_phone) {
     if (!ch || IS_NPC(ch) || !ch->pcdata) return;
     char arg1[MSL];
+    argument = one_argument_nouncap(argument, arg1);
+    CHAR_DATA *holder = ch;
+    const bool own_command = !arg1[0] || !str_cmp(arg1, "on") || !str_cmp(arg1, "off")
+        || !str_cmp(arg1, "silent") || !str_cmp(arg1, "loudspeaker")
+        || !str_cmp(arg1, "ringtone") || !str_cmp(arg1, "gps")
+        || !str_cmp(arg1, "clone") || !str_cmp(arg1, "clean") || !str_cmp(arg1, "signalboost");
+    if (!own_command && argument[0]) {
+      if (get_skill(ch, SKILL_ELECTROPATHIC) < 1) {
+        send_to_char("You need electropathy to control someone else's phone.\n\r", ch);
+        return;
+      }
+      if (is_blind(ch) || is_dreaming(ch) || IS_FLAG(ch->act, PLR_DEAD)) {
+        send_to_char("You can't do that now.\n\r", ch);
+        return;
+      }
+      holder = get_char_room(ch, NULL, arg1);
+      if (!holder || holder == ch || IS_NPC(holder) || !holder->pcdata
+          || holder->in_room != ch->in_room || !can_see(ch, holder)) {
+        send_to_char("You need to target another person you can see in your room.\n\r", ch);
+        return;
+      }
+      CHAR_DATA *other = holder->pcdata->connected_to;
+      if (!other || other == holder || IS_NPC(other) || !other->pcdata
+          || holder->pcdata->connection_stage != CONNECT_TALKING
+          || other->pcdata->connected_to != holder
+          || other->pcdata->connection_stage != CONNECT_TALKING) {
+        send_to_char("They aren't on an active phone call.\n\r", ch);
+        return;
+      }
+      if (!cell_signal(ch) || !cell_signal(holder)) {
+        send_to_char("You can't get a connection to their phone.\n\r", ch);
+        return;
+      }
+      argument = one_argument_nouncap(argument, arg1);
+      if (str_cmp(arg1, "on") && str_cmp(arg1, "off") && str_cmp(arg1, "silent")
+          && str_cmp(arg1, "loudspeaker") && str_cmp(arg1, "ringtone")) {
+        send_to_char("Syntax: phone <person> <on/off/silent/loudspeaker [on/off]/ringtone (string)>\n\r", ch);
+        return;
+      }
+    }
     OBJ_DATA *phone;
     OBJ_DATA *obj;
-    phone = get_eq_char(ch, WEAR_HOLD);
+    phone = holder != ch ? get_phone(holder) : get_eq_char(ch, WEAR_HOLD);
     EXTRA_DESCR_DATA *ed;
 
+    if (holder != ch && !phone) {
+      send_to_char("They don't have a usable phone.\n\r", ch);
+      return;
+    }
     if (phone == NULL || phone->item_type != ITEM_PHONE)
     phone = get_eq_char(ch, WEAR_HOLD_2);
 
     if (phone == NULL || phone->item_type != ITEM_PHONE) {
       for (obj = ch->carrying; obj != NULL; obj = obj->next_content) {
-        if (obj->wear_loc != WEAR_NONE || IS_SET(obj->extra_flags, ITEM_WARDROBE))
+        if (IS_SET(obj->extra_flags, ITEM_WARDROBE))
         continue;
 
         if (obj->item_type != ITEM_PHONE)
         continue;
 
         phone = obj;
+        break;
       }
     }
     if (phone == NULL) {
@@ -11184,11 +11230,54 @@ extern "C" {
       return;
     }
 
-    argument = one_argument_nouncap(argument, arg1);
+    if (!str_cmp(arg1, "loudspeaker")) {
+      if (argument[0] && str_cmp(argument, "on") && str_cmp(argument, "off")) {
+        send_to_char("Syntax: phone loudspeaker [on/off]\n\r", ch);
+        return;
+      }
+      // Match the usable phone selected by call speech, including worn phones.
+      phone = get_phone(holder);
+      if (!phone) {
+        send_to_char("You need a phone that is turned on.\n\r", ch);
+        return;
+      }
+      EXTRA_DESCR_DATA **link = &phone->extra_descr;
+      while (*link && str_cmp((*link)->keyword, "+loudspeaker"))
+        link = &(*link)->next;
+      const bool enabled = *link != NULL;
+      const bool turn_on = argument[0] ? !str_cmp(argument, "on") : !enabled;
+      if (turn_on == enabled) {
+        printf_to_char(ch, "%s phone's loudspeaker is already %s.\n\r", holder == ch ? "Your" : "Their", turn_on ? "on" : "off");
+        return;
+      }
+      if (turn_on) {
+        ed = new_extra_descr();
+        ed->keyword = str_dup("+loudspeaker");
+        free_string(ed->description);
+        ed->description = str_dup("on");
+        *link = ed;
+      }
+      else {
+        ed = *link;
+        *link = ed->next;
+        free_extra_descr(ed);
+      }
+      printf_to_char(ch, "You turn %s's loudspeaker %s.\n\r", phone->description, turn_on ? "on" : "off");
+      if (holder == ch)
+        act(turn_on ? "$n turns $p's loudspeaker on." : "$n turns $p's loudspeaker off.",
+            ch, phone, NULL, TO_ROOM);
+      else {
+        act(turn_on ? "Your $p's loudspeaker turns on." : "Your $p's loudspeaker turns off.",
+            holder, phone, NULL, TO_CHAR);
+        act(turn_on ? "$n's $p's loudspeaker turns on." : "$n's $p's loudspeaker turns off.",
+            holder, phone, NULL, TO_ROOM);
+      }
+      return;
+    }
     if (!str_cmp(arg1, "on") || !str_cmp(arg1, "off")) {
       const bool turn_on = !str_cmp(arg1, "on");
       if (turn_on != !!IS_SET(phone->extra_flags, ITEM_OFF)) {
-        printf_to_char(ch, "Your phone is already %s.\n\r", turn_on ? "on" : "off");
+        printf_to_char(ch, "%s phone is already %s.\n\r", holder == ch ? "Your" : "Their", turn_on ? "on" : "off");
         return;
       }
       if (IS_SET(phone->extra_flags, ITEM_OFF)) {
@@ -11199,17 +11288,21 @@ extern "C" {
       else {
         printf_to_char(ch, "You turn %s off.\n\r", phone->description);
         SET_BIT(phone->extra_flags, ITEM_OFF);
-        if(ch->pcdata->cam_spy_char != NULL)
-        ch->pcdata->cam_spy_char = NULL;
+        if (holder != ch)
+          act("Your $p turns off.", holder, phone, NULL, TO_CHAR);
+        if (holder->pcdata->connected_to != NULL && (holder != ch || get_phone(holder) == NULL))
+          do_hangup(holder, (char *)"");
+        if(holder->pcdata->cam_spy_char != NULL)
+        holder->pcdata->cam_spy_char = NULL;
         for (vector<MATCH_TYPE *>::iterator it = MatchVect.begin();
         it != MatchVect.end(); ++it) {
-          if(!str_cmp(ch->name, (*it)->nameone))
+          if(!str_cmp(holder->name, (*it)->nameone))
           {
             (*it)->last_msg_one_one = 0;
             (*it)->last_msg_one_two = 0;
             (*it)->last_msg_one_three = 0;
           }
-          if(!str_cmp(ch->name, (*it)->nametwo))
+          if(!str_cmp(holder->name, (*it)->nametwo))
           {
             (*it)->last_msg_two_one = 0;
             (*it)->last_msg_two_two = 0;
@@ -11235,17 +11328,21 @@ extern "C" {
       if (IS_SET(phone->extra_flags, ITEM_SILENT)) {
         printf_to_char(ch, "You switch %s off silent.\n\r", phone->description);
         REMOVE_BIT(phone->extra_flags, ITEM_SILENT);
+        if (holder != ch)
+          act("Your $p switches off silent mode.", holder, phone, NULL, TO_CHAR);
         return;
       }
       else {
         printf_to_char(ch, "You switch %s to silent.\n\r", phone->description);
         SET_BIT(phone->extra_flags, ITEM_SILENT);
+        if (holder != ch)
+          act("Your $p switches to silent mode.", holder, phone, NULL, TO_CHAR);
         return;
       }
     }
 
     if (!str_cmp(arg1, "ringtone")) {
-      if (!holding_phone(ch) && !wearing_phone(ch)) {
+      if (holder == ch && !holding_phone(ch) && !wearing_phone(ch)) {
         send_to_char("You must be holding a phone first.\n\r", ch);
         return;
       }
@@ -11270,6 +11367,8 @@ extern "C" {
       }
 
       printf_to_char(ch, "Ringtone set to: %s\n\r", argument);
+      if (holder != ch)
+        printf_to_char(holder, "Your phone's ringtone changes to: %s\n\r", argument);
       return;
     }
     if (!str_cmp(arg1, "clone")) {
@@ -11374,7 +11473,8 @@ extern "C" {
       return;
     }
 
-    send_to_char("Phone <on/off/silent/ringtone (string)/clone/clean/signalboost>\n\r", ch);
+    send_to_char("Phone <on/off/silent/loudspeaker [on/off]/ringtone (string)/clone/clean/signalboost>\n\r", ch);
+    send_to_char("Electropathy: phone <person on a call> <on/off/silent/loudspeaker [on/off]/ringtone (string)>\n\r", ch);
   }
 
   // Based on mult_argument for dice rolling - Discordance
@@ -12239,12 +12339,13 @@ extern "C" {
   }
 
   _DOFUN(do_plantcamera) {
+    if (!ch || IS_NPC(ch) || !ch->in_room) return;
     if (is_helpless(ch) || is_ghost(ch) || is_pinned(ch) || in_fight(ch) || IS_FLAG(ch->act, PLR_SHROUD) || ch->shape != SHAPE_HUMAN) {
       send_to_char("Not now.\n\r", ch);
       return;
     }
 
-    if (ch->in_room->area->vnum == 1 || ch->in_room->area->vnum == 12 || !in_haven(ch->in_room)) {
+    if (!haven::camera_room_supported(ch->in_room)) {
       send_to_char("You can't plant a camera here.\n\r", ch);
       return;
     }
@@ -12271,43 +12372,51 @@ extern "C" {
 
       if (is_name(arg1, obj->name) && can_see_obj(ch, obj)) {
         phone = obj;
+        break;
       }
     }
     if (phone == NULL) {
       send_to_char("Syntax: plantcamera (phone to sync it to)\n\r", ch);
       return;
     }
+    if (phone->value[0] < 100) {
+      send_to_char("That phone does not have a valid number.\n\r", ch);
+      return;
+    }
+    EXTRA_DESCR_DATA *ed = haven::camera_links(ch->in_room);
+    if (haven::camera_linked(ed, phone->value[0])) {
+      send_to_char("A camera here is already synced to that phone.\n\r", ch);
+      return;
+    }
+    std::string links = ed && ed->description ? ed->description : "";
+    if (!links.empty()) links += ' ';
+    const int hours = haven::camera_lifetime_hours(get_skill(ch, SKILL_HACKING));
+    const long long expires = static_cast<long long>(current_time) + hours * 3600;
+    links += std::to_string(phone->value[0]) + ":" + std::to_string(expires) + ":" + ch->name;
+    if (links.size() >= MSL) {
+      send_to_char("There are too many cameras here already.\n\r", ch);
+      return;
+    }
     if (!has_consume(ch, 46405)) {
       send_to_char("You need to buy a spy camera from radio shack first.\n\r", ch);
       return;
-    }
-
-    EXTRA_DESCR_DATA *ed;
-    char buf[MSL];
-
-    for (ed = ch->in_room->extra_descr; ed; ed = ed->next) {
-      if (is_name("!bugs", ed->keyword))
-      break;
     }
     if (!ed) {
       ed = new_extra_descr();
       ed->keyword = str_dup("!bugs");
       ed->next = ch->in_room->extra_descr;
       ch->in_room->extra_descr = ed;
-      free_string(ch->in_room->extra_descr->description);
-      sprintf(buf, "%d", phone->value[0]);
-      ch->in_room->extra_descr->description = str_dup(buf);
     }
-    else {
-      sprintf(buf, "%s %d", ed->description, phone->value[0]);
-      free_string(ed->description);
-      ed->description = str_dup(buf);
-    }
+    free_string(ed->description);
+    ed->description = str_dup(links.c_str());
+    SET_BIT(ch->in_room->area->area_flags, AREA_CHANGED);
     printf_to_char(ch, "You discreetly plant the spycamera and sync it up to broadcast to %s.\n\r", phone->description);
+    printf_to_char(ch, "The camera will operate for %d real week(s).\n\r", hours / (7 * 24));
     act("$n plants a spy camera.", ch, NULL, NULL, TO_ROOM);
   }
 
   _DOFUN(do_bugsweep) {
+    if (!ch || IS_NPC(ch) || !ch->in_room || !ch->in_room->area) return;
     if (ch->money < 5000) {
       send_to_char("You don't have enough to afford that.\n\r", ch);
       return;
@@ -12324,21 +12433,15 @@ extern "C" {
     }
     ch->money -= 5000;
 
-    EXTRA_DESCR_DATA *ed;
-
-    for (ed = ch->in_room->extra_descr; ed; ed = ed->next) {
-      if (is_name("!bugs", ed->keyword))
-      break;
-    }
+    EXTRA_DESCR_DATA *ed = haven::camera_links(ch->in_room);
     if (!ed) {
       send_to_char("The bugsweep comes up empty.\n\r", ch);
     }
     else if (safe_strlen(ed->description) < 2)
     send_to_char("The bugsweep comes up empty.\n\r", ch);
     else {
-      send_to_char("Your sweep detects and neutralizing some spyware.\n\r", ch);
-      free_string(ed->description);
-      ed->description = str_dup("");
+      send_to_char("Your sweep detects and neutralizes some spyware.\n\r", ch);
+      haven::camera_links(ch->in_room, true);
     }
     act("$n sweeps the room for bugs.", ch, NULL, NULL, TO_ROOM);
   }

@@ -586,11 +586,6 @@ extern "C" {
       send_to_char("You're not currently earning RPxp because you have large weaponry on you and aren't in a fight.\n\r", ch);
       return;
     }
-    // This keeps track of xp gained while in private mode - Discordance
-    if (IS_FLAG(ch->comm, COMM_PRIVATE) && !IS_FLAG(ch->act, PLR_AFTERGLOW)) {
-      ch->privaterpexp += amount;
-    }
-
     if (ch->pcdata->rpxpbonus > 0) {
       bonus = UMIN(1, ch->pcdata->rpxpbonus);
       amount += bonus;
@@ -601,6 +596,14 @@ extern "C" {
       amount += bonus;
       ch->pcdata->rpxpbonus -= bonus;
       amount = UMAX(1, amount);
+    }
+
+    // Double the final RPXP award after applying bonuses and penalties.
+    amount *= 2;
+
+    // This keeps track of xp gained while in private mode - Discordance
+    if (IS_FLAG(ch->comm, COMM_PRIVATE) && !IS_FLAG(ch->act, PLR_AFTERGLOW)) {
+      ch->privaterpexp += amount;
     }
 
     if (ch->pcdata->account != NULL) {
@@ -3639,6 +3642,33 @@ end_battle();
           }
         }
       }
+
+      // Restore the original sanctuary prisoner-care deadline and event release rules.
+      if (in_haven(ch->in_room) && under_understanding(ch, ch) && event_cleanse == 0 && (IS_FLAG(ch->act, PLR_BOUND) || IS_FLAG(ch->act, PLR_BOUNDFEET) || trapped_room(ch->in_room, ch))) {
+        if (ch->pcdata->prison_mult == 0) {
+          ch->pcdata->prison_mult = 1;
+          ch->pcdata->prison_care = current_time + (3600 * 5);
+        }
+        if (ch->pcdata->prison_care < current_time)
+        autorelease(ch);
+        else {
+          for (vector<EVENT_TYPE *>::iterator it = EventVect.begin();
+          it != EventVect.end(); ++it) {
+            if ((*it)->valid == FALSE)
+            continue;
+
+            if (current_time > (*it)->active_time || current_time > (*it)->deactive_time)
+            continue;
+
+            if ((*it)->type == EVENT_UNDERSTANDINGMINUS || (*it)->type == EVENT_CLEANSE)
+            autorelease(ch);
+            if ((*it)->typetwo == EVENT_UNDERSTANDINGMINUS || (*it)->typetwo == EVENT_CLEANSE)
+            autorelease(ch);
+          }
+        }
+      }
+      else
+      ch->pcdata->prison_care = current_time + (3600 * 14);
 
       if (in_fight(ch) && ch->fight_fast == FALSE && (ch->fight_current == NULL || !same_fight(ch, ch->fight_current))) {
         CHAR_DATA *temp = next_fight_member(ch);
@@ -6732,6 +6762,8 @@ log_string(buf);
       ch->factiontrue = -1;
     }
 
+    // The deadline is elapsed time, including delays between walking steps.
+    finish_overdue_walk(ch);
     if (ch->walking == 1 && ch->destination != NULL && ch->destination && ch->destination->area && ch->in_room != NULL && ch->wait <= 0) {
       if (ch->destination == ch->in_room) {
         if (ch->pcdata->driving_around == TRUE) {
@@ -6750,10 +6782,12 @@ log_string(buf);
           ch->pcdata->driving_around = FALSE;
           else {
             ch->destination = newroom;
+            ch->walk_started_at = current_time;
           }
         }
         else {
           ch->walking = 0;
+          ch->walk_started_at = 0;
           if (ch->in_room->vnum == 13806) {
             send_to_char("You burst from the water, gulping down your first breaths of free air.\n\r", ch);
           }
@@ -6773,6 +6807,7 @@ log_string(buf);
           int dir = path_dir(ch->in_room, ch->destination, ch->facing, ch);
           if (dir == -1) {
             ch->walking = 0;
+            ch->walk_started_at = 0;
             send_to_char("No path found.\n\r", ch);
           }
           else {
@@ -8847,6 +8882,7 @@ world: %d, room area: %d, desti area: %d\n\r", room->vnum, desti->vnum, vehicle_
     CHAR_DATA *ch;
     char buf[MSL];
 
+    camera_update();
     operation_second_update();
     dissent_update();
     cortex_public_update();

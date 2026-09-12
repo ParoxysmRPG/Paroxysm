@@ -2792,10 +2792,82 @@ member->esteem = fac->member_esteem[i];
     do_function(ch, &do_clan, argument);
   }
 
+  static void society_sell_blood(CHAR_DATA *ch, char *argument) {
+    if (!ch || IS_NPC(ch) || !ch->pcdata) return;
+    FACTION_TYPE *fac = clan_lookup(selected_society(ch));
+    if (!fac || fac->type != FACTION_SOCIETY || fac->stasis
+        || (fac->vnum != ch->fsociety && fac->vnum != ch->legacy_society)) {
+      send_to_char("You must belong to an active society to sell blood for its funds.\n\r", ch);
+      return;
+    }
+    if (!ch->in_room || !in_haven(ch->in_room) || in_world(ch) != WORLD_EARTH
+        || !free_to_act(ch) || is_ghost(ch) || is_gm(ch) || higher_power(ch)
+        || IS_FLAG(ch->act, PLR_GUEST) || IS_FLAG(ch->act, PLR_DEAD)
+        || IS_FLAG(ch->act, PLR_SHROUD) || IS_FLAG(ch->act, PLR_DEEPSHROUD)
+        || battleground(ch->in_room) || dissent_in_room(ch->in_room) || state_of_emergency()) {
+      send_to_char("You must be free to act in waking Gravesend to meet the blood buyers.\n\r", ch);
+      return;
+    }
+    const time_t ready = (time_t)ch->pcdata->last_blood_sale + 7 * 24 * 60 * 60;
+    if (ch->pcdata->last_blood_sale > 0 && current_time < ready) {
+      printf_to_char(ch, "You can attempt another blood sale in %ld hour(s).\n\r",
+          (long)((ready - current_time + 3599) / 3600));
+      return;
+    }
+    OBJ_DATA *blood = get_obj_carry(ch, argument, ch);
+    if (!blood || !blood->pIndexData || blood->pIndexData->vnum != 33
+        || blood->item_type != ITEM_DRINK_CON || blood->value[1] <= 0
+        || !IS_OBJ_STAT(blood, ITEM_VBLOOD) || IS_OBJ_STAT(blood, ITEM_WARDROBE)) {
+      send_to_char("Syntax: society sellblood (glass of vampire blood)\n\rYou need a nonempty glass produced by giveblood.\n\r", ch);
+      return;
+    }
+    if (!get_mob_index(CORTEX_SOLDIER)) {
+      send_to_char("The blood buyers are unavailable right now.\n\r", ch);
+      return;
+    }
+    for (CHAR_DATA *mob : char_list) {
+      if (cortex_enforcer(mob) && mob->ttl > 0 && !str_cmp(mob->aggression, ch->name)) {
+        send_to_char("You must shake off the Cortex enforcers before arranging a sale.\n\r", ch);
+        return;
+      }
+    }
+
+    const bool ambush = number_percent() <= 50;
+    // An interrupted deal still spends both the blood and the weekly opportunity.
+    ch->pcdata->last_blood_sale = current_time;
+    extract_obj(blood);
+    save_char_obj(ch, FALSE, FALSE);
+    char buf[MSL];
+    if (ambush) {
+      act("Your supposed blood buyers reveal a Cortex sting. Enforcers seize the blood and attack!", ch, NULL, NULL, TO_CHAR);
+      act("Cortex enforcers interrupt $n's blood deal and attack!", ch, NULL, NULL, TO_ROOM);
+      cortex_send_enforcers(ch);
+      snprintf(buf, sizeof(buf), "%s's vampire blood sale was intercepted by Cortex; no funds earned.", ch->name);
+      send_log(fac->vnum, buf);
+      return;
+    }
+    const int reward = UMIN(2000, 250 * (1 << (5 - URANGE(1, get_tier(ch), 5))));
+    // A weekly cash sale credits the selected society directly, like dissent rewards.
+    fac->resource += reward;
+    fac->lifeearned += reward;
+    ch->pcdata->week_tracker[TRACK_CONTRIBUTED] += reward * 10;
+    ch->pcdata->life_tracker[TRACK_CONTRIBUTED] += reward * 10;
+    snprintf(buf, sizeof(buf), "%s sold vampire blood to NPC buyers for $%d in society funds.", ch->name, reward * 10);
+    send_log(fac->vnum, buf);
+    printf_to_char(ch, "The buyers take your blood and pay $%d into %s's funds.\n\r", reward * 10, fac->name);
+    save_clans(FALSE);
+    save_char_obj(ch, FALSE, FALSE);
+  }
+
   _DOFUN(do_society) {
+    if (!ch || IS_NPC(ch) || !ch->pcdata) return;
     ch->pcdata->ftype = FACTION_SOCIETY;
     char arg[MSL];
     char *rest = one_argument_nouncap(argument, arg);
+    if (!str_cmp(arg, "sellblood")) {
+      society_sell_blood(ch, rest);
+      return;
+    }
     if (!str_cmp(arg, "select")) {
       FACTION_TYPE *fac = clan_lookup_name(rest);
       if (!fac || fac->type != FACTION_SOCIETY || (fac->vnum != ch->fsociety && fac->vnum != ch->legacy_society)) {
@@ -2864,7 +2936,7 @@ member->esteem = fac->member_esteem[i];
 
       // Keeping institute PCs out of factions - Discordance
       if (ch->race == RACE_FACULTY) {
-        printf_to_char(ch, "White Oak Civic Educators cannot join %ss.\n\r", ctype);
+        printf_to_char(ch, "Cortex Academy of Civic Integration Civic Educators cannot join %ss.\n\r", ctype);
         return;
       }
 
@@ -3412,11 +3484,6 @@ return;
               continue;
             printf_to_char(ch, "%s%s`x\n\r", side == ALLIANCE_SIDELEFT ? "`r" : "`g", listed->name);
           }
-        }
-        send_to_char("Unaffiliated\n\r", ch);
-        for (FACTION_TYPE *listed : FacVect) {
-          if (!listed->stasis && !listed->antagonist && safe_strlen(listed->name) >= 3 && listed->type == FACTION_SOCIETY && !is_alliance(listed->alliance))
-            printf_to_char(ch, "`c%s`x\n\r", listed->name);
         }
       }
 

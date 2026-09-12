@@ -21,7 +21,7 @@ screen provide useful examples.
   wording.
 
 The formatting pass updates eleven help entries: Affect, Affects, Guest
-Progression, White Oak, Higher Powers, Monster Guests, Guest, Cauterize,
+Progression, Cortex Academy of Civic Integration, Higher Powers, Monster Guests, Guest, Cauterize,
 Compromised, Societies, and Territory Rewards. It also updates lifeforce,
 guest, society/patron, Cortex quota, dissent, and territory reward output.
 

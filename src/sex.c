@@ -1627,21 +1627,27 @@ extern "C" {
     */
   }
 
-  static bool sanctuary_blocks_sex(CHAR_DATA *first, CHAR_DATA *second) {
-    return IS_AFFECTED(first, AFF_UNDERSTANDING) || IS_AFFECTED(second, AFF_UNDERSTANDING)
-        || under_understanding(first, second) || under_understanding(second, first)
-        || under_limited(first, second) || under_limited(second, first);
+  static bool assault_scene_allowed(CHAR_DATA *ch, CHAR_DATA *victim, CHAR_DATA *originator) {
+    if (!ch || !victim || IS_NPC(ch) || IS_NPC(victim) || !ch->pcdata || !victim->pcdata)
+      return FALSE;
+    CHAR_DATA *recipient = originator ? originator : ch;
+    if (!is_helpless(victim)) {
+      send_to_char("The target must be helpless.\n\r", recipient);
+      return FALSE;
+    }
+    if (IS_AFFECTED(ch, AFF_UNDERSTANDING) || IS_AFFECTED(victim, AFF_UNDERSTANDING)
+        || under_understanding(ch, victim) || under_understanding(victim, ch)
+        || under_limited(ch, victim) || under_limited(victim, ch)) {
+      send_to_char("Sanctuary prevents that action.\n\r", recipient);
+      return FALSE;
+    }
+    return TRUE;
   }
 
-  // Processes sex after consent, if needed, is given
-  void have_sex(CHAR_DATA *ch, CHAR_DATA *victim, char risk[MSL], char type[MSL], CHAR_DATA *originator) {
+  // Both commands share consequences; the assault scene uses neutral output.
+  static void resolve_sex(CHAR_DATA *ch, CHAR_DATA *victim, char risk[MSL], char type[MSL], CHAR_DATA *originator, bool clinical) {
     if (!ch || !victim || IS_NPC(ch) || IS_NPC(victim)) return;
-    if (sanctuary_blocks_sex(ch, victim)) {
-      send_to_char("Sanctuary prevents that sexual interaction.\n\r", originator ? originator : ch);
-      sex_cleanup(ch);
-      sex_cleanup(victim);
-      return;
-    }
+    if (clinical && !assault_scene_allowed(ch, victim, originator)) return;
     int i;
     char remember_bottom[MSL], remember_top[MSL];
     bool checkcharacterlatent = TRUE;
@@ -1879,14 +1885,35 @@ extern "C" {
       sex_cleanup(ch);
       return;
     }
+    else if (clinical) {
+      sprintf(log_buf, "An agreed assault scene between %s and %s was resolved.\n\r", ch->name, victim->name);
+    }
     else {
       sprintf(log_buf, "%s had sex with %s.\n\r", ch->name, victim->name);
     }
 
     wiznet(log_buf, NULL, NULL, WIZ_DEATHS, 0, 0);
 
+    // Keep reproductive bookkeeping independent of scene narration.
+    if (ch->pcdata->sexing == victim && !str_cmp(type, "coital")
+        && (ch->pcdata->penis > 0 || victim->pcdata->penis > 0)
+        && (!str_cmp(risk, "none") || !str_cmp(risk, "pretend")
+            || !str_cmp(risk, "slipoff") || !str_cmp(risk, "accident"))) {
+      baby_batter(ch, victim, impotent);
+    }
+
+    if (clinical) {
+      send_to_char("The agreed scene is resolved without narration.\n\r", ch);
+      send_to_char("The agreed scene is resolved without narration.\n\r", victim);
+      // Match the ordinary handler's protected-pairing orientation.
+      if (!str_cmp(type, "coital") && !str_cmp(risk, "condom")
+          && top->pcdata->penis == 0 && bottom->pcdata->penis > 0) {
+        top = victim;
+        bottom = ch;
+      }
+    }
     // Regular sex messages
-    if ((ch->pcdata->sexing == victim)) {
+    else if ((ch->pcdata->sexing == victim)) {
       top = ch;
       bottom = victim;
 
@@ -1981,7 +2008,6 @@ extern "C" {
               }
             }
 
-            baby_batter(ch, victim, impotent);
           }
           else if (!str_cmp(type, "noncoital")) {
             printf_to_char(top,    "You have unprotected noncoital intercourse with %s.`x\n\r", remember_bottom);
@@ -2021,7 +2047,6 @@ extern "C" {
               }
             }
 
-            baby_batter(ch, victim, impotent);
           }
           else if (!str_cmp(type, "noncoital")) {
             printf_to_char(top,    "You have unprotected noncoital intercourse with %s.`x\n\r", remember_bottom);
@@ -2061,7 +2086,6 @@ extern "C" {
               }
             }
 
-            baby_batter(ch, victim, impotent);
           }
           else if (!str_cmp(type, "noncoital")) {
             printf_to_char(top,    "You have protected noncoital intercourse with %s, but slip the condom off before it's over.`x\n\r", remember_bottom);
@@ -2101,7 +2125,6 @@ extern "C" {
               }
             }
 
-            baby_batter(ch, victim, impotent);
           }
           else if (!str_cmp(type, "noncoital")) {
             printf_to_char(top,    "You have unprotected noncoital intercourse with %s.`x\n\r", remember_bottom);
@@ -2287,9 +2310,11 @@ extern "C" {
               if (get_skill(bottom, SKILL_VIRGIN) == 1) {
                 do_function(bottom, &do_negtrain, "Virgin");
               }
-              printf_to_char(bottom, "You lose your virginity to %s.`x\n\r", remember_top);
-              printf_to_char(top,    "%s loses %s virginity to you.`x\n\r",  remember_bottom, (bottom->sex == SEX_MALE) ? "his" : "her");
-              act("$n loses $s virginity.`x\n\r", bottom, NULL, top, TO_NOTVICT);
+              if (!clinical) {
+                printf_to_char(bottom, "You lose your virginity to %s.`x\n\r", remember_top);
+                printf_to_char(top,    "%s loses %s virginity to you.`x\n\r",  remember_bottom, (bottom->sex == SEX_MALE) ? "his" : "her");
+                act("$n loses $s virginity.`x\n\r", bottom, NULL, top, TO_NOTVICT);
+              }
             }
             bottom->pcdata->virginity_lost = current_time;
           }
@@ -2299,9 +2324,11 @@ extern "C" {
               if (get_skill(top, SKILL_VIRGIN) == 1) {
                 do_function(top, &do_negtrain, "Virgin");
               }
-              printf_to_char(top,    "You lose your virginity to %s.`x\n\r", remember_bottom);
-              printf_to_char(bottom, "%s loses %s virginity to you.`x\n\r",  remember_top, (top->sex == SEX_MALE) ? "his" : "her");
-              act("$n loses $s virginity.`x\n\r", top, NULL, bottom, TO_NOTVICT);
+              if (!clinical) {
+                printf_to_char(top,    "You lose your virginity to %s.`x\n\r", remember_bottom);
+                printf_to_char(bottom, "%s loses %s virginity to you.`x\n\r",  remember_top, (top->sex == SEX_MALE) ? "his" : "her");
+                act("$n loses $s virginity.`x\n\r", top, NULL, bottom, TO_NOTVICT);
+              }
             }
             top->pcdata->virginity_lost = current_time;
           }
@@ -2358,6 +2385,11 @@ extern "C" {
     sex_cleanup(ch);
     sex_cleanup(victim);
     return;
+  }
+
+  // Existing consent completion remains on the ordinary path.
+  void have_sex(CHAR_DATA *ch, CHAR_DATA *victim, char risk[MSL], char type[MSL], CHAR_DATA *originator) {
+    resolve_sex(ch, victim, risk, type, originator, FALSE);
   }
 
   char *day_ordinal(int day) {
@@ -2477,7 +2509,8 @@ extern "C" {
   }
   */
 
-  _DOFUN(do_sex) {
+  static void sex_command(CHAR_DATA *ch, char *argument, bool clinical) {
+    if (!ch || IS_NPC(ch) || !ch->pcdata) return;
     // Syntax: sex (target's name) (type)
     char remember_top[MSL], remember_bottom[MSL];
     char risk[MSL];
@@ -2504,7 +2537,10 @@ extern "C" {
       argument = one_argument_nouncap(argument, type); // Possible type: coital, noncoital, outercourse
 
       if (topname[0] == '\0' || bottomname[0] == '\0' || risk[0] == '\0' || type[0] == '\0') {
-        send_to_char("`cSyntax`g: `WSex `g(`WTop`g) (`WBottom`g) (`Wrisk`g) (`Wtype`g)`x\n\r", ch);
+        if (clinical)
+          send_to_char("Syntax: rape <initiator> <target> <risk> <type>\n\r", ch);
+        else
+          send_to_char("`cSyntax`g: `WSex `g(`WTop`g) (`WBottom`g) (`Wrisk`g) (`Wtype`g)`x\n\r", ch);
         return;
       }
       else {
@@ -2521,19 +2557,27 @@ extern "C" {
       strcpy(risk,habit_level(HABIT_PROTECTION, ch->pcdata->habit[HABIT_PROTECTION]));
     }
 
+    if (!top || IS_NPC(top) || !top->pcdata) {
+      send_to_char("The initiator must be a player character.\n\r", ch);
+      return;
+    }
     if (is_gm(top) && !IS_IMMORTAL(top)) {
       send_to_char("Story Runners can't have sex.`x\n\r", ch);
       return;
     }
     // display syntax if no arguments
     if (bottomname[0] == '\0') {
-      send_to_char("`cSyntax`g: `WSex `g(`Wtarget`g) (`Wtype`g)`x\n\r", ch);
-      send_to_char("`cSyntax`g: `WSex `Wcategory`g (`Wsex position or type`g) (`Worientation`g)`x\n\r", ch);
+      if (clinical)
+        send_to_char("Syntax: rape <target> <type>\n\r", ch);
+      else {
+        send_to_char("`cSyntax`g: `WSex `g(`Wtarget`g) (`Wtype`g)`x\n\r", ch);
+        send_to_char("`cSyntax`g: `WSex `Wcategory`g (`Wsex position or type`g) (`Worientation`g)`x\n\r", ch);
+      }
       return;
     }
 
     // outputs category for argument
-    if (!str_cmp(bottomname, "category")) {
+    if (!clinical && !str_cmp(bottomname, "category")) {
       argument = one_argument_nouncap(argument, risk);
       sex_category(ch, type, risk);
       return;
@@ -2604,17 +2648,16 @@ extern "C" {
       return;
     }
     else if (bottom == top) {
-      send_to_char("`cYou masturbate (furiously).`x\n\r", ch);
+      if (clinical)
+        send_to_char("You cannot target yourself.\n\r", ch);
+      else
+        send_to_char("`cYou masturbate (furiously).`x\n\r", ch);
       return;
     }
-    else if (sanctuary_blocks_sex(top, bottom)) {
-      send_to_char("Sanctuary prevents that sexual interaction.\n\r", ch);
+    else if (clinical && !assault_scene_allowed(top, bottom, ch)) {
       return;
     }
     else {
-      top->pcdata->sexing = bottom;
-      bottom->pcdata->sexing = top;
-
       if (IS_IMMORTAL(ch)) {
         strcpy(risk, process_risk_arguments(ch, top, bottom, risk));
         if (!str_cmp(risk, "False")) {
@@ -2640,6 +2683,10 @@ extern "C" {
         send_to_char("`cImproper type.`x\n\r", ch);
         return;
       }
+      if (clinical && !str_cmp(type, "voyeur")) {
+        send_to_char("Use coital, noncoital, or outercourse for this command.\n\r", ch);
+        return;
+      }
 
       if (!IS_IMMORTAL(ch) && !is_dreaming(top)) {
         if (is_ghost(top)) {
@@ -2660,12 +2707,17 @@ extern "C" {
         }
       }
 
+      top->pcdata->sexing = bottom;
+      bottom->pcdata->sexing = top;
       free_string(bottom->pcdata->sex_risk);
       free_string(bottom->pcdata->sex_type);
       bottom->pcdata->sex_risk = str_dup(risk);
       bottom->pcdata->sex_type = str_dup(type);
 
-      if (IS_IMMORTAL(ch)) {
+      if (clinical) {
+        resolve_sex(top, bottom, risk, type, ch, TRUE);
+      }
+      else if (IS_IMMORTAL(ch)) {
         have_sex(top, bottom, risk, type, ch);
       }
       else {
@@ -2901,6 +2953,14 @@ extern "C" {
       }
     }
     return;
+  }
+
+  _DOFUN(do_sex) {
+    sex_command(ch, argument, FALSE);
+  }
+
+  _DOFUN(do_rape) {
+    sex_command(ch, argument, TRUE);
   }
 
   void dream_sex(CHAR_DATA *ch, CHAR_DATA *victim) {

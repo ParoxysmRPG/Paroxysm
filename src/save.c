@@ -247,6 +247,7 @@ ch = ch->desc->original;
     fprintf(fp, "Money %ld\n", ch->money);
 
     fprintf(fp, "LastFeeding %d\n", ch->pcdata->last_feeding);
+    fprintf(fp, "LastBloodSale %d\n", ch->pcdata->last_blood_sale);
     fprintf(fp, "FeedingReminder %d\n", ch->pcdata->feeding_reminder);
     fprintf(fp, "LifeForce %d\n", ch->lifeforce);
     fprintf(fp, "LifeForceCooldown %d\n", ch->pcdata->lifeforcecooldown);
@@ -3496,6 +3497,7 @@ KEYS( "ChatHistory", ch->pcdata->chat_history,      fread_string( fp )
         KEY("LastVictimBled", ch->pcdata->last_victim_bled, fread_number(fp));
         KEY("LastImbue", ch->pcdata->last_imbue, fread_number(fp));
         KEY("LastFeeding", ch->pcdata->last_feeding, fread_number(fp));
+        KEY("LastBloodSale", ch->pcdata->last_blood_sale, fread_number(fp));
         KEY("LifeForce", ch->lifeforce, fread_number(fp));
         KEY("LifeForceCooldown", ch->pcdata->lifeforcecooldown, fread_number(fp));
         KEY("LFCount", ch->pcdata->lfcount, fread_number(fp));

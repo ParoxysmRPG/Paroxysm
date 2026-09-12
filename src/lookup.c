@@ -5266,10 +5266,14 @@ extern "C" {
     if(fac == NULL)
     return 0;
 
+    const bool exempt_corruption_penalty = fac->type == FACTION_SOCIETY && get_tier(ch) < 3
+        && (fac->axes[AXES_CORRUPT] == AXES_DEMONIC
+            || (fac->axes[AXES_CORRUPT] >= AXES_FARLEFT && fac->axes[AXES_CORRUPT] <= AXES_NEARLEFT));
+
     if (!str_cmp(ch->name, fac->leader)) {
-      if (fac->axes[AXES_CORRUPT] <= AXES_FARLEFT && get_tier(ch) <= 2 && fac->axes[AXES_CORRUPT] != 0)
+      if (!exempt_corruption_penalty && fac->axes[AXES_CORRUPT] <= AXES_FARLEFT && get_tier(ch) <= 2 && fac->axes[AXES_CORRUPT] != 0)
       val -= 10;
-      if (fac->axes[AXES_CORRUPT] <= AXES_NEARLEFT && get_tier(ch) <= 1 && fac->axes[AXES_CORRUPT] != 0)
+      if (!exempt_corruption_penalty && fac->axes[AXES_CORRUPT] <= AXES_NEARLEFT && get_tier(ch) <= 1 && fac->axes[AXES_CORRUPT] != 0)
       val -= 10;
 
       if (!trust_elligible(ch, fac, FALSE, NULL))
@@ -5348,6 +5352,9 @@ extern "C" {
       else if (get_tier(ch) > 2)
       bonus -= 8;
     }
+
+    if (exempt_corruption_penalty)
+    bonus = UMAX(0, bonus);
 
     if (view != NULL && bonus != 0)
     lifeforce_effect(view, "Corrupt Position", bonus, "base modifier points");

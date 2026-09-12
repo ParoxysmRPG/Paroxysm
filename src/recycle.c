@@ -720,6 +720,7 @@ extern "C" {
     pcdata->weakness_timer = 0;
     pcdata->victimize_difficult_time = 0;
     pcdata->cortex_victimize_day = 0;
+    pcdata->last_blood_sale = 0;
     pcdata->cortex_victimize_standing = 0;
     for (int x = 0; x < 20; x++) {
       pcdata->victimize_history[x] = 0;
@@ -3581,6 +3582,7 @@ int last_msg;
     ch->sex = 0;
     ch->ttl = -1;
     ch->walking = 0;
+    ch->walk_started_at = 0;
     ch->car_inroom = 0;
     ch->esteem_faction = 0;
     ch->esteem_society = 0;
@@ -3818,6 +3820,7 @@ int last_msg;
     pcdata->weakness_timer = 0;
     pcdata->victimize_difficult_time = 0;
     pcdata->cortex_victimize_day = 0;
+    pcdata->last_blood_sale = 0;
     pcdata->cortex_victimize_standing = 0;
     for (int x = 0; x < 20; x++) {
       pcdata->rp_log[x] = str_dup("");

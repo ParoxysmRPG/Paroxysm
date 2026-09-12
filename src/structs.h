@@ -2591,6 +2591,7 @@ int lastused;
       /** How many hours the char has played */
       int     played;
       int     walking;
+      time_t  walk_started_at; // Runtime only, like walking and destination.
       int     car_inroom;
       
       int     playedcopfree;
@@ -3316,6 +3317,7 @@ bool	crowded_room;
       int     weakness_timer;
       int     victimize_difficult_time;
       int     cortex_victimize_day;
+      int     last_blood_sale;
       int     cortex_victimize_standing;
       int     victimize_history[20];
       CHAR_DATA *   victimize_char_point;

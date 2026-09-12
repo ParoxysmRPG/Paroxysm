@@ -2345,8 +2345,10 @@ void clear_pointers(CHAR_DATA *ch) {
         victim->pcdata->protecting = NULL;
       if (victim->pcdata->sexing == ch)
         victim->pcdata->sexing = NULL;
-      if (victim->pcdata->connected_to == ch)
+      if (victim->pcdata->connected_to == ch) {
         victim->pcdata->connected_to = NULL;
+        victim->pcdata->connection_stage = CONNECT_NONE;
+      }
       if (victim->pcdata->sr_connection == ch)
         victim->pcdata->sr_connection = NULL;
       if (victim->pcdata->cansee == ch)

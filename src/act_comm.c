@@ -24,6 +24,7 @@
 #include "reward_colors.h"
 #include "runtime_io.h"
 #include "text_format.h"
+#include "spy_camera.h"
 #include "olc.h"
 #include "gsn.h"
 #include "recycle.h"
@@ -1103,7 +1104,7 @@ extern "C" {
 
         tempdude = CH(d);
 
-        if (tempdude == NULL || IS_NPC(tempdude)) {
+        if (tempdude == NULL || IS_NPC(tempdude) || !tempdude->pcdata || !tempdude->in_room) {
           continue;
         }
         if (d->connected != CON_PLAYING || tempdude == ch) {
@@ -1112,7 +1113,7 @@ extern "C" {
         if (tempdude->race != RACE_CIVIL_SERVANT) {
           continue;
         }
-        if (get_phone(tempdude) == NULL && get_skill(tempdude, SKILL_ELECTROPATHIC) < 1) {
+        if (get_phone(tempdude) == NULL) {
           continue;
         }
         if (is_helpless(tempdude) || silenced(tempdude) || !cell_signal(tempdude) || is_ghost(tempdude) || IS_FLAG(tempdude->act, PLR_DEAD) || is_mute(tempdude) || IS_FLAG(tempdude->act, PLR_SHROUD)) {
@@ -1125,7 +1126,7 @@ extern "C" {
         found = TRUE;
         victim = tempdude;
         obj = get_phone(victim);
-        send_to_char("Dispatch connects you to an emergency call.\n\r", victim);
+        break;
       }
       if (found == FALSE) {
         send_to_char("All lines seem busy.\n\r", ch);
@@ -1145,20 +1146,21 @@ extern "C" {
 
       for (ObjList::iterator it = object_list.begin(); it != object_list.end();
       ++it) {
-        obj = *it;
-
-        if (obj->item_type != ITEM_PHONE || obj->value[0] != numberdialed) {
+        OBJ_DATA *candidate = *it;
+        if (!candidate || candidate->item_type != ITEM_PHONE || candidate->value[0] != numberdialed) {
           continue;
         }
-        if (IS_SET(obj->extra_flags, ITEM_OFF)) {
+        if (IS_SET(candidate->extra_flags, ITEM_OFF) || !phone_owner(candidate)) {
           continue;
         }
         else {
+          obj = candidate;
           break;
         }
       }
 
       if (obj == NULL) {
+        send_to_char("I'm sorry, the number you have dialed is not available.\n\r", ch);
         return;
       }
       if (obj->item_type != ITEM_PHONE || obj->value[0] != numberdialed || numberdialed <= 0 || IS_SET(obj->extra_flags, ITEM_OFF)) {
@@ -1173,7 +1175,7 @@ extern "C" {
       }
     }
 
-    if (!victim || IS_NPC(victim) || !victim->pcdata || IS_FLAG(victim->act, PLR_DEAD)) {
+    if (!victim || IS_NPC(victim) || !victim->pcdata || !victim->in_room || IS_FLAG(victim->act, PLR_DEAD)) {
       send_to_char("I'm sorry, the number you have dialed is not available.\n\r", ch);
       return;
     }
@@ -1181,7 +1183,7 @@ extern "C" {
       send_to_char("I'm sorry, the number you have dialed is not available.\n\r", ch);
       return;
     }
-    if (victim->pcdata->connected_to != NULL) {
+    if (victim == ch || victim->pcdata->connected_to != NULL) {
       send_to_char("That number is busy.\n\r", ch);
       return;
     }
@@ -1211,6 +1213,9 @@ extern "C" {
     victim->pcdata->connected_to = ch;
     ch->pcdata->connection_stage = CONNECT_DIALING;
     victim->pcdata->connection_stage = CONNECT_RINGING;
+
+    if (!str_cmp(arg, "911"))
+      send_to_char("Dispatch connects you to an emergency call.\n\r", victim);
 
     if (IS_SET(obj->extra_flags, ITEM_SILENT)) {
       act("Your $p starts to vibrate.\n\r", victim, obj, victim, TO_CHAR);
@@ -1251,6 +1256,7 @@ extern "C" {
   }
 
   _DOFUN(do_pickup) {
+    if (!ch || IS_NPC(ch) || !ch->pcdata || !ch->in_room) return;
     if (IS_FLAG(ch->act, PLR_DEAD) && ch->in_room->area->vnum != 103) {
       send_to_char("Hah! Nice try.\n\r", ch);
       return;
@@ -1267,8 +1273,17 @@ extern "C" {
 
     // Added a check to make sure phones can't be answered without holding or
     // wearing a phone - Discordance
-    if (!holding_phone(ch) && !wearing_phone(ch)) {
+    if ((!holding_phone(ch) && !wearing_phone(ch)) || get_phone(ch) == NULL) {
       send_to_char("You must be holding a phone first.\n\r", ch);
+      return;
+    }
+
+    CHAR_DATA *caller = ch->pcdata->connected_to;
+    if (caller == ch || !caller->pcdata || caller->pcdata->connected_to != ch
+        || caller->pcdata->connection_stage != CONNECT_DIALING) {
+      ch->pcdata->connected_to = NULL;
+      ch->pcdata->connection_stage = CONNECT_NONE;
+      send_to_char("That call has ended.\n\r", ch);
       return;
     }
 
@@ -1281,16 +1296,20 @@ extern "C" {
   }
 
   _DOFUN(do_hangup) {
-    if (ch->pcdata->connected_to == NULL || ch->pcdata->connection_stage == CONNECT_NONE) {
+    if (!ch || IS_NPC(ch) || !ch->pcdata) return;
+    if (ch->pcdata->connected_to == NULL) {
+      ch->pcdata->connection_stage = CONNECT_NONE;
       send_to_char("You can't do that now.\n\r", ch);
       return;
     }
 
     act("You hangup.\n\r", ch, NULL, ch, TO_CHAR);
-    act("The person on the other end hangs up.\n\r", ch->pcdata->connected_to, NULL, ch->pcdata->connected_to, TO_CHAR);
-
-    ch->pcdata->connected_to->pcdata->connection_stage = CONNECT_NONE;
-    ch->pcdata->connected_to->pcdata->connected_to = NULL;
+    CHAR_DATA *other = ch->pcdata->connected_to;
+    if (other != ch && other->pcdata && other->pcdata->connected_to == ch) {
+      act("The person on the other end hangs up.\n\r", other, NULL, other, TO_CHAR);
+      other->pcdata->connection_stage = CONNECT_NONE;
+      other->pcdata->connected_to = NULL;
+    }
     ch->pcdata->connection_stage = CONNECT_NONE;
     ch->pcdata->connected_to = NULL;
   }
@@ -3557,6 +3576,32 @@ extern "C" {
     }
   }
 
+  static void loudspeaker_speech(CHAR_DATA *ch, CHAR_DATA *holder,
+      char *rectalk, char *argument, bool interference, bool translate = true) {
+    if (!holder || IS_NPC(holder) || !holder->pcdata || !holder->in_room
+        || !holder->in_room->people) return;
+    OBJ_DATA *phone = get_phone(holder);
+    if (!phone || !get_extra_descr("+loudspeaker", phone->extra_descr)) return;
+
+    for (CHAR_DATA *to : *holder->in_room->people) {
+      if (!to || to == holder || to == ch || IS_NPC(to) || !to->pcdata
+          || is_deaf(to) || is_dreaming(to)
+          || !can_hear(to, holder, VOLUME_NORMAL)) continue;
+      if (!same_player(ch, to) && ch->pcdata->account
+          && IS_FLAG(ch->pcdata->account->flags, ACCOUNT_SHADOWBAN)) continue;
+
+      char *words = translate ? mangle_text(ch, to, ch->pcdata->speaking, argument) : argument;
+      if (interference) words = static_text(ch, holder, words);
+      const char *tone = safe_strlen(rectalk) > 2 ? rectalk : ch->pcdata->talk;
+      std::string message = safe_strlen(tone) > 2
+          ? haven::format_text("A phone on loudspeaker says, %s, \"`o%s`x\"\n\r", tone, words)
+          : haven::format_text("A phone on loudspeaker says \"`o%s`x\"\n\r", words);
+      char_rplog(to, message.data());
+      page_to_char(wrap_string(message.data(), get_wordwrap(to)), to);
+      triggercheck(to, words);
+    }
+  }
+
   _DOFUN(do_say) {
     CHAR_DATA *to;
     std::string buf;
@@ -3859,6 +3904,7 @@ extern "C" {
       char_rplog(victim, buf.data());
       page_to_char(wrap_string(buf.data(), get_wordwrap(victim)), victim);
       give_attention(ch, victim);
+      loudspeaker_speech(ch, victim, rectalk, argument, true);
       triggercheck(victim, mangle_text(ch, victim, ch->pcdata->speaking, argument));
       if (number_percent() % 4 == 0 && get_tracer(ch) != NULL && get_skill(get_tracer(ch), SKILL_HACKING) >= 5)
       printf_to_char(
@@ -4417,6 +4463,7 @@ extern "C" {
         char_rplog(victim, buf.data());
         page_to_char(wrap_string(buf.data(), get_wordwrap(victim)), victim);
 
+        loudspeaker_speech(ch, victim, rectalk, argument, false);
         triggercheck(victim, mangle_text(ch, victim, ch->pcdata->speaking, argument));
 
         if (number_percent() % 4 == 0 && get_tracer(ch) != NULL && get_skill(get_tracer(ch), SKILL_HACKING) >= 5)
@@ -6018,214 +6065,185 @@ extern "C" {
   char *spyware_message(CHAR_DATA *ch, CHAR_DATA *victim, int type, char *argument, CHAR_DATA *to, bool possessive, bool selfnamed) {
     int i;
 
-    char buf[MSL], word[MSL], newstring[MSL], blah[MSL];
+    char buf[MSL], word[MSL], blah[MSL];
+    std::string newstring;
     std::string tmp;
-    char *argy;
-    argy = str_dup("");
-    free_string(argy);
-
-    argy = str_dup(argument);
-    newstring[0] = 0;
-    while (*argy && *argy != '\0' && safe_strlen(argy) > 0) {
+    if (!ch || !argument || strlen(argument) >= MSL) return str_dup("");
+    std::string input(argument);
+    char *argy = input.data();
+    while (*argy) {
       memset(buf, 0, MSL);
       argy = one_argument_true(argy, buf);
       memset(word, 0, MSL);
       word[0] = 0;
       if (buf[0] == '@') {
-        for (i = 1; isalpha(buf[i]) && buf[i] != ' ' && buf[i] != '\0'; i++) {
+        for (i = 1; isalpha(static_cast<unsigned char>(buf[i])) && buf[i] != ' ' && buf[i] != '\0'; i++) {
           sprintf(blah, "%c", buf[i]);
           strcat(word, blah);
         }
         if (!strcmp(word, "me") || !strcmp(word, "self")) {
           selfnamed = TRUE;
-          strcat(newstring, get_intro(ch));
-          if (tmp.data()[0] != '.')
-          //              if(isalpha(tmp[0]))
-          //              {
+          newstring += get_intro(ch);
           if (buf[i] == '.')
-          strcat(newstring, ".");
+          newstring += ".";
           if (buf[i] == ',')
-          strcat(newstring, ",");
+          newstring += ",";
           if (buf[i] == '\'')
-          strcat(newstring, "'");
+          newstring += "'";
           if (buf[i] == '"')
-          strcat(newstring, "\"");
+          newstring += "\"";
 
-          strcat(newstring, " ");
-          //              }
+          newstring += " ";
         }
         else if (!strcmp(word, "my") || !strcmp(word, "mine")) {
           selfnamed = TRUE;
-          strcat(newstring, get_intro(ch));
-          strcat(newstring, "'s");
+          newstring += get_intro(ch);
+          newstring += "'s";
           if (buf[i] == '.')
-          strcat(newstring, ".");
+          newstring += ".";
           if (buf[i] == ',')
-          strcat(newstring, ",");
+          newstring += ",";
           if (buf[i] == '\'')
-          strcat(newstring, "'");
+          newstring += "'";
           if (buf[i] == '"')
-          strcat(newstring, "\"");
+          newstring += "\"";
 
-          strcat(newstring, " ");
+          newstring += " ";
 
         }
         else if (!str_cmp(word, "line") || !str_cmp(word, "newline")) {
-          strcat(newstring, " \n\r");
+          newstring += " \n\r";
         }
-        else if ((victim = get_char_vision(ch, NULL, word)) != NULL) {
+        else if (strlen(word) < MAX_INPUT_LENGTH && (victim = get_char_vision(ch, NULL, word)) != NULL) {
 
-          if (ispunct(buf[i]) && buf[i + 1] == 's') {
-            strcat(newstring, get_intro(victim));
-            strcat(newstring, "'s");
+          if (ispunct(static_cast<unsigned char>(buf[i])) && buf[i + 1] == 's') {
+            newstring += get_intro(victim);
+            newstring += "'s";
             if (buf[i + 2] == '.')
-            strcat(newstring, ".");
+            newstring += ".";
             if (buf[i + 2] == ',')
-            strcat(newstring, ",");
+            newstring += ",";
             if (buf[i + 2] == '\'')
-            strcat(newstring, "'");
+            newstring += "'";
             if (buf[i + 2] == '"')
-            strcat(newstring, "\"");
+            newstring += "\"";
 
-            strcat(newstring, " ");
+            newstring += " ";
           }
           else {
-            strcat(newstring, get_intro(victim));
+            newstring += get_intro(victim);
             if (buf[i] == '.')
-            strcat(newstring, ".");
+            newstring += ".";
             if (buf[i] == ',')
-            strcat(newstring, ",");
+            newstring += ",";
             if (buf[i] == '\'')
-            strcat(newstring, "'");
+            newstring += "'";
             if (buf[i] == '"')
-            strcat(newstring, "\"");
+            newstring += "\"";
 
-            strcat(newstring, " ");
+            newstring += " ";
           }
         }
         else {
-          strcat(newstring, "someone");
+          newstring += "someone";
 
           if (buf[i] == '.')
-          strcat(newstring, ".");
+          newstring += ".";
           if (buf[i] == ',')
-          strcat(newstring, ",");
+          newstring += ",";
           if (buf[i] == '\'')
-          strcat(newstring, "'");
+          newstring += "'";
           if (buf[i] == '"')
-          strcat(newstring, "\"");
+          newstring += "\"";
 
-          strcat(newstring, " ");
+          newstring += " ";
         }
       }
       else {
-        strcat(newstring, buf);
-        strcat(newstring, " ");
+        newstring += buf;
+        newstring += " ";
       }
     }
     if (selfnamed == TRUE)
-    tmp = haven::format_text("%s", newstring);
+    tmp = haven::format_text("%s", newstring.c_str());
     else if (possessive == TRUE)
-    tmp = haven::format_text("%s%s", get_intro(ch), newstring);
+    tmp = haven::format_text("%s%s", get_intro(ch), newstring.c_str());
     else
-    tmp = haven::format_text("%s %s", get_intro(ch), newstring);
+    tmp = haven::format_text("%s %s", get_intro(ch), newstring.c_str());
     return str_dup(tmp.data());
   }
 
+  void camera_notify(ROOM_INDEX_DATA *room, int number, const char *owner, bool expired) {
+    const std::string message = haven::format_text("Your spy camera at %s (linked to %d) %s.",
+        room->name, number, expired ? "has expired" : "was found and destroyed in a bugsweep");
+    if (owner && *owner) {
+      std::string name(owner), notice(message);
+      offline_message(name.data(), notice.data());
+      return;
+    }
+    // Legacy cameras did not record their planter. Notify a loaded phone's holder.
+    for (ObjList::iterator it = object_list.begin(); it != object_list.end(); ++it) {
+      OBJ_DATA *phone = *it;
+      if (!phone || phone->item_type != ITEM_PHONE || phone->value[0] != number) continue;
+      CHAR_DATA *holder = phone_owner(phone);
+      if (holder) printf_to_char(holder, "%s\n\r", message.c_str());
+    }
+  }
+
+  void camera_update() {
+    // Expire even in empty, dark, public, or otherwise inactive rooms.
+    static time_t next_check = 0;
+    if (current_time < next_check) return;
+    next_check = current_time + 60;
+    for (int hash = 0; hash < MAX_KEY_HASH; ++hash)
+      for (ROOM_INDEX_DATA *room = room_index_hash[hash]; room; room = room->next)
+        haven::camera_links(room);
+  }
+
+  static EXTRA_DESCR_DATA *recording_camera_links(ROOM_INDEX_DATA *room) {
+    if (!haven::camera_room_supported(room) || mist_room(room) || is_dark(room)) return NULL;
+    EXTRA_DESCR_DATA *ed = haven::camera_links(room);
+    return ed && ed->description && ed->description[0] ? ed : NULL;
+  }
+
+  static CHAR_DATA *camera_recipient(OBJ_DATA *phone, EXTRA_DESCR_DATA *links) {
+    if (!phone || phone->item_type != ITEM_PHONE || IS_SET(phone->extra_flags, ITEM_OFF)
+        || !haven::camera_linked(links, phone->value[0])) return NULL;
+    CHAR_DATA *to = phone_owner(phone);
+    return to && cell_signal(to) ? to : NULL;
+  }
+
+  static void deliver_camera_message(ROOM_INDEX_DATA *room, OBJ_DATA *phone,
+                                     CHAR_DATA *to, const char *message) {
+    if (!message || !*message) return;
+    const std::string entry = haven::format_text("From Camera at %s: %s\n\r", room->name, message);
+    const std::string history = phone->material ? phone->material : "";
+    // Match the text inbox limit; preserve existing messages and whole recordings.
+    if (history.size() + 1 + entry.size() > 16000) return;
+    const std::string combined = history + "\n" + entry;
+    free_string(phone->material);
+    phone->material = str_dup(combined.c_str());
+    if (IS_SET(phone->extra_flags, ITEM_SILENT)) {
+      act("Your $p vibrates.", to, phone, NULL, TO_CHAR);
+    }
+    else {
+      act("Your $p beeps.", to, phone, NULL, TO_CHAR);
+      act("$n's $p beeps.", to, phone, NULL, TO_ROOM);
+    }
+  }
+
   void emotespy(CHAR_DATA *ch, CHAR_DATA *victim, int type, char *argument, bool possessive, bool selfnamed) {
-    CHAR_DATA *to;
-
+    if (!ch || !argument || type == EMOTE_ATTEMPT || is_ghost(ch) || IS_FLAG(ch->act, PLR_SHROUD)) return;
     ROOM_INDEX_DATA *room = ch->in_room;
-    if (room == NULL)
-    return;
-
-    if(type == EMOTE_ATTEMPT)
-    return;
-
-    if (public_room(room))
-    return;
-
-    if (room->area->vnum == 1 || room->area->vnum == 12 || !in_haven(room)) {
-      return;
-    }
-
-    if (mist_room(room))
-    return;
-
-    if (is_ghost(ch))
-    return;
-
-    if (is_dark(room))
-    return;
-
-    if (IS_FLAG(ch->act, PLR_SHROUD))
-    return;
-
-    if (room_in_school(room->vnum))
-    return;
-
-    EXTRA_DESCR_DATA *ed;
-    for (ed = room->extra_descr; ed; ed = ed->next) {
-      if (is_name("!bugs", ed->keyword))
-      break;
-    }
-    
-    if (!ed) {
-      return;
-    }
-    char buf[MSL];
-    std::string mess, newmat;
-    OBJ_DATA *obj;
-
-    for (ObjList::iterator it = object_list.begin(); it != object_list.end();++it) {
-      obj = *it;
-
-      if (obj->item_type != ITEM_PHONE)
-      continue;
-      else if (IS_SET(obj->extra_flags, ITEM_OFF))
-      continue;
-
-      if (obj->value[0] < 100)
-      continue;
-
-      to = NULL;
-      if (obj->carried_by != NULL && !IS_SET(obj->extra_flags, ITEM_WARDROBE)) {
-        to = obj->carried_by;
-      }
-      else {
-        if (obj->in_obj != NULL && obj->in_obj->carried_by != NULL && !IS_SET(obj->in_obj->extra_flags, ITEM_WARDROBE))
-        to = obj->in_obj->carried_by;
-        else
-        to = NULL;
-      }
-      if (to == NULL)
-      continue;
-
-      if (!cell_signal(to))
-      continue;
-
-      if (obj->material == NULL)
-      obj->material = str_dup("");
-
-      if (obj->material == NULL || safe_strlen(obj->material) > 20000)
-      continue;
-
-      sprintf(buf, "%d", obj->value[0]);
-      if (is_name(buf, ed->description)) {
-        mess = haven::format_text("From Camera at %s: %s\n\r", ch->in_room->name, spyware_message(ch, victim, type, argument, to, possessive, selfnamed));
-
-        newmat = haven::format_text("%s\n%s", obj->material, mess.data());
-        free_string(obj->material);
-        obj->material = str_dup(newmat.data());
-
-        if (IS_SET(obj->extra_flags, ITEM_SILENT)) {
-          act("Your $p vibrates.", to, obj, NULL, TO_CHAR);
-        }
-        else {
-          act("Your $p beeps.", to, obj, NULL, TO_CHAR);
-          act("$n's $p beeps.", to, obj, NULL, TO_ROOM);
-        }
-      }
+    EXTRA_DESCR_DATA *links = recording_camera_links(room);
+    if (!links) return;
+    for (ObjList::iterator it = object_list.begin(); it != object_list.end(); ++it) {
+      OBJ_DATA *phone = *it;
+      CHAR_DATA *to = camera_recipient(phone, links);
+      if (!to) continue;
+      char *message = spyware_message(ch, victim, type, argument, to, possessive, selfnamed);
+      deliver_camera_message(room, phone, to, message);
+      free_string(message);
     }
   }
 
@@ -11470,7 +11488,7 @@ extern "C" {
   void offline_message(char *arg1, char *message) {
     struct stat sb;
     char buf[MSL];
-    DESCRIPTOR_DATA d;
+    DESCRIPTOR_DATA d = {};
     bool online = FALSE;
     CHAR_DATA *victim;
 
@@ -11494,9 +11512,10 @@ extern "C" {
       free_char(victim);
       return;
     }
-    sprintf(buf, "%s\n%s", victim->pcdata->messages, message);
+    const std::string notice = std::string(victim->pcdata->messages ? victim->pcdata->messages : "")
+        + "\n" + (message ? message : "");
     free_string(victim->pcdata->messages);
-    victim->pcdata->messages = str_dup(buf);
+    victim->pcdata->messages = str_dup(notice.c_str());
     save_char_obj(victim, FALSE, FALSE);
 
     if (online)
@@ -12071,6 +12090,7 @@ extern "C" {
 
       page_to_char(wrap_string(buf, get_wordwrap(victim)), victim);
 
+      loudspeaker_speech(ch, victim, (char *)"", argument, true, false);
       CHAR_DATA *to;
       for (DescList::iterator it = descriptor_list.begin();
       it != descriptor_list.end(); ++it) {
@@ -13030,91 +13050,13 @@ extern "C" {
   }
 
   void spymessage(ROOM_INDEX_DATA *room, char *message) {
-    CHAR_DATA *to;
-
-    if (room == NULL)
-    return;
-
-    if (public_room(room))
-    return;
-
-    if (mist_room(room))
-    return;
-
-    if (is_dark(room))
-    return;
-
-    if (room_in_school(room->vnum))
-    return;
-
-    EXTRA_DESCR_DATA *ed;
-    for (ed = room->extra_descr; ed; ed = ed->next) {
-      if (is_name("!bugs", ed->keyword))
-      break;
-    }
-    if (!ed) {
-      return;
-    }
-    char buf[MSL];
-    std::string mess, newmat;
-    OBJ_DATA *obj;
-
-    for (ObjList::iterator it = object_list.begin(); it != object_list.end();
-    ++it) {
-      obj = *it;
-
-      if (obj->item_type != ITEM_PHONE)
-      continue;
-      else if (IS_SET(obj->extra_flags, ITEM_OFF))
-      continue;
-
-      if (obj->value[0] < 100)
-      continue;
-
-      to = NULL;
-      if (obj->carried_by != NULL && !IS_SET(obj->extra_flags, ITEM_WARDROBE)) {
-        to = obj->carried_by;
-      }
-      else {
-        if (obj->in_obj != NULL && obj->in_obj->carried_by != NULL && !IS_SET(obj->in_obj->extra_flags, ITEM_WARDROBE))
-        to = obj->in_obj->carried_by;
-        else
-        to = NULL;
-      }
-      if (to == NULL)
-      continue;
-
-      if (!cell_signal(to))
-      continue;
-      if (obj == NULL)
-      continue;
-      if (obj->material == NULL)
-      continue;
-      if (safe_strlen(obj->material) > 20000)
-      continue;
-
-      sprintf(buf, "%d", obj->value[0]);
-      if (is_name(buf, ed->description)) {
-        mess = haven::format_text("From Camera at %s: %s\n\r", room->name, message);
-
-        newmat = haven::format_text("%s\n%s", obj->material, mess.data());
-        free_string(obj->material);
-        obj->material = str_dup(newmat.data());
-
-        if (IS_SET(obj->extra_flags, ITEM_SILENT)) {
-          act("Your $p vibrates.", to, obj, NULL, TO_CHAR);
-        }
-        else {
-          act("Your $p beeps.", to, obj, NULL, TO_CHAR);
-          act("$n's $p beeps.", to, obj, NULL, TO_ROOM);
-        }
-        if (number_range(1, 5422) % 50 == 0) {
-          free_string(ed->description);
-          ed->description = str_dup("");
-          send_to_char("The camera shorts out.\n\r", to);
-          return;
-        }
-      }
+    if (!message || !*message) return;
+    EXTRA_DESCR_DATA *links = recording_camera_links(room);
+    if (!links) return;
+    for (ObjList::iterator it = object_list.begin(); it != object_list.end(); ++it) {
+      OBJ_DATA *phone = *it;
+      CHAR_DATA *to = camera_recipient(phone, links);
+      if (to) deliver_camera_message(room, phone, to, message);
     }
   }
 

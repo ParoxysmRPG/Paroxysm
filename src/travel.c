@@ -2210,10 +2210,11 @@ return;
   }
 
   _DOFUN(do_newdrive) {
+    if (!ch || IS_NPC(ch) || !ch->pcdata || !ch->in_room) return;
     char arg1[MSL];
     char buf[MSL];
     one_argument_nouncap(argument, arg1);
-    ROOM_INDEX_DATA *room;
+    ROOM_INDEX_DATA *room = NULL;
     bool stock = FALSE;
     int destivnum = -1;
     int i;
@@ -2222,7 +2223,7 @@ return;
     int cab;
 
     if (!str_cmp(arg1, "slow")) {
-      if (ch->pcdata->travel_time > 0 && (ch->pcdata->travel_type == TRAVEL_BPASSENGER || ch->pcdata->travel_type == TRAVEL_CPASSENGER))
+      if (ch->pcdata->travel_time > 0 && (ch->pcdata->travel_type == TRAVEL_BPASSENGER || ch->pcdata->travel_type == TRAVEL_CPASSENGER || ch->pcdata->travel_type == TRAVEL_HPASSENGER))
       return;
 
       if (IS_FLAG(ch->comm, COMM_SLOW)) {
@@ -2233,7 +2234,7 @@ return;
           CHAR_DATA *vch;
           DESCRIPTOR_DATA *d = *it;
           vch = CH(d);
-          if (vch == NULL)
+          if (vch == NULL || IS_NPC(vch) || !vch->pcdata || ch->pcdata->travel_time <= 0)
           continue;
           if (vch->in_room != ch->in_room) {
             continue;
@@ -2255,7 +2256,7 @@ return;
           CHAR_DATA *vch;
           DESCRIPTOR_DATA *d = *it;
           vch = CH(d);
-          if (vch == NULL)
+          if (vch == NULL || IS_NPC(vch) || !vch->pcdata || ch->pcdata->travel_time <= 0)
           continue;
           if (vch->in_room != ch->in_room) {
             continue;
@@ -2353,7 +2354,7 @@ return;
       }
     }
     if (vehicle_location(ch) != 0) {
-      if (get_room_index(vehicle_location(ch)) == NULL || (get_room_index(vehicle_location(ch))->sector_type != SECT_STREET && get_room_index(vehicle_location(ch))->sector_type != SECT_ALLEY))
+      if (vehicle_location(ch) < 0 || get_room_index(vehicle_location(ch)) == NULL || (get_room_index(vehicle_location(ch))->sector_type != SECT_STREET && get_room_index(vehicle_location(ch))->sector_type != SECT_ALLEY))
       set_vehicle_location(ch, 0);
     }
     if (found == FALSE && vehicle_location(ch) == 0 && vehicle_typeone(ch) != CAR_HORSE) {
@@ -2379,12 +2380,12 @@ return;
         }
       }
       int dnumber = landmark_vnum(argument, ch);
-      if (dnumber > 0) {
+      if (dnumber > 0 && get_room_index(dnumber) != NULL) {
         room = get_room_index(dnumber);
         stock = TRUE;
       }
       for (i = 0; i < 10; i++) {
-        if (!str_cmp(ch->pcdata->drivenames[i], arg1))
+        if (arg1[0] != '\0' && !str_cmp(ch->pcdata->drivenames[i], arg1))
         desti = MAX_TAXIS + 1 + i;
       }
     }
@@ -2404,13 +2405,17 @@ return;
       destivnum = taxi_table[desti - 1].vnum;
       else if (desti <= MAX_TAXIS + 10) {
         destivnum = ch->pcdata->driveloc[desti - MAX_TAXIS - 1];
-        if (!valid_parking_spot(get_room_index(destivnum))) {
+        if (destivnum <= 0 || !valid_parking_spot(get_room_index(destivnum))) {
           send_to_char("There doesn't seem to be any parking in that area.\n\r", ch);
           return;
         }
       }
     }
     else {
+      if (room == NULL) {
+        send_to_char("That destination is unavailable.\n\r", ch);
+        return;
+      }
       destivnum = room->vnum;
       if (!valid_parking_spot(get_room_index(destivnum))) {
         //            send_to_char("There doesn't seem to be any parking in that
@@ -2418,9 +2423,24 @@ return;
       }
     }
 
-    if (get_room_index(destivnum) == NULL)
+    if (destivnum <= 0 || get_room_index(destivnum) == NULL)
     return;
 
+    // Resolve forced routing before validating the route or boarding passengers.
+    ROOM_INDEX_DATA *lured_room = IS_AFFECTED(ch, AFF_LURED) && ch->pcdata->lured_room > 0
+        ? get_room_index(ch->pcdata->lured_room) : NULL;
+    if (IS_AFFECTED(ch, AFF_LURED) && lured_room != NULL) {
+      int mindist = 1000;
+      for (int j = 0; j < MAX_TAXIS; ++j) {
+        ROOM_INDEX_DATA *stop = get_room_index(taxi_table[j].vnum);
+        if (!stop) continue;
+        int distance = get_dist(get_roomx(lured_room), get_roomy(lured_room), get_roomx(stop), get_roomy(stop));
+        if (distance < mindist) {
+          mindist = distance;
+          destivnum = stop->vnum;
+        }
+      }
+    }
     ROOM_INDEX_DATA *driveroom = get_room_index(destivnum);
     if (!has_town_vehicle(ch) && mist_level(driveroom) < 3 && driveroom->area->vnum == 13) {
       send_to_char("You can't ride your horse into town.\n\r", ch);
@@ -2452,6 +2472,19 @@ return;
       return;
     }
 
+    ROOM_INDEX_DATA *travelroom = NULL;
+    for (cab = INIT_CABS; cab < END_CABS; ++cab) {
+      ROOM_INDEX_DATA *candidate = get_room_index(cab);
+      if (candidate && room_empty(candidate)) {
+        travelroom = candidate;
+        break;
+      }
+    }
+    if (!travelroom) {
+      send_to_char("There is no room to begin your journey right now. Try again shortly.\n\r", ch);
+      return;
+    }
+
     if (!IS_NPC(ch) && ch->pcdata->process_timer > 0) {
       ch->pcdata->process_timer = 0;
       send_to_char("You stop what you were doing.\n\r", ch);
@@ -2464,12 +2497,6 @@ return;
     dist = UMAX(dist, 2);
 
     unplace_car(ch);
-
-    for (cab = INIT_CABS; cab < END_CABS && !room_empty(get_room_index(cab));
-    cab++) {
-    }
-
-    ROOM_INDEX_DATA *travelroom = get_room_index(cab);
 
     free_string(travelroom->name);
     if (safe_strlen(vehicle_name(ch)) > 2)
@@ -2523,7 +2550,7 @@ return;
       if (is_ghost(vch) && vch->possessing != ch)
       continue;
 
-      if (passengers > max_passengers(ch))
+      if (!is_ghost(vch) && passengers >= max_passengers(ch))
       continue;
 
       char_from_room(vch);
@@ -2618,22 +2645,6 @@ return;
     ch->pcdata->travel_type = TRAVEL_CAR;
     ch->pcdata->travel_to = destivnum;
     ch->pcdata->last_drove = ch->pcdata->travel_to;
-    if (IS_AFFECTED(ch, AFF_LURED) && get_room_index(ch->pcdata->lured_room) != NULL) {
-      int mindist = 1000;
-      int minpointer = 0;
-      for (int i = 0; i < MAX_TAXIS; i++) {
-        if (get_dist(get_roomx(get_room_index(ch->pcdata->lured_room)), get_roomy(get_room_index(ch->pcdata->lured_room)), get_roomx(get_room_index(taxi_table[i].vnum)), get_roomy(get_room_index(taxi_table[i].vnum))) < mindist) {
-          minpointer = i;
-          mindist = get_dist(get_roomx(get_room_index(ch->pcdata->lured_room)), get_roomy(get_room_index(ch->pcdata->lured_room)), get_roomx(get_room_index(taxi_table[i].vnum)), get_roomy(get_room_index(taxi_table[i].vnum)));
-        }
-      }
-      ch->pcdata->travel_to = taxi_table[minpointer].vnum;
-      ch->pcdata->last_drove = ch->pcdata->travel_to;
-      dist =
-      street_distance(ch->in_room, get_room_index(ch->pcdata->travel_to), ch);
-      dist = UMAX(dist, 2);
-      ch->pcdata->travel_time = dist;
-    }
   }
 
   _DOFUN(do_drive) {

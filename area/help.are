@@ -87,26 +87,26 @@ Collegiate societies do not have to pay for sanctuary protection each week, and 
 ~
 End
 
-Keyword White Oak~
+Keyword Cortex Academy of Civic Integration~
 SeeAlso Student, Civic Educator, College, Clinic, Cortex~
 Level 0
 Online 0
 Type 0
 Text `WThrough Service, Belonging.`x
 
-The White Oak Institute in Gravesend, MA presents itself as a special school
+The Cortex Academy of Civic Integration in Gravesend, MA presents itself as a special school
 for young people whose emerging supernatural abilities make ordinary education
 unsuitable. Its campus combines an undergraduate college, residential dorms
 and a hospital with a substantial mental health wing. Families are promised
 expert care, safety and a future for children they no longer understand.
 
 Students were told they needed to attend a special school and were brought to
-White Oak by family, referring professionals or the Institute's agents. Some
+Cortex Academy of Civic Integration by family, referring professionals or the Institute's agents. Some
 arrived willingly; others had little say in the decision. They may know very
 little about the supernatural world beyond what they have been told about
 themselves.
 
-Behind its educational mission, White Oak is a Cortex indoctrination school.
+Behind its educational mission, Cortex Academy of Civic Integration is a Cortex indoctrination school.
 Its purpose is to brainwash young supernaturals into Cortex sympathizers and,
 ultimately, loyalists. Lessons in controlling their abilities teach that
 supernatural independence is dangerous and that safety and belonging come
@@ -121,7 +121,7 @@ instability, and service to the Cortex as repayment for the school's care. The
 attached clinic reinforces this system through supervision and the
 institutional authority of treatment, while also serving the wider town.
 
-White Oak still offers ordinary classes, sports and student social life. Its
+Cortex Academy of Civic Integration still offers ordinary classes, sports and student social life. Its
 teams are the Wildcats, especially known for lacrosse and competitive cheer.
 These activities cultivate attachment to the institution and give its Civic
 Educators further opportunities to reward approved attitudes. The school's
@@ -201,7 +201,7 @@ Online 0
 Type 0
 Text Sigma Lambda Pi's colors are sapphire blue and gold, their flower is the carnation, their jewel the Sapphire, their symbol is an arch with a crown over it and their motto is 'While we live, let us live as brothers'
 
-At the White Oak institute Sigma Lambda Pi is known for their fierce loyalty to each other, they often do particularly well in team sports and work together to host some of the most impressive and ambitious parties and social events of the institute.
+At the Cortex Academy of Civic Integration Sigma Lambda Pi is known for their fierce loyalty to each other, they often do particularly well in team sports and work together to host some of the most impressive and ambitious parties and social events of the institute.
 ~
 End
 
@@ -212,7 +212,7 @@ Online 0
 Type 0
 Text Phi Beta Chi's colors are azure blue and white, their flower is the white rose and their motto is 'Love through Life'
 
-At the White Oak institute they are known as one of the more serious houses, boasting multiple top students and having a long lineage of academic and career excellence.
+At the Cortex Academy of Civic Integration they are known as one of the more serious houses, boasting multiple top students and having a long lineage of academic and career excellence.
 ~
 End
 
@@ -223,7 +223,7 @@ Online 0
 Type 0
 Text Alpha Gamma Omegas colors are blue and gold, their flower is the Easter lily and their motto is 'Fraternity for Eternity' Their letters represent the dominance of the divine.
 
-At the White Oak institute the fraternity is known for being very traditional and their ambitious future leader program. Many members of Alpha Gamma Omega go into political careers after graduation.
+At the Cortex Academy of Civic Integration the fraternity is known for being very traditional and their ambitious future leader program. Many members of Alpha Gamma Omega go into political careers after graduation.
 ~
 End
 
@@ -236,7 +236,7 @@ Text Also known as Tri Delta, the Delta Delta Delta sorority's colors are silver
 
 Their motto is 'Let us steadfastly love one another'
 
-At the White Oak institute tri-delta is known as something of a party house with a large number of its members also being in the three time state championship cheer team.
+At the Cortex Academy of Civic Integration tri-delta is known as something of a party house with a large number of its members also being in the three time state championship cheer team.
 ~
 End
 
@@ -356,7 +356,7 @@ Text `WLevels`x: `c0, 3`x
 
 `WRequirements`x: College Student
 
-This stat represents someone making a contribution to the White Oak institute
+This stat represents someone making a contribution to the Cortex Academy of Civic Integration
 in order to ensure you have favorable treatment while there. Characters with
 this stat cannot be committed by college staff with the college commit command.
 They can still be committed through other means.
@@ -1797,7 +1797,7 @@ This stat represents those who've dedicated themselves to the world of computers
  
 `c[`WEngineer One`c]`g:`x
  `c `c `cDemolitions `W2`g:`x Greater proficiency with explosives; makes it easier to `Wbreakin`x to buildings.
- `c `c `cEngineering `W3`g:`x Greater proficiency with building electronics; can `Wsignalboost`x phones on White Oak campus.
+ `c `c `cEngineering `W3`g:`x Greater proficiency with building electronics; can `Wsignalboost`x phones on Cortex Academy of Civic Integration campus.
  `c `c `cHacking `W3`g:`x Greater proficiency with computers; allows jamming communications.
   
 `c[`WEngineer Two`c]`g:`x
@@ -3535,12 +3535,12 @@ Type 0
 Text `cSyntax`g:`W rent `g(`Wroom number `g/`W stop`g)`w
 
 This can be used from the each of the college dormitories in the
-White Oak Institute at no charge. 
+Cortex Academy of Civic Integration at no charge. 
 
 `cSyntax`g:`W roomie `g(`Wroom number `g/`W stop`g)`w
 
 Available to college students who want to share a room with another
-student within the White Oak dormitories.  
+student within the Cortex Academy of Civic Integration dormitories.  
 ~
 End
 
@@ -3643,12 +3643,12 @@ Type 0
 Text `cSyntax`g:`W rent `g(`Wroom number `g/`W stop`g)`w
 
 This can be used from the each of the college dormitories in the
-White Oak Institute at no charge. 
+Cortex Academy of Civic Integration at no charge. 
 
 `cSyntax`g:`W roomie `g(`Wroom number `g/`W stop`g)`w
 
 Available to college students who want to share a room with another
-student within the White Oak dormitories.  
+student within the Cortex Academy of Civic Integration dormitories.  
 ~
 End
 
@@ -4839,7 +4839,7 @@ ability to also feed on psychic distress.
 Any victims in the institute will lose life force as if being fed upon by a
 supernatural, but their persecutor will only gain it as if they were human. 
 They will also gain standing in the institute however.  While no official
-comment has been made by the White Oak Corporation confirming this
+comment has been made by the Cortex Academy of Civic Integration confirming this
 practice, most figure their discreet promotion of the practice has something
 to do with this missing life force.  
 
@@ -5658,11 +5658,10 @@ Use `Wsociety position corrupt demonic`x (or `Wsociety position demonic`x).
  
 `c[`WCorrupt`g/`WVirtuous`c]`g:`x
   `yCorrupt`g:`x
-   `g-`W3`g, `W6`g, `W8`g%`x life force for T1s.
-   `g-`W2`g, `W4`g, `W6`g%`x life force for T2s.
+   Corrupt and demonic society positions do not reduce life force for T2.5s and lower, including corruption-based leader penalties.
    `g+`W1`g, `W3`g, `W6`g%`x life force for T3+.
    At mildly corrupt or higher, all T1s are slaves, with no ability to access higher levels of trust or standing and the ability to be incapacitated or tracked by any natural society member with the `Wcontrol`x command.
-   At strongly corrupt or demonic, all T2s are also slaves.
+   At strongly corrupt or demonic, all T2s and T2.5s are also slaves. This enslavement still applies despite the lack of a corruption-based life force penalty.
    Demonic pact holders are banned from societies unless they are strongly corrupt or demonic. The Cortex always bans pact holders because it cannot tolerate loyalty to another master.
    At neutral, T1 and T3 have `g-`W3`g%`x LF, T4 `g-`W9`g%,`x T5 `g-`W12`g%`x.
 
@@ -7317,7 +7316,7 @@ Text The following landmarks can be used with the `Wdrive`w and `Wwalk`w syntaxe
 `g,_________________________________________________________________________________, 
 `g|  `cKeyword           Destination Name               Service                       `g|
 `g|---------------------------------------------------------------------------------|
-`g|  `Winstitute`w         The White Oak Institute        College                       `g|`x
+`g|  `Winstitute`w         The Cortex Academy of Civic Integration        College                       `g|`x
 `g|  `Wbank              `wGravesend National Bank            Banking                       `g|
 `g|  `Wbedandbreakfast   `wAntlers Hotel                  Hotel                         `g|
 `g|  `Wcemetery`w          Arkwright Cemetery             Cemetery                     `g |`w
@@ -7686,7 +7685,7 @@ Online 0
 Type 0
 Text `cSyntax`g: `Wtreat `g(`xperson`g)`x
  
-Used in a medical facility (such as White Oak), this command will reduce the time to recover from wounds by up to 50% depending on the user's medicine skill. Rooms that are eligible for using `Wtreat`x in will display '`WThis is a medical facility.`x' under their name when you look in them.
+Used in a medical facility (such as Cortex Academy of Civic Integration), this command will reduce the time to recover from wounds by up to 50% depending on the user's medicine skill. Rooms that are eligible for using `Wtreat`x in will display '`WThis is a medical facility.`x' under their name when you look in them.
  
 This will charge `g$`W500`x in society resources if the society has at least `g$`W100k`x resources and the user is trusted with resources, otherwise it will charge `g$`W500`x in cash on hand.
  
@@ -11025,6 +11024,27 @@ the prisoner's care.
 ~
 End
 
+Keyword Rape~
+SeeAlso Sex Sanctuary~
+Level 0
+Online 0
+Type 0
+Text `WSyntax:`x rape (target) (type)
+
+Resolves an agreed roleplay scene without the target's in-character yes
+prompt. The target must be helpless. Full or limited sanctuary on either
+participant blocks the command, including at the Institute. Player agreement
+is established outside this command.
+
+Uses the same aftermath and pregnancy mechanics, protection habit, and type
+categories as sex. Scene notifications are neutral and contain no narration.
+The voyeur category is not supported. Ordinary sex keeps its yes prompt.
+
+Immortal syntax: rape (initiator) (target) (risk) (type). The helplessness and
+sanctuary restrictions still apply.
+~
+End
+
 Keyword Attractiveness Lore~
 SeeAlso ~
 Level 0
@@ -12379,7 +12399,7 @@ or break up public rows.
 to it will force them to leave that residence within twenty minutes or be
 arrested.  Used most often in the case of trespassing complaints.  
  
-`WFrisk`x: When used on someone on the White Oak campus, weapons on their person
+`WFrisk`x: When used on someone on the Cortex Academy of Civic Integration campus, weapons on their person
 will be transported to the evidence cage in the Sheriff's Department.
 ~
 End
@@ -12459,7 +12479,7 @@ Demonic Pact Holder
 End
 
 Keyword Civic Educator~
-SeeAlso White Oak, Student, College, Clinic, Cortex~
+SeeAlso Cortex Academy of Civic Integration, Student, College, Clinic, Cortex~
 Level 0
 Online 0
 Type 0
@@ -12467,7 +12487,7 @@ Text `cTier One Archetype`x
 
 Human.
 
-Civic Educators are the White Oak Institute's teaching and supervisory
+Civic Educators are the Cortex Academy of Civic Integration's teaching and supervisory
 staff. They are committed servants of its Cortex indoctrination project,
 selected for political reliability and commonly recruited from outside
 Gravesend. Their purpose is to make Cortex sympathizers out of the young
@@ -12494,7 +12514,7 @@ existing college and clinic roles and restrictions still apply.
 End
 
 Keyword Student~
-SeeAlso White Oak, Civic Educator, College~
+SeeAlso Cortex Academy of Civic Integration, Civic Educator, College~
 Level 0
 Online 0
 Type 0
@@ -12502,13 +12522,13 @@ Text `cTier One Archetype`x
 
 Human.  
 
-This archetype represents a student brought to the White Oak Institute.
+This archetype represents a student brought to the Cortex Academy of Civic Integration.
 You were told that you needed to go to a special school, and your family,
 a referring professional or the Institute's agents arranged to bring you
 there. You may have accepted their explanation, resented the decision or
 barely understood what was happening.
 
-White Oak specializes in young people with emerging supernatural abilities
+Cortex Academy of Civic Integration specializes in young people with emerging supernatural abilities
 and those drawn into the supernatural world. A Student begins mechanically
 human; enrollment does not itself grant supernatural powers. You may still
 be waiting for your abilities to emerge or have been sent there because of
@@ -12519,7 +12539,7 @@ school's actual purpose is to turn its students into Cortex sympathizers
 and loyalists. Its Civic Educators use lessons, counselling, discipline and
 rewards to teach obedience to the Cortex. Your character need not arrive
 knowing this purpose or already believing its propaganda; accepting,
-questioning or resisting that conditioning is part of life at White Oak.
+questioning or resisting that conditioning is part of life at Cortex Academy of Civic Integration.
 
 `WMinimum Age:`x 18
 
@@ -13581,7 +13601,18 @@ Plants a spy camera in the current room, you must have bought a spy camera
 from Narnia first and this item is consumed with the use.  A phone must
 be specified to sync the camera up to.  Any RP done in that room will be
 sent as a small recording text attachment to the synced up phone as long as
-it is online.  
+it is online and has signal and inbox space. Cameras cannot be planted in
+public rooms, school rooms, or outside the supported Haven area. Darkness
+and mist temporarily prevent recordings.
+
+A camera lasts one real week per point of Hacking at installation, with a
+one-week minimum and a five-week maximum. Planting reports its lifetime.
+Timers continue while you are offline and survive server restarts.
+
+You receive a saved message if your camera expires or is found and destroyed
+by a bugsweep, even if you are offline. Cameras no longer randomly short out.
+A room can have cameras linked to different phones; planting a duplicate
+for the same phone does not consume another camera.
  
 Note that a cloned phone will NOT transmit video from a spycam to its master.
 ~
@@ -13979,6 +14010,22 @@ phone to use it.
  
 `cSyntax`g:`W phone silent`w
  Toggles your phone on or off silent mode.
+
+`cSyntax`g:`W phone loudspeaker `g[`Won`g/`Woff`g]`w
+ Toggle your phone's loudspeaker, or explicitly turn it on or off. While on,
+ everyone who can hear in your room hears the person at the other end of
+ your call. This includes normal speech, say to phone, and telesay. Your
+ phone must be turned on. The setting stays with the phone until changed;
+ silent mode only silences its ringtone and does not mute the loudspeaker.
+
+`cSyntax`g:`W phone `g<`Wperson`g> <`Wcommand`g>`w
+ Electropaths can operate the phone of a visible person in the same room
+ while that person is on an answered call. For example:
+ `Wphone <person> loudspeaker on`w lets you hear their caller.
+ Available controls are on, off, silent, loudspeaker [on/off], and ringtone
+ (string). You do not need a phone of your own. You must be able to see and
+ both you and the target must have a signal. Turning their phone off ends
+ their call. This cannot target someone at the other end of a remote call.
  
 `cSyntax`g: `Wphone clone (slave) (master)`x
 `x Slaves one phone to another for $200, the master phone will receive any texts
@@ -13992,8 +14039,7 @@ phone to use it.
  This will hangup the call you are currently in.
  
 `cSyntax`g: `Wphone signalboost`x
- Toggles whether a phone will temporarily function in the White Oak 
- Institute. Requires Engineering 3+ and an available racial cooldown.
+ Toggles whether a phone will temporarily function in the Cortex Academy of Civic Integration. Requires Engineering 3+ and an available racial cooldown.
 ~
 End
 
@@ -14377,7 +14423,7 @@ way will not be made available immediately, but rather a week later.
 If you have more than 100% life force you can siphon the rest off into a 
 blood donation to give to your society.  Each 1% of life force above 
 100 grants $100 society resources per tier of the donater.
-This must be done in the basement operating rooms in White Oak.
+This must be done in the basement operating rooms in Cortex Academy of Civic Integration.
  
 Contributing to a society does not impose a secrecy penalty.
 ~
@@ -14821,7 +14867,7 @@ players can create freely. The Gravesend districts are:
 
 `cUrban`x: Covering the area North of the Bay, West of Beach Street
 but East of Badwater the urban area is the most city-like part of
-Gravesend, where the influence of the apartment complex and White Oak
+Gravesend, where the influence of the apartment complex and Cortex Academy of Civic Integration
 technological institute are most felt.
 `cEligible Industries:`x Online, Store, Games/Gaming, Bar, Financial,
 Research, Education, Tkeout, Technology, Journalism, Legal, Nonprofit.
@@ -16112,6 +16158,8 @@ Text `cSyntax`g: `Wwalk `g(`Wdestination`g)`w
   numbered intersection on `Wwalk list`w, or the following landmarks:
   `Wlodge`w, `Wmedical`w, `Wbedandbreakfast`w, `Wbank`w, `Wlibrary`w, `Wnewspaper`w, `Wpostoffice`w,
   `Wfurniture`w, `Wthrift`w, `Whunting`w, `Whsd`w, `W`Wor `Wcemetary`w.
+  If a walk takes more than ten real minutes, you are moved directly to
+  your destination and stop walking. Use `Wwalk stop`w to cancel a journey.
  
 `cSyntax`g: `Wwalk list`w
   Displays all the intersections as well as any remembered destinations.
@@ -18406,6 +18454,13 @@ it requires you to be able to see.
 
 `WSyntax:`x Teletext (number) (message)/telesay (message)/telessay
 (message)/telecsay (message) 
+
+`WSyntax:`x phone <person> <command>
+Control a visible person's phone in your room while they are on an answered
+call. Commands: on, off, silent, loudspeaker [on/off], ringtone (string).
+For example, `Wphone <person> loudspeaker on`x makes their caller audible to
+the room. You do not need to hold or own a phone. Sight and a signal for both
+you and the target are required. See `Whelp phone`x.
 ~
 End
 
@@ -19520,7 +19575,7 @@ room you're currently in, it's useful if your character has recently moved
 into a new house etc and you don't want to have to move all your clothes by
 hand.  
  
-This command does not move containers or weapons when used outside of White Oak.
+This command does not move containers or weapons when used outside of Cortex Academy of Civic Integration.
 ~
 End
 
@@ -19668,7 +19723,7 @@ front and then will be charged 25 dollars a day until 11AM until you stop
 with the rent stop command.  
 
 This can also be used from the each of the `Ycollege dormitories`w in the
-White Oak Institute at no charge.  
+Cortex Academy of Civic Integration at no charge.  
 
 `cSyntax`g: `Wrent `g(`Wcontainer number `g/ `Wstop`g)`x
 
@@ -19679,7 +19734,7 @@ with the rent stop command.
 `cSyntax`g: `Wroomie `g(`Wroom number `g/ `Wstop`g)`x
 
 Available to college students who want to share a room with another
-student within the White Oak.
+student within the Cortex Academy of Civic Integration.
  
 If you wish to rent your own room, type rent in the dorm foyer, to see
 a list of available rooms. And then rent (room number) to rent that room.
@@ -20662,6 +20717,36 @@ such as furniture.
 ~
 End
 
+Keyword sellblood blood sale~
+SeeAlso Giveblood, Society Resources, Society Commands~
+Level 0
+Online 0
+Type 0
+Text `gSyntax`x: `Wsociety sellblood (glass of vampire blood)`x
+
+Meet NPC blood buyers in waking Gravesend to raise funds for your selected
+society. You must be free to act and carry a nonempty glass made with giveblood.
+Members with more than one society can choose it with society select (name).
+
+Each character may attempt one sale every seven real days. The glass is consumed
+on either outcome, and changing societies or reconnecting does not reset this.
+There is a 50% chance the buyers are a Cortex sting: enforcers attack and no
+funds are earned. Defeat carries the usual Cortex arrest and auction consequences.
+A successful sale pays directly into society funds: $2,500 at tier 5, $5,000 at
+tier 4, $10,000 at tier 3, and the $20,000 cap at tiers 2 and 1.
+Sales are unavailable during a state of emergency or a dissent encounter.
+
+Cortex squads vary from one to six NPCs, with higher tiers facing potentially
+larger squads. Their combat disciplines scale with your tier, a widely varying
+encounter roll, and individual variation. Some encounters are far more dangerous
+than others. These variations also apply to public arrests and interventions.
+
+Cortex members travelling through dangerous off-world rooms can also be ambushed
+by one to four local creatures. Their numbers and combat disciplines vary with
+tier and luck. These are separate from breaches into Gravesend.
+~
+End
+
 Keyword giveblood~
 SeeAlso ~
 Level 0
@@ -20669,8 +20754,10 @@ Online 0
 Type 0
 Text `gSyntax`x: `WGiveBlood`x
 
-Used by vampires to produce small glasses of vampire blood.  Vampire
-blood can be added to other food or drink with the '`Wpour`x' command.  
+  Used by vampires to produce small glasses of vampire blood.  Vampire
+blood can be added to other food or drink with the '`Wpour`x' command.
+Use `Wsociety sellblood (glass)`x to attempt a weekly sale for society funds;
+see `Whelp sellblood`x for the risk of a Cortex sting.
 ~
 End
 
@@ -25289,7 +25376,7 @@ to write the name without spaces.
 Characters can write IC notes to 'market' and they will be visible to 
 anyone who's visited the market since they were written. 
  
-To send to White Oak Civic Educators, use the following in the to field:
+To send to Cortex Academy of Civic Integration Civic Educators, use the following in the to field:
  
 College Collegestaff Clinic Clinicstaff 
 Institute - Institute sends to all above
@@ -27645,6 +27732,9 @@ Text Use society for player societies and faction for core factions. You can joi
 
 Society patron none/worship (name)/oppose (name) lets a leader choose an optional higher-power affiliation.
 
+Society sellblood (glass) attempts a weekly vampire blood sale to NPC buyers for
+society funds, with a 50% risk of a Cortex ambush. See help sellblood.
+
 `cGeneral society commands`g:`w
  
 `cSyntax`g:`W `WFaction`D/`WSociety`x list`w
@@ -27900,8 +27990,8 @@ Text `WSetting`x
 -Information about the spell that protects Gravesend.
 `WArchives`x
 -Information about where supernatural information is kept.
-`WWhite Oak`x
--Information about the White Oak Institute`x
+`WCortex Academy of Civic Integration`x
+-Information about the Cortex Academy of Civic Integration`x
 ~
 End
 
@@ -29156,7 +29246,7 @@ Normal fame is for locals to show what they're known for around town, also
 for those with the celebrity legendary power to show what they are known for
 generally.  
 
-Institute fame is for staff/students/patients of the White Oak institute
+Institute fame is for staff/students/patients of the Cortex Academy of Civic Integration
 and is visible on institute grounds.  It shows what they are known for or
 what they do in the institute etc.  
 
@@ -29658,6 +29748,18 @@ At Rank 5 it allows the interception of some of the traced individual's communic
  
 When combined with engineering to a total of at least 5, they can detect
 bugs in any room they enter.
+
+`cSpy Cameras`g:`w
+  Spy cameras planted with plantcamera last one real week per point of
+  Hacking at the time of installation. Hacking 0 and 1 give one week;
+  Hacking 2-5 give two to five weeks. Planting reports the camera's lifetime.
+  Later skill changes do not alter an installed camera's timer. Timers
+  continue while you are offline and survive server restarts.
+
+  You receive a saved message when a camera you planted expires or is found
+  and destroyed by a bugsweep, including if you are offline. Passive bug
+  detection does not destroy cameras or notify their planters. Cameras no
+  longer randomly short out; each camera expires independently.
 ~
 End
 
@@ -29843,7 +29945,7 @@ This stat represents a character's ability to build electronic devices.
   Design or build commercial quality devices
 `cEngineering`x 3
   Design or build cutting edge quality devices
-  Modify phones to temporarily work in the White Oak Institute
+  Modify phones to temporarily work in the Cortex Academy of Civic Integration
 `cEngineering`x 4
   Design and build military quality devices
 `cEngineering`x 5 

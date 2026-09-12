@@ -10,9 +10,9 @@ End
 
 #MOBILES
 #45001
-cafeteria White Oak monk~
-whiteoak monk~
-A White Oak monk watches over the food bins
+cafeteria Cortex Academy of Civic Integration monk~
+cortex academy of civic integration monk~
+A Cortex Academy of Civic Integration monk watches over the food bins
 ~
 ~
 normal~
@@ -46,9 +46,9 @@ normal~
 0 0 unknown
 
 #45016
-whiteoak pharmacist~
-White Oak pharmacist~
-A White Oak pharmacist doling out prescriptions 
+cortex academy of civic integration pharmacist~
+Cortex Academy of Civic Integration pharmacist~
+A Cortex Academy of Civic Integration pharmacist doling out prescriptions 
 ~
 ~
 normal~
@@ -64,9 +64,9 @@ normal~
 0 0 unknown
 
 #45017
-whiteoak bookstore attendant~
+cortex academy of civic integration bookstore attendant~
 bookstore attendant~
-A White Oak Bookstore attendant ringing up supplies
+A Cortex Academy of Civic Integration Bookstore attendant ringing up supplies
 ~
 ~
 normal~

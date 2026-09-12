@@ -6849,6 +6849,16 @@ Flags     0
 End
 
 #COMMAND
+Name      rape~
+Code      do_rape
+Position  0
+Level     1
+Log       1
+Show      1
+Flags     0
+End
+
+#COMMAND
 Name      storyidea~
 Code      do_storyidea
 Position  0

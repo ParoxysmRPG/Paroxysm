@@ -35,7 +35,7 @@ void cortex_public_response(CHAR_DATA *attacker, CHAR_DATA *defender) {
   act("Cortex enforcers arrive to defend you and subdue $n!", attacker, NULL, defender, TO_VICT);
   act("Cortex enforcers arrive to defend $N and subdue $n!", attacker, NULL, defender, TO_NOTVICT);
   const int difficulty = number_range(1, 10);
-  const int count = number_range(2, 4);
+  const int count = cortex_encounter_count(attacker);
   for (int n = 0; n < count; ++n) {
     CHAR_DATA *mob = create_mobile(index);
     SET_FLAG(mob->act, ACT_CORTEX_ENFORCER);
@@ -55,10 +55,7 @@ void cortex_public_response(CHAR_DATA *attacker, CHAR_DATA *defender) {
     mob->aggression = str_dup(attacker->name);
     free_string(mob->protecting);
     mob->protecting = str_dup(defender->name);
-    for (int i = 0; i < discipline_table_count; ++i) {
-      int &value = mob->disciplines[discipline_table[i].vnum];
-      if (value > 0) value = UMAX(1, value * difficulty_mod(difficulty) / 100);
-    }
+    cortex_scale_enforcer(mob, attacker, difficulty);
     char_to_room(mob, defender->in_room);
     mob->x = defender->x;
     mob->y = defender->y;

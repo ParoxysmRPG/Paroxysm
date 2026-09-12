@@ -25,6 +25,7 @@
 #include "equipment_snapshot.h"
 #include "reward_colors.h"
 #include "text_format.h"
+#include "spy_camera.h"
 #include "olc.h"
 #include "gsn.h"
 #include "recycle.h"
@@ -5386,17 +5387,8 @@ extern "C" {
   }
 
   bool bugged_room(ROOM_INDEX_DATA *room) {
-    EXTRA_DESCR_DATA *ed;
-    for (ed = room->extra_descr; ed; ed = ed->next) {
-      if (is_name("!bugs", ed->keyword) && safe_strlen(ed->description) > 2) {
-        return TRUE;
-      }
-    }
-    if (!ed) {
-      return FALSE;
-    }
-
-    return FALSE;
+    EXTRA_DESCR_DATA *ed = haven::camera_links(room);
+    return ed && ed->description && ed->description[0];
   }
 
   _DOFUN(do_glance) {

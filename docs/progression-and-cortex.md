@@ -28,6 +28,35 @@ player, falling back to the weakest available monster from that world.
 The monster stays at the ambush location. Normal monsters retain their usual
 location restrictions. The pending breach expires on server restart.
 
+Cortex members travelling in dangerous rooms of the Other, Wilds, Godrealm or
+Hell have a separate 5% ambush chance per eligible move. This requires an active,
+unshrouded character outside combat, battlegrounds and hunting patrols, with no
+existing spawned-monster cooldown. The encounter contains 1-min(4, tier+1)
+creatures drawn independently from that world. A random difficulty (1-10)
+sets the monster selection ceiling; the weakest local template is the fallback.
+Actual combat disciplines also scale with tier, difficulty and an independent
+75-125% roll per NPC. The normal 12-tick monster cooldown prevents repeated
+spawns, and attackers expire after 12 ticks. Gravesend breaches are unchanged.
+
+`society sellblood <glass>` consumes a nonempty giveblood glass to attempt an
+NPC sale in waking Gravesend. One attempt per character per seven real days is
+persisted as LastBloodSale, shared across society selections. A 50% sting roll
+spawns a tier-scaled Cortex arrest squad and earns nothing. Otherwise the
+selected active society receives $2,500 at tier 5, doubled for each lower tier
+up to a $20,000 cap: $5,000 at tier 4, $10,000 at tier 3, and $20,000 at tiers 2 and 1.
+The payout goes directly to society funds, with a society log and contribution tracking. Both
+outcomes consume the glass and cooldown; invalid attempts consume neither.
+Sales require being free to act, exclude guests, staff, ghosts, higher powers,
+battlegrounds, dissent and state-of-emergency scenes, and refuse existing
+enforcer pursuits. Rewards and cooldowns are saved immediately.
+
+Validation: `python3 tools/test_blood_sales.py` exercises sale outcomes, cooldown
+boundaries, eligibility, NPC counts and discipline scaling under ASan/UBSan.
+`python3 tools/test_dissent_public.py` covers public-defense and arrest outcomes.
+After building, `python3 tools/test_world_changes.py --enforcers-only` checks
+real player save/load, the blood template, live enforcers and auction handling
+in a disposable world copy.
+
 Full or limited sanctuary prevents both direct hypnosis locking and a failed
 resistance attempt from making a compulsion permanent. Ordinary temporary
 imprints remain available, and existing locked imprints can still be unlocked.

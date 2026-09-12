@@ -11,6 +11,8 @@ void pc_update(CHAR_DATA *, int);
 void do_storyidea(CHAR_DATA *, char *);
 void do_treat(CHAR_DATA *, char *);
 void do_patrol(CHAR_DATA *, char *);
+void fwrite_char(CHAR_DATA *, FILE *, bool, bool, CHAR_DATA *);
+void fread_char(CHAR_DATA *, FILE *);
 }
 
 static void assign(char *&field, const char *value) {
@@ -140,6 +142,21 @@ static void wounds() {
 }
 static void enforcers() {
   auto *target = player("Alarmtarget");
+  // Round-trip the weekly sale timestamp through the real player save format.
+  assert(target->pcdata->last_blood_sale == 0);
+  target->pcdata->last_blood_sale = current_time;
+  FILE *saved = tmpfile(); assert(saved);
+  fwrite_char(target, saved, FALSE, FALSE, nullptr);
+  rewind(saved);
+  assert(!strcmp(fread_word(saved), "#PLAYER"));
+  auto *restored = new_char(); restored->pcdata = new_pcdata();
+  fread_char(restored, saved); fclose(saved);
+  assert(restored->pcdata->last_blood_sale == target->pcdata->last_blood_sale);
+  free_char(restored);
+  OBJ_DATA *blood = create_object(get_obj_index(33), 0);
+  assert(blood->item_type == ITEM_DRINK_CON && blood->value[1] > 0 && IS_OBJ_STAT(blood, ITEM_VBLOOD));
+  extract_obj(blood);
+  puts("PASS: weekly blood-sale timestamp survives real player save/load; giveblood template is eligible.");
   auto *bidder = player("Alarmbidder"), *absentee = player("Alarmabsentee");
   bidder->pcdata->patrol_habits[PATROL_DIPLOMATICHABIT] = 1;
   absentee->pcdata->patrol_habits[PATROL_DIPLOMATICHABIT] = 1;
@@ -158,7 +175,8 @@ static void enforcers() {
     assert(mob->in_room == target->in_room && !strcmp(mob->aggression, target->name));
     assert(in_fight(mob) && mob->faction == FACTION_CORTEX);
   }
-  assert(count >= 2 && count <= 4 && NewsVect.size() == gossip_before + 1);
+  assert(count >= 1 && count <= UMIN(6, URANGE(1, get_tier(target), 5) + 2)
+      && NewsVect.size() == gossip_before + 1);
   assert(strstr(NewsVect.back()->message, "Alarmtarget") && strstr(NewsVect.back()->message, "Cortex enforcers"));
   assert(!cortex_alarm(target, 2) && NewsVect.size() == gossip_before + 1);
   target->pcdata->sleeping = 240;
