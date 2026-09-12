@@ -4700,7 +4700,6 @@ extern "C" {
     else
     amount = ch->karma;
 
-    amount += 5000;
     return amount;
   }
   

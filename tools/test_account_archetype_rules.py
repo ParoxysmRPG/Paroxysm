@@ -31,6 +31,7 @@ void SET_INIT(SET s) { memset(s, 0, sizeof(SET)); }
 void send_to_char(const char *, CHAR_DATA *) {}
 '''
 source += section('recycle.c', '  ACCOUNT_TYPE *new_account(void)', '  void free_account(')
+source += section('lookup.c', '  int available_karma(', '  void gain_personal_karma(')
 source += section('skills.c', '  bool has_requirements(', '    if (skill == SKILL_MENTALDISCIPLINE')
 source += 'return TRUE; }\n'
 source += r'''
@@ -52,6 +53,20 @@ int main() {
   assert(account->karma == 0 && account->pkarma == 0);
   assert(account->karmabank == 0 && account->karmaearned == 0);
   assert(account->pkarmaspent == 0 && account->pkarma_remainder == 0);
+  PC_DATA pc = {};
+  ch.pcdata = &pc;
+  pc.account = account;
+  assert(available_karma(&ch) == 0);
+  account->karma = 1200;
+  ch.karma = 300;
+  assert(available_karma(&ch) == 1200);
+  pc.account = nullptr;
+  assert(available_karma(&ch) == 300);
+  ch.karma = 0;
+  assert(available_karma(&ch) == 0);
+  pc.account = account;
+  SET_FLAG(ch.act, PLR_GUEST);
+  assert(available_karma(&ch) == 0);
   for (void *p : allocations) free(p);
   puts("Archetype availability, Cortex contract eligibility, and zero account karma passed.");
 }
@@ -63,5 +78,6 @@ with tempfile.TemporaryDirectory(prefix='haven-account-rules-') as tmp:
                     '-fdata-sections', '-Wl,--gc-sections',
                     '-fsanitize=address,undefined', '-no-pie', '-I', str(ROOT / 'src'),
                     str(path / 'test.cc'), str(ROOT / 'src/tables.c'),
+                    str(ROOT / 'src/bit.c'),
                     '-o', str(path / 'test')], check=True)
     subprocess.run([str(path / 'test')], check=True)
