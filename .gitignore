@@ -42,3 +42,6 @@ src/resolve
 src/shutdown.txt
 tools/__pycache__/
 *.pyc
+
+data/archives/back*/*
+!data/archives/back*/.gitkeep
