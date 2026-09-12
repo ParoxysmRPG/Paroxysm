@@ -1,0 +1,1476 @@
+#AREADATA
+Name Traveling~
+VNUMs 19000 19099
+Completed 0
+World 0
+Range -1 -1 -1 -1
+End
+
+
+
+#MOBILES
+#0
+
+
+
+#OBJECTS
+#0
+
+
+
+#ROOMS
+#19000
+`rT`Rr`yo`Yl`rl`Ry`w`x~
+Upholstered seats fit tightly within the vehicle's metal body. The compact
+passenger space carries the familiar smells of fabric, rubber, and enclosed
+travel.`x
+~
+0 67108908 17
+P
+seats~
+The passenger seats fit closely within the vehicle's body.`x
+~
+G 0 0 80 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19001
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19002
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19003
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19004
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19005
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19006
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19007
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19008
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19009
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19010
+`236a gl`237oss`238y bl`239ack and `052r`088ed `12420`16006 `196Lo`160tus `124El`088is`052e `239con`238ver`237tib`236le`w~
+Upholstered seats fit tightly within the vehicle's metal body. The compact
+passenger space carries the familiar smells of fabric, rubber, and enclosed
+travel.`x
+~
+0 1048588 17
+P
+seats~
+The passenger seats fit closely within the vehicle's body.`x
+~
+G -1 2 20 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19011
+a rusted 2005 Ford Focus~
+`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
+old leaves and fallen twigs, while overlapping branches divide the woodland
+into close, irregular spaces.`x
+~
+0 12 23
+P
+seats~
+The passenger seats fit closely within the vehicle's body.`x
+~
+G 0 1 20 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19012
+`#432d2fan `#413a3aupsc`#4c0711ale,`#49131b bla`#462025ck a`#413a3and `#432d2fred `#462025Buic`#49131bk Ve`#4c0711rano`q~
+Upholstered seats fit tightly within the vehicle's metal body. The compact
+passenger space carries the familiar smells of fabric, rubber, and enclosed
+travel.`x
+~
+0 12 17
+P
+seats~
+The passenger seats fit closely within the vehicle's body.`x
+~
+G 0 0 20 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19013
+`140a Kaw`134asaki`128 Z H2 in pu`129rple `250an`248d ma`245tte si`243lver`x~
+A narrow saddle fits above the motorcycle's compact frame. Close-set metal and
+molded body panels define the riding position, with little separation between
+rider and machine.`x
+~
+0 4 23
+P
+saddle~
+The saddle provides the motorcycle's narrow riding seat.`x
+~
+G 0 0 20 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19014
+a battered Honda civic~
+`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
+old leaves and fallen twigs, while overlapping branches divide the woodland
+into close, irregular spaces.`x
+~
+0 12 23
+P
+seats~
+The passenger seats fit closely within the vehicle's body.`x
+~
+G 0 0 20 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19015
+A `dblack`w 1998 `dchevy cavalier`w~
+Upholstered seats fit tightly within the vehicle's metal body. The compact
+passenger space carries the familiar smells of fabric, rubber, and enclosed
+travel.`x
+~
+0 12 17
+P
+seats~
+The passenger seats fit closely within the vehicle's body.`x
+~
+G 0 0 20 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19016
+`Wa somewhat dated Ford Taurus Police Interceptor`x~
+Upholstered seats fit tightly within the vehicle's metal body. The compact
+passenger space carries the familiar smells of fabric, rubber, and enclosed
+travel.`x
+~
+0 12 17
+P
+seats~
+The passenger seats fit closely within the vehicle's body.`x
+~
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19017
+Inside a Car~
+Upholstered seats fit tightly within the vehicle's metal body. The compact
+passenger space carries the familiar smells of fabric, rubber, and enclosed
+travel.`x
+~
+0 12 17
+P
+seats~
+The passenger seats fit closely within the vehicle's body.`x
+~
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19018
+`rRed `WFord F-250 `DLariat `WCrew Cab `R4x4`w~
+Upholstered seats fit tightly within the vehicle's metal body. The compact
+passenger space carries the familiar smells of fabric, rubber, and enclosed
+travel.`x
+~
+0 12 17
+P
+seats~
+The passenger seats fit closely within the vehicle's body.`x
+~
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19019
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19020
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19021
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19022
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19023
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19024
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19025
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19026
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19027
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19028
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19029
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19030
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19031
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19032
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19033
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19034
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19035
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19036
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19037
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19038
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19039
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19040
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19041
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19042
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19043
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19044
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19045
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19046
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19047
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19048
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19049
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19050
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19051
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19052
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19053
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19054
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19055
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19056
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19057
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19058
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19059
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19060
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19061
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19062
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19063
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19064
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19065
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19066
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19067
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19068
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19069
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19070
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19071
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19072
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19073
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19074
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19075
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19076
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19077
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19078
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19079
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19080
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19081
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19082
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19083
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19084
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19085
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19086
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19087
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19088
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19089
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19090
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19091
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19092
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19093
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19094
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19095
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19096
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19097
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19098
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#19099
+Taxi~
+A compact passenger space fits within the craft's structural shell. Close-set
+surfaces and repeated joints make every part of the interior feel shaped by
+the demands of travel.`x
+~
+0 12 17
+G 0 0 40 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#0
+
+
+
+#RESETS
+S
+
+
+
+#SHOPS
+0
+
+
+
+#$

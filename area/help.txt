@@ -1,0 +1,6 @@
+
+[ 5860] Wegwwg: aliiance
+[16072] Admin: factionc ommands
+[16072] Admin: 2
+[   40] NewCharacter24: archetypes
+[   40] NewCharacter24: slave

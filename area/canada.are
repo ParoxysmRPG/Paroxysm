@@ -1,0 +1,1421 @@
+#AREADATA
+Name Canada~
+VNUMs 35000 35999
+Completed 0
+World 0
+Range -1 -1 -1 -1
+End
+
+
+
+#MOBILES
+#0
+
+
+
+#OBJECTS
+#0
+
+
+
+#ROOMS
+#35000
+a street not too far from an isolated warehouse`x~
+`wWorn pavement`x forms the road surface, it's patched seams and scuffed edges
+recording years of traffic. The traveled ground stays open between the rougher
+margins.`x
+~
+0 12 9
+B 1
+G 1 0 50 15 0
+C 1000 1000 1000
+T 3000
+M 5 H 0
+W (null)~
+Y (null)~
+S
+#35001
+an abandoned warehouse filled with occult items`x~
+Broad spans of industrial flooring lie beneath structural beams. Scratches and
+old handling marks break up the plain surfaces, giving the open warehouse
+space a thoroughly practical character.`x
+~
+0 524 9
+B 1
+G 1 0 50 15 0
+C 1000 1000 1000
+T 3000
+M 5 H 0
+W (null)~
+Y (null)~
+S
+#35002
+A bedroom in a Casino suite`x~
+A `wbedside area`x defines the room's quieter half. Sleeping furniture sits
+clear of a small standing space, and the surrounding walls give the interior a
+close, private scale.`x
+~
+0 44 9
+B 1
+G 0 0 50 15 0
+C 1000 1000 1000
+T 3000
+M 5 H 0
+W (null)~
+Y (null)~
+P
+bedside~
+There is room to sit or stand beside the sleeping area, close enough for quiet
+conversation.`x
+~
+S
+#35003
+A Casino suite in Hull~
+The enclosed space has a plain floor and close surrounding surfaces. A clear
+central area leaves room to stand together, with the quieter margins set back
+from the middle.`x
+~
+0 44 2
+B 1
+G 0 0 50 0 35
+C 1000 1000 1000
+T 3000
+M 0 H 0
+W (null)~
+Y (null)~
+S
+#35004
+A Smoky Casino Suite in Hull~
+The enclosed space has a plain floor and close surrounding surfaces. A clear
+central area leaves room to stand together, with the quieter margins set back
+from the middle.`x
+~
+0 44 2
+B 1
+G 2 0 50 0 35
+C 1000 1000 1000
+T 3000
+M 5 H 0
+W (null)~
+Y (null)~
+S
+#35005
+`rA Long, Dark `RT`ru`Rn`rnel`w~
+Rough `wstonework`x encloses the tunnel. Worn seams run along it's sides, and
+grit gathers where the walls meet the floor; the confined space makes nearby
+movement sound close.`x
+~
+0 12 2
+B 1
+G 4 0 70 0 35
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35006
+`rAn Expansive Mar`Rk`re`Rt`rplace`w~
+Rows of displays organize the shop floor, leaving space to browse between
+them. A `wcounter`x marks the edge of the customer area; scuffs near it's base
+show where people linger. Broad proportions give the central space room to
+breathe.`x
+~
+0 44 2
+B 1
+G 4 0 70 0 35
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+P
+counter~
+The counter marks the public edge of the sales area.`x
+~
+P
+displays~
+Space between the displays allows a small group to browse together.`x
+~
+S
+#35007
+`rA Black P`Ra`rs`Rs`rage`w~
+An open strip of flooring lies between the surrounding structural surfaces.
+Worn patches show where people pass, while the margins provide a quieter place
+to pause.`x
+~
+0 44 2
+B 1
+G 4 0 70 0 35
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35008
+`rThe Dark Work`Rs`rh`Ro`rp of the Ar`Rt`ri`Rs`ran`w~
+Darkened work surfaces surround a central `wworkbench`x. Fine tool marks and
+carefully separated working areas suggest patient craft, with the room's close
+proportions keeping attention on what lies at hand.`x
+~
+0 44 2
+B 1
+G 4 0 70 0 35
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+P
+workbench~
+The bench provides a working station at the room's edge.`x
+~
+S
+#35009
+`rA Narrow Passage to M`Ra`rny B`Rl`ra`Rc`rk Cells`w~
+An open strip of flooring lies between the surrounding structural surfaces.
+Worn patches show where people pass, while the margins provide a quieter place
+to pause.`x
+~
+0 12 2
+B 1
+G 4 0 70 0 35
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35010
+`rThe Blo`Ro`rd B`Ra`rt`Rh`rs`w~
+Deep red decorative surfaces surround a club interior arranged for close
+gatherings. A `wseating area`x rests against the wall, it's dark upholstery
+contrasting with the open central floor.`x
+~
+0 44 3
+B 1
+G 4 0 70 0 35
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+P
+seating area~
+The seats form a small group for conversation.`x
+~
+S
+#35011
+ViTech Corp- Entrance~
+A worn approach defines the threshold of the surrounding space. The ground is
+clearest in the middle, where repeated passage has left it's mark.`x
+~
+0 44 9
+B 1
+G 0 0 60 15 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35012
+`yDirt Road`w~
+`wWorn pavement`x forms the road surface, it's patched seams and scuffed edges
+recording years of traffic. The traveled ground stays open between the rougher
+margins.`x
+~
+0 36 1
+B 1
+G 0 0 200 100 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35013
+ViTech Corp- Lobby~
+Clean-lined corporate finishes frame a compact reception space. A `wwaiting
+bench`x sits against the wall, with an open central floor emphasizing the
+room's orderly, impersonal presentation.`x
+~
+0 44 8
+B 1
+G 0 0 150 0 50
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+P
+waiting bench~
+The bench provides a place to wait clear of the central floor.`x
+~
+S
+#35014
+ViTech Corp- Second Floor~
+An open strip of flooring lies between the surrounding structural surfaces.
+Worn patches show where people pass, while the margins provide a quieter place
+to pause.`x
+~
+0 44 8
+B 1
+G 0 0 150 0 50
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35015
+Vitech Corp- Basement Lab~
+Washable laboratory surfaces sit beneath the building's heavy lower structure.
+A `wworkbench`x occupies one side, it's practical layout contrasting with the
+close, enclosed proportions of the basement.`x
+~
+0 44 14
+B 1
+G 0 0 60 20 20
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+P
+workbench~
+The bench provides a working station at the room's edge.`x
+~
+S
+#35016
+ViTech Corp- Hallway~
+Plain walls border a strip of hard flooring. Wear follows the middle of the
+corridor, while it's margins remain quiet and comparatively untouched.`x
+~
+0 44 9
+B 1
+G 0 0 60 15 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35017
+ViTech Corp- Conference Room: A~
+A `wmeeting table`x organizes the formal interior. Chairs face it's center, and
+the surrounding floor provides room to stand outside the seated group.`x
+~
+0 44 9
+B 1
+G 0 0 60 15 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+P
+meeting table~
+Chairs arranged around the table allow the group to face one another.`x
+~
+S
+#35018
+ViTech Corp- Conference Room: A~
+A `wmeeting table`x organizes the formal interior. Chairs face it's center, and
+the surrounding floor provides room to stand outside the seated group.`x
+~
+0 44 9
+B 1
+G 0 0 60 15 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+P
+meeting table~
+Chairs arranged around the table allow the group to face one another.`x
+~
+S
+#35019
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35020
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35021
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35022
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35023
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35024
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35025
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35026
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35027
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35028
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35029
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35030
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35031
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35032
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35033
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35034
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35035
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35036
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35037
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35038
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35039
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35040
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35041
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35042
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35043
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35044
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35045
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35046
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35047
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35048
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35049
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35050
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35051
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35052
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35053
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35054
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35055
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35056
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35057
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35058
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35059
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35060
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35061
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35062
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35063
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35064
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35065
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35066
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35067
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35068
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35069
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35070
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35071
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35072
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35073
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35074
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35075
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35076
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35077
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35078
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35079
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35080
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35081
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35082
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35083
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35084
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35085
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35086
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35087
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35088
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35089
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35090
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35091
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35092
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35093
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35094
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35095
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35096
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35097
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35098
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35099
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#35100
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#0
+
+
+
+#RESETS
+S
+
+
+
+#SHOPS
+0
+
+
+
+#$

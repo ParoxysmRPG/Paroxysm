@@ -1,0 +1,904 @@
+#FACTION
+Vnum     5
+Type     1
+Name The Cortex~
+PatronRelation 0
+PowerWorships ~
+PowerOpposes ~
+Eidilon ~
+EidilonType 0
+EidilonPlayers ~
+Description The Cortex is a corrupt, authoritarian society strongly opposed to supernaturals. Its other ideological positions are neutral.~
+Outcast 0
+Manifesto The Cortex pursues power through corruption and authoritarian control. Its supernatural members are subject to faction chip control.~
+Missions Acquire influence through patronage, bribery and coercion. Enforce Cortex authority and the chipping of supernatural members.~
+History The Cortex built its power through corruption and authoritarian control. It destroyed the Order, exploiting the virtuous society's refusal to compromise its principles.~
+Roles Cortex members may act as officials, brokers, investigators, researchers or soldiers. No combat or arcane focus is required for membership.~
+Scenes Negotiate a corrupt bargain, enforce a decree, expose a rival's weakness, or resist an abuse of Cortex authority.~
+OOC ~
+AllianceSide 1
+AllianceNumber 5
+AllianceName ~
+SecretDays 2
+StasisTime 0
+StasisAccount ~
+PositionTime 1521365868
+RestrictTime 0
+Cardinal 0
+Staff 0
+Subtype 0
+NoPart 0
+LastOperation 1704585600
+LastIntel 1702165470
+LastDeploy 1704585600
+OperationWins 368
+StealMult 0
+LifeEarned 3491
+WeeklyResources 1440
+LastHighIntel 1705123863
+Axes 0 4 4 1 1 7 4 0 0 0
+Attr 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+Restrictions 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+Crystals 0 0 0 0 0
+BattleHour 0
+BattleDay 0
+BattleTerritory 0
+BattleClimate 0
+BattleWins 0
+AntagSoloWins 0
+AntagGroupWins 0
+BattleOps 0
+CanAlt 0
+PrisonEmotes 0
+Stasis 0
+Closed 0
+Alchemy 0
+LastIncite 1681257600
+Log 0 183 [Sep  9 15:10] Wegwwg joins The Cortex.~
+Log 1 199 [Sep 11 22:44] NewCharacter24 joins The Cortex.~
+DayResources 0
+Parent 0
+College 0
+CortexQuotaMonth 24321
+CortexQuotaHarvested 0
+CortexLastDissent 0
+Resources 15180
+Research 0
+Support 0
+SoftRestrict 0
+Manpower 8
+Symbol a clenched fist~
+Update 2
+SoldierDeploy 0
+SoldierName a Cortex operative in tactical gear~
+SoldierDesc This Cortex operative wears black tactical gear marked with the faction insignia. A rifle and protective equipment complete the uniform.~
+SoldierReinforce 9
+Type 1
+Awards 2
+AwardProgress 1903
+Patrolling 0
+Guarding 0
+Report ~
+OpHourRan 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+OpSecondPlace 0 0 0 0 0
+Rank 0 Intake~ 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+Rank 1 Food~ 1 1 1 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+Rank 2 Intern~ 1 1 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+Rank 3 Keeper~ 1 1 1 0 1 0 1 0 0 1 0 1 0 0 0 0 0 0 0 0
+Rank 4 Shadow~ 1 1 1 0 1 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0
+Rank 5 Whisper~ 1 1 1 0 1 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0
+Rank 6 CSO~ 1 1 1 0 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0
+Rank 7 CIO~ 1 1 1 0 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0
+Rank 8 CFO~ 1 1 1 0 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0
+Rank 9 CEO~ 1 1 1 0 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0
+Member Wegwwg~
+100 14 0 0 0 0 1 0 0 0 0 ~
+~
+Member NewCharacter24~
+100 0 0 0 0 0 1 0 0 0 0 ~
+~
+ReportTwoTitle The Golden Shadow's operation in District 82~
+ReportTwoTime 1789095600
+ReportTwoText At Fri Sep 11 2026, in mountains near District 82
+
+`cMission: Get to one of the three designated sites and continue securing the area until the process is complete.`x
+
+
+
+in mountains near District 82
+It is `Dnight`x, about `D-2`xF(`D-18`xC) degrees, There is a new moon.  
+
+
+The Golden Shadow has proved victorious.~
+ReportThreeTitle The Destined Host's operation in Westrend~
+ReportThreeTime 1789099200
+ReportThreeText At Fri Sep 11 2026, in a village near Westrend
+
+`cMission: Get to one of the three designated sites and continue securing the area until the process is complete.`x
+
+
+
+in a village near Westrend
+It is `Dnight`x, about `D-4`xF(`D-20`xC) degrees, There is a new moon.  
+
+
+The Destined Host has proved victorious.~
+ReportOneSent 1
+ReportTwoSent 0
+ReportThreeSent 0
+ReportOnePSent 0
+ReportTwoPSent 0
+ReportThreePSent 0
+End
+
+#FACTION
+Vnum     7
+Type     1
+Name The Scum~
+PatronRelation 0
+PowerWorships ~
+PowerOpposes ~
+Eidilon ~
+EidilonType 0
+EidilonPlayers ~
+Description The Scum is a strongly democratic society that moderately supports supernaturals. Its other ideological positions are neutral.~
+Outcast 0
+Manifesto The Scum champions democratic rule and supports supernatural participation.~
+Missions Build democratic opposition to the Cortex. Recruit natural and supernatural allies, and use influence, favors and underhanded bargains to support the society.~
+History The Scum opposes the Cortex through democratic organization and a willingness to use corrupt means. Many members cite the Order's destruction as proof that only extremism can resist the Cortex.~
+Roles Scum members may organize, negotiate, investigate, research or fight. Natural and supernatural members can participate, and no arcane or combat focus is required.~
+Scenes Debate a collective decision, recruit an ally, negotiate a questionable deal, or argue about how far resistance should go.~
+OOC ~
+AllianceSide 3
+AllianceNumber 7
+AllianceName ~
+SecretDays 8
+StasisTime 0
+StasisAccount ~
+PositionTime 1521367147
+RestrictTime 1521367303
+Cardinal 0
+Staff 0
+Subtype 0
+NoPart 0
+LastOperation 1702990800
+LastIntel 1672792666
+LastDeploy 1704639601
+OperationWins 112
+StealMult 0
+LifeEarned 1993
+WeeklyResources 265
+LastHighIntel 1705428863
+Axes 0 4 4 4 7 2 4 0 0 0
+Attr 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+Restrictions 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+Crystals 0 0 0 0 0
+BattleHour 0
+BattleDay 0
+BattleTerritory 0
+BattleClimate 0
+BattleWins 0
+AntagSoloWins 0
+AntagGroupWins 0
+BattleOps 0
+CanAlt 0
+PrisonEmotes 0
+Stasis 0
+Closed 0
+Alchemy 0
+LastIncite 1701547679
+DayResources 0
+Parent 0
+College 0
+Resources 15393
+Research 0
+Support 0
+SoftRestrict 1
+Manpower 15
+Symbol a stylized sun~
+Update 0
+SoldierDeploy 0
+SoldierName a Scum operative in protective gear~
+SoldierDesc This Scum operative wears practical protective gear bearing the society's insignia and carries equipment suited to the mission.~
+SoldierReinforce 0
+Type 1
+Awards 2
+AwardProgress 1349
+Patrolling 0
+Guarding 0
+Report ~
+OpHourRan 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+OpSecondPlace 0 0 0 0 0
+Rank 0 Recruit~ 1 1 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+Rank 1 Demolisher~ 1 1 1 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+Rank 2 Assistant~ 1 1 1 0 1 1 1 0 0 0 0 1 0 0 0 0 0 0 0 0
+Rank 3 Private~ 1 1 1 0 1 1 1 0 0 0 0 1 0 0 0 0 0 0 0 0
+Rank 4 Grenadier~ 1 1 1 0 1 1 1 0 1 1 0 1 0 0 0 0 0 0 0 0
+Rank 5 Agent~ 1 1 1 0 1 1 1 0 1 1 0 1 0 0 0 0 0 0 0 0
+Rank 6 Sergeant~ 1 1 1 0 1 1 1 0 1 1 0 1 0 0 0 0 0 0 0 0
+Rank 7 Captain~ 1 1 1 0 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0
+Rank 8 Director~ 1 1 1 0 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0
+Rank 9 Commander~ 1 1 1 0 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0
+ReportTwoTitle The Golden Shadow's operation in District 82~
+ReportTwoTime 1789095600
+ReportTwoText At Fri Sep 11 2026, in mountains near District 82
+
+`cMission: Get to one of the three designated sites and continue securing the area until the process is complete.`x
+
+
+
+in mountains near District 82
+It is `Dnight`x, about `D-2`xF(`D-18`xC) degrees, There is a new moon.  
+
+
+The Golden Shadow has proved victorious.~
+ReportThreeTitle The Destined Host's operation in Westrend~
+ReportThreeTime 1789099200
+ReportThreeText At Fri Sep 11 2026, in a village near Westrend
+
+`cMission: Get to one of the three designated sites and continue securing the area until the process is complete.`x
+
+
+
+in a village near Westrend
+It is `Dnight`x, about `D-4`xF(`D-20`xC) degrees, There is a new moon.  
+
+
+The Destined Host has proved victorious.~
+ReportOneSent 0
+ReportTwoSent 0
+ReportThreeSent 0
+ReportOnePSent 0
+ReportTwoPSent 0
+ReportThreePSent 0
+End
+
+#FACTION
+Vnum     29
+Type     0
+Name The Destined Host~
+PatronRelation 0
+PowerWorships ~
+PowerOpposes ~
+Eidilon ~
+EidilonType 0
+EidilonPlayers ~
+Description The Destined Host is a faction that believes in the power and supremacy
+of demons, viewing them as the world's only hope against impending doom. They have
+made pacts with these otherworldly entities, gaining power and influence in exchange
+for their loyalty and service. They work tirelessly to strengthen the demons' hold
+on the world, conducting dark rituals and seeking out ancient artifacts that could
+help to bring more of their benefactors into this realm. Despite their seemingly
+malevolent alliances, they see themselves as the world's protectors, believing that
+only by embracing the power of demons can the world be saved.~
+Outcast 0
+Manifesto ~
+Missions ~
+History ~
+Roles ~
+Scenes ~
+OOC ~
+AllianceSide 0
+AllianceNumber 9
+AllianceName ~
+SecretDays 13311
+StasisTime 0
+StasisAccount ~
+PositionTime 0
+RestrictTime 0
+Cardinal 0
+Staff 0
+Subtype 0
+NoPart 0
+LastOperation 1789099200
+LastIntel 1608732000
+LastDeploy 0
+OperationWins 23
+StealMult 475
+LifeEarned -2400
+WeeklyResources 0
+LastHighIntel 0
+Axes 0 0 0 0 0 0 0 0 0 0
+Attr 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+Restrictions 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+Crystals 0 0 0 0 0
+BattleHour 0
+BattleDay 0
+BattleTerritory 0
+BattleClimate 0
+BattleWins 1
+AntagSoloWins 1
+AntagGroupWins -2
+BattleOps 1
+CanAlt 0
+PrisonEmotes 0
+Stasis 0
+Closed 0
+Alchemy 0
+LastIncite 1501150006
+DayResources 0
+Parent 0
+College 0
+Resources 10000
+Research 0
+Support 0
+SoftRestrict 0
+Manpower 15
+Symbol A crimson hand holding a blackened, thorned crown~
+Update 6
+SoldierDeploy 0
+SoldierName a figure clad in red and black camo with demonic sigils etched into their weapons~
+SoldierDesc ~
+SoldierReinforce 0
+Type 0
+Awards 0
+AwardProgress 0
+Patrolling 0
+Guarding 0
+Adversary 0
+Antagonist 1
+Report ~
+OpHourRan 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0
+OpSecondPlace 0 0 0 0 0
+Rank 0 ~ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+Rank 1 ~ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+Rank 2 ~ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+Rank 3 ~ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+Rank 4 ~ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+Rank 5 ~ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+Rank 6 ~ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+Rank 7 ~ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+Rank 8 ~ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+Rank 9 ~ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ReportTwoTitle ~
+ReportTwoTime 0
+ReportTwoText ~
+ReportThreeTitle ~
+ReportThreeTime 0
+ReportThreeText ~
+ReportOneSent 0
+ReportTwoSent 0
+ReportThreeSent 0
+ReportOnePSent 0
+ReportTwoPSent 0
+ReportThreePSent 0
+End
+
+#FACTION
+Vnum     26
+Type     0
+Name The Golden Shadow~
+PatronRelation 0
+PowerWorships ~
+PowerOpposes ~
+Eidilon ~
+EidilonType 0
+EidilonPlayers ~
+Description The Golden Shadow is a mercenary group that has chosen to profit
+from the world's impending destruction rather than try to prevent it. They
+are opportunists, working with whoever offers the most gain, be it dark
+forces or desperate individuals. Their ideology is one of ruthless pragmatism;
+they believe that in a world destined for destruction, the only sensible
+course of action is to amass as much wealth and power as possible while they
+can. They are skilled fighters and negotiators, using their talents to
+exploit the fear and chaos that the approaching apocalypse has caused.~
+Outcast 0
+Manifesto ~
+Missions ~
+History ~
+Roles ~
+Scenes ~
+OOC ~
+AllianceSide 0
+AllianceNumber 9
+AllianceName ~
+SecretDays 13311
+StasisTime 0
+StasisAccount ~
+PositionTime 0
+RestrictTime 0
+Cardinal 0
+Staff 0
+Subtype 0
+NoPart 0
+LastOperation 1789095600
+LastIntel 1608732000
+LastDeploy 0
+OperationWins 97
+StealMult 475
+LifeEarned -2400
+WeeklyResources 0
+LastHighIntel 0
+Axes 0 0 0 0 0 0 0 0 0 0
+Attr 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+Restrictions 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+Crystals 0 0 0 0 0
+BattleHour 0
+BattleDay 0
+BattleTerritory 0
+BattleClimate 0
+BattleWins 1
+AntagSoloWins 0
+AntagGroupWins -4
+BattleOps 1
+CanAlt 0
+PrisonEmotes 0
+Stasis 0
+Closed 0
+Alchemy 0
+LastIncite 1501149584
+DayResources 0
+Parent 0
+College 0
+Resources 10000
+Research 0
+Support 0
+SoftRestrict 0
+Manpower 15
+Symbol A golden dagger plunged through a shadowy globe~
+Update 6
+SoldierDeploy 0
+SoldierName a figure in sleek, black tactical gear, with a golden emblem on their shoulder~
+SoldierDesc ~
+SoldierReinforce 0
+Type 0
+Awards 0
+AwardProgress 0
+Patrolling 0
+Guarding 0
+Adversary 0
+Antagonist 1
+Report ~
+OpHourRan 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0
+OpSecondPlace 0 0 0 0 0
+Rank 0 ~ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+Rank 1 ~ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+Rank 2 ~ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+Rank 3 ~ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+Rank 4 ~ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+Rank 5 ~ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+Rank 6 ~ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+Rank 7 ~ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+Rank 8 ~ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+Rank 9 ~ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ReportTwoTitle ~
+ReportTwoTime 0
+ReportTwoText ~
+ReportThreeTitle ~
+ReportThreeTime 0
+ReportThreeText ~
+ReportOneSent 0
+ReportTwoSent 0
+ReportThreeSent 0
+ReportOnePSent 0
+ReportTwoPSent 0
+ReportThreePSent 0
+End
+
+#FACTION
+Vnum     27
+Type     0
+Name The Black Flame~
+PatronRelation 0
+PowerWorships ~
+PowerOpposes ~
+Eidilon ~
+EidilonType 0
+EidilonPlayers ~
+Description The Black Flame is a cult that worships the eldritch horrors of the
+void, seeing them not as bringing about a necessary end. They believe that the
+world's destruction is not only inevitable, but desirable, a cleansing fire
+that will pave the way for whatever comes next. Their members are drawn from
+all walks of life, united by a shared fascination with the unknown and a desire
+to prepare the world for its impending end. They conduct rituals designed to
+hasten the arrival of the eldritch horrors, and work to spread their beliefs,
+hoping to convert others to their cause. Despite their dark and seemingly
+nihilistic ideology, they see themselves as the world's saviors, guiding it
+towards its ultimate destiny.~
+Outcast 0
+Manifesto ~
+Missions ~
+History ~
+Roles ~
+Scenes ~
+OOC ~
+AllianceSide 0
+AllianceNumber 9
+AllianceName ~
+SecretDays 13311
+StasisTime 0
+StasisAccount ~
+PositionTime 0
+RestrictTime 0
+Cardinal 0
+Staff 0
+Subtype 0
+NoPart 0
+LastOperation 1705446001
+LastIntel 1608732000
+LastDeploy 0
+OperationWins 29
+StealMult 475
+LifeEarned -2400
+WeeklyResources 0
+LastHighIntel 0
+Axes 0 0 0 0 0 0 0 0 0 0
+Attr 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+Restrictions 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+Crystals 0 0 0 0 0
+BattleHour 0
+BattleDay 0
+BattleTerritory 0
+BattleClimate 0
+BattleWins 0
+AntagSoloWins 3
+AntagGroupWins 3
+BattleOps 1
+CanAlt 0
+PrisonEmotes 0
+Stasis 0
+Closed 0
+Alchemy 0
+LastIncite 1501149833
+DayResources 0
+Parent 0
+College 0
+Resources 10000
+Research 0
+Support 0
+SoftRestrict 0
+Manpower 15
+Symbol An obsidian flame-wreathed globe~
+Update 6
+SoldierDeploy 0
+SoldierName a figure in dark robes, with an impassive white mask~
+SoldierDesc ~
+SoldierReinforce 0
+Type 0
+Awards 0
+AwardProgress 0
+Patrolling 0
+Guarding 0
+Adversary 0
+Antagonist 1
+Report ~
+OpHourRan 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+OpSecondPlace 0 0 0 0 0
+Rank 0 ~ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+Rank 1 ~ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+Rank 2 ~ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+Rank 3 ~ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+Rank 4 ~ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+Rank 5 ~ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+Rank 6 ~ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+Rank 7 ~ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+Rank 8 ~ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+Rank 9 ~ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ReportTwoTitle ~
+ReportTwoTime 0
+ReportTwoText ~
+ReportThreeTitle ~
+ReportThreeTime 0
+ReportThreeText ~
+ReportOneSent 0
+ReportTwoSent 0
+ReportThreeSent 0
+ReportOnePSent 0
+ReportTwoPSent 0
+ReportThreePSent 0
+End
+
+#FACTION
+Vnum     6
+Type     1
+Name The Order~
+PatronRelation 0
+PowerWorships ~
+PowerOpposes ~
+Eidilon ~
+EidilonType 0
+EidilonPlayers ~
+Description The Order was once a virtuous society. Destroyed by the Cortex, it survives as a historical warning rather than an organization open to player membership.~
+Outcast 0
+Manifesto The Order was once a virtuous society, destroyed by the Cortex. Its unwillingness to compromise on morality made it an easy target. Many members of the Scum point to its destruction as proof that extremism is the only way to resist.~
+Missions Using Preastes rituals to protect innocents or other likely targets.  
+
+Argue morality with those who disagree with The Order's philosophy.  
+
+Argue morality with others inside the Order.  
+
+Seduce or befriend enemies in order to try and redeem them and bring them
+around to Order-like morality.  
+
+Take the place of would-be victims to save them.  
+
+Extract Venetian Oaths from villains to at least temporarily limit their
+ability to do evil.  
+
+Curse evil doers.  
+
+Use magic or drugs to try and rehabilitate evil doers.  
+
+Punish evil doers.  
+
+Promote love, equality and peace socially or supernaturally.  
+
+Bargain or charm evil doers away from their current evil ambitions.  
+~
+History After the Gods and Fae left earth behind, some of their former students
+and acolytes formed several supernatural councils.  A druidic council in the
+northwest of Europe was initially a small time player in the supernatural
+world but eventually grew into a powerful player called The Order who saw to
+the destruction of the Western Roman Empire.  
+
+Throughout the medieval period they controlled most of Central Europe.  The
+Industrial revolution led to the decline of the power of the supernatural
+and after World War Two the Order was left shattered, broken up into a dozen
+smaller fragments which rose and fell over the following decades.  One year
+after the supposed defeat of Et-Aral however several in the supernatural
+community started advocating for greater cohesion, the need to return to
+larger, more powerful groups to safeguard the world and The Order began to
+regather its strength.  
+~
+Roles Shieldbearers are the largest military group with The Order and are
+responsible for the protection of others.  
+
+The Shieldbearers are tasked with handling all the Order's defense and siege
+work.  Usually deploying in practical street wear, but with a signature coat
+or jacket to identify themselves(typically brown) they tend to use heavy
+armor and favor emplaced heavy weaponry.  They tend to prefer to pick areas
+of high value or impact and then set up defenses and emplaced weaponry in
+that area to ensure it stays with the Order.  They are vulnerable however to
+being caught while moving locations.  They often take round ballistic
+shields with them into battle, using them to cover each other when needed,
+or placing them along walls to help fortify an area against weapons fire,
+they are usually called 'girls' by the other factions.  
+
+Swordbearers are a smaller group with the Order, dedicated to proactive
+efforts to deal with threats before the shieldbearers may be needed.  
+
+The Swordbearers are the most mobile of the divisions, they tend to favor
+fairly light armor and weapons such as pistols and submachine guns.  Usually
+deploying in practical street wear, but with a signature coat or jacket to
+identify themselves(typically brown) they are also the most melee focused of
+the divisions and generally try to use their mobility to close and or flank
+the enemies before tearing into them in close quarters combat.  Swordbearers
+are often called 'dogs' by the other factions.  
+
+Librarians are the support and investigative arm of the Order, and those
+who're less focused on conflict than on research and finding ways to improve
+the world through the occult.  
+~
+Scenes Argue morality with Order members.  
+
+Corrupt Order members to work against their principles.  
+
+Punish Order members for interfering.  
+
+Manipulate Order members with threats against innocents.  
+~
+OOC ~
+AllianceSide 0
+AllianceNumber 6
+AllianceName ~
+SecretDays 2
+StasisTime 0
+StasisAccount ~
+PositionTime 1521366571
+RestrictTime 1521366592
+Cardinal 0
+Staff 0
+Subtype 0
+NoPart 0
+LastOperation 1703181600
+LastIntel 1645404019
+LastDeploy 1704859200
+OperationWins 283
+StealMult 0
+LifeEarned 2567
+WeeklyResources 857
+LastHighIntel 1704585312
+Axes 0 1 3 7 7 4 3 0 0 0
+Attr 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+Restrictions 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0
+Crystals 0 0 0 0 0
+BattleHour 0
+BattleDay 0
+BattleTerritory 0
+BattleClimate 0
+BattleWins 0
+AntagSoloWins 0
+AntagGroupWins 0
+BattleOps 0
+CanAlt 0
+PrisonEmotes 0
+Stasis 0
+Closed 1
+Alchemy 0
+LastIncite 1683846001
+DayResources 0
+Parent 0
+College 0
+Resources 15904
+Research 0
+Support 0
+SoftRestrict 1
+Manpower 2
+Symbol a sword crossed with a scroll~
+Update 2
+SoldierDeploy 0
+SoldierName order Swordbearer~
+SoldierDesc This figure is dressed in practical street clothes and a heavy long brown
+suede coat which just barely fails to conceal the shiny metal of ringmail on
+their torso and the sword at their hip.  The crossguard of the sword
+features a symbol of a scroll crossed with a sword.  
+~
+SoldierReinforce 0
+Type 1
+Awards 0
+AwardProgress 1610
+Patrolling 0
+Guarding 0
+Report ~
+OpHourRan 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+OpSecondPlace 0 0 0 0 0
+Rank 0 Initiate~ 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+Rank 1 Penitent~ 1 1 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+Rank 2 Acolyte~ 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+Rank 3 Sword~ 1 1 1 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+Rank 4 Shield~ 1 1 1 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+Rank 5 Scroll~ 1 1 1 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+Rank 6 M.Sword~ 1 1 1 0 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0
+Rank 7 M.Scroll~ 1 1 1 0 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0
+Rank 8 M.Shield~ 1 1 1 0 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0
+Rank 9 Warden~ 1 1 1 0 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0
+ReportTwoTitle The Golden Shadow's operation in District 82~
+ReportTwoTime 1789095600
+ReportTwoText At Fri Sep 11 2026, in mountains near District 82
+
+`cMission: Get to one of the three designated sites and continue securing the area until the process is complete.`x
+
+
+
+in mountains near District 82
+It is `Dnight`x, about `D-2`xF(`D-18`xC) degrees, There is a new moon.  
+
+
+The Golden Shadow has proved victorious.~
+ReportThreeTitle The Destined Host's operation in Westrend~
+ReportThreeTime 1789099200
+ReportThreeText At Fri Sep 11 2026, in a village near Westrend
+
+`cMission: Get to one of the three designated sites and continue securing the area until the process is complete.`x
+
+
+
+in a village near Westrend
+It is `Dnight`x, about `D-4`xF(`D-20`xC) degrees, There is a new moon.  
+
+
+The Destined Host has proved victorious.~
+ReportOneSent 0
+ReportTwoSent 0
+ReportThreeSent 0
+ReportOnePSent 0
+ReportTwoPSent 0
+ReportThreePSent 0
+End
+
+#FACTION
+Vnum     28
+Type     0
+Name The Sapphire Martyrs~
+PatronRelation 0
+PowerWorships ~
+PowerOpposes ~
+Eidilon ~
+EidilonType 0
+EidilonPlayers ~
+Description The Sapphire Martyrs believe that nothing can be done to prevent the destruction
+of Earth but if the other worlds are still connected to it when its end comes,
+they too will perish. As such they are trying to achieve enough domination over
+the world to destroy it before its destined demise so as to sever those
+connections and save the other worlds.
+
+Their ranks are filled with individuals who have lost hope in salvation and are
+ready to embrace oblivion, believing in the purity of their cause. Their ideology
+is steeped in a profound sense of martyrdom, and they view their mission as a
+tragic but necessary act of love. Despite the horror of their objective, they
+carry themselves with a chilling serenity, seeing beauty in the sacrifice
+they are prepared to make.~
+Outcast 0
+Manifesto ~
+Missions ~
+History ~
+Roles ~
+Scenes ~
+OOC ~
+AllianceSide 0
+AllianceNumber 9
+AllianceName ~
+SecretDays 13311
+StasisTime 0
+StasisAccount ~
+PositionTime 0
+RestrictTime 0
+Cardinal 0
+Staff 0
+Subtype 0
+NoPart 0
+LastOperation 1789092000
+LastIntel 1608732000
+LastDeploy 0
+OperationWins 21
+StealMult 475
+LifeEarned -2400
+WeeklyResources 0
+LastHighIntel 0
+Axes 0 0 0 0 0 0 0 0 0 0
+Attr 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+Restrictions 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+Crystals 0 0 0 0 0
+BattleHour 0
+BattleDay 0
+BattleTerritory 0
+BattleClimate 0
+BattleWins 2
+AntagSoloWins 0
+AntagGroupWins -3
+BattleOps 2
+CanAlt 0
+PrisonEmotes 0
+Stasis 0
+Closed 0
+Alchemy 0
+LastIncite 1501149931
+DayResources 0
+Parent 0
+College 0
+Resources 10000
+Research 0
+Support 0
+SoftRestrict 0
+Manpower 15
+Symbol A fractured, tear-shaped blue sapphire~
+Update 6
+SoldierDeploy 0
+SoldierName a figure in urban combat gear with a dark blue beret~
+SoldierDesc ~
+SoldierReinforce 0
+Type 0
+Awards 0
+AwardProgress 0
+Patrolling 0
+Guarding 0
+Adversary 0
+Antagonist 1
+Report ~
+OpHourRan 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0
+OpSecondPlace 0 0 0 0 0
+Rank 0 ~ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+Rank 1 ~ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+Rank 2 ~ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+Rank 3 ~ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+Rank 4 ~ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+Rank 5 ~ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+Rank 6 ~ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+Rank 7 ~ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+Rank 8 ~ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+Rank 9 ~ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ReportTwoTitle ~
+ReportTwoTime 0
+ReportTwoText ~
+ReportThreeTitle ~
+ReportThreeTime 0
+ReportThreeText ~
+ReportOneSent 0
+ReportTwoSent 0
+ReportThreeSent 0
+ReportOnePSent 0
+ReportTwoPSent 0
+ReportThreePSent 0
+End
+
+#END

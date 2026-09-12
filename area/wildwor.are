@@ -1,0 +1,77 @@
+#AREADATA
+Name World Wilds~
+VNUMs 401000 401999
+Completed 0
+World 2
+Range -1 -1 -1 -1
+End
+
+
+
+#MOBILES
+#0
+
+
+
+#OBJECTS
+#0
+
+
+
+#ROOMS
+#401003
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 0 H 0
+W (null)~
+Y ~
+S
+#401026
+The Forest~
+`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
+old leaves and fallen twigs, while overlapping branches divide the woodland
+into close, irregular spaces.`x
+~
+0 4194308 23
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 0 H 0
+W (null)~
+Y ~
+S
+#401027
+The Forest~
+`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
+old leaves and fallen twigs, while overlapping branches divide the woodland
+into close, irregular spaces.`x
+~
+0 4194308 23
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 0 H 0
+W (null)~
+Y ~
+S
+#0
+
+
+
+#RESETS
+S
+
+
+
+#SHOPS
+0
+
+
+
+#$

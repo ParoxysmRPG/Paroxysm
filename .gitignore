@@ -1,0 +1,44 @@
+# Build output
+src/.build/
+src/.build-local/
+*.o
+
+# Generated logs
+*.log
+python_engine.log
+
+# Runtime crash files
+core
+core.*
+area/core*
+area/shutdown.txt
+
+# Secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Editor and OS files
+.vscode/
+.DS_Store
+Thumbs.db
+*.swp
+
+# Keep the log directory itself
+!log/.gitkeep
+area/back*/
+data/back*/
+data/archives/back*/
+area/gmon.out
+area/*.tmp
+bin/nohup.out
+data/*.lock
+data/*.tmp
+src/copyover.data
+src/haven
+src/resolve
+src/shutdown.txt
+tools/__pycache__/
+*.pyc

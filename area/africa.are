@@ -1,0 +1,1761 @@
+#AREADATA
+Name Africa~
+VNUMs 38000 38999
+Completed 0
+World 0
+Range -1 -1 -1 -1
+End
+
+
+
+#MOBILES
+#0
+
+
+
+#OBJECTS
+#0
+
+
+
+#ROOMS
+#38000
+`230the `228Sandy Shoreline`230 of `159Tanzania's Coast`w~
+Loose `ysand`x slopes toward the water along Tanzania's coast. Shell fragments
+and strands of dried seaweed trace the tide's reach, while shallow ripples
+mark the firmer sand near the shoreline. Salt hangs in the air above the open
+beach.`x
+~
+0 516 26
+B 1
+G 68 20 50 40 40
+C 1000 1000 1000
+T 3000
+D3
+~
+~
+0 0 38001
+0 0 0 0 0 0 0 0 0
+M 6 H 0
+W (null)~
+Y (null)~
+S
+#38001
+`242the `238Depths`242 of a `065Mangrove Forest`242 on `113Tanzania`w~
+Tangled `gmangrove roots`x arch out of dark, waterlogged soil. Fallen leaves
+collect between the roots, and narrow pools reflect fragments of the dense
+canopy. The air smells of salt and wet earth; each step presses into the soft
+ground beneath the trees.`x
+~
+0 4 23
+B 1
+G 68 20 50 40 40
+C 1000 1000 1000
+T 3000
+D0
+~
+~
+0 0 38002
+0 0 0 0 0 0 0 0 0
+D1
+~
+~
+0 0 38000
+0 0 0 0 0 0 0 0 0
+M 7 H 0
+W (null)~
+Y (null)~
+S
+#38002
+`242a `088Tribal Encampment`242 concealed beneath the `131soil `242and `248stone`w~
+Rough stone and packed earth enclose a concealed encampment beneath the
+ground. Fabric screens divide the shelter into close, irregular spaces, their
+lower edges dusted with soil. A clear `wcamp center`x leaves room to gather
+beneath the low stone overhead.`x
+~
+0 12 11
+B 1
+G 68 20 50 0 30
+C 1000 1000 1000
+T 3000
+D2
+~
+~
+0 0 38001
+0 0 0 0 0 0 0 0 0
+M 7 H 0
+W (null)~
+Y (null)~
+P
+camp center~
+The center of the camp provides room to gather within the surrounding shelter.`x
+~
+S
+#38003
+`ythe Road to the Giza Necropolis`x~
+`wWorn pavement`x forms the road surface, it's patched seams and scuffed edges
+recording years of traffic. The traveled ground stays open between the rougher
+margins.`x
+~
+0 36 1
+B 1
+G 0 0 50 100 0
+C 1000 1000 1000
+T 3000
+D8
+~
+~
+0 0 38004
+0 0 0 0 0 0 0 0 0
+M 7 H 0
+W (null)~
+Y (null)~
+S
+#38004
+`ythe Road to `Ythe City of Giza`x~
+`wWorn pavement`x forms the road surface, it's patched seams and scuffed edges
+recording years of traffic. The traveled ground stays open between the rougher
+margins.`x
+~
+0 548 1
+B 1
+G 0 0 50 100 0
+C 1000 1000 1000
+T 3000
+D7
+~
+~
+0 0 38003
+0 0 0 0 0 0 0 0 0
+M 7 H 0
+W (null)~
+Y (null)~
+S
+#38005
+`ythe Streets of `YCairo`x~
+`wWorn pavement`x forms the road surface, it's patched seams and scuffed edges
+recording years of traffic. The traveled ground stays open between the rougher
+margins.`x
+~
+0 36 1
+B 1
+G 1 0 50 100 0
+C 1000 1000 1000
+T 3000
+D3
+~
+~
+0 0 38006
+0 0 0 0 0 0 0 0 0
+D6
+~
+~
+0 0 38023
+0 0 0 0 0 0 0 0 0
+M 7 H 0
+W (null)~
+Y (null)~
+S
+#38006
+`ya Bridge Crossing the `020N`026i`032l`038e `050R`049i`048v`047e`046r`x~
+The bridge stretches over the `cNile`x, with worn paving underfoot and a river
+breeze moving across the exposed span. Dust gathers at the foot of the
+parapet. Below, broken reflections drift across the water, setting the river's
+slow movement against the hard lines of the crossing.`x
+~
+0 36 1
+B 1
+G 1 0 50 100 0
+C 1000 1000 1000
+T 3000
+D1
+~
+~
+0 0 38005
+0 0 0 0 0 0 0 0 0
+D3
+~
+~
+0 0 38007
+0 0 0 0 0 0 0 0 0
+M 7 H 0
+W (null)~
+Y (null)~
+S
+#38007
+`ythe Streets of `YGiza, El Omraniya`x~
+`wWorn pavement`x forms the road surface, it's patched seams and scuffed edges
+recording years of traffic. The traveled ground stays open between the rougher
+margins.`x
+~
+0 36 1
+B 1
+G 1 0 50 100 0
+C 1000 1000 1000
+T 3000
+D1
+~
+~
+0 0 38006
+0 0 0 0 0 0 0 0 0
+D9
+~
+~
+0 0 38008
+0 0 0 0 0 0 0 0 0
+M 7 H 0
+W (null)~
+Y (null)~
+S
+#38008
+`ythe Streets of `YGiza, El Omraniya`x~
+`wWorn pavement`x forms the road surface, it's patched seams and scuffed edges
+recording years of traffic. The traveled ground stays open between the rougher
+margins.`x
+~
+0 36 1
+B 1
+G 1 0 50 100 0
+C 1000 1000 1000
+T 3000
+D3
+~
+~
+0 0 38021
+0 0 0 0 0 0 0 0 0
+D6
+~
+~
+0 0 38007
+0 0 0 0 0 0 0 0 0
+D9
+~
+~
+0 0 38009
+0 0 0 0 0 0 0 0 0
+M 7 H 0
+W (null)~
+Y (null)~
+S
+#38009
+`ythe Streets of `YGiza, El Omraniya`x~
+`wWorn pavement`x forms the road surface, it's patched seams and scuffed edges
+recording years of traffic. The traveled ground stays open between the rougher
+margins.`x
+~
+0 36 1
+B 1
+G 1 0 50 100 0
+C 1000 1000 1000
+T 3000
+D6
+~
+~
+0 0 38008
+0 0 0 0 0 0 0 0 0
+D9
+~
+~
+0 0 38011
+0 0 0 0 0 0 0 0 0
+M 7 H 0
+W (null)~
+Y (null)~
+S
+#38010
+`ya `RK`WF`RC`y in `YGiza`x`x~
+Red-and-white trim borders a hard-wearing dining space. Molded seating faces
+compact tables, and a `wservice counter`x organizes the customer side of the
+restaurant.`x
+~
+0 44 4
+B 1
+G 1 0 50 0 40
+C 1000 1000 1000
+T 3000
+D3
+~
+~
+1 0 38012
+0 0 0 0 0 0 0 0 0
+D4
+~
+~
+1 0 38013
+0 0 0 0 0 0 0 0 0
+M 7 H 0
+W (null)~
+Y (null)~
+P
+service counter~
+The counter offers room to stand along it's customer side.`x
+~
+S
+#38011
+`ythe Streets of `YGiza, El Omraniya`x~
+`wWorn pavement`x forms the road surface, it's patched seams and scuffed edges
+recording years of traffic. The traveled ground stays open between the rougher
+margins.`x
+~
+0 36 1
+B 1
+G 1 0 50 100 0
+C 1000 1000 1000
+T 3000
+D0
+~
+~
+0 0 38020
+0 0 0 0 0 0 0 0 0
+D6
+~
+~
+0 0 38009
+0 0 0 0 0 0 0 0 0
+D8
+~
+~
+0 0 38012
+0 0 0 0 0 0 0 0 0
+M 7 H 0
+W (null)~
+Y (null)~
+S
+#38012
+`ya Bending Road in `YGiza`x`x~
+`wWorn pavement`x forms the road surface, it's patched seams and scuffed edges
+recording years of traffic. The traveled ground stays open between the rougher
+margins.`x
+~
+0 36 1
+B 1
+G 1 0 50 100 0
+C 1000 1000 1000
+T 3000
+D1
+~
+~
+1 0 38010
+0 0 0 0 0 0 0 0 0
+D7
+~
+~
+0 0 38011
+0 0 0 0 0 0 0 0 0
+D8
+~
+~
+0 0 38014
+0 0 0 0 0 0 0 0 0
+M 7 H 0
+W (null)~
+Y (null)~
+S
+#38013
+`ya `WP`Rizza `WH`Rut `yin `YGiza`x`x~
+Warm red accents and practical dining furniture fill the restaurant. Booth
+seating breaks the floor into small alcoves, with the central standing space
+kept clear between them.`x
+~
+0 44 4
+B 1
+G 1 0 50 0 40
+C 1000 1000 1000
+T 3000
+D5
+~
+~
+1 0 38010
+0 0 0 0 0 0 0 0 0
+M 7 H 0
+W (null)~
+Y (null)~
+P
+booth seating~
+The booths provide inward-facing seats around compact tables.`x
+~
+S
+#38014
+`yan Alley Beside a `RK`WF`RC`x`x~
+Hard walls hem in a strip of scuffed paving. Grit collects along the edges of
+the `walley`x, where the ground receives less wear than the narrow middle.`x
+~
+0 516 7
+B 1
+G 1 0 50 50 0
+C 1000 1000 1000
+T 3000
+D1
+~
+~
+0 0 38015
+0 0 0 0 0 0 0 0 0
+D7
+~
+~
+0 0 38012
+0 0 0 0 0 0 0 0 0
+M 7 H 0
+W (null)~
+Y (null)~
+S
+#38015
+`ya `YB`yustling `YO`ypen-`YA`yir `YB`mazaar`x`x~
+Canvas awnings overlap above the open-air bazaar, breaking the light into
+strips across the dusty ground. Closely spaced stalls leave narrow aisles
+between their displays. A worn `wcounter`x faces the passing trade, surrounded
+by the mingled scents of cloth, spice, and sun-warmed canvas.`x
+~
+0 548 5
+B 1
+G 1 0 50 20 0
+C 1000 1000 1000
+T 3000
+D3
+~
+~
+0 0 38014
+0 0 0 0 0 0 0 0 0
+D6
+~
+~
+0 0 38016
+0 0 0 0 0 0 0 0 0
+M 7 H 0
+W (null)~
+Y (null)~
+P
+counter~
+The counter marks the public edge of the sales area.`x
+~
+P
+displays~
+Space between the displays allows a small group to browse together.`x
+~
+S
+#38016
+`ya `YB`yustling `YO`ypen-`YA`yir `YB`mazaar`x`x~
+Bolts of patterned cloth hang beneath the bazaar's awnings, their loose edges
+stirring above the aisle. Dust softens the colors near the ground, where
+countless footsteps have worn a shallow track. A `wcounter`x stands beneath
+the hanging fabric, with space to pause beside the displays.`x
+~
+0 36 5
+B 1
+G 1 0 50 20 0
+C 1000 1000 1000
+T 3000
+D8
+~
+~
+0 0 38017
+0 0 0 0 0 0 0 0 0
+D9
+~
+~
+0 0 38015
+0 0 0 0 0 0 0 0 0
+M 7 H 0
+W (null)~
+Y (null)~
+P
+counter~
+The counter marks the public edge of the sales area.`x
+~
+P
+displays~
+Space between the displays allows a small group to browse together.`x
+~
+S
+#38017
+`ya `YB`yustling `YO`ypen-`YA`yir `YB`mazaar`x`x~
+Shallow trays and stacked baskets fill the shaded displays of the bazaar. The
+dry scent of spices lingers beneath the canvas, and bright slivers of open sky
+show between the awnings. A scuffed `wcounter`x borders the aisle, the wood
+worn smooth along the edge nearest the foot traffic.`x
+~
+0 548 5
+B 1
+G 1 0 50 20 0
+C 1000 1000 1000
+T 3000
+D2
+~
+~
+0 0 38018
+0 0 0 0 0 0 0 0 0
+D7
+~
+~
+0 0 38016
+0 0 0 0 0 0 0 0 0
+M 7 H 0
+W (null)~
+Y (null)~
+P
+counter~
+The counter marks the public edge of the sales area.`x
+~
+P
+displays~
+Space between the displays allows a small group to browse together.`x
+~
+S
+#38018
+`ya `YB`yustling `YO`ypen-`YA`yir `YB`mazaar`x`x~
+Small metal wares catch the light along this stretch of the open-air bazaar.
+Canvas roofs cast uneven shade over the stalls, while the central aisle
+remains dusty and well trodden. A sturdy `wcounter`x provides a stopping place
+among the close-packed displays.`x
+~
+0 36 5
+B 1
+G 1 0 50 20 0
+C 1000 1000 1000
+T 3000
+D0
+~
+~
+0 0 38017
+0 0 0 0 0 0 0 0 0
+D3
+~
+drapes of textiles~
+1 0 38019
+0 0 0 0 0 0 0 0 0
+M 7 H 0
+W (null)~
+Y (null)~
+P
+counter~
+The counter marks the public edge of the sales area.`x
+~
+P
+displays~
+Space between the displays allows a small group to browse together.`x
+~
+S
+#38019
+`ma `YT`mextiles `YT`ment at the `YH`meart of the `YB`mazaar`x`x~
+Layers of woven cloth line the textiles tent, softening the framework beneath
+folds of muted color. Rolled rugs and hanging lengths of fabric border a clear
+`wcamp center`x where visitors can gather. Dust settles into the weave near
+the ground, and the canvas overhead filters the light into a warm, subdued
+glow.`x
+~
+0 12 5
+B 1
+G 1 0 50 20 0
+C 1000 1000 1000
+T 3000
+D1
+~
+drapes of textiles~
+1 0 38018
+0 0 0 0 0 0 0 0 0
+M 7 H 0
+W (null)~
+Y (null)~
+P
+camp center~
+The center of the camp provides room to gather within the surrounding shelter.`x
+~
+S
+#38020
+the Border Road~
+`wWorn pavement`x forms the road surface, it's patched seams and scuffed edges
+recording years of traffic. The traveled ground stays open between the rougher
+margins.`x
+~
+0 36 1
+B 1
+G 1 0 50 100 0
+C 1000 1000 1000
+T 3000
+D2
+~
+~
+0 0 38011
+0 0 0 0 0 0 0 0 0
+M 7 H 0
+W (null)~
+Y (null)~
+S
+#38021
+`ythe `CP`yyramids `CV`yiew `CI`ynn - Lobby`x`x~
+Pale plaster and warm wood trim frame a modest reception interior. A `wwaiting
+bench`x sits along one wall, leaving the center clear for arrivals within the
+inn's compact public space.`x
+~
+0 44 16
+B 1
+G 1 0 50 15 15
+C 1000 1000 1000
+T 3000
+D1
+~
+~
+0 0 38008
+0 0 0 0 0 0 0 0 0
+D4
+~
+~
+0 0 38024
+0 0 0 0 0 0 0 0 0
+M 7 H 0
+W (null)~
+Y (null)~
+P
+waiting bench~
+The bench provides a place to wait clear of the central floor.`x
+~
+S
+#38022
+`ythe `YC`yairo `YI`ynternational `YA`yirport`x~
+Broad circulation space and durable structural surfaces give this transport
+area a practical scale. A `wwaiting area`x occupies one edge, leaving the
+central ground clear.`x
+~
+0 44 9
+B 1
+G 1 0 50 15 0
+C 1000 1000 1000
+T 3000
+D3
+~
+~
+1 0 38023
+0 0 0 0 0 0 0 0 0
+M 7 H 0
+W (null)~
+Y (null)~
+P
+waiting area~
+The waiting area provides room to gather beside the main circulation space.`x
+~
+S
+#38023
+`ythe Streets of `YCairo`x~
+`wWorn pavement`x forms the road surface, it's patched seams and scuffed edges
+recording years of traffic. The traveled ground stays open between the rougher
+margins.`x
+~
+0 36 1
+B 1
+G 1 0 50 100 0
+C 1000 1000 1000
+T 3000
+D1
+~
+~
+1 0 38022
+0 0 0 0 0 0 0 0 0
+D9
+~
+~
+0 0 38005
+0 0 0 0 0 0 0 0 0
+M 7 H 0
+W (null)~
+Y (null)~
+S
+#38024
+`ythe `CP`yyramids `CV`yiew `CI`ynn - Upper Floor Hallway`x`x~
+Plain walls border a strip of hard flooring. Wear follows the middle of the
+corridor, while it's margins remain quiet and comparatively untouched.`x
+~
+0 12 9
+B 1
+G 1 0 50 15 0
+C 1000 1000 1000
+T 3000
+D0
+~
+~
+1 0 38027
+0 0 0 0 0 0 0 0 0
+D3
+~
+~
+1 0 38025
+0 0 0 0 0 0 0 0 0
+D4
+~
+~
+0 0 38028
+0 0 0 0 0 0 0 0 0
+D5
+~
+~
+0 0 38021
+0 0 0 0 0 0 0 0 0
+M 7 H 0
+W (null)~
+Y (null)~
+S
+#38025
+`ythe `CP`yyramids `CV`yiew `CI`ynn - Room 303`x`x~
+A `wbedside area`x defines the room's quieter half. Sleeping furniture sits
+clear of a small standing space, and the surrounding walls give the interior a
+close, private scale.`x
+~
+0 12 2
+B 1
+G 1 0 50 0 35
+C 1000 1000 1000
+T 3000
+D0
+~
+~
+1 0 38026
+0 0 0 0 0 0 0 0 0
+D1
+~
+~
+1 0 38024
+0 0 0 0 0 0 0 0 0
+M 7 H 0
+W (null)~
+Y (null)~
+P
+bedside~
+There is room to sit or stand beside the sleeping area, close enough for quiet
+conversation.`x
+~
+S
+#38026
+`ythe `CP`yyramids `CV`yiew `CI`ynn - Room 303 Bathroom`x`x~
+Hard surfaces and close-set fittings give the washroom a compact layout. A
+`wshower`x occupies one side, with a screened washing space and a drain
+beneath the fittings.`x
+~
+0 16777228 2
+B 1
+G 1 0 50 0 35
+C 1000 1000 1000
+T 3000
+D2
+~
+~
+1 0 38025
+0 0 0 0 0 0 0 0 0
+M 7 H 0
+W (null)~
+Y (null)~
+P
+shower~
+Water runs from the shower head into a drained washing space, with room to
+stand beneath the spray.`x
+~
+S
+#38027
+`ythe `CP`yyramids `CV`yiew `CI`ynn - Room 305`x`x~
+A `wbedside area`x defines the room's quieter half. Sleeping furniture sits
+clear of a small standing space, and the surrounding walls give the interior a
+close, private scale.`x
+~
+0 12 2
+B 1
+G 1 0 50 0 35
+C 1000 1000 1000
+T 3000
+D2
+~
+~
+1 0 38024
+0 0 0 0 0 0 0 0 0
+M 7 H 0
+W (null)~
+Y (null)~
+P
+bedside~
+There is room to sit or stand beside the sleeping area, close enough for quiet
+conversation.`x
+~
+S
+#38028
+`ythe `CP`yyramids `CV`yiew `CI`ynn - Rooftop Terrace`x`x~
+Low parapets border the inn's rooftop terrace. Sand has gathered in the seams
+of the weathered paving, and the exposed roof catches the dry breeze above the
+surrounding streets. Beyond the nearer buildings, the pyramids form broad,
+angular silhouettes against the distance.`x
+~
+0 36 13
+B 1
+G 1 0 50 50 50
+C 1000 1000 1000
+T 3000
+D5
+~
+~
+0 0 38024
+0 0 0 0 0 0 0 0 0
+M 7 H 0
+W (null)~
+Y (null)~
+S
+#38029
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#38030
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#38031
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#38032
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#38033
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#38034
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#38035
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#38036
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#38037
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#38038
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#38039
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#38040
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#38041
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#38042
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#38043
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#38044
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#38045
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#38046
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#38047
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#38048
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#38049
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#38050
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#38051
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#38052
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#38053
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#38054
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#38055
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#38056
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#38057
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#38058
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#38059
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#38060
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#38061
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#38062
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#38063
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#38064
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#38065
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#38066
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#38067
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#38068
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#38069
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#38070
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#38071
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#38072
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#38073
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#38074
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#38075
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#38076
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#38077
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#38078
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#38079
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#38080
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#38081
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#38082
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#38083
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#38084
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#38085
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#38086
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#38087
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#38088
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#38089
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#38090
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#38091
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#38092
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#38093
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#38094
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#38095
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#38096
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#38097
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#38098
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#38099
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#38100
+~
+A plain floor meets unadorned walls around a clear central space. The
+restrained surroundings leave little to distract from anyone sharing the room.`x
+~
+0 4 0
+G 0 0 0 0 0
+C 0 0 0
+T 3000
+M 100 H 0
+W (null)~
+Y (null)~
+S
+#0
+
+
+
+#RESETS
+D 0 38010 3 1
+D 0 38010 4 1
+D 0 38012 1 1
+D 0 38013 5 1
+D 0 38018 3 1
+D 0 38019 1 1
+D 0 38022 3 1
+D 0 38023 1 1
+D 0 38024 0 2
+D 0 38024 3 2
+D 0 38025 0 1
+D 0 38025 1 1
+D 0 38026 2 1
+D 0 38027 2 1
+S
+
+
+
+#SHOPS
+0
+
+
+
+#$

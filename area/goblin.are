@@ -1,0 +1,4907 @@
+#AREADATA
+Name Goblin Market~
+VNUMs 405000 405999
+Completed 0
+World 0
+Range 0 0 0 0
+End
+
+
+
+#MOBILES
+#405004
+shady trader~
+shady trader~
+A shady trader
+~
+~
+normal~
+~
+3x0x0x0x
+0x0x0x0x
+-1
+0
+0
+0
+0 0 stand stand either 0
+~
+0 0 unknown
+
+#405007
+shady trader~
+shady trader~
+A shady trader
+~
+~
+normal~
+~
+3x0x0x0x
+0x0x0x0x
+-1
+0
+0
+0
+0 0 stand stand either 0
+~
+0 0 unknown
+
+#405010
+doll-like receptionist~
+doll-like receptionist~
+A doll-like receptionist
+~
+~
+normal~
+~
+3x0x0x0x
+0x0x0x0x
+-1
+0
+0
+0
+0 0 stand stand female 1
+~
+0 0 unknown
+
+#405011
+bartender~
+bartender~
+The Folly bartender
+~
+~
+normal~
+~
+3x0x0x0x
+0x0x0x0x
+-1
+0
+0
+0
+0 0 stand stand either 0
+~
+0 0 unknown
+
+#0
+
+
+
+#OBJECTS
+#0
+
+
+
+#ROOMS
+#405000
+`Da stone passageway`x~
+Plain walls border a strip of hard flooring. Wear follows the middle of the
+corridor, while it's margins remain quiet and comparatively untouched.`x
+~
+0 8 24
+B 1
+G 0 0 50 0 0
+C 0 0 -1000
+T 3000
+D0
+~
+~
+0 0 405001
+0 0 0 0 0 0 0 0 0
+D1
+~
+~
+1 0 112938
+0 0 0 0 0 0 0 0 0
+D3
+~
+~
+1 0 197250
+0 0 0 0 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+S
+#405001
+`Da stone passageway`x~
+Plain walls border a strip of hard flooring. Wear follows the middle of the
+corridor, while it's margins remain quiet and comparatively untouched.`x
+~
+0 8 0
+B 1
+G 0 0 50 0 0
+C 0 1 -1000
+T 3000
+D0
+~
+~
+0 0 405002
+0 0 0 0 0 0 0 0 0
+D1
+~
+`004door labeled `w"`082FIRE ESCAPE`w"~
+1 0 134017
+0 0 0 0 0 0 0 0 0
+D2
+~
+~
+0 0 405000
+0 0 0 0 0 0 0 0 0
+D3
+~
+~
+1 0 234176
+0 0 0 0 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+S
+#405002
+`Da stone passageway`x~
+Plain walls border a strip of hard flooring. Wear follows the middle of the
+corridor, while it's margins remain quiet and comparatively untouched.`x
+~
+0 8 0
+B 1
+G 0 0 50 0 0
+C 0 2 -1000
+T 3000
+D0
+~
+~
+0 0 405003
+0 0 0 0 0 0 0 0 0
+D1
+~
+~
+0 0 14808
+0 0 0 0 0 0 0 0 0
+D2
+~
+~
+0 0 405001
+0 0 0 0 0 0 0 0 0
+D3
+~
+~
+1 0 14817
+0 0 0 0 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+S
+#405003
+`Da stone passageway`x~
+Plain walls border a strip of hard flooring. Wear follows the middle of the
+corridor, while it's margins remain quiet and comparatively untouched.`x
+~
+0 8 0
+B 1
+G 0 0 50 0 0
+C 0 3 -1000
+T 3000
+D0
+~
+~
+0 0 405004
+0 0 0 0 0 0 0 0 0
+D1
+~
+~
+1 0 91626
+0 0 0 0 0 0 0 0 0
+D2
+~
+~
+0 0 405002
+0 0 0 0 0 0 0 0 0
+D3
+~
+~
+1 0 153275
+0 0 0 0 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+S
+#405004
+`Dth`ye So`Yut`yh si`Dde `yof t`Yhe Ba`yza`Dar`x~
+Rows of displays organize the shop floor, leaving space to browse between
+them. A `wcounter`x marks the edge of the customer area; scuffs near it's base
+show where people linger.`x
+~
+0 33554440 5
+B 1
+G 0 0 50 0 0
+C 0 4 -1000
+T 3000
+D0
+~
+~
+0 0 405007
+0 0 0 0 0 0 0 0 0
+D1
+~
+~
+1 0 405005
+0 0 0 0 0 0 0 0 0
+D2
+~
+~
+0 0 405003
+0 0 0 0 0 0 0 0 0
+D3
+~
+~
+1 0 405006
+0 0 0 0 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+P
+counter~
+The counter marks the public edge of the sales area.`x
+~
+P
+displays~
+Space between the displays allows a small group to browse together.`x
+~
+S
+#405005
+`ythe L`ribr`yary`x~
+Rows of books and paper-filled shelving break the room into intimate spaces. A
+`wreading table`x provides a clear surface among the close-set spines, with
+the dry smell of paper lingering nearby.`x
+~
+0 8 5
+B 1
+G 0 0 50 0 0
+C 1 4 -1000
+T 3000
+D1
+~
+~
+0 0 405021
+0 0 0 4 0 0 0 0 0
+D3
+~
+~
+1 0 405004
+0 0 0 0 0 0 0 0 0
+D8
+~
+~
+0 0 405022
+0 0 0 4 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+P
+reading table~
+The reading table provides shared seating and a clear surface near the
+shelves.`x
+~
+S
+#405006
+`Dthe `cMag`Cic`mal `CWo`crks`Dhop`x~
+Inscribed working surfaces occupy the workshop's edges, their patterns
+interrupted by ordinary scratches. A `wworktable`x stands in the center,
+bringing arcane craft down to the scale of patient handwork.`x
+~
+0 40 5
+B 1
+G 0 0 50 0 0
+C -1 4 -1000
+T 3000
+D1
+~
+~
+1 0 405004
+0 0 0 0 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+P
+worktable~
+The central table provides a shared working surface.`x
+~
+S
+#405007
+`Dth`ye No`Yrt`yh si`Dde `yof t`Yhe Ba`yza`Dar`x~
+Rows of displays organize the shop floor, leaving space to browse between
+them. A `wcounter`x marks the edge of the customer area; scuffs near it's base
+show where people linger.`x
+~
+0 1048584 5
+B 1
+G 0 0 50 0 0
+C 0 5 -1000
+T 3000
+D0
+~
+~
+1 0 405011
+0 0 0 0 0 0 0 0 0
+D1
+~
+~
+0 0 405008
+0 0 0 0 0 0 0 0 0
+D2
+~
+~
+0 0 405004
+0 0 0 0 0 0 0 0 0
+D3
+~
+~
+0 0 405009
+0 0 0 0 0 0 0 0 0
+D6
+~
+~
+0 0 405015
+0 0 0 0 0 0 0 0 0
+D7
+~
+~
+1 0 405010
+0 0 0 0 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+P
+counter~
+The counter marks the public edge of the sales area.`x
+~
+P
+displays~
+Space between the displays allows a small group to browse together.`x
+~
+S
+#405008
+`Da stone passageway`x~
+Plain walls border a strip of hard flooring. Wear follows the middle of the
+corridor, while it's margins remain quiet and comparatively untouched.`x
+~
+0 8 11
+B 1
+G 0 0 50 0 0
+C 1 5 -1000
+T 3000
+D1
+~
+~
+0 0 405016
+0 0 0 0 0 0 0 0 0
+D3
+~
+~
+0 0 405007
+0 0 0 0 0 0 0 0 0
+D6
+~
+~
+0 0 405017
+0 0 0 4 0 0 0 0 0
+D8
+~
+~
+0 0 405021
+0 0 0 4 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+S
+#405009
+`Dthe `gAlch`Gemi`Dcal L`Gabr`gato`Dry`x~
+Work surfaces crowded with fixed racks border a clear central floor. Marks of
+spills and careful cleaning overlap across the `wworkbench`x, giving the
+alchemical laboratory a history of exacting, imperfect work.`x
+~
+0 17825800 5
+B 1
+G 0 0 50 0 0
+C -1 5 -1000
+T 3000
+D1
+~
+~
+0 0 405007
+0 0 0 0 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+P
+workbench~
+The workbench offers a clear standing station among the fixed racks.`x
+~
+S
+#405010
+`Dthe F`gleshfo`Drmin`gg Cl`Dinic`x~
+Smooth treatment surfaces sit within an otherwise rough-built enclosure. The
+contrast between the clean `wconsultation area`x and the surrounding market
+architecture gives the clinic an unsettling precision.`x
+~
+0 40 5
+B 1
+G 0 0 50 0 0
+C -1 6 -1000
+T 3000
+D8
+~
+~
+1 0 405007
+0 0 0 0 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+P
+consultation area~
+Seats face a plain treatment surface within the clinic.`x
+~
+S
+#405011
+`DThe F`yol`Dly`x~
+Mismatched woodwork and carefully patched furnishings give the Folly the
+character of a refuge assembled over time. A `wseating nook`x sits against the
+irregular wall, close enough for low conversation.`x
+~
+0 67108872 12
+B 1
+G 0 0 50 0 0
+C 0 6 -1000
+T 3000
+D0
+~
+~
+1 0 405012
+0 0 0 0 0 0 0 0 0
+D2
+~
+~
+1 0 405007
+0 0 0 0 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+P
+seating nook~
+The nook gathers several seats around a patched wooden table.`x
+~
+S
+#405012
+`DT`Dhe F`yol`Dly`x `DLodgings`x~
+Plastered walls enclose a modest domestic interior. A scuffed floor leaves a
+clear central area, with the quieter edges of the room set apart from the
+space used for passing through. `wsitting area`x provides a distinct place to
+gather.`x
+~
+0 33562632 2
+B 1
+G 0 0 50 0 0
+C 0 7 -1000
+T 3000
+D1
+~
+~
+1 0 405014
+0 0 0 0 0 0 0 0 0
+D2
+~
+~
+1 0 405011
+0 0 0 0 0 0 0 0 0
+D3
+~
+~
+1 0 405013
+0 0 0 0 0 0 0 0 0
+D6
+~
+~
+0 0 405031
+0 0 0 4 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+P
+sitting area~
+A small group of seats occupies one edge of the domestic space.`x
+~
+S
+#405013
+`Dthe Men's Bathroom`x~
+Hard surfaces and close-set fittings give the washroom a compact layout. A
+`wshower`x occupies one side, with a screened washing space and a drain
+beneath the fittings.`x
+~
+0 17039368 2
+B 1
+G 0 0 50 0 0
+C -1 7 -1000
+T 3000
+D1
+~
+~
+1 0 405012
+0 0 0 0 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+P
+shower~
+Water runs from the shower head into a drained washing space, with room to
+stand beneath the spray.`x
+~
+S
+#405014
+`Dthe Women's Bathroom`x~
+Hard surfaces and close-set fittings give the washroom a compact layout. A
+`wshower`x occupies one side, with a screened washing space and a drain
+beneath the fittings.`x
+~
+0 17039368 2
+B 1
+G 0 0 50 0 0
+C 1 7 -1000
+T 3000
+D0
+~
+~
+0 0 405031
+0 0 0 4 0 0 0 0 0
+D1
+~
+~
+0 0 405018
+0 0 0 4 0 0 0 0 0
+D3
+~
+~
+1 0 405012
+0 0 0 0 0 0 0 0 0
+D6
+~
+~
+0 0 405019
+0 0 0 4 0 0 0 0 0
+D8
+~
+~
+0 0 405017
+0 0 0 4 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+P
+shower~
+Water runs from the shower head into a drained washing space, with room to
+stand beneath the spray.`x
+~
+S
+#405015
+`Dthe `cEngin`Cee`Wrin`Cg Wo`crks`Dhop`x~
+Metal brackets and measured work surfaces give the workshop a rigid geometry.
+Filing marks and handling scars surround a sturdy `wworkbench`x, where the
+room's practical layout comes together.`x
+~
+0 1048616 5
+B 1
+G 0 0 50 0 0
+C 1 6 -1000
+T 3000
+D1
+~
+~
+0 0 405017
+0 0 0 4 0 0 0 0 0
+D6
+~
+~
+0 0 405018
+0 0 0 4 0 0 0 0 0
+D9
+~
+~
+0 0 405007
+0 0 0 0 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+P
+workbench~
+The bench leaves room for several people to examine work together.`x
+~
+S
+#405016
+`Dthe A`rren`Ra `rView`Ding A`rrea`D~
+An open `wtraining area`x occupies the center. Repeated use has marked it's
+surface, while the edges leave room for observers clear of the activity space.
+`wsidelines`x provides a distinct place to gather.`x
+~
+0 8 5
+B 1
+G 0 0 50 0 0
+C 2 5 -1000
+T 3000
+D0
+~
+~
+1 0 405017
+0 0 0 0 0 0 0 0 0
+D1
+~
+~
+5 0 405034
+0 0 0 1 0 0 0 0 0
+D2
+~
+~
+1 0 405021
+0 0 0 0 0 0 0 0 0
+D3
+~
+~
+0 0 405008
+0 0 0 0 0 0 0 0 0
+D5
+~
+~
+0 0 405023
+0 0 0 0 0 0 0 0 0
+D6
+~
+~
+0 0 405035
+0 0 0 4 0 0 0 0 0
+D8
+~
+~
+0 0 405036
+0 0 0 4 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+P
+sidelines~
+The sidelines offer a place to watch while leaving the central area clear.`x
+~
+S
+#405017
+`Dthe A`rrcan`Re Vie`rwing A`Drea`x~
+A raised `wviewing space`x faces the dueling grounds. Hard-wearing seats
+follow it's edge, with a clear `wobserver area`x set back from the boundary.`x
+~
+0 8 5
+B 1
+G 0 0 50 0 0
+C 2 6 -1000
+T 3000
+D0
+~
+~
+5 0 405018
+0 0 0 1 0 0 0 0 0
+D1
+~
+~
+0 0 405035
+0 0 0 4 0 0 0 0 0
+D2
+~
+~
+1 0 405016
+0 0 0 0 0 0 0 0 0
+D3
+~
+~
+0 0 405015
+0 0 0 4 0 0 0 0 0
+D5
+~
+~
+0 0 405024
+0 0 0 0 0 0 0 0 0
+D7
+~
+~
+0 0 405014
+0 0 0 4 0 0 0 0 0
+D8
+~
+~
+0 0 405034
+0 0 0 4 0 0 0 0 0
+D9
+~
+~
+0 0 405008
+0 0 0 4 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+P
+observer area~
+The area offers room to watch from beside the seats.`x
+~
+P
+viewing space~
+The space provides a close view of the enclosed display.`x
+~
+S
+#405018
+Above magical dueling area~
+The `cair`x stretches around an unbounded space above the ground. There is no
+floor or surrounding wall here; distance and height give the emptiness it's
+scale.`x
+~
+0 8 18
+B 1
+G 0 0 50 0 0
+C 2 7 -1000
+T 3000
+D0
+~
+~
+0 0 405019
+0 0 0 0 0 0 0 0 0
+D2
+~
+~
+5 0 405017
+0 0 0 1 0 0 0 0 0
+D3
+~
+~
+0 0 405014
+0 0 0 4 0 0 0 0 0
+D5
+~
+~
+0 0 405025
+0 0 0 4 0 0 0 0 0
+D6
+~
+~
+0 0 405030
+0 0 0 0 0 0 0 0 0
+D7
+~
+~
+0 0 405031
+0 0 0 0 0 0 0 0 0
+D8
+~
+~
+0 0 405035
+0 0 0 4 0 0 0 0 0
+D9
+~
+~
+0 0 405015
+0 0 0 4 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+S
+#405019
+Above magical dueling area~
+The `cair`x stretches around an unbounded space above the ground. There is no
+floor or surrounding wall here; distance and height give the emptiness it's
+scale.`x
+~
+0 8 18
+B 1
+G 0 0 50 0 0
+C 2 8 -1000
+T 3000
+D0
+~
+~
+0 0 405020
+0 0 0 0 0 0 0 0 0
+D1
+~
+~
+0 0 405030
+0 0 0 0 0 0 0 0 0
+D2
+~
+~
+0 0 405018
+0 0 0 0 0 0 0 0 0
+D3
+~
+~
+0 0 405031
+0 0 0 0 0 0 0 0 0
+D5
+~
+~
+0 0 405026
+0 0 0 1 0 0 0 0 0
+D9
+~
+~
+0 0 405014
+0 0 0 4 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+S
+#405020
+Above magical dueling area~
+The `cair`x stretches around an unbounded space above the ground. There is no
+floor or surrounding wall here; distance and height give the emptiness it's
+scale.`x
+~
+0 8 18
+B 1
+G 0 0 50 0 0
+C 2 9 -1000
+T 3000
+D2
+~
+~
+0 0 405019
+0 0 0 0 0 0 0 0 0
+D5
+~
+~
+0 0 405027
+0 0 0 1 0 0 0 0 0
+D8
+~
+~
+0 0 405030
+0 0 0 0 0 0 0 0 0
+D9
+~
+~
+0 0 405031
+0 0 0 0 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+S
+#405021
+`Dthe Ca`rge Vie`Rwing A`rre`Da`x~
+Hard walls enclose a restricted space. A `wbench`x occupies one edge, leaving
+a small patch of floor whose worn surface makes the enclosure's limits feel
+close.`x
+~
+0 8 5
+B 1
+G 0 0 50 0 0
+C 2 4 -1000
+T 3000
+D0
+~
+~
+1 0 405016
+0 0 0 0 0 0 0 0 0
+D1
+~
+~
+0 0 405036
+0 0 0 4 0 0 0 0 0
+D2
+~
+~
+5 0 405022
+0 0 0 1 0 0 0 0 0
+D3
+~
+~
+0 0 405005
+0 0 0 4 0 0 0 0 0
+D5
+~
+~
+0 0 405032
+0 0 0 0 0 0 0 0 0
+D6
+~
+~
+0 0 405034
+0 0 0 4 0 0 0 0 0
+D7
+~
+~
+0 0 405008
+0 0 0 4 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+P
+bench~
+The bench rests against the edge of the enclosure, overlooking it's limited
+floor space.`x
+~
+S
+#405022
+above cage~
+The `cair`x stretches around an unbounded space above the ground. There is no
+floor or surrounding wall here; distance and height give the emptiness it's
+scale.`x
+~
+0 8 18
+B 1
+G 0 0 50 0 0
+C 2 3 -1000
+T 3000
+D0
+~
+~
+5 0 405021
+0 0 0 1 0 0 0 0 0
+D5
+~
+~
+0 0 405033
+0 0 0 1 0 0 0 0 0
+D6
+~
+~
+0 0 405036
+0 0 0 4 0 0 0 0 0
+D7
+~
+~
+0 0 405005
+0 0 0 4 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+S
+#405023
+`Dan Arena Waiting Area`x~
+An open `wtraining area`x occupies the center. Repeated use has marked it's
+surface, while the edges leave room for observers clear of the activity space.
+`wsidelines`x provides a distinct place to gather.`x
+~
+0 8 5
+B 1
+G 0 0 50 0 0
+C 2 5 -1001
+T 3000
+D0
+~
+~
+0 0 405024
+0 0 0 0 0 0 0 0 0
+D1
+~
+~
+1 0 405084
+0 0 0 0 0 0 0 0 0
+D2
+~
+~
+0 0 405032
+0 0 0 0 0 0 0 0 0
+D4
+~
+~
+0 0 405016
+0 0 0 0 0 0 0 0 0
+D6
+~
+~
+0 0 405083
+0 0 0 4 0 0 0 0 0
+D8
+~
+~
+0 0 405085
+0 0 0 4 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+P
+sidelines~
+The sidelines offer a place to watch while leaving the central area clear.`x
+~
+S
+#405024
+`Dan Arena Waiting Area`x~
+An open `wtraining area`x occupies the center. Repeated use has marked it's
+surface, while the edges leave room for observers clear of the activity space.
+`wsidelines`x provides a distinct place to gather.`x
+~
+0 8 5
+B 1
+G 0 0 50 0 0
+C 2 6 -1001
+T 3000
+D0
+~
+~
+1 0 405025
+0 0 0 0 0 0 0 0 0
+D1
+~
+~
+0 0 405083
+0 0 0 4 0 0 0 0 0
+D2
+~
+~
+0 0 405023
+0 0 0 0 0 0 0 0 0
+D4
+~
+~
+0 0 405017
+0 0 0 0 0 0 0 0 0
+D8
+~
+~
+0 0 405084
+0 0 0 4 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+P
+sidelines~
+The sidelines offer a place to watch while leaving the central area clear.`x
+~
+S
+#405025
+`DArcane D`cue`Cl`cin`Dg Circle`x~
+Circular markings define the `wdueling ground`x. Scuffs cross their edges, but
+the central space remains open, with the circle edge giving observers a clear
+sense of the arena's shape.`x
+~
+0 16392 24
+B 1
+G 0 0 50 0 0
+C 2 7 -1001
+T 3000
+D0
+~
+~
+0 0 405026
+0 0 0 0 0 0 0 0 0
+D2
+~
+~
+1 0 405024
+0 0 0 0 0 0 0 0 0
+D4
+~
+~
+0 0 405018
+0 0 0 1 0 0 0 0 0
+D6
+~
+~
+0 0 405028
+0 0 0 0 0 0 0 0 0
+D7
+~
+~
+0 0 405029
+0 0 0 0 0 0 0 0 0
+D8
+~
+~
+0 0 405083
+0 0 0 4 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+P
+circle edge~
+The edge of the marked circle offers a place to gather clear of it's center.`x
+~
+S
+#405026
+`DArcane D`cue`Cl`cin`Dg Circle`x~
+Circular markings define the `wdueling ground`x. Scuffs cross their edges, but
+the central space remains open, with the circle edge giving observers a clear
+sense of the arena's shape.`x
+~
+0 16392 24
+B 1
+G 0 0 50 0 0
+C 2 8 -1001
+T 3000
+D0
+~
+~
+0 0 405027
+0 0 0 0 0 0 0 0 0
+D1
+~
+~
+0 0 405028
+0 0 0 0 0 0 0 0 0
+D2
+~
+~
+0 0 405025
+0 0 0 0 0 0 0 0 0
+D3
+~
+~
+0 0 405029
+0 0 0 0 0 0 0 0 0
+D4
+~
+~
+0 0 405019
+0 0 0 1 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+P
+circle edge~
+The edge of the marked circle offers a place to gather clear of it's center.`x
+~
+S
+#405027
+`DArcane D`cue`Cl`cin`Dg Circle`x~
+Circular markings define the `wdueling ground`x. Scuffs cross their edges, but
+the central space remains open, with the circle edge giving observers a clear
+sense of the arena's shape.`x
+~
+0 16392 24
+B 1
+G 0 0 50 0 0
+C 2 9 -1001
+T 3000
+D2
+~
+~
+0 0 405026
+0 0 0 0 0 0 0 0 0
+D4
+~
+~
+0 0 405020
+0 0 0 1 0 0 0 0 0
+D8
+~
+~
+0 0 405028
+0 0 0 0 0 0 0 0 0
+D9
+~
+~
+0 0 405029
+0 0 0 0 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+P
+circle edge~
+The edge of the marked circle offers a place to gather clear of it's center.`x
+~
+S
+#405028
+`DArcane D`cue`Cl`cin`Dg Circle`x~
+Circular markings define the `wdueling ground`x. Scuffs cross their edges, but
+the central space remains open, with the circle edge giving observers a clear
+sense of the arena's shape.`x
+~
+0 16392 24
+B 1
+G 0 0 50 0 0
+C 3 8 -1001
+T 3000
+D3
+~
+~
+0 0 405026
+0 0 0 0 0 0 0 0 0
+D4
+~
+~
+0 0 405030
+0 0 0 1 0 0 0 0 0
+D7
+~
+~
+0 0 405027
+0 0 0 0 0 0 0 0 0
+D8
+~
+~
+0 0 405082
+0 0 0 4 0 0 0 0 0
+D9
+~
+~
+0 0 405025
+0 0 0 0 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+P
+circle edge~
+The edge of the marked circle offers a place to gather clear of it's center.`x
+~
+S
+#405029
+`DArcane D`cue`Cl`cin`Dg Circle`x~
+Circular markings define the `wdueling ground`x. Scuffs cross their edges, but
+the central space remains open, with the circle edge giving observers a clear
+sense of the arena's shape.`x
+~
+0 16392 24
+B 1
+G 0 0 50 0 0
+C 1 8 -1001
+T 3000
+D1
+~
+~
+0 0 405026
+0 0 0 0 0 0 0 0 0
+D4
+~
+~
+0 0 405031
+0 0 0 1 0 0 0 0 0
+D6
+~
+~
+0 0 405027
+0 0 0 0 0 0 0 0 0
+D8
+~
+~
+0 0 405025
+0 0 0 0 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+P
+circle edge~
+The edge of the marked circle offers a place to gather clear of it's center.`x
+~
+S
+#405030
+Above magical dueling area~
+The `cair`x stretches around an unbounded space above the ground. There is no
+floor or surrounding wall here; distance and height give the emptiness it's
+scale.`x
+~
+0 8 18
+B 1
+G 0 0 50 0 0
+C 3 8 -1000
+T 3000
+D3
+~
+~
+0 0 405019
+0 0 0 0 0 0 0 0 0
+D5
+~
+~
+0 0 405028
+0 0 0 1 0 0 0 0 0
+D7
+~
+~
+0 0 405020
+0 0 0 0 0 0 0 0 0
+D8
+~
+~
+0 0 405039
+0 0 0 4 0 0 0 0 0
+D9
+~
+~
+0 0 405018
+0 0 0 0 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+S
+#405031
+Above magical dueling area~
+The `cair`x stretches around an unbounded space above the ground. There is no
+floor or surrounding wall here; distance and height give the emptiness it's
+scale.`x
+~
+0 8 18
+B 1
+G 0 0 50 0 0
+C 1 8 -1000
+T 3000
+D1
+~
+~
+0 0 405019
+0 0 0 0 0 0 0 0 0
+D2
+~
+~
+0 0 405014
+0 0 0 4 0 0 0 0 0
+D5
+~
+~
+0 0 405029
+0 0 0 1 0 0 0 0 0
+D6
+~
+~
+0 0 405020
+0 0 0 0 0 0 0 0 0
+D8
+~
+~
+0 0 405018
+0 0 0 4 0 0 0 0 0
+D9
+~
+~
+0 0 405012
+0 0 0 4 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+S
+#405032
+`Dan Arena Waiting Area`x~
+An open `wtraining area`x occupies the center. Repeated use has marked it's
+surface, while the edges leave room for observers clear of the activity space.
+`wsidelines`x provides a distinct place to gather.`x
+~
+0 8 5
+B 1
+G 0 0 50 0 0
+C 2 4 -1001
+T 3000
+D0
+~
+~
+0 0 405023
+0 0 0 0 0 0 0 0 0
+D1
+~
+~
+0 0 405085
+0 0 0 4 0 0 0 0 0
+D2
+~
+~
+1 0 405033
+0 0 0 0 0 0 0 0 0
+D4
+~
+~
+0 0 405021
+0 0 0 0 0 0 0 0 0
+D6
+~
+~
+0 0 405084
+0 0 0 4 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+P
+sidelines~
+The sidelines offer a place to watch while leaving the central area clear.`x
+~
+S
+#405033
+`Dthe Cage`x~
+Hard walls enclose a restricted space. A `wbench`x occupies one edge, leaving
+a small patch of floor whose worn surface makes the enclosure's limits feel
+close.`x
+~
+0 16392 24
+B 1
+G 0 0 50 0 0
+C 2 3 -1001
+T 3000
+D0
+~
+~
+1 0 405032
+0 0 0 0 0 0 0 0 0
+D4
+~
+~
+0 0 405022
+0 0 0 1 0 0 0 0 0
+D6
+~
+~
+0 0 405085
+0 0 0 4 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+P
+bench~
+The bench rests against the edge of the enclosure, overlooking it's limited
+floor space.`x
+~
+S
+#405034
+`Dabove the Arena`x~
+The `cair`x stretches around an unbounded space above the ground. There is no
+floor or surrounding wall here; distance and height give the emptiness it's
+scale.`x
+~
+0 16392 18
+B 1
+G 0 0 50 0 0
+C 3 5 -1000
+T 3000
+D0
+~
+~
+0 0 405035
+0 0 0 0 0 0 0 0 0
+D1
+~
+~
+0 0 405037
+0 0 0 0 0 0 0 0 0
+D2
+~
+~
+0 0 405036
+0 0 0 0 0 0 0 0 0
+D3
+~
+~
+5 0 405016
+0 0 0 1 0 0 0 0 0
+D5
+~
+~
+0 0 405084
+0 0 0 0 0 0 0 0 0
+D6
+~
+~
+0 0 405038
+0 0 0 0 0 0 0 0 0
+D7
+~
+~
+0 0 405017
+0 0 0 4 0 0 0 0 0
+D8
+~
+~
+0 0 405040
+0 0 0 0 0 0 0 0 0
+D9
+~
+~
+0 0 405021
+0 0 0 4 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+S
+#405035
+`Dabove the Arena`x~
+The `cair`x stretches around an unbounded space above the ground. There is no
+floor or surrounding wall here; distance and height give the emptiness it's
+scale.`x
+~
+0 16392 18
+B 1
+G 0 0 50 0 0
+C 3 6 -1000
+T 3000
+D1
+~
+~
+0 0 405038
+0 0 0 0 0 0 0 0 0
+D2
+~
+~
+0 0 405034
+0 0 0 0 0 0 0 0 0
+D3
+~
+~
+0 0 405017
+0 0 0 4 0 0 0 0 0
+D5
+~
+~
+0 0 405083
+0 0 0 0 0 0 0 0 0
+D6
+~
+~
+0 0 405039
+0 0 0 0 0 0 0 0 0
+D7
+~
+~
+0 0 405018
+0 0 0 4 0 0 0 0 0
+D8
+~
+~
+0 0 405037
+0 0 0 0 0 0 0 0 0
+D9
+~
+~
+0 0 405016
+0 0 0 4 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+S
+#405036
+`Dabove the Arena`x~
+The `cair`x stretches around an unbounded space above the ground. There is no
+floor or surrounding wall here; distance and height give the emptiness it's
+scale.`x
+~
+0 16392 18
+B 1
+G 0 0 50 0 0
+C 3 4 -1000
+T 3000
+D0
+~
+~
+0 0 405034
+0 0 0 0 0 0 0 0 0
+D1
+~
+~
+0 0 405040
+0 0 0 0 0 0 0 0 0
+D3
+~
+~
+0 0 405021
+0 0 0 4 0 0 0 0 0
+D5
+~
+~
+0 0 405085
+0 0 0 0 0 0 0 0 0
+D6
+~
+~
+0 0 405037
+0 0 0 0 0 0 0 0 0
+D7
+~
+~
+0 0 405016
+0 0 0 4 0 0 0 0 0
+D8
+~
+~
+0 0 405041
+0 0 0 0 0 0 0 0 0
+D9
+~
+~
+0 0 405022
+0 0 0 4 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+S
+#405037
+`Dabove the Arena`x~
+The `cair`x stretches around an unbounded space above the ground. There is no
+floor or surrounding wall here; distance and height give the emptiness it's
+scale.`x
+~
+0 16392 18
+B 1
+G 0 0 50 0 0
+C 4 5 -1000
+T 3000
+D0
+~
+~
+0 0 405038
+0 0 0 0 0 0 0 0 0
+D1
+~
+~
+0 0 405044
+0 0 0 0 0 0 0 0 0
+D2
+~
+~
+0 0 405040
+0 0 0 0 0 0 0 0 0
+D3
+~
+~
+0 0 405034
+0 0 0 0 0 0 0 0 0
+D5
+~
+~
+0 0 405080
+0 0 0 0 0 0 0 0 0
+D6
+~
+~
+0 0 405045
+0 0 0 0 0 0 0 0 0
+D7
+~
+~
+0 0 405035
+0 0 0 0 0 0 0 0 0
+D8
+~
+~
+0 0 405043
+0 0 0 0 0 0 0 0 0
+D9
+~
+~
+0 0 405036
+0 0 0 0 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+S
+#405038
+`Dabove the Arena`x~
+The `cair`x stretches around an unbounded space above the ground. There is no
+floor or surrounding wall here; distance and height give the emptiness it's
+scale.`x
+~
+0 16392 18
+B 1
+G 0 0 50 0 0
+C 4 6 -1000
+T 3000
+D0
+~
+~
+0 0 405039
+0 0 0 0 0 0 0 0 0
+D1
+~
+~
+0 0 405045
+0 0 0 0 0 0 0 0 0
+D2
+~
+~
+0 0 405037
+0 0 0 0 0 0 0 0 0
+D3
+~
+~
+0 0 405035
+0 0 0 0 0 0 0 0 0
+D5
+~
+~
+0 0 405081
+0 0 0 0 0 0 0 0 0
+D6
+~
+~
+0 0 405046
+0 0 0 0 0 0 0 0 0
+D8
+~
+~
+0 0 405044
+0 0 0 0 0 0 0 0 0
+D9
+~
+~
+0 0 405034
+0 0 0 0 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+S
+#405039
+`Dabove the Arena`x~
+The `cair`x stretches around an unbounded space above the ground. There is no
+floor or surrounding wall here; distance and height give the emptiness it's
+scale.`x
+~
+0 16392 18
+B 1
+G 0 0 50 0 0
+C 4 7 -1000
+T 3000
+D1
+~
+~
+0 0 405046
+0 0 0 0 0 0 0 0 0
+D2
+~
+~
+0 0 405038
+0 0 0 0 0 0 0 0 0
+D5
+~
+~
+0 0 405082
+0 0 0 0 0 0 0 0 0
+D7
+~
+~
+0 0 405030
+0 0 0 4 0 0 0 0 0
+D8
+~
+~
+0 0 405045
+0 0 0 0 0 0 0 0 0
+D9
+~
+~
+0 0 405035
+0 0 0 0 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+S
+#405040
+`Dabove the Arena`x~
+The `cair`x stretches around an unbounded space above the ground. There is no
+floor or surrounding wall here; distance and height give the emptiness it's
+scale.`x
+~
+0 16392 18
+B 1
+G 0 0 50 0 0
+C 4 4 -1000
+T 3000
+D0
+~
+~
+0 0 405037
+0 0 0 0 0 0 0 0 0
+D1
+~
+~
+0 0 405043
+0 0 0 0 0 0 0 0 0
+D2
+~
+~
+0 0 405041
+0 0 0 0 0 0 0 0 0
+D3
+~
+~
+0 0 405036
+0 0 0 0 0 0 0 0 0
+D5
+~
+~
+0 0 405079
+0 0 0 0 0 0 0 0 0
+D6
+~
+~
+0 0 405044
+0 0 0 0 0 0 0 0 0
+D7
+~
+~
+0 0 405034
+0 0 0 0 0 0 0 0 0
+D8
+~
+~
+0 0 405042
+0 0 0 0 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+S
+#405041
+`Dabove the Arena`x~
+The `cair`x stretches around an unbounded space above the ground. There is no
+floor or surrounding wall here; distance and height give the emptiness it's
+scale.`x
+~
+0 16392 18
+B 1
+G 0 0 50 0 0
+C 4 3 -1000
+T 3000
+D0
+~
+~
+0 0 405040
+0 0 0 0 0 0 0 0 0
+D1
+~
+~
+0 0 405042
+0 0 0 0 0 0 0 0 0
+D5
+~
+~
+0 0 405078
+0 0 0 0 0 0 0 0 0
+D6
+~
+~
+0 0 405043
+0 0 0 0 0 0 0 0 0
+D7
+~
+~
+0 0 405036
+0 0 0 0 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+S
+#405042
+`Dabove the Arena`x~
+The `cair`x stretches around an unbounded space above the ground. There is no
+floor or surrounding wall here; distance and height give the emptiness it's
+scale.`x
+~
+0 16392 18
+B 1
+G 0 0 50 0 0
+C 5 3 -1000
+T 3000
+D0
+~
+~
+0 0 405043
+0 0 0 0 0 0 0 0 0
+D1
+~
+~
+0 0 405051
+0 0 0 0 0 0 0 0 0
+D3
+~
+~
+0 0 405041
+0 0 0 0 0 0 0 0 0
+D5
+~
+~
+0 0 405077
+0 0 0 0 0 0 0 0 0
+D6
+~
+~
+0 0 405050
+0 0 0 0 0 0 0 0 0
+D7
+~
+~
+0 0 405040
+0 0 0 0 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+S
+#405043
+`Dabove the Arena`x~
+The `cair`x stretches around an unbounded space above the ground. There is no
+floor or surrounding wall here; distance and height give the emptiness it's
+scale.`x
+~
+0 16392 18
+B 1
+G 0 0 50 0 0
+C 5 4 -1000
+T 3000
+D0
+~
+~
+0 0 405044
+0 0 0 0 0 0 0 0 0
+D1
+~
+~
+0 0 405050
+0 0 0 0 0 0 0 0 0
+D2
+~
+~
+0 0 405042
+0 0 0 0 0 0 0 0 0
+D3
+~
+~
+0 0 405040
+0 0 0 0 0 0 0 0 0
+D5
+~
+~
+0 0 405076
+0 0 0 0 0 0 0 0 0
+D6
+~
+~
+0 0 405049
+0 0 0 0 0 0 0 0 0
+D7
+~
+~
+0 0 405037
+0 0 0 0 0 0 0 0 0
+D8
+~
+~
+0 0 405051
+0 0 0 0 0 0 0 0 0
+D9
+~
+~
+0 0 405041
+0 0 0 0 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+S
+#405044
+`Dabove the Arena`x~
+The `cair`x stretches around an unbounded space above the ground. There is no
+floor or surrounding wall here; distance and height give the emptiness it's
+scale.`x
+~
+0 16392 18
+B 1
+G 0 0 50 0 0
+C 5 5 -1000
+T 3000
+D0
+~
+~
+0 0 405045
+0 0 0 0 0 0 0 0 0
+D1
+~
+~
+0 0 405049
+0 0 0 0 0 0 0 0 0
+D2
+~
+~
+0 0 405043
+0 0 0 0 0 0 0 0 0
+D3
+~
+~
+0 0 405037
+0 0 0 0 0 0 0 0 0
+D5
+~
+~
+0 0 405075
+0 0 0 0 0 0 0 0 0
+D6
+~
+~
+0 0 405048
+0 0 0 0 0 0 0 0 0
+D7
+~
+~
+0 0 405038
+0 0 0 0 0 0 0 0 0
+D8
+~
+~
+0 0 405050
+0 0 0 0 0 0 0 0 0
+D9
+~
+~
+0 0 405040
+0 0 0 0 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+S
+#405045
+`Dabove the Arena`x~
+The `cair`x stretches around an unbounded space above the ground. There is no
+floor or surrounding wall here; distance and height give the emptiness it's
+scale.`x
+~
+0 16392 18
+B 1
+G 0 0 50 0 0
+C 5 6 -1000
+T 3000
+D0
+~
+~
+0 0 405046
+0 0 0 0 0 0 0 0 0
+D1
+~
+~
+0 0 405048
+0 0 0 0 0 0 0 0 0
+D2
+~
+~
+0 0 405044
+0 0 0 0 0 0 0 0 0
+D3
+~
+~
+0 0 405038
+0 0 0 0 0 0 0 0 0
+D5
+~
+~
+0 0 405074
+0 0 0 0 0 0 0 0 0
+D6
+~
+~
+0 0 405047
+0 0 0 0 0 0 0 0 0
+D7
+~
+~
+0 0 405039
+0 0 0 0 0 0 0 0 0
+D8
+~
+~
+0 0 405049
+0 0 0 0 0 0 0 0 0
+D9
+~
+~
+0 0 405037
+0 0 0 0 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+S
+#405046
+`Dabove the Arena`x~
+The `cair`x stretches around an unbounded space above the ground. There is no
+floor or surrounding wall here; distance and height give the emptiness it's
+scale.`x
+~
+0 16392 18
+B 1
+G 0 0 50 0 0
+C 5 7 -1000
+T 3000
+D1
+~
+~
+0 0 405047
+0 0 0 0 0 0 0 0 0
+D2
+~
+~
+0 0 405045
+0 0 0 0 0 0 0 0 0
+D3
+~
+~
+0 0 405039
+0 0 0 0 0 0 0 0 0
+D5
+~
+~
+0 0 405073
+0 0 0 0 0 0 0 0 0
+D8
+~
+~
+0 0 405048
+0 0 0 0 0 0 0 0 0
+D9
+~
+~
+0 0 405038
+0 0 0 0 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+S
+#405047
+above the arena~
+The `cair`x stretches around an unbounded space above the ground. There is no
+floor or surrounding wall here; distance and height give the emptiness it's
+scale.`x
+~
+0 40 24
+B 1
+G 0 0 50 0 0
+C 6 7 -1000
+T 3000
+D1
+~
+~
+0 0 405056
+0 0 0 0 0 0 0 0 0
+D2
+~
+~
+0 0 405048
+0 0 0 0 0 0 0 0 0
+D3
+~
+~
+0 0 405046
+0 0 0 0 0 0 0 0 0
+D5
+~
+~
+0 0 405072
+0 0 0 0 0 0 0 0 0
+D8
+~
+~
+0 0 405055
+0 0 0 0 0 0 0 0 0
+D9
+~
+~
+0 0 405045
+0 0 0 0 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+S
+#405048
+`Dabove the Arena`x~
+The `cair`x stretches around an unbounded space above the ground. There is no
+floor or surrounding wall here; distance and height give the emptiness it's
+scale.`x
+~
+0 8 24
+B 1
+G 0 0 50 0 0
+C 6 6 -1000
+T 3000
+D0
+~
+~
+0 0 405047
+0 0 0 0 0 0 0 0 0
+D1
+~
+~
+0 0 405055
+0 0 0 0 0 0 0 0 0
+D2
+~
+~
+0 0 405049
+0 0 0 0 0 0 0 0 0
+D3
+~
+~
+0 0 405045
+0 0 0 0 0 0 0 0 0
+D5
+~
+~
+0 0 405071
+0 0 0 0 0 0 0 0 0
+D6
+~
+~
+0 0 405056
+0 0 0 0 0 0 0 0 0
+D7
+~
+~
+0 0 405046
+0 0 0 0 0 0 0 0 0
+D8
+~
+~
+0 0 405054
+0 0 0 0 0 0 0 0 0
+D9
+~
+~
+0 0 405044
+0 0 0 0 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+S
+#405049
+`Dabove the Arena`x~
+The `cair`x stretches around an unbounded space above the ground. There is no
+floor or surrounding wall here; distance and height give the emptiness it's
+scale.`x
+~
+0 8 24
+B 1
+G 0 0 50 0 0
+C 6 5 -1000
+T 3000
+D0
+~
+~
+0 0 405048
+0 0 0 0 0 0 0 0 0
+D1
+~
+~
+0 0 405054
+0 0 0 0 0 0 0 0 0
+D2
+~
+~
+0 0 405050
+0 0 0 0 0 0 0 0 0
+D3
+~
+~
+0 0 405044
+0 0 0 0 0 0 0 0 0
+D5
+~
+~
+0 0 405070
+0 0 0 0 0 0 0 0 0
+D6
+~
+~
+0 0 405055
+0 0 0 0 0 0 0 0 0
+D7
+~
+~
+0 0 405045
+0 0 0 0 0 0 0 0 0
+D8
+~
+~
+0 0 405053
+0 0 0 0 0 0 0 0 0
+D9
+~
+~
+0 0 405043
+0 0 0 0 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+S
+#405050
+`Dabove the Arena`x~
+The `cair`x stretches around an unbounded space above the ground. There is no
+floor or surrounding wall here; distance and height give the emptiness it's
+scale.`x
+~
+0 8 24
+B 1
+G 0 0 50 0 0
+C 6 4 -1000
+T 3000
+D0
+~
+~
+0 0 405049
+0 0 0 0 0 0 0 0 0
+D1
+~
+~
+0 0 405053
+0 0 0 0 0 0 0 0 0
+D2
+~
+~
+0 0 405051
+0 0 0 0 0 0 0 0 0
+D3
+~
+~
+0 0 405043
+0 0 0 0 0 0 0 0 0
+D5
+~
+~
+0 0 405069
+0 0 0 0 0 0 0 0 0
+D6
+~
+~
+0 0 405054
+0 0 0 0 0 0 0 0 0
+D7
+~
+~
+0 0 405044
+0 0 0 0 0 0 0 0 0
+D8
+~
+~
+0 0 405052
+0 0 0 0 0 0 0 0 0
+D9
+~
+~
+0 0 405042
+0 0 0 0 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+S
+#405051
+`Dabove the Arena`x~
+The `cair`x stretches around an unbounded space above the ground. There is no
+floor or surrounding wall here; distance and height give the emptiness it's
+scale.`x
+~
+0 16392 18
+B 1
+G 0 0 50 0 0
+C 6 3 -1000
+T 3000
+D0
+~
+~
+0 0 405050
+0 0 0 0 0 0 0 0 0
+D1
+~
+~
+0 0 405052
+0 0 0 0 0 0 0 0 0
+D3
+~
+~
+0 0 405042
+0 0 0 0 0 0 0 0 0
+D5
+~
+~
+0 0 405068
+0 0 0 0 0 0 0 0 0
+D6
+~
+~
+0 0 405053
+0 0 0 0 0 0 0 0 0
+D7
+~
+~
+0 0 405043
+0 0 0 0 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+S
+#405052
+`Dabove the Arena`x~
+The `cair`x stretches around an unbounded space above the ground. There is no
+floor or surrounding wall here; distance and height give the emptiness it's
+scale.`x
+~
+0 16392 18
+B 1
+G 0 0 50 0 0
+C 7 3 -1000
+T 3000
+D0
+~
+~
+0 0 405053
+0 0 0 0 0 0 0 0 0
+D3
+~
+~
+0 0 405051
+0 0 0 0 0 0 0 0 0
+D5
+~
+~
+0 0 405067
+0 0 0 0 0 0 0 0 0
+D6
+~
+~
+0 0 405059
+0 0 0 0 0 0 0 0 0
+D7
+~
+~
+0 0 405050
+0 0 0 0 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+S
+#405053
+`Dabove the Arena`x~
+The `cair`x stretches around an unbounded space above the ground. There is no
+floor or surrounding wall here; distance and height give the emptiness it's
+scale.`x
+~
+0 16392 18
+B 1
+G 0 0 50 0 0
+C 7 4 -1000
+T 3000
+D0
+~
+~
+0 0 405054
+0 0 0 0 0 0 0 0 0
+D1
+~
+~
+0 0 405059
+0 0 0 0 0 0 0 0 0
+D2
+~
+~
+0 0 405052
+0 0 0 0 0 0 0 0 0
+D3
+~
+~
+0 0 405050
+0 0 0 0 0 0 0 0 0
+D5
+~
+~
+0 0 405066
+0 0 0 0 0 0 0 0 0
+D6
+~
+~
+0 0 405058
+0 0 0 0 0 0 0 0 0
+D7
+~
+~
+0 0 405049
+0 0 0 0 0 0 0 0 0
+D9
+~
+~
+0 0 405051
+0 0 0 0 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+S
+#405054
+`Dabove the Arena`x~
+The `cair`x stretches around an unbounded space above the ground. There is no
+floor or surrounding wall here; distance and height give the emptiness it's
+scale.`x
+~
+0 16392 18
+B 1
+G 0 0 50 0 0
+C 7 5 -1000
+T 3000
+D0
+~
+~
+0 0 405055
+0 0 0 0 0 0 0 0 0
+D1
+~
+~
+0 0 405058
+0 0 0 0 0 0 0 0 0
+D2
+~
+~
+0 0 405053
+0 0 0 0 0 0 0 0 0
+D3
+~
+~
+0 0 405049
+0 0 0 0 0 0 0 0 0
+D5
+~
+~
+0 0 405065
+0 0 0 0 0 0 0 0 0
+D6
+~
+~
+0 0 405057
+0 0 0 0 0 0 0 0 0
+D7
+~
+~
+0 0 405048
+0 0 0 0 0 0 0 0 0
+D8
+~
+~
+0 0 405059
+0 0 0 0 0 0 0 0 0
+D9
+~
+~
+0 0 405050
+0 0 0 0 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+S
+#405055
+`Dabove the Arena`x~
+The `cair`x stretches around an unbounded space above the ground. There is no
+floor or surrounding wall here; distance and height give the emptiness it's
+scale.`x
+~
+0 16392 18
+B 1
+G 0 0 50 0 0
+C 7 6 -1000
+T 3000
+D0
+~
+~
+0 0 405056
+0 0 0 0 0 0 0 0 0
+D1
+~
+~
+0 0 405057
+0 0 0 0 0 0 0 0 0
+D2
+~
+~
+0 0 405054
+0 0 0 0 0 0 0 0 0
+D3
+~
+~
+0 0 405048
+0 0 0 0 0 0 0 0 0
+D5
+~
+~
+0 0 405064
+0 0 0 0 0 0 0 0 0
+D7
+~
+~
+0 0 405047
+0 0 0 0 0 0 0 0 0
+D8
+~
+~
+0 0 405058
+0 0 0 0 0 0 0 0 0
+D9
+~
+~
+0 0 405049
+0 0 0 0 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+S
+#405056
+`Dabove the Arena`x~
+The `cair`x stretches around an unbounded space above the ground. There is no
+floor or surrounding wall here; distance and height give the emptiness it's
+scale.`x
+~
+0 16392 18
+B 1
+G 0 0 50 0 0
+C 7 7 -1000
+T 3000
+D2
+~
+~
+0 0 405055
+0 0 0 0 0 0 0 0 0
+D3
+~
+~
+0 0 405047
+0 0 0 0 0 0 0 0 0
+D5
+~
+~
+0 0 405063
+0 0 0 0 0 0 0 0 0
+D8
+~
+~
+0 0 405057
+0 0 0 0 0 0 0 0 0
+D9
+~
+~
+0 0 405048
+0 0 0 0 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+S
+#405057
+`Dabove the Arena`x~
+The `cair`x stretches around an unbounded space above the ground. There is no
+floor or surrounding wall here; distance and height give the emptiness it's
+scale.`x
+~
+0 16392 18
+B 1
+G 0 0 50 0 0
+C 8 6 -1000
+T 3000
+D2
+~
+~
+0 0 405058
+0 0 0 0 0 0 0 0 0
+D3
+~
+~
+0 0 405055
+0 0 0 0 0 0 0 0 0
+D5
+~
+~
+0 0 405062
+0 0 0 0 0 0 0 0 0
+D7
+~
+~
+0 0 405056
+0 0 0 0 0 0 0 0 0
+D9
+~
+~
+0 0 405054
+0 0 0 0 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+S
+#405058
+`Dabove the Arena`x~
+The `cair`x stretches around an unbounded space above the ground. There is no
+floor or surrounding wall here; distance and height give the emptiness it's
+scale.`x
+~
+0 16392 18
+B 1
+G 0 0 50 0 0
+C 8 5 -1000
+T 3000
+D0
+~
+~
+0 0 405057
+0 0 0 0 0 0 0 0 0
+D2
+~
+~
+0 0 405059
+0 0 0 0 0 0 0 0 0
+D3
+~
+~
+0 0 405054
+0 0 0 0 0 0 0 0 0
+D5
+~
+~
+0 0 405061
+0 0 0 0 0 0 0 0 0
+D7
+~
+~
+0 0 405055
+0 0 0 0 0 0 0 0 0
+D9
+~
+~
+0 0 405053
+0 0 0 0 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+S
+#405059
+`Dabove the Arena`x~
+The `cair`x stretches around an unbounded space above the ground. There is no
+floor or surrounding wall here; distance and height give the emptiness it's
+scale.`x
+~
+0 16392 18
+B 1
+G 0 0 50 0 0
+C 8 4 -1000
+T 3000
+D0
+~
+~
+0 0 405058
+0 0 0 0 0 0 0 0 0
+D3
+~
+~
+0 0 405053
+0 0 0 0 0 0 0 0 0
+D5
+~
+~
+0 0 405060
+0 0 0 0 0 0 0 0 0
+D7
+~
+~
+0 0 405054
+0 0 0 0 0 0 0 0 0
+D9
+~
+~
+0 0 405052
+0 0 0 0 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+S
+#405060
+`ythe Arena`x~
+An open `wtraining area`x occupies the center. Repeated use has marked it's
+surface, while the edges leave room for observers clear of the activity space.
+`wsidelines`x provides a distinct place to gather.`x
+~
+0 16392 24
+B 1
+G 0 0 50 0 0
+C 8 4 -1001
+T 3000
+D0
+~
+~
+0 0 405061
+0 0 0 0 0 0 0 0 0
+D3
+~
+~
+0 0 405066
+0 0 0 0 0 0 0 0 0
+D4
+~
+~
+0 0 405059
+0 0 0 0 0 0 0 0 0
+D7
+~
+~
+0 0 405065
+0 0 0 0 0 0 0 0 0
+D9
+~
+~
+0 0 405067
+0 0 0 0 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+P
+sidelines~
+The sidelines offer a place to watch while leaving the central area clear.`x
+~
+S
+#405061
+`ythe Arena`x~
+An open `wtraining area`x occupies the center. Repeated use has marked it's
+surface, while the edges leave room for observers clear of the activity space.
+`wsidelines`x provides a distinct place to gather.`x
+~
+0 16392 24
+B 1
+G 0 0 50 0 0
+C 8 5 -1001
+T 3000
+D0
+~
+~
+0 0 405062
+0 0 0 0 0 0 0 0 0
+D2
+~
+~
+0 0 405060
+0 0 0 0 0 0 0 0 0
+D3
+~
+~
+0 0 405065
+0 0 0 0 0 0 0 0 0
+D4
+~
+~
+0 0 405058
+0 0 0 0 0 0 0 0 0
+D7
+~
+~
+0 0 405064
+0 0 0 0 0 0 0 0 0
+D9
+~
+~
+0 0 405066
+0 0 0 0 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+P
+sidelines~
+The sidelines offer a place to watch while leaving the central area clear.`x
+~
+S
+#405062
+`ythe Arena`x~
+An open `wtraining area`x occupies the center. Repeated use has marked it's
+surface, while the edges leave room for observers clear of the activity space.
+`wsidelines`x provides a distinct place to gather.`x
+~
+0 16392 24
+B 1
+G 0 0 50 0 0
+C 8 6 -1001
+T 3000
+D2
+~
+~
+0 0 405061
+0 0 0 0 0 0 0 0 0
+D3
+~
+~
+0 0 405064
+0 0 0 0 0 0 0 0 0
+D4
+~
+~
+0 0 405057
+0 0 0 0 0 0 0 0 0
+D7
+~
+~
+0 0 405063
+0 0 0 0 0 0 0 0 0
+D9
+~
+~
+0 0 405065
+0 0 0 0 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+P
+sidelines~
+The sidelines offer a place to watch while leaving the central area clear.`x
+~
+S
+#405063
+`ythe Arena`x~
+An open `wtraining area`x occupies the center. Repeated use has marked it's
+surface, while the edges leave room for observers clear of the activity space.
+`wsidelines`x provides a distinct place to gather.`x
+~
+0 16392 24
+B 1
+G 0 0 50 0 0
+C 7 7 -1001
+T 3000
+D2
+~
+~
+0 0 405064
+0 0 0 0 0 0 0 0 0
+D3
+~
+~
+0 0 405072
+0 0 0 0 0 0 0 0 0
+D4
+~
+~
+0 0 405056
+0 0 0 0 0 0 0 0 0
+D8
+~
+~
+0 0 405062
+0 0 0 0 0 0 0 0 0
+D9
+~
+~
+0 0 405071
+0 0 0 0 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+P
+sidelines~
+The sidelines offer a place to watch while leaving the central area clear.`x
+~
+S
+#405064
+`ythe Arena`x~
+An open `wtraining area`x occupies the center. Repeated use has marked it's
+surface, while the edges leave room for observers clear of the activity space.
+`wsidelines`x provides a distinct place to gather.`x
+~
+0 16392 24
+B 1
+G 0 0 50 0 0
+C 7 6 -1001
+T 3000
+D0
+~
+~
+0 0 405063
+0 0 0 0 0 0 0 0 0
+D1
+~
+~
+0 0 405062
+0 0 0 0 0 0 0 0 0
+D2
+~
+~
+0 0 405065
+0 0 0 0 0 0 0 0 0
+D3
+~
+~
+0 0 405071
+0 0 0 0 0 0 0 0 0
+D4
+~
+~
+0 0 405055
+0 0 0 0 0 0 0 0 0
+D7
+~
+~
+0 0 405072
+0 0 0 0 0 0 0 0 0
+D8
+~
+~
+0 0 405061
+0 0 0 0 0 0 0 0 0
+D9
+~
+~
+0 0 405070
+0 0 0 0 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+P
+sidelines~
+The sidelines offer a place to watch while leaving the central area clear.`x
+~
+S
+#405065
+`ythe Arena`x~
+An open `wtraining area`x occupies the center. Repeated use has marked it's
+surface, while the edges leave room for observers clear of the activity space.
+`wsidelines`x provides a distinct place to gather.`x
+~
+0 16392 24
+B 1
+G 0 0 50 0 0
+C 7 5 -1001
+T 3000
+D0
+~
+~
+0 0 405064
+0 0 0 0 0 0 0 0 0
+D1
+~
+~
+0 0 405061
+0 0 0 0 0 0 0 0 0
+D2
+~
+~
+0 0 405066
+0 0 0 0 0 0 0 0 0
+D3
+~
+~
+0 0 405070
+0 0 0 0 0 0 0 0 0
+D4
+~
+~
+0 0 405054
+0 0 0 0 0 0 0 0 0
+D6
+~
+~
+0 0 405062
+0 0 0 0 0 0 0 0 0
+D7
+~
+~
+0 0 405071
+0 0 0 0 0 0 0 0 0
+D8
+~
+~
+0 0 405060
+0 0 0 0 0 0 0 0 0
+D9
+~
+~
+0 0 405069
+0 0 0 0 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+P
+sidelines~
+The sidelines offer a place to watch while leaving the central area clear.`x
+~
+S
+#405066
+`ythe Arena`x~
+An open `wtraining area`x occupies the center. Repeated use has marked it's
+surface, while the edges leave room for observers clear of the activity space.
+`wsidelines`x provides a distinct place to gather.`x
+~
+0 16392 24
+B 1
+G 0 0 50 0 0
+C 7 4 -1001
+T 3000
+D0
+~
+~
+0 0 405065
+0 0 0 0 0 0 0 0 0
+D1
+~
+~
+0 0 405060
+0 0 0 0 0 0 0 0 0
+D2
+~
+~
+0 0 405067
+0 0 0 0 0 0 0 0 0
+D3
+~
+~
+0 0 405069
+0 0 0 0 0 0 0 0 0
+D4
+~
+~
+0 0 405053
+0 0 0 0 0 0 0 0 0
+D6
+~
+~
+0 0 405061
+0 0 0 0 0 0 0 0 0
+D7
+~
+~
+0 0 405070
+0 0 0 0 0 0 0 0 0
+D9
+~
+~
+0 0 405068
+0 0 0 0 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+P
+sidelines~
+The sidelines offer a place to watch while leaving the central area clear.`x
+~
+S
+#405067
+`ythe Arena`x~
+An open `wtraining area`x occupies the center. Repeated use has marked it's
+surface, while the edges leave room for observers clear of the activity space.
+`wsidelines`x provides a distinct place to gather.`x
+~
+0 16392 24
+B 1
+G 0 0 50 0 0
+C 7 3 -1001
+T 3000
+D0
+~
+~
+0 0 405066
+0 0 0 0 0 0 0 0 0
+D3
+~
+~
+0 0 405068
+0 0 0 0 0 0 0 0 0
+D4
+~
+~
+0 0 405052
+0 0 0 0 0 0 0 0 0
+D6
+~
+~
+0 0 405060
+0 0 0 0 0 0 0 0 0
+D7
+~
+~
+0 0 405069
+0 0 0 0 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+P
+sidelines~
+The sidelines offer a place to watch while leaving the central area clear.`x
+~
+S
+#405068
+`ythe Arena`x~
+An open `wtraining area`x occupies the center. Repeated use has marked it's
+surface, while the edges leave room for observers clear of the activity space.
+`wsidelines`x provides a distinct place to gather.`x
+~
+0 16392 24
+B 1
+G 0 0 50 0 0
+C 6 3 -1001
+T 3000
+D0
+~
+~
+0 0 405069
+0 0 0 0 0 0 0 0 0
+D1
+~
+~
+0 0 405067
+0 0 0 0 0 0 0 0 0
+D3
+~
+~
+0 0 405077
+0 0 0 0 0 0 0 0 0
+D4
+~
+~
+0 0 405051
+0 0 0 0 0 0 0 0 0
+D6
+~
+~
+0 0 405066
+0 0 0 0 0 0 0 0 0
+D7
+~
+~
+0 0 405076
+0 0 0 0 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+P
+sidelines~
+The sidelines offer a place to watch while leaving the central area clear.`x
+~
+S
+#405069
+`ythe Arena`x~
+An open `wtraining area`x occupies the center. Repeated use has marked it's
+surface, while the edges leave room for observers clear of the activity space.
+`wsidelines`x provides a distinct place to gather.`x
+~
+0 16392 24
+B 1
+G 0 0 50 0 0
+C 6 4 -1001
+T 3000
+D0
+~
+~
+0 0 405070
+0 0 0 0 0 0 0 0 0
+D1
+~
+~
+0 0 405066
+0 0 0 0 0 0 0 0 0
+D2
+~
+~
+0 0 405068
+0 0 0 0 0 0 0 0 0
+D3
+~
+~
+0 0 405076
+0 0 0 0 0 0 0 0 0
+D4
+~
+~
+0 0 405050
+0 0 0 0 0 0 0 0 0
+D6
+~
+~
+0 0 405065
+0 0 0 0 0 0 0 0 0
+D7
+~
+~
+0 0 405075
+0 0 0 0 0 0 0 0 0
+D8
+~
+~
+0 0 405067
+0 0 0 0 0 0 0 0 0
+D9
+~
+~
+0 0 405077
+0 0 0 0 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+P
+sidelines~
+The sidelines offer a place to watch while leaving the central area clear.`x
+~
+S
+#405070
+`ythe Arena`x~
+An open `wtraining area`x occupies the center. Repeated use has marked it's
+surface, while the edges leave room for observers clear of the activity space.
+`wsidelines`x provides a distinct place to gather.`x
+~
+0 16392 24
+B 1
+G 0 0 50 0 0
+C 6 5 -1001
+T 3000
+D0
+~
+~
+0 0 405071
+0 0 0 0 0 0 0 0 0
+D1
+~
+~
+0 0 405065
+0 0 0 0 0 0 0 0 0
+D2
+~
+~
+0 0 405069
+0 0 0 0 0 0 0 0 0
+D3
+~
+~
+0 0 405075
+0 0 0 0 0 0 0 0 0
+D4
+~
+~
+0 0 405049
+0 0 0 0 0 0 0 0 0
+D6
+~
+~
+0 0 405064
+0 0 0 0 0 0 0 0 0
+D7
+~
+~
+0 0 405074
+0 0 0 0 0 0 0 0 0
+D8
+~
+~
+0 0 405066
+0 0 0 0 0 0 0 0 0
+D9
+~
+~
+0 0 405076
+0 0 0 0 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+P
+sidelines~
+The sidelines offer a place to watch while leaving the central area clear.`x
+~
+S
+#405071
+`ythe Arena`x~
+An open `wtraining area`x occupies the center. Repeated use has marked it's
+surface, while the edges leave room for observers clear of the activity space.
+`wsidelines`x provides a distinct place to gather.`x
+~
+0 16392 24
+B 1
+G 0 0 50 0 0
+C 6 6 -1001
+T 3000
+D0
+~
+~
+0 0 405072
+0 0 0 0 0 0 0 0 0
+D1
+~
+~
+0 0 405064
+0 0 0 0 0 0 0 0 0
+D2
+~
+~
+0 0 405070
+0 0 0 0 0 0 0 0 0
+D3
+~
+~
+0 0 405074
+0 0 0 0 0 0 0 0 0
+D4
+~
+~
+0 0 405048
+0 0 0 0 0 0 0 0 0
+D6
+~
+~
+0 0 405063
+0 0 0 0 0 0 0 0 0
+D7
+~
+~
+0 0 405073
+0 0 0 0 0 0 0 0 0
+D8
+~
+~
+0 0 405065
+0 0 0 0 0 0 0 0 0
+D9
+~
+~
+0 0 405075
+0 0 0 0 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+P
+sidelines~
+The sidelines offer a place to watch while leaving the central area clear.`x
+~
+S
+#405072
+`ythe Arena`x~
+An open `wtraining area`x occupies the center. Repeated use has marked it's
+surface, while the edges leave room for observers clear of the activity space.
+`wsidelines`x provides a distinct place to gather.`x
+~
+0 16392 24
+B 1
+G 0 0 50 0 0
+C 6 7 -1001
+T 3000
+D1
+~
+~
+0 0 405063
+0 0 0 0 0 0 0 0 0
+D2
+~
+~
+0 0 405071
+0 0 0 0 0 0 0 0 0
+D3
+~
+~
+0 0 405073
+0 0 0 0 0 0 0 0 0
+D4
+~
+~
+0 0 405047
+0 0 0 0 0 0 0 0 0
+D8
+~
+~
+0 0 405064
+0 0 0 0 0 0 0 0 0
+D9
+~
+~
+0 0 405074
+0 0 0 0 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+P
+sidelines~
+The sidelines offer a place to watch while leaving the central area clear.`x
+~
+S
+#405073
+`ythe Arena`x~
+An open `wtraining area`x occupies the center. Repeated use has marked it's
+surface, while the edges leave room for observers clear of the activity space.
+`wsidelines`x provides a distinct place to gather.`x
+~
+0 16392 24
+B 1
+G 0 0 50 0 0
+C 5 7 -1001
+T 3000
+D1
+~
+~
+0 0 405072
+0 0 0 0 0 0 0 0 0
+D2
+~
+~
+0 0 405074
+0 0 0 0 0 0 0 0 0
+D3
+~
+~
+0 0 405082
+0 0 0 0 0 0 0 0 0
+D4
+~
+~
+0 0 405046
+0 0 0 0 0 0 0 0 0
+D8
+~
+~
+0 0 405071
+0 0 0 0 0 0 0 0 0
+D9
+~
+~
+0 0 405081
+0 0 0 0 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+P
+sidelines~
+The sidelines offer a place to watch while leaving the central area clear.`x
+~
+S
+#405074
+`ythe Arena`x~
+An open `wtraining area`x occupies the center. Repeated use has marked it's
+surface, while the edges leave room for observers clear of the activity space.
+`wsidelines`x provides a distinct place to gather.`x
+~
+0 16392 24
+B 1
+G 0 0 50 0 0
+C 5 6 -1001
+T 3000
+D0
+~
+~
+0 0 405073
+0 0 0 0 0 0 0 0 0
+D1
+~
+~
+0 0 405071
+0 0 0 0 0 0 0 0 0
+D2
+~
+~
+0 0 405075
+0 0 0 0 0 0 0 0 0
+D3
+~
+~
+0 0 405081
+0 0 0 0 0 0 0 0 0
+D4
+~
+~
+0 0 405045
+0 0 0 0 0 0 0 0 0
+D6
+~
+~
+0 0 405072
+0 0 0 0 0 0 0 0 0
+D7
+~
+~
+0 0 405082
+0 0 0 0 0 0 0 0 0
+D8
+~
+~
+0 0 405070
+0 0 0 0 0 0 0 0 0
+D9
+~
+~
+0 0 405080
+0 0 0 0 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+P
+sidelines~
+The sidelines offer a place to watch while leaving the central area clear.`x
+~
+S
+#405075
+`ythe Arena`x~
+An open `wtraining area`x occupies the center. Repeated use has marked it's
+surface, while the edges leave room for observers clear of the activity space.
+`wsidelines`x provides a distinct place to gather.`x
+~
+0 16392 24
+B 1
+G 0 0 50 0 0
+C 5 5 -1001
+T 3000
+D0
+~
+~
+0 0 405074
+0 0 0 0 0 0 0 0 0
+D1
+~
+~
+0 0 405070
+0 0 0 0 0 0 0 0 0
+D2
+~
+~
+0 0 405076
+0 0 0 0 0 0 0 0 0
+D3
+~
+~
+0 0 405080
+0 0 0 0 0 0 0 0 0
+D4
+~
+~
+0 0 405044
+0 0 0 0 0 0 0 0 0
+D6
+~
+~
+0 0 405071
+0 0 0 0 0 0 0 0 0
+D7
+~
+~
+0 0 405081
+0 0 0 0 0 0 0 0 0
+D8
+~
+~
+0 0 405069
+0 0 0 0 0 0 0 0 0
+D9
+~
+~
+0 0 405079
+0 0 0 0 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+P
+sidelines~
+The sidelines offer a place to watch while leaving the central area clear.`x
+~
+S
+#405076
+`ythe Arena`x~
+An open `wtraining area`x occupies the center. Repeated use has marked it's
+surface, while the edges leave room for observers clear of the activity space.
+`wsidelines`x provides a distinct place to gather.`x
+~
+0 16392 24
+B 1
+G 0 0 50 0 0
+C 5 4 -1001
+T 3000
+D0
+~
+~
+0 0 405075
+0 0 0 0 0 0 0 0 0
+D1
+~
+~
+0 0 405069
+0 0 0 0 0 0 0 0 0
+D2
+~
+~
+0 0 405077
+0 0 0 0 0 0 0 0 0
+D3
+~
+~
+0 0 405079
+0 0 0 0 0 0 0 0 0
+D4
+~
+~
+0 0 405043
+0 0 0 0 0 0 0 0 0
+D6
+~
+~
+0 0 405070
+0 0 0 0 0 0 0 0 0
+D7
+~
+~
+0 0 405080
+0 0 0 0 0 0 0 0 0
+D8
+~
+~
+0 0 405068
+0 0 0 0 0 0 0 0 0
+D9
+~
+~
+0 0 405078
+0 0 0 0 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+P
+sidelines~
+The sidelines offer a place to watch while leaving the central area clear.`x
+~
+S
+#405077
+`ythe Arena`x~
+An open `wtraining area`x occupies the center. Repeated use has marked it's
+surface, while the edges leave room for observers clear of the activity space.
+`wsidelines`x provides a distinct place to gather.`x
+~
+0 16392 24
+B 1
+G 0 0 50 0 0
+C 5 3 -1001
+T 3000
+D0
+~
+~
+0 0 405076
+0 0 0 0 0 0 0 0 0
+D1
+~
+~
+0 0 405068
+0 0 0 0 0 0 0 0 0
+D3
+~
+~
+0 0 405078
+0 0 0 0 0 0 0 0 0
+D4
+~
+~
+0 0 405042
+0 0 0 0 0 0 0 0 0
+D6
+~
+~
+0 0 405069
+0 0 0 0 0 0 0 0 0
+D7
+~
+~
+0 0 405079
+0 0 0 0 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+P
+sidelines~
+The sidelines offer a place to watch while leaving the central area clear.`x
+~
+S
+#405078
+`ythe Arena`x~
+An open `wtraining area`x occupies the center. Repeated use has marked it's
+surface, while the edges leave room for observers clear of the activity space.
+`wsidelines`x provides a distinct place to gather.`x
+~
+0 16392 24
+B 1
+G 0 0 50 0 0
+C 4 3 -1001
+T 3000
+D0
+~
+~
+0 0 405079
+0 0 0 0 0 0 0 0 0
+D1
+~
+~
+0 0 405077
+0 0 0 0 0 0 0 0 0
+D4
+~
+~
+0 0 405041
+0 0 0 0 0 0 0 0 0
+D6
+~
+~
+0 0 405076
+0 0 0 0 0 0 0 0 0
+D7
+~
+~
+0 0 405085
+0 0 0 0 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+P
+sidelines~
+The sidelines offer a place to watch while leaving the central area clear.`x
+~
+S
+#405079
+`ythe Arena`x~
+An open `wtraining area`x occupies the center. Repeated use has marked it's
+surface, while the edges leave room for observers clear of the activity space.
+`wsidelines`x provides a distinct place to gather.`x
+~
+0 16392 24
+B 1
+G 0 0 50 0 0
+C 4 4 -1001
+T 3000
+D0
+~
+~
+0 0 405080
+0 0 0 0 0 0 0 0 0
+D1
+~
+~
+0 0 405076
+0 0 0 0 0 0 0 0 0
+D2
+~
+~
+0 0 405078
+0 0 0 0 0 0 0 0 0
+D3
+~
+~
+0 0 405085
+0 0 0 0 0 0 0 0 0
+D4
+~
+~
+0 0 405040
+0 0 0 0 0 0 0 0 0
+D6
+~
+~
+0 0 405075
+0 0 0 0 0 0 0 0 0
+D7
+~
+~
+0 0 405084
+0 0 0 0 0 0 0 0 0
+D8
+~
+~
+0 0 405077
+0 0 0 0 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+P
+sidelines~
+The sidelines offer a place to watch while leaving the central area clear.`x
+~
+S
+#405080
+`ythe Arena`x~
+An open `wtraining area`x occupies the center. Repeated use has marked it's
+surface, while the edges leave room for observers clear of the activity space.
+`wsidelines`x provides a distinct place to gather.`x
+~
+0 16392 24
+B 1
+G 0 0 50 0 0
+C 4 5 -1001
+T 3000
+D0
+~
+~
+0 0 405081
+0 0 0 0 0 0 0 0 0
+D1
+~
+~
+0 0 405075
+0 0 0 0 0 0 0 0 0
+D2
+~
+~
+0 0 405079
+0 0 0 0 0 0 0 0 0
+D3
+~
+~
+0 0 405084
+0 0 0 0 0 0 0 0 0
+D4
+~
+~
+0 0 405037
+0 0 0 0 0 0 0 0 0
+D6
+~
+~
+0 0 405074
+0 0 0 0 0 0 0 0 0
+D7
+~
+~
+0 0 405083
+0 0 0 0 0 0 0 0 0
+D8
+~
+~
+0 0 405076
+0 0 0 0 0 0 0 0 0
+D9
+~
+~
+0 0 405085
+0 0 0 0 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+P
+sidelines~
+The sidelines offer a place to watch while leaving the central area clear.`x
+~
+S
+#405081
+`ythe Arena`x~
+An open `wtraining area`x occupies the center. Repeated use has marked it's
+surface, while the edges leave room for observers clear of the activity space.
+`wsidelines`x provides a distinct place to gather.`x
+~
+0 16392 24
+B 1
+G 0 0 50 0 0
+C 4 6 -1001
+T 3000
+D0
+~
+~
+0 0 405082
+0 0 0 0 0 0 0 0 0
+D1
+~
+~
+0 0 405074
+0 0 0 0 0 0 0 0 0
+D2
+~
+~
+0 0 405080
+0 0 0 0 0 0 0 0 0
+D3
+~
+~
+0 0 405083
+0 0 0 0 0 0 0 0 0
+D4
+~
+~
+0 0 405038
+0 0 0 0 0 0 0 0 0
+D6
+~
+~
+0 0 405073
+0 0 0 0 0 0 0 0 0
+D8
+~
+~
+0 0 405075
+0 0 0 0 0 0 0 0 0
+D9
+~
+~
+0 0 405084
+0 0 0 0 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+P
+sidelines~
+The sidelines offer a place to watch while leaving the central area clear.`x
+~
+S
+#405082
+`ythe Arena`x~
+An open `wtraining area`x occupies the center. Repeated use has marked it's
+surface, while the edges leave room for observers clear of the activity space.
+`wsidelines`x provides a distinct place to gather.`x
+~
+0 16392 24
+B 1
+G 0 0 50 0 0
+C 4 7 -1001
+T 3000
+D1
+~
+~
+0 0 405073
+0 0 0 0 0 0 0 0 0
+D2
+~
+~
+0 0 405081
+0 0 0 0 0 0 0 0 0
+D4
+~
+~
+0 0 405039
+0 0 0 0 0 0 0 0 0
+D7
+~
+~
+0 0 405028
+0 0 0 4 0 0 0 0 0
+D8
+~
+~
+0 0 405074
+0 0 0 0 0 0 0 0 0
+D9
+~
+~
+0 0 405083
+0 0 0 0 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+P
+sidelines~
+The sidelines offer a place to watch while leaving the central area clear.`x
+~
+S
+#405083
+`ythe Arena`x~
+An open `wtraining area`x occupies the center. Repeated use has marked it's
+surface, while the edges leave room for observers clear of the activity space.
+`wsidelines`x provides a distinct place to gather.`x
+~
+0 16392 24
+B 1
+G 0 0 50 0 0
+C 3 6 -1001
+T 3000
+D1
+~
+~
+0 0 405081
+0 0 0 0 0 0 0 0 0
+D2
+~
+~
+0 0 405084
+0 0 0 0 0 0 0 0 0
+D3
+~
+~
+0 0 405024
+0 0 0 0 0 0 0 0 0
+D4
+~
+~
+0 0 405035
+0 0 0 0 0 0 0 0 0
+D6
+~
+~
+0 0 405082
+0 0 0 0 0 0 0 0 0
+D7
+~
+~
+0 0 405025
+0 0 0 4 0 0 0 0 0
+D8
+~
+~
+0 0 405080
+0 0 0 0 0 0 0 0 0
+D9
+~
+~
+0 0 405023
+0 0 0 0 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+P
+sidelines~
+The sidelines offer a place to watch while leaving the central area clear.`x
+~
+S
+#405084
+`ythe Arena`x~
+An open `wtraining area`x occupies the center. Repeated use has marked it's
+surface, while the edges leave room for observers clear of the activity space.
+`wsidelines`x provides a distinct place to gather.`x
+~
+0 16392 24
+B 1
+G 0 0 50 0 0
+C 3 5 -1001
+T 3000
+D0
+~
+~
+0 0 405083
+0 0 0 0 0 0 0 0 0
+D1
+~
+~
+0 0 405080
+0 0 0 0 0 0 0 0 0
+D2
+~
+~
+0 0 405085
+0 0 0 0 0 0 0 0 0
+D3
+~
+~
+1 0 405023
+0 0 0 0 0 0 0 0 0
+D4
+~
+~
+0 0 405034
+0 0 0 0 0 0 0 0 0
+D6
+~
+~
+0 0 405081
+0 0 0 0 0 0 0 0 0
+D7
+~
+~
+0 0 405024
+0 0 0 4 0 0 0 0 0
+D8
+~
+~
+0 0 405079
+0 0 0 0 0 0 0 0 0
+D9
+~
+~
+0 0 405032
+0 0 0 4 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+P
+sidelines~
+The sidelines offer a place to watch while leaving the central area clear.`x
+~
+S
+#405085
+`ythe Arena`x~
+An open `wtraining area`x occupies the center. Repeated use has marked it's
+surface, while the edges leave room for observers clear of the activity space.
+`wsidelines`x provides a distinct place to gather.`x
+~
+0 16392 24
+B 1
+G 0 0 50 0 0
+C 3 4 -1001
+T 3000
+D0
+~
+~
+0 0 405084
+0 0 0 0 0 0 0 0 0
+D1
+~
+~
+0 0 405079
+0 0 0 0 0 0 0 0 0
+D3
+~
+~
+0 0 405032
+0 0 0 4 0 0 0 0 0
+D4
+~
+~
+0 0 405036
+0 0 0 0 0 0 0 0 0
+D6
+~
+~
+0 0 405080
+0 0 0 0 0 0 0 0 0
+D7
+~
+~
+0 0 405023
+0 0 0 4 0 0 0 0 0
+D8
+~
+~
+0 0 405078
+0 0 0 0 0 0 0 0 0
+D9
+~
+~
+0 0 405033
+0 0 0 4 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+P
+sidelines~
+The sidelines offer a place to watch while leaving the central area clear.`x
+~
+S
+#405086
+the Mobious path~
+The `wpath`x holds a disturbingly repetitive shape. Worn ground and enclosing
+surfaces recur with an almost remembered familiarity, making the immediate
+stretch easy to see and difficult to place.`x
+~
+0 8 24
+B 1
+G 0 0 50 0 0
+C 0 1 777
+T 3000
+D0
+~
+~
+0 0 405088
+0 0 0 0 0 0 0 0 0
+D1
+~
+~
+0 0 405090
+0 0 0 0 0 0 0 0 0
+D2
+~
+~
+0 0 405500
+0 0 0 0 0 0 0 0 0
+D3
+~
+~
+0 0 405093
+0 0 0 0 0 0 0 0 0
+D4
+~
+~
+0 0 405087
+0 0 0 0 0 0 0 0 0
+D6
+~
+~
+0 0 405089
+0 0 0 0 0 0 0 0 0
+D7
+~
+~
+0 0 405094
+0 0 0 0 0 0 0 0 0
+D8
+~
+~
+0 0 405091
+0 0 0 0 0 0 0 0 0
+D9
+~
+~
+0 0 405092
+0 0 0 0 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+S
+#405087
+`CSkies`x~
+The `cair`x stretches around an unbounded space above the ground. There is no
+floor or surrounding wall here; distance and height give the emptiness it's
+scale.`x
+~
+0 4194304 18
+G 0 0 50 0 0
+C 0 1 778
+T 3000
+D5
+~
+~
+0 0 405086
+0 0 0 0 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+S
+#405088
+`CSkies`x~
+The `cair`x stretches around an unbounded space above the ground. There is no
+floor or surrounding wall here; distance and height give the emptiness it's
+scale.`x
+~
+0 4194304 18
+G 0 0 50 0 0
+C 0 2 777
+T 3000
+D1
+~
+~
+0 0 405089
+0 0 0 0 0 0 0 0 0
+D2
+~
+~
+0 0 405086
+0 0 0 0 0 0 0 0 0
+D3
+~
+~
+0 0 405094
+0 0 0 0 0 0 0 0 0
+D8
+~
+~
+0 0 405090
+0 0 0 0 0 0 0 0 0
+D9
+~
+~
+0 0 405093
+0 0 0 0 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+S
+#405089
+`CSkies`x~
+The `cair`x stretches around an unbounded space above the ground. There is no
+floor or surrounding wall here; distance and height give the emptiness it's
+scale.`x
+~
+0 4194304 18
+G 0 0 50 0 0
+C 1 2 777
+T 3000
+D2
+~
+~
+0 0 405090
+0 0 0 0 0 0 0 0 0
+D3
+~
+~
+0 0 405088
+0 0 0 0 0 0 0 0 0
+D9
+~
+~
+0 0 405086
+0 0 0 0 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+S
+#405090
+`CSkies`x~
+The `cair`x stretches around an unbounded space above the ground. There is no
+floor or surrounding wall here; distance and height give the emptiness it's
+scale.`x
+~
+0 4194304 18
+G 0 0 50 0 0
+C 1 1 777
+T 3000
+D0
+~
+~
+0 0 405089
+0 0 0 0 0 0 0 0 0
+D2
+~
+~
+0 0 405091
+0 0 0 0 0 0 0 0 0
+D3
+~
+~
+0 0 405086
+0 0 0 0 0 0 0 0 0
+D7
+~
+~
+0 0 405088
+0 0 0 0 0 0 0 0 0
+D9
+~
+~
+0 0 405500
+0 0 0 0 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+S
+#405091
+`CSkies`x~
+The `cair`x stretches around an unbounded space above the ground. There is no
+floor or surrounding wall here; distance and height give the emptiness it's
+scale.`x
+~
+0 4194304 18
+G 0 0 50 0 0
+C 1 0 777
+T 3000
+D0
+~
+~
+0 0 405090
+0 0 0 0 0 0 0 0 0
+D3
+~
+~
+0 0 405500
+0 0 0 0 0 0 0 0 0
+D7
+~
+~
+0 0 405086
+0 0 0 0 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+S
+#405092
+`CSkies`x~
+The `cair`x stretches around an unbounded space above the ground. There is no
+floor or surrounding wall here; distance and height give the emptiness it's
+scale.`x
+~
+0 4194304 18
+G 0 0 50 0 0
+C -1 0 777
+T 3000
+D0
+~
+~
+0 0 405093
+0 0 0 0 0 0 0 0 0
+D1
+~
+~
+0 0 405500
+0 0 0 0 0 0 0 0 0
+D6
+~
+~
+0 0 405086
+0 0 0 0 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+S
+#405093
+`CSkies`x~
+The `cair`x stretches around an unbounded space above the ground. There is no
+floor or surrounding wall here; distance and height give the emptiness it's
+scale.`x
+~
+0 4194304 18
+G 0 0 50 0 0
+C -1 1 777
+T 3000
+D0
+~
+~
+0 0 405094
+0 0 0 0 0 0 0 0 0
+D1
+~
+~
+0 0 405086
+0 0 0 0 0 0 0 0 0
+D2
+~
+~
+0 0 405092
+0 0 0 0 0 0 0 0 0
+D6
+~
+~
+0 0 405088
+0 0 0 0 0 0 0 0 0
+D8
+~
+~
+0 0 405500
+0 0 0 0 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+S
+#405094
+`CSkies`x~
+The `cair`x stretches around an unbounded space above the ground. There is no
+floor or surrounding wall here; distance and height give the emptiness it's
+scale.`x
+~
+0 4194304 18
+G 0 0 50 0 0
+C -1 2 777
+T 3000
+D1
+~
+~
+0 0 405088
+0 0 0 0 0 0 0 0 0
+D2
+~
+~
+0 0 405093
+0 0 0 0 0 0 0 0 0
+D8
+~
+~
+0 0 405086
+0 0 0 0 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+S
+#405095
+the Mobious path~
+The `wpath`x holds a disturbingly repetitive shape. Worn ground and enclosing
+surfaces recur with an almost remembered familiarity, making the immediate
+stretch easy to see and difficult to place.`x
+~
+0 8 24
+B 1
+G 0 0 50 0 0
+C 0 1 -777
+T 3000
+D2
+~
+~
+0 0 405500
+0 0 0 0 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+S
+#405096
+the Mobious path~
+The `wpath`x holds a disturbingly repetitive shape. Worn ground and enclosing
+surfaces recur with an almost remembered familiarity, making the immediate
+stretch easy to see and difficult to place.`x
+~
+0 1024 27
+B 1
+G 1 1 50 0 0
+C 0 -1 -777
+T 3000
+D0
+~
+~
+0 0 405500
+0 0 0 0 0 0 0 0 0
+D2
+~
+~
+0 0 405097
+0 0 0 0 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+S
+#405097
+the Mobious path~
+The `wpath`x holds a disturbingly repetitive shape. Worn ground and enclosing
+surfaces recur with an almost remembered familiarity, making the immediate
+stretch easy to see and difficult to place.`x
+~
+0 1024 27
+B 1
+G 0 -1 50 0 0
+C 0 -2 -777
+T 3000
+D0
+~
+~
+0 0 405096
+0 0 0 0 0 0 0 0 0
+D2
+~
+~
+0 0 405098
+0 0 0 0 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+S
+#405098
+the Mobious path~
+The `wpath`x holds a disturbingly repetitive shape. Worn ground and enclosing
+surfaces recur with an almost remembered familiarity, making the immediate
+stretch easy to see and difficult to place.`x
+~
+0 1024 27
+B 1
+G 1 -1 50 0 0
+C 0 -3 -777
+T 3000
+D0
+~
+~
+0 0 405097
+0 0 0 0 0 0 0 0 0
+D2
+~
+~
+0 0 405099
+0 0 0 0 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+S
+#405099
+the Mobious path~
+The `wpath`x holds a disturbingly repetitive shape. Worn ground and enclosing
+surfaces recur with an almost remembered familiarity, making the immediate
+stretch easy to see and difficult to place.`x
+~
+0 1024 27
+B 1
+G 0 0 50 0 0
+C 0 -4 -777
+T 3000
+D0
+~
+~
+0 0 405098
+0 0 0 0 0 0 0 0 0
+D2
+~
+~
+0 0 405100
+0 0 0 0 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+S
+#405100
+the Mobious path~
+The `wpath`x holds a disturbingly repetitive shape. Worn ground and enclosing
+surfaces recur with an almost remembered familiarity, making the immediate
+stretch easy to see and difficult to place.`x
+~
+0 1024 27
+B 1
+G 0 -1 50 0 0
+C 0 -5 -777
+T 3000
+D0
+~
+~
+0 0 405099
+0 0 0 0 0 0 0 0 0
+D2
+~
+~
+0 0 405101
+0 0 0 0 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+S
+#405101
+the Mobious path~
+The `wpath`x holds a disturbingly repetitive shape. Worn ground and enclosing
+surfaces recur with an almost remembered familiarity, making the immediate
+stretch easy to see and difficult to place.`x
+~
+0 1024 27
+B 1
+G 0 1 50 0 0
+C 0 -6 -777
+T 3000
+D0
+~
+~
+0 0 405100
+0 0 0 0 0 0 0 0 0
+D2
+~
+~
+0 0 405102
+0 0 0 0 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+S
+#405102
+the Mobious path~
+The `wpath`x holds a disturbingly repetitive shape. Worn ground and enclosing
+surfaces recur with an almost remembered familiarity, making the immediate
+stretch easy to see and difficult to place.`x
+~
+0 1024 27
+B 1
+G 0 0 50 0 0
+C 0 -7 -777
+T 3000
+D0
+~
+~
+0 0 405101
+0 0 0 0 0 0 0 0 0
+D2
+~
+~
+0 0 405103
+0 0 0 0 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+S
+#405103
+the Mobious path~
+The `wpath`x holds a disturbingly repetitive shape. Worn ground and enclosing
+surfaces recur with an almost remembered familiarity, making the immediate
+stretch easy to see and difficult to place.`x
+~
+0 1024 27
+B 1
+G 1 -1 50 0 0
+C 0 -8 -777
+T 3000
+D0
+~
+~
+0 0 405102
+0 0 0 0 0 0 0 0 0
+D2
+~
+~
+0 0 405104
+0 0 0 0 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+S
+#405104
+the Mobious path~
+The `wpath`x holds a disturbingly repetitive shape. Worn ground and enclosing
+surfaces recur with an almost remembered familiarity, making the immediate
+stretch easy to see and difficult to place.`x
+~
+0 1024 27
+B 1
+G 0 0 50 0 0
+C 0 -9 -777
+T 3000
+D0
+~
+~
+0 0 405103
+0 0 0 0 0 0 0 0 0
+D2
+~
+~
+0 0 405105
+0 0 0 0 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+S
+#405105
+the Mobious path~
+The `wpath`x holds a disturbingly repetitive shape. Worn ground and enclosing
+surfaces recur with an almost remembered familiarity, making the immediate
+stretch easy to see and difficult to place.`x
+~
+0 1024 27
+B 1
+G -1 -1 50 0 0
+C 0 -10 -777
+T 3000
+D0
+~
+~
+0 0 405104
+0 0 0 0 0 0 0 0 0
+D2
+~
+~
+0 0 405500
+0 0 0 0 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+S
+#405500
+the Mobious path~
+The `wpath`x holds a disturbingly repetitive shape. Worn ground and enclosing
+surfaces recur with an almost remembered familiarity, making the immediate
+stretch easy to see and difficult to place.`x
+~
+0 1024 27
+B 1
+G -3 -1 50 0 0
+C 0 0 -777
+T 3000
+D0
+~
+~
+0 0 405105
+0 0 0 0 0 0 0 0 0
+D1
+~
+~
+0 0 405091
+0 0 0 4 0 0 0 0 0
+D2
+~
+~
+0 0 405096
+0 0 0 0 0 0 0 0 0
+D3
+~
+~
+0 0 405092
+0 0 0 4 0 0 0 0 0
+D6
+~
+~
+0 0 405090
+0 0 0 4 0 0 0 0 0
+D7
+~
+~
+0 0 405093
+0 0 0 4 0 0 0 0 0
+M 0 H 0
+W (null)~
+Y ~
+S
+#0
+
+
+
+#RESETS
+D 0 405000 1 1
+D 0 405000 3 1
+D 0 405001 1 1
+D 0 405001 3 1
+D 0 405002 3 1
+D 0 405003 1 2
+D 0 405003 3 1
+D 0 405004 1 1
+D 0 405004 3 1
+D 0 405005 3 1
+D 0 405006 1 1
+D 0 405007 0 1
+D 0 405007 7 1
+D 0 405010 8 1
+D 0 405011 0 1
+D 0 405011 2 1
+D 0 405012 1 1
+D 0 405012 2 1
+D 0 405012 3 1
+D 0 405013 1 1
+D 0 405014 3 1
+D 0 405016 0 1
+D 0 405016 2 1
+D 0 405017 2 1
+D 0 405021 0 1
+D 0 405023 1 1
+D 0 405024 0 1
+D 0 405025 2 1
+D 0 405032 2 1
+D 0 405033 0 1
+D 0 405084 3 1
+S
+
+
+
+#SHOPS
+405004 0 0 0 0 0 100 100 0 23 0 0
+405007 0 0 0 0 0 100 100 0 23 0 0
+405011 0 0 0 0 0 100 100 0 23 0 0
+0
+
+
+
+#$

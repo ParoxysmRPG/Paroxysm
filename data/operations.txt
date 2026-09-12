@@ -1,0 +1,646 @@
+#OPERATION
+Author Tyr~
+Territory 4
+AdversaryType 0
+AdversaryName a figure in dark robes, with an impassive white mask~
+Elitestring ~
+Storyrunners ~
+Atmosphere ~
+RoomName in the city of New York, New York~
+Description ~
+Preferred ~
+BagName ~
+Timeshift 0
+UploadName securing the area~
+Type 3
+InitDays 0
+Spam 0
+MaxPCs 2
+Speed 4
+Terrain 4
+Size 1000
+Hour 12
+Day 0
+Faction 27
+Bonus 0
+Storyline ~
+Timer 0
+Competition 0
+Timeline ~
+Challenge 2
+HomeSoldiers 0
+Goal 11
+GuestResolved 0
+Target ~
+Soldiers 0 0 0 0 0 0 0 0 0 0
+Enrolled 0 0 0 0 0 0 0 0 0 0
+FacTimers 0 0 0 0 0 0 0 0 0 0
+POIX 0 0 0 0 0 0 0 0 0 0
+POIY 0 0 0 0 0 0 0 0 0 0
+POIType 0 0 0 0 0 0 0 0 0 0
+POIFaction 0 0 0 0 0 0 0 0 0 0
+End
+
+#OPERATION
+Author Tyr~
+Territory 48
+AdversaryType 0
+AdversaryName a figure in urban combat gear with a dark blue beret~
+Elitestring ~
+Storyrunners ~
+Atmosphere ~
+RoomName in caves near Seoul, South Korea~
+Description ~
+Preferred ~
+BagName ~
+Timeshift 0
+UploadName securing the area~
+Type 3
+InitDays 1
+Spam 0
+MaxPCs 8
+Speed 2
+Terrain 7
+Size 1000
+Hour 22
+Day 0
+Faction 28
+Bonus 0
+Storyline ~
+Timer 0
+Competition 0
+Timeline ~
+Challenge 2
+HomeSoldiers 0
+Goal 11
+GuestResolved 0
+Target ~
+Soldiers 0 0 0 0 0 0 0 0 0 0
+Enrolled 0 0 0 0 0 0 0 0 0 0
+FacTimers 0 0 0 0 0 0 0 0 0 0
+POIX 0 0 0 0 0 0 0 0 0 0
+POIY 0 0 0 0 0 0 0 0 0 0
+POIType 0 0 0 0 0 0 0 0 0 0
+POIFaction 0 0 0 0 0 0 0 0 0 0
+End
+
+#OPERATION
+Author Tyr~
+Territory 74
+AdversaryType 1
+AdversaryName a figure in sleek, black tactical gear, with a golden emblem on their shoulder~
+Elitestring ~
+Storyrunners ~
+Atmosphere ~
+RoomName in a lake near Lauriea~
+Description ~
+Preferred ~
+BagName ~
+Timeshift 0
+UploadName securing the area~
+Type 2
+InitDays 1
+Spam 0
+MaxPCs 4
+Speed 3
+Terrain 10
+Size 1000
+Hour 12
+Day 1
+Faction 26
+Bonus 0
+Storyline ~
+Timer 0
+Competition 0
+Timeline ~
+Challenge 2
+HomeSoldiers 0
+Goal 11
+GuestResolved 0
+Target ~
+Soldiers 0 0 0 0 0 0 0 0 0 0
+Enrolled 0 0 0 0 0 0 0 0 0 0
+FacTimers 0 0 0 0 0 0 0 0 0 0
+POIX 0 0 0 0 0 0 0 0 0 0
+POIY 0 0 0 0 0 0 0 0 0 0
+POIType 0 0 0 0 0 0 0 0 0 0
+POIFaction 0 0 0 0 0 0 0 0 0 0
+End
+
+#OPERATION
+Author Tyr~
+Territory 73
+AdversaryType 1
+AdversaryName a figure in urban combat gear with a dark blue beret~
+Elitestring ~
+Storyrunners ~
+Atmosphere ~
+RoomName in a field near Rhagost~
+Description ~
+Preferred ~
+BagName ~
+Timeshift 0
+UploadName securing the area~
+Type 3
+InitDays 2
+Spam 0
+MaxPCs 6
+Speed 4
+Terrain 1
+Size 1000
+Hour 22
+Day 1
+Faction 28
+Bonus 0
+Storyline ~
+Timer 0
+Competition 0
+Timeline ~
+Challenge 2
+HomeSoldiers 0
+Goal 11
+GuestResolved 0
+Target ~
+Soldiers 0 0 0 0 0 0 0 0 0 0
+Enrolled 0 0 0 0 0 0 0 0 0 0
+FacTimers 0 0 0 0 0 0 0 0 0 0
+POIX 0 0 0 0 0 0 0 0 0 0
+POIY 0 0 0 0 0 0 0 0 0 0
+POIType 0 0 0 0 0 0 0 0 0 0
+POIFaction 0 0 0 0 0 0 0 0 0 0
+End
+
+#OPERATION
+Author Tyr~
+Territory 3
+AdversaryType 0
+AdversaryName a figure in sleek, black tactical gear, with a golden emblem on their shoulder~
+Elitestring ~
+Storyrunners ~
+Atmosphere ~
+RoomName in a field near Vancouver, Canada~
+Description ~
+Preferred ~
+BagName ~
+Timeshift 0
+UploadName securing the area~
+Type 3
+InitDays 2
+Spam 0
+MaxPCs 2
+Speed 3
+Terrain 1
+Size 1000
+Hour 12
+Day 2
+Faction 26
+Bonus 0
+Storyline ~
+Timer 0
+Competition 0
+Timeline ~
+Challenge 2
+HomeSoldiers 0
+Goal 11
+GuestResolved 0
+Target ~
+Soldiers 0 0 0 0 0 0 0 0 0 0
+Enrolled 0 0 0 0 0 0 0 0 0 0
+FacTimers 0 0 0 0 0 0 0 0 0 0
+POIX 0 0 0 0 0 0 0 0 0 0
+POIY 0 0 0 0 0 0 0 0 0 0
+POIType 0 0 0 0 0 0 0 0 0 0
+POIFaction 0 0 0 0 0 0 0 0 0 0
+End
+
+#OPERATION
+Author Tyr~
+Territory 11
+AdversaryType 0
+AdversaryName a figure in sleek, black tactical gear, with a golden emblem on their shoulder~
+Elitestring ~
+Storyrunners ~
+Atmosphere ~
+RoomName in the city of Richmond, Virginia~
+Description ~
+Preferred ~
+BagName ~
+Timeshift 0
+UploadName securing the area~
+Type 2
+InitDays 3
+Spam 0
+MaxPCs 7
+Speed 2
+Terrain 4
+Size 1000
+Hour 22
+Day 2
+Faction 26
+Bonus 0
+Storyline ~
+Timer 0
+Competition 0
+Timeline ~
+Challenge 2
+HomeSoldiers 0
+Goal 11
+GuestResolved 0
+Target ~
+Soldiers 0 0 0 0 0 0 0 0 0 0
+Enrolled 0 0 0 0 0 0 0 0 0 0
+FacTimers 0 0 0 0 0 0 0 0 0 0
+POIX 0 0 0 0 0 0 0 0 0 0
+POIY 0 0 0 0 0 0 0 0 0 0
+POIType 0 0 0 0 0 0 0 0 0 0
+POIFaction 0 0 0 0 0 0 0 0 0 0
+End
+
+#OPERATION
+Author Tyr~
+Territory 5
+AdversaryType 0
+AdversaryName a figure in sleek, black tactical gear, with a golden emblem on their shoulder~
+Elitestring ~
+Storyrunners ~
+Atmosphere ~
+RoomName in a town near Boston, Massachusetts~
+Description ~
+Preferred ~
+BagName ~
+Timeshift 0
+UploadName securing the area~
+Type 3
+InitDays 3
+Spam 0
+MaxPCs 8
+Speed 3
+Terrain 3
+Size 1000
+Hour 12
+Day 3
+Faction 26
+Bonus 0
+Storyline ~
+Timer 0
+Competition 0
+Timeline ~
+Challenge 2
+HomeSoldiers 0
+Goal 11
+GuestResolved 0
+Target ~
+Soldiers 0 0 0 0 0 0 0 0 0 0
+Enrolled 0 0 0 0 0 0 0 0 0 0
+FacTimers 0 0 0 0 0 0 0 0 0 0
+POIX 0 0 0 0 0 0 0 0 0 0
+POIY 0 0 0 0 0 0 0 0 0 0
+POIType 0 0 0 0 0 0 0 0 0 0
+POIFaction 0 0 0 0 0 0 0 0 0 0
+End
+
+#OPERATION
+Author Tyr~
+Territory 59
+AdversaryType 0
+AdversaryName a figure clad in red and black camo with demonic sigils etched into their weapons~
+Elitestring ~
+Storyrunners ~
+Atmosphere ~
+RoomName in a warehouse near Marrakesh, Morocco~
+Description ~
+Preferred ~
+BagName ~
+Timeshift 0
+UploadName securing the area~
+Type 2
+InitDays 4
+Spam 0
+MaxPCs 6
+Speed 4
+Terrain 6
+Size 1000
+Hour 22
+Day 3
+Faction 29
+Bonus 0
+Storyline ~
+Timer 0
+Competition 0
+Timeline ~
+Challenge 2
+HomeSoldiers 0
+Goal 11
+GuestResolved 0
+Target ~
+Soldiers 0 0 0 0 0 0 0 0 0 0
+Enrolled 0 0 0 0 0 0 0 0 0 0
+FacTimers 0 0 0 0 0 0 0 0 0 0
+POIX 0 0 0 0 0 0 0 0 0 0
+POIY 0 0 0 0 0 0 0 0 0 0
+POIType 0 0 0 0 0 0 0 0 0 0
+POIFaction 0 0 0 0 0 0 0 0 0 0
+End
+
+#OPERATION
+Author Tyr~
+Territory 8
+AdversaryType 0
+AdversaryName a figure clad in red and black camo with demonic sigils etched into their weapons~
+Elitestring ~
+Storyrunners ~
+Atmosphere ~
+RoomName in caves near Miami, Florida~
+Description ~
+Preferred ~
+BagName ~
+Timeshift 0
+UploadName securing the area~
+Type 3
+InitDays 4
+Spam 0
+MaxPCs 7
+Speed 4
+Terrain 7
+Size 1000
+Hour 12
+Day 4
+Faction 29
+Bonus 0
+Storyline ~
+Timer 0
+Competition 0
+Timeline ~
+Challenge 2
+HomeSoldiers 0
+Goal 11
+GuestResolved 0
+Target ~
+Soldiers 0 0 0 0 0 0 0 0 0 0
+Enrolled 0 0 0 0 0 0 0 0 0 0
+FacTimers 0 0 0 0 0 0 0 0 0 0
+POIX 0 0 0 0 0 0 0 0 0 0
+POIY 0 0 0 0 0 0 0 0 0 0
+POIType 0 0 0 0 0 0 0 0 0 0
+POIFaction 0 0 0 0 0 0 0 0 0 0
+End
+
+#OPERATION
+Author Tyr~
+Territory 12
+AdversaryType 0
+AdversaryName a figure in sleek, black tactical gear, with a golden emblem on their shoulder~
+Elitestring ~
+Storyrunners ~
+Atmosphere ~
+RoomName in a town near Yellowstone, Wyoming~
+Description ~
+Preferred ~
+BagName ~
+Timeshift 0
+UploadName securing the area~
+Type 3
+InitDays 5
+Spam 0
+MaxPCs 3
+Speed 3
+Terrain 3
+Size 1000
+Hour 22
+Day 4
+Faction 26
+Bonus 0
+Storyline ~
+Timer 0
+Competition 0
+Timeline ~
+Challenge 2
+HomeSoldiers 0
+Goal 11
+GuestResolved 0
+Target ~
+Soldiers 0 0 0 0 0 0 0 0 0 0
+Enrolled 0 0 0 0 0 0 0 0 0 0
+FacTimers 0 0 0 0 0 0 0 0 0 0
+POIX 0 0 0 0 0 0 0 0 0 0
+POIY 0 0 0 0 0 0 0 0 0 0
+POIType 0 0 0 0 0 0 0 0 0 0
+POIFaction 0 0 0 0 0 0 0 0 0 0
+End
+
+#OPERATION
+Author Tyr~
+Territory 2
+AdversaryType 0
+AdversaryName a figure in sleek, black tactical gear, with a golden emblem on their shoulder~
+Elitestring ~
+Storyrunners ~
+Atmosphere ~
+RoomName in the tundra near Toronto, Canada~
+Description ~
+Preferred ~
+BagName ~
+Timeshift 0
+UploadName securing the area~
+Type 3
+InitDays 5
+Spam 0
+MaxPCs 8
+Speed 2
+Terrain 9
+Size 1000
+Hour 12
+Day 5
+Faction 26
+Bonus 0
+Storyline ~
+Timer 0
+Competition 0
+Timeline ~
+Challenge 2
+HomeSoldiers 0
+Goal 11
+GuestResolved 0
+Target ~
+Soldiers 0 0 0 0 0 0 0 0 0 0
+Enrolled 0 0 0 0 0 0 0 0 0 0
+FacTimers 0 0 0 0 0 0 0 0 0 0
+POIX 0 0 0 0 0 0 0 0 0 0
+POIY 0 0 0 0 0 0 0 0 0 0
+POIType 0 0 0 0 0 0 0 0 0 0
+POIFaction 0 0 0 0 0 0 0 0 0 0
+End
+
+#OPERATION
+Author Tyr~
+Territory 46
+AdversaryType 0
+AdversaryName a figure in urban combat gear with a dark blue beret~
+Elitestring ~
+Storyrunners ~
+Atmosphere ~
+RoomName in the city of Mumbai, India~
+Description ~
+Preferred ~
+BagName ~
+Timeshift 0
+UploadName securing the area~
+Type 3
+InitDays 6
+Spam 0
+MaxPCs 6
+Speed 2
+Terrain 4
+Size 1000
+Hour 22
+Day 5
+Faction 28
+Bonus 0
+Storyline ~
+Timer 0
+Competition 0
+Timeline ~
+Challenge 2
+HomeSoldiers 0
+Goal 11
+GuestResolved 0
+Target ~
+Soldiers 0 0 0 0 0 0 0 0 0 0
+Enrolled 0 0 0 0 0 0 0 0 0 0
+FacTimers 0 0 0 0 0 0 0 0 0 0
+POIX 0 0 0 0 0 0 0 0 0 0
+POIY 0 0 0 0 0 0 0 0 0 0
+POIType 0 0 0 0 0 0 0 0 0 0
+POIFaction 0 0 0 0 0 0 0 0 0 0
+End
+
+#OPERATION
+Author Tyr~
+Territory 37
+AdversaryType 0
+AdversaryName a figure in urban combat gear with a dark blue beret~
+Elitestring ~
+Storyrunners ~
+Atmosphere ~
+RoomName in caves near Istanbul, Turkey~
+Description ~
+Preferred ~
+BagName ~
+Timeshift 0
+UploadName securing the area~
+Type 3
+InitDays 6
+Spam 0
+MaxPCs 7
+Speed 2
+Terrain 7
+Size 1000
+Hour 12
+Day 6
+Faction 28
+Bonus 0
+Storyline ~
+Timer 0
+Competition 0
+Timeline ~
+Challenge 2
+HomeSoldiers 0
+Goal 11
+GuestResolved 0
+Target ~
+Soldiers 0 0 0 0 0 0 0 0 0 0
+Enrolled 0 0 0 0 0 0 0 0 0 0
+FacTimers 0 0 0 0 0 0 0 0 0 0
+POIX 0 0 0 0 0 0 0 0 0 0
+POIY 0 0 0 0 0 0 0 0 0 0
+POIType 0 0 0 0 0 0 0 0 0 0
+POIFaction 0 0 0 0 0 0 0 0 0 0
+End
+
+#OPERATION
+Author Tyr~
+Territory 68
+AdversaryType 1
+AdversaryName a figure in sleek, black tactical gear, with a golden emblem on their shoulder~
+Elitestring ~
+Storyrunners ~
+Atmosphere ~
+RoomName in a field near Navorost~
+Description ~
+Preferred ~
+BagName ~
+Timeshift 0
+UploadName securing the area~
+Type 2
+InitDays 0
+Spam 0
+MaxPCs 3
+Speed 4
+Terrain 1
+Size 1000
+Hour 16
+Day 6
+Faction 26
+Bonus 0
+Storyline ~
+Timer 0
+Competition 0
+Timeline ~
+Challenge 2
+HomeSoldiers 0
+Goal 11
+GuestResolved 0
+Target ~
+Soldiers 0 0 0 0 0 0 0 0 0 0
+Enrolled 0 0 0 0 0 0 0 0 0 0
+FacTimers 0 0 0 0 0 0 0 0 0 0
+POIX 0 0 0 0 0 0 0 0 0 0
+POIY 0 0 0 0 0 0 0 0 0 0
+POIType 0 0 0 0 0 0 0 0 0 0
+POIFaction 0 0 0 0 0 0 0 0 0 0
+End
+
+#OPERATION
+Author Tyr~
+Territory 21
+AdversaryType 0
+AdversaryName a figure in sleek, black tactical gear, with a golden emblem on their shoulder~
+Elitestring ~
+Storyrunners ~
+Atmosphere ~
+RoomName in the city of Dublin, Ireland~
+Description ~
+Preferred ~
+BagName ~
+Timeshift 0
+UploadName securing the area~
+Type 3
+InitDays 7
+Spam 0
+MaxPCs 7
+Speed 2
+Terrain 4
+Size 1000
+Hour 22
+Day 6
+Faction 26
+Bonus 0
+Storyline ~
+Timer 0
+Competition 0
+Timeline ~
+Challenge 2
+HomeSoldiers 0
+Goal 11
+GuestResolved 0
+Target ~
+Soldiers 0 0 0 0 0 0 0 0 0 0
+Enrolled 0 0 0 0 0 0 0 0 0 0
+FacTimers 0 0 0 0 0 0 0 0 0 0
+POIX 0 0 0 0 0 0 0 0 0 0
+POIY 0 0 0 0 0 0 0 0 0 0
+POIType 0 0 0 0 0 0 0 0 0 0
+POIFaction 0 0 0 0 0 0 0 0 0 0
+End
+
+#END
