@@ -34,6 +34,8 @@ bool state_of_emergency(void) { return emergency; }
 const struct discipline_type discipline_table[] = {};
 const int discipline_table_count = 0;
 ROOM_INDEX_DATA limbo = {};
+ROOM_INDEX_DATA meeting_west = {}, meeting_east = {}, prison_west = {}, prison_east = {};
+bool auction_rooms_available = true;
 MOB_INDEX_DATA crowd_index = {}, enforcer_index = {};
 int saves = 0, ambushes = 0, fights = 0, aggro_attacker = 20;
 bool save_ok = true;
@@ -46,6 +48,8 @@ char *str_dup(const char *s) { return strdup(s); }
 void free_string(char *s) { free(s); }
 bool str_cmp(const char *a, const char *b) { return strcasecmp(a, b) != 0; }
 void send_to_char(const char *s, CHAR_DATA *ch) { output_messages[ch] += s; }
+void save_char_obj(CHAR_DATA *, bool, bool) {}
+void send_message(int, char *) {}
 void printf_to_char(CHAR_DATA *ch, const char *fmt, ...) {
   char buf[8192]; va_list args; va_start(args, fmt);
   vsnprintf(buf, sizeof(buf), fmt, args); va_end(args); output_messages[ch] += buf;
@@ -66,7 +70,23 @@ void start_fight(CHAR_DATA *ch, CHAR_DATA *victim) {
   ++fights; set_combat_state(ch, true); set_combat_state(victim, true);
 }
 MOB_INDEX_DATA *get_mob_index(int id) { return id == 115 ? &crowd_index : &enforcer_index; }
-ROOM_INDEX_DATA *get_room_index(int) { return &limbo; }
+ROOM_INDEX_DATA *get_room_index(int id) {
+  if (!auction_rooms_available && (id == ROOM_MEETING_WEST || id == ROOM_MEETING_EAST)) return nullptr;
+  if (id == ROOM_MEETING_WEST) return &meeting_west;
+  if (id == ROOM_MEETING_EAST) return &meeting_east;
+  if (id == ROOM_PRISON_WEST) return &prison_west;
+  if (id == ROOM_PRISON_EAST) return &prison_east;
+  return &limbo;
+}
+int pc_pop(ROOM_INDEX_DATA *room) {
+  int count = 0;
+  for (auto *ch : char_list) if (!IS_NPC(ch) && ch->in_room == room) ++count;
+  return count;
+}
+bool in_haven(ROOM_INDEX_DATA *) { return true; }
+CHAR_DATA *get_gm(ROOM_INDEX_DATA *, bool) { return nullptr; }
+bool same_faction(CHAR_DATA *, CHAR_DATA *) { return false; }
+int prof_focus(CHAR_DATA *) { return 0; }
 CHAR_DATA *create_mobile(MOB_INDEX_DATA *index) {
   auto *ch = new CHAR_DATA{}; ch->pIndexData = index;
   ch->race = RACE_SOLDIER; SET_FLAG(ch->act, ACT_IS_NPC);
@@ -106,7 +126,9 @@ CHAR_DATA *get_cover(CHAR_DATA *) { return nullptr; }
 bool can_see_char_distance(CHAR_DATA *, CHAR_DATA *, int) { return true; }
 '''
 
+patrols = (ROOT / 'src/patrols.c').read_text()
 production = '\n'.join([
+    patrols[patrols.index('  bool start_syndicate_auction('):patrols.index('  bool free_to_act(')],
     section('  bool cortex_enforcer(', '  bool cortex_alarm('),
     section('  void cortex_enforcer_defeat(', '  static time_t cortex_breach_until'),
     section('  int difficulty_mod(', '  char *const crystal_levels'),
@@ -137,7 +159,7 @@ int main() {
   npc = society; npc.vnum = 102; npc.type = FACTION_NPC;
   deleted = society; deleted.vnum = 103; deleted.valid = false;
   FacVect = {&cortex, &society, &offline, &scum, &npc, &deleted};
-  AREA_DATA town = {}; town.vnum = HAVEN_TOWN_VNUM; town.name = const_cast<char *>("Haven Township");
+  AREA_DATA town = {}; town.vnum = HAVEN_TOWN_VNUM; town.name = const_cast<char *>("Gravesend Township");
   ROOM_INDEX_DATA street = {}, other = {}; EXIT_DATA exit = {};
   street.area = other.area = &town; street.name = const_cast<char *>("Actual protest street");
   other.name = const_cast<char *>("Another street");
@@ -249,7 +271,51 @@ int main() {
   for (auto *ch : char_list) if (cortex_public_enforcer(ch)) assert(ch->ttl == 0);
   assert(apc.sleeping == 100 && attacker.in_room == &street);
   cleanup_mobs();
-  puts("Dissent timing, rewards, cooldown, location, combat eligibility, enforcer targeting/KO and nightmare tests passed.");
+
+  // Alarm defeat auctions this exact character, with no monster or defense restoration.
+  apc.sleeping = 0; attacker.in_room = &street; attacker.hit = 0; attacker.wounds = 2;
+  dpc.patrol_habits[PATROL_DIPLOMATICHABIT] = 1; dpc.patrol_amount = 999;
+  opc.patrol_habits[PATROL_DIPLOMATICHABIT] = 1;
+  SET_FLAG(outsider.act, PLR_SHROUD);
+  meeting_west.name = const_cast<char *>("West auction");
+  meeting_east.name = const_cast<char *>("East auction");
+  auto *alarm = create_mobile(&enforcer_index);
+  SET_FLAG(alarm->act, ACT_CORTEX_ENFORCER); alarm->ttl = 12;
+  free_string(alarm->aggression); alarm->aggression = str_dup(attacker.name);
+  alarm->in_room = &street;
+  cortex_enforcer_defeat(alarm, &attacker);
+  assert(attacker.in_room == &prison_west && !IS_FLAG(attacker.act, PLR_BOUND));
+  assert(apc.patrol_status == PATROL_KIDNAPPED && apc.patrol_timer == 24 * 60);
+  assert(apc.syndicate_release_at == current_time + 24 * 60 * 60);
+  assert(apc.sleeping == 0 && attacker.hit == 0 && attacker.wounds == 2 && ambushes == 0);
+  assert(!in_fight(&attacker) && alarm->ttl == 0 && !in_fight(alarm));
+  assert(dpc.patrol_status == PATROL_BIDDING && dpc.patrol_target == &attacker);
+  assert(dpc.patrol_timer == 15 && dpc.patrol_room == &meeting_west && dpc.patrol_amount == 0);
+  assert(opc.patrol_status == 0);
+  apc.patrol_timer = 20; cortex_enforcer_defeat(alarm, &attacker);
+  assert(apc.patrol_timer == 20); // Retired squad cannot capture a second time.
+  assert(!start_syndicate_auction(&attacker));
+  cleanup_mobs();
+
+  // Occupied cells force the other venue; full venues leave the victim in place.
+  REMOVE_FLAG(outsider.act, PLR_SHROUD);
+  assert(start_syndicate_auction(&outsider) && outsider.in_room == &prison_east);
+  dpc.patrol_status = 0;
+  alarm = create_mobile(&enforcer_index);
+  SET_FLAG(alarm->act, ACT_CORTEX_ENFORCER); alarm->ttl = 12;
+  free_string(alarm->aggression); alarm->aggression = str_dup(defender.name);
+  cortex_enforcer_defeat(alarm, &defender);
+  assert(defender.in_room == &street && dpc.sleeping >= 240 && defender.hit == 0);
+  assert(dpc.patrol_status == 0 && ambushes == 0);
+  cleanup_mobs();
+  auction_rooms_available = false;
+  assert(!start_syndicate_auction(&defender));
+  assert(!start_syndicate_auction(nullptr));
+  for (PC_DATA *pc : {&apc, &dpc, &opc}) {
+    free_string(pc->syndicate_seller);
+    free_string(pc->syndicate_prisoner);
+  }
+  puts("Dissent, public-response KO, alarm auctions, venue availability and nightmare tests passed.");
 }
 '''
 

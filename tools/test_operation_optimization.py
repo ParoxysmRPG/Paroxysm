@@ -36,6 +36,7 @@ stubs = r'''
 #define MSL 4096
 #define IS_NPC(c) ((c)->npc)
 #define UMAX(a,b) std::max(a,b)
+#define UMIN(a,b) std::min(a,b)
 #define ADVERSARY_VALUE 65
 enum { POI_EXTRACT = 1, POI_CAPTURE = 2, GOAL_PSYCHIC = 3,
        OPERATION_INTERCEPT = 4, OPERATION_EXTRACT = 5,
@@ -87,10 +88,11 @@ void lose_operation() { ++losses; }
 void win_operation(int, OPERATION_TYPE *) { ++wins; }
 void end_battle() { ++ends; isactiveoperation = false; activeoperation = nullptr; }
 void battle_message(const char *, int) {}
-void send_message_temp(int, const char *) {}
+void send_message_temp(int, const char *text) { output += text; }
 int pc_op_count() { return 2; }
-void make_elite(int, int, int, int, char *, int, int) { ++spawns; }
-void make_adversary(int, int, int, int, char *, int) { ++spawns; }
+std::vector<int> spawn_slots;
+void make_elite(int, int slot, int, int, char *, int, int) { ++spawns; spawn_slots.push_back(slot); }
+void make_adversary(int, int slot, int, int, char *, int) { ++spawns; spawn_slots.push_back(slot); }
 int safe_strlen(const char *s) { return s ? strlen(s) : 0; }
 void free_string(char *s) { free(s); }
 char *str_dup(const char *s) { return strdup(s); }
@@ -232,8 +234,30 @@ int main() {
   op.type = OPERATION_INTERCEPT; op.timer = 6; op.power = 1000;
   CHAR_DATA obstacle; obstacle.npc = true; obstacle.pIndexData = &cover;
   char_list.push_back(&obstacle);
-  operations_update(); assert(op.timer == 5 && op.power == 1300 && spawns == 19);
-  puts("PASS: extraction concludes once; zero waves, loss, psychic goals and reinforcement budget.");
+  operations_update(); assert(op.timer == 5 && op.power == 1300 && spawns == 12);
+  // Empty faction slots share one allowance, including elites. The capture
+  // branch must use its spawn slot, not the inner loop's soldier counter.
+  for (int type : {OPERATION_INTERCEPT, OPERATION_CAPTURE}) {
+    op.type = type; op.timer = 6; op.power = 100000; op.elitestring = str_dup("elite");
+    battle_factions[0] = 123; spawns = 0; spawn_slots.clear();
+    operations_update();
+    assert(spawns == 12 && strlen(op.elitestring) == 0);
+    for (int slot : spawn_slots) assert(slot == 1);
+    free_string(op.elitestring); op.elitestring = nullptr;
+  }
+  // An existing full population prevents even the elite from exceeding the cap.
+  CHAR_DATA existing; adversary.vnum = 115;
+  existing.npc = true; existing.pIndexData = &adversary; existing.in_room = viewer.in_room;
+  for (int i = 0; i < 12; ++i) char_list.push_back(&existing);
+  op.timer = 6; op.power = INT_MAX; op.elitestring = str_dup("elite"); spawns = 0;
+  operations_update(); assert(spawns == 0 && op.power == INT_MAX && !strcmp(op.elitestring, "elite"));
+  free_string(op.elitestring); op.elitestring = nullptr;
+  char_list.remove(&existing);
+  // Malformed/legacy zero upload targets must not divide by zero in progress.
+  op.timer = 4; op.waves = 0; op.upload = 0; op.faction = 123;
+  op.home_uploads = INT_MAX; output.clear(); operations_update();
+  assert(output.find("214748364700 percent") != std::string::npos);
+  puts("PASS: extraction concludes once; zero waves/uploads, loss, psychic goals and one bounded reinforcement budget.");
 }
 '''
 

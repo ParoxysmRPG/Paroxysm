@@ -93,8 +93,10 @@ normal~
 #ROOMS
 #405000
 `Da stone passageway`x~
-Plain walls border a strip of hard flooring. Wear follows the middle of the
-corridor, while it's margins remain quiet and comparatively untouched.`x
+The far wall steps inward around a shallow structural pier faced in pale green
+paint. The ceiling joints converge slightly off-center, lending the passage an
+unobtrusive asymmetry. The repeated lines give the passage a quiet momentum,
+drawing attention along the building rather than into the margins.`x
 ~
 0 8 24
 B 1
@@ -122,8 +124,11 @@ Y ~
 S
 #405001
 `Da stone passageway`x~
-Plain walls border a strip of hard flooring. Wear follows the middle of the
-corridor, while it's margins remain quiet and comparatively untouched.`x
+A rectangular recess interrupts the right-hand side of the corridor, framed by
+a narrow border of dark wood. The floor pattern shifts by a small fraction at
+an old join, making the repair easier to feel with the eye than to measure.
+The repeated lines give the passage a quiet momentum, drawing attention along
+the building rather than into the margins.`x
 ~
 0 8 0
 B 1
@@ -156,8 +161,10 @@ Y ~
 S
 #405002
 `Da stone passageway`x~
-Plain walls border a strip of hard flooring. Wear follows the middle of the
-corridor, while it's margins remain quiet and comparatively untouched.`x
+A rectangular recess interrupts the far side of the corridor, framed by a
+narrow border of gray tile. One broad panel is set back just far enough to
+catch a thin border of shadow. The long proportions draw the eye past each
+small interruption in the wall, making the far end feel slightly removed.`x
 ~
 0 8 0
 B 1
@@ -190,8 +197,10 @@ Y ~
 S
 #405003
 `Da stone passageway`x~
-Plain walls border a strip of hard flooring. Wear follows the middle of the
-corridor, while it's margins remain quiet and comparatively untouched.`x
+The ceiling drops slightly toward the near wall, where gray tile picks out the
+change in level. A narrow patch in the flooring crosses the usual line of
+travel at a diagonal. The repeated lines give the passage a quiet momentum,
+drawing attention along the building rather than into the margins.`x
 ~
 0 8 0
 B 1
@@ -224,9 +233,11 @@ Y ~
 S
 #405004
 `Dth`ye So`Yut`yh si`Dde `yof t`Yhe Ba`yza`Dar`x~
-Rows of displays organize the shop floor, leaving space to browse between
-them. A `wcounter`x marks the edge of the customer area; scuffs near it's base
-show where people linger.`x
+The near displays step down toward a low `wcounter`x, with cream enamel tying
+the fittings together. Small label holders repeat along the shelf edges, some
+bright at the corners and others dulled by handling. The displays reward
+attention to small differences, leaving the open floor to carry the ordinary
+passing trade.`x
 ~
 0 33554440 5
 B 1
@@ -258,18 +269,18 @@ W (null)~
 Y ~
 P
 counter~
-The counter marks the public edge of the sales area.`x
-~
-P
-displays~
-Space between the displays allows a small group to browse together.`x
+The counter's edge has been polished smooth by resting hands. Small scratches
+cloud the top, leaving a comfortable shared surface for leaning in to talk or
+examining something laid between companions.`x
 ~
 S
 #405005
 `ythe L`ribr`yary`x~
-Rows of books and paper-filled shelving break the room into intimate spaces. A
-`wreading table`x provides a clear surface among the close-set spines, with
-the dry smell of paper lingering nearby.`x
+Bookcases frame the `wreading table`x along the right-hand wall, with muted
+green paint outlining their deeper recesses. The table has a shallow groove
+around the working surface, collecting a thin line of paper dust. The space
+feels most complete at reading distance, where small titles and the grain of a
+tabletop become the landscape.`x
 ~
 0 8 5
 B 1
@@ -296,15 +307,18 @@ W (null)~
 Y ~
 P
 reading table~
-The reading table provides shared seating and a clear surface near the
-shelves.`x
+Broad enough for open books, the table keeps a clear working surface among the
+shelves. Fine scratches and a dull polish mark the places where readers have
+leaned, with chairs close enough to compare a passage in low voices.`x
 ~
 S
 #405006
 `Dthe `cMag`Cic`mal `CWo`crks`Dhop`x~
-Inscribed working surfaces occupy the workshop's edges, their patterns
-interrupted by ordinary scratches. A `wworktable`x stands in the center,
-bringing arcane craft down to the scale of patient handwork.`x
+Inscribed surfaces border the workshop, their elaborate patterns interrupted
+by ordinary scratches and old repairs. Fine dust settles into the deeper cuts.
+A central `wworktable`x gives arcane craft a practical meeting place, with
+enough room for company to lean together over work that has required both
+patience and precision.`x
 ~
 0 40 5
 B 1
@@ -321,14 +335,17 @@ W (null)~
 Y ~
 P
 worktable~
-The central table provides a shared working surface.`x
+A broad working surface bears fine cuts, stains, and older repairs. The edge
+is rubbed smooth where people lean over a project, with enough room for
+companions to examine the same detail from either side.`x
 ~
 S
 #405007
 `Dth`ye No`Yrt`yh si`Dde `yof t`Yhe Ba`yza`Dar`x~
-Rows of displays organize the shop floor, leaving space to browse between
-them. A `wcounter`x marks the edge of the customer area; scuffs near it's base
-show where people linger.`x
+A broad strip of blue-gray paint draws the eye toward the `wcounter`x at the
+far end. The upper shelving leaves a generous gap beneath the ceiling, making
+the crowded lower rows feel less close. The shop has a practical intimacy,
+bringing a whole collection of choices within a few steps.`x
 ~
 0 1048584 5
 B 1
@@ -370,17 +387,17 @@ W (null)~
 Y ~
 P
 counter~
-The counter marks the public edge of the sales area.`x
-~
-P
-displays~
-Space between the displays allows a small group to browse together.`x
+The counter's edge has been polished smooth by resting hands. Small scratches
+cloud the top, leaving a comfortable shared surface for leaning in to talk or
+examining something laid between companions.`x
 ~
 S
 #405008
 `Da stone passageway`x~
-Plain walls border a strip of hard flooring. Wear follows the middle of the
-corridor, while it's margins remain quiet and comparatively untouched.`x
+The right-hand edge of the floor follows a low, rounded skirting finished in
+pale green paint. A narrow patch in the flooring crosses the usual line of
+travel at a diagonal. The repeated lines give the passage a quiet momentum,
+drawing attention along the building rather than into the margins.`x
 ~
 0 8 11
 B 1
@@ -413,9 +430,11 @@ Y ~
 S
 #405009
 `Dthe `gAlch`Gemi`Dcal L`Gabr`gato`Dry`x~
-Work surfaces crowded with fixed racks border a clear central floor. Marks of
-spills and careful cleaning overlap across the `wworkbench`x, giving the
-alchemical laboratory a history of exacting, imperfect work.`x
+Fixed racks crowd the laboratory's working surfaces. Old spills have left
+overlapping stains that cleaning has faded without erasing, and a sharp,
+mineral smell clings to the fittings. The `wworkbench`x keeps a clear station
+among them, bringing the room's strange experiments down to the scale of
+careful hands.`x
 ~
 0 17825800 5
 B 1
@@ -432,14 +451,20 @@ W (null)~
 Y ~
 P
 workbench~
-The workbench offers a clear standing station among the fixed racks.`x
+Fine tool marks cross the stout working surface, with dust caught in the
+deepest cuts. The bench stands at a practical height for leaning over a piece
+of work, bringing careful hands and curious company together.`x
 ~
 S
 #405010
 `Dthe F`gleshfo`Drmin`gg Cl`Dinic`x~
-Smooth treatment surfaces sit within an otherwise rough-built enclosure. The
-contrast between the clean `wconsultation area`x and the surrounding market
-architecture gives the clinic an unsettling precision.`x
+The Fleshforming Clinic has made an exact, washable island inside the Goblin
+Market's rough construction. A narrow `wtreatment table`x occupies the cleared
+space, backed by fittings whose clean edges are almost too conspicuous beside
+the uneven walls. The surrounding joinery refuses to match the clinical
+surfaces. The contrast gives the room an unsettling precision, as though the
+care spent preparing it says little about whether the purpose should be
+comforting.`x
 ~
 0 40 5
 B 1
@@ -455,15 +480,20 @@ M 0 H 0
 W (null)~
 Y ~
 P
-consultation area~
-Seats face a plain treatment surface within the clinic.`x
+treatment table~
+Firm padding covers a narrow, easily cleaned table. The raised surface leaves
+room to stand close on either side, keeping patient and attendant within quiet
+speaking distance.`x
 ~
 S
 #405011
 `DThe F`yol`Dly`x~
-Mismatched woodwork and carefully patched furnishings give the Folly the
-character of a refuge assembled over time. A `wseating nook`x sits against the
-irregular wall, close enough for low conversation.`x
+The Folly's `wcorner seats`x are a mismatched gathering of patched furniture
+tucked against an irregular wall. Different wood finishes meet without quite
+agreeing, and one carefully repaired edge is newer than anything surrounding
+it. A small tabletop brings the chairs into conversational reach. The room
+feels rescued rather than furnished, a refuge whose warmth comes from ordinary
+things being allowed another useful life.`x
 ~
 0 67108872 12
 B 1
@@ -484,16 +514,19 @@ M 0 H 0
 W (null)~
 Y ~
 P
-seating nook~
-The nook gathers several seats around a patched wooden table.`x
+corner seats~
+These seats tuck into a quieter corner, angled toward one another. The fabric
+is softened by use, and the close arrangement makes it easy to lower a voice
+without losing sight of the room.`x
 ~
 S
 #405012
 `DT`Dhe F`yol`Dly`x `DLodgings`x~
-Plastered walls enclose a modest domestic interior. A scuffed floor leaves a
-clear central area, with the quieter edges of the room set apart from the
-space used for passing through. `wsitting area`x provides a distinct place to
-gather.`x
+The `wsofa`x sits at a slight angle to the near wall, breaking up the straight
+lines of the cream plaster trim. The floor has a softer finish around the
+seats, with a clearer strip left for crossing the room. Small sounds lose
+their sharpness among the soft furnishings, giving a conversation room to slow
+down.`x
 ~
 0 33562632 2
 B 1
@@ -524,15 +557,18 @@ M 0 H 0
 W (null)~
 Y ~
 P
-sitting area~
-A small group of seats occupies one edge of the domestic space.`x
+sofa~
+Deep cushions settle into familiar hollows along the sofa. The arms are rubbed
+smooth, and the upholstery holds a faint fabric warmth; there's room to sit
+close or claim a comfortable corner.`x
 ~
 S
 #405013
 `Dthe Men's Bathroom`x~
-Hard surfaces and close-set fittings give the washroom a compact layout. A
-`wshower`x occupies one side, with a screened washing space and a drain
-beneath the fittings.`x
+The `wshower`x is recessed beneath a shallow lintel faced in cream enamel at
+the left-hand end. A recessed shelf keeps washing things close to hand without
+protruding into the narrow floor. Reflections repeat between the polished
+surfaces, making the modest enclosure seem more intricate than it is.`x
 ~
 0 17039368 2
 B 1
@@ -549,15 +585,17 @@ W (null)~
 Y ~
 P
 shower~
-Water runs from the shower head into a drained washing space, with room to
-stand beneath the spray.`x
+Pale mineral trails mark the shower fittings above the drained washing space.
+Water patters against the floor beneath the spray, and the close air carries a
+clean trace of soap.`x
 ~
 S
 #405014
 `Dthe Women's Bathroom`x~
-Hard surfaces and close-set fittings give the washroom a compact layout. A
-`wshower`x occupies one side, with a screened washing space and a drain
-beneath the fittings.`x
+A narrow border of sand-colored plaster frames the `wshower`x along the near
+wall. A pale towel folded over a simple rail adds the only soft texture among
+the washable surfaces. The close fittings leave the room practical and
+intimate, scaled to the small business of washing.`x
 ~
 0 17039368 2
 B 1
@@ -594,15 +632,18 @@ W (null)~
 Y ~
 P
 shower~
-Water runs from the shower head into a drained washing space, with room to
-stand beneath the spray.`x
+Pale mineral trails mark the shower fittings above the drained washing space.
+Water patters against the floor beneath the spray, and the close air carries a
+clean trace of soap.`x
 ~
 S
 #405015
 `Dthe `cEngin`Cee`Wrin`Cg Wo`crks`Dhop`x~
-Metal brackets and measured work surfaces give the workshop a rigid geometry.
-Filing marks and handling scars surround a sturdy `wworkbench`x, where the
-room's practical layout comes together.`x
+Metal brackets and squared surfaces give the workshop a stubbornly practical
+geometry. Filing marks cloud the edges of the `wworkbench`x, and fine debris
+catches in the joints despite repeated cleanups. The air carries a dry metal
+smell, with each worn station recording the small adjustments of things made
+to fit.`x
 ~
 0 1048616 5
 B 1
@@ -629,14 +670,18 @@ W (null)~
 Y ~
 P
 workbench~
-The bench leaves room for several people to examine work together.`x
+Fine tool marks cross the stout working surface, with dust caught in the
+deepest cuts. The bench stands at a practical height for leaning over a piece
+of work, bringing careful hands and curious company together.`x
 ~
 S
 #405016
 `Dthe A`rren`Ra `rView`Ding A`rrea`D~
-An open `wtraining area`x occupies the center. Repeated use has marked it's
-surface, while the edges leave room for observers clear of the activity space.
-`wsidelines`x provides a distinct place to gather.`x
+The right-hand boundary steps back around a shallow recess, giving this
+portion of the recreation floor a broader margin. The nearest wall has a more
+forgiving finish below shoulder height than the plain surface above. The clear
+central space carries broad, overlapping scuffs, a faded record of movements
+repeated in different directions.`x
 ~
 0 8 5
 B 1
@@ -681,15 +726,11 @@ D8
 M 0 H 0
 W (null)~
 Y ~
-P
-sidelines~
-The sidelines offer a place to watch while leaving the central area clear.`x
-~
 S
 #405017
 `Dthe A`rrcan`Re Vie`rwing A`Drea`x~
-A raised `wviewing space`x faces the dueling grounds. Hard-wearing seats
-follow it's edge, with a clear `wobserver area`x set back from the boundary.`x
+A raised viewing space faces the dueling grounds. Hard-wearing seats follow
+the edge, with a clear observer area set back from the boundary.`x
 ~
 0 8 5
 B 1
@@ -739,20 +780,14 @@ D9
 M 0 H 0
 W (null)~
 Y ~
-P
-observer area~
-The area offers room to watch from beside the seats.`x
-~
-P
-viewing space~
-The space provides a close view of the enclosed display.`x
-~
 S
 #405018
 Above magical dueling area~
-The `cair`x stretches around an unbounded space above the ground. There is no
-floor or surrounding wall here; distance and height give the emptiness it's
-scale.`x
+The left-hand surroundings fall away beyond a broad shape of rust-colored
+sandstone, leaving the air itself unenclosed. The spaces between the lower
+shapes look narrower from this height than their separate edges suggest. It's
+a place of depth rather than enclosure, with the nearest solid forms kept
+distinctly below.`x
 ~
 0 8 18
 B 1
@@ -805,9 +840,11 @@ Y ~
 S
 #405019
 Above magical dueling area~
-The `cair`x stretches around an unbounded space above the ground. There is no
-floor or surrounding wall here; distance and height give the emptiness it's
-scale.`x
+A distinct edge of dark basalt lies far below on the left-hand side, a small
+reference point within the open height. The spaces between the lower shapes
+look narrower from this height than their separate edges suggest. There is no
+floor here, only the exposed scale of open air and the distant arrangement
+beneath it.`x
 ~
 0 8 18
 B 1
@@ -850,9 +887,11 @@ Y ~
 S
 #405020
 Above magical dueling area~
-The `cair`x stretches around an unbounded space above the ground. There is no
-floor or surrounding wall here; distance and height give the emptiness it's
-scale.`x
+A small angular patch of slate-gray stone anchors the near view before the
+more distant forms lose their detail. An isolated vertical form below
+interrupts the broader pattern, drawing attention before becoming small again.
+The open space offers no enclosing surface to return a sound or make the
+distance feel comfortably near.`x
 ~
 0 8 18
 B 1
@@ -885,9 +924,10 @@ Y ~
 S
 #405021
 `Dthe Ca`rge Vie`Rwing A`rre`Da`x~
-Hard walls enclose a restricted space. A `wbench`x occupies one edge, leaving
-a small patch of floor whose worn surface makes the enclosure's limits feel
-close.`x
+A shallow recess in the right-hand wall contains the bench, framed by heavier
+rust-colored sandstone. Small scratches gather near the height of a resting
+hand, making an uneven patch on the otherwise plain surface. The limited floor
+makes a small movement feel like a complete circuit of the enclosure.`x
 ~
 0 8 5
 B 1
@@ -932,17 +972,14 @@ D7
 M 0 H 0
 W (null)~
 Y ~
-P
-bench~
-The bench rests against the edge of the enclosure, overlooking it's limited
-floor space.`x
-~
 S
 #405022
 above cage~
-The `cair`x stretches around an unbounded space above the ground. There is no
-floor or surrounding wall here; distance and height give the emptiness it's
-scale.`x
+A small angular patch of dark basalt anchors the far view before the more
+distant forms lose their detail. An isolated vertical form below interrupts
+the broader pattern, drawing attention before becoming small again. The open
+space offers no enclosing surface to return a sound or make the distance feel
+comfortably near.`x
 ~
 0 8 18
 B 1
@@ -975,9 +1012,11 @@ Y ~
 S
 #405023
 `Dan Arena Waiting Area`x~
-An open `wtraining area`x occupies the center. Repeated use has marked it's
-surface, while the edges leave room for observers clear of the activity space.
-`wsidelines`x provides a distinct place to gather.`x
+A low structural edge of gray tile separates the left-hand activity space from
+the surrounding passage. A broad panel presents a simple diagram of the
+activity, with the surrounding finish kept spare. The open floor gives small
+gestures room to become visible, while the surroundings keep their supporting
+role.`x
 ~
 0 8 5
 B 1
@@ -1017,16 +1056,14 @@ D8
 M 0 H 0
 W (null)~
 Y ~
-P
-sidelines~
-The sidelines offer a place to watch while leaving the central area clear.`x
-~
 S
 #405024
 `Dan Arena Waiting Area`x~
-An open `wtraining area`x occupies the center. Repeated use has marked it's
-surface, while the edges leave room for observers clear of the activity space.
-`wsidelines`x provides a distinct place to gather.`x
+The far fittings follow the lines of the playing surface, turning the room's
+proportions toward the activity. The nearest wall has a more forgiving finish
+below shoulder height than the plain surface above. The open floor gives small
+gestures room to become visible, while the surroundings keep their supporting
+role.`x
 ~
 0 8 5
 B 1
@@ -1061,16 +1098,15 @@ D8
 M 0 H 0
 W (null)~
 Y ~
-P
-sidelines~
-The sidelines offer a place to watch while leaving the central area clear.`x
-~
 S
 #405025
 `DArcane D`cue`Cl`cin`Dg Circle`x~
-Circular markings define the `wdueling ground`x. Scuffs cross their edges, but
-the central space remains open, with the circle edge giving observers a clear
-sense of the arena's shape.`x
+Circular markings define the `wdueling ground`x, their lines interrupted by
+old scuffs. Near the middle, repeated contests have worn a duller patch into
+the surface. The circle edge leaves observers room to gather, with the marked
+boundary making every step into the open ground feel deliberate. The nearest
+wall has a more forgiving finish below shoulder height than the plain surface
+above. The boundary markings change direction around a neatly fitted corner.`x
 ~
 0 16392 24
 B 1
@@ -1110,16 +1146,16 @@ D8
 M 0 H 0
 W (null)~
 Y ~
-P
-circle edge~
-The edge of the marked circle offers a place to gather clear of it's center.`x
-~
 S
 #405026
 `DArcane D`cue`Cl`cin`Dg Circle`x~
-Circular markings define the `wdueling ground`x. Scuffs cross their edges, but
-the central space remains open, with the circle edge giving observers a clear
-sense of the arena's shape.`x
+Circular markings define the `wdueling ground`x, their lines interrupted by
+old scuffs. Near the middle, repeated contests have worn a duller patch into
+the surface. The circle edge leaves observers room to gather, with the marked
+boundary making every step into the open ground feel deliberate. A broad panel
+presents a simple diagram of the activity, with the surrounding finish kept
+spare. Repeated movement has left arcs rather than straight tracks across the
+busiest part of the surface.`x
 ~
 0 16392 24
 B 1
@@ -1154,16 +1190,16 @@ D4
 M 0 H 0
 W (null)~
 Y ~
-P
-circle edge~
-The edge of the marked circle offers a place to gather clear of it's center.`x
-~
 S
 #405027
 `DArcane D`cue`Cl`cin`Dg Circle`x~
-Circular markings define the `wdueling ground`x. Scuffs cross their edges, but
-the central space remains open, with the circle edge giving observers a clear
-sense of the arena's shape.`x
+Circular markings define the `wdueling ground`x, their lines interrupted by
+old scuffs. Near the middle, repeated contests have worn a duller patch into
+the surface. The circle edge leaves observers room to gather, with the marked
+boundary making every step into the open ground feel deliberate. A broad panel
+presents a simple diagram of the activity, with the surrounding finish kept
+spare. The floor changes texture just beyond the main playing surface, making
+the limit apparent underfoot.`x
 ~
 0 16392 24
 B 1
@@ -1193,16 +1229,16 @@ D9
 M 0 H 0
 W (null)~
 Y ~
-P
-circle edge~
-The edge of the marked circle offers a place to gather clear of it's center.`x
-~
 S
 #405028
 `DArcane D`cue`Cl`cin`Dg Circle`x~
-Circular markings define the `wdueling ground`x. Scuffs cross their edges, but
-the central space remains open, with the circle edge giving observers a clear
-sense of the arena's shape.`x
+Circular markings define the `wdueling ground`x, their lines interrupted by
+old scuffs. Near the middle, repeated contests have worn a duller patch into
+the surface. The circle edge leaves observers room to gather, with the marked
+boundary making every step into the open ground feel deliberate. The boundary
+markings change direction around a neatly fitted corner. A broad panel
+presents a simple diagram of the activity, with the surrounding finish kept
+spare.`x
 ~
 0 16392 24
 B 1
@@ -1237,16 +1273,15 @@ D9
 M 0 H 0
 W (null)~
 Y ~
-P
-circle edge~
-The edge of the marked circle offers a place to gather clear of it's center.`x
-~
 S
 #405029
 `DArcane D`cue`Cl`cin`Dg Circle`x~
-Circular markings define the `wdueling ground`x. Scuffs cross their edges, but
-the central space remains open, with the circle edge giving observers a clear
-sense of the arena's shape.`x
+Circular markings define the `wdueling ground`x, their lines interrupted by
+old scuffs. Near the middle, repeated contests have worn a duller patch into
+the surface. The circle edge leaves observers room to gather, with the marked
+boundary making every step into the open ground feel deliberate. A broad panel
+presents a simple diagram of the activity, with the surrounding finish kept
+spare. The boundary markings change direction around a neatly fitted corner.`x
 ~
 0 16392 24
 B 1
@@ -1276,16 +1311,14 @@ D8
 M 0 H 0
 W (null)~
 Y ~
-P
-circle edge~
-The edge of the marked circle offers a place to gather clear of it's center.`x
-~
 S
 #405030
 Above magical dueling area~
-The `cair`x stretches around an unbounded space above the ground. There is no
-floor or surrounding wall here; distance and height give the emptiness it's
-scale.`x
+Toward the right-hand, the nearest shapes below form a broken outline around a
+pale patch of rust-colored sandstone. An isolated vertical form below
+interrupts the broader pattern, drawing attention before becoming small again.
+Height strips familiar things of their ordinary size, leaving the sky immense
+around a few small points of reference.`x
 ~
 0 8 18
 B 1
@@ -1323,9 +1356,10 @@ Y ~
 S
 #405031
 Above magical dueling area~
-The `cair`x stretches around an unbounded space above the ground. There is no
-floor or surrounding wall here; distance and height give the emptiness it's
-scale.`x
+Toward the left-hand, the nearest shapes below form a broken outline around a
+pale patch of dark basalt. The surrounding emptiness gives every visible edge
+an unusual emphasis. There is no floor here, only the exposed scale of open
+air and the distant arrangement beneath it.`x
 ~
 0 8 18
 B 1
@@ -1368,9 +1402,10 @@ Y ~
 S
 #405032
 `Dan Arena Waiting Area`x~
-An open `wtraining area`x occupies the center. Repeated use has marked it's
-surface, while the edges leave room for observers clear of the activity space.
-`wsidelines`x provides a distinct place to gather.`x
+A low structural edge of sand-colored plaster separates the far activity space
+from the surrounding passage. A broad panel presents a simple diagram of the
+activity, with the surrounding finish kept spare. The room has the practical
+wear of effort repeated for enjoyment as much as discipline.`x
 ~
 0 8 5
 B 1
@@ -1405,16 +1440,13 @@ D6
 M 0 H 0
 W (null)~
 Y ~
-P
-sidelines~
-The sidelines offer a place to watch while leaving the central area clear.`x
-~
 S
 #405033
 `Dthe Cage`x~
-Hard walls enclose a restricted space. A `wbench`x occupies one edge, leaving
-a small patch of floor whose worn surface makes the enclosure's limits feel
-close.`x
+A shallow recess in the near wall contains the bench, framed by heavier
+blue-gray shale. The nearest joint is packed flat, denying the rough surface
+even a useful-looking recess. The bench offers a place to sit without making
+the confinement comfortable.`x
 ~
 0 16392 24
 B 1
@@ -1439,17 +1471,13 @@ D6
 M 0 H 0
 W (null)~
 Y ~
-P
-bench~
-The bench rests against the edge of the enclosure, overlooking it's limited
-floor space.`x
-~
 S
 #405034
 `Dabove the Arena`x~
-The `cair`x stretches around an unbounded space above the ground. There is no
-floor or surrounding wall here; distance and height give the emptiness it's
-scale.`x
+A distinct edge of dark basalt lies far below on the right-hand side, a small
+reference point within the open height. A change in angle would rearrange the
+overlapping shapes more quickly than an eye expects. There is no floor here,
+only the exposed scale of open air and the distant arrangement beneath it.`x
 ~
 0 16392 18
 B 1
@@ -1507,9 +1535,11 @@ Y ~
 S
 #405035
 `Dabove the Arena`x~
-The `cair`x stretches around an unbounded space above the ground. There is no
-floor or surrounding wall here; distance and height give the emptiness it's
-scale.`x
+Toward the near, the nearest shapes below form a broken outline around a pale
+patch of green-veined rock. The spaces between the lower shapes look narrower
+from this height than their separate edges suggest. Height strips familiar
+things of their ordinary size, leaving the sky immense around a few small
+points of reference.`x
 ~
 0 16392 18
 B 1
@@ -1562,9 +1592,11 @@ Y ~
 S
 #405036
 `Dabove the Arena`x~
-The `cair`x stretches around an unbounded space above the ground. There is no
-floor or surrounding wall here; distance and height give the emptiness it's
-scale.`x
+The left-hand surroundings fall away beyond a broad shape of green-veined
+rock, leaving the air itself unenclosed. The nearer surfaces show their upper
+faces, revealing outlines usually lost when viewed from the ground. Height
+strips familiar things of their ordinary size, leaving the sky immense around
+a few small points of reference.`x
 ~
 0 16392 18
 B 1
@@ -1617,9 +1649,11 @@ Y ~
 S
 #405037
 `Dabove the Arena`x~
-The `cair`x stretches around an unbounded space above the ground. There is no
-floor or surrounding wall here; distance and height give the emptiness it's
-scale.`x
+Toward the left-hand, the nearest shapes below form a broken outline around a
+pale patch of slate-gray stone. The nearer surfaces show their upper faces,
+revealing outlines usually lost when viewed from the ground. It's a place of
+depth rather than enclosure, with the nearest solid forms kept distinctly
+below.`x
 ~
 0 16392 18
 B 1
@@ -1677,9 +1711,11 @@ Y ~
 S
 #405038
 `Dabove the Arena`x~
-The `cair`x stretches around an unbounded space above the ground. There is no
-floor or surrounding wall here; distance and height give the emptiness it's
-scale.`x
+The left-hand view opens above a narrow line of slate-gray stone, reducing the
+ground to texture and proportion. The nearer surfaces show their upper faces,
+revealing outlines usually lost when viewed from the ground. It's a place of
+depth rather than enclosure, with the nearest solid forms kept distinctly
+below.`x
 ~
 0 16392 18
 B 1
@@ -1732,9 +1768,10 @@ Y ~
 S
 #405039
 `Dabove the Arena`x~
-The `cair`x stretches around an unbounded space above the ground. There is no
-floor or surrounding wall here; distance and height give the emptiness it's
-scale.`x
+The left-hand surroundings fall away beyond a broad shape of slate-gray stone,
+leaving the air itself unenclosed. The surrounding emptiness gives every
+visible edge an unusual emphasis. Height strips familiar things of their
+ordinary size, leaving the sky immense around a few small points of reference.`x
 ~
 0 16392 18
 B 1
@@ -1777,9 +1814,11 @@ Y ~
 S
 #405040
 `Dabove the Arena`x~
-The `cair`x stretches around an unbounded space above the ground. There is no
-floor or surrounding wall here; distance and height give the emptiness it's
-scale.`x
+A distinct edge of green-veined rock lies far below on the near side, a small
+reference point within the open height. A change in angle would rearrange the
+overlapping shapes more quickly than an eye expects. The open space offers no
+enclosing surface to return a sound or make the distance feel comfortably
+near.`x
 ~
 0 16392 18
 B 1
@@ -1832,9 +1871,11 @@ Y ~
 S
 #405041
 `Dabove the Arena`x~
-The `cair`x stretches around an unbounded space above the ground. There is no
-floor or surrounding wall here; distance and height give the emptiness it's
-scale.`x
+The near view opens above a narrow line of cream mineral deposits, reducing
+the ground to texture and proportion. An isolated vertical form below
+interrupts the broader pattern, drawing attention before becoming small again.
+It's a place of depth rather than enclosure, with the nearest solid forms kept
+distinctly below.`x
 ~
 0 16392 18
 B 1
@@ -1872,9 +1913,10 @@ Y ~
 S
 #405042
 `Dabove the Arena`x~
-The `cair`x stretches around an unbounded space above the ground. There is no
-floor or surrounding wall here; distance and height give the emptiness it's
-scale.`x
+Toward the far, the nearest shapes below form a broken outline around a pale
+patch of pale limestone. The surrounding emptiness gives every visible edge an
+unusual emphasis. There is no floor here, only the exposed scale of open air
+and the distant arrangement beneath it.`x
 ~
 0 16392 18
 B 1
@@ -1917,9 +1959,11 @@ Y ~
 S
 #405043
 `Dabove the Arena`x~
-The `cair`x stretches around an unbounded space above the ground. There is no
-floor or surrounding wall here; distance and height give the emptiness it's
-scale.`x
+The right-hand view gathers the nearer ground into overlapping bands, one pale
+strip of green-veined rock standing out among them. The nearer surfaces show
+their upper faces, revealing outlines usually lost when viewed from the
+ground. It's a place of depth rather than enclosure, with the nearest solid
+forms kept distinctly below.`x
 ~
 0 16392 18
 B 1
@@ -1977,9 +2021,11 @@ Y ~
 S
 #405044
 `Dabove the Arena`x~
-The `cair`x stretches around an unbounded space above the ground. There is no
-floor or surrounding wall here; distance and height give the emptiness it's
-scale.`x
+The near surroundings fall away beyond a broad shape of dark basalt, leaving
+the air itself unenclosed. The nearer surfaces show their upper faces,
+revealing outlines usually lost when viewed from the ground. There is no floor
+here, only the exposed scale of open air and the distant arrangement beneath
+it.`x
 ~
 0 16392 18
 B 1
@@ -2037,9 +2083,11 @@ Y ~
 S
 #405045
 `Dabove the Arena`x~
-The `cair`x stretches around an unbounded space above the ground. There is no
-floor or surrounding wall here; distance and height give the emptiness it's
-scale.`x
+A small angular patch of chalky stone anchors the far view before the more
+distant forms lose their detail. An isolated vertical form below interrupts
+the broader pattern, drawing attention before becoming small again. It's a
+place of depth rather than enclosure, with the nearest solid forms kept
+distinctly below.`x
 ~
 0 16392 18
 B 1
@@ -2097,9 +2145,11 @@ Y ~
 S
 #405046
 `Dabove the Arena`x~
-The `cair`x stretches around an unbounded space above the ground. There is no
-floor or surrounding wall here; distance and height give the emptiness it's
-scale.`x
+The near view gathers the nearer ground into overlapping bands, one pale strip
+of cream mineral deposits standing out among them. An isolated vertical form
+below interrupts the broader pattern, drawing attention before becoming small
+again. There is no floor here, only the exposed scale of open air and the
+distant arrangement beneath it.`x
 ~
 0 16392 18
 B 1
@@ -2142,9 +2192,11 @@ Y ~
 S
 #405047
 above the arena~
-The `cair`x stretches around an unbounded space above the ground. There is no
-floor or surrounding wall here; distance and height give the emptiness it's
-scale.`x
+A distinct edge of pale limestone lies far below on the near side, a small
+reference point within the open height. An isolated vertical form below
+interrupts the broader pattern, drawing attention before becoming small again.
+Height strips familiar things of their ordinary size, leaving the sky immense
+around a few small points of reference.`x
 ~
 0 40 24
 B 1
@@ -2187,9 +2239,10 @@ Y ~
 S
 #405048
 `Dabove the Arena`x~
-The `cair`x stretches around an unbounded space above the ground. There is no
-floor or surrounding wall here; distance and height give the emptiness it's
-scale.`x
+Toward the near, the nearest shapes below form a broken outline around a pale
+patch of pale limestone. The nearer surfaces show their upper faces, revealing
+outlines usually lost when viewed from the ground. There is no floor here,
+only the exposed scale of open air and the distant arrangement beneath it.`x
 ~
 0 8 24
 B 1
@@ -2247,9 +2300,11 @@ Y ~
 S
 #405049
 `Dabove the Arena`x~
-The `cair`x stretches around an unbounded space above the ground. There is no
-floor or surrounding wall here; distance and height give the emptiness it's
-scale.`x
+The far view opens above a narrow line of blue-gray shale, reducing the ground
+to texture and proportion. The nearer surfaces show their upper faces,
+revealing outlines usually lost when viewed from the ground. It's a place of
+depth rather than enclosure, with the nearest solid forms kept distinctly
+below.`x
 ~
 0 8 24
 B 1
@@ -2307,9 +2362,11 @@ Y ~
 S
 #405050
 `Dabove the Arena`x~
-The `cair`x stretches around an unbounded space above the ground. There is no
-floor or surrounding wall here; distance and height give the emptiness it's
-scale.`x
+The left-hand surroundings fall away beyond a broad shape of rust-colored
+sandstone, leaving the air itself unenclosed. An isolated vertical form below
+interrupts the broader pattern, drawing attention before becoming small again.
+The open space offers no enclosing surface to return a sound or make the
+distance feel comfortably near.`x
 ~
 0 8 24
 B 1
@@ -2367,9 +2424,11 @@ Y ~
 S
 #405051
 `Dabove the Arena`x~
-The `cair`x stretches around an unbounded space above the ground. There is no
-floor or surrounding wall here; distance and height give the emptiness it's
-scale.`x
+A small angular patch of slate-gray stone anchors the far view before the more
+distant forms lose their detail. The spaces between the lower shapes look
+narrower from this height than their separate edges suggest. There is no floor
+here, only the exposed scale of open air and the distant arrangement beneath
+it.`x
 ~
 0 16392 18
 B 1
@@ -2412,9 +2471,11 @@ Y ~
 S
 #405052
 `Dabove the Arena`x~
-The `cair`x stretches around an unbounded space above the ground. There is no
-floor or surrounding wall here; distance and height give the emptiness it's
-scale.`x
+A small angular patch of pale limestone anchors the far view before the more
+distant forms lose their detail. The spaces between the lower shapes look
+narrower from this height than their separate edges suggest. There is no floor
+here, only the exposed scale of open air and the distant arrangement beneath
+it.`x
 ~
 0 16392 18
 B 1
@@ -2452,9 +2513,10 @@ Y ~
 S
 #405053
 `Dabove the Arena`x~
-The `cair`x stretches around an unbounded space above the ground. There is no
-floor or surrounding wall here; distance and height give the emptiness it's
-scale.`x
+Toward the near, the nearest shapes below form a broken outline around a pale
+patch of slate-gray stone. A change in angle would rearrange the overlapping
+shapes more quickly than an eye expects. The open space offers no enclosing
+surface to return a sound or make the distance feel comfortably near.`x
 ~
 0 16392 18
 B 1
@@ -2507,9 +2569,10 @@ Y ~
 S
 #405054
 `Dabove the Arena`x~
-The `cair`x stretches around an unbounded space above the ground. There is no
-floor or surrounding wall here; distance and height give the emptiness it's
-scale.`x
+Toward the left-hand, the nearest shapes below form a broken outline around a
+pale patch of chalky stone. A change in angle would rearrange the overlapping
+shapes more quickly than an eye expects. The open space offers no enclosing
+surface to return a sound or make the distance feel comfortably near.`x
 ~
 0 16392 18
 B 1
@@ -2567,9 +2630,11 @@ Y ~
 S
 #405055
 `Dabove the Arena`x~
-The `cair`x stretches around an unbounded space above the ground. There is no
-floor or surrounding wall here; distance and height give the emptiness it's
-scale.`x
+Toward the left-hand, the nearest shapes below form a broken outline around a
+pale patch of chalky stone. The spaces between the lower shapes look narrower
+from this height than their separate edges suggest. The open space offers no
+enclosing surface to return a sound or make the distance feel comfortably
+near.`x
 ~
 0 16392 18
 B 1
@@ -2622,9 +2687,11 @@ Y ~
 S
 #405056
 `Dabove the Arena`x~
-The `cair`x stretches around an unbounded space above the ground. There is no
-floor or surrounding wall here; distance and height give the emptiness it's
-scale.`x
+The right-hand view gathers the nearer ground into overlapping bands, one pale
+strip of slate-gray stone standing out among them. An isolated vertical form
+below interrupts the broader pattern, drawing attention before becoming small
+again. The open space offers no enclosing surface to return a sound or make
+the distance feel comfortably near.`x
 ~
 0 16392 18
 B 1
@@ -2662,9 +2729,10 @@ Y ~
 S
 #405057
 `Dabove the Arena`x~
-The `cair`x stretches around an unbounded space above the ground. There is no
-floor or surrounding wall here; distance and height give the emptiness it's
-scale.`x
+A small angular patch of chalky stone anchors the near view before the more
+distant forms lose their detail. A change in angle would rearrange the
+overlapping shapes more quickly than an eye expects. There is no floor here,
+only the exposed scale of open air and the distant arrangement beneath it.`x
 ~
 0 16392 18
 B 1
@@ -2702,9 +2770,11 @@ Y ~
 S
 #405058
 `Dabove the Arena`x~
-The `cair`x stretches around an unbounded space above the ground. There is no
-floor or surrounding wall here; distance and height give the emptiness it's
-scale.`x
+The far surroundings fall away beyond a broad shape of pale limestone, leaving
+the air itself unenclosed. The spaces between the lower shapes look narrower
+from this height than their separate edges suggest. The open space offers no
+enclosing surface to return a sound or make the distance feel comfortably
+near.`x
 ~
 0 16392 18
 B 1
@@ -2747,9 +2817,11 @@ Y ~
 S
 #405059
 `Dabove the Arena`x~
-The `cair`x stretches around an unbounded space above the ground. There is no
-floor or surrounding wall here; distance and height give the emptiness it's
-scale.`x
+Toward the right-hand, the nearest shapes below form a broken outline around a
+pale patch of blue-gray shale. Nearby outlines remain sharper than the forms
+beyond them, making the depth apparent without giving it an easy measure.
+There is no floor here, only the exposed scale of open air and the distant
+arrangement beneath it.`x
 ~
 0 16392 18
 B 1
@@ -2787,9 +2859,11 @@ Y ~
 S
 #405060
 `ythe Arena`x~
-An open `wtraining area`x occupies the center. Repeated use has marked it's
-surface, while the edges leave room for observers clear of the activity space.
-`wsidelines`x provides a distinct place to gather.`x
+A low structural edge of pale green paint separates the near activity space
+from the surrounding passage. The floor changes texture just beyond the main
+playing surface, making the limit apparent underfoot. The clear central space
+carries broad, overlapping scuffs, a faded record of movements repeated in
+different directions.`x
 ~
 0 16392 24
 B 1
@@ -2824,16 +2898,14 @@ D9
 M 0 H 0
 W (null)~
 Y ~
-P
-sidelines~
-The sidelines offer a place to watch while leaving the central area clear.`x
-~
 S
 #405061
 `ythe Arena`x~
-An open `wtraining area`x occupies the center. Repeated use has marked it's
-surface, while the edges leave room for observers clear of the activity space.
-`wsidelines`x provides a distinct place to gather.`x
+The right-hand boundary steps back around a shallow recess, giving this
+portion of the recreation floor a broader margin. Repeated movement has left
+arcs rather than straight tracks across the busiest part of the surface. The
+room has the practical wear of effort repeated for enjoyment as much as
+discipline.`x
 ~
 0 16392 24
 B 1
@@ -2873,16 +2945,13 @@ D9
 M 0 H 0
 W (null)~
 Y ~
-P
-sidelines~
-The sidelines offer a place to watch while leaving the central area clear.`x
-~
 S
 #405062
 `ythe Arena`x~
-An open `wtraining area`x occupies the center. Repeated use has marked it's
-surface, while the edges leave room for observers clear of the activity space.
-`wsidelines`x provides a distinct place to gather.`x
+A low structural edge of white ceramic separates the near activity space from
+the surrounding passage. A broad panel presents a simple diagram of the
+activity, with the surrounding finish kept spare. The room has the practical
+wear of effort repeated for enjoyment as much as discipline.`x
 ~
 0 16392 24
 B 1
@@ -2917,16 +2986,13 @@ D9
 M 0 H 0
 W (null)~
 Y ~
-P
-sidelines~
-The sidelines offer a place to watch while leaving the central area clear.`x
-~
 S
 #405063
 `ythe Arena`x~
-An open `wtraining area`x occupies the center. Repeated use has marked it's
-surface, while the edges leave room for observers clear of the activity space.
-`wsidelines`x provides a distinct place to gather.`x
+A low structural edge of sand-colored plaster separates the near activity
+space from the surrounding passage. Repeated movement has left arcs rather
+than straight tracks across the busiest part of the surface. The room has the
+practical wear of effort repeated for enjoyment as much as discipline.`x
 ~
 0 16392 24
 B 1
@@ -2961,16 +3027,13 @@ D9
 M 0 H 0
 W (null)~
 Y ~
-P
-sidelines~
-The sidelines offer a place to watch while leaving the central area clear.`x
-~
 S
 #405064
 `ythe Arena`x~
-An open `wtraining area`x occupies the center. Repeated use has marked it's
-surface, while the edges leave room for observers clear of the activity space.
-`wsidelines`x provides a distinct place to gather.`x
+The near boundary steps back around a shallow recess, giving this portion of
+the recreation floor a broader margin. Repeated movement has left arcs rather
+than straight tracks across the busiest part of the surface. The room has the
+practical wear of effort repeated for enjoyment as much as discipline.`x
 ~
 0 16392 24
 B 1
@@ -3020,16 +3083,14 @@ D9
 M 0 H 0
 W (null)~
 Y ~
-P
-sidelines~
-The sidelines offer a place to watch while leaving the central area clear.`x
-~
 S
 #405065
 `ythe Arena`x~
-An open `wtraining area`x occupies the center. Repeated use has marked it's
-surface, while the edges leave room for observers clear of the activity space.
-`wsidelines`x provides a distinct place to gather.`x
+The far playing space is framed by a broad strip of cream enamel, keeping the
+central activity area clear. A broad panel presents a simple diagram of the
+activity, with the surrounding finish kept spare. The open floor gives small
+gestures room to become visible, while the surroundings keep their supporting
+role.`x
 ~
 0 16392 24
 B 1
@@ -3084,16 +3145,13 @@ D9
 M 0 H 0
 W (null)~
 Y ~
-P
-sidelines~
-The sidelines offer a place to watch while leaving the central area clear.`x
-~
 S
 #405066
 `ythe Arena`x~
-An open `wtraining area`x occupies the center. Repeated use has marked it's
-surface, while the edges leave room for observers clear of the activity space.
-`wsidelines`x provides a distinct place to gather.`x
+A low structural edge of dark wood separates the far activity space from the
+surrounding passage. The floor changes texture just beyond the main playing
+surface, making the limit apparent underfoot. The room has the practical wear
+of effort repeated for enjoyment as much as discipline.`x
 ~
 0 16392 24
 B 1
@@ -3143,16 +3201,14 @@ D9
 M 0 H 0
 W (null)~
 Y ~
-P
-sidelines~
-The sidelines offer a place to watch while leaving the central area clear.`x
-~
 S
 #405067
 `ythe Arena`x~
-An open `wtraining area`x occupies the center. Repeated use has marked it's
-surface, while the edges leave room for observers clear of the activity space.
-`wsidelines`x provides a distinct place to gather.`x
+The right-hand fittings follow the lines of the playing surface, turning the
+room's proportions toward the activity. The floor changes texture just beyond
+the main playing surface, making the limit apparent underfoot. The arrangement
+makes movement legible, with the strongest lines following the repeated paths
+of play.`x
 ~
 0 16392 24
 B 1
@@ -3187,16 +3243,14 @@ D7
 M 0 H 0
 W (null)~
 Y ~
-P
-sidelines~
-The sidelines offer a place to watch while leaving the central area clear.`x
-~
 S
 #405068
 `ythe Arena`x~
-An open `wtraining area`x occupies the center. Repeated use has marked it's
-surface, while the edges leave room for observers clear of the activity space.
-`wsidelines`x provides a distinct place to gather.`x
+The left-hand boundary steps back around a shallow recess, giving this portion
+of the recreation floor a broader margin. The nearest wall has a more
+forgiving finish below shoulder height than the plain surface above. The
+arrangement makes movement legible, with the strongest lines following the
+repeated paths of play.`x
 ~
 0 16392 24
 B 1
@@ -3236,16 +3290,13 @@ D7
 M 0 H 0
 W (null)~
 Y ~
-P
-sidelines~
-The sidelines offer a place to watch while leaving the central area clear.`x
-~
 S
 #405069
 `ythe Arena`x~
-An open `wtraining area`x occupies the center. Repeated use has marked it's
-surface, while the edges leave room for observers clear of the activity space.
-`wsidelines`x provides a distinct place to gather.`x
+A low structural edge of dark wood separates the near activity space from the
+surrounding passage. A broad panel presents a simple diagram of the activity,
+with the surrounding finish kept spare. The room has the practical wear of
+effort repeated for enjoyment as much as discipline.`x
 ~
 0 16392 24
 B 1
@@ -3300,16 +3351,13 @@ D9
 M 0 H 0
 W (null)~
 Y ~
-P
-sidelines~
-The sidelines offer a place to watch while leaving the central area clear.`x
-~
 S
 #405070
 `ythe Arena`x~
-An open `wtraining area`x occupies the center. Repeated use has marked it's
-surface, while the edges leave room for observers clear of the activity space.
-`wsidelines`x provides a distinct place to gather.`x
+A low structural edge of pale green paint separates the near activity space
+from the surrounding passage. The nearest wall has a more forgiving finish
+below shoulder height than the plain surface above. The room has the practical
+wear of effort repeated for enjoyment as much as discipline.`x
 ~
 0 16392 24
 B 1
@@ -3364,16 +3412,13 @@ D9
 M 0 H 0
 W (null)~
 Y ~
-P
-sidelines~
-The sidelines offer a place to watch while leaving the central area clear.`x
-~
 S
 #405071
 `ythe Arena`x~
-An open `wtraining area`x occupies the center. Repeated use has marked it's
-surface, while the edges leave room for observers clear of the activity space.
-`wsidelines`x provides a distinct place to gather.`x
+A low structural edge of sand-colored plaster separates the near activity
+space from the surrounding passage. The boundary markings change direction
+around a neatly fitted corner. The open floor gives small gestures room to
+become visible, while the surroundings keep their supporting role.`x
 ~
 0 16392 24
 B 1
@@ -3428,16 +3473,14 @@ D9
 M 0 H 0
 W (null)~
 Y ~
-P
-sidelines~
-The sidelines offer a place to watch while leaving the central area clear.`x
-~
 S
 #405072
 `ythe Arena`x~
-An open `wtraining area`x occupies the center. Repeated use has marked it's
-surface, while the edges leave room for observers clear of the activity space.
-`wsidelines`x provides a distinct place to gather.`x
+The left-hand fittings follow the lines of the playing surface, turning the
+room's proportions toward the activity. Repeated movement has left arcs rather
+than straight tracks across the busiest part of the surface. The arrangement
+makes movement legible, with the strongest lines following the repeated paths
+of play.`x
 ~
 0 16392 24
 B 1
@@ -3477,16 +3520,14 @@ D9
 M 0 H 0
 W (null)~
 Y ~
-P
-sidelines~
-The sidelines offer a place to watch while leaving the central area clear.`x
-~
 S
 #405073
 `ythe Arena`x~
-An open `wtraining area`x occupies the center. Repeated use has marked it's
-surface, while the edges leave room for observers clear of the activity space.
-`wsidelines`x provides a distinct place to gather.`x
+The left-hand fittings follow the lines of the playing surface, turning the
+room's proportions toward the activity. The nearest wall has a more forgiving
+finish below shoulder height than the plain surface above. The clear central
+space carries broad, overlapping scuffs, a faded record of movements repeated
+in different directions.`x
 ~
 0 16392 24
 B 1
@@ -3526,16 +3567,13 @@ D9
 M 0 H 0
 W (null)~
 Y ~
-P
-sidelines~
-The sidelines offer a place to watch while leaving the central area clear.`x
-~
 S
 #405074
 `ythe Arena`x~
-An open `wtraining area`x occupies the center. Repeated use has marked it's
-surface, while the edges leave room for observers clear of the activity space.
-`wsidelines`x provides a distinct place to gather.`x
+A low structural edge of cream enamel separates the near activity space from
+the surrounding passage. The nearest wall has a more forgiving finish below
+shoulder height than the plain surface above. The room has the practical wear
+of effort repeated for enjoyment as much as discipline.`x
 ~
 0 16392 24
 B 1
@@ -3590,16 +3628,14 @@ D9
 M 0 H 0
 W (null)~
 Y ~
-P
-sidelines~
-The sidelines offer a place to watch while leaving the central area clear.`x
-~
 S
 #405075
 `ythe Arena`x~
-An open `wtraining area`x occupies the center. Repeated use has marked it's
-surface, while the edges leave room for observers clear of the activity space.
-`wsidelines`x provides a distinct place to gather.`x
+The near playing space is framed by a broad strip of dark wood, keeping the
+central activity area clear. Repeated movement has left arcs rather than
+straight tracks across the busiest part of the surface. The clear central
+space carries broad, overlapping scuffs, a faded record of movements repeated
+in different directions.`x
 ~
 0 16392 24
 B 1
@@ -3654,16 +3690,13 @@ D9
 M 0 H 0
 W (null)~
 Y ~
-P
-sidelines~
-The sidelines offer a place to watch while leaving the central area clear.`x
-~
 S
 #405076
 `ythe Arena`x~
-An open `wtraining area`x occupies the center. Repeated use has marked it's
-surface, while the edges leave room for observers clear of the activity space.
-`wsidelines`x provides a distinct place to gather.`x
+A low structural edge of gray tile separates the near activity space from the
+surrounding passage. A broad panel presents a simple diagram of the activity,
+with the surrounding finish kept spare. The arrangement makes movement
+legible, with the strongest lines following the repeated paths of play.`x
 ~
 0 16392 24
 B 1
@@ -3718,16 +3751,13 @@ D9
 M 0 H 0
 W (null)~
 Y ~
-P
-sidelines~
-The sidelines offer a place to watch while leaving the central area clear.`x
-~
 S
 #405077
 `ythe Arena`x~
-An open `wtraining area`x occupies the center. Repeated use has marked it's
-surface, while the edges leave room for observers clear of the activity space.
-`wsidelines`x provides a distinct place to gather.`x
+The far boundary steps back around a shallow recess, giving this portion of
+the recreation floor a broader margin. The nearest wall has a more forgiving
+finish below shoulder height than the plain surface above. The room has the
+practical wear of effort repeated for enjoyment as much as discipline.`x
 ~
 0 16392 24
 B 1
@@ -3767,16 +3797,14 @@ D7
 M 0 H 0
 W (null)~
 Y ~
-P
-sidelines~
-The sidelines offer a place to watch while leaving the central area clear.`x
-~
 S
 #405078
 `ythe Arena`x~
-An open `wtraining area`x occupies the center. Repeated use has marked it's
-surface, while the edges leave room for observers clear of the activity space.
-`wsidelines`x provides a distinct place to gather.`x
+The left-hand boundary steps back around a shallow recess, giving this portion
+of the recreation floor a broader margin. A broad panel presents a simple
+diagram of the activity, with the surrounding finish kept spare. The clear
+central space carries broad, overlapping scuffs, a faded record of movements
+repeated in different directions.`x
 ~
 0 16392 24
 B 1
@@ -3811,16 +3839,13 @@ D7
 M 0 H 0
 W (null)~
 Y ~
-P
-sidelines~
-The sidelines offer a place to watch while leaving the central area clear.`x
-~
 S
 #405079
 `ythe Arena`x~
-An open `wtraining area`x occupies the center. Repeated use has marked it's
-surface, while the edges leave room for observers clear of the activity space.
-`wsidelines`x provides a distinct place to gather.`x
+The far boundary steps back around a shallow recess, giving this portion of
+the recreation floor a broader margin. The floor changes texture just beyond
+the main playing surface, making the limit apparent underfoot. The room has
+the practical wear of effort repeated for enjoyment as much as discipline.`x
 ~
 0 16392 24
 B 1
@@ -3870,16 +3895,13 @@ D8
 M 0 H 0
 W (null)~
 Y ~
-P
-sidelines~
-The sidelines offer a place to watch while leaving the central area clear.`x
-~
 S
 #405080
 `ythe Arena`x~
-An open `wtraining area`x occupies the center. Repeated use has marked it's
-surface, while the edges leave room for observers clear of the activity space.
-`wsidelines`x provides a distinct place to gather.`x
+A low structural edge of cream enamel separates the near activity space from
+the surrounding passage. Repeated movement has left arcs rather than straight
+tracks across the busiest part of the surface. The arrangement makes movement
+legible, with the strongest lines following the repeated paths of play.`x
 ~
 0 16392 24
 B 1
@@ -3934,16 +3956,14 @@ D9
 M 0 H 0
 W (null)~
 Y ~
-P
-sidelines~
-The sidelines offer a place to watch while leaving the central area clear.`x
-~
 S
 #405081
 `ythe Arena`x~
-An open `wtraining area`x occupies the center. Repeated use has marked it's
-surface, while the edges leave room for observers clear of the activity space.
-`wsidelines`x provides a distinct place to gather.`x
+The far playing space is framed by a broad strip of brushed steel, keeping the
+central activity area clear. The floor changes texture just beyond the main
+playing surface, making the limit apparent underfoot. The open floor gives
+small gestures room to become visible, while the surroundings keep their
+supporting role.`x
 ~
 0 16392 24
 B 1
@@ -3993,16 +4013,14 @@ D9
 M 0 H 0
 W (null)~
 Y ~
-P
-sidelines~
-The sidelines offer a place to watch while leaving the central area clear.`x
-~
 S
 #405082
 `ythe Arena`x~
-An open `wtraining area`x occupies the center. Repeated use has marked it's
-surface, while the edges leave room for observers clear of the activity space.
-`wsidelines`x provides a distinct place to gather.`x
+The near playing space is framed by a broad strip of cream enamel, keeping the
+central activity area clear. A broad panel presents a simple diagram of the
+activity, with the surrounding finish kept spare. The open floor gives small
+gestures room to become visible, while the surroundings keep their supporting
+role.`x
 ~
 0 16392 24
 B 1
@@ -4042,16 +4060,14 @@ D9
 M 0 H 0
 W (null)~
 Y ~
-P
-sidelines~
-The sidelines offer a place to watch while leaving the central area clear.`x
-~
 S
 #405083
 `ythe Arena`x~
-An open `wtraining area`x occupies the center. Repeated use has marked it's
-surface, while the edges leave room for observers clear of the activity space.
-`wsidelines`x provides a distinct place to gather.`x
+The left-hand fittings follow the lines of the playing surface, turning the
+room's proportions toward the activity. Repeated movement has left arcs rather
+than straight tracks across the busiest part of the surface. The clear central
+space carries broad, overlapping scuffs, a faded record of movements repeated
+in different directions.`x
 ~
 0 16392 24
 B 1
@@ -4101,16 +4117,14 @@ D9
 M 0 H 0
 W (null)~
 Y ~
-P
-sidelines~
-The sidelines offer a place to watch while leaving the central area clear.`x
-~
 S
 #405084
 `ythe Arena`x~
-An open `wtraining area`x occupies the center. Repeated use has marked it's
-surface, while the edges leave room for observers clear of the activity space.
-`wsidelines`x provides a distinct place to gather.`x
+The left-hand boundary steps back around a shallow recess, giving this portion
+of the recreation floor a broader margin. A broad panel presents a simple
+diagram of the activity, with the surrounding finish kept spare. The
+arrangement makes movement legible, with the strongest lines following the
+repeated paths of play.`x
 ~
 0 16392 24
 B 1
@@ -4165,16 +4179,14 @@ D9
 M 0 H 0
 W (null)~
 Y ~
-P
-sidelines~
-The sidelines offer a place to watch while leaving the central area clear.`x
-~
 S
 #405085
 `ythe Arena`x~
-An open `wtraining area`x occupies the center. Repeated use has marked it's
-surface, while the edges leave room for observers clear of the activity space.
-`wsidelines`x provides a distinct place to gather.`x
+A low structural edge of white ceramic separates the left-hand activity space
+from the surrounding passage. The nearest wall has a more forgiving finish
+below shoulder height than the plain surface above. The clear central space
+carries broad, overlapping scuffs, a faded record of movements repeated in
+different directions.`x
 ~
 0 16392 24
 B 1
@@ -4224,16 +4236,16 @@ D9
 M 0 H 0
 W (null)~
 Y ~
-P
-sidelines~
-The sidelines offer a place to watch while leaving the central area clear.`x
-~
 S
 #405086
 the Mobious path~
-The `wpath`x holds a disturbingly repetitive shape. Worn ground and enclosing
-surfaces recur with an almost remembered familiarity, making the immediate
-stretch easy to see and difficult to place.`x
+The `wpath`x repeats with the stubborn familiarity of a dream revisited. A
+worn patch of ground, a bend in the enclosing shapes, another stretch that
+seems already passed: none offers a reliable landmark. It's all perfectly
+visible at close range, yet difficult to place in a sequence that makes sense.
+The exposed edges are rounded more heavily on one side than the other. The
+immediate ground is clearest through the middle, where ordinary passage has
+kept the margins at bay.`x
 ~
 0 8 24
 B 1
@@ -4291,9 +4303,10 @@ Y ~
 S
 #405087
 `CSkies`x~
-The `cair`x stretches around an unbounded space above the ground. There is no
-floor or surrounding wall here; distance and height give the emptiness it's
-scale.`x
+Open `cair`x falls away in every direction. Without a wall or a patch of
+ground close at hand, distances become difficult to judge; even a small
+movement makes the surrounding emptiness apparent. It's an exposed place, with
+nothing nearby to break the immense sweep of the sky.`x
 ~
 0 4194304 18
 G 0 0 50 0 0
@@ -4310,9 +4323,10 @@ Y ~
 S
 #405088
 `CSkies`x~
-The `cair`x stretches around an unbounded space above the ground. There is no
-floor or surrounding wall here; distance and height give the emptiness it's
-scale.`x
+Open `cair`x falls away in every direction. Without a wall or a patch of
+ground close at hand, distances become difficult to judge; even a small
+movement makes the surrounding emptiness apparent. It's an exposed place, with
+nothing nearby to break the immense sweep of the sky.`x
 ~
 0 4194304 18
 G 0 0 50 0 0
@@ -4349,9 +4363,10 @@ Y ~
 S
 #405089
 `CSkies`x~
-The `cair`x stretches around an unbounded space above the ground. There is no
-floor or surrounding wall here; distance and height give the emptiness it's
-scale.`x
+Open `cair`x falls away in every direction. Without a wall or a patch of
+ground close at hand, distances become difficult to judge; even a small
+movement makes the surrounding emptiness apparent. It's an exposed place, with
+nothing nearby to break the immense sweep of the sky.`x
 ~
 0 4194304 18
 G 0 0 50 0 0
@@ -4378,9 +4393,10 @@ Y ~
 S
 #405090
 `CSkies`x~
-The `cair`x stretches around an unbounded space above the ground. There is no
-floor or surrounding wall here; distance and height give the emptiness it's
-scale.`x
+Open `cair`x falls away in every direction. Without a wall or a patch of
+ground close at hand, distances become difficult to judge; even a small
+movement makes the surrounding emptiness apparent. It's an exposed place, with
+nothing nearby to break the immense sweep of the sky.`x
 ~
 0 4194304 18
 G 0 0 50 0 0
@@ -4417,9 +4433,10 @@ Y ~
 S
 #405091
 `CSkies`x~
-The `cair`x stretches around an unbounded space above the ground. There is no
-floor or surrounding wall here; distance and height give the emptiness it's
-scale.`x
+Open `cair`x falls away in every direction. Without a wall or a patch of
+ground close at hand, distances become difficult to judge; even a small
+movement makes the surrounding emptiness apparent. It's an exposed place, with
+nothing nearby to break the immense sweep of the sky.`x
 ~
 0 4194304 18
 G 0 0 50 0 0
@@ -4446,9 +4463,10 @@ Y ~
 S
 #405092
 `CSkies`x~
-The `cair`x stretches around an unbounded space above the ground. There is no
-floor or surrounding wall here; distance and height give the emptiness it's
-scale.`x
+Open `cair`x falls away in every direction. Without a wall or a patch of
+ground close at hand, distances become difficult to judge; even a small
+movement makes the surrounding emptiness apparent. It's an exposed place, with
+nothing nearby to break the immense sweep of the sky.`x
 ~
 0 4194304 18
 G 0 0 50 0 0
@@ -4475,9 +4493,10 @@ Y ~
 S
 #405093
 `CSkies`x~
-The `cair`x stretches around an unbounded space above the ground. There is no
-floor or surrounding wall here; distance and height give the emptiness it's
-scale.`x
+Open `cair`x falls away in every direction. Without a wall or a patch of
+ground close at hand, distances become difficult to judge; even a small
+movement makes the surrounding emptiness apparent. It's an exposed place, with
+nothing nearby to break the immense sweep of the sky.`x
 ~
 0 4194304 18
 G 0 0 50 0 0
@@ -4514,9 +4533,10 @@ Y ~
 S
 #405094
 `CSkies`x~
-The `cair`x stretches around an unbounded space above the ground. There is no
-floor or surrounding wall here; distance and height give the emptiness it's
-scale.`x
+Open `cair`x falls away in every direction. Without a wall or a patch of
+ground close at hand, distances become difficult to judge; even a small
+movement makes the surrounding emptiness apparent. It's an exposed place, with
+nothing nearby to break the immense sweep of the sky.`x
 ~
 0 4194304 18
 G 0 0 50 0 0
@@ -4543,9 +4563,13 @@ Y ~
 S
 #405095
 the Mobious path~
-The `wpath`x holds a disturbingly repetitive shape. Worn ground and enclosing
-surfaces recur with an almost remembered familiarity, making the immediate
-stretch easy to see and difficult to place.`x
+The `wpath`x repeats with the stubborn familiarity of a dream revisited. A
+worn patch of ground, a bend in the enclosing shapes, another stretch that
+seems already passed: none offers a reliable landmark. It's all perfectly
+visible at close range, yet difficult to place in a sequence that makes sense.
+The immediate ground is clearest through the middle, where ordinary passage
+has kept the margins at bay. The ground retains a faint arc of wear where
+passing traffic has favored the same turn.`x
 ~
 0 8 24
 B 1
@@ -4563,9 +4587,10 @@ Y ~
 S
 #405096
 the Mobious path~
-The `wpath`x holds a disturbingly repetitive shape. Worn ground and enclosing
-surfaces recur with an almost remembered familiarity, making the immediate
-stretch easy to see and difficult to place.`x
+The `wpath`x repeats with the stubborn familiarity of a dream revisited. A
+worn patch of ground, a bend in the enclosing shapes, another stretch that
+seems already passed: none offers a reliable landmark. It's all perfectly
+visible at close range, yet difficult to place in a sequence that makes sense.`x
 ~
 0 1024 27
 B 1
@@ -4588,9 +4613,10 @@ Y ~
 S
 #405097
 the Mobious path~
-The `wpath`x holds a disturbingly repetitive shape. Worn ground and enclosing
-surfaces recur with an almost remembered familiarity, making the immediate
-stretch easy to see and difficult to place.`x
+The `wpath`x repeats with the stubborn familiarity of a dream revisited. A
+worn patch of ground, a bend in the enclosing shapes, another stretch that
+seems already passed: none offers a reliable landmark. It's all perfectly
+visible at close range, yet difficult to place in a sequence that makes sense.`x
 ~
 0 1024 27
 B 1
@@ -4613,9 +4639,10 @@ Y ~
 S
 #405098
 the Mobious path~
-The `wpath`x holds a disturbingly repetitive shape. Worn ground and enclosing
-surfaces recur with an almost remembered familiarity, making the immediate
-stretch easy to see and difficult to place.`x
+The `wpath`x repeats with the stubborn familiarity of a dream revisited. A
+worn patch of ground, a bend in the enclosing shapes, another stretch that
+seems already passed: none offers a reliable landmark. It's all perfectly
+visible at close range, yet difficult to place in a sequence that makes sense.`x
 ~
 0 1024 27
 B 1
@@ -4638,9 +4665,10 @@ Y ~
 S
 #405099
 the Mobious path~
-The `wpath`x holds a disturbingly repetitive shape. Worn ground and enclosing
-surfaces recur with an almost remembered familiarity, making the immediate
-stretch easy to see and difficult to place.`x
+The `wpath`x repeats with the stubborn familiarity of a dream revisited. A
+worn patch of ground, a bend in the enclosing shapes, another stretch that
+seems already passed: none offers a reliable landmark. It's all perfectly
+visible at close range, yet difficult to place in a sequence that makes sense.`x
 ~
 0 1024 27
 B 1
@@ -4663,9 +4691,10 @@ Y ~
 S
 #405100
 the Mobious path~
-The `wpath`x holds a disturbingly repetitive shape. Worn ground and enclosing
-surfaces recur with an almost remembered familiarity, making the immediate
-stretch easy to see and difficult to place.`x
+The `wpath`x repeats with the stubborn familiarity of a dream revisited. A
+worn patch of ground, a bend in the enclosing shapes, another stretch that
+seems already passed: none offers a reliable landmark. It's all perfectly
+visible at close range, yet difficult to place in a sequence that makes sense.`x
 ~
 0 1024 27
 B 1
@@ -4688,9 +4717,10 @@ Y ~
 S
 #405101
 the Mobious path~
-The `wpath`x holds a disturbingly repetitive shape. Worn ground and enclosing
-surfaces recur with an almost remembered familiarity, making the immediate
-stretch easy to see and difficult to place.`x
+The `wpath`x repeats with the stubborn familiarity of a dream revisited. A
+worn patch of ground, a bend in the enclosing shapes, another stretch that
+seems already passed: none offers a reliable landmark. It's all perfectly
+visible at close range, yet difficult to place in a sequence that makes sense.`x
 ~
 0 1024 27
 B 1
@@ -4713,9 +4743,10 @@ Y ~
 S
 #405102
 the Mobious path~
-The `wpath`x holds a disturbingly repetitive shape. Worn ground and enclosing
-surfaces recur with an almost remembered familiarity, making the immediate
-stretch easy to see and difficult to place.`x
+The `wpath`x repeats with the stubborn familiarity of a dream revisited. A
+worn patch of ground, a bend in the enclosing shapes, another stretch that
+seems already passed: none offers a reliable landmark. It's all perfectly
+visible at close range, yet difficult to place in a sequence that makes sense.`x
 ~
 0 1024 27
 B 1
@@ -4738,9 +4769,10 @@ Y ~
 S
 #405103
 the Mobious path~
-The `wpath`x holds a disturbingly repetitive shape. Worn ground and enclosing
-surfaces recur with an almost remembered familiarity, making the immediate
-stretch easy to see and difficult to place.`x
+The `wpath`x repeats with the stubborn familiarity of a dream revisited. A
+worn patch of ground, a bend in the enclosing shapes, another stretch that
+seems already passed: none offers a reliable landmark. It's all perfectly
+visible at close range, yet difficult to place in a sequence that makes sense.`x
 ~
 0 1024 27
 B 1
@@ -4763,9 +4795,10 @@ Y ~
 S
 #405104
 the Mobious path~
-The `wpath`x holds a disturbingly repetitive shape. Worn ground and enclosing
-surfaces recur with an almost remembered familiarity, making the immediate
-stretch easy to see and difficult to place.`x
+The `wpath`x repeats with the stubborn familiarity of a dream revisited. A
+worn patch of ground, a bend in the enclosing shapes, another stretch that
+seems already passed: none offers a reliable landmark. It's all perfectly
+visible at close range, yet difficult to place in a sequence that makes sense.`x
 ~
 0 1024 27
 B 1
@@ -4788,9 +4821,10 @@ Y ~
 S
 #405105
 the Mobious path~
-The `wpath`x holds a disturbingly repetitive shape. Worn ground and enclosing
-surfaces recur with an almost remembered familiarity, making the immediate
-stretch easy to see and difficult to place.`x
+The `wpath`x repeats with the stubborn familiarity of a dream revisited. A
+worn patch of ground, a bend in the enclosing shapes, another stretch that
+seems already passed: none offers a reliable landmark. It's all perfectly
+visible at close range, yet difficult to place in a sequence that makes sense.`x
 ~
 0 1024 27
 B 1
@@ -4813,9 +4847,10 @@ Y ~
 S
 #405500
 the Mobious path~
-The `wpath`x holds a disturbingly repetitive shape. Worn ground and enclosing
-surfaces recur with an almost remembered familiarity, making the immediate
-stretch easy to see and difficult to place.`x
+The `wpath`x repeats with the stubborn familiarity of a dream revisited. A
+worn patch of ground, a bend in the enclosing shapes, another stretch that
+seems already passed: none offers a reliable landmark. It's all perfectly
+visible at close range, yet difficult to place in a sequence that makes sense.`x
 ~
 0 1024 27
 B 1

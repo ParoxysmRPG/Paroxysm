@@ -2771,7 +2771,7 @@ extern "C" {
         }
 
         write_to_descriptor(
-        d->descriptor, "\n\rHaven has crashed.\n\rIf you can identify the bug, please note Immortal.\n\rPlease wait while we reload your character.\n\r", 0);
+        d->descriptor, "\n\rParoxysm has crashed.\n\rIf you can identify the bug, please note Immortal.\n\rPlease wait while we reload your character.\n\r", 0);
       }
     }
 
@@ -3843,7 +3843,7 @@ extern "C" {
           send_to_char("The RP log could not be copied.\n\r", ch);
           return;
         }
-        printf_to_char(ch, "http:/`x/havenrpg.net/rplogs/%d.txt\n\r", val);
+        printf_to_char(ch, "http:/`x/paroxysm.net/rplogs/%d.txt\n\r", val);
       }
       else
       send_to_char("Syntax: Log start/stop/pause/report/view\n\r", ch);
@@ -6406,7 +6406,7 @@ extern "C" {
         if (och != NULL)
         save_char_obj(och, TRUE, FALSE);
 
-        sprintf(buf, "\n\rHaven is rebooting.\n\r");
+        sprintf(buf, "\n\rParoxysm is rebooting.\n\r");
 
         write_to_descriptor(d->descriptor, buf, 0);
       }
@@ -6487,7 +6487,7 @@ extern "C" {
         if (och != NULL)
         save_char_obj(och, TRUE, FALSE);
 
-        sprintf(buf, "\n\rHaven is rebooting automatically.\n\r");
+        sprintf(buf, "\n\rParoxysm is rebooting automatically.\n\r");
 
         write_to_descriptor(d->descriptor, buf, 0);
       }

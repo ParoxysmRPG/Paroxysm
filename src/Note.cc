@@ -66,7 +66,7 @@ bool NoteBoard::readFrom(StaticInput &is) {
     switch (toupper(key[0])) {
     case 'D':
       if (!str_cmp(key, "Display")) {
-        m_strDisplay = is.getString(temp);
+        m_strDisplay = is.getString();
         bMatch = true;
       }
       break;
@@ -78,13 +78,13 @@ bool NoteBoard::readFrom(StaticInput &is) {
       break;
     case 'F':
       if (!str_cmp(key, "FailMsg")) {
-        m_strFailedWriteMsg = is.getString(temp);
+        m_strFailedWriteMsg = is.getString();
         bMatch = true;
       }
       break;
     case 'N':
       if (!str_cmp(key, "Name")) {
-        m_strName = is.getString(temp);
+        m_strName = is.getString();
         bMatch = true;
       }
       break;
@@ -108,7 +108,7 @@ bool NoteBoard::readFrom(StaticInput &is) {
     }
   }
 
-  return bDone;
+  return bDone && !is.failed();
 }
 
 vector<NoteBoard *> NoteBoard::getBoards() { return s_nbList; }
@@ -319,7 +319,7 @@ bool Note::readFrom(StaticInput &is) {
     switch (toupper(key[0])) {
     case 'B':
       if (!str_cmp(key, "Bcc")) {
-        m_bccList.setValue(is.getString(temp));
+        m_bccList.setValue(is.getString());
         bMatch = true;
       }
       if (!str_cmp(key, "BoardN")) {
@@ -330,7 +330,7 @@ bool Note::readFrom(StaticInput &is) {
       break;
     case 'C':
       if (!str_cmp(key, "Cc")) {
-        m_ccList.setValue(is.getString(temp));
+        m_ccList.setValue(is.getString());
         bMatch = true;
       }
       break;
@@ -348,17 +348,17 @@ bool Note::readFrom(StaticInput &is) {
       break;
     case 'S':
       if (!str_cmp(key, "Sender")) {
-        m_strSender = is.getString(temp);
+        m_strSender = is.getString();
         bMatch = true;
       }
       else if (!str_cmp(key, "Subject")) {
-        m_strSubject = is.getString(temp);
+        m_strSubject = is.getString();
         bMatch = true;
       }
       break;
     case 'T':
       if (!str_cmp(key, "Text")) {
-        m_strText = is.getString(temp);
+        m_strText = is.getString();
         bMatch = true;
       }
       else if (!str_cmp(key, "Thread")) {
@@ -366,7 +366,7 @@ bool Note::readFrom(StaticInput &is) {
         bMatch = true;
       }
       else if (!str_cmp(key, "To")) {
-        m_toList.setValue(is.getString(temp));
+        m_toList.setValue(is.getString());
         bMatch = true;
       }
       break;
@@ -377,7 +377,7 @@ bool Note::readFrom(StaticInput &is) {
     }
   }
 
-  return bDone;
+  return bDone && !is.failed();
 }
 
 string Note::toString() {

@@ -1,6 +1,6 @@
 Dissent is a waking-world patrol between Cortex and player societies. An
 eligible player on patrol has a 5% chance per patrol launch check to trigger
-one when both Cortex and a society have available players in Haven. A saved
+one when both Cortex and a society have available players in Gravesend. A saved
 start time enforces at least seven real days between dissents, across restarts.
 The patrol will not launch if that cooldown cannot be saved.
 
@@ -28,7 +28,19 @@ Starting an eligible public fight brings two to four Cortex enforcers to defend
 the person attacked. They target only the original attacker, subdue them without
 increasing their wounds, then withdraw. The attacker remains unconscious in the
 same location at the defender's mercy. This response does not heal the attacker
-or trigger the older public-alarm monster encounter.
+or trigger a public-alarm auction.
+
+Public alarms still summon Cortex enforcers. If those enforcers defeat the
+character, they hand that character over to the syndicate for auction instead
+of triggering a monster ambush. The character is unbound in an available holding
+cell with a fixed telephone and wards against the nightmare. All societies
+receive a scout report, and eligible diplomatic patrol participants receive a
+15-minute auction invitation. The highest bidder present at the auction can use
+`patrol collect` to receive the prisoner through the sale flow. Without a buyer, the
+24-hour real-time deadline releases the prisoner into the forest, including
+time spent offline. If both auction sites are occupied or reserved, the
+enforcers leave the character unconscious
+where they were defeated. Defeat does not restore defenses or add wounds.
 
 An active dissenting mob in either combatant's room suppresses enforcer arrivals.
 Public-response squads withdraw if their attacker enters a dissent room or the

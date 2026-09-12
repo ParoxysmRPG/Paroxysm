@@ -21,9 +21,11 @@ End
 #ROOMS
 #32000
 `ddingy warehouse retrofitted into a rave`w~
-Exposed structural beams rise above a broad dance floor. Old industrial scars
-remain visible beneath the club fittings, and a `wwatching bench`x stands back
-from the open center against the rough warehouse walls.`x
+Exposed beams span the broad dance floor, their old industrial scars still
+visible above the club fittings. Heel marks cross older handling stains on the
+ground. A `wwatching bench`x stands against the rough warehouse walls, where
+the fabric carries the mingled traces of perfume and the building's stubborn
+concrete dust.`x
 ~
 0 131596 8
 B 1
@@ -40,15 +42,16 @@ W (null)~
 Y (null)~
 P
 watching bench~
-The bench provides a place to sit at the edge of the room.`x
+A firm bench stands back from the activity, the seat polished along the
+busiest stretch. From here, companions can follow what happens in the open
+space without crowding it.`x
 ~
 S
 #32001
 `Wa Longliner Fishing Boat named "`yFilthy Oar`W"`x`x~
 The longliner's work-worn deck lies within a close framework of marine
 fittings. Salt-marked surfaces and repeated joints give the Filthy Oar a
-practical shape, with a `wstanding area`x kept clear among the fixed
-structures.`x
+practical shape, with a open floor kept clear among the fixed structures.`x
 ~
 0 131628 2
 B 1
@@ -78,16 +81,13 @@ D3
 M 100 H 0
 W (null)~
 Y (null)~
-P
-standing area~
-The clear area offers room to stand together beside the fixed fittings.`x
-~
 S
 #32002
 `024choppy waters`x`x~
-`cWater`x fills the surrounding expanse, it's overlapping surface textures
-concealing the depth beneath. There is no solid footing in this stretch of
-open water.`x
+Overlapping folds of `cwater`x stretch across the open expanse, breaking every
+reflection into fragments. Small ripples vanish into broader swells before an
+eye can follow them far. Beneath the restless surface, depth keeps a darker
+color; there's no solid footing here.`x
 ~
 0 131620 20
 B 1
@@ -126,8 +126,8 @@ S
 #32004
 Mandarin Oriental Hotel, Boston - Residential Suite~
 Carefully finished wood and soft textiles define a spacious hotel interior. A
-`wsitting area`x stands apart from the quieter sleeping furniture, giving the
-suite distinct places for company and rest.`x
+`wsofa`x stands apart from the quieter sleeping furniture, giving the suite
+distinct places for company and rest.`x
 ~
 0 131596 8
 B 1
@@ -138,15 +138,18 @@ M 1 H 0
 W (null)~
 Y (null)~
 P
-sitting area~
-Seats face inward within the room's quieter gathering space.`x
+sofa~
+Deep cushions settle into familiar hollows along the sofa. The arms are rubbed
+smooth, and the upholstery holds a faint fabric warmth; there's room to sit
+close or claim a comfortable corner.`x
 ~
 S
 #32005
 `101Industrial Streets of Boston`w~
-`wWorn pavement`x forms the road surface, it's patched seams and scuffed edges
-recording years of traffic. The traveled ground stays open between the rougher
-margins.`x
+Old repairs stitch the `wroad`x in crooked bands of tar. Traffic has ground
+the pavement smooth through the middle, leaving a crumble of grit along the
+edges. A faint rubber smell clings to the surface; weeds have taken root in
+cracks too narrow for a tire to reach.`x
 ~
 0 131108 1
 B 1
@@ -168,9 +171,10 @@ Y (null)~
 S
 #32006
 `024choppy waters`x`x~
-`cWater`x fills the surrounding expanse, it's overlapping surface textures
-concealing the depth beneath. There is no solid footing in this stretch of
-open water.`x
+Overlapping folds of `cwater`x stretch across the open expanse, breaking every
+reflection into fragments. Small ripples vanish into broader swells before an
+eye can follow them far. Beneath the restless surface, depth keeps a darker
+color; there's no solid footing here.`x
 ~
 0 4325924 20
 B 1
@@ -188,9 +192,10 @@ Y (null)~
 S
 #32007
 `024choppy waters`x`x~
-`cWater`x fills the surrounding expanse, it's overlapping surface textures
-concealing the depth beneath. There is no solid footing in this stretch of
-open water.`x
+Overlapping folds of `cwater`x stretch across the open expanse, breaking every
+reflection into fragments. Small ripples vanish into broader swells before an
+eye can follow them far. Beneath the restless surface, depth keeps a darker
+color; there's no solid footing here.`x
 ~
 0 548 20
 B 1
@@ -208,9 +213,10 @@ Y (null)~
 S
 #32008
 `024choppy waters`x`x~
-`cWater`x fills the surrounding expanse, it's overlapping surface textures
-concealing the depth beneath. There is no solid footing in this stretch of
-open water.`x
+Overlapping folds of `cwater`x stretch across the open expanse, breaking every
+reflection into fragments. Small ripples vanish into broader swells before an
+eye can follow them far. Beneath the restless surface, depth keeps a darker
+color; there's no solid footing here.`x
 ~
 0 548 20
 B 1
@@ -228,10 +234,10 @@ Y (null)~
 S
 #32009
 `da `rStudio Apartment`d in the `rBoston's North End`d~
-Plastered walls enclose a modest domestic interior. A scuffed floor leaves a
-clear central area, with the quieter edges of the room set apart from the
-space used for passing through. `wsitting area`x provides a distinct place to
-gather.`x
+The far corner gathers a `wsofa`x and a low, oval table against a finish of
+pearl-gray paint. A shallow decorative bowl catches the room in a curved,
+imperfect reflection. Small sounds lose their sharpness among the soft
+furnishings, giving a conversation room to slow down.`x
 ~
 0 131628 2
 B 1
@@ -247,15 +253,20 @@ M 0 H 0
 W (null)~
 Y (null)~
 P
-sitting area~
-A small group of seats occupies one edge of the domestic space.`x
+sofa~
+Deep cushions settle into familiar hollows along the sofa. The arms are rubbed
+smooth, and the upholstery holds a faint fabric warmth; there's room to sit
+close or claim a comfortable corner.`x
 ~
 S
 #32010
 `240the `252Main Bar`240 area of a `yShady Dive`w~
-A long `wbar counter`x anchors the room, it's worn edge smoothed by countless
-elbows. Tables occupy the remaining floor, with space between them for small
-groups to gather.`x
+The `wbar`x turns around the right-hand corner, giving the tavern two slightly
+different angles of conversation. The table legs have broad feet, giving the
+furniture a stubbornly stable appearance. The proportions are comfortably
+unceremonious, built around resting elbows rather than making an entrance.
+Small `wtables`x occupy the quieter margin, their tops softly marked by old
+cups and plates.`x
 ~
 0 524 12
 B 1
@@ -267,17 +278,21 @@ W (null)~
 Y (null)~
 P
 bar~
-The bar counter offers a long, shared edge where people can gather.`x
+Old drink rings overlap in the bar's dark finish. The edge is smooth beneath
+an elbow, and the long shared counter brings neighboring patrons within easy
+reach of a remark or a quietly exchanged confidence.`x
 ~
 P
 tables~
-Tables stand apart from the counter, with seats facing inward.`x
+Small tables provide close-set seats for conversation.`x
 ~
 S
 #32011
 `240a `rBackstage Area`240 of a Dive behind `238Dark Curtains`w~
-A broad `wperformance floor`x leaves room for movement. Wear marks it's open
-surface, and the edges provide space to watch without standing in the center.`x
+A low bank of closed compartments follows the left-hand wall below a long
+surface of dark iron. A row of fixed metal hooks follows a support at a height
+intended for more than casual reach. The storage has a patient stillness, an
+arrangement waiting for the next ordinary task to require something.`x
 ~
 0 524 14
 B 1
@@ -287,15 +302,13 @@ T 3000
 M 0 H 0
 W (null)~
 Y (null)~
-P
-floor edge~
-The edge of the performance floor offers a place to watch the open area.`x
-~
 S
 #32012
 `240a `238Dim-Lit Corridor`240 leading to the `252Bathrooms`w~
-Plain walls border a strip of hard flooring. Wear follows the middle of the
-corridor, while it's margins remain quiet and comparatively untouched.`x
+A narrow border of blue-gray paint frames the `wwashbasin`x along the far
+wall. The hard floor is divided into small squares, with wider joints marking
+the boundary of the wet surface. Nothing is far from reach; the room works
+through compact arrangements rather than spare space.`x
 ~
 0 524 12
 B 1
@@ -305,11 +318,20 @@ T 3000
 M 0 H 0
 W (null)~
 Y (null)~
+P
+washbasin~
+The shallow basin has a rounded lip and a compact pair of fittings. A narrow
+ledge beside it offers room to rest a hand, with the mirror bringing the
+little washing space into close focus.`x
+~
 S
 #32013
 a service entrance of the Cosmopolitan Hotel in Downtown Boston~
-A worn approach defines the threshold of the surrounding space. The ground is
-clearest in the middle, where repeated passage has left it's mark.`x
+The `wwaiting bench`x sits beneath a shallow wall recess on the right-hand
+side, where the finish changes to gray tile. A mat with a simple border makes
+a darker rectangle along the busiest route across the floor. The arrangement
+gives an arrival somewhere to pause before deciding how to become part of the
+room.`x
 ~
 0 524 9
 B 1
@@ -319,12 +341,20 @@ T 3000
 M 0 H 0
 W (null)~
 Y (null)~
+P
+waiting bench~
+The bench has a smooth seat and a back marked by the rub of countless coats.
+From here, arrivals remain in view while the busiest line across the floor
+passes a little farther away.`x
+~
 S
 #32014
 an `254Expansive Stretch`w of `230Sandy Beach`w along `159Boston Coast`w~
-Loose `ysand`x forms a broad, yielding surface. Finer grains collect between
-scattered shell fragments, while the exposed ground bears faint ridges and
-worn depressions. Broad proportions give the central space room to breathe.`x
+Loose `ysand`x lies in low ridges, scattered with shell chips worn smooth as
+old teeth. Coarser grains scratch underfoot while the finer sand gives way and
+settles again. Faint tracks lose definition at the edges, leaving the exposed
+beach with a surface that never quite keeps a mark. Broad proportions give the
+central space room to breathe.`x
 ~
 0 4 26
 B 1
@@ -347,9 +377,11 @@ Y (null)~
 S
 #32015
 `rThirsty Mind Coffee and Wine Bar`w~
-Small tables gather beneath warm, understated finishes. A `wservice counter`x
-gives Thirsty Mind it's social center, while a `wcorner table`x offers a
-quieter place within the close dining arrangement.`x
+Coffee and the faint fruity trace of old wine mingle around Thirsty Mind's
+`wservice counter`x. Small tables gather beneath warm finishes, their surfaces
+marked by the ghosts of earlier glasses. A `wcorner table`x sits just outside
+the busiest arrangement, offering a comfortable place for a conversation to
+outlast the first drink.`x
 ~
 0 2097709 12
 B 1
@@ -361,18 +393,23 @@ W (null)~
 Y (null)~
 P
 service counter~
-The counter offers a shared standing edge on the customer side.`x
+The service counter has a smooth front edge and a scatter of small handling
+marks across the top. The customer side leaves room to lean beside a companion
+while taking in the room beyond.`x
 ~
 P
 corner table~
-The table provides close-set seats beside the edge of the room.`x
+The corner table sits beyond the busiest line through the room. Chairs tuck
+close around a surface marked by faint rings and tiny scratches, making a
+comfortable pocket for an unhurried conversation.`x
 ~
 S
 #32016
 the `254cozy interior`w of `230Boston Beach 'n BBQ`w~
-Robust wood surfaces and casual dining furniture give the interior a
-comfortable coastal character. A `wshared table`x occupies the center, with
-scuffed flooring visible between the chair legs.`x
+The room holds a settled smell of wood and old barbecue smoke. Sturdy dining
+furniture crowds the worn floor, with a `wshared table`x at the center and the
+marks of many meals along the edges. Coastal touches soften the robust
+fittings, giving the interior an easy, elbows-on-the-table warmth.`x
 ~
 0 12 4
 B 1
@@ -389,14 +426,17 @@ W (null)~
 Y (null)~
 P
 shared table~
-Chairs gather around a table intended for company.`x
+The substantial table brings a whole group within speaking distance. Chair
+backs shine from handling, and old marks survive near the edges, where meals
+and long conversations have softened the finish.`x
 ~
 S
 #32017
 a bit of `084Sparse Forest`w running alongside `230Boston Beach`w~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 516 23
 B 1
@@ -414,9 +454,11 @@ Y (null)~
 S
 #32018
 `WIn The Lobby Of Boston Medical`w~
-The floor opens into a reception space framed by the surrounding walls. A
-`wwaiting area`x sits along one edge, leaving the center uncluttered for
-arrivals.`x
+The `wwaiting bench`x sits beneath a shallow wall recess on the left-hand
+side, where the finish changes to dark wood. A mat with a simple border makes
+a darker rectangle along the busiest route across the floor. The broad center
+makes movement legible, while the bench offers the more patient perspective of
+waiting.`x
 ~
 0 556 15
 B 1
@@ -432,16 +474,19 @@ M 100 H 0
 W (null)~
 Y (null)~
 P
-waiting area~
-Seats along the edge of the room offer somewhere to wait without occupying it's
-center.`x
+waiting bench~
+The bench has a smooth seat and a back marked by the rub of countless coats.
+From here, arrivals remain in view while the busiest line across the floor
+passes a little farther away.`x
 ~
 S
 #32019
 Boston Auto Repair~
-Marked work surfaces border a practical interior. A `wworktable`x gathers the
-room's activity into a shared space, it's surface showing the traces of
-repeated use.`x
+The left-hand displays step down toward a low `wcounter`x, with dark wood
+tying the fittings together. A narrow mirror at the end of a display repeats
+the nearest rows into a deeper-looking arrangement. There is enough room for
+two people to compare impressions without turning the aisles into a meeting
+room.`x
 ~
 0 67109420 5
 B 1
@@ -457,15 +502,18 @@ M 100 H 0
 W (null)~
 Y (null)~
 P
-worktable~
-The table provides a shared working surface.`x
+counter~
+The counter's edge has been polished smooth by resting hands. Small scratches
+cloud the top, leaving a comfortable shared surface for leaning in to talk or
+examining something laid between companions.`x
 ~
 S
 #32020
 Boston Auto Repair - Office~
-A `wdesk`x anchors the working area, with a visitor's chair on it's near side.
-Plain storage and a clear patch of floor keep the office arranged around
-face-to-face conversation.`x
+The `wdesk`x faces the far half of the room beneath a restrained band of
+blue-gray paint. A narrow strip of cork makes a warmer patch among the harder
+office surfaces. The cleared working edge gives every meeting the same quiet
+starting point.`x
 ~
 0 33563148 5
 B 1
@@ -487,14 +535,17 @@ W (null)~
 Y (null)~
 P
 desk~
-The desk and visitor chair form a compact meeting place within the office.`x
+The working edge of the desk is smooth beneath the hands, with fine scratches
+crossing the surface. A visitor's chair faces it at an easy speaking distance,
+leaving the desktop between the two sides of a conversation.`x
 ~
 S
 #32021
 An appartment in Boston~
-The enclosed space has a plain floor and close surrounding surfaces. A clear
-central area leaves room to stand together, with the quieter margins set back
-from the middle.`x
+A broad section of smoke-blue paint frames the `wsofa`x at the left-hand end,
+giving the room a comfortable center. A woven throw lies in a broad fold over
+one arm, the fringe slightly longer on one side. Fabric and furniture polish
+mingle faintly in the enclosed air, a comfortable smell without much ceremony.`x
 ~
 0 524 2
 B 1
@@ -509,12 +560,19 @@ D2
 M 0 H 0
 W (null)~
 Y (null)~
+P
+sofa~
+Deep cushions settle into familiar hollows along the sofa. The arms are rubbed
+smooth, and the upholstery holds a faint fabric warmth; there's room to sit
+close or claim a comfortable corner.`x
+~
 S
 #32022
 somewhere deep inside the maze of `rshipping containers`w`x~
-Close boundaries divide the ground into a repeating sequence of small spaces.
-Similar textures recur along the edges, making the immediate section of the
-maze easier to recognize than to place.`x
+Enclosing boundaries break the ground into a sequence of close turns. Worn
+patches look unhelpfully alike, each stretch offering another variation on the
+same confined view. It's easy to take in the immediate space and harder to
+hold an impression of how it fits the whole.`x
 ~
 0 516 7
 B 1
@@ -537,9 +595,11 @@ Y (null)~
 S
 #32023
 a `Ddeserted building`w in dire need of maintenance`x~
-Plain shelving borders the utility space. Scuffed surfaces and a narrow
-central standing area reflect the room's role in keeping supplies out of the
-way. `wshelves`x provides a distinct place to gather.`x
+A low bank of closed compartments follows the left-hand wall below a long
+surface of poured concrete. A protective rail sits close to the base of the
+structure, rubbed brighter where bulky loads have passed. The practical
+fittings leave little decorative surplus, making the small signs of handling
+unusually visible.`x
 ~
 0 12 8
 B 1
@@ -554,16 +614,13 @@ D0
 M 0 H 0
 W (null)~
 Y (null)~
-P
-shelves~
-The shelving leaves a narrow place to stand among the storage surfaces.`x
-~
 S
 #32024
 an ill-lit set of `yrepurposed rooms`w`x~
-Plain structural surfaces enclose a carefully arranged interior. The clear
-central floor gives the room a practical, controlled layout, with it's margins
-set apart from the main standing space.`x
+A deep structural recess breaks the far wall into a narrower bay behind the
+main floor. A protective rail sits close to the base of the structure, rubbed
+brighter where bulky loads have passed. The room smells of dry concrete and
+sheltered storage, with little softness among the practical surfaces.`x
 ~
 0 12 8
 B 1
@@ -581,10 +638,11 @@ Y (null)~
 S
 #32025
 a dilapidated, half-furnished`W caravan`w`x~
-Plain shelving borders the utility space. Scuffed surfaces and a narrow
-central standing area reflect the room's role in keeping supplies out of the
-way. `wshelves`x provides a distinct place to gather. Grime and worn finishes
-have settled into the less-used corners.`x
+Scuffed shelves border a narrow working space. Their edges carry chips from
+awkward loads, and fine dust marks corners that seldom see a hand. The room
+has the close, dry smell of things put aside, with a clear strip of floor
+keeping the stored supplies within reach. Grime and worn finishes have settled
+into the less-used corners.`x
 ~
 0 12 2
 B 1
@@ -599,16 +657,13 @@ D9
 M 0 H 0
 W (null)~
 Y (null)~
-P
-shelves~
-The shelving leaves a narrow place to stand among the storage surfaces.`x
-~
 S
 #32026
 an `Demptied-out warehouse`w in southside `WBoston Harbour`w`x~
-Broad spans of industrial flooring lie beneath structural beams. Scratches and
-old handling marks break up the plain surfaces, giving the open warehouse
-space a thoroughly practical character.`x
+A deep structural recess breaks the near wall into a narrower bay behind the
+main floor. A protective rail sits close to the base of the structure, rubbed
+brighter where bulky loads have passed. The open spans make a modest sound
+travel farther than expected, returning it with a hollow edge.`x
 ~
 0 12 8
 B 1
@@ -626,9 +681,11 @@ Y (null)~
 S
 #32027
 a Hall of Cells ~
-An open strip of flooring lies between the surrounding structural surfaces.
-Worn patches show where people pass, while the margins provide a quieter place
-to pause.`x
+A broad panel of white ceramic gives the far wall a quiet focus within the
+otherwise open hall. A line of shallow grooves gives the lower wall a rhythm
+that changes as the passage is viewed end-on. The repeated lines give the
+passage a quiet momentum, drawing attention along the building rather than
+into the margins.`x
 ~
 0 524 2
 B 1
@@ -641,9 +698,10 @@ Y (null)~
 S
 #32028
 a Room Designed for Courses and Lectures~
-The enclosed space has a plain floor and close surrounding surfaces. A clear
-central area leaves room to stand together, with the quieter margins set back
-from the middle.`x
+The `wwaiting chairs`x rest in a shallow recess on the right-hand side,
+leaving the clinical route unobstructed. A framed abstract print offers a
+restrained patch of color at seated eye level. The room offers a place for
+company to remain nearby without becoming part of the treatment space.`x
 ~
 0 524 15
 B 1
@@ -653,12 +711,19 @@ T 3000
 M 0 H 0
 W (null)~
 Y (null)~
+P
+waiting chairs~
+A row of practical chairs faces into the room. Their edges bear small scuffs
+from bags and restless hands, and the gaps between them allow a quiet exchange
+without leaning into the main thoroughfare.`x
+~
 S
 #32029
 an Outside Recreational Area~
-The ground here forms an approach beside the surrounding structure. Wear
-concentrates in the open standing space, while grit settles against the
-building's base.`x
+The right-hand surface changes around a broad repair edged with blue-gray
+shale. The immediate ground is clearest through the middle, where ordinary
+passage has kept the margins at bay. The open setting leaves little to contain
+sound, with the nearest boundaries giving the space a local scale.`x
 ~
 0 4 15
 B 1
@@ -671,9 +736,10 @@ Y (null)~
 S
 #32030
 `WFriedman Hall's`w of `DBrown `wUniversity~
-An open strip of flooring lies between the surrounding structural surfaces.
-Worn patches show where people pass, while the margins provide a quieter place
-to pause.`x
+A shallow wall recess on the near side is framed by a generous border of
+sand-colored plaster. Small changes in the grain of the trim reveal where
+separate lengths have been fitted together. The clear passage carries sound
+farther than the close walls first suggest.`x
 ~
 0 12 2
 B 1
@@ -696,8 +762,10 @@ Y (null)~
 S
 #32031
 a long corridor in `WFriedman Hall`w~
-Plain walls border a strip of hard flooring. Wear follows the middle of the
-corridor, while it's margins remain quiet and comparatively untouched.`x
+The near edge of the floor follows a low, rounded skirting finished in gray
+tile. A line of shallow grooves gives the lower wall a rhythm that changes as
+the passage is viewed end-on. The repeated lines give the passage a quiet
+momentum, drawing attention along the building rather than into the margins.`x
 ~
 0 12 2
 B 1
@@ -725,8 +793,10 @@ Y (null)~
 S
 #32032
 the upper hallways of `WFriedman Hall`w~
-Plain walls border a strip of hard flooring. Wear follows the middle of the
-corridor, while it's margins remain quiet and comparatively untouched.`x
+The far edge of the floor follows a low, rounded skirting finished in brushed
+steel. A simple wall plate sits a little above the surrounding trim, the
+corners softly rounded. The repeated lines give the passage a quiet momentum,
+drawing attention along the building rather than into the margins.`x
 ~
 0 2060 2
 B 1
@@ -759,9 +829,11 @@ Y (null)~
 S
 #32033
 the custodian's corner in `WFriedman Hall`w~
-An open strip of flooring lies between the surrounding structural surfaces.
-Worn patches show where people pass, while the margins provide a quieter place
-to pause.`x
+A long strip of blue-gray paint follows the left-hand side at shoulder height,
+breaking the plain wall into two proportions. Small changes in the grain of
+the trim reveal where separate lengths have been fitted together. The
+enclosure makes a small sound feel near even when the source lies beyond the
+immediate view.`x
 ~
 0 12 2
 B 1
@@ -779,9 +851,10 @@ Y (null)~
 S
 #32034
 the vice-chancellor's office of `WFriedman Hall`w~
-Hard walls enclose a restricted space. A `wbench`x occupies one edge, leaving
-a small patch of floor whose worn surface makes the enclosure's limits feel
-close.`x
+The `wdesk`x stands diagonally to the near wall, making an otherwise square
+office feel less formal. A small blotter marks a precise rectangle on the
+working surface, leaving a broad margin around it. There is room for a
+conversation to become private without the room itself becoming comfortable.`x
 ~
 0 524 2
 B 1
@@ -797,16 +870,19 @@ M 0 H 0
 W (null)~
 Y (null)~
 P
-bench~
-The bench rests against the edge of the enclosure, overlooking it's limited
-floor space.`x
+desk~
+The working edge of the desk is smooth beneath the hands, with fine scratches
+crossing the surface. A visitor's chair faces it at an easy speaking distance,
+leaving the desktop between the two sides of a conversation.`x
 ~
 S
 #32035
 a Senior Professor's office in `WFriedman Hall`w~
-A `wdesk`x anchors the working area, with a visitor's chair on it's near side.
-Plain storage and a clear patch of floor keep the office arranged around
-face-to-face conversation.`x
+The `wdesk`x sits beneath a low section of ceiling on the left-hand side,
+where brushed steel emphasizes the room's structure. The edge of a pinned
+paper curls forward from an otherwise tightly ordered notice panel. There is
+room for a conversation to become private without the room itself becoming
+comfortable.`x
 ~
 0 524 2
 B 1
@@ -823,14 +899,18 @@ W (null)~
 Y (null)~
 P
 desk~
-The desk and visitor chair form a compact meeting place within the office.`x
+The working edge of the desk is smooth beneath the hands, with fine scratches
+crossing the surface. A visitor's chair faces it at an easy speaking distance,
+leaving the desktop between the two sides of a conversation.`x
 ~
 S
 #32036
 the staff lounge of `WFriedman Hall`w~
-A `wseating area`x gives the room it's center of gravity. Upholstered seats
-face a low table, with enough clear floor around them to keep the gathering
-space comfortable.`x
+The `wsofa`x sits at a slight angle to the far wall, breaking up the straight
+lines of the warm terracotta trim. The upholstery changes texture where a
+smooth outer panel meets the heavier weave of the cushions. Small sounds lose
+their sharpness among the soft furnishings, giving a conversation room to slow
+down.`x
 ~
 0 524 2
 B 1
@@ -846,14 +926,18 @@ M 0 H 0
 W (null)~
 Y (null)~
 P
-seating area~
-The seats gather around a low table, making a small circle for conversation.`x
+sofa~
+Deep cushions settle into familiar hollows along the sofa. The arms are rubbed
+smooth, and the upholstery holds a faint fabric warmth; there's room to sit
+close or claim a comfortable corner.`x
 ~
 S
 #32037
 a long corridor in `WFriedman Hall`w~
-Plain walls border a strip of hard flooring. Wear follows the middle of the
-corridor, while it's margins remain quiet and comparatively untouched.`x
+The ceiling drops slightly toward the near wall, where sand-colored plaster
+picks out the change in level. A line of shallow grooves gives the lower wall
+a rhythm that changes as the passage is viewed end-on. The clear passage
+carries sound farther than the close walls first suggest.`x
 ~
 0 524 2
 B 1
@@ -876,9 +960,10 @@ Y (null)~
 S
 #32038
 `WFriedman Hall`w's outdoor sport facilities~
-An open strip of flooring lies between the surrounding structural surfaces.
-Worn patches show where people pass, while the margins provide a quieter place
-to pause.`x
+A worn strip of floor carries passage through the building's interior. Old
+scuffs cluster along the lower walls, with repairs showing as slightly
+different shades in the finish. Voices and footsteps travel readily through
+the plain space, reaching farther than a casual glance.`x
 ~
 0 516 10
 B 1
@@ -906,8 +991,11 @@ Y (null)~
 S
 #32039
 the entrance of `WFriedman's`C Fieldhouse`w~
-A worn approach defines the threshold of the surrounding space. The ground is
-clearest in the middle, where repeated passage has left it's mark.`x
+A low decorative panel of cream enamel frames the `wwaiting bench`x toward the
+near end of the reception space. A shallow display recess holds a single
+decorative object, giving the surrounding blank surface a deliberate focus.
+The arrangement gives an arrival somewhere to pause before deciding how to
+become part of the room.`x
 ~
 0 12 2
 B 1
@@ -937,12 +1025,19 @@ D3
 M 0 H 0
 W (null)~
 Y (null)~
+P
+waiting bench~
+The bench has a smooth seat and a back marked by the rub of countless coats.
+From here, arrivals remain in view while the busiest line across the floor
+passes a little farther away.`x
+~
 S
 #32040
 the `Gfootball fields`w outside of `WFriedman Hall`w~
-`gGrass`x covers the open ground in uneven layers. Shorter growth marks the
-more exposed patches, while the thicker edges gather fallen stems and seed
-husks.`x
+Uneven swathes of `ggrass`x spread across the open ground, fine blades
+mingling with coarse clumps and brittle seed heads. Fallen stems form a tawny
+thatch close to the soil. There's a green, earthy smell wherever the growth
+has been pressed down, and little shelter among the low plants.`x
 ~
 0 516 10
 B 1
@@ -960,9 +1055,11 @@ Y (null)~
 S
 #32041
 the `cmen's`w changing rooms~
-A clear changing space occupies the center, bordered by places to set clothing
-aside. A `wbench`x keeps the seating close to the wall and leaves the main
-floor free.`x
+The left-hand storage compartments face a simple `wbench`x across a modest
+patch of clear floor. Small hooks repeat along the wall, their rounded ends
+projecting just far enough to hold clothing. The bench has a softer shine
+along the front edge, where countless changes of clothes have worn away the
+sharper finish.`x
 ~
 0 524 2
 B 1
@@ -979,14 +1076,18 @@ W (null)~
 Y (null)~
 P
 bench~
-The bench provides a narrow seat beside the changing space.`x
+The bench offers a firm seat, the most-used stretch worn smoother than the
+ends. Small nicks catch along the edge. It's a straightforward place to sit
+shoulder to shoulder without crowding the open floor.`x
 ~
 S
 #32042
 the `Cwomen's`w changing rooms~
-A clear changing space occupies the center, bordered by places to set clothing
-aside. A `wbench`x keeps the seating close to the wall and leaves the main
-floor free.`x
+The `wbench`x occupies a shallow recess on the left-hand side, leaving the
+central changing floor unobstructed. A shallow shelf leaves room for folded
+clothing above the more practical lower fittings. The bench has a softer shine
+along the front edge, where countless changes of clothes have worn away the
+sharper finish.`x
 ~
 0 524 2
 B 1
@@ -1003,15 +1104,18 @@ W (null)~
 Y (null)~
 P
 bench~
-The bench provides a narrow seat beside the changing space.`x
+The bench offers a firm seat, the most-used stretch worn smoother than the
+ends. Small nicks catch along the edge. It's a straightforward place to sit
+shoulder to shoulder without crowding the open floor.`x
 ~
 S
 #32043
 the indoor sport facilities of `WFriedman Fieldhouse`w~
-The playing surface spreads across an open area, it's boundaries established by
-the geometry of the sporting ground. Wear concentrates where movement
-repeatedly crosses the surface. `wsidelines`x provides a distinct place to
-gather.`x
+A low structural edge of blue-gray paint separates the right-hand activity
+space from the surrounding passage. A broad panel presents a simple diagram of
+the activity, with the surrounding finish kept spare. The clear central space
+carries broad, overlapping scuffs, a faded record of movements repeated in
+different directions.`x
 ~
 0 524 2
 B 1
@@ -1041,15 +1145,13 @@ D8
 M 0 H 0
 W (null)~
 Y (null)~
-P
-sidelines~
-The sidelines provide a place to gather clear of the main playing space.`x
-~
 S
 #32044
 an indoor `cswimming pool`w inside of`W Friedman Fieldhouse`w~
-Water fills a deliberately shaped basin, it's boundary marked by a hard rim.
-The `wbasin edge`x separates the bathing space from the ground around it.`x
+A hard rim traces the left-hand water, separating the basin from a narrow band
+of brushed steel. Pale deposits mark the line where small splashes have
+repeatedly dried against the hard edge. A mineral damp hangs close to the
+water, making the harder finishes feel cool even at a distance.`x
 ~
 0 524 2
 B 1
@@ -1064,16 +1166,14 @@ D9
 M 0 H 0
 W (null)~
 Y (null)~
-P
-basin edge~
-The hard surface beside the pool provides room to gather at the water's edge.`x
-~
 S
 #32045
 a `Dwork-out gym `wfull of equipment~
-An open `wtraining area`x occupies the center. Repeated use has marked it's
-surface, while the edges leave room for observers clear of the activity space.
-`wsidelines`x provides a distinct place to gather.`x
+The near playing space is framed by a broad strip of gray tile, keeping the
+central activity area clear. The floor changes texture just beyond the main
+playing surface, making the limit apparent underfoot. The clear central space
+carries broad, overlapping scuffs, a faded record of movements repeated in
+different directions.`x
 ~
 0 12 2
 B 1
@@ -1088,16 +1188,13 @@ D7
 M 0 H 0
 W (null)~
 Y (null)~
-P
-sidelines~
-The sidelines offer a place to watch while leaving the central area clear.`x
-~
 S
 #32046
 a `Ddark storage closet `wfor sport equipment~
-Plain shelving borders the utility space. Scuffed surfaces and a narrow
-central standing area reflect the room's role in keeping supplies out of the
-way. `wshelves`x provides a distinct place to gather.`x
+Close storage fittings follow the left-hand wall beneath a plain backing of
+ribbed steel. The wall carries the faint outlines of older storage divisions,
+visible beneath the more recent finish. The shelves have the dry smell of old
+packaging, strongest where their closely fitted backs meet the wall.`x
 ~
 0 524 2
 B 1
@@ -1112,17 +1209,14 @@ D8
 M 0 H 0
 W (null)~
 Y (null)~
-P
-shelves~
-The shelving leaves a narrow place to stand among the storage surfaces.`x
-~
 S
 #32047
 the small unisex bathroom at the end of the hall`x~
-Hard surfaces and close-set fittings give the washroom a compact layout. A
-`wshower`x occupies one side, with a screened washing space and a drain
-beneath the fittings. The close proportions leave little spare space between the
-room's edges.`x
+A vertical strip of cream enamel divides the `wshower`x from the room's closer
+fittings on the right-hand side. The hard floor is divided into small squares,
+with wider joints marking the boundary of the wet surface. Nothing is far from
+reach; the room works through compact arrangements rather than spare space.
+The close proportions leave little spare space between the room's edges.`x
 ~
 0 16777228 5
 B 1
@@ -1134,15 +1228,17 @@ W (null)~
 Y (null)~
 P
 shower~
-Water runs from the shower head into a drained washing space, with room to
-stand beneath the spray.`x
+Pale mineral trails mark the shower fittings above the drained washing space.
+Water patters against the floor beneath the spray, and the close air carries a
+clean trace of soap.`x
 ~
 S
 #32048
 Outside of a Quaint Taxidermist's Shop~
-The ground here forms an approach beside the surrounding structure. Wear
-concentrates in the open standing space, while grit settles against the
-building's base.`x
+Old runoff has traced narrow stains down the building's lower walls.
+Underfoot, the approach is scuffed pale where people stop before moving on.
+Grit gathers close to the foundation, and the surrounding structure gives this
+small patch of ground a little shelter from the wider world.`x
 ~
 0 36 1
 B 1
@@ -1160,9 +1256,11 @@ Y (null)~
 S
 #32049
 Inside of a Quaint Taxidermist's Shop ~
-The surrounding space has an uncertain depth. It's textures seem to recede just
-beyond easy recognition, giving the immediate ground the uneasy clarity of a
-remembered dream.`x
+The left-hand displays step down toward a low `wcounter`x, with gray tile
+tying the fittings together. A narrow mirror at the end of a display repeats
+the nearest rows into a deeper-looking arrangement. There is enough room for
+two people to compare impressions without turning the aisles into a meeting
+room.`x
 ~
 0 4194348 5
 B 1
@@ -1182,12 +1280,20 @@ D1
 M 0 H 0
 W (null)~
 Y (null)~
+P
+counter~
+The counter's edge has been polished smooth by resting hands. Small scratches
+cloud the top, leaving a comfortable shared surface for leaning in to talk or
+examining something laid between companions.`x
+~
 S
 #32050
 The Back of a Quaint Taxidermist's Shop ~
-The surrounding space has an uncertain depth. It's textures seem to recede just
-beyond easy recognition, giving the immediate ground the uneasy clarity of a
-remembered dream.`x
+The `wcounter`x makes a dogleg beside the near wall, separating a compact
+sales position from the browsing floor. A narrow mirror at the end of a
+display repeats the nearest rows into a deeper-looking arrangement. The
+arrangement makes browsing feel unhurried, with the sales position always easy
+to find again.`x
 ~
 0 556 14
 B 1
@@ -1202,12 +1308,21 @@ D2
 M 0 H 0
 W (null)~
 Y (null)~
+P
+counter~
+The counter's edge has been polished smooth by resting hands. Small scratches
+cloud the top, leaving a comfortable shared surface for leaning in to talk or
+examining something laid between companions.`x
+~
 S
 #32051
 Inside a Smoky Bar in Boston~
-A long `wbar counter`x anchors the room, it's worn edge smoothed by countless
-elbows. Tables occupy the remaining floor, with space between them for small
-groups to gather.`x
+A squared return gives the `wbar`x a sheltered end on the far side, framed in
+chalk-white wood. The counter has a softly rounded lip, worn to a different
+sheen from the wider working surface. There is a settled sociability to the
+place, visible in the surfaces shaped by years of people lingering. Small
+`wtables`x occupy the quieter margin, their tops softly marked by old cups and
+plates.`x
 ~
 0 44 3
 B 1
@@ -1219,18 +1334,22 @@ W (null)~
 Y (null)~
 P
 bar~
-The bar counter offers a long, shared edge where people can gather.`x
+Old drink rings overlap in the bar's dark finish. The edge is smooth beneath
+an elbow, and the long shared counter brings neighboring patrons within easy
+reach of a remark or a quietly exchanged confidence.`x
 ~
 P
 tables~
-Tables stand apart from the counter, with seats facing inward.`x
+Small tables provide close-set seats for conversation.`x
 ~
 S
 #32052
 `WA Room In Boston Medical`w~
-The enclosed space has a plain floor and close surrounding surfaces. A clear
-central area leaves room to stand together, with the quieter margins set back
-from the middle.`x
+The right-hand public margin gathers `wwaiting chairs`x just beyond the
+clinical floor, with brushed steel framing the fittings. A mat with a simple
+border makes a darker rectangle along the busiest route across the floor. The
+pale, washable surfaces give waiting a particular clarity, leaving small
+sounds unusually distinct.`x
 ~
 0 556 15
 B 1
@@ -1245,12 +1364,20 @@ D3
 M 5 H 0
 W (null)~
 Y (null)~
+P
+waiting chairs~
+A row of practical chairs faces into the room. Their edges bear small scuffs
+from bags and restless hands, and the gaps between them allow a quiet exchange
+without leaning into the main thoroughfare.`x
+~
 S
 #32053
 Test room 1~
-Unoccupied space lies within plain, unfinished surfaces. Scuffs and small
-imperfections remain exposed, giving the area the quiet, stripped-back
-character of a place without furnishings.`x
+A narrow band of muted green paint follows the left-hand wall behind the
+`wbed`x, giving the sleeping corner a quiet emphasis. The bedding has a narrow
+stitched border that repeats in the cloth covering a small bedside surface.
+The quiet is domestic and modest, shaped by the distance between an elbow, a
+pillow, and a familiar wall.`x
 ~
 0 556 2
 B 1
@@ -1260,12 +1387,20 @@ T 3000
 M 0 H 0
 W (null)~
 Y (null)~
+P
+bed~
+The mattress yields beneath creased bedding, with a firmer edge for sitting
+beside someone. Soft fabric muffles small movements, bringing a quiet
+conversation within reach of the pillows.`x
+~
 S
 #32054
 Test Room2~
-Unoccupied space lies within plain, unfinished surfaces. Scuffs and small
-imperfections remain exposed, giving the area the quiet, stripped-back
-character of a place without furnishings.`x
+A broad section of honey-colored wood frames the `wsofa`x at the right-hand
+end, giving the room a comfortable center. Small framed prints hang at
+different heights, making an informal balance out of their mismatched
+proportions. The seats turn attention toward company, leaving the surrounding
+details to be noticed between exchanges.`x
 ~
 0 44 2
 B 1
@@ -1275,12 +1410,19 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+sofa~
+Deep cushions settle into familiar hollows along the sofa. The arms are rubbed
+smooth, and the upholstery holds a faint fabric warmth; there's room to sit
+close or claim a comfortable corner.`x
+~
 S
 #32055
 `ya Sufficient, Shared Bathroom in a Cabin `gin th`ye`g W`Gi`glde`Wr`gy`w~
-Hard surfaces and close-set fittings give the washroom a compact layout. A
-`wshower`x occupies one side, with a screened washing space and a drain
-beneath the fittings.`x
+At the left-hand end, the `wshower`x sits within a squared recess picked out
+in pale green paint. A pale towel folded over a simple rail adds the only soft
+texture among the washable surfaces. Nothing is far from reach; the room works
+through compact arrangements rather than spare space.`x
 ~
 0 16777740 2
 B 1
@@ -1292,15 +1434,18 @@ W (null)~
 Y (null)~
 P
 shower~
-Water runs from the shower head into a drained washing space, with room to
-stand beneath the spray.`x
+Pale mineral trails mark the shower fittings above the drained washing space.
+Water patters against the floor beneath the spray, and the close air carries a
+clean trace of soap.`x
 ~
 S
 #32056
 `ya Sufficient, Shared Bathroom in a Cabin `gin th`ye`g W`Gi`glde`Wr`gy`w~
-Hard surfaces and close-set fittings give the washroom a compact layout. A
-`wshower`x occupies one side, with a screened washing space and a drain
-beneath the fittings.`x
+The `wshower`x occupies the right-hand corner, where a change in sand-colored
+plaster makes the drain line easy to see. A small ceramic soap dish has a
+ridged bottom and one darker line along the glaze. Reflections repeat between
+the polished surfaces, making the modest enclosure seem more intricate than it
+is.`x
 ~
 0 16777740 2
 B 1
@@ -1312,15 +1457,17 @@ W (null)~
 Y (null)~
 P
 shower~
-Water runs from the shower head into a drained washing space, with room to
-stand beneath the spray.`x
+Pale mineral trails mark the shower fittings above the drained washing space.
+Water patters against the floor beneath the spray, and the close air carries a
+clean trace of soap.`x
 ~
 S
 #32057
 `MTh`me `MZ`me`Mn Sp`ma`w~
-Soft finishes surround a carefully arranged treatment space. A `wresting
-seat`x stands near it's edge, with the clear floor lending the room a
-deliberate calm.`x
+A padded `wchaise`x rests beside the left-hand wall beneath a muted panel of
+pearl-gray paint. A little shelf holds an arrangement of ordinary ornaments
+chosen for color rather than symmetry. The padded furniture gives the room a
+quieter scale than the practical fittings around it.`x
 ~
 0 556 9
 B 1
@@ -1331,15 +1478,18 @@ M 100 H 0
 W (null)~
 Y (null)~
 P
-resting seat~
-The seat offers a quiet place beside the treatment space.`x
+chaise~
+A padded chaise follows the length of the body, the upholstery softly creased
+from use. The raised end offers a comfortable place to rest a shoulder, with
+the treatment room's activity set slightly apart.`x
 ~
 S
 #32058
 the ruins of a house~
-Broken material lies across rough, exposed ground. Fragmented edges and worn
-foundations give the site an irregular layout, with small pieces gathered in
-it's lower pockets.`x
+Broken remnants interrupt a rough expanse of ground. Grit fills the gaps
+between larger fragments, and weather has dulled the exposed edges to similar
+shades. Older shapes remain just legible beneath the debris, giving the place
+the unsettled appearance of something interrupted and left to wear away.`x
 ~
 0 4 23
 B 1
@@ -1352,11 +1502,13 @@ Y (null)~
 S
 #32059
 ~
-Plastered walls enclose a modest domestic interior. A scuffed floor leaves a
-clear central area, with the quieter edges of the room set apart from the
-space used for passing through.`x
+A strip of pearl-gray paint stops short of the near corner, exposing the
+construction beneath the finish. A hairline seam crosses the floor and
+disappears beneath the base of the wall. The undecorated surfaces leave the
+proportions unusually easy to read, from the low corners to the open middle.`x
 ~
 0 556 2
+B 1
 G 1 -1 50 0 35
 C 1000 1000 1000
 T 3000
@@ -1366,9 +1518,11 @@ Y (null)~
 S
 #32060
 A Room~
-The enclosed space has a plain floor and close surrounding surfaces. A clear
-central area leaves room to stand together, with the quieter margins set back
-from the middle.`x
+A broad section of muted green paint frames the `wsofa`x at the right-hand
+end, giving the room a comfortable center. A rug carries a repeating diamond
+pattern, interrupted near one edge by a deliberately contrasting border. The
+room feels intended for the part of a visit after everyone has stopped
+deciding where to stand.`x
 ~
 0 556 2
 B 1
@@ -1378,14 +1532,22 @@ T 3000
 M 0 H 0
 W (null)~
 Y (null)~
+P
+sofa~
+Deep cushions settle into familiar hollows along the sofa. The arms are rubbed
+smooth, and the upholstery holds a faint fabric warmth; there's room to sit
+close or claim a comfortable corner.`x
+~
 S
 #32061
 ~
-Plastered walls enclose a modest domestic interior. A scuffed floor leaves a
-clear central area, with the quieter edges of the room set apart from the
-space used for passing through.`x
+Near the left-hand wall, the floor rises into a low ridge edged with warm
+terracotta. The lower edges are rounded where an otherwise sharp finish meets
+the floor. Without furniture to soften the enclosure, every small sound
+acquires a dry little echo.`x
 ~
 0 556 2
+B 1
 G 1 -1 50 0 35
 C 1000 1000 1000
 T 3000
@@ -1395,8 +1557,11 @@ Y (null)~
 S
 #32062
 `WPorrazzo Skating Rink, Boston`w - `CEntrance`w~
-A worn approach defines the threshold of the surrounding space. The ground is
-clearest in the middle, where repeated passage has left it's mark.`x
+The `wwaiting bench`x sits beneath a shallow wall recess on the left-hand
+side, where the finish changes to gray tile. A narrow directory panel is
+arranged in careful rows, with slightly different shades behind the oldest
+labels. The broad center makes movement legible, while the bench offers the
+more patient perspective of waiting.`x
 ~
 0 556 9
 B 1
@@ -1421,12 +1586,19 @@ D3
 M 1 H 0
 W (null)~
 Y (null)~
+P
+waiting bench~
+The bench has a smooth seat and a back marked by the rub of countless coats.
+From here, arrivals remain in view while the busiest line across the floor
+passes a little farther away.`x
+~
 S
 #32063
 `rThe Underground `D- The Antechamber`w~
-An open strip of flooring lies between the surrounding structural surfaces.
-Worn patches show where people pass, while the margins provide a quieter place
-to pause.`x
+A low divider turns the `wsofa`x slightly away from the open floor at the
+left-hand end. The trim uses an exaggerated curve where the rest of the room
+keeps to straight lines. The furnishings favor company leaning close, leaving
+the wider room to carry the larger gestures.`x
 ~
 0 524 3
 B 1
@@ -1436,12 +1608,19 @@ T 3000
 M 0 H 0
 W (null)~
 Y (null)~
+P
+sofa~
+Deep cushions settle into familiar hollows along the sofa. The arms are rubbed
+smooth, and the upholstery holds a faint fabric warmth; there's room to sit
+close or claim a comfortable corner.`x
+~
 S
 #32064
 North Square, Boston~
-An open gathering space spreads across hard, worn ground. The broad center
-leaves room for groups to stand apart, while the margins provide a more
-sheltered sense of scale.`x
+Hard ground opens into a broad public gathering space. Old repairs interrupt
+the surface, and the busiest patches have been worn smooth by crossing feet.
+Along the margins, small groups can find a little enclosure while the open
+center leaves every arrival plainly visible.`x
 ~
 0 548 1
 B 1
@@ -1459,10 +1638,11 @@ Y (null)~
 S
 #32065
 a wood-paneled finished basement~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces. Wood paneling gives the surrounding surfaces a
-close, warm grain.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses. Wood
+paneling gives the surrounding surfaces a close, warm grain.`x
 ~
 0 2060 2
 B 1
@@ -1480,9 +1660,10 @@ Y (null)~
 S
 #32066
 nondescript street in Boston~
-`wWorn pavement`x forms the road surface, it's patched seams and scuffed edges
-recording years of traffic. The traveled ground stays open between the rougher
-margins.`x
+Old repairs stitch the `wroad`x in crooked bands of tar. Traffic has ground
+the pavement smooth through the middle, leaving a crumble of grit along the
+edges. A faint rubber smell clings to the surface; weeds have taken root in
+cracks too narrow for a tire to reach.`x
 ~
 0 548 1
 B 1
@@ -1495,9 +1676,10 @@ Y (null)~
 S
 #32067
 Some Street in Boston~
-`wWorn pavement`x forms the road surface, it's patched seams and scuffed edges
-recording years of traffic. The traveled ground stays open between the rougher
-margins.`x
+Old repairs stitch the `wroad`x in crooked bands of tar. Traffic has ground
+the pavement smooth through the middle, leaving a crumble of grit along the
+edges. A faint rubber smell clings to the surface; weeds have taken root in
+cracks too narrow for a tire to reach.`x
 ~
 0 2097701 1
 B 1
@@ -1515,10 +1697,11 @@ Y (null)~
 S
 #32068
 A Weathered Home~
-Plastered walls enclose a modest domestic interior. A scuffed floor leaves a
-clear central area, with the quieter edges of the room set apart from the
-space used for passing through. `wsitting area`x provides a distinct place to
-gather.`x
+The far half is arranged around a `wsofa`x, with cream plaster outlining the
+quieter edges of the room. Small framed prints hang at different heights,
+making an informal balance out of their mismatched proportions. There is an
+easy domestic scale here: nothing grander than a shared table edge and a place
+to settle.`x
 ~
 0 2097709 2
 B 1
@@ -1539,16 +1722,19 @@ M 0 H 0
 W (null)~
 Y (null)~
 P
-sitting area~
-A small group of seats occupies one edge of the domestic space.`x
+sofa~
+Deep cushions settle into familiar hollows along the sofa. The arms are rubbed
+smooth, and the upholstery holds a faint fabric warmth; there's room to sit
+close or claim a comfortable corner.`x
 ~
 S
 #32069
 A Weathered Home~
-Plastered walls enclose a modest domestic interior. A scuffed floor leaves a
-clear central area, with the quieter edges of the room set apart from the
-space used for passing through. `wsitting area`x provides a distinct place to
-gather.`x
+A broad section of dark walnut frames the `wsofa`x at the left-hand end,
+giving the room a comfortable center. The upholstery changes texture where a
+smooth outer panel meets the heavier weave of the cushions. Fabric and
+furniture polish mingle faintly in the enclosed air, a comfortable smell
+without much ceremony.`x
 ~
 0 524845 2
 B 1
@@ -1564,15 +1750,19 @@ M 0 H 0
 W (null)~
 Y (null)~
 P
-sitting area~
-A small group of seats occupies one edge of the domestic space.`x
+sofa~
+Deep cushions settle into familiar hollows along the sofa. The arms are rubbed
+smooth, and the upholstery holds a faint fabric warmth; there's room to sit
+close or claim a comfortable corner.`x
 ~
 S
 #32070
 Mamma Maria, Italian Restaurant~
-Warm woodwork and carefully separated dining settings give the restaurant an
-intimate, traditional character. A `wcorner table`x rests at the edge of the
-room, set apart from the central arrangements.`x
+Warm woodwork frames carefully separated dining settings at Mamma Maria. The
+air carries a faint, lingering trace of herbs beneath the clean table
+surfaces. A `wcorner table`x rests just beyond the main arrangements, where
+close chairs and subdued finishes bring dinner down to the comfortable scale
+of an unhurried conversation.`x
 ~
 0 556 5
 B 1
@@ -1589,14 +1779,18 @@ W (null)~
 Y (null)~
 P
 corner table~
-The table provides close-set seats beside the edge of the room.`x
+The corner table sits beyond the busiest line through the room. Chairs tuck
+close around a surface marked by faint rings and tiny scratches, making a
+comfortable pocket for an unhurried conversation.`x
 ~
 S
 #32071
 Rockin' Pub~
-Dark wood and music-themed decoration frame a compact pub interior. A `wbar
-counter`x faces the public floor, with a `wwatching bench`x set back from the
-room's more open center.`x
+Music-themed decoration crowds the pub's dark woodwork. The `wbar counter`x
+wears a dull shine beneath old drink rings, and the air carries a settled
+trace of beer and furniture polish. A `wwatching bench`x stands back from the
+open middle, giving company a place to take in the room between rounds of
+conversation.`x
 ~
 0 36 1
 B 1
@@ -1608,18 +1802,23 @@ W (null)~
 Y (null)~
 P
 watching bench~
-The bench provides a place to sit at the edge of the room.`x
+A firm bench stands back from the activity, the seat polished along the
+busiest stretch. From here, companions can follow what happens in the open
+space without crowding it.`x
 ~
 P
 bar counter~
-The long counter provides a place for patrons to gather.`x
+A dark gloss follows the bar counter's worn edge. Old rings and tiny dents
+survive in the finish, giving patrons a familiar surface to lean across while
+a conversation passes along the counter.`x
 ~
 S
 #32072
 A back road through the swamps north of Boston~
-`wWorn pavement`x forms the road surface, it's patched seams and scuffed edges
-recording years of traffic. The traveled ground stays open between the rougher
-margins.`x
+Old repairs stitch the `wroad`x in crooked bands of tar. Traffic has ground
+the pavement smooth through the middle, leaving a crumble of grit along the
+edges. A faint rubber smell clings to the surface; weeds have taken root in
+cracks too narrow for a tire to reach.`x
 ~
 0 36 1
 B 1
@@ -1637,8 +1836,10 @@ Y (null)~
 S
 #32073
 a driveway leading up to a modest family home~
-Hard paving supports a practical vehicle area. Tire wear interrupts it's
-surface, and the margins carry the scuffs and grit of repeated traffic.`x
+A squared patch of green-veined rock interrupts the otherwise uneven far
+surface. Small stones have collected in the shallowest depression, sorted into
+a rough crescent. Nothing closes the space overhead; the surrounding forms
+frame the ground without turning it into an interior.`x
 ~
 0 2097157 2
 B 1
@@ -1675,14 +1876,17 @@ W (null)~
 Y (null)~
 P
 customer counter~
-The counter borders the public standing space.`x
+The customer counter sets a solid edge before the displays. Handling has
+dulled the finish in small patches, leaving a clear surface to lean across
+while discussing the goods with someone alongside.`x
 ~
 S
 #32075
 `DBoylston Street, `gBo`Gs`gt`Wo`Gn`D, `DMA`6~
-`wWorn pavement`x forms the road surface, it's patched seams and scuffed edges
-recording years of traffic. The traveled ground stays open between the rougher
-margins.`x
+Old repairs stitch the `wroad`x in crooked bands of tar. Traffic has ground
+the pavement smooth through the middle, leaving a crumble of grit along the
+edges. A faint rubber smell clings to the surface; weeds have taken root in
+cracks too narrow for a tire to reach.`x
 ~
 0 524837 1
 B 1
@@ -1695,9 +1899,10 @@ Y (null)~
 S
 #32076
 a comfortable open area living and dining room~
-Tables divide the dining space into separate groups, their surfaces bordered
-by well-used chairs. A `wcorner table`x sits apart from the central
-arrangement, offering a more enclosed place to gather.`x
+A shallow alcove of smoke-blue paint gathers the `wcorner table`x away from
+the busiest part of the near floor. The chair backs use a simple curved motif
+that repeats, at a smaller scale, along the nearest table edge. A faint trace
+of cooked food gives the carefully arranged interior a less formal warmth.`x
 ~
 0 2097677 2
 B 1
@@ -1719,16 +1924,18 @@ W (null)~
 Y (null)~
 P
 corner table~
-Chairs surround a table near the edge of the dining area, away from it's
-center.`x
+The corner table sits beyond the busiest line through the room. Chairs tuck
+close around a surface marked by faint rings and tiny scratches, making a
+comfortable pocket for an unhurried conversation.`x
 ~
 S
 #32077
 `WPorrazzo Skating Rink, Boston`w - `CIce Rink`w~
-The playing surface spreads across an open area, it's boundaries established by
-the geometry of the sporting ground. Wear concentrates where movement
-repeatedly crosses the surface. `wsidelines`x provides a distinct place to
-gather.`x
+The right-hand boundary steps back around a shallow recess, giving this
+portion of the recreation floor a broader margin. A broad panel presents a
+simple diagram of the activity, with the surrounding finish kept spare. The
+open floor gives small gestures room to become visible, while the surroundings
+keep their supporting role.`x
 ~
 0 2097709 9
 B 1
@@ -1743,16 +1950,13 @@ D2
 M 1 H 0
 W (null)~
 Y (null)~
-P
-sidelines~
-The sidelines provide a place to gather clear of the main playing space.`x
-~
 S
 #32078
 `WPorrazzo Skating Rink, Boston`w - `CPro Skate Shop`w~
-Rows of displays organize the shop floor, leaving space to browse between
-them. A `wcounter`x marks the edge of the customer area; scuffs near it's base
-show where people linger.`x
+The near displays step down toward a low `wcounter`x, with dark wood tying the
+fittings together. Fine wire dividers keep neighboring goods apart without
+hiding their outlines. The arrangement makes browsing feel unhurried, with the
+sales position always easy to find again.`x
 ~
 0 2097709 5
 B 1
@@ -1769,18 +1973,17 @@ W (null)~
 Y (null)~
 P
 counter~
-The counter marks the public edge of the sales area.`x
-~
-P
-displays~
-Space between the displays allows a small group to browse together.`x
+The counter's edge has been polished smooth by resting hands. Small scratches
+cloud the top, leaving a comfortable shared surface for leaning in to talk or
+examining something laid between companions.`x
 ~
 S
 #32079
 `WPorrazzo Skating Rink, Boston`w - `CCafe`w~
-Small tables bring the cafe down to the scale of a quiet conversation. A
-`wcounter`x faces the seating area, with hard flooring worn smooth where
-customers gather.`x
+The near `wtables`x sit near a shallow wall recess, where the finish changes
+to dark walnut. The counter trim has a subtle ripple in the finish, visible
+where the surface catches a reflection. The arrangements leave room for both
+sociable company and someone content to watch the room from a small table.`x
 ~
 0 556 12
 B 1
@@ -1797,7 +2000,9 @@ W (null)~
 Y (null)~
 P
 counter~
-The counter faces the cafe seating, it's edge polished by everyday use.`x
+The counter's edge has been polished smooth by resting hands. Small scratches
+cloud the top, leaving a comfortable shared surface for leaning in to talk or
+examining something laid between companions.`x
 ~
 P
 tables~
@@ -1806,9 +2011,10 @@ Small tables provide close-set seats for conversation.`x
 S
 #32080
 `WPorrazzo Skating Rink, Boston`w - `yThe Beach`w~
-Loose `ysand`x forms a broad, yielding surface. Finer grains collect between
-scattered shell fragments, while the exposed ground bears faint ridges and
-worn depressions.`x
+Loose `ysand`x lies in low ridges, scattered with shell chips worn smooth as
+old teeth. Coarser grains scratch underfoot while the finer sand gives way and
+settles again. Faint tracks lose definition at the edges, leaving the exposed
+beach with a surface that never quite keeps a mark.`x
 ~
 0 1049124 26
 B 1
@@ -1826,9 +2032,10 @@ Y (null)~
 S
 #32081
 `WPorrazzo Skating Rink, Boston`w - `BIn The Water Beside The Beach`w~
-`cWater`x fills the surrounding expanse, it's overlapping surface textures
-concealing the depth beneath. There is no solid footing in this stretch of
-open water.`x
+Overlapping folds of `cwater`x stretch across the open expanse, breaking every
+reflection into fragments. Small ripples vanish into broader swells before an
+eye can follow them far. Beneath the restless surface, depth keeps a darker
+color; there's no solid footing here.`x
 ~
 0 36 28
 B 1
@@ -1846,9 +2053,11 @@ Y (null)~
 S
 #32082
 The SalteBox Cafe~
-Salt-weathered decorative wood and small dining settings give the cafe a
-modest coastal identity. A `wservice counter`x faces the tables, while a
-`wcorner table`x offers a quiet place to gather.`x
+Salt-weathered decorative wood gives the SalteBox the faded colors of things
+left near the sea. Small dining settings gather before the `wservice
+counter`x, with scuffs under the chairs and a faint coffee smell in the close
+air. A `wcorner table`x rests at the edge, comfortably tucked into the cafe's
+unpretentious coastal clutter.`x
 ~
 0 524 4
 B 1
@@ -1860,18 +2069,22 @@ W (null)~
 Y (null)~
 P
 service counter~
-The counter offers a shared standing edge on the customer side.`x
+The service counter has a smooth front edge and a scatter of small handling
+marks across the top. The customer side leaves room to lean beside a companion
+while taking in the room beyond.`x
 ~
 P
 corner table~
-The table provides close-set seats beside the edge of the room.`x
+The corner table sits beyond the busiest line through the room. Chairs tuck
+close around a surface marked by faint rings and tiny scratches, making a
+comfortable pocket for an unhurried conversation.`x
 ~
 S
 #32083
 ksoa`x~
 A worn patch of urban paving lies between plain structural surfaces. Small
 repairs and accumulated grit give the standing space an everyday texture
-without a strong landmark to distinguish it's edges.`x
+without a strong landmark to distinguish the edges.`x
 ~
 0 548 1
 B 1
@@ -1884,9 +2097,10 @@ Y (null)~
 S
 #32084
 A Remote Sea Cave`x~
-`cWater`x fills the surrounding expanse, it's overlapping surface textures
-concealing the depth beneath. There is no solid footing in this stretch of
-open water.`x
+A slanted seam of chalky stone divides the far rock face into two differently
+grained masses. The floor holds a fan of broken chips, grading from blunt
+fragments to fine grit. The cave smells of cool stone and sheltered grit, with
+no domestic softness to break the enclosure.`x
 ~
 0 524 24
 B 1
@@ -1899,8 +2113,10 @@ Y (null)~
 S
 #32085
 Hotel and Elevator~
-Close walls enclose a compact compartment. Metal seams break up the plain
-surfaces, with only a small standing area between the surrounding panels.`x
+A shallow service recess interrupts the right-hand enclosure beneath a broad
+panel of dark wood. The fitted corners are rounded, leaving very little unused
+space between the panels. Hard surfaces keep every small sound near,
+separating this brief transition space from the larger building.`x
 ~
 0 44 2
 B 1
@@ -1923,8 +2139,10 @@ Y (null)~
 S
 #32086
 Elevator and Hotel~
-Close walls enclose a compact compartment. Metal seams break up the plain
-surfaces, with only a small standing area between the surrounding panels.`x
+A shallow service recess interrupts the far enclosure beneath a broad panel of
+white ceramic. Small fastenings sit in a precise line around the nearest
+access cover. Hard surfaces keep every small sound near, separating this brief
+transition space from the larger building.`x
 ~
 0 548 1
 B 1
@@ -1942,8 +2160,11 @@ Y (null)~
 S
 #32087
 Elevator and Hotel~
-Close walls enclose a compact compartment. Metal seams break up the plain
-surfaces, with only a small standing area between the surrounding panels.`x
+A shallow service recess interrupts the near enclosure beneath a broad panel
+of sand-colored plaster. A narrow indicator plate lies flush with the
+surrounding finish, the engraved labels small and restrained. Hard surfaces
+keep every small sound near, separating this brief transition space from the
+larger building.`x
 ~
 0 548 1
 B 1
@@ -1966,8 +2187,11 @@ Y (null)~
 S
 #32088
 Elevator~
-Close walls enclose a compact compartment. Metal seams break up the plain
-surfaces, with only a small standing area between the surrounding panels.`x
+The left-hand wall curves slightly toward the floor, giving the fitted
+sand-colored plaster a close, contained shape. The lower edge has a heavier
+seal than the panels above, making the compartment's divisions plainly
+visible. The close-fitting enclosure has the clean, impersonal smell of seals,
+paint, and regularly wiped metal.`x
 ~
 0 44 2
 B 1
@@ -1985,9 +2209,10 @@ Y (null)~
 S
 #32089
 a nondescript street in Boston~
-`wWorn pavement`x forms the road surface, it's patched seams and scuffed edges
-recording years of traffic. The traveled ground stays open between the rougher
-margins.`x
+Old repairs stitch the `wroad`x in crooked bands of tar. Traffic has ground
+the pavement smooth through the middle, leaving a crumble of grit along the
+edges. A faint rubber smell clings to the surface; weeds have taken root in
+cracks too narrow for a tire to reach.`x
 ~
 0 548 1
 B 1
@@ -2000,9 +2225,10 @@ Y (null)~
 S
 #32090
 a nondescript street in Boston~
-`wWorn pavement`x forms the road surface, it's patched seams and scuffed edges
-recording years of traffic. The traveled ground stays open between the rougher
-margins.`x
+Old repairs stitch the `wroad`x in crooked bands of tar. Traffic has ground
+the pavement smooth through the middle, leaving a crumble of grit along the
+edges. A faint rubber smell clings to the surface; weeds have taken root in
+cracks too narrow for a tire to reach.`x
 ~
 0 548 1
 B 1
@@ -2015,9 +2241,10 @@ Y (null)~
 S
 #32091
 a nondescript street in Boston~
-`wWorn pavement`x forms the road surface, it's patched seams and scuffed edges
-recording years of traffic. The traveled ground stays open between the rougher
-margins.`x
+Old repairs stitch the `wroad`x in crooked bands of tar. Traffic has ground
+the pavement smooth through the middle, leaving a crumble of grit along the
+edges. A faint rubber smell clings to the surface; weeds have taken root in
+cracks too narrow for a tire to reach.`x
 ~
 0 36 1
 B 1
@@ -2030,9 +2257,10 @@ Y (null)~
 S
 #32092
 a nondescript street in Boston~
-`wWorn pavement`x forms the road surface, it's patched seams and scuffed edges
-recording years of traffic. The traveled ground stays open between the rougher
-margins.`x
+Old repairs stitch the `wroad`x in crooked bands of tar. Traffic has ground
+the pavement smooth through the middle, leaving a crumble of grit along the
+edges. A faint rubber smell clings to the surface; weeds have taken root in
+cracks too narrow for a tire to reach.`x
 ~
 0 36 1
 B 1
@@ -2044,10 +2272,11 @@ W (null)~
 Y (null)~
 S
 #32093
-a stretch of road between Boston and Haven~
-`wWorn pavement`x forms the road surface, it's patched seams and scuffed edges
-recording years of traffic. The traveled ground stays open between the rougher
-margins.`x
+a stretch of road between Boston and Gravesend~
+Old repairs stitch the `wroad`x in crooked bands of tar. Traffic has ground
+the pavement smooth through the middle, leaving a crumble of grit along the
+edges. A faint rubber smell clings to the surface; weeds have taken root in
+cracks too narrow for a tire to reach.`x
 ~
 0 36 1
 B 1
@@ -2064,10 +2293,11 @@ W (null)~
 Y (null)~
 S
 #32094
-a stretch of road between Boston and Haven~
-`wWorn pavement`x forms the road surface, it's patched seams and scuffed edges
-recording years of traffic. The traveled ground stays open between the rougher
-margins.`x
+a stretch of road between Boston and Gravesend~
+Old repairs stitch the `wroad`x in crooked bands of tar. Traffic has ground
+the pavement smooth through the middle, leaving a crumble of grit along the
+edges. A faint rubber smell clings to the surface; weeds have taken root in
+cracks too narrow for a tire to reach.`x
 ~
 0 36 1
 B 1
@@ -2094,10 +2324,11 @@ W (null)~
 Y (null)~
 S
 #32095
-a stretch of road between Boston and Haven~
-`wWorn pavement`x forms the road surface, it's patched seams and scuffed edges
-recording years of traffic. The traveled ground stays open between the rougher
-margins.`x
+a stretch of road between Boston and Gravesend~
+Old repairs stitch the `wroad`x in crooked bands of tar. Traffic has ground
+the pavement smooth through the middle, leaving a crumble of grit along the
+edges. A faint rubber smell clings to the surface; weeds have taken root in
+cracks too narrow for a tire to reach.`x
 ~
 0 36 1
 B 1
@@ -2119,10 +2350,11 @@ W (null)~
 Y (null)~
 S
 #32096
-a stretch of road between Boston and Haven~
-`wWorn pavement`x forms the road surface, it's patched seams and scuffed edges
-recording years of traffic. The traveled ground stays open between the rougher
-margins.`x
+a stretch of road between Boston and Gravesend~
+Old repairs stitch the `wroad`x in crooked bands of tar. Traffic has ground
+the pavement smooth through the middle, leaving a crumble of grit along the
+edges. A faint rubber smell clings to the surface; weeds have taken root in
+cracks too narrow for a tire to reach.`x
 ~
 0 36 1
 B 1
@@ -2144,10 +2376,11 @@ W (null)~
 Y (null)~
 S
 #32097
-a stretch of road between Boston and Haven~
-`wWorn pavement`x forms the road surface, it's patched seams and scuffed edges
-recording years of traffic. The traveled ground stays open between the rougher
-margins.`x
+a stretch of road between Boston and Gravesend~
+Old repairs stitch the `wroad`x in crooked bands of tar. Traffic has ground
+the pavement smooth through the middle, leaving a crumble of grit along the
+edges. A faint rubber smell clings to the surface; weeds have taken root in
+cracks too narrow for a tire to reach.`x
 ~
 0 36 1
 B 1
@@ -2169,10 +2402,11 @@ W (null)~
 Y (null)~
 S
 #32098
-a stretch of road between Boston and Haven~
-`wWorn pavement`x forms the road surface, it's patched seams and scuffed edges
-recording years of traffic. The traveled ground stays open between the rougher
-margins.`x
+a stretch of road between Boston and Gravesend~
+Old repairs stitch the `wroad`x in crooked bands of tar. Traffic has ground
+the pavement smooth through the middle, leaving a crumble of grit along the
+edges. A faint rubber smell clings to the surface; weeds have taken root in
+cracks too narrow for a tire to reach.`x
 ~
 0 36 1
 B 1
@@ -2195,8 +2429,10 @@ Y (null)~
 S
 #32099
 approaching an exit to Boston~
-A worn approach defines the threshold of the surrounding space. The ground is
-clearest in the middle, where repeated passage has left it's mark.`x
+Repeated passage has smoothed the threshold into a shallow, familiar dip. Dust
+catches along the edges where the surrounding structure meets the ground. It's
+a small transition space, carrying the scuffs of arrivals, departures, and
+people who stopped here to finish a conversation.`x
 ~
 0 36 1
 B 1
@@ -2219,8 +2455,10 @@ Y (null)~
 S
 #32100
 nearing an exit to Boston~
-A worn approach defines the threshold of the surrounding space. The ground is
-clearest in the middle, where repeated passage has left it's mark.`x
+Repeated passage has smoothed the threshold into a shallow, familiar dip. Dust
+catches along the edges where the surrounding structure meets the ground. It's
+a small transition space, carrying the scuffs of arrivals, departures, and
+people who stopped here to finish a conversation.`x
 ~
 0 36 1
 B 1
@@ -2243,8 +2481,10 @@ Y (null)~
 S
 #32101
 the exit to Boston~
-A worn approach defines the threshold of the surrounding space. The ground is
-clearest in the middle, where repeated passage has left it's mark.`x
+Repeated passage has smoothed the threshold into a shallow, familiar dip. Dust
+catches along the edges where the surrounding structure meets the ground. It's
+a small transition space, carrying the scuffs of arrivals, departures, and
+people who stopped here to finish a conversation.`x
 ~
 0 32 1
 B 1
@@ -2272,9 +2512,10 @@ Y ~
 S
 #32102
 a rough stretch of highway~
-`wWorn pavement`x forms the road surface, it's patched seams and scuffed edges
-recording years of traffic. The traveled ground stays open between the rougher
-margins.`x
+Old repairs stitch the `wroad`x in crooked bands of tar. Traffic has ground
+the pavement smooth through the middle, leaving a crumble of grit along the
+edges. A faint rubber smell clings to the surface; weeds have taken root in
+cracks too narrow for a tire to reach.`x
 ~
 0 32 1
 B 1
@@ -2297,9 +2538,10 @@ Y ~
 S
 #32103
 a rough stretch of highway~
-`wWorn pavement`x forms the road surface, it's patched seams and scuffed edges
-recording years of traffic. The traveled ground stays open between the rougher
-margins.`x
+Old repairs stitch the `wroad`x in crooked bands of tar. Traffic has ground
+the pavement smooth through the middle, leaving a crumble of grit along the
+edges. A faint rubber smell clings to the surface; weeds have taken root in
+cracks too narrow for a tire to reach.`x
 ~
 0 32 1
 B 1
@@ -2317,9 +2559,10 @@ Y ~
 S
 #32104
 a rough stretch of highway~
-`wWorn pavement`x forms the road surface, it's patched seams and scuffed edges
-recording years of traffic. The traveled ground stays open between the rougher
-margins.`x
+Old repairs stitch the `wroad`x in crooked bands of tar. Traffic has ground
+the pavement smooth through the middle, leaving a crumble of grit along the
+edges. A faint rubber smell clings to the surface; weeds have taken root in
+cracks too narrow for a tire to reach.`x
 ~
 0 32 1
 B 1
@@ -2342,9 +2585,10 @@ Y ~
 S
 #32105
 a rough stretch of highway~
-`wWorn pavement`x forms the road surface, it's patched seams and scuffed edges
-recording years of traffic. The traveled ground stays open between the rougher
-margins.`x
+Old repairs stitch the `wroad`x in crooked bands of tar. Traffic has ground
+the pavement smooth through the middle, leaving a crumble of grit along the
+edges. A faint rubber smell clings to the surface; weeds have taken root in
+cracks too narrow for a tire to reach.`x
 ~
 0 32 1
 B 1
@@ -2362,10 +2606,11 @@ Y ~
 S
 #32106
 a lonely drive leading to a small hotel~
-`wWorn pavement`x forms the road surface, it's patched seams and scuffed edges
-recording years of traffic. The traveled ground stays open between the rougher
-margins. The close proportions leave little spare space between the room's
-edges.`x
+Old repairs stitch the `wroad`x in crooked bands of tar. Traffic has ground
+the pavement smooth through the middle, leaving a crumble of grit along the
+edges. A faint rubber smell clings to the surface; weeds have taken root in
+cracks too narrow for a tire to reach. The close proportions leave little
+spare space between the room's edges.`x
 ~
 0 32 1
 B 1
@@ -2388,8 +2633,10 @@ Y ~
 S
 #32107
 the entrance to 'The `WSi`wl`Wver S`wt`War`x' hotel`x~
-A worn approach defines the threshold of the surrounding space. The ground is
-clearest in the middle, where repeated passage has left it's mark.`x
+The right-hand corner steps inward around the `wwaiting bench`x, leaving the
+main arrival space clear. A framed abstract print offers a restrained patch of
+color at seated eye level. The arrangement gives an arrival somewhere to pause
+before deciding how to become part of the room.`x
 ~
 0 32 1
 B 1
@@ -2409,12 +2656,19 @@ D2
 M 1 H 0
 W (null)~
 Y ~
+P
+waiting bench~
+The bench has a smooth seat and a back marked by the rub of countless coats.
+From here, arrivals remain in view while the busiest line across the floor
+passes a little farther away.`x
+~
 S
 #32108
 the courtyard of 'The `WSi`wl`Wver S`wt`War`x' hotel~
-An open gathering space spreads across hard, worn ground. The broad center
-leaves room for groups to stand apart, while the margins provide a more
-sheltered sense of scale.`x
+Hard ground opens into a broad public gathering space. Old repairs interrupt
+the surface, and the busiest patches have been worn smooth by crossing feet.
+Along the margins, small groups can find a little enclosure while the open
+center leaves every arrival plainly visible.`x
 ~
 0 32 10
 B 1
@@ -2433,7 +2687,7 @@ S
 #32109
 an exit~
 The ground narrows into a worn threshold space. Repeated passage has smoothed
-it's center, while the surrounding structural edges retain their rougher
+the center, while the surrounding structural edges retain their rougher
 texture.`x
 ~
 0 36 1
@@ -2448,7 +2702,7 @@ S
 #32110
 an exit~
 The ground narrows into a worn threshold space. Repeated passage has smoothed
-it's center, while the surrounding structural edges retain their rougher
+the center, while the surrounding structural edges retain their rougher
 texture.`x
 ~
 0 36 1
@@ -2463,7 +2717,7 @@ S
 #32111
 an exit~
 The ground narrows into a worn threshold space. Repeated passage has smoothed
-it's center, while the surrounding structural edges retain their rougher
+the center, while the surrounding structural edges retain their rougher
 texture.`x
 ~
 0 548 1
@@ -2477,9 +2731,11 @@ Y ~
 S
 #32112
 an area under construction~
-Unoccupied space lies within plain, unfinished surfaces. Scuffs and small
-imperfections remain exposed, giving the area the quiet, stripped-back
-character of a place without furnishings.`x
+The near displays step down toward a low `wcounter`x, with sand-colored
+plaster tying the fittings together. Small label holders repeat along the
+shelf edges, some bright at the corners and others dulled by handling. The
+displays reward attention to small differences, leaving the open floor to
+carry the ordinary passing trade.`x
 ~
 0 44 5
 B 1
@@ -2489,12 +2745,19 @@ T 3000
 M 1 H 0
 W (null)~
 Y ~
+P
+counter~
+The counter's edge has been polished smooth by resting hands. Small scratches
+cloud the top, leaving a comfortable shared surface for leaning in to talk or
+examining something laid between companions.`x
+~
 S
 #32113
 an area under construction~
-Unoccupied space lies within plain, unfinished surfaces. Scuffs and small
-imperfections remain exposed, giving the area the quiet, stripped-back
-character of a place without furnishings.`x
+A broad strip of white ceramic draws the eye toward the `wcounter`x at the
+near end. The upper shelving leaves a generous gap beneath the ceiling, making
+the crowded lower rows feel less close. The displays reward attention to small
+differences, leaving the open floor to carry the ordinary passing trade.`x
 ~
 0 44 5
 B 1
@@ -2504,12 +2767,20 @@ T 3000
 M 1 H 0
 W (null)~
 Y ~
+P
+counter~
+The counter's edge has been polished smooth by resting hands. Small scratches
+cloud the top, leaving a comfortable shared surface for leaning in to talk or
+examining something laid between companions.`x
+~
 S
 #32114
 an area under construction~
-Unoccupied space lies within plain, unfinished surfaces. Scuffs and small
-imperfections remain exposed, giving the area the quiet, stripped-back
-character of a place without furnishings.`x
+The `wcounter`x makes a dogleg beside the near wall, separating a compact
+sales position from the browsing floor. A small handwritten-looking label
+introduces an uneven note among otherwise regular printed cards. The
+arrangement makes browsing feel unhurried, with the sales position always easy
+to find again.`x
 ~
 0 44 5
 B 1
@@ -2524,12 +2795,20 @@ D2
 M 1 H 0
 W (null)~
 Y ~
+P
+counter~
+The counter's edge has been polished smooth by resting hands. Small scratches
+cloud the top, leaving a comfortable shared surface for leaning in to talk or
+examining something laid between companions.`x
+~
 S
 #32115
 an area under construction~
-Unoccupied space lies within plain, unfinished surfaces. Scuffs and small
-imperfections remain exposed, giving the area the quiet, stripped-back
-character of a place without furnishings.`x
+A `wsofa`x faces inward from the right-hand wall, beneath a shallow decorative
+band of muted green paint. Small framed prints hang at different heights,
+making an informal balance out of their mismatched proportions. The seats turn
+attention toward company, leaving the surrounding details to be noticed
+between exchanges.`x
 ~
 0 44 2
 B 1
@@ -2549,12 +2828,19 @@ D1
 M 1 H 0
 W (null)~
 Y ~
+P
+sofa~
+Deep cushions settle into familiar hollows along the sofa. The arms are rubbed
+smooth, and the upholstery holds a faint fabric warmth; there's room to sit
+close or claim a comfortable corner.`x
+~
 S
 #32116
 an area under construction~
-Unoccupied space lies within plain, unfinished surfaces. Scuffs and small
-imperfections remain exposed, giving the area the quiet, stripped-back
-character of a place without furnishings.`x
+A shallow recess faced in chalk-white wood shelters the `wsofa`x on the near
+side. A shallow decorative bowl catches the room in a curved, imperfect
+reflection. The room feels intended for the part of a visit after everyone has
+stopped deciding where to stand.`x
 ~
 0 44 2
 B 1
@@ -2569,12 +2855,19 @@ D3
 M 1 H 0
 W (null)~
 Y ~
+P
+sofa~
+Deep cushions settle into familiar hollows along the sofa. The arms are rubbed
+smooth, and the upholstery holds a faint fabric warmth; there's room to sit
+close or claim a comfortable corner.`x
+~
 S
 #32117
 area under development~
-Unoccupied space lies within plain, unfinished surfaces. Scuffs and small
-imperfections remain exposed, giving the area the quiet, stripped-back
-character of a place without furnishings.`x
+Near the right-hand wall, the floor rises into a low ridge edged with warm
+terracotta. The floor carries a faint rectangular outline, clearer at one end
+than the other. There is a faint mineral smell beneath the dry air, the scent
+of a room reduced to the materials that make it.`x
 ~
 0 44 5
 B 1
@@ -2587,9 +2880,10 @@ Y ~
 S
 #32118
 area under development~
-Unoccupied space lies within plain, unfinished surfaces. Scuffs and small
-imperfections remain exposed, giving the area the quiet, stripped-back
-character of a place without furnishings.`x
+A strip of dark walnut stops short of the near corner, exposing the
+construction beneath the finish. The floor carries a faint rectangular
+outline, clearer at one end than the other. The open floor makes the slightest
+unevenness conspicuous, a landscape of small seams and shallow shadows.`x
 ~
 0 44 5
 B 1
@@ -2602,9 +2896,10 @@ Y ~
 S
 #32119
 area under development~
-Unoccupied space lies within plain, unfinished surfaces. Scuffs and small
-imperfections remain exposed, giving the area the quiet, stripped-back
-character of a place without furnishings.`x
+A shallow recess interrupts the far wall, outlined by a narrow lip of
+chalk-white wood. The ceiling has a shallow step that makes one corner seem
+unexpectedly close. Without furniture to soften the enclosure, every small
+sound acquires a dry little echo.`x
 ~
 0 44 5
 B 1
@@ -2617,9 +2912,10 @@ Y ~
 S
 #32120
 area under development~
-Unoccupied space lies within plain, unfinished surfaces. Scuffs and small
-imperfections remain exposed, giving the area the quiet, stripped-back
-character of a place without furnishings.`x
+The right-hand end narrows around a broad structural pier faced in pearl-gray
+paint. An old repair has dried to a slightly different shade, revealing the
+shape of the patch. The quiet has an unfinished quality, as though the next
+ordinary use might finally give the space a character.`x
 ~
 0 44 5
 B 1
@@ -2632,9 +2928,11 @@ Y ~
 S
 #32121
 area under development~
-Unoccupied space lies within plain, unfinished surfaces. Scuffs and small
-imperfections remain exposed, giving the area the quiet, stripped-back
-character of a place without furnishings.`x
+Two broad planes meet at an awkward angle on the left-hand side, with dark
+walnut picked out along the join. An old repair has dried to a slightly
+different shade, revealing the shape of the patch. The undecorated surfaces
+leave the proportions unusually easy to read, from the low corners to the open
+middle.`x
 ~
 0 44 5
 B 1
@@ -2647,9 +2945,10 @@ Y ~
 S
 #32122
 area under development~
-Unoccupied space lies within plain, unfinished surfaces. Scuffs and small
-imperfections remain exposed, giving the area the quiet, stripped-back
-character of a place without furnishings.`x
+Near the near wall, the floor rises into a low ridge edged with dark walnut.
+Fine tool strokes remain visible beneath the last layer of wall finish. The
+undecorated surfaces leave the proportions unusually easy to read, from the
+low corners to the open middle.`x
 ~
 0 12 2
 B 1
@@ -2662,9 +2961,10 @@ Y ~
 S
 #32123
 area under development~
-Unoccupied space lies within plain, unfinished surfaces. Scuffs and small
-imperfections remain exposed, giving the area the quiet, stripped-back
-character of a place without furnishings.`x
+A strip of warm terracotta stops short of the far corner, exposing the
+construction beneath the finish. The ceiling has a shallow step that makes one
+corner seem unexpectedly close. The quiet has an unfinished quality, as though
+the next ordinary use might finally give the space a character.`x
 ~
 0 44 5
 B 1
@@ -2677,9 +2977,10 @@ Y ~
 S
 #32124
 area under development~
-Unoccupied space lies within plain, unfinished surfaces. Scuffs and small
-imperfections remain exposed, giving the area the quiet, stripped-back
-character of a place without furnishings.`x
+A strip of warm terracotta stops short of the right-hand corner, exposing the
+construction beneath the finish. The floor carries a faint rectangular
+outline, clearer at one end than the other. Without furniture to soften the
+enclosure, every small sound acquires a dry little echo.`x
 ~
 0 44 5
 B 1
@@ -2692,9 +2993,10 @@ Y ~
 S
 #32125
 area under development~
-Unoccupied space lies within plain, unfinished surfaces. Scuffs and small
-imperfections remain exposed, giving the area the quiet, stripped-back
-character of a place without furnishings.`x
+A square patch of warm terracotta marks the right-hand wall where the
+surrounding finish changes depth. Fine tool strokes remain visible beneath the
+last layer of wall finish. The quiet has an unfinished quality, as though the
+next ordinary use might finally give the space a character.`x
 ~
 0 44 5
 B 1
@@ -2707,9 +3009,10 @@ Y ~
 S
 #32126
 area under development~
-Unoccupied space lies within plain, unfinished surfaces. Scuffs and small
-imperfections remain exposed, giving the area the quiet, stripped-back
-character of a place without furnishings.`x
+A shallow recess interrupts the left-hand wall, outlined by a narrow lip of
+dark walnut. A hairline seam crosses the floor and disappears beneath the base
+of the wall. The open floor makes the slightest unevenness conspicuous, a
+landscape of small seams and shallow shadows.`x
 ~
 0 44 2
 B 1
@@ -2722,9 +3025,10 @@ Y ~
 S
 #32127
 area under development~
-Unoccupied space lies within plain, unfinished surfaces. Scuffs and small
-imperfections remain exposed, giving the area the quiet, stripped-back
-character of a place without furnishings.`x
+A shallow recess interrupts the far wall, outlined by a narrow lip of dark
+walnut. A hairline seam crosses the floor and disappears beneath the base of
+the wall. The undecorated surfaces leave the proportions unusually easy to
+read, from the low corners to the open middle.`x
 ~
 0 44 5
 B 1
@@ -2737,9 +3041,10 @@ Y ~
 S
 #32128
 area under development~
-Unoccupied space lies within plain, unfinished surfaces. Scuffs and small
-imperfections remain exposed, giving the area the quiet, stripped-back
-character of a place without furnishings.`x
+A square patch of cream plaster marks the right-hand wall where the
+surrounding finish changes depth. The ceiling has a shallow step that makes
+one corner seem unexpectedly close. The undecorated surfaces leave the
+proportions unusually easy to read, from the low corners to the open middle.`x
 ~
 0 44 5
 B 1
@@ -2752,9 +3057,10 @@ Y ~
 S
 #32129
 area under development~
-Unoccupied space lies within plain, unfinished surfaces. Scuffs and small
-imperfections remain exposed, giving the area the quiet, stripped-back
-character of a place without furnishings.`x
+Two broad planes meet at an awkward angle on the left-hand side, with cream
+plaster picked out along the join. The floor carries a faint rectangular
+outline, clearer at one end than the other. Without furniture to soften the
+enclosure, every small sound acquires a dry little echo.`x
 ~
 0 44 5
 B 1
@@ -2767,9 +3073,10 @@ Y ~
 S
 #32130
 area under development~
-Unoccupied space lies within plain, unfinished surfaces. Scuffs and small
-imperfections remain exposed, giving the area the quiet, stripped-back
-character of a place without furnishings.`x
+Two broad planes meet at an awkward angle on the near side, with warm
+terracotta picked out along the join. A hairline seam crosses the floor and
+disappears beneath the base of the wall. Without furniture to soften the
+enclosure, every small sound acquires a dry little echo.`x
 ~
 0 44 5
 B 1
@@ -2782,9 +3089,10 @@ Y ~
 S
 #32131
 area under development~
-Unoccupied space lies within plain, unfinished surfaces. Scuffs and small
-imperfections remain exposed, giving the area the quiet, stripped-back
-character of a place without furnishings.`x
+Near the near wall, the floor rises into a low ridge edged with smoke-blue
+paint. An old repair has dried to a slightly different shade, revealing the
+shape of the patch. The open floor makes the slightest unevenness conspicuous,
+a landscape of small seams and shallow shadows.`x
 ~
 0 44 5
 B 1
@@ -2797,9 +3105,11 @@ Y ~
 S
 #32132
 area under development~
-Unoccupied space lies within plain, unfinished surfaces. Scuffs and small
-imperfections remain exposed, giving the area the quiet, stripped-back
-character of a place without furnishings.`x
+A strip of chalk-white wood stops short of the near corner, exposing the
+construction beneath the finish. The floor carries a faint rectangular
+outline, clearer at one end than the other. There is a faint mineral smell
+beneath the dry air, the scent of a room reduced to the materials that make
+it.`x
 ~
 0 44 5
 B 1
@@ -2812,9 +3122,10 @@ Y ~
 S
 #32133
 area under development~
-Unoccupied space lies within plain, unfinished surfaces. Scuffs and small
-imperfections remain exposed, giving the area the quiet, stripped-back
-character of a place without furnishings.`x
+Two broad planes meet at an awkward angle on the near side, with dark walnut
+picked out along the join. Fine tool strokes remain visible beneath the last
+layer of wall finish. There is a faint mineral smell beneath the dry air, the
+scent of a room reduced to the materials that make it.`x
 ~
 0 44 5
 B 1
@@ -2827,9 +3138,10 @@ Y ~
 S
 #32134
 area under development~
-Unoccupied space lies within plain, unfinished surfaces. Scuffs and small
-imperfections remain exposed, giving the area the quiet, stripped-back
-character of a place without furnishings.`x
+A shallow recess interrupts the right-hand wall, outlined by a narrow lip of
+chalk-white wood. A narrow shadow lies inside the deepest joint, emphasizing
+the spare geometry. The quiet has an unfinished quality, as though the next
+ordinary use might finally give the space a character.`x
 ~
 0 524 2
 B 1

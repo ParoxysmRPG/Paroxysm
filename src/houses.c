@@ -1533,8 +1533,8 @@ prop->auction_month -= 12;
       buf += frame;
       buf += "_`x\n\r";
       page += buf.data();
-      if (!str_cmp(arg2, "township") || safe_strlen(arg2) < 2 || !str_cmp(arg2, "town") || !str_cmp(arg2, "haven")) {
-        page += "`WHaven Township`x\n\r";
+      if (!str_cmp(arg2, "township") || safe_strlen(arg2) < 2 || !str_cmp(arg2, "town") || !str_cmp(arg2, "gravesend")) {
+        page += "`WGravesend Township`x\n\r";
         for (vector<PROP_TYPE *>::iterator it = PropVect.begin();
         it != PropVect.end(); ++it) {
           if (!(*it)->propname || (*it)->propname[0] == '\0' || (*it)->valid == FALSE || (*it)->type != PROP_HOUSE) {
@@ -1560,8 +1560,8 @@ prop->auction_month -= 12;
           page += buf.data();
         }
       }
-      if (!str_cmp(arg2, "forest") || safe_strlen(arg2) < 2 || !str_cmp(arg2, "inner") || !str_cmp(arg2, "forests") || !str_cmp(arg2, "haven")) {
-        page += "`WHaven Forest`x\n\r";
+      if (!str_cmp(arg2, "forest") || safe_strlen(arg2) < 2 || !str_cmp(arg2, "inner") || !str_cmp(arg2, "forests") || !str_cmp(arg2, "gravesend")) {
+        page += "`WGravesend Forest`x\n\r";
         for (vector<PROP_TYPE *>::iterator it = PropVect.begin();
         it != PropVect.end(); ++it) {
           if (!(*it)->propname || (*it)->propname[0] == '\0' || (*it)->valid == FALSE || (*it)->type != PROP_HOUSE) {
@@ -2591,8 +2591,8 @@ house->auction_month -= 12;
       buf += frame;
       buf += "_`x\n\r";
       page += buf.data();
-      if (!str_cmp(arg2, "township") || safe_strlen(arg2) < 2 || !str_cmp(arg2, "town") || !str_cmp(arg2, "haven")) {
-        page += "`WHaven Township`x\n\r";
+      if (!str_cmp(arg2, "township") || safe_strlen(arg2) < 2 || !str_cmp(arg2, "town") || !str_cmp(arg2, "gravesend")) {
+        page += "`WGravesend Township`x\n\r";
         for (vector<PROP_TYPE *>::iterator it = PropVect.begin();
         it != PropVect.end(); ++it) {
           if (!(*it)->propname || (*it)->propname[0] == '\0' || (*it)->type != PROP_SHOP || (*it)->valid == FALSE) {
@@ -2617,8 +2617,8 @@ house->auction_month -= 12;
           page += buf.data();
         }
       }
-      if (!str_cmp(arg2, "forest") || safe_strlen(arg2) < 2 || !str_cmp(arg2, "inner") || !str_cmp(arg2, "forests") || !str_cmp(arg2, "haven")) {
-        page += "`WHaven Forest`x\n\r";
+      if (!str_cmp(arg2, "forest") || safe_strlen(arg2) < 2 || !str_cmp(arg2, "inner") || !str_cmp(arg2, "forests") || !str_cmp(arg2, "gravesend")) {
+        page += "`WGravesend Forest`x\n\r";
         for (vector<PROP_TYPE *>::iterator it = PropVect.begin();
         it != PropVect.end(); ++it) {
           if (!(*it)->propname || (*it)->propname[0] == '\0' || (*it)->type != PROP_SHOP || (*it)->valid == FALSE) {
@@ -3315,7 +3315,7 @@ house->auction_month -= 12;
       for (int i = 0; i < MAX_INDUSTRY; i++) {
         if (!str_cmp(argument, industry_table[i].name)) {
           if (!valid_industry(industry_table[i].vnum, district_room(get_room_index(prop->firstroom)))) {
-            send_to_char("That would be a violation of Haven zoning laws, see help district.\n\r", ch);
+            send_to_char("That would be a violation of Gravesend zoning laws, see help district.\n\r", ch);
             return;
           }
           if (prop->industry != 0 && prop->renovate == 0)
@@ -9478,7 +9478,7 @@ send_to_char("That isn't a valid apartment, Syntax: Buzz (101-400)
 * typically.  Less commonly, a house may have been converted into a store by
 * its owner who still lives there, but usually at the cost of living space.
 * They don't simply build a house onto top of store.  Some apartment buildings
-* are set up in that manner, however.  A town of Haven's size won't have that
+* are set up in that manner, however.  A town of Gravesend's size won't have that
 * issue.
 *
 *      Smaller plots will add a disincentive to placing housing on commercial
@@ -13541,7 +13541,7 @@ unequip_char(ch, obj);
 act("$n mails $a $p.",ch,obj,NULL, TO_ROOM);
 act("You mail $a $p.",ch,obj,NULL, TO_CHAR);
 
-obj->stash_room=28203; //Moving to special postoffice room "Haven Post Office
+obj->stash_room=28203; //Moving to special postoffice room "Gravesend Post Office
 - Outgoing Mail" SET_BIT(obj->extra_flags,ITEM_WARDROBE);
 }
 }

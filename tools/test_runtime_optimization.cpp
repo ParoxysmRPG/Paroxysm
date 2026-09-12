@@ -187,6 +187,7 @@ static void faction_tests() {
     puts("PASS: faction index preserves misses, first match, renumbering and ordering");
 }
 static void operation_job_tests() {
+    setenv("HAVEN_ENABLE_AI", "1", 1);
     const auto saved_ops = OpVect;
     const auto saved_factions = FacVect;
     const auto saved_locations = locationVect;
@@ -211,7 +212,7 @@ static void operation_job_tests() {
               &completed, &removed, &valid};
     write_file(AI_IN_FILE, "existing\n");
     ai_operation_job();
-    assert(read_file(AI_IN_FILE) == "existing\n2,0,Antagonist,\"Test territory\",,,\n");
+    assert(read_file(AI_IN_FILE) == "existing\n2,0,Antagonist,\"Test territory\",1,901,\n");
 
     OpVect = {&valid};
     write_file(AI_IN_FILE, "");
@@ -224,10 +225,11 @@ static void operation_job_tests() {
     faction.name = const_cast<char *>(long_name.c_str()); territory.name = (char *)"Test territory";
     valid.description = (char *)"123456789";
     ai_operation_job();
-    assert(read_file(AI_IN_FILE) == "2,0," + long_name + ",\"Test territory\",,,\n");
+    assert(read_file(AI_IN_FILE) == "Type,ID,ValOne,ValTwo,ValThree,ValFour,ValFive\n2,0," + long_name + ",\"Test territory\",1,901,\n");
     OpVect = saved_ops; FacVect = saved_factions; locationVect = saved_locations;
     invalidate_faction_index(); write_file(AI_IN_FILE, saved_queue);
 
+    unsetenv("HAVEN_ENABLE_AI");
     for (int vnum : {294, 295, 296}) {
         auto *object = get_obj_index(vnum);
         assert(object && object->item_type == ITEM_TRASH);
@@ -309,6 +311,23 @@ static void gameplay_tests() {
     set_combat_state(ch, false); fight_update();
     assert(ch->caff_duration[0] == 4);
     puts("PASS: real combat tick updates active characters and leaves idle characters untouched");
+    auto *turn = test_player("RuntimeTurn");
+    for (auto *member : {ch, idle, turn}) {
+        set_combat_state(member, true);
+        member->fight_fast = FALSE; member->pcdata->autoskip = 0;
+    }
+    assert(next_fight_member(turn) == idle && next_fight_member(ch) == turn);
+    idle->pcdata->autoskip = 1;
+    assert(next_fight_member(turn) == ch);
+    ch->pcdata->autoskip = 1;
+    assert(next_fight_member(turn) == idle);
+    set_combat_state(idle, false);
+    assert(next_fight_member(turn) == ch);
+    for (auto *member : {ch, idle, turn}) {
+        set_combat_state(member, false); member->pcdata->autoskip = 0;
+    }
+    puts("PASS: real turn selection preserves index order, wrap, autoskip fallback and deactivation");
+
 
     auto *phone = test_item(ch, ITEM_PHONE, "phone", WEAR_HOLD);
     phone->value[0] = 990011;

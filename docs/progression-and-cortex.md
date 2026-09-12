@@ -21,7 +21,7 @@ and roster dismissal cannot remove that mandatory membership.
 
 When Cortex participates in a live off-world operation and loses to an NPC
 antagonist faction, there is a 25% chance of a breach. For the following real
-hour, moving through Haven has a 5% chance per eligible move to spawn one
+hour, moving through Gravesend has a 5% chance per eligible move to spawn one
 monster from that world, including on roads and inside buildings. A breach
 produces at most one encounter. Monsters prefer a suitable level for the
 player, falling back to the weakest available monster from that world.

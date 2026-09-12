@@ -76,8 +76,16 @@ void act_new(const char *, CHAR_DATA *, const void *, const void *, int, int) {}
 '''
 source += lookup[start:end]
 source += r'''
+std::string uncolored(const std::string &text) {
+  std::string result;
+  for (size_t i = 0; i < text.size(); ++i) {
+    if (text[i] == '`' && i + 1 < text.size()) ++i;
+    else result += text[i];
+  }
+  return result;
+}
 void contains(const char *s) {
-  if (output.find(s) == std::string::npos) {
+  if (uncolored(output).find(uncolored(s)) == std::string::npos) {
     fprintf(stderr, "Missing: %s\nOutput:\n%s\n", s, output.c_str());
     abort();
   }
@@ -153,7 +161,7 @@ int main() {
   room.vnum = 100; output.clear(); do_affect(&ch, (char *)"");
   contains("Creation room"); contains("Current LifeForce: 100");
   output.clear(); do_affect(&ch, (char *)"someone");
-  assert(output == "`WSyntax:`x affect or affects\n\r");
+  assert(output == "`cSyntax`g:`W affect `xor `Waffects`x\n\r");
   puts("Affect report, society weighting, wounds, hunger, gains, overrides and modifiers passed.");
 }
 '''

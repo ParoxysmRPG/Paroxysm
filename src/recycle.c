@@ -86,7 +86,9 @@ extern "C" {
     d->pEdit = NULL;   /* OLC */
     d->pString = NULL; /* OLC */
     d->editor = 0;     /* OLC */
-    d->outbuf = (char *)alloc_mem(d->outsize);
+    d->outbuf = static_cast<char *>(malloc(d->outsize));
+    if (!d->outbuf) { bug("Unable to allocate socket output.", 0); exit(EXIT_FAILURE); }
+    d->outbuf[0] = '\0';
     d->ansi = 0;
 
     return d;
@@ -99,7 +101,7 @@ extern "C" {
     free_string(d->host);
     free_string(d->hostip);
     free_string(d->ident);
-    free_mem(d->outbuf, d->outsize);
+    free(d->outbuf);
     INVALIDATE(d);
     descriptor_free.push_front(d);
   }
@@ -379,6 +381,8 @@ extern "C" {
     free_string(pcdata->pledge);
     free_string(pcdata->pubic_hair);
     free_string(pcdata->messages);
+    free_string(pcdata->syndicate_seller);
+    free_string(pcdata->syndicate_prisoner);
     free_string(pcdata->class_fame);
     free_string(pcdata->home_territory);
     free_string(pcdata->deathcause);
@@ -4289,6 +4293,9 @@ int last_msg;
     pcdata->patrol_subtype = 0;
     pcdata->patrol_room = NULL;
     pcdata->patrol_target = NULL;
+    pcdata->syndicate_release_at = 0;
+    pcdata->syndicate_seller = str_dup("");
+    pcdata->syndicate_prisoner = str_dup("");
     pcdata->last_patrol = NULL;
     pcdata->encounter_sr = NULL;
 

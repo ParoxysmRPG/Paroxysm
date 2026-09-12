@@ -9,6 +9,7 @@
 #include <sys/stat.h>
 #include <cstring>
 #include <iostream>
+#include <vector>
 
 #ifdef WIN32
 #define snprintf _snprintf
@@ -36,10 +37,11 @@ protected:
 	const char *m_pcStart;
 	const char *m_pcEnd;
 	int m_iLine;
+	bool m_readError;
 	
 	// protected constructor to avoid direct instances
 	StaticInput() :
-	m_szData(0), m_pcStart(0), m_pcEnd(0), m_iLine(1)
+	m_szData(0), m_pcStart(0), m_pcEnd(0), m_iLine(1), m_readError(false)
 	{}
 	
 	virtual ~StaticInput() {}
@@ -61,15 +63,28 @@ public:
 	int getInt();
 	float getFloat();
 	unsigned long getLong();
-	char * getWord(char *);
-	char * getString(char *); 	// ~ delimited
-	char * getLine(char *);
+	bool failed() const { return m_readError; }
+	string getWord();
+	string getString(); // ~ delimited, including arbitrarily long note bodies
+	string getLine();
+	template<size_t Capacity> char *getWord(char (&target)[Capacity]) { return copyText(target, getWord()); }
+	template<size_t Capacity> char *getString(char (&target)[Capacity]) { return copyText(target, getString()); }
+	template<size_t Capacity> char *getLine(char (&target)[Capacity]) { return copyText(target, getLine()); }
+	template<size_t Capacity> char *copyText(char (&target)[Capacity], const string &value) {
+		if (value.size() >= Capacity) {
+			m_readError = true;
+			target[0] = '\0';
+		} else {
+			memcpy(target, value.c_str(), value.size() + 1);
+		}
+		return target;
+	}
 	void getBitfield( unsigned long *);
 	void * read( void *, int ); // for reading structs directly
 	
 	void skipWhite() 
 	{ 
-		while( !isEof() && isspace(*m_pcStart) ) 
+		while( !isEof() && isspace(static_cast<unsigned char>(*m_pcStart)) )
 		{
 			if ( *m_pcStart++ == '\n' )
 				m_iLine++;
@@ -155,7 +170,24 @@ public:
 	void vsendf(const char * fmt, va_list args)
 	{
 		char buf[BUFFERSIZE * 2];
-		write( buf, vsnprintf( buf, BUFFERSIZE * 2, fmt, args) );
+		va_list copy;
+		va_copy(copy, args);
+		const int length = vsnprintf(buf, sizeof(buf), fmt, copy);
+		va_end(copy);
+		if (length < 0) { m_bActive = false; return; }
+		if (static_cast<size_t>(length) < sizeof(buf)) {
+			write(buf, length);
+			return;
+		}
+		vector<char> expanded(static_cast<size_t>(length) + 1);
+		va_copy(copy, args);
+		const int written = vsnprintf(expanded.data(), expanded.size(), fmt, copy);
+		va_end(copy);
+		if (written < 0 || static_cast<size_t>(written) >= expanded.size()) {
+			m_bActive = false;
+			return;
+		}
+		write(expanded.data(), written);
 	}
 	void sendf( const char * fmt, ... )
 	{

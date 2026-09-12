@@ -70,7 +70,6 @@ Sanitizer mode stops on the first address/undefined-behavior error. Leak detecti
 is disabled because the engine retains its permanent allocator pools until exit.
 
 Additional checks: operation optimization and territory rewards tests pass.
-Two broader tests fail outside the changed helpers: `test_core_factions.py`
-expects Scum's corrupt axis to be `AXES_MIDLEFT`, and `test_alliance.py` omits
-the `TerritoryRewardDefault` definition from its extracted test translation unit.
-These faction-policy/test-fixture issues are outside this memory safety audit.
+The previously documented core-faction and alliance fixture failures have been
+resolved; both focused suites pass. Further note-reader and formatted-output
+fixes are covered in [runtime-hardening.md](runtime-hardening.md).

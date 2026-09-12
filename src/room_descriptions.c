@@ -37,10 +37,20 @@ bool room_uses_stock_description(ROOM_INDEX_DATA *room) {
     if (!strcmp(room->description, room_realm_forest_text[i])) return TRUE;
   for (unsigned int i = 0; i < sizeof(room_transit_text)/sizeof(room_transit_text[0]); ++i)
     if (!strcmp(room->description, room_transit_text[i])) return TRUE;
+  // The reusable travel pool retains a distinct cab interior through save/load
+  // and can still clear automatic seats when the shell changes purpose.
+  if (room->vnum >= 19000 && room->vnum <= 19099 &&
+      !strcmp(room->description, room_taxi_text[room->vnum - 19000])) return TRUE;
   return FALSE;
 }
 
+static bool is_taxi_room(ROOM_INDEX_DATA *room) {
+  return room->name && (!str_cmp(room->name, "Taxi") ||
+                        !str_cmp(room->name, "The back of a Taxi"));
+}
+
 static int description_kind(ROOM_INDEX_DATA *room) {
+  if (is_taxi_room(room)) return SECT_CAR;
   if (room->sector_type == SECT_ALLEY && room->name && strcasestr(room->name, "subway")) return -1;
   if (room->sector_type == SECT_CAR && !IS_SET(room->room_flags, ROOM_INDOORS)) return -2;
   if (room->sector_type == SECT_FOREST && room->name && strcasestr(room->name, "path")) return -3;
@@ -51,6 +61,11 @@ static int description_kind(ROOM_INDEX_DATA *room) {
 const char *default_room_description(ROOM_INDEX_DATA *room) {
   if (room == NULL) return room_terrain_text[0];
   int kind = description_kind(room);
+  if (is_taxi_room(room)) {
+    if (room->vnum >= 19000 && room->vnum <= 19099)
+      return room_taxi_text[room->vnum - 19000];
+    return room_terrain_text[SECT_CAR];
+  }
   if (kind >= -3 && kind < 0) return room_transit_text[-kind - 1];
   if (room->sector_type == SECT_FOREST && room->area != NULL) {
     switch (room->area->vnum) {
@@ -77,19 +92,47 @@ struct StockPlace {
   int sector;
   const char *name;
   const char *text;
+  const char *previous_name;
+  const char *previous_text;
 };
 
+// Area authoring and the engine use different line wrapping. Compare words
+// exactly while treating whitespace runs alike, so a saved stock seat can be
+// removed when a reusable vehicle becomes a sidewalk. Decorated rooms still
+// return before this comparison, including intentionally stock-looking edits.
+static bool same_place_text(const char *a, const char *b) {
+  while (*a && *b) {
+    if (isspace((unsigned char)*a) && isspace((unsigned char)*b)) {
+      while (isspace((unsigned char)*a)) ++a;
+      while (isspace((unsigned char)*b)) ++b;
+    } else if (*a++ != *b++) return FALSE;
+  }
+  while (isspace((unsigned char)*a)) ++a;
+  while (isspace((unsigned char)*b)) ++b;
+  return !*a && !*b;
+}
+
 static const StockPlace stock_places[] = {
-  { -1, "seats", "The subway seats line the passenger aisle beneath the metal handholds.`x\n\r" },
-  { -2, "seat", "The narrow riding seat leaves its occupant open to the surrounding space.`x\n\r" },
-  { SECT_CLUB, "seating area", "Seats stand back from the dance floor, leaving room for quiet company.`x\n\r" },
-  { SECT_RESTERAUNT, "tables", "Chairs gather around the dining tables, facing inward for conversation.`x\n\r" },
-  { SECT_SHOP, "counter", "The counter provides a shared standing place along the customer side.`x\n\r" },
-  { SECT_TAVERN, "bar", "The worn bar counter provides a long edge where people can gather.`x\n\r" },
-  { SECT_TAVERN, "tables", "Tables stand apart from the bar with their chairs facing inward.`x\n\r" },
-  { SECT_CAFE, "counter", "The counter faces the cafe's seating area.`x\n\r" },
-  { SECT_CAFE, "tables", "The small tables provide close-set seating for conversation.`x\n\r" },
-  { SECT_CAR, "seats", "The passenger seats provide a compact place to sit within the vehicle.`x\n\r" }
+  { -1, "seats", "The subway seats are polished along the edges by countless passengers.\n\rMetal handholds hang above them, and the close spacing brings neighboring\n\rcompany within easy speaking distance.`x\n\r",
+    "seats", "The subway seats line the passenger aisle beneath the metal handholds.`x\n\r" },
+  { -2, "seat", "The narrow riding seat is smooth through the middle, with dust caught\n\ralong the seams. The compact frame stays close beneath it, leaving the\n\rrider open to the surrounding air.`x\n\r",
+    "seat", "The narrow riding seat leaves its occupant open to the surrounding space.`x\n\r" },
+  { SECT_CLUB, "sofa", "Deep cushions soften the low sofa beside the dance floor. The arms are\n\rrubbed smooth, and the upholstery holds a trace of old perfume. It's a\n\rcomfortable place to settle close to company and watch the room.`x\n\r",
+    "seating area", "Seats stand back from the dance floor, leaving room for quiet company.`x\n\r" },
+  { SECT_RESTERAUNT, "tables", "Dining chairs gather around tables marked by faint rings and tiny\n\rscratches. The close arrangement leaves room for a meal and the kind of\n\rconversation that lingers after the plates have gone.`x\n\r",
+    "tables", "Chairs gather around the dining tables, facing inward for conversation.`x\n\r" },
+  { SECT_SHOP, "counter", "The shop counter has a smooth edge beneath resting hands. Small\n\rhandling marks cloud the top, giving companions a shared surface for\n\rleaning in to discuss the surrounding displays.`x\n\r",
+    "counter", "The counter provides a shared standing place along the customer side.`x\n\r" },
+  { SECT_TAVERN, "bar", "Old drink rings overlap in the bar's dark finish. The long edge is\n\rsmooth beneath an elbow, bringing neighboring patrons within easy reach\n\rof a passing remark or a quietly exchanged confidence.`x\n\r",
+    "bar", "The worn bar counter provides a long edge where people can gather.`x\n\r" },
+  { SECT_TAVERN, "tables", "These tables sit a little apart from the bar, with chairs drawn close\n\raround their worn edges. Old rings remain beneath the finish, giving\n\reach group a comfortable pocket for conversation over a drink.`x\n\r",
+    "tables", "Tables stand apart from the bar with their chairs facing inward.`x\n\r" },
+  { SECT_CAFE, "counter", "A faint coffee smell lingers around the cafe counter. The nearest\n\redge is smooth from resting hands, with room to lean beside a companion\n\rand take in the small tables across the room.`x\n\r",
+    "counter", "The counter faces the cafe's seating area.`x\n\r" },
+  { SECT_CAFE, "tables", "Small cafe tables bring the chairs comfortably close. Pale cup rings\n\rtrace earlier visits across the wiped surfaces, leaving just enough\n\rroom for elbows and an unhurried conversation.`x\n\r",
+    "tables", "The small tables provide close-set seating for conversation.`x\n\r" },
+  { SECT_CAR, "seats", "The passenger seats fit closely inside the vehicle. Creased upholstery\n\rholds a faint fabric smell, and the padded backs offer a compact place\n\rto settle beside a traveling companion.`x\n\r",
+    "seats", "The passenger seats provide a compact place to sit within the vehicle.`x\n\r" }
 };
 
 void clear_room_places(ROOM_INDEX_DATA *room) {
@@ -143,8 +186,20 @@ void ensure_room_description(ROOM_INDEX_DATA *room) {
     bool obsolete = FALSE;
     for (unsigned int i = 0; i < sizeof(stock_places)/sizeof(stock_places[0]); ++i) {
       const StockPlace &entry = stock_places[i];
-      if (entry.sector != kind && !strcmp(place->keyword, entry.name) &&
-          !strcmp(place->description, entry.text)) obsolete = TRUE;
+      bool previous = !strcmp(place->keyword, entry.previous_name) &&
+        same_place_text(place->description, entry.previous_text);
+      bool current = !strcmp(place->keyword, entry.name) &&
+        same_place_text(place->description, entry.text);
+      if (!previous && !current) continue;
+      if (entry.sector != kind) obsolete = TRUE;
+      else if (previous) {
+        // Recognize the exact previous automatic text, preserving custom places.
+        free_string(place->keyword);
+        free_string(place->description);
+        place->keyword = str_dup(entry.name);
+        place->description = str_dup(entry.text);
+      }
+      break;
     }
     if (obsolete) {
       *link = place->next;

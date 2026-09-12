@@ -90,6 +90,15 @@ int main() {
   assert(!has(target, "copied text") && !has(third, "copied text"));
   assert(has(fourth, "copied text") && has(fourth, "group-message"));
   assert(strstr(group->history, "group-message"));
+  SET_BIT(get_phone(third)->extra_flags, ITEM_OFF);
+  OBJ_DATA *third_phone = find_phone(third, 990003);
+  assert(third_phone == nullptr);
+  command(sender, do_text, "phone-audit off-phone-message");
+  for (OBJ_DATA *item = third->carrying; item; item = item->next_content)
+    if (item->item_type == ITEM_PHONE) REMOVE_BIT(item->extra_flags, ITEM_OFF);
+  assert(!has(third, "off-phone-message"));
+  command(sender, do_text, "phone-audit reenabled-phone-message");
+  assert(has(third, "reenabled-phone-message"));
   command(fourth, do_text, "history phone-audit");
   assert(strstr(fourth->desc->outbuf, "You are not a member"));
 
@@ -123,6 +132,9 @@ int main() {
   descriptor_list.remove(target->desc); target->desc->character = nullptr; target->desc = nullptr;
   extract_char(target, TRUE);
   assert(!get_char_world_pc(book->owner));
+  command(sender, do_text, "phone-audit offline-group-message");
+  assert(has(third, "offline-group-message") && has(fourth, "copied text"));
+  clear(third); clear(fourth);
   command(sender, do_text, "990002 offline-message");
   assert_history_saved("offline-message");
   assert(has(third, "copied text") != has(fourth, "copied text"));
@@ -130,7 +142,7 @@ int main() {
   DESCRIPTOR_DATA loaded = {};
   assert(load_char_obj(&loaded, book->owner));
   OBJ_DATA *stored = find_phone(loaded.character, 990002);
-  assert(stored && strstr(stored->material, "offline-message") && strstr(stored->material, "A photo message"));
+  assert(stored && strstr(stored->material, "offline-message") && strstr(stored->material, "offline-group-message") && strstr(stored->material, "A photo message"));
   free_char(loaded.character);
   puts("PASS: real direct/group/DM/teletext and offline delivery, single scheme copies, rejection paths and group-history access");
 }

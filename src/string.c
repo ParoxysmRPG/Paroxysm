@@ -1167,31 +1167,11 @@ log_string(fetch_line(orig, num_lines+1));
 
 
   void writeLineToFile(const std::string& fileName, const std::string& text) {
-    std::ofstream outputFile(fileName, std::ios::app);  // Open file in append mode
-
-    if (outputFile.is_open()) {
-      outputFile << text << '\n';  // Write the text to the file
-      outputFile.close();          // Close the file
-    }
-    else {
-
-      bug("Unable to open the file.", 0);
-    }
+    if (!haven::append_file_bytes(fileName, text + "\n")) bug("Unable to append file record.", 0);
   }
   void writeTextToFile(const std::string& fileName, const std::string& text) {
-    std::ofstream outputFile(fileName, std::ios::app);  // Open file in append mode
-
-    if (outputFile.is_open()) {
-      outputFile << text;  // Write the text to the file
-      outputFile.close();          // Close the file
-    }
-    else {
-
-      bug("Unable to open the file.", 0);
-    }
+    if (!haven::append_file_bytes(fileName, text)) bug("Unable to append file text.", 0);
   }
-
-
 
   std::string readAndDeleteLineFromFile(const std::string& fileName) {
     return haven::pop_file_line(fileName);
@@ -1199,6 +1179,10 @@ log_string(fetch_line(orig, num_lines+1));
 
   _DOFUN(do_testaiwrite)
   {
+    if (!haven::ai_enabled()) {
+      send_to_char("AI processing is currently disabled.\n\r", ch);
+      return;
+    }
     writeLineToFile(AI_IN_FILE, "1,19,,,,,");
     send_to_char("Line written to the file successfully.\n\r", ch);
 
@@ -1206,6 +1190,10 @@ log_string(fetch_line(orig, num_lines+1));
 
   _DOFUN(do_testairead)
   {
+    if (!haven::ai_enabled()) {
+      send_to_char("AI processing is currently disabled.\n\r", ch);
+      return;
+    }
     std::string line = readAndDeleteLineFromFile(AI_OUT_FILE);
     send_to_char(line.c_str(), ch);
     send_to_char("\n\r", ch);

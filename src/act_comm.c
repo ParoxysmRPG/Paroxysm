@@ -1,3 +1,4 @@
+#include <unordered_map>
 #ifndef WIN32
 #include <sys/stat.h>
 #endif
@@ -1384,7 +1385,7 @@ extern "C" {
     char *pdesc;
     char arg1[MSL];
     struct stat sb;
-    DESCRIPTOR_DATA d;
+    DESCRIPTOR_DATA d = {};
     bool online = FALSE;
 
     if (!str_cmp(argument, "clear")) {
@@ -2185,7 +2186,24 @@ extern "C" {
 
   }
 
-  bool text_to_person(CHAR_DATA *ch, int numberdialed, int sourcenumber, char * msg, bool picture)
+  // Used only during a synchronous group text delivery. Inventory changes and
+  // subsequent commands get a fresh lookup; first active duplicate still wins.
+  struct GroupPhoneLookup {
+    std::unordered_map<int, OBJ_DATA *> phones;
+    GroupPhoneLookup() {
+      for (OBJ_DATA *phone : object_list)
+        if (phone && phone->item_type == ITEM_PHONE &&
+            !IS_SET(phone->extra_flags, ITEM_OFF))
+          phones.emplace(phone->value[0], phone);
+    }
+    OBJ_DATA *find(int number) const {
+      auto found = phones.find(number);
+      return found == phones.end() ? NULL : found->second;
+    }
+  };
+
+  static bool text_to_person_impl(CHAR_DATA *ch, int numberdialed, int sourcenumber,
+                                 char *msg, bool picture, const GroupPhoneLookup *phones)
   {
     if (!ch || IS_NPC(ch) || !ch->pcdata || !msg || !*msg || safe_strlen(msg) >= MAX_INPUT_LENGTH) return FALSE;
     if(numberdialed == 0)
@@ -2194,23 +2212,23 @@ extern "C" {
     OBJ_DATA *obj = NULL;
     bool online = FALSE;
     int from = sourcenumber;
+    DESCRIPTOR_DATA d = {}; // Must outlive the loaded recipient and its save.
     bool phonefound = FALSE;
-    for (ObjList::iterator it = object_list.begin(); it != object_list.end();
-    ++it) {
-      obj = *it;
-
-      if (obj->item_type != ITEM_PHONE || obj->value[0] != numberdialed) {
-        continue;
+    if (phones) {
+      obj = phones->find(numberdialed);
+    } else {
+      for (OBJ_DATA *candidate : object_list) {
+        if (candidate && candidate->item_type == ITEM_PHONE &&
+            candidate->value[0] == numberdialed && !IS_SET(candidate->extra_flags, ITEM_OFF)) {
+          obj = candidate;
+          break;
+        }
       }
-      else if (IS_SET(obj->extra_flags, ITEM_OFF)) {
-        continue;
-      }
-      else {
-        phonefound = TRUE;
-        victim = phone_owner(obj);
-        online = true;
-        break;
-      }
+    }
+    if (obj) {
+      phonefound = TRUE;
+      victim = phone_owner(obj);
+      online = TRUE;
     }
 
     if (phonefound == FALSE ) {
@@ -2226,7 +2244,6 @@ extern "C" {
       if (bookfound == FALSE) {
         return FALSE;
       }
-      DESCRIPTOR_DATA d = {};
 
       d.original = NULL;
       if ((victim = get_char_world_pc_noname(NULL, phonename)) != NULL) {
@@ -2382,6 +2399,10 @@ extern "C" {
     return TRUE;
   }
 
+  bool text_to_person(CHAR_DATA *ch, int numberdialed, int sourcenumber, char *msg, bool picture) {
+    return text_to_person_impl(ch, numberdialed, sourcenumber, msg, picture, NULL);
+  }
+
   _DOFUN(do_text) {
     if (!ch || IS_NPC(ch) || !ch->pcdata || !ch->in_room) return;
     smash_tilde(argument);
@@ -2468,15 +2489,16 @@ extern "C" {
     }
 
 
-    if (get_phone(ch) != NULL && get_phone(ch)->item_type == ITEM_PHONE) {
-      if (get_phone(ch)->material == NULL) {
-        get_phone(ch)->material = str_dup("");
+    OBJ_DATA *sender_phone = get_phone(ch);
+    if (sender_phone != NULL && sender_phone->item_type == ITEM_PHONE) {
+      if (sender_phone->material == NULL) {
+        sender_phone->material = str_dup("");
       }
-      if (safe_strlen(get_phone(ch)->material) > 15000 && str_cmp(arg1, "clear") && str_cmp(arg1, "history")) {
+      if (safe_strlen(sender_phone->material) > 15000 && str_cmp(arg1, "clear") && str_cmp(arg1, "history")) {
         send_to_char("Your phone gives a text memory full error, please delete previous text messages(text clear)\n\r", ch);
         return;
       }
-      if (!is_name("phone", get_phone(ch)->name)) {
+      if (!is_name("phone", sender_phone->name)) {
         send_to_char("Phones must include the word 'phone' in their name to function.\n\r", ch);
         return;
       }
@@ -2491,7 +2513,7 @@ extern "C" {
         continue;
         if(!str_cmp((*it)->tname, argument))
         {
-          OBJ_DATA *phone = get_phone(ch);
+          OBJ_DATA *phone = sender_phone;
           if (!phone || !group_text_member(*it, phone->value[0])) {
             send_to_char("You are not a member of that group text.\n\r", ch);
             return;
@@ -2536,16 +2558,16 @@ extern "C" {
       return;
     }
 
-    if (get_phone(ch) == NULL) {
+    if (sender_phone == NULL) {
       send_to_char("You do not seem to have a phone.\n\r", ch);
       return;
     }
 
-    from = get_phone(ch)->value[0];
+    from = sender_phone->value[0];
 
     if (!str_cmp(arg1, "clear")) {
-      free_string(get_phone(ch)->material);
-      get_phone(ch)->material = str_dup("");
+      free_string(sender_phone->material);
+      sender_phone->material = str_dup("");
       send_to_char("Messages cleared.\n\r", ch);
       return;
     }
@@ -2605,12 +2627,13 @@ extern "C" {
             char rplog[MSL];
             snprintf(rplog, sizeof(rplog), "You text %s %s", (*it)->tname, argument);
             prp_rplog(ch, rplog);
+            const GroupPhoneLookup group_phones;
             bool delivered_to_group = false;
             for(int i=0;i<10;i++)
             {
               if((*it)->pnumber[i] > 0 && (*it)->pnumber[i] != from)
               {
-                delivered_to_group = text_to_person(ch, (*it)->pnumber[i], from, garg, FALSE) || delivered_to_group;
+                delivered_to_group = text_to_person_impl(ch, (*it)->pnumber[i], from, garg, FALSE, &group_phones) || delivered_to_group;
               }
             }
             if (!delivered_to_group) {
@@ -2713,14 +2736,15 @@ extern "C" {
 
       WAIT_STATE(ch, PULSE_PER_SECOND * 5);
 
-      if (find_phone(victim, numberdialed) == NULL) {
+      OBJ_DATA *recipient_phone = find_phone(victim, numberdialed);
+      if (recipient_phone == NULL) {
         send_to_char("I'm sorry, the number you have dialed is not available.\n\r", ch);
         if (!online) {
           free_char(victim);
         }
         return;
       }
-      if (IS_SET(find_phone(victim, numberdialed)->extra_flags, ITEM_OFF)) {
+      if (IS_SET(recipient_phone->extra_flags, ITEM_OFF)) {
         send_to_char("I'm sorry, the number you have dialed is not available.\n\r", ch);
         if (!online) {
           free_char(victim);
@@ -2731,7 +2755,7 @@ extern "C" {
       for (i = 0; i < 50; i++) {
         if (!str_cmp(victim->name, ch->pcdata->speed_names[i])) {
           if (ch->pcdata->speed_numbers[i] !=
-              find_phone(victim, numberdialed)->value[0]) {
+              recipient_phone->value[0]) {
             send_to_char("I'm sorry, the number you have dialed is not available.\n\r", ch);
             if (!online) {
               free_char(victim);
@@ -2743,7 +2767,6 @@ extern "C" {
 
       ch->pcdata->time_since_emote = 0;
 
-      OBJ_DATA *recipient_phone = find_phone(victim, numberdialed);
       const std::string delivered = phone_plain_text(distort_text(argument));
       const std::string sender = ref < 0 ? std::to_string(from) : victim->pcdata->speed_names[ref];
       if (!format_phone_text(recipient_phone, sender.c_str(), delivered.c_str(), buf, tbuf)) {
@@ -2754,11 +2777,11 @@ extern "C" {
       strcpy(buf3, tbuf);
 
       if (recipient_phone->value[4] > 0) {
-        hack_text(from, argument, find_phone(victim, numberdialed)->value[4], find_phone(victim, numberdialed)->value[0]);
+        hack_text(from, argument, recipient_phone->value[4], recipient_phone->value[0]);
       }
       
-      if (get_phone(ch) != NULL && get_phone(ch)->value[4] > 0) {
-        hack_text(from, argument, get_phone(ch)->value[4], recipient_phone->value[0]);
+      if (sender_phone != NULL && sender_phone->value[4] > 0) {
+        hack_text(from, argument, sender_phone->value[4], recipient_phone->value[0]);
       }
 
       if (ch->in_room == victim->in_room && ch != victim)
@@ -2815,8 +2838,8 @@ extern "C" {
       }
 
       {
-        free_string(find_phone(victim, numberdialed)->material);
-        find_phone(victim, numberdialed)->material = str_dup(buf);
+        free_string(recipient_phone->material);
+        recipient_phone->material = str_dup(buf);
       }
       send_to_char("Sent.\n\r", ch);
 
@@ -2929,8 +2952,8 @@ extern "C" {
     if (obj->value[4] > 0) {
       hack_text(from, argument, obj->value[4], obj->value[0]);
     }
-    if (get_phone(ch) != NULL && get_phone(ch)->value[4] > 0) {
-      hack_text(from, argument, get_phone(ch)->value[4], obj->value[0]);
+    if (sender_phone != NULL && sender_phone->value[4] > 0) {
+      hack_text(from, argument, sender_phone->value[4], obj->value[0]);
     }
 
     if (noowner == FALSE) {
@@ -3175,13 +3198,14 @@ extern "C" {
 
       WAIT_STATE(ch, PULSE_PER_SECOND * 5);
 
-      if (get_phone(victim) == NULL) {
+      OBJ_DATA *recipient_phone = get_phone(victim);
+      if (recipient_phone == NULL) {
         send_to_char("I'm sorry, the number you have dialed is not available.\n\r", ch);
         if (!online)
         free_char(victim);
         return;
       }
-      if (IS_SET(get_phone(victim)->extra_flags, ITEM_OFF)) {
+      if (IS_SET(recipient_phone->extra_flags, ITEM_OFF)) {
         send_to_char("I'm sorry, the number you have dialed is not available.\n\r", ch);
         if (!online)
         free_char(victim);
@@ -3189,7 +3213,7 @@ extern "C" {
       }
       for (i = 0; i < 50; i++) {
         if (!str_cmp(victim->name, ch->pcdata->speed_names[i])) {
-          if (ch->pcdata->speed_numbers[i] != get_phone(victim)->value[0]) {
+          if (ch->pcdata->speed_numbers[i] != recipient_phone->value[0]) {
             send_to_char("I'm sorry, the number you have dialed is not available.\n\r", ch);
             if (!online)
             free_char(victim);
@@ -3200,11 +3224,11 @@ extern "C" {
 
       ch->pcdata->time_since_emote = 0;
 
-      if (get_phone(victim)->value[4] > 0)
-      hack_text(0, argument, get_phone(victim)->value[4], get_phone(victim)->value[0]);
+      if (recipient_phone->value[4] > 0)
+      hack_text(0, argument, recipient_phone->value[4], recipient_phone->value[0]);
 
       char receipt[MSL];
-      if (!format_phone_text(get_phone(victim), "Unknown", phone_plain_text(argument).c_str(), buf, receipt)) {
+      if (!format_phone_text(recipient_phone, "Unknown", phone_plain_text(argument).c_str(), buf, receipt)) {
         send_to_char("Their text memory is full.\n\r", ch);
         if (!online) free_char(victim);
         return;
@@ -3239,8 +3263,8 @@ extern "C" {
       if (IS_NPC(ch) || ch->pcdata->institute_action == 0)
       rpreward(ch, argument, TRUE, 1);
 
-      free_string(get_phone(victim)->material);
-      get_phone(victim)->material = str_dup(buf);
+      free_string(recipient_phone->material);
+      recipient_phone->material = str_dup(buf);
 
       send_to_char("Sent.\n\r", ch);
 

@@ -18,6 +18,73 @@
 
 extern char **environ;
 
+bool haven::ai_enabled() {
+    const char *enabled = std::getenv("HAVEN_ENABLE_AI");
+    return enabled && std::strcmp(enabled, "1") == 0;
+}
+
+static bool disabled_ai_queue(const std::string &path) {
+    const std::string name = path.substr(path.find_last_of("/\\") + 1);
+    return (name == "ai_in.csv" || name == "ai_sum_in.csv" ||
+            name == "ai_out.csv" || name == "ai_sum_out.csv" || name == "ai_sum_out.tmp") && !haven::ai_enabled();
+}
+
+bool haven::append_file_bytes(const std::string &path, const std::string &bytes) {
+    if (disabled_ai_queue(path)) return false;
+    int lock = open((path + ".lock").c_str(), O_CREAT | O_RDWR, 0600);
+    if (lock < 0) return false;
+    int result;
+    do { result = flock(lock, LOCK_EX); } while (result < 0 && errno == EINTR);
+    if (result < 0) { close(lock); return false; }
+    int fd = open(path.c_str(), O_WRONLY | O_CREAT | O_APPEND, 0600);
+    bool ok = fd >= 0;
+    // Restore the original length on a failed partial append while still locked.
+    const off_t start = ok ? lseek(fd, 0, SEEK_END) : -1;
+    if (start < 0) ok = false;
+    std::string record;
+    if (start == 0) {
+        const std::string name = path.substr(path.find_last_of('/') + 1);
+        if (name == "ai_in.csv") record = "Type,ID,ValOne,ValTwo,ValThree,ValFour,ValFive\n";
+        else if (name == "ai_sum_in.csv") record = "type,subtype,title,text\n";
+    }
+    record += bytes;
+    size_t offset = 0;
+    while (ok && offset < record.size()) {
+        ssize_t written = write(fd, record.data() + offset, record.size() - offset);
+        if (written < 0 && errno == EINTR) continue;
+        if (written <= 0) { ok = false; break; }
+        offset += written;
+    }
+    if (ok) ok = fsync(fd) == 0;
+    if (!ok && fd >= 0 && start >= 0) {
+        if (ftruncate(fd, start) != 0 || fsync(fd) != 0)
+            bugf("Unable to restore incomplete queue append: %s", path.c_str());
+    }
+    if (fd >= 0 && close(fd) != 0) ok = false;
+    if (ok && start == 0) {
+        const size_t slash = path.find_last_of('/');
+        const std::string directory = slash == std::string::npos ? "." : path.substr(0, slash);
+        int parent = open(directory.c_str(), O_RDONLY | O_DIRECTORY);
+        if (parent < 0) ok = false;
+        else { if (fsync(parent) != 0) ok = false; close(parent); }
+    }
+    flock(lock, LOCK_UN);
+    close(lock);
+    return ok;
+}
+
+bool haven::append_ai_summary(const std::string &path, int type, int subtype,
+                              const char *title, const std::string &body) {
+    if (!ai_enabled()) return false;
+    auto quoted = [](const std::string &value) {
+        std::string result = "~";
+        for (char ch : value) { result += ch; if (ch == '~') result += '~'; }
+        return result + "~";
+    };
+    return append_file_bytes(path, std::to_string(type) + "," + std::to_string(subtype) +
+                             "," + quoted(title ? title : "") + "," + quoted(body) + "\n");
+}
+
 bool haven::remove_optional_file(const std::string &path) {
     if (std::remove(path.c_str()) == 0 || errno == ENOENT) return true;
     perror(path.c_str());
@@ -224,6 +291,7 @@ bool ensure_backup_directories() {
 }
 
 std::string pop_file_line(const std::string &path) {
+    if (disabled_ai_queue(path)) return {};
     QueueLock lock(path);
     if (!lock.acquired()) return "";
     FILE *input = fopen(path.c_str(), "rb");

@@ -1452,15 +1452,15 @@ break;
     fclose(outFile);
 
     if (mapnumber == 1)
-    send_to_char("http://havenrpg.net/townone.html\n\r", ch);
+    send_to_char("http://paroxysm.net/townone.html\n\r", ch);
     else if (mapnumber == 2)
-    send_to_char("http://havenrpg.net/towntwo.html\n\r", ch);
+    send_to_char("http://paroxysm.net/towntwo.html\n\r", ch);
     else if (mapnumber == 3)
-    send_to_char("http://havenrpg.net/townthree.html\n\r", ch);
+    send_to_char("http://paroxysm.net/townthree.html\n\r", ch);
     else if (mapnumber == 4)
-    send_to_char("http://havenrpg.net/townfour.html\n\r", ch);
+    send_to_char("http://paroxysm.net/townfour.html\n\r", ch);
     else
-    send_to_char("http://havenrpg.net/townfive.html\n\r", ch);
+    send_to_char("http://paroxysm.net/townfive.html\n\r", ch);
 
     mapnumber++;
     if (mapnumber > 5)
@@ -2977,11 +2977,11 @@ return -1;
 
     obj = create_object(get_obj_index(14), 0);
     free_string(obj->name);
-    obj->name = str_dup("map haven paper");
+    obj->name = str_dup("map gravesend paper");
     free_string(obj->short_descr);
-    obj->short_descr = str_dup("map of Haven");
+    obj->short_descr = str_dup("map of Gravesend");
     free_string(obj->description);
-    obj->description = str_dup("A paper map of Haven");
+    obj->description = str_dup("A paper map of Gravesend");
     obj_to_char(obj, ch);
 
     static char string[MSL];

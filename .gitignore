@@ -35,6 +35,8 @@ area/gmon.out
 area/*.tmp
 bin/nohup.out
 data/*.lock
+data/*.worker-cursor
+data/*.failed.jsonl
 data/*.tmp
 src/copyover.data
 src/haven

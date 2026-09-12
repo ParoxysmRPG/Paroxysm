@@ -128,7 +128,9 @@ void show_cortex_quota(CHAR_DATA *ch, FACTION_TYPE *fac) {
   if (!fac || fac->vnum != FACTION_CORTEX
       || (ch->fcore != FACTION_CORTEX && !IS_IMMORTAL(ch))) return;
   cortex_quota_update();
-  printf_to_char(ch, "`gMonthly LF harvest quota`W:`x %d/%d LF (%s). Resets at the start of each UTC calendar month.\n\r`gMonth-end fine`W:`x $%d; `greward`W:`x $%d.\n\r",
+  printf_to_char(ch, "`cMonthly LF harvest quota`W:`x %d/%d LF (%s).`x\n\r"
+                    "  Resets at the start of each UTC calendar month.`x\n\r"
+                    "`cMonth-end fine`W:`x $%d; `creward`W:`x $%d.`x\n\r",
       fac->lf_quota_harvested, CORTEX_LF_QUOTA,
       fac->lf_quota_harvested >= CORTEX_LF_QUOTA ? "met" : "unmet",
       CORTEX_QUOTA_FINE * 10, CORTEX_QUOTA_REWARD * 10);

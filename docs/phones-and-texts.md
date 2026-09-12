@@ -48,14 +48,25 @@ scheme. Photos are not text messages and do not trigger it.
 
 ## Verification
 
+Group text delivery builds one temporary lookup of loaded phone numbers for all
+recipients, replacing a world-object scan per recipient. It retains first active
+duplicate semantics and refreshes on each command, so power and inventory edits
+are visible on the next send. Single-text and offline teletext commands reuse
+their resolved phones throughout delivery. No phone pointer cache survives the
+command. Offline group delivery keeps its temporary descriptor alive until the
+recipient has been saved and unloaded; photo descriptors are initialized too.
+
 Run in WSL/Linux from the repository root:
 
 ```sh
 python3 tools/test_phones.py
 make -C src -j4
 python3 tools/test_phone_delivery.py
+python3 tools/test_phone_delivery.py --sanitize
 ```
 
+Build the sanitizer cache target described in
+[runtime-hardening.md](runtime-hardening.md) before using `--sanitize`.
 The first suite executes production helpers and phone controls under ASan/UBSan.
 The second links the engine and boots a disposable copy of the world for text
 delivery tests; it does not write live player or account saves. The audit focused

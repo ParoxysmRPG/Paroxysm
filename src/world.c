@@ -417,7 +417,7 @@ free_reset_data( pReset );
       return 0;
     }
     else if (room_number < HavenUnderground + 5000000) {
-      // Haven underground
+      // Gravesend underground
       coord = room_number - HavenUnderground;
       // check in private property and government
       if (get_room_index(coord + HavenCityBuildings) != NULL || get_room_index(coord + HavenPrivateProperty) != NULL) {
@@ -425,11 +425,11 @@ free_reset_data( pReset );
       }
     }
     else if (room_number < HavenStreets + 1000000) {
-      // Haven streets
+      // Gravesend streets
       coord = room_number - HavenStreets + HavenStreetsModifier;
     }
     else if (room_number < HavenSkies + 4000000) {
-      // Haven skies
+      // Gravesend skies
       coord = room_number - HavenSkies + HavenSkiesModifier;
       // check private property and government
       if (get_room_index(coord + HavenCityBuildings) != NULL || get_room_index(coord + HavenPrivateProperty) != NULL) {
@@ -437,7 +437,7 @@ free_reset_data( pReset );
       }
     }
     else if (room_number < HavenWoods + 1000000) {
-      // Haven greenspace
+      // Gravesend greenspace
       coord = room_number - HavenWoods + HavenWoodsModifier;
       // setting exits for greenspace when stuff is in the way is bad
       if (get_room_index(coord + HavenStreets - HavenStreetsModifier) != NULL || get_room_index(coord + HavenCityBuildings) != NULL || get_room_index(coord + HavenPrivateProperty) != NULL) {
@@ -445,7 +445,7 @@ free_reset_data( pReset );
       }
     }
     else if (room_number < HavenPrivateProperty + 10000000) {
-      // Haven private property
+      // Gravesend private property
       coord = room_number - HavenPrivateProperty;
       // check in streets and government for conflicts
       if (get_room_index(coord + HavenStreets - HavenStreetsModifier) != NULL || get_room_index(coord + HavenCityBuildings) != NULL) {
@@ -453,7 +453,7 @@ free_reset_data( pReset );
       }
     }
     else if (room_number < HavenCityBuildings + 10000000) {
-      // Haven government and business
+      // Gravesend government and business
       coord = room_number - HavenCityBuildings;
       // check in streets
       if (get_room_index(coord + HavenStreets - HavenStreetsModifier) != NULL) {
@@ -461,7 +461,7 @@ free_reset_data( pReset );
       }
     }
     else if (room_number < HavenOcean + 6000000) {
-      // Haven Ocean
+      // Gravesend Ocean
       coord = room_number - HavenOcean;
     }
 
@@ -864,7 +864,7 @@ room->size=100;
           integrate_room(i);
           room->sector_type = SECT_PARK;
           free_string(room->name);
-          room->name = str_dup("`WHaven `GF`gi`Ge`gl`Gd`x");
+          room->name = str_dup("`WGravesend `GF`gi`Ge`gl`Gd`x");
           set_generated_room_description(room, NULL);
           room->shroud = str_dup("");
           SET_BIT(room->room_flags, ROOM_UNLIT);
@@ -1579,7 +1579,7 @@ as small glowing forms\nflit around their swaying branches.\n");
 else
 {
 free_string(room->name);
-room->name = str_dup("`DHaven `GF`gi`Ge`gl`Gd`x");
+room->name = str_dup("`DGravesend `GF`gi`Ge`gl`Gd`x");
 free_string(room->description);
 room->description = str_dup("Rich green fields stretch out
 all around you, the grass underfoot is short but\nsoft, and large twisted
@@ -2857,9 +2857,9 @@ malice.\n");
     }
 
     if (territory_potion(loc))
-      sprintf(buf, "Reward: monthly potions (item %d); no additional bonus.\n", territory_potion(loc));
+      sprintf(buf, "`WReward:`x monthly potions (item %d); no additional bonus.`x\n\r", territory_potion(loc));
     else
-      sprintf(buf, "Reward: %s\n", territory_reward_description(territory_reward(loc)));
+      sprintf(buf, "`WReward:`x %s`x\n\r", territory_reward_description(territory_reward(loc)));
     strcat(string, buf);
     format_territory_support(buf, sizeof(buf), loc);
     strcat(string, buf);
@@ -4678,7 +4678,7 @@ return -1;
     }
     else if (room->sector_type == SECT_BEACH) {
       free_string(room->name);
-      room->name = str_dup("`gHaven `YS`yh`Yo`yr`Ye`x");
+      room->name = str_dup("`gGravesend `YS`yh`Yo`yr`Ye`x");
       set_generated_room_description(room, NULL);
       room->shroud = str_dup("");
       SET_BIT(room->room_flags, ROOM_UNLIT);
@@ -4686,7 +4686,7 @@ return -1;
     }
     else if (room->sector_type == SECT_ROCKY) {
       free_string(room->name);
-      room->name = str_dup("`cHaven`x `DB`wl`Du`wf`Df`ws`x");
+      room->name = str_dup("`cGravesend`x `DB`wl`Du`wf`Df`ws`x");
       set_generated_room_description(room, NULL);
       room->shroud = str_dup("");
       SET_BIT(room->room_flags, ROOM_UNLIT);
@@ -4696,7 +4696,7 @@ return -1;
     }
     else if (room->sector_type == SECT_WATER) {
       free_string(room->name);
-      room->name = str_dup("`cHaven`x `YC`yo`Ya`ys`Yt`x");
+      room->name = str_dup("`cGravesend`x `YC`yo`Ya`ys`Yt`x");
       set_generated_room_description(room, NULL);
       room->shroud = str_dup("");
       SET_BIT(room->room_flags, ROOM_UNLIT);
@@ -4705,7 +4705,7 @@ return -1;
     }
     else if (room->sector_type == SECT_PARK) {
       free_string(room->name);
-      room->name = str_dup("`DHaven `GF`gi`Ge`gl`Gd`x");
+      room->name = str_dup("`DGravesend `GF`gi`Ge`gl`Gd`x");
       set_generated_room_description(room, NULL);
       room->shroud = str_dup("");
       SET_BIT(room->room_flags, ROOM_UNLIT);
@@ -4921,7 +4921,7 @@ area = 1;
       }
       if ((*it)->valid == FALSE)
       continue;
-      if ((*it)->continent == 0 && str_cmp((*it)->name, "Haven"))
+      if ((*it)->continent == 0 && str_cmp((*it)->name, "Gravesend"))
       continue;
       count++;
     }
@@ -4938,7 +4938,7 @@ area = 1;
       if ((*it)->valid == FALSE)
       continue;
 
-      if ((*it)->continent == 0 && str_cmp((*it)->name, "Haven"))
+      if ((*it)->continent == 0 && str_cmp((*it)->name, "Gravesend"))
       continue;
 
       if (count == number)
@@ -4963,7 +4963,7 @@ area = 1;
       }
       if ((*it)->valid == FALSE)
       continue;
-      if ((*it)->continent == 0 && str_cmp((*it)->name, "Haven"))
+      if ((*it)->continent == 0 && str_cmp((*it)->name, "Gravesend"))
       continue;
 
       if (!str_cmp((*it)->name, terr->name))

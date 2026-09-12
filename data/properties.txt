@@ -42,7 +42,7 @@ End
 
 #PROPERTY
 Vnum   1
-Name      `247T`248h`249e`250 `251H`252a`253v`254e`255n`231 `231H`231is`231t`255o`254r`253y`252 `251M`250u`249s`248e`247um`w~
+Name      `247T`248h`249e`250 `251Gravesend`231 `231H`231is`231t`255o`254r`253y`252 `251M`250u`249s`248e`247um`w~
 Type 2
 Industry 12
 Electric 19415
@@ -655,7 +655,7 @@ Faction 0
 Price  570
 ADate 20 0
 Owner ~
-Advertisement `117Fa`080la`117fe`074l &`117 C`039hi`074ll`074 Me`074di`039te`074rra`074ne`039an`032 G`039ril`032l `025- `027Ta`026keo`025ut`117 M`080edi`117te`074rr`117an`039ean`074 C`074ui`074si`039ne `074in`074 t`039he `032He`039ar`032t `025of `027Ha`026ve`025n! `w
+Advertisement `117Fa`080la`117fe`074l &`117 C`039hi`074ll`074 Me`074di`039te`074rra`074ne`039an`032 G`039ril`032l `025- `027Ta`026keo`025ut`117 M`080edi`117te`074rr`117an`039ean`074 C`074ui`074si`039ne `074in`074 t`039he `032He`039ar`032t `025of `027Gravesend! `w
  
 `117Immerse yourself in the rich flavors of our mouthwatering falafel, gyro, and shawarma wraps, meticulously crafted to perfection. Served`117 in decadent buttery garlic naan bread, each bite is a symphony of taste that transports you straight to the heart of the Mediterranean.`w
  
@@ -1008,7 +1008,7 @@ Advertisement `237- `160R`124u`088de `160D`124o`088gg`052's Smoke Shop`w
  
 `238This run-down concrete construction on Badwater, opposite`w
 `238of the local strip club, is as much a hang-out spot for a`w
-`238few of Haven's less-friendly ilk as it is an actual joint`w
+`238few of Gravesend's less-friendly ilk as it is an actual joint`w
 `238where transactions do take place. The store itself offers`w
 `238only cannabis-related products, but its parking lot is an`w
 `238undeniably dubious spot where hoodied, masked roadmen are`w
@@ -1739,14 +1739,14 @@ Faction 0
 Price  753
 ADate 21 0
 Owner ~
-Advertisement `001Recently redecorated, House Red claims to be the finest - or at least, the oldest - wine bar in Haven. From the lovely bottles in the Bodega, the wonderful tea in the book nook or the tasty bites in the dining room, there is something for everyone in this sophisticated,  oversized bar-with-a-view.`x
+Advertisement `001Recently redecorated, House Red claims to be the finest - or at least, the oldest - wine bar in Gravesend. From the lovely bottles in the Bodega, the wonderful tea in the book nook or the tasty bites in the dining room, there is something for everyone in this sophisticated,  oversized bar-with-a-view.`x
 
  
 [`240Occult Knowledge`x]
 `240There is a VIP Lounge underneath House Red, accessible by nightmare.`x
  
 [`240Underworld`x]
-`240Drugs are sold in the basement and said to be produced and spread throughout Haven from a laboratory nearby. With enough money, it is said you can find specialized treatment and medicine here.`x
+`240Drugs are sold in the basement and said to be produced and spread throughout Gravesend from a laboratory nearby. With enough money, it is said you can find specialized treatment and medicine here.`x
 ~
 PropState 0
 Autoclear 0
@@ -2667,7 +2667,7 @@ Faction 0
 Price  570
 ADate 19 0
 Owner ~
-Advertisement `156`156`155G`192`193`194`231e`231`231n`231`231`231T`194`193`192`155e`156`156k`w proudly announces its Haven branch! From pharmaceuticals to upcoming various GenTek merchandise, you'll find it all at your local store. Please contact Sr. Geneticist Cailyn Summers if you'd like to schedule any appointment.
+Advertisement `156`156`155G`192`193`194`231e`231`231n`231`231`231T`194`193`192`155e`156`156k`w proudly announces its Gravesend branch! From pharmaceuticals to upcoming various GenTek merchandise, you'll find it all at your local store. Please contact Sr. Geneticist Cailyn Summers if you'd like to schedule any appointment.
 ~
 PropState 0
 Autoclear 0
@@ -2688,7 +2688,7 @@ End
 
 #PROPERTY
 Vnum   33
-Name      `065Haven Hardware`w~
+Name      `065Gravesend Hardware`w~
 Type 2
 Industry 3
 Electric 345
@@ -3170,7 +3170,7 @@ End
 
 #PROPERTY
 Vnum   44
-Name      `#6a141dHa`#642128ven`#5e2f33's`#583d3e Mu`#534b49seu`#534b49m `#583d3eof `#5e2f33Od`#642128dit`#6a141dies`q~
+Name      `#6a141dGravesend`#5e2f33's`#583d3e Mu`#534b49seu`#534b49m `#583d3eof `#5e2f33Od`#642128dit`#6a141dies`q~
 Type 2
 Industry 26
 Electric 25470
@@ -3236,7 +3236,7 @@ ADate 25 0
 Owner ~
 Advertisement `#ff2e2e `#ff1717G`#ff0000i`#e80e02o`#d11d05v`#b92b07a`#a23a09n`#8b480cn`#74570ei`#5d6511'`#467413s`#2e8215 `#179118R`#009f1ai`#17a82fs`#2eb044t`#46b958o`#5dc26dr`#74cb82a`#8bd397n`#a2dcact`#b9e5c1e`#d1eed5 `#e8f6eae`#ffffff `#ffe6e6P`#ffcccci`#ffb3b3z`#ff9999z`#ff8080e`#ff6666r`#ff4d4di`#ff3333a`#ff1a1a:`#ff0000 `#e80e02A`#d11d05 `#b92b07T`#a23a09a`#8b480cs`#74570et`#5d6511e`#467413 `#2e8215o`#179118f`#009f1a `#17a82fI`#2eb044t`#46b958a`#5dc26dl`#74cb82y`#8bd397 `#a2dcaci`#b9e5c1n`#d1eed5 `#e8f6eaE`#ffffffv`#ffe8e8e`#ffd1d1r`#ffb9b9y`#ffa2a2 `#ff8b8bB`#ff7474i`#ff5d5dt`#ff4646e`#ff2e2e!`q`x
 
-`230Get ready for a culinary journey that's amore from the start! We're thrilled to announce the grand re-opening of `#009f1aG`#33b248i`#66c576o`#99d9a3v`#ccecd1a`#ffffffn`#ffbfbfn`#ff8080i`#ff4040'`#ff0000s`x`q`230, a Haven favorite, reinvented. This family-owned Italian restaurant and pizzeria is nestled on quaint Ash Street in the northern sector of town, with delightful views and even better food! we invite you to join us for an unforgettable dining experience where tradition meets innovation.
+`230Get ready for a culinary journey that's amore from the start! We're thrilled to announce the grand re-opening of `#009f1aG`#33b248i`#66c576o`#99d9a3v`#ccecd1a`#ffffffn`#ffbfbfn`#ff8080i`#ff4040'`#ff0000s`x`q`230, a Gravesend favorite, reinvented. This family-owned Italian restaurant and pizzeria is nestled on quaint Ash Street in the northern sector of town, with delightful views and even better food! we invite you to join us for an unforgettable dining experience where tradition meets innovation.
 
 Why Choose Giovanni's?
 
@@ -3435,9 +3435,9 @@ Faction 0
 Price  450
 ADate 25 0
 Owner ~
-Advertisement Newly renovated and soon to reopen! `#447294T`#4c799bh`#5381a2e`#5b88a9 `#6290b0F`#6a97b7r`#719ebfe`#79a6c6s`#80adcdh`#88b5d4 `#8fbcdbC`#9abfd8a`#a5c2d4t`#b1c5d1c`#bcc8cdh`#c7caca `#d2cdc6C`#ded0c3a`#e9d3bff`#f4d6bce`q`x, will once more be Haven's seafood oasis by the shore!`x
+Advertisement Newly renovated and soon to reopen! `#447294T`#4c799bh`#5381a2e`#5b88a9 `#6290b0F`#6a97b7r`#719ebfe`#79a6c6s`#80adcdh`#88b5d4 `#8fbcdbC`#9abfd8a`#a5c2d4t`#b1c5d1c`#bcc8cdh`#c7caca `#d2cdc6C`#ded0c3a`#e9d3bff`#f4d6bce`q`x, will once more be Gravesend's seafood oasis by the shore!`x
 
-Nestled against the picturesque beachfront of `022Willow Cove`153, `#447294T`#4c799bh`#5381a2e`#5b88a9 `#6290b0F`#6a97b7r`#719ebfe`#79a6c6s`#80adcdh`#88b5d4 `#8fbcdbC`#9abfd8a`#a5c2d4t`#b1c5d1c`#bcc8cdh`#c7caca `#d2cdc6C`#ded0c3a`#e9d3bff`#f4d6bce`q`x, invites you to celebrate the bounty of the ocean, fresh caught each day in Haven's longstanding tradition and prepared by our talented chefs. Winter, Spring, Summer or Fall, our commitment to serving the freshest seafood in a warm and inviting atmosphere makes us the go-to destination for local seafood enthusiasts and visiting beachgoers alike. `x
+Nestled against the picturesque beachfront of `022Willow Cove`153, `#447294T`#4c799bh`#5381a2e`#5b88a9 `#6290b0F`#6a97b7r`#719ebfe`#79a6c6s`#80adcdh`#88b5d4 `#8fbcdbC`#9abfd8a`#a5c2d4t`#b1c5d1c`#bcc8cdh`#c7caca `#d2cdc6C`#ded0c3a`#e9d3bff`#f4d6bce`q`x, invites you to celebrate the bounty of the ocean, fresh caught each day in Gravesend's longstanding tradition and prepared by our talented chefs. Winter, Spring, Summer or Fall, our commitment to serving the freshest seafood in a warm and inviting atmosphere makes us the go-to destination for local seafood enthusiasts and visiting beachgoers alike. `x
 
 `#447294What sets `#447294T`#4c799bh`#5381a2e`#5b88a9 `#6290b0F`#6a97b7r`#719ebfe`#79a6c6s`#80adcdh`#88b5d4 `#8fbcdbC`#9abfd8a`#a5c2d4t`#b1c5d1c`#bcc8cdh`#c7caca `#d2cdc6C`#ded0c3a`#e9d3bff`#f4d6bce`q `#447294apart?`q`x
 
@@ -3524,7 +3524,7 @@ Advertisement `x
 `#7ae9d5S`#77e8d6i`#74e6d7r`#70e5d8e`#6de4d9n`#6ae2d9 `#66e1da-`#63dfdb `#60dedcw`#5dddddh`#59dbdee`#56dadfr`#5cd9e0e`#63d8e1 `#69d8e2t`#6fd7e3h`#76d6e4e`#7cd5e5 `#82d5e6s`#89d4e7e`#8fd3e8a`#95d2e9 `#9cd2eam`#a2d1ebe`#a8d0ede`#afcfeet`#b5ceefs`#bccef0 `#c2cdf1t`#c8ccf2h`#cfcbf3e`#d5cbf4 `#dbcaf5s`#e2c9f6t`#e8c8f7a`#eec8f8r`#f5c7f9s`#fbc6fa,`#fac8f7 `#fac9f4a`#f9cbf1n`#f8cdeed`#f7ceeb `#f7d0e8t`#f6d2e5h`#f5d4e2e`#f4d5df `#f4d7dcn`#f3d9d9i`#f2dad6g`#f2dcd4h`#f1ded1t`#f0dfces`#efe1cb `#efe3c8a`#eee4c5r`#ede6c2e`#ece8bf `#eceabca`#ebebb9s`#eaedb6 `#e9efb3e`#e9f0b0n`#e8f2add`#e6f3ael`#e4f3afe`#e1f4b0s`#dff4b1s`#ddf5b2 `#dbf5b3a`#d9f6b4s`#d6f6b5 `#d4f7b6t`#d2f7b7h`#d0f8b8e`#cef8b9 `#ccf9b9 `#c9f9ba `#c7fabb `#c5fabc
 `#84edd2o`#81ecd3c`#7eead4e`#7ae9d5a`#77e8d6n`#74e6d7.`#70e5d8 `#6de4d9 `#6ae2d9 `#66e1da `#63dfdb `#60dedc `#5ddddd `#59dbde `#56dadf `#5cd9e0 `#63d8e1 `#69d8e2 `#6fd7e3 `#76d6e4 `#7cd5e5 `#82d5e6 `#89d4e7 `#8fd3e8 `#95d2e9 `#9cd2ea `#a2d1eb `#a8d0ed `#afcfee `#b5ceef `#bccef0 `#c2cdf1 `#c8ccf2 `#cfcbf3 `#d5cbf4 `#dbcaf5 `#e2c9f6 `#e8c8f7 `#eec8f8 `#f5c7f9 `#fbc6fa `#fac8f7 `#fac9f4 `#f9cbf1 `#f8cdee `#f7ceeb `#f7d0e8 `#f6d2e5 `#f5d4e2 `#f4d5df `#f4d7dc `#f3d9d9 `#f2dad6 `#f2dcd4 `#f1ded1 `#f0dfce `#efe1cb `#efe3c8 `#eee4c5 `#ede6c2 `#ece8bf `#eceabc `#ebebb9 `#eaedb6 `#e9efb3 `#e9f0b0 `#e8f2ad `#e6f3ae `#e4f3af `#e1f4b0 `#dff4b1 `#ddf5b2 `#dbf5b3 `#d9f6b4 `#d6f6b5 `#d4f7b6 `#d2f7b7 `#d0f8b8 `#cef8b9 `#ccf9b9`x
  
-`146MyHaven Influencers drink for free.*`x
+`146Meetz Influencers drink for free.*`x
 `D*Max one drink per hour.`x
 ~
 PropState 0

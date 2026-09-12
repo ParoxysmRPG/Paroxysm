@@ -37,7 +37,10 @@ enum { MONSTER_TEMPLATE=10, CORTEX_SOLDIER=20, ALLY_TEMPLATE=30,
 struct AREA_DATA { int vnum=0; };
 struct ROOM_INDEX_DATA { AREA_DATA *area; int x=0; bool battle=false; };
 struct MOB_INDEX_DATA { int vnum=115; };
+struct PC_DATA { int autoskip = 0; };
 struct CHAR_DATA {
+  PC_DATA *pcdata = nullptr;
+  bool fight_fast = false;
   ROOM_INDEX_DATA *in_room=nullptr;
   MOB_INDEX_DATA *pIndexData=nullptr;
   CHAR_DATA *target=nullptr, *target_2=nullptr, *target_3=nullptr,
@@ -96,6 +99,7 @@ CHAR_DATA *next_combat_character(unsigned long long *cursor) {
 void round_process(CHAR_DATA *) { ++rounds; }
 int fight_speed(CHAR_DATA *) { return 2; }
 bool has_enemy(CHAR_DATA *c) { ++enemy_checks; return c->enemy; }
+bool is_enemy(CHAR_DATA *a, CHAR_DATA *b) { return a != b && b->enemy; }
 bool can_see_char_distance(CHAR_DATA *,CHAR_DATA *,int) { return true; }
 void log_string(const char *) {}
 '''
@@ -106,7 +110,9 @@ production += section('  CHAR_DATA *get_close_cover(', '  void npc_combat_move('
 production += section('  void npc_combat_attack(', '    CHAR_DATA *original = victim;') + '}\n'
 move = section('  void npc_combat_move(', '    if (IS_NPC(ch) && (ch->pIndexData->vnum == ALLY_TEMPLATE')
 production += move + '}\n'
-production += section('  bool check_fight(', '  CHAR_DATA *next_fight_member(')
+production += section('  bool check_fight(', '  static CHAR_DATA *find_next_fight_member(')
+production += section('  bool has_enemy(', '  bool same_fight(').replace('bool has_enemy(', 'bool actual_has_enemy(', 1)
+production += section('  static CHAR_DATA *find_next_fight_member(', '  bool room_fight(')
 
 tests = r'''
 int main() {
@@ -189,6 +195,39 @@ int main() {
   enemy_checks=0; assert(check_fight(&hunter)); assert(enemy_checks==2);
   assert(hunter.fight_current==&candidates[1]);
   puts("PASS: distant bystanders skip nested enemy scans; nearby combat joins preserve turn state.");
+  // The world list is finite: unrelated population must neither hide enemies
+  // after entry 1000 nor disable combat globally after entry 800.
+  hunter.enemy = false; hunter.in_room = &room;
+  CHAR_DATA idle = hunter; idle.in_room = &remote; idle.enemy = false;
+  char_list.assign(3000, &idle);
+  fight_problem = 0;
+  assert(!actual_has_enemy(&hunter) && !check_fight(&hunter));
+  assert(fight_problem == 0);
+  CHAR_DATA enemy = hunter; enemy.enemy = true;
+  char_list.push_back(&enemy);
+  assert(actual_has_enemy(&hunter) && fight_problem == 0);
+  // Turn ordering and autoskip fallback use the combat index even in a large
+  // idle world, and see membership removal immediately on the next call.
+  CHAR_DATA first = hunter, middle = hunter, last = hunter;
+  first.in_fight = middle.in_fight = last.in_fight = true;
+  first.npc = middle.npc = last.npc = false;
+  first.fight_fast = middle.fight_fast = last.fight_fast = false;
+  first.enemy = middle.enemy = last.enemy = true;
+  PC_DATA first_pc = {}, middle_pc = {}, last_pc = {};
+  first.pcdata = &first_pc; middle.pcdata = &middle_pc; last.pcdata = &last_pc;
+  combatants = {&first, &middle, &last};
+  assert(next_fight_member(&first) == &middle);
+  assert(next_fight_member(&last) == &first);
+  middle_pc.autoskip = 1;
+  assert(next_fight_member(&first) == &last);
+  last_pc.autoskip = 1;
+  assert(next_fight_member(&first) == &middle); // Tail retry accepts autoskip.
+  middle_pc.autoskip = last_pc.autoskip = 0;
+  assert(next_fight_member_init(&first) == &middle);
+  combatants = {&first, &last};
+  assert(next_fight_member(&first) == &last && fight_problem == 0);
+  puts("PASS: 3000 idle characters do not disable combat or hide enemies; indexed turns preserve wrap and autoskip.");
+
 }
 '''
 

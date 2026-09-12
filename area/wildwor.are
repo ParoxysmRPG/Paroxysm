@@ -21,10 +21,13 @@ End
 #ROOMS
 #401003
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+A square patch of cream plaster marks the right-hand wall where the
+surrounding finish changes depth. The floor carries a faint rectangular
+outline, clearer at one end than the other. Without furniture to soften the
+enclosure, every small sound acquires a dry little echo.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 C 0 0 0
 T 3000
@@ -34,9 +37,10 @@ Y ~
 S
 #401026
 The Forest~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 0 0 0
@@ -48,9 +52,10 @@ Y ~
 S
 #401027
 The Forest~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 0 0 0

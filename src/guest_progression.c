@@ -84,7 +84,7 @@ bool set_power_relation(FACTION_TYPE *fac, const char *name, int relation) {
 
 void show_power_relations(CHAR_DATA *ch, FACTION_TYPE *fac) {
   if (fac->vnum == FACTION_CORTEX) {
-    send_to_char("`gOpposes`W:`x every higher power (permanent).\n\r", ch);
+    send_to_char("`cOpposes`W:`x every higher power (permanent).`x\n\r", ch);
     return;
   }
   std::string worships = fac->power_worships, opposes = fac->power_opposes;
@@ -92,7 +92,7 @@ void show_power_relations(CHAR_DATA *ch, FACTION_TYPE *fac) {
     std::string &list = fac->patron_relation == SOCIETY_PATRON_WORSHIP ? worships : opposes;
     if (!power_name_in_list(fac->eidilon, list.c_str())) list += " " + std::string(fac->eidilon);
   }
-  printf_to_char(ch, "`gWorships`W:`x %s\n\r`gOpposes`W:`x %s\n\r", worships.empty() ? "none" : worships.c_str(), opposes.empty() ? "none" : opposes.c_str());
+  printf_to_char(ch, "`cWorships`W:`x %s`x\n\r`cOpposes`W:`x %s`x\n\r", worships.empty() ? "none" : worships.c_str(), opposes.empty() ? "none" : opposes.c_str());
 }
 
 const char *power_operation_error(int faction, int territory, int goal, const char *target) {
@@ -195,16 +195,18 @@ bool guest_out_of_play(CHAR_DATA *ch) {
 void show_guest_progress(CHAR_DATA *ch) {
   if (higher_power(ch)) {
     DOMAIN_TYPE *dom = power_domain(ch->name);
-    if (dom) printf_to_char(ch, "Successful worships: %d. T4 requires %d; T5 requires %d.\n\r",
+    if (dom) printf_to_char(ch, "`cSuccessful worships`g:`W %d`x. T4 requires `W%d`x; T5 requires `W%d`x.\n\r",
         dom->successful_worships, WORSHIPS_FOR_T4, WORSHIPS_FOR_T5);
     if (dom && dom->banished_until > current_time)
-      printf_to_char(ch, "Banished for another %ld days; worship and remaking are unavailable.\n\r",
+      printf_to_char(ch, "`YBanished for another %ld days; worship and remaking are unavailable.`x\n\r",
           (dom->banished_until - current_time + 86399) / 86400);
   }
   int tier = guest_remake_tier(ch);
   if (!higher_power(ch) && !guestmonster(ch) && ch->pcdata->account)
     tier = ch->pcdata->account->guest_remake_reward;
-  if (tier) printf_to_char(ch, "You may remake as a permanent T%d character: guest remake t%d <new name>. This retires this guest.\n\r", tier, tier);
+  if (tier) printf_to_char(ch, "You may remake as a permanent `WT%d`x character:\n\r"
+                             "  `Wguest remake t%d `g<`xnew name`g>`x.\n\r"
+                             "This retires this guest.`x\n\r", tier, tier);
   else send_to_char("You have not yet earned a guest remake.\n\r", ch);
 }
 

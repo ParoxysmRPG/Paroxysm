@@ -11,8 +11,8 @@ End
 #MOBILES
 #1
 imaginary friend~
-ouroboros' imaginary friend~
-Ouroboros' imaginary friend
+a collaborative project's imaginary friend~
+a collaborative project's imaginary friend
 ~
 ~
 normal~
@@ -111,9 +111,9 @@ D 16 15
 D 25 10
 
 #6
-haven deputy police officer cop~
-Haven deputy~
-A Haven deputy
+gravesend deputy police officer cop~
+Gravesend deputy~
+A Gravesend deputy
 ~
 Dressed in a simple light brown outfit this deputy is one of the few
 humans dedicated to keeping the peace around town and is equipped with a
@@ -2684,7 +2684,7 @@ jewelry W AB
 E
 all~
 This badge shows the officer's badge number, and displays a stylized
-rendition of Haven's Clocktower.  To the left of the Clocktower reads: `WTo
+rendition of Gravesend's Clocktower.  To the left of the Clocktower reads: `WTo
 Protect`w.  To the right reads: `WAnd Serve`w.  
 ~
 #300
@@ -2706,7 +2706,9 @@ jewelry 0 AB
 `DThe void`x~
 An unbounded `cvoid`x surrounds a single point of awareness. There is no wall
 or floor to measure it against, only the strange impression that the emptiness
-is close enough to touch.`x
+is close enough to touch. A leaf has caught upright between two roots, the dry
+veins more visible than the remaining color. Small shelves of fungus cling to
+a fallen branch, their layered edges softer than the wood beneath them.`x
 ~
 0 4194312 23
 B 1
@@ -2744,16 +2746,14 @@ Y (null)~
 S
 #2
 `#c99531a`#ce9e42 `#d3a752r`#d7b063o`#dcb973o`#e1c284m`#e5ca89 `#ead28ef`#eeda94u`#f3e299l`#f7ea9el`#f3e299 `#eeda94o`#ead28ef`#e5ca89 `#e1c284c`#dcb973l`#d7b063o`#d3a752c`#ce9e42k`#c99531s`q`w`x`x~
-Clock faces crowd the surrounding walls, their differing sizes breaking the
-room into circles and narrow intervals. The `wcentral floor`x feels small
-within this accumulation of measured time.`x
+Clock faces crowd the walls in overlapping circles, their numerals differing
+in size and style. Brass-colored edges sit beside darker cases, and fine dust
+gathers on the smallest ledges. The central floor feels almost accidental
+within this accumulation of measured time, a patch of room the clocks have yet
+to claim.`x
 ~
 0 16777740 2
 B 1
-P
-central floor~
-A clear patch of floor lies within the surrounding ranks of clocks.`x
-~
 G 6 -7 200 0 100
 C -10000 -10000 -10000
 T 3000
@@ -2763,7 +2763,7 @@ Y (null)~
 S
 #3
 Creation~
-A pale, undefined space gathers around a clear center. Its edges remain soft
+A pale, undefined space gathers around a clear center. The edges remain soft
 and unresolved, giving this place of beginnings the `cquiet expectancy`x of a
 form not yet chosen.`x
 ~
@@ -2788,8 +2788,10 @@ Y (null)~
 S
 #4
 a corridor~
-Plain walls border a strip of hard flooring. Wear follows the middle of the
-corridor, while its margins remain quiet and comparatively untouched.`x
+A vertical seam divides the left-hand finish into two unequal panels of
+blue-gray paint. The upper finish has a finer texture than the more durable
+strip close to shoe height. The clear passage carries sound farther than the
+close walls first suggest.`x
 ~
 0 0 0
 B 1
@@ -2824,7 +2826,7 @@ S
 Testing Pad #5~
 A plain testing floor lies within an unadorned enclosure. Clear surfaces and
 simple proportions keep the space easy to observe, with no furnishings
-interrupting its center.`x
+interrupting the center.`x
 ~
 0 51904521 2
 B 1
@@ -2852,9 +2854,10 @@ Y (null)~
 S
 #6
 `DA Room Painted in Black`w~
-The enclosed space has a plain floor and close surrounding surfaces. A clear
-central area leaves room to stand together, with the quieter margins set back
-from the middle.`x
+Two broad planes meet at an awkward angle on the left-hand side, with muted
+green paint picked out along the join. Fine tool strokes remain visible
+beneath the last layer of wall finish. There is a faint mineral smell beneath
+the dry air, the scent of a room reduced to the materials that make it.`x
 ~
 0 16916480 0
 B 1
@@ -2872,8 +2875,10 @@ Y (null)~
 S
 #7
 A Corridor~
-Plain walls border a strip of hard flooring. Wear follows the middle of the
-corridor, while its margins remain quiet and comparatively untouched.`x
+The far wall steps inward around a shallow structural pier faced in brushed
+steel. The floor pattern shifts by a small fraction at an old join, making the
+repair easier to feel with the eye than to measure. The enclosure makes a
+small sound feel near even when the source lies beyond the immediate view.`x
 ~
 0 0 0
 B 1
@@ -2901,9 +2906,11 @@ Y (null)~
 S
 #8
 Disco's Basement~
-The building's lower structure is exposed here in heavy walls and a plain
-floor. Corners feel close beneath the ceiling, and small sounds carry through
-the enclosed basement.`x
+A narrow shelf of chalky stone projects from the near base of the wall, just
+above the traveled ground. A repaired section uses smaller stones fitted
+around the older work like a rough mosaic. The narrow margins make the
+enclosing structure feel close, every seam and mineral stain held within easy
+reach.`x
 ~
 0 8 0
 B 1
@@ -2921,16 +2928,14 @@ Y (null)~
 S
 #9
 An Immortal Office~
-A `wdesk`x anchors the working area, with a visitor's chair on its near side.
-Plain storage and a clear patch of floor keep the office arranged around
-face-to-face conversation.`x
+The `wdesk`x faces the left-hand half of the room beneath a restrained band of
+blue-gray paint. A document tray has been turned slightly away from the
+visitor, presenting the neat backs of stacked folders. Paper and dry furniture
+polish give the room the settled smell of work that mostly happens sitting
+down.`x
 ~
 0 0 0
 B 1
-P
-desk~
-The desk and visitor chair form a compact meeting place within the office.`x
-~
 G 0 0 0 0 0
 C 0 0 0
 T 3000
@@ -2942,11 +2947,20 @@ D0
 M 100 H 0
 W (null)~
 Y (null)~
+P
+desk~
+The working edge of the desk is smooth beneath the hands, with fine scratches
+crossing the surface. A visitor's chair faces it at an easy speaking distance,
+leaving the desktop between the two sides of a conversation.`x
+~
 S
 #10
 a corridor~
-Plain walls border a strip of hard flooring. Wear follows the middle of the
-corridor, while its margins remain quiet and comparatively untouched.`x
+A band of cream enamel follows the right-hand wall, turning a plain passage
+into a sequence of long, horizontal lines. The floor pattern shifts by a small
+fraction at an old join, making the repair easier to feel with the eye than to
+measure. The enclosure makes a small sound feel near even when the source lies
+beyond the immediate view.`x
 ~
 0 8 0
 B 1
@@ -2984,17 +2998,13 @@ Y (null)~
 S
 #11
 `Dan old safehouse`x`x~
-Plastered walls enclose a modest domestic interior. A scuffed floor leaves a
-clear central area, with the quieter edges of the room set apart from the
-space used for passing through. `wsitting area`x provides a distinct place to
-gather.`x
+A shallow recess faced in cream plaster shelters the `wsofa`x on the far side.
+A rug carries a repeating diamond pattern, interrupted near one edge by a
+deliberately contrasting border. Small sounds lose their sharpness among the
+soft furnishings, giving a conversation room to slow down.`x
 ~
 0 51388424 2
 B 1
-P
-sitting area~
-A small group of seats occupies one edge of the domestic space.`x
-~
 G 0 -1 100 0 0
 C 0 0 0
 T 3000
@@ -3011,12 +3021,21 @@ D5
 M 100 H 0
 W (null)~
 Y ?~
+P
+sofa~
+Deep cushions settle into familiar hollows along the sofa. The arms are rubbed
+smooth, and the upholstery holds a faint fabric warmth; there's room to sit
+close or claim a comfortable corner.`x
+~
 S
 #12
 `Dthe Void`x`x~
 An unbounded `cvoid`x surrounds a single point of awareness. There is no wall
 or floor to measure it against, only the strange impression that the emptiness
-is close enough to touch.`x
+is close enough to touch. Small framed prints hang at different heights,
+making an informal balance out of their mismatched proportions. A little shelf
+holds an arrangement of ordinary ornaments chosen for color rather than
+symmetry.`x
 ~
 0 33554440 2
 B 1
@@ -3034,8 +3053,10 @@ Y (null)~
 S
 #13
 a corridor~
-Plain walls border a strip of hard flooring. Wear follows the middle of the
-corridor, while its margins remain quiet and comparatively untouched.`x
+The ceiling drops slightly toward the right-hand wall, where cream enamel
+picks out the change in level. The upper finish has a finer texture than the
+more durable strip close to shoe height. The enclosure makes a small sound
+feel near even when the source lies beyond the immediate view.`x
 ~
 0 33554432 0
 B 1
@@ -3063,7 +3084,7 @@ Y (null)~
 S
 #14
 `DTime-Out`x`x~
-Plain walls and an uncluttered floor enclose a small, quiet room. Its empty
+Plain walls and an uncluttered floor enclose a small, quiet room. The empty
 center and restrained surfaces give the space an air of deliberate separation
 from the activity beyond it.`x
 ~
@@ -3083,9 +3104,11 @@ Y (null)~
 S
 #15
 delete~
-Unoccupied space lies within plain, unfinished surfaces. Scuffs and small
-imperfections remain exposed, giving the area the quiet, stripped-back
-character of a place without furnishings.`x
+A square patch of pearl-gray paint marks the right-hand wall where the
+surrounding finish changes depth. A hairline seam crosses the floor and
+disappears beneath the base of the wall. There is a faint mineral smell
+beneath the dry air, the scent of a room reduced to the materials that make
+it.`x
 ~
 0 32 2
 B 1
@@ -3103,9 +3126,10 @@ Y (null)~
 S
 #16
 delete~
-Unoccupied space lies within plain, unfinished surfaces. Scuffs and small
-imperfections remain exposed, giving the area the quiet, stripped-back
-character of a place without furnishings.`x
+A shallow recess interrupts the far wall, outlined by a narrow lip of warm
+terracotta. The ceiling has a shallow step that makes one corner seem
+unexpectedly close. The open floor makes the slightest unevenness conspicuous,
+a landscape of small seams and shallow shadows.`x
 ~
 0 12 10
 B 1
@@ -3123,9 +3147,10 @@ Y ~
 S
 #17
 delete~
-Unoccupied space lies within plain, unfinished surfaces. Scuffs and small
-imperfections remain exposed, giving the area the quiet, stripped-back
-character of a place without furnishings.`x
+A shallow recess interrupts the far wall, outlined by a narrow lip of
+chalk-white wood. A narrow shadow lies inside the deepest joint, emphasizing
+the spare geometry. There is a faint mineral smell beneath the dry air, the
+scent of a room reduced to the materials that make it.`x
 ~
 0 32 2
 B 1
@@ -3183,9 +3208,10 @@ Y ~
 S
 #18
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -3197,9 +3223,10 @@ Y ~
 S
 #19
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -3211,9 +3238,10 @@ Y ~
 S
 #20
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -3225,16 +3253,14 @@ Y ~
 S
 #21
 Bank~
-Heavy finishes and deliberately open floor space give the financial premises a
-restrained, guarded character. The `wpublic standing area`x sits clear of the
-surrounding fittings.`x
+The left-hand floor widens before a heavy dividing structure edged with gray
+tile. A shallow display recess holds a single decorative object, giving the
+surrounding blank surface a deliberate focus. The orderly surroundings keep
+the public position easy to read and the more protected spaces clearly
+separate.`x
 ~
 0 1048620 9
 B 1
-P
-public standing area~
-The clear standing area provides room for people to wait together.`x
-~
 G 0 0 80 0 0
 C 0 0 0
 T 3000
@@ -3244,9 +3270,10 @@ Y (null)~
 S
 #22
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -3258,9 +3285,10 @@ Y ~
 S
 #23
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -3272,9 +3300,10 @@ Y ~
 S
 #24
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -3286,9 +3315,10 @@ Y ~
 S
 #25
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -3300,9 +3330,10 @@ Y ~
 S
 #26
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -3314,9 +3345,10 @@ Y ~
 S
 #27
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -3328,9 +3360,10 @@ Y ~
 S
 #28
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -3342,9 +3375,10 @@ Y ~
 S
 #29
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -3356,9 +3390,10 @@ Y ~
 S
 #30
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -3370,9 +3405,10 @@ Y ~
 S
 #31
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -3384,9 +3420,10 @@ Y ~
 S
 #32
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -3398,9 +3435,10 @@ Y ~
 S
 #33
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -3412,9 +3450,10 @@ Y ~
 S
 #34
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -3426,9 +3465,10 @@ Y ~
 S
 #35
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -3440,9 +3480,10 @@ Y ~
 S
 #36
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -3454,9 +3495,10 @@ Y ~
 S
 #37
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -3468,9 +3510,10 @@ Y ~
 S
 #38
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -3482,9 +3525,10 @@ Y ~
 S
 #39
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -3496,10 +3540,12 @@ Y ~
 S
 #40
 `rGenesis Chamber`x~
-An indistinct expanse surrounds a small point of orientation. Edges seem
-difficult to hold in view, leaving the `cspace`x with the unsettling intimacy
-of a half-remembered dream. Durable public furnishings and open sightlines
-give the union building the comfortable wear of a shared gathering place.`x
+Distance gathers around a small point of orientation, then loosens before it
+becomes a recognizable place. The edges of the `cspace`x have the wavering
+certainty of a remembered room. It's difficult to hold any one detail in view
+for long; something about the surroundings always seems to have just changed.
+Public furnishings show the comfortable knocks of shared use, giving the union
+building a warmth that survives the durable institutional finish.`x
 ~
 0 33554444 0
 B 1
@@ -3512,9 +3558,10 @@ Y union~
 S
 #41
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -3526,9 +3573,10 @@ Y ~
 S
 #42
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -3540,9 +3588,10 @@ Y ~
 S
 #43
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -3554,9 +3603,10 @@ Y ~
 S
 #44
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -3568,9 +3618,10 @@ Y ~
 S
 #45
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -3582,9 +3633,10 @@ Y ~
 S
 #46
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -3596,9 +3648,10 @@ Y ~
 S
 #47
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -3610,9 +3663,10 @@ Y ~
 S
 #48
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -3624,9 +3678,10 @@ Y ~
 S
 #49
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -3639,7 +3694,7 @@ S
 #50
 Movement and Helpfiles~
 Information about all the game's systems and lore is available in helpfiles.
-You can also find it all on our website, http://havenrpg.net
+You can also find it all on our website, http://paroxysm.net
 
 To look at a helpfile type help (file name). If there is more than one
 match you can use help 2.(file name) etc. You can use helpsearch (argument)
@@ -3784,7 +3839,7 @@ Y creation~
 S
 #53
 Organizations~
-Much of what happens in New Haven is a political struggle between different
+Much of what happens in Gravesend is a political struggle between different
 organizations. While you don't have to join one of these organizations it
 is generally harder to find things to do or purpose if you do not.
 
@@ -3838,7 +3893,7 @@ Y creation~
 S
 #54
 Combat~
-There are three types of combat in Haven. Fast combat is real time and what
+There are three types of combat in Paroxysm. Fast combat is real time and what
 will happen if you type attack (target).
 Slow Combat is turn based and what will happen if you type spar (target).
 RP Combat is semi-turn based and more of a coded support system for narrative
@@ -3885,7 +3940,7 @@ Y creation~
 S
 #55
 Roleplaying~
-Haven is a roleplay enforced game, that means at all times while in the
+Paroxysm is a roleplay enforced game, that means at all times while in the
 game your character should act like a real person, a fictional character
 with their own identity and actions, and not simply as a video game avatar.
 You can think of it like writing an interactive story. If you've never
@@ -4007,7 +4062,7 @@ Descriptions~
 Characters should have a description. The simplest way to describe your
 character is to simply type describe self. This will put you into an editor
 where you can write a few lines about what your character looks like. If
-you are feeling more adventurous however, Haven has a much more detailed
+you are feeling more adventurous however, Paroxysm has a much more detailed
 description system you can make use of.
 
 To do this type describe (location) to start writing a description of each part
@@ -4059,11 +4114,11 @@ Y creation~
 S
 #59
 Setting~
-Haven is a modern, paranormal horror game set in the city of New Haven, a
+Paroxysm is a modern, paranormal horror game set in the city of Gravesend, a
 city that exists in the liminal space between worlds with an unclear
 origin.
 
-Haven is a horror setting in which the foundational principle is that power
+Paroxysm is a horror setting in which the foundational principle is that power
 equals corruption. It is not just a saying that power corrupts in this
 world, it is an unbreakable metaphysical law. All the most powerful
 individuals are corrupt and so are most of the more powerful organizations.
@@ -4087,7 +4142,7 @@ elements function as metaphors for real world psychological or social conflicts.
 It also has a heavy emphasis on conveying a general feeling of unease or
 haunting.
 
-In Haven all the Demons, Gods, Fae etc used to be human, and many
+In Paroxysm all the Demons, Gods, Fae etc used to be human, and many
 supernatural elements function as exaggerations of real human traits or
 what-ifs that can function as the basis for psychological exploration.
 
@@ -4121,10 +4176,6 @@ table`x stands among simple chairs, with clear floor around the seated group.`x
 ~
 0 1048588 0
 B 1
-P
-shared table~
-The table provides a place for storytellers to gather.`x
-~
 G 9 14 0 0 0
 C 0 0 0
 T 3000
@@ -4134,7 +4185,7 @@ Y (null)~
 S
 #61
 Rules~
-Haven is an IC enforced game. That means once you leave newbie school and
+Paroxysm is an IC enforced game. That means once you leave newbie school and
 enter out into the game world you will be behaving as your character at all
 times. Most of the rules are simply about ensuring everyone is playing ICly
 and preventing common internet abuse. See help rules for a full list. You
@@ -4184,7 +4235,7 @@ Characters also require some secrets, you can use the secrets command to
 write a description of yours. These are generally invisible to most other
 players unless they have a specific legendary power.
 
-You should also consider your character's drives, in Haven drives are
+You should also consider your character's drives, in Paroxysm drives are
 either fears or ambitions. When your drives negatively impact your
 character you have a chance to gain a bonus, see help cdrives for more
 information.
@@ -4219,9 +4270,10 @@ Y creation~
 S
 #63
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -4233,9 +4285,10 @@ Y ~
 S
 #64
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -4247,9 +4300,10 @@ Y ~
 S
 #65
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -4261,9 +4315,10 @@ Y ~
 S
 #66
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -4275,9 +4330,10 @@ Y ~
 S
 #67
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -4289,9 +4345,10 @@ Y ~
 S
 #68
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -4303,9 +4360,11 @@ Y ~
 S
 #69
 The `WAbyss`x~
-An indistinct expanse surrounds a small point of orientation. Edges seem
-difficult to hold in view, leaving the `cspace`x with the unsettling intimacy
-of a half-remembered dream.`x
+The left-hand surroundings fall away beyond a broad shape of cream mineral
+deposits, leaving the air itself unenclosed. A change in angle would rearrange
+the overlapping shapes more quickly than an eye expects. There is no floor
+here, only the exposed scale of open air and the distant arrangement beneath
+it.`x
 ~
 0 33555468 2
 B 1
@@ -4323,9 +4382,10 @@ Y (null)~
 S
 #70
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -4337,9 +4397,10 @@ Y ~
 S
 #71
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -4351,9 +4412,10 @@ Y ~
 S
 #72
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -4365,9 +4427,10 @@ Y ~
 S
 #73
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -4379,9 +4442,10 @@ Y ~
 S
 #74
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -4393,9 +4457,10 @@ Y ~
 S
 #75
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -4407,9 +4472,10 @@ Y ~
 S
 #76
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -4421,9 +4487,10 @@ Y ~
 S
 #77
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -4435,9 +4502,10 @@ Y ~
 S
 #78
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -4449,9 +4517,10 @@ Y ~
 S
 #79
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -4463,9 +4532,10 @@ Y ~
 S
 #80
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -4477,9 +4547,10 @@ Y ~
 S
 #81
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -4491,9 +4562,10 @@ Y ~
 S
 #82
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -4505,9 +4577,10 @@ Y ~
 S
 #83
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -4519,9 +4592,10 @@ Y ~
 S
 #84
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -4533,9 +4607,10 @@ Y ~
 S
 #85
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -4547,9 +4622,10 @@ Y ~
 S
 #86
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -4561,9 +4637,10 @@ Y ~
 S
 #87
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -4575,9 +4652,10 @@ Y ~
 S
 #88
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -4589,9 +4667,10 @@ Y ~
 S
 #89
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -4603,9 +4682,10 @@ Y ~
 S
 #90
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -4617,9 +4697,10 @@ Y ~
 S
 #91
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -4631,9 +4712,10 @@ Y ~
 S
 #92
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -4645,9 +4727,10 @@ Y ~
 S
 #93
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -4659,9 +4742,10 @@ Y ~
 S
 #94
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -4673,9 +4757,10 @@ Y ~
 S
 #95
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -4687,7 +4772,7 @@ Y ~
 S
 #96
 a birthing sac~
-Curved, yielding surfaces enclose a close organic hollow. Fine folds give its
+Curved, yielding surfaces enclose a close organic hollow. Fine folds give the
 inner boundary a layered texture, surrounding the center with an unsettling
 sense of containment.`x
 ~
@@ -4702,9 +4787,11 @@ Y ~
 S
 #97
 Floating in nothingness~
-An indistinct expanse surrounds a small point of orientation. Edges seem
-difficult to hold in view, leaving the `cspace`x with the unsettling intimacy
-of a half-remembered dream.`x
+The left-hand view gathers the nearer ground into overlapping bands, one pale
+strip of pale limestone standing out among them. The surrounding emptiness
+gives every visible edge an unusual emphasis. Height strips familiar things of
+their ordinary size, leaving the sky immense around a few small points of
+reference.`x
 ~
 0 4 0
 B 1
@@ -4717,9 +4804,12 @@ Y ~
 S
 #98
 Your Grave~
-Heavy surfaces enclose a solemn space devoted to the dead. The clear central
-floor emphasizes the weight and stillness of the surrounding memorial
-structure.`x
+Weather-softened memorial stone rises from the uneven ground, with darker
+earth settled into the carved lines. The right-hand margin rises gently
+against a low retaining edge of pale limestone. An older stain has faded to a
+soft outline, most distinct where the surrounding ground changes texture. This
+is ground meant to be crossed or briefly paused upon, shaped by ordinary use
+rather than furnishings.`x
 ~
 0 2052 2
 B 1
@@ -4782,17 +4872,13 @@ Y (null)~
 S
 #99
 Prison~
-Hard walls enclose a restricted space. A `wbench`x occupies one edge, leaving
-a small patch of floor whose worn surface makes the enclosure's limits feel
-close.`x
+The bench occupies the near edge, where the enclosing surfaces meet at a
+blunt, close angle. The nearest joint is packed flat, denying the rough
+surface even a useful-looking recess. The bench offers a place to sit without
+making the confinement comfortable.`x
 ~
 0 12 0
 B 1
-P
-bench~
-The bench rests against the edge of the enclosure, overlooking its limited
-floor space.`x
-~
 G 0 0 100 0 0
 C 0 0 0
 T 3000
@@ -4802,8 +4888,11 @@ Y (null)~
 S
 #100
 entrance to the grid room defaults~
-A worn approach defines the threshold of the surrounding space. The ground is
-clearest in the middle, where repeated passage has left its mark.`x
+The `wwaiting bench`x sits beneath a shallow wall recess on the right-hand
+side, where the finish changes to white ceramic. The floor pattern shifts by
+half a tile near the edge, a small irregularity in an otherwise formal
+arrangement. The space balances welcome with a little institutional distance,
+keeping arrivals plainly in view.`x
 ~
 0 0 0
 B 1
@@ -4823,13 +4912,23 @@ D4
 M 0 H 0
 W (null)~
 Y ~
+P
+waiting bench~
+The bench has a smooth seat and a back marked by the rub of countless coats.
+From here, arrivals remain in view while the busiest line across the floor
+passes a little farther away.`x
+~
 S
 #101
 Sector Park~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+The right-hand stems gather around a broad patch of silver-gray roots, their
+smaller leaves overlapping above the soil. The worked soil changes color
+around the nearest roots, revealing the different places moisture settles. The
+cultivated ground smells richly of earth, with a greener trace where leaves
+and stems meet at close quarters.`x
 ~
 0 0 0
+B 1
 G 0 0 0 0 0
 C 0 0 0
 T 3000
@@ -4850,7 +4949,7 @@ S
 #102
 Unity Cove~
 A shallow curve of sandy ground gives the cove a sheltered shape. Fine grains
-collect among shell fragments, with the broad center more open than its
+collect among shell fragments, with the broad center more open than the
 irregular margins.`x
 ~
 0 4 0
@@ -4874,10 +4973,13 @@ Y ~
 S
 #103
 Sector Water~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+The right-hand bed slopes away from a low rise of rust-colored sandstone,
+leaving a darker reach beyond it. Soft sediment gathers at the lower edges of
+the submerged forms. The water remains the defining feature, gathering the
+smaller contours into one continuous expanse.`x
 ~
 0 0 0
+B 1
 G 0 0 0 0 0
 C 0 0 0
 T 3000
@@ -4897,10 +4999,14 @@ Y ~
 S
 #104
 Sector Water~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+A small hollow lined with green-veined rock lies beneath the far water,
+distinct from the surrounding sediment. The surface breaks reflections into
+small, uneven pieces that never settle into a single picture. The water
+remains the defining feature, gathering the smaller contours into one
+continuous expanse.`x
 ~
 0 0 0
+B 1
 G 0 0 0 0 0
 C 0 0 0
 T 3000
@@ -4920,10 +5026,14 @@ Y ~
 S
 #105
 Sector Underwater~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+A pale shape of cream mineral deposits interrupts the near depths before the
+surrounding water softens the outline. The surface breaks reflections into
+small, uneven pieces that never settle into a single picture. The surrounding
+water lends everything a softened depth, with no dry standing place within the
+immediate reach.`x
 ~
 0 0 0
+B 1
 G 0 0 0 0 0
 C 0 0 0
 T 3000
@@ -4943,10 +5053,13 @@ Y ~
 S
 #106
 Sector Rocky~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+A squared patch of rust-colored sandstone interrupts the otherwise uneven far
+surface. The ground retains a faint arc of wear where passing traffic has
+favored the same turn. The details are modest but distinct, visible in the
+joins between maintained ground and the less-tended edges.`x
 ~
 0 0 0
+B 1
 G 0 0 0 0 0
 C 0 0 0
 T 3000
@@ -4966,10 +5079,13 @@ Y ~
 S
 #107
 Sector Beach~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+The near beach gathers into a low hollow where green-veined rock has collected
+among the sand. A piece of weathered driftwood lies low in the sand, the
+exposed grain raised into narrow ridges. The exposed shore has little
+enclosure, leaving the interest in small textures close to the ground.`x
 ~
 0 0 0
+B 1
 G 0 0 0 0 0
 C 0 0 0
 T 3000
@@ -4989,10 +5105,14 @@ Y ~
 S
 #108
 Sector Air~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+The far view opens above a narrow line of blue-gray shale, reducing the ground
+to texture and proportion. Nearby outlines remain sharper than the forms
+beyond them, making the depth apparent without giving it an easy measure.
+Height strips familiar things of their ordinary size, leaving the sky immense
+around a few small points of reference.`x
 ~
 0 0 0
+B 1
 G 0 0 0 0 0
 C 0 0 0
 T 3000
@@ -5012,10 +5132,13 @@ Y ~
 S
 #109
 Sector Street~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+A low curb of green-veined rock follows the near margin of the open ground. A
+narrow join runs slightly off the line of the surrounding work, recording an
+earlier patch. The open setting leaves little to contain sound, with the
+nearest boundaries giving the space a local scale.`x
 ~
 0 0 0
+B 1
 G 0 0 0 0 0
 C 0 0 0
 T 3000
@@ -5035,10 +5158,13 @@ Y ~
 S
 #110
 Sector Tunnels~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+A shallow drainage recess follows the far floor beside a wall of slate-gray
+stone. A repaired section uses smaller stones fitted around the older work
+like a rough mosaic. The building above is apparent as weight rather than a
+view, pressing the proportions down around the traveled floor.`x
 ~
 0 0 0
+B 1
 G 0 0 0 0 0
 C 0 0 0
 T 3000
@@ -5058,10 +5184,13 @@ Y ~
 S
 #111
 Sector Water~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+Toward the near, the water deepens over a submerged band of slate-gray stone.
+Soft sediment gathers at the lower edges of the submerged forms. The water
+remains the defining feature, gathering the smaller contours into one
+continuous expanse.`x
 ~
 0 0 0
+B 1
 G 0 0 0 0 0
 C 0 0 0
 T 3000
@@ -5081,10 +5210,13 @@ Y ~
 S
 #112
 Sector Alley~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+The left-hand margin rises gently against a low retaining edge of cream
+mineral deposits. A small tuft of stubborn growth has found a pocket between
+two differently finished surfaces. The exposed surfaces carry a small history
+of repairs, each one aging a little differently from the last.`x
 ~
 0 0 0
+B 1
 G 0 0 0 0 0
 C 0 0 0
 T 3000
@@ -5104,10 +5236,13 @@ Y ~
 S
 #113
 Sector Cemetery~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+The left-hand margin rises gently against a low retaining edge of chalky
+stone. The ground retains a faint arc of wear where passing traffic has
+favored the same turn. Nothing closes the space overhead; the surrounding
+forms frame the ground without turning it into an interior.`x
 ~
 0 0 0
+B 1
 G 0 0 0 0 0
 C 0 0 0
 T 3000
@@ -5127,10 +5262,13 @@ Y ~
 S
 #114
 Sector Parking Lot~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+The near edge broadens beside a shallow drainage seam cut through chalky
+stone. A narrow join runs slightly off the line of the surrounding work,
+recording an earlier patch. The details are modest but distinct, visible in
+the joins between maintained ground and the less-tended edges.`x
 ~
 0 0 0
+B 1
 G 0 0 0 0 0
 C 0 0 0
 T 3000
@@ -5150,10 +5288,13 @@ Y ~
 S
 #115
 Sector Sidewalk~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+A low curb of dark basalt follows the left-hand margin of the open ground.
+Small stones have collected in the shallowest depression, sorted into a rough
+crescent. The open setting leaves little to contain sound, with the nearest
+boundaries giving the space a local scale.`x
 ~
 0 0 0
+B 1
 G 0 0 0 0 0
 C 0 0 0
 T 3000
@@ -5168,9 +5309,10 @@ Y ~
 S
 #116
 delete~
-Unoccupied space lies within plain, unfinished surfaces. Scuffs and small
-imperfections remain exposed, giving the area the quiet, stripped-back
-character of a place without furnishings.`x
+A shallow recess interrupts the left-hand wall, outlined by a narrow lip of
+warm terracotta. Fine tool strokes remain visible beneath the last layer of
+wall finish. The open floor makes the slightest unevenness conspicuous, a
+landscape of small seams and shallow shadows.`x
 ~
 0 4 0
 B 1
@@ -5183,9 +5325,10 @@ Y ~
 S
 #117
 delete~
-Unoccupied space lies within plain, unfinished surfaces. Scuffs and small
-imperfections remain exposed, giving the area the quiet, stripped-back
-character of a place without furnishings.`x
+A square patch of pearl-gray paint marks the left-hand wall where the
+surrounding finish changes depth. A hairline seam crosses the floor and
+disappears beneath the base of the wall. Without furniture to soften the
+enclosure, every small sound acquires a dry little echo.`x
 ~
 0 4 0
 B 1
@@ -5198,9 +5341,10 @@ Y ~
 S
 #118
 delete~
-Unoccupied space lies within plain, unfinished surfaces. Scuffs and small
-imperfections remain exposed, giving the area the quiet, stripped-back
-character of a place without furnishings.`x
+The right-hand end narrows around a broad structural pier faced in chalk-white
+wood. The ceiling has a shallow step that makes one corner seem unexpectedly
+close. The quiet has an unfinished quality, as though the next ordinary use
+might finally give the space a character.`x
 ~
 0 4 0
 B 1
@@ -5213,9 +5357,10 @@ Y ~
 S
 #119
 delete~
-Unoccupied space lies within plain, unfinished surfaces. Scuffs and small
-imperfections remain exposed, giving the area the quiet, stripped-back
-character of a place without furnishings.`x
+A square patch of cream plaster marks the right-hand wall where the
+surrounding finish changes depth. Small pinholes form an uneven line just
+above the height of a raised hand. The undecorated surfaces leave the
+proportions unusually easy to read, from the low corners to the open middle.`x
 ~
 0 4 0
 B 1
@@ -5228,9 +5373,10 @@ Y ~
 S
 #120
 delete~
-Unoccupied space lies within plain, unfinished surfaces. Scuffs and small
-imperfections remain exposed, giving the area the quiet, stripped-back
-character of a place without furnishings.`x
+A square patch of pearl-gray paint marks the right-hand wall where the
+surrounding finish changes depth. The floor carries a faint rectangular
+outline, clearer at one end than the other. The open floor makes the slightest
+unevenness conspicuous, a landscape of small seams and shallow shadows.`x
 ~
 0 4 0
 B 1
@@ -5243,9 +5389,10 @@ Y ~
 S
 #121
 delete~
-Unoccupied space lies within plain, unfinished surfaces. Scuffs and small
-imperfections remain exposed, giving the area the quiet, stripped-back
-character of a place without furnishings.`x
+Two broad planes meet at an awkward angle on the left-hand side, with
+pearl-gray paint picked out along the join. The lower edges are rounded where
+an otherwise sharp finish meets the floor. Without furniture to soften the
+enclosure, every small sound acquires a dry little echo.`x
 ~
 0 4 0
 B 1
@@ -5258,9 +5405,10 @@ Y ~
 S
 #122
 delete~
-Unoccupied space lies within plain, unfinished surfaces. Scuffs and small
-imperfections remain exposed, giving the area the quiet, stripped-back
-character of a place without furnishings.`x
+The near end narrows around a broad structural pier faced in cream plaster.
+Fine tool strokes remain visible beneath the last layer of wall finish.
+Without furniture to soften the enclosure, every small sound acquires a dry
+little echo.`x
 ~
 0 4 0
 B 1
@@ -5273,9 +5421,10 @@ Y ~
 S
 #123
 delete~
-Unoccupied space lies within plain, unfinished surfaces. Scuffs and small
-imperfections remain exposed, giving the area the quiet, stripped-back
-character of a place without furnishings.`x
+Two broad planes meet at an awkward angle on the far side, with muted green
+paint picked out along the join. Fine tool strokes remain visible beneath the
+last layer of wall finish. The open floor makes the slightest unevenness
+conspicuous, a landscape of small seams and shallow shadows.`x
 ~
 0 4 0
 B 1
@@ -5288,9 +5437,10 @@ Y ~
 S
 #124
 delete~
-Unoccupied space lies within plain, unfinished surfaces. Scuffs and small
-imperfections remain exposed, giving the area the quiet, stripped-back
-character of a place without furnishings.`x
+Near the left-hand wall, the floor rises into a low ridge edged with muted
+green paint. The ceiling has a shallow step that makes one corner seem
+unexpectedly close. The undecorated surfaces leave the proportions unusually
+easy to read, from the low corners to the open middle.`x
 ~
 0 4 0
 B 1
@@ -5303,9 +5453,10 @@ Y ~
 S
 #125
 delete~
-Unoccupied space lies within plain, unfinished surfaces. Scuffs and small
-imperfections remain exposed, giving the area the quiet, stripped-back
-character of a place without furnishings.`x
+A shallow recess interrupts the left-hand wall, outlined by a narrow lip of
+cream plaster. The floor carries a faint rectangular outline, clearer at one
+end than the other. The quiet has an unfinished quality, as though the next
+ordinary use might finally give the space a character.`x
 ~
 0 4 0
 B 1
@@ -5318,9 +5469,10 @@ Y ~
 S
 #126
 delete~
-Unoccupied space lies within plain, unfinished surfaces. Scuffs and small
-imperfections remain exposed, giving the area the quiet, stripped-back
-character of a place without furnishings.`x
+The near end narrows around a broad structural pier faced in honey-colored
+wood. Fine tool strokes remain visible beneath the last layer of wall finish.
+The open floor makes the slightest unevenness conspicuous, a landscape of
+small seams and shallow shadows.`x
 ~
 0 4 0
 B 1
@@ -5333,9 +5485,10 @@ Y ~
 S
 #127
 delete~
-Unoccupied space lies within plain, unfinished surfaces. Scuffs and small
-imperfections remain exposed, giving the area the quiet, stripped-back
-character of a place without furnishings.`x
+The left-hand end narrows around a broad structural pier faced in chalk-white
+wood. A hairline seam crosses the floor and disappears beneath the base of the
+wall. Without furniture to soften the enclosure, every small sound acquires a
+dry little echo.`x
 ~
 0 4 0
 B 1
@@ -5348,9 +5501,10 @@ Y ~
 S
 #128
 delete~
-Unoccupied space lies within plain, unfinished surfaces. Scuffs and small
-imperfections remain exposed, giving the area the quiet, stripped-back
-character of a place without furnishings.`x
+Near the left-hand wall, the floor rises into a low ridge edged with
+smoke-blue paint. The lower edges are rounded where an otherwise sharp finish
+meets the floor. The quiet has an unfinished quality, as though the next
+ordinary use might finally give the space a character.`x
 ~
 0 4 0
 B 1
@@ -5363,9 +5517,10 @@ Y ~
 S
 #129
 delete~
-Unoccupied space lies within plain, unfinished surfaces. Scuffs and small
-imperfections remain exposed, giving the area the quiet, stripped-back
-character of a place without furnishings.`x
+Two broad planes meet at an awkward angle on the right-hand side, with dark
+walnut picked out along the join. A hairline seam crosses the floor and
+disappears beneath the base of the wall. The open floor makes the slightest
+unevenness conspicuous, a landscape of small seams and shallow shadows.`x
 ~
 0 4 0
 B 1
@@ -5378,9 +5533,10 @@ Y ~
 S
 #130
 delete~
-Unoccupied space lies within plain, unfinished surfaces. Scuffs and small
-imperfections remain exposed, giving the area the quiet, stripped-back
-character of a place without furnishings.`x
+A shallow recess interrupts the right-hand wall, outlined by a narrow lip of
+chalk-white wood. The ceiling has a shallow step that makes one corner seem
+unexpectedly close. There is a faint mineral smell beneath the dry air, the
+scent of a room reduced to the materials that make it.`x
 ~
 0 4 0
 B 1
@@ -5393,9 +5549,10 @@ Y ~
 S
 #131
 delete~
-Unoccupied space lies within plain, unfinished surfaces. Scuffs and small
-imperfections remain exposed, giving the area the quiet, stripped-back
-character of a place without furnishings.`x
+Near the near wall, the floor rises into a low ridge edged with warm
+terracotta. The floor carries a faint rectangular outline, clearer at one end
+than the other. The quiet has an unfinished quality, as though the next
+ordinary use might finally give the space a character.`x
 ~
 0 4 0
 B 1
@@ -5408,9 +5565,10 @@ Y ~
 S
 #132
 delete~
-Unoccupied space lies within plain, unfinished surfaces. Scuffs and small
-imperfections remain exposed, giving the area the quiet, stripped-back
-character of a place without furnishings.`x
+Two broad planes meet at an awkward angle on the near side, with chalk-white
+wood picked out along the join. Small pinholes form an uneven line just above
+the height of a raised hand. There is a faint mineral smell beneath the dry
+air, the scent of a room reduced to the materials that make it.`x
 ~
 0 4 0
 B 1
@@ -5448,8 +5606,10 @@ Y ~
 S
 #134
 the entrance to the gardens~
-A worn approach defines the threshold of the surrounding space. The ground is
-clearest in the middle, where repeated passage has left its mark.`x
+The right-hand bed steps up gently, exposing a darker band of fine gravel
+beneath the lower leaves. The worked soil changes color around the nearest
+roots, revealing the different places moisture settles. The plants provide the
+focus here, leaving the ordinary gaps between them as part of the setting.`x
 ~
 0 0 0
 B 1
@@ -5545,16 +5705,13 @@ Y ~
 S
 #138
 a consultation office~
-A `wdesk`x anchors the working area, with a visitor's chair on its near side.
-Plain storage and a clear patch of floor keep the office arranged around
-face-to-face conversation.`x
+The `wdesk`x faces the right-hand half of the room beneath a restrained band
+of pale green paint. A line of shallow drawers breaks the lower fittings into
+compact, carefully measured compartments. The cleared working edge gives every
+meeting the same quiet starting point.`x
 ~
 0 0 0
 B 1
-P
-desk~
-The desk and visitor chair form a compact meeting place within the office.`x
-~
 G 0 0 0 0 0
 C 0 0 0
 T 3000
@@ -5571,12 +5728,19 @@ D3
 M 0 H 0
 W (null)~
 Y ~
+P
+desk~
+The working edge of the desk is smooth beneath the hands, with fine scratches
+crossing the surface. A visitor's chair faces it at an easy speaking distance,
+leaving the desktop between the two sides of a conversation.`x
+~
 S
 #139
 the training courtyard~
-An open gathering space spreads across hard, worn ground. The broad center
-leaves room for groups to stand apart, while the margins provide a more
-sheltered sense of scale.`x
+The left-hand margin rises gently against a low retaining edge of blue-gray
+shale. The immediate ground is clearest through the middle, where ordinary
+passage has kept the margins at bay. Nothing closes the space overhead; the
+surrounding forms frame the ground without turning it into an interior.`x
 ~
 0 0 0
 B 1
@@ -5619,9 +5783,11 @@ Y ~
 S
 #140
 the training courtyard~
-An open gathering space spreads across hard, worn ground. The broad center
-leaves room for groups to stand apart, while the margins provide a more
-sheltered sense of scale.`x
+A narrow strip of cream mineral deposits marks the right-hand boundary between
+the traveled ground and the rougher margin. A small tuft of stubborn growth
+has found a pocket between two differently finished surfaces. Nothing closes
+the space overhead; the surrounding forms frame the ground without turning it
+into an interior.`x
 ~
 0 0 0
 B 1
@@ -5664,16 +5830,13 @@ Y ~
 S
 #141
 a lounge~
-A `wseating area`x gives the room its center of gravity. Upholstered seats
-face a low table, with enough clear floor around them to keep the gathering
-space comfortable.`x
+The near half is arranged around a `wsofa`x, with muted green paint outlining
+the quieter edges of the room. A shallow decorative bowl catches the room in a
+curved, imperfect reflection. Fabric and furniture polish mingle faintly in
+the enclosed air, a comfortable smell without much ceremony.`x
 ~
 0 0 0
 B 1
-P
-seating area~
-The seats gather around a low table, making a small circle for conversation.`x
-~
 G 0 0 0 0 0
 C 0 0 0
 T 3000
@@ -5690,12 +5853,20 @@ D3
 M 0 H 0
 W (null)~
 Y ~
+P
+sofa~
+Deep cushions settle into familiar hollows along the sofa. The arms are rubbed
+smooth, and the upholstery holds a faint fabric warmth; there's room to sit
+close or claim a comfortable corner.`x
+~
 S
 #142
 a path leading to the grove~
-A worn strip of ground marks the path through its surroundings. Small
-irregularities break up the surface, and the less-traveled margins retain a
-rougher texture.`x
+The left-hand planting curves around a shallow bed of weathered bark, breaking
+the cultivated ground into a softer outline. One low plant carries a pale
+border around each leaf, making a delicate pattern close to the ground. The
+cultivated ground smells richly of earth, with a greener trace where leaves
+and stems meet at close quarters.`x
 ~
 0 0 0
 B 1
@@ -5723,16 +5894,13 @@ Y ~
 S
 #143
 the bottom of a handsome wooden stair~
-Repeated treads and worn edges define the stair structure. The landing
-provides a small level space within its close-set framework.`x
+A broad section of cream enamel frames the right-hand edge of the stairs
+beneath a sharply angled ceiling. A broader tread interrupts the climb, the
+corners polished smoother than the wide, shallow center. The enclosure gives
+each small sound a short, climbing echo.`x
 ~
 0 0 0
 B 1
-P
-landing~
-The landing offers a level place to stand beside the stair structure, clear of
-the treads.`x
-~
 G 0 0 0 0 0
 C 0 0 0
 T 3000
@@ -5752,16 +5920,14 @@ Y ~
 S
 #144
 a locker room~
-A clear changing space occupies the center, bordered by places to set clothing
-aside. A `wbench`x keeps the seating close to the wall and leaves the main
-floor free.`x
+The left-hand storage compartments face a simple `wbench`x across a modest
+patch of clear floor. The nearest floor has a fine grip texture, interrupted
+by a smoother strip beneath the bench. A faint fabric smell lingers in the
+close air, and the clear floor leaves room for the awkward movements of
+changing.`x
 ~
 0 0 0
 B 1
-P
-bench~
-The bench provides a narrow seat beside the changing space.`x
-~
 G 0 0 0 0 0
 C 0 0 0
 T 3000
@@ -5778,12 +5944,19 @@ D7
 M 0 H 0
 W (null)~
 Y ~
+P
+bench~
+The bench offers a firm seat, the most-used stretch worn smoother than the
+ends. Small nicks catch along the edge. It's a straightforward place to sit
+shoulder to shoulder without crowding the open floor.`x
+~
 S
 #145
 a deployment and ready room~
-The enclosed space has a plain floor and close surrounding surfaces. A clear
-central area leaves room to stand together, with the quieter margins set back
-from the middle.`x
+A shallow recess interrupts the far wall, outlined by a narrow lip of
+honey-colored wood. The ceiling has a shallow step that makes one corner seem
+unexpectedly close. The open floor makes the slightest unevenness conspicuous,
+a landscape of small seams and shallow shadows.`x
 ~
 0 0 0
 B 1
@@ -5801,16 +5974,14 @@ Y ~
 S
 #146
 an open air clinic~
-Hard, washable surfaces define the clinical space. Pale walls and an
-uncluttered floor give the room a deliberate order, with an edge of antiseptic
-in the air. `wwaiting chairs`x provides a distinct place to gather.`x
+The right-hand view opens above a narrow line of green-veined rock, reducing
+the ground to texture and proportion. The nearer surfaces show their upper
+faces, revealing outlines usually lost when viewed from the ground. There is
+no floor here, only the exposed scale of open air and the distant arrangement
+beneath it.`x
 ~
 0 0 0
 B 1
-P
-waiting chairs~
-A short group of chairs provides a place to wait beside the clinical space.`x
-~
 G 0 0 0 0 0
 C 0 0 0
 T 3000
@@ -5825,17 +5996,14 @@ Y ~
 S
 #147
 a cosy library alcove~
-Rows of books and paper-filled shelving break the room into intimate spaces. A
-`wreading table`x provides a clear surface among the close-set spines, with
-the dry smell of paper lingering nearby.`x
+Bookcases frame the `wreading table`x along the near wall, with dark walnut
+outlining their deeper recesses. Shelf labels use small, careful lettering,
+their edges softened where readers have brushed past. There is a patient,
+scholarly quiet here, made by materials that change more slowly than the
+people handling them.`x
 ~
 0 0 0
 B 1
-P
-reading table~
-The reading table provides shared seating and a clear surface near the
-shelves.`x
-~
 G 0 0 0 0 0
 C 0 0 0
 T 3000
@@ -5847,18 +6015,21 @@ D3
 M 0 H 0
 W (null)~
 Y ~
+P
+reading table~
+Broad enough for open books, the table keeps a clear working surface among the
+shelves. Fine scratches and a dull polish mark the places where readers have
+leaned, with chairs close enough to compare a passage in low voices.`x
+~
 S
 #148
 the staff cots~
-Simple cots occupy a compact resting space. A `wbedside area`x leaves just
-enough room for quiet company among the closely arranged sleeping furniture.`x
+Simple cots occupy a compact resting space. The nearest `wbed`x has creased
+`wbed`xding and a firm edge for sitting, bringing quiet company close among
+the neighboring cots.`x
 ~
 0 0 0
 B 1
-P
-bedside area~
-A small clear space lies beside the sleeping furniture.`x
-~
 G 0 0 0 0 0
 C 0 0 0
 T 3000
@@ -5870,19 +6041,22 @@ D3
 M 0 H 0
 W (null)~
 Y ~
+P
+bed~
+The mattress yields beneath creased bedding, with a firmer edge for sitting
+beside someone. Soft fabric muffles small movements, bringing a quiet
+conversation within reach of the pillows.`x
+~
 S
 #149
 the shower room~
-Washable surfaces enclose the `wshower`x. Drainage grooves interrupt the floor
-beneath the fixtures, and mineral traces mark the places reached by water.`x
+A vertical strip of dark wood divides the `wshower`x from the room's closer
+fittings on the near side. The mirror has a narrow beveled edge, splitting
+nearby shapes into a second, thinner reflection. The close fittings leave the
+room practical and intimate, scaled to the small business of washing.`x
 ~
 0 16777216 0
 B 1
-P
-shower~
-Water sprays from the shower fixtures across the tiled washing space and runs
-into the floor drains.`x
-~
 G 0 0 0 0 0
 C 0 0 0
 T 3000
@@ -5894,18 +6068,22 @@ D0
 M 0 H 0
 W (null)~
 Y ~
+P
+shower~
+Pale mineral trails mark the shower fittings above the drained washing space.
+Water patters against the floor beneath the spray, and the close air carries a
+clean trace of soap.`x
+~
 S
 #150
 a picnic area and fire pit~
-Rows of `wseats`x establish a shared vantage point. Worn edges and a narrow
-standing space give this gathering area a practical, familiar shape.`x
+The left-hand rock narrows into a buttress whose rough grain contrasts with
+the smoother chalky stone beside it. The floor holds a fan of broken chips,
+grading from blunt fragments to fine grit. The natural shapes remain
+stubbornly indifferent to a human-sized sense of comfort or symmetry.`x
 ~
 0 0 0
 B 1
-P
-seats~
-The seats gather people into rows, with a little room to stand beside them.`x
-~
 G 0 0 0 0 0
 C 0 0 0
 T 3000
@@ -5925,16 +6103,13 @@ Y ~
 S
 #151
 a cluttered utility shed~
-Plain shelving borders the utility space. Scuffed surfaces and a narrow
-central standing area reflect the room's role in keeping supplies out of the
-way. `wshelves`x provides a distinct place to gather.`x
+Close storage fittings follow the far wall beneath a plain backing of ribbed
+steel. A narrow strip of floor has a rougher texture, giving the working
+surface a clear change underfoot. The practical fittings leave little
+decorative surplus, making the small signs of handling unusually visible.`x
 ~
 0 0 0
 B 1
-P
-shelves~
-The shelving leaves a narrow place to stand among the storage surfaces.`x
-~
 G 0 0 0 0 0
 C 0 0 0
 T 3000
@@ -5949,16 +6124,13 @@ Y ~
 S
 #152
 the top of a handsome wooden stair~
-Repeated treads and worn edges define the stair structure. The landing
-provides a small level space within its close-set framework.`x
+The left-hand treads meet a low structural return faced in sand-colored
+plaster. The nearest treads have gently rounded noses, with narrower dark
+lines where the risers meet them. The enclosure gives each small sound a
+short, climbing echo.`x
 ~
 0 0 0
 B 1
-P
-landing~
-The landing offers a level place to stand beside the stair structure, clear of
-the treads.`x
-~
 G 0 0 0 0 0
 C 0 0 0
 T 3000
@@ -5988,9 +6160,10 @@ Y ~
 S
 #153
 air~
-The `cair`x stretches around an unbounded space above the ground. There is no
-floor or surrounding wall here; distance and height give the emptiness its
-scale.`x
+Open `cair`x falls away in every direction. Without a wall or a patch of
+ground close at hand, distances become difficult to judge; even a small
+movement makes the surrounding emptiness apparent. It's an exposed place, with
+nothing nearby to break the immense sweep of the sky.`x
 ~
 0 0 18
 G 0 0 0 0 0
@@ -6032,9 +6205,10 @@ Y ~
 S
 #154
 air~
-The `cair`x stretches around an unbounded space above the ground. There is no
-floor or surrounding wall here; distance and height give the emptiness its
-scale.`x
+Open `cair`x falls away in every direction. Without a wall or a patch of
+ground close at hand, distances become difficult to judge; even a small
+movement makes the surrounding emptiness apparent. It's an exposed place, with
+nothing nearby to break the immense sweep of the sky.`x
 ~
 0 0 18
 G 0 0 0 0 0
@@ -6076,17 +6250,13 @@ Y ~
 S
 #155
 a holding cell~
-Hard walls enclose a restricted space. A `wbench`x occupies one edge, leaving
-a small patch of floor whose worn surface makes the enclosure's limits feel
-close.`x
+The bench occupies the far edge, where the enclosing surfaces meet at a blunt,
+close angle. The nearest joint is packed flat, denying the rough surface even
+a useful-looking recess. There is little here to distract an eye; the room
+makes the same edges available again and again.`x
 ~
 0 0 0
 B 1
-P
-bench~
-The bench rests against the edge of the enclosure, overlooking its limited
-floor space.`x
-~
 G 0 0 0 0 0
 C 0 0 0
 T 3000
@@ -6101,9 +6271,11 @@ Y ~
 S
 #156
 a walkway~
-A worn strip of ground marks the path through its surroundings. Small
-irregularities break up the surface, and the less-traveled margins retain a
-rougher texture.`x
+A rectangular recess interrupts the near side of the corridor, framed by a
+narrow border of sand-colored plaster. One broad panel is set back just far
+enough to catch a thin border of shadow. The restrained details become
+noticeable during a pause, then fall back into the ordinary business of
+passing through.`x
 ~
 0 0 0
 B 1
@@ -6136,9 +6308,10 @@ Y ~
 S
 #157
 a walkway~
-A worn strip of ground marks the path through its surroundings. Small
-irregularities break up the surface, and the less-traveled margins retain a
-rougher texture.`x
+A rectangular recess interrupts the near side of the corridor, framed by a
+narrow border of pale green paint. Small changes in the grain of the trim
+reveal where separate lengths have been fitted together. The enclosure makes a
+small sound feel near even when the source lies beyond the immediate view.`x
 ~
 0 0 0
 B 1
@@ -6171,16 +6344,14 @@ Y ~
 S
 #158
 a spartan operating theater~
-Rows of `waudience seating`x face the performance area. The clear sightlines
-and broad interior give the room a sense of expectation even between
-performances.`x
+The near treatment position is organized around a narrow `wtreatment table`x
+and a broad panel of white ceramic. A diagram panel uses fine ruled lines and
+careful spacing, making a dense arrangement of small labels. Antiseptic leaves
+a sharp edge in the air, and the clear surfaces make the enclosure feel
+deliberately exposed.`x
 ~
 0 0 0
 B 1
-P
-audience seating~
-The audience seats face the performance space in orderly rows.`x
-~
 G 0 0 0 0 0
 C 0 0 0
 T 3000
@@ -6197,19 +6368,23 @@ D8
 M 0 H 0
 W (null)~
 Y ~
+P
+treatment table~
+Firm padding covers a narrow, easily cleaned table. The raised surface leaves
+room to stand close on either side, keeping patient and attendant within quiet
+speaking distance.`x
+~
 S
 #159
 an executive office~
-A `wdesk`x anchors the working area, with a visitor's chair on its near side.
-Plain storage and a clear patch of floor keep the office arranged around
-face-to-face conversation.`x
+The near corner holds a compact `wdesk`x, with a clear gap left between the
+working surface and the visitor's chair. A document tray has been turned
+slightly away from the visitor, presenting the neat backs of stacked folders.
+The arrangement sets a clear distance between host and visitor, close enough
+for courtesy to carry some weight.`x
 ~
 0 0 0
 B 1
-P
-desk~
-The desk and visitor chair form a compact meeting place within the office.`x
-~
 G 0 0 0 0 0
 C 0 0 0
 T 3000
@@ -6226,12 +6401,20 @@ D6
 M 0 H 0
 W (null)~
 Y ~
+P
+desk~
+The working edge of the desk is smooth beneath the hands, with fine scratches
+crossing the surface. A visitor's chair faces it at an easy speaking distance,
+leaving the desktop between the two sides of a conversation.`x
+~
 S
 #160
 a walkway~
-A worn strip of ground marks the path through its surroundings. Small
-irregularities break up the surface, and the less-traveled margins retain a
-rougher texture.`x
+The ceiling drops slightly toward the left-hand wall, where dark wood picks
+out the change in level. A line of shallow grooves gives the lower wall a
+rhythm that changes as the passage is viewed end-on. The long proportions draw
+the eye past each small interruption in the wall, making the far end feel
+slightly removed.`x
 ~
 0 0 0
 B 1
@@ -6259,16 +6442,13 @@ Y ~
 S
 #161
 a laboratory~
-Washable work surfaces divide the laboratory into orderly stations. A
-`wworkbench`x stands clear of the central floor, with plain walls emphasizing
-the room's controlled, practical layout.`x
+A washable `wworkbench`x runs along the near wall beneath a broad panel of
+brushed steel. A narrow trough runs beneath one section of the work surface
+before disappearing into the fitted structure. The room brings complicated
+work down to a series of small, carefully bounded stations.`x
 ~
 0 0 0
 B 1
-P
-workbench~
-The workbench provides a clear station beside the laboratory floor.`x
-~
 G 0 0 0 0 0
 C 0 0 0
 T 3000
@@ -6290,12 +6470,19 @@ D7
 M 0 H 0
 W (null)~
 Y ~
+P
+workbench~
+Fine tool marks cross the stout working surface, with dust caught in the
+deepest cuts. The bench stands at a practical height for leaning over a piece
+of work, bringing careful hands and curious company together.`x
+~
 S
 #162
 delete~
-Unoccupied space lies within plain, unfinished surfaces. Scuffs and small
-imperfections remain exposed, giving the area the quiet, stripped-back
-character of a place without furnishings.`x
+A strip of honey-colored wood stops short of the near corner, exposing the
+construction beneath the finish. The floor carries a faint rectangular
+outline, clearer at one end than the other. The undecorated surfaces leave the
+proportions unusually easy to read, from the low corners to the open middle.`x
 ~
 0 12 10
 B 1
@@ -6313,9 +6500,10 @@ Y ~
 S
 #163
 delete~
-Unoccupied space lies within plain, unfinished surfaces. Scuffs and small
-imperfections remain exposed, giving the area the quiet, stripped-back
-character of a place without furnishings.`x
+Two broad planes meet at an awkward angle on the far side, with cream plaster
+picked out along the join. The ceiling has a shallow step that makes one
+corner seem unexpectedly close. Without furniture to soften the enclosure,
+every small sound acquires a dry little echo.`x
 ~
 0 12 10
 B 1
@@ -6330,7 +6518,10 @@ S
 The `DVoid`x~
 An unbounded `cvoid`x surrounds a single point of awareness. There is no wall
 or floor to measure it against, only the strange impression that the emptiness
-is close enough to touch.`x
+is close enough to touch. The floor has a softer finish around the seats, with
+a clearer strip left for crossing the room. Small framed prints hang at
+different heights, making an informal balance out of their mismatched
+proportions.`x
 ~
 0 8 2
 B 1
@@ -6378,9 +6569,10 @@ Y ~
 S
 #165
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -6392,9 +6584,10 @@ Y ~
 S
 #166
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -6406,9 +6599,10 @@ Y ~
 S
 #167
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -6420,9 +6614,10 @@ Y ~
 S
 #168
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -6434,9 +6629,10 @@ Y ~
 S
 #169
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -6448,9 +6644,10 @@ Y ~
 S
 #170
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -6462,9 +6659,10 @@ Y ~
 S
 #171
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -6476,9 +6674,10 @@ Y ~
 S
 #172
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -6490,9 +6689,10 @@ Y ~
 S
 #173
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -6504,9 +6704,10 @@ Y ~
 S
 #174
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -6518,9 +6719,10 @@ Y ~
 S
 #175
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -6532,9 +6734,10 @@ Y ~
 S
 #176
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -6546,9 +6749,10 @@ Y ~
 S
 #177
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -6560,9 +6764,10 @@ Y ~
 S
 #178
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -6574,9 +6779,10 @@ Y ~
 S
 #179
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -6588,9 +6794,10 @@ Y ~
 S
 #180
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -6602,9 +6809,10 @@ Y ~
 S
 #181
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -6616,9 +6824,10 @@ Y ~
 S
 #182
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -6630,9 +6839,10 @@ Y ~
 S
 #183
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -6644,9 +6854,10 @@ Y ~
 S
 #184
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -6658,9 +6869,10 @@ Y ~
 S
 #185
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -6672,9 +6884,10 @@ Y ~
 S
 #186
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -6686,9 +6899,10 @@ Y ~
 S
 #187
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -6700,9 +6914,10 @@ Y ~
 S
 #188
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -6714,9 +6929,10 @@ Y ~
 S
 #189
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -6728,9 +6944,10 @@ Y ~
 S
 #190
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -6742,9 +6959,10 @@ Y ~
 S
 #191
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -6756,9 +6974,10 @@ Y ~
 S
 #192
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -6770,9 +6989,10 @@ Y ~
 S
 #193
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -6784,9 +7004,10 @@ Y ~
 S
 #194
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -6798,9 +7019,10 @@ Y ~
 S
 #195
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -6812,9 +7034,10 @@ Y ~
 S
 #196
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -6826,9 +7049,10 @@ Y ~
 S
 #197
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -6840,9 +7064,10 @@ Y ~
 S
 #198
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -6854,9 +7079,10 @@ Y ~
 S
 #199
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -6868,9 +7094,10 @@ Y ~
 S
 #200
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -6882,9 +7109,10 @@ Y ~
 S
 #201
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0
@@ -6896,9 +7124,10 @@ Y ~
 S
 #202
 `GT`gh`Ge `GF`go`Dr`ge`Gs`gt`x~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+`gTree trunks`x rise through a deep litter of leaves, their bark rough with
+lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
+The woodland smells of leaf mold and old rain; beyond the nearest tangle,
+overlapping growth breaks the view into narrow, uncertain glimpses.`x
 ~
 0 4194308 23
 G 0 0 50 0 0

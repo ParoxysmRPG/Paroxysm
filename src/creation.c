@@ -632,7 +632,7 @@ extern "C" {
     }
 
     CREATION(credit_show_adult) {
-      send_to_char("Haven is a mature role playing game in which there are no restrictions on\n\r", ch);
+      send_to_char("Paroxysm is a mature role playing game in which there are no restrictions on\n\r", ch);
       send_to_char("content, as such depictions of graphic violence, sex or other mature themes may\n\r", ch);
       send_to_char("be presented to the player over the course of their time here. Although we don't\n\r", ch);
       send_to_char("believe these things are common that is ultimately dependant on the players and\n\r", ch);
@@ -2121,7 +2121,7 @@ extern "C" {
 
       char_to_room(ch, get_room_index(3609));
       act("$n arrives.", ch, NULL, NULL, TO_ROOM);
-      send_to_char("You arrive in Haven.\n\r", ch);
+      send_to_char("You arrive in Gravesend.\n\r", ch);
       if(crisis_prologue == 1)
       {
         char_from_room(ch);

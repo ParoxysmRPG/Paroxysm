@@ -10,6 +10,7 @@ extern char str_boot_time[];
 void pc_update(CHAR_DATA *, int);
 void do_storyidea(CHAR_DATA *, char *);
 void do_treat(CHAR_DATA *, char *);
+void do_patrol(CHAR_DATA *, char *);
 }
 
 static void assign(char *&field, const char *value) {
@@ -139,6 +140,12 @@ static void wounds() {
 }
 static void enforcers() {
   auto *target = player("Alarmtarget");
+  auto *bidder = player("Alarmbidder"), *absentee = player("Alarmabsentee");
+  bidder->pcdata->patrol_habits[PATROL_DIPLOMATICHABIT] = 1;
+  absentee->pcdata->patrol_habits[PATROL_DIPLOMATICHABIT] = 1;
+  bidder->pcdata->total_money = 100000;
+  descriptor_list.push_back(bidder->desc);
+  descriptor_list.push_back(absentee->desc);
   assert(in_haven(target->in_room));
   assert(!cortex_alarm(target, 0));
   size_t gossip_before = NewsVect.size();
@@ -155,21 +162,50 @@ static void enforcers() {
   assert(strstr(NewsVect.back()->message, "Alarmtarget") && strstr(NewsVect.back()->message, "Cortex enforcers"));
   assert(!cortex_alarm(target, 2) && NewsVect.size() == gossip_before + 1);
   target->pcdata->sleeping = 240;
+  target->hit = 0;
   cortex_enforcer_defeat(attacker, target);
-  assert(target->pcdata->sleeping == 0 && in_fight(target));
-  bool monster = false;
+  assert(target->pcdata->sleeping == 0 && !in_fight(target) && target->hit == 0);
+  assert(target->pcdata->patrol_status == PATROL_KIDNAPPED && !IS_FLAG(target->act, PLR_BOUND));
+  assert(target->pcdata->syndicate_release_at == current_time + 24 * 60 * 60);
+  assert(target->in_room->vnum == ROOM_PRISON_WEST || target->in_room->vnum == ROOM_PRISON_EAST);
   for (auto *mob : char_list) {
-    if (cortex_enforcer(mob)) assert(mob->ttl == 1 && !in_fight(mob));
-    if (forest_monster(mob) && cortex_breach_monster(mob) && mob->in_room == target->in_room) {
-      monster = true; assert(in_fight(mob));
-    }
+    if (cortex_enforcer(mob)) assert(mob->ttl == 0 && !in_fight(mob));
+    assert(!(forest_monster(mob) && cortex_breach_monster(mob) && mob->in_room == target->in_room));
   }
-  assert(monster);
-  puts("PASS: randomized alarm squad, combat, one automatic rumor, duplicate prevention and monster ambush after defeat.");
+  assert(bidder->pcdata->patrol_status == PATROL_BIDDING && bidder->pcdata->patrol_target == target);
+  assert(absentee->pcdata->patrol_status == PATROL_BIDDING);
+  char_from_room(bidder); char_to_room(bidder, bidder->pcdata->patrol_room);
+  char bid[] = "bid 100"; do_patrol(bidder, bid);
+  assert(bidder->pcdata->patrol_amount == 100);
+  absentee->pcdata->patrol_amount = 900; // Bidding from elsewhere cannot win.
+  absentee->pcdata->patrol_timer = 1;
+  patrol_update(absentee); // An absent participant can be the first timer to expire.
+  assert(bidder->pcdata->patrol_status == PATROL_COLLECTING);
+  assert(absentee->pcdata->patrol_status == 0 && absentee->pcdata->patrol_amount == 0);
+  assert(bidder->pcdata->patrol_room == target->in_room);
+  char_from_room(bidder); char_to_room(bidder, get_room_index(16068));
+  char collect[] = "collect"; do_patrol(bidder, collect);
+  assert(target->in_room == bidder->in_room && IS_FLAG(target->act, PLR_BOUND));
+  assert(target->pcdata->patrol_status == 0 && target->pcdata->patrol_timer == 0);
+  assert(bidder->pcdata->total_money == 90000 && bidder->pcdata->patrol_status == 0);
+  auto *unsold = player("Alarmunsold");
+  assert(start_syndicate_auction(unsold));
+  assert(bidder->pcdata->patrol_status == PATROL_BIDDING);
+  bidder->pcdata->patrol_timer = 1;
+  patrol_update(bidder);
+  assert(bidder->pcdata->patrol_status == 0 && absentee->pcdata->patrol_status == 0);
+  unsold->pcdata->patrol_timer = 1;
+  unsold->pcdata->syndicate_release_at = current_time;
+  patrol_update(unsold);
+  assert(unsold->in_room->vnum != ROOM_PRISON_WEST && unsold->in_room->vnum != ROOM_PRISON_EAST);
+  assert(!IS_FLAG(unsold->act, PLR_BOUND));
+  assert(unsold->pcdata->patrol_status == 0 && unsold->pcdata->patrol_timer == 0);
+  puts("PASS: alarm squad and rumor, auction after defeat, winner selection, paid delivery, and release without bids.");
 }
-int main() {
+int main(int argc, char **argv) {
   setvbuf(stdout, nullptr, _IONBF, 0);
   current_time = time(nullptr); strcpy(str_boot_time, ctime(&current_time)); boot_db();
-  stories(); wounds(); enforcers();
+  if (argc > 1 && !strcmp(argv[1], "--enforcers-only")) enforcers();
+  else { stories(); wounds(); enforcers(); }
   return 0;
 }

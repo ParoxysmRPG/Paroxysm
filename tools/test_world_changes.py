@@ -36,7 +36,8 @@ with tempfile.TemporaryDirectory(prefix="haven-world-changes-test-") as temporar
                     "-o", str(binary)], check=True)
     env = dict(os.environ, ASAN_OPTIONS="detect_leaks=0:halt_on_error=1",
                UBSAN_OPTIONS="halt_on_error=1:print_stacktrace=1")
-    result = subprocess.run([str(binary)], cwd=scratch / "area", env=env,
+    arguments = ["--enforcers-only"] if "--enforcers-only" in sys.argv else []
+    result = subprocess.run([str(binary), *arguments], cwd=scratch / "area", env=env,
                             stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
                             text=True, errors="replace", timeout=120)
     (build.parent / "world-changes-test.log").write_text(result.stdout)
@@ -44,5 +45,4 @@ with tempfile.TemporaryDirectory(prefix="haven-world-changes-test-") as temporar
     print("\n".join(lines[-70:] if result.returncode else
                     [line for line in lines if "PASS:" in line]))
     raise SystemExit(result.returncode)
-
 

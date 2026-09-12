@@ -1097,7 +1097,7 @@ load_events();
       }
 
       if (!in_haven(ch->in_room)) {
-        send_to_char("You have to get to Haven first.\n\r", ch);
+        send_to_char("You have to get to Gravesend first.\n\r", ch);
         return;
       }
       const int launch_cost = scheme_launch_cost(ch, event, FALSE);
@@ -1250,7 +1250,7 @@ load_events();
       }
 
       if (!in_haven(ch->in_room)) {
-        send_to_char("You have to get to Haven first.\n\r", ch);
+        send_to_char("You have to get to Gravesend first.\n\r", ch);
         return;
       }
       const int launch_cost = scheme_launch_cost(ch, event, TRUE);

@@ -1941,7 +1941,7 @@ extern "C" {
     // Don't want the ghosties wandering all over the place - Discordance
     if (is_ghost(ch)) {
       /*if(to_room->area->vnum != 13 && to_room->area->vnum != 14) {
-        send_to_char( "You seem helplessly fixated on Haven and find yourself unable to leave.\n\r", ch );
+        send_to_char( "You seem helplessly fixated on Gravesend and find yourself unable to leave.\n\r", ch );
         return;
       }*/
       if (IS_FLAG(ch->act, PLR_GHOSTBOUND) && to_room->sector_type != SECT_CEMETARY) {
@@ -2371,7 +2371,7 @@ extern "C" {
       else {
         to_room =
         room_by_coordinates(number_range(75, 90), number_range(-50, 120), 0);
-        scout_report("Your scouts report a sea monster being spotted off the coast of Haven.");
+        scout_report("Your scouts report a sea monster being spotted off the coast of Gravesend.");
       }
     }
     if (!follow && asylum_room(ch->in_room) && clinic_patient(ch))
@@ -4729,7 +4729,7 @@ extern "C" {
     return 15247;
     if (strcasestr(arg, "Sidney Beach") != NULL)
     return 1176;
-    if (strcasestr(arg, "Westhaven") != NULL || strcasestr(arg, "Trailer") != NULL)
+    if (strcasestr(arg, "West Gravesend") != NULL || strcasestr(arg, "Trailer") != NULL)
     return 14273;
 
     for (vector<PROP_TYPE *>::iterator it = PropVect.begin();

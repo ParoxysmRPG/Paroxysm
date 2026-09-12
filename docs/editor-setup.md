@@ -12,10 +12,12 @@ wsl --exec python3 tools/configure_intellisense.py
 ```
 
 This discovers g++'s actual include directories and copies their headers into
-`.vscode/linux-headers/`, which Git ignores. It updates the `Win32` IntelliSense
-configuration to use those local paths and Linux GCC mode. No game sources or
-build settings change. It also copies GCC's integer-limit macro definitions,
-which the cached headers need for `INT_MAX` and related constants when Windows
+`.vscode/linux-headers/`, which Git ignores. It creates the VS Code configuration
+when missing and updates the `Win32` IntelliSense configuration to use those
+local paths and Linux GCC mode. It also associates `.c` and `.h` files with C++
+to match the Makefile. No game sources or build settings change. It also copies
+GCC's integer-limit macro definitions, which the cached headers need for
+`INT_MAX` and related constants when Windows
 IntelliSense has no compiler to query. Repeat the command after upgrading the WSL
 compiler or system development packages, or when setting up another checkout.
 

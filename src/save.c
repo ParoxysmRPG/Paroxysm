@@ -1906,6 +1906,15 @@ fprintf(fp, "\n");
       fprintf(fp, "PatrolAmount %d\n", ch->pcdata->patrol_amount);
       fprintf(fp, "PatrolPledged %d\n", ch->pcdata->patrol_pledged);
       fprintf(fp, "PatrolSubtype %d\n", ch->pcdata->patrol_subtype);
+      if (ch->pcdata->patrol_status == PATROL_KIDNAPPED
+          || ch->pcdata->patrol_status == PATROL_BIDDING
+          || ch->pcdata->patrol_status == PATROL_COLLECTING) {
+        fprintf(fp, "SyndicateRelease %lld\n", (long long)ch->pcdata->syndicate_release_at);
+        fprintf(fp, "SyndicateSeller %s~\n", ch->pcdata->syndicate_seller);
+        fprintf(fp, "SyndicatePrisoner %s~\n", ch->pcdata->syndicate_prisoner);
+        if (ch->pcdata->patrol_room)
+          fprintf(fp, "PatrolRoom %d\n", ch->pcdata->patrol_room->vnum);
+      }
     }
 
 
@@ -3873,6 +3882,7 @@ KEYS( "ChatHistory", ch->pcdata->chat_history,      fread_string( fp )
         KEY("PreyEmoteCooldown", ch->pcdata->prey_emote_cooldown,
         fread_number(fp));
         KEY("PatrolStatus", ch->pcdata->patrol_status, fread_number(fp));
+        KEY("PatrolRoom", ch->pcdata->patrol_room, get_room_index(fread_number(fp)));
         KEY("PatrolTimer", ch->pcdata->patrol_timer, fread_number(fp));
         KEY("PatrolAmount", ch->pcdata->patrol_amount, fread_number(fp));
         KEY("PatrolPledged", ch->pcdata->patrol_pledged, fread_number(fp));
@@ -4006,6 +4016,9 @@ KEYS( "ChatHistory", ch->pcdata->chat_history,      fread_string( fp )
         break;
 
       case 'S':
+        KEY("SyndicateRelease", ch->pcdata->syndicate_release_at, (time_t)strtoll(fread_word(fp), NULL, 10));
+        KEYS("SyndicateSeller", ch->pcdata->syndicate_seller, fread_string(fp));
+        KEYS("SyndicatePrisoner", ch->pcdata->syndicate_prisoner, fread_string(fp));
         KEY("Scro", ch->lines, fread_number(fp));
         KEY("SocietyCreated", ch->pcdata->society_created, fread_number(fp));
         KEYS("Skin", ch->pcdata->skin, fread_string(fp));

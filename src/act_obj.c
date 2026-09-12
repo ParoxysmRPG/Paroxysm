@@ -8063,7 +8063,7 @@ extern "C" {
         return;
       }
       if (ch->pcdata->ci_status != ROOM_PUBLIC && ch->pcdata->ci_status != 0 && in_haven(ch->in_room) && ch->pcdata->ci_area != DIST_MISTS) {
-        send_to_char("You can't do this from inside Haven.\n\r", ch);
+        send_to_char("You can't do this from inside Gravesend.\n\r", ch);
         return;
       }
       if (ch->pcdata->ci_status != ROOM_PUBLIC && (ch->in_room->area->vnum == HELL_FOREST_VNUM || ch->in_room->area->vnum == OTHER_FOREST_VNUM || ch->in_room->area->vnum == GODREALM_FOREST_VNUM || ch->in_room->area->vnum == WILDS_FOREST_VNUM)) {
@@ -8712,7 +8712,7 @@ extern "C" {
         LOCATION_TYPE *loc = get_loc(ch->pcdata->ci_short);
         op->territoryvnum = number_from_territory(loc);
         free_string(op->room_name);
-        op->room_name = str_dup("The Streets of Haven");
+        op->room_name = str_dup("The Streets of Gravesend");
         free_string(op->description);
         free_string(op->preferred);
         op->preferred = str_dup(ch->pcdata->ci_bystanders);

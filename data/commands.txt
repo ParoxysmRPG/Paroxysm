@@ -1669,6 +1669,16 @@ Flags     0
 End
 
 #COMMAND
+Name      commit~
+Code      do_commit
+Position  0
+Level     1
+Log       1
+Show      1
+Flags     0
+End
+
+#COMMAND
 Name      cauterize~
 Code      do_cauterize
 Position  0
@@ -4649,7 +4659,7 @@ Flags     0
 End
 
 #COMMAND
-Name      myhaven~
+Name      meetz~
 Code      do_myhaven
 Position  0
 Level     1

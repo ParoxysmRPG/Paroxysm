@@ -1,3 +1,5 @@
+#include "ai_protocol.h"
+#include "runtime_io.h"
 #if defined (_WIN31)
 #if defined (_DEBUG)
 #pragma warning (disable : 4786)
@@ -3005,7 +3007,7 @@ continue;
       if (monster != NULL) {
         makemonstermap();
         char sbuf[MSL];
-        sprintf(sbuf, "Your scouts report the monster's location as: %s\n\rhttp://havenrpg.net/report.bmp\n\r", monster->in_room->name);
+        sprintf(sbuf, "Your scouts report the monster's location as: %s\n\rhttp://paroxysm.net/report.bmp\n\r", monster->in_room->name);
         scout_report_temp(sbuf);
       }
     }
@@ -6549,7 +6551,7 @@ log_string(buf);
     ch->pcdata->spawned_monsters--;
 
     if (guestmonster(ch) && fetch_guestmonster_exclusive(ch) != NULL && fetch_guestmonster_exclusive(ch) != ch) {
-      send_to_char("There is already another monster in Haven.\n\r", ch);
+      send_to_char("There is already another monster in Gravesend.\n\r", ch);
       ch->played += 3300 * 2;
       real_quit(ch);
       return;
@@ -10252,27 +10254,33 @@ minute_update(clock_minute);
   }
 
   void update_ai_operation(std::vector<std::string> tarray) {
-    for(vector<OPERATION_TYPE *>::iterator it = OpVect.begin();it !=
-    OpVect.end();++it)
-    {
-      FACTION_TYPE *fac = clan_lookup((*it)->faction);
-      if(!str_cmp(fac->name, tarray[1].c_str()) && strlen((*it)->description) < 10 && fac->antagonist == 1)
-      {
-        (*it)->terrain =  terrain_pointer(tarray[2].c_str());
-        free_string((*it)->room_name);
-        (*it)->room_name = str_dup(tarray[3].c_str());
-        free_string((*it)->upload_name);
-        (*it)->upload_name = str_dup(tarray[4].c_str());
-        free_string((*it)->description);
-        (*it)->description = str_dup(tarray[5].c_str());
-      }
+    if (!haven::valid_ai_fields(tarray, 2)) { bug("Invalid AI result fields.", 0); return; }
+    OPERATION_TYPE *target = nullptr;
+    for (OPERATION_TYPE *op : OpVect) {
+      if (!op || !op->valid || !op->description || strlen(op->description) >= 10) continue;
+      FACTION_TYPE *fac = clan_lookup(op->faction);
+      if (!fac || !fac->name || fac->antagonist != 1 || str_cmp(fac->name, tarray[1].c_str())) continue;
+      if (tarray.size() == 9 && (op->territoryvnum != std::stoi(tarray[6]) ||
+          op->faction != std::stoi(tarray[7]) || op->battleground_number != std::stoi(tarray[8]))) continue;
+      // Old responses lack identity. Never apply them to multiple operations.
+      if (target) { bug("Ambiguous AI operation result.", 0); return; }
+      target = op;
     }
+    if (!target) return;
+    target->terrain = terrain_pointer(tarray[2].c_str());
+    free_string(target->room_name);
+    target->room_name = str_dup(tarray[3].c_str());
+    free_string(target->upload_name);
+    target->upload_name = str_dup(tarray[4].c_str());
+    free_string(target->description);
+    target->description = str_dup(tarray[5].c_str());
   }
   void update_ai_doom(std::vector<std::string> tarray)
   {
+    if (!haven::valid_ai_fields(tarray, 3)) { bug("Invalid AI result fields.", 0); return; }
     struct stat sb;
     char buf[MSL];
-    DESCRIPTOR_DATA d;
+    DESCRIPTOR_DATA d = {};
     bool online = FALSE;
     CHAR_DATA *victim;
 
@@ -10307,10 +10315,10 @@ minute_update(clock_minute);
     log_string(logs);
     free_string(victim->pcdata->doom_desc);
     victim->pcdata->doom_desc = str_dup(tarray[3].c_str());
-    victim->pcdata->doom_date = current_time + (days * 3600 * 24);
-    sprintf(buf, "%s\nYou receive a prophecy: %s", victim->pcdata->messages, tarray[3].c_str());
+    victim->pcdata->doom_date = current_time + (static_cast<time_t>(days) * 3600 * 24);
+    const std::string message = std::string(victim->pcdata->messages) + "\nYou receive a prophecy: " + tarray[3];
     free_string(victim->pcdata->messages);
-    victim->pcdata->messages = str_dup(buf);
+    victim->pcdata->messages = str_dup(message.c_str());
     save_char_obj(victim, FALSE, FALSE);
 
     if (!online)
@@ -10321,6 +10329,7 @@ minute_update(clock_minute);
 
   void update_ai_social(std::vector<std::string> tarray)
   {
+    if (!haven::valid_ai_fields(tarray, 4)) { bug("Invalid AI result fields.", 0); return; }
     log_string("AI SOCIAL UPDATE");
     for (vector<MATCH_TYPE *>::iterator it = MatchVect.begin();
     it != MatchVect.end(); ++it) {
@@ -10370,6 +10379,7 @@ minute_update(clock_minute);
 
   void update_ai_news(std::vector<std::string> tarray)
   {
+    if (!haven::valid_ai_fields(tarray, 5)) { bug("Invalid AI result fields.", 0); return; }
     char logs[MSL];
     sprintf(logs, "AINEWS: %s", tarray[1].c_str());
     log_string(logs);
@@ -10404,6 +10414,7 @@ minute_update(clock_minute);
       printf_to_char(victim, "`157Supernatural Rumors:`x\n\r%s\n\r", news->message);
     }
     FACTION_TYPE *fac = clan_lookup(FACTION_CORTEX);
+    if (!fac) return;
     if(!str_cmp(tarray[3].c_str(), fac->reportone_title) && fac->reportone_plog_sent == 0)
     {
       for(int i=0;i<50;i++)
@@ -10449,6 +10460,7 @@ minute_update(clock_minute);
   //    outstring = "6|||" + cname + "|||" + nname + "|||" + nsurname + "|||" + nintro + "|||" + ndesc
   void update_operative(std::vector<std::string> tarray)
   {
+    if (!haven::valid_ai_fields(tarray, 6)) { bug("Invalid AI result fields.", 0); return; }
     try {
       CHAR_DATA *orig = get_char_world_pc(const_cast<char*>(tarray[1].c_str()));
       if(orig == NULL)
@@ -10644,9 +10656,14 @@ minute_update(clock_minute);
   }
 
   void run_ai_job(const std::string& inputString) {
+    if (!haven::ai_enabled()) return;
     try {
       log_string(inputString.c_str());
-      std::vector<std::string> tarray = splitString(inputString, "|||");
+      std::vector<std::string> tarray;
+      if (!haven::parse_ai_record(inputString, tarray)) {
+        bug("Rejected malformed AI result.", 0);
+        return;
+      }
       int arg1 = std::stoi(tarray[0]);
       if (arg1 == 1) {
         int arg2 = std::stoi(tarray[1]);
@@ -10679,6 +10696,7 @@ minute_update(clock_minute);
 
   void ai_update()
   {
+    if (!haven::ai_enabled()) return;
     haven::ScopedTimer timer("ai_update");
     std::string line = readAndDeleteLineFromFile(AI_OUT_FILE);
     if (!line.empty()) {
@@ -10693,6 +10711,7 @@ minute_update(clock_minute);
 
   void ai_encounter_job()
   {
+    if (!haven::ai_enabled()) return;
     char buf[MSL];
     for(int i=1;i<53;i++)
     {
@@ -10708,13 +10727,14 @@ minute_update(clock_minute);
       if(found == FALSE)
       {
         sprintf(buf, "1,%d,,,,,", i);
-        writeLineToFile(AI_IN_FILE, str_dup(buf));
+        writeLineToFile(AI_IN_FILE, buf);
         return;
       }
     }
   }
   void ai_operation_job()
   {
+    if (!haven::ai_enabled()) return;
     for (OPERATION_TYPE *op : OpVect)
     {
       if (op == NULL || !op->valid || op->description == NULL || strlen(op->description) >= 10)
@@ -10729,74 +10749,41 @@ minute_update(clock_minute);
       if (territory == NULL || territory->name == NULL)
         continue;
 
-      const std::string line = std::string("2,0,") + fac->name + ",\"" + territory->name + "\",,,";
+      const std::string line = "2," + std::to_string(op->battleground_number) + "," + fac->name + ",\"" + territory->name + "\"," + std::to_string(op->territoryvnum) + "," + std::to_string(op->faction) + ",";
       writeLineToFile(AI_IN_FILE, line);
     }
   }
 
   void ai_log_job()
   {
+    if (!haven::ai_enabled()) return;
     FACTION_TYPE *fac = clan_lookup(FACTION_CORTEX);
-    char sout[MSL];
-    if(fac->reportone_log_sent == 0 && fac->reportone_time < current_time - (3600 * 24))
-    {
-      sprintf(sout, "%d,%d,~%s~,~", 1, 0, fac->reportone_title);
-      writeTextToFile(AI_SUM_IN_FILE, str_dup(sout));
-      writeTextToFile(AI_SUM_IN_FILE, fac->reportone_text);
-      for(int i=0;i<10;i++)
-      {
-        if(strlen(fac->report_overflow[0][i]) > 2)
-        writeTextToFile(AI_SUM_IN_FILE, fac->report_overflow[0][i]);
-      }
-      writeLineToFile(AI_SUM_IN_FILE, "~");
-      fac->reportone_log_sent = 1;
+    if (!fac) return;
+    const char *titles[] = {fac->reportone_title, fac->reporttwo_title, fac->reportthree_title};
+    const char *texts[] = {fac->reportone_text, fac->reporttwo_text, fac->reportthree_text};
+    const time_t times[] = {fac->reportone_time, fac->reporttwo_time, fac->reportthree_time};
+    int *sent[] = {&fac->reportone_log_sent, &fac->reporttwo_log_sent, &fac->reportthree_log_sent};
+    for (int slot = 0; slot < 3; ++slot) {
+      if (*sent[slot] || times[slot] >= current_time - 3600 * 24) continue;
+      std::string body = texts[slot] ? texts[slot] : "";
+      for (int i = 0; i < 10; ++i)
+        if (safe_strlen(fac->report_overflow[slot][i]) > 2) body += fac->report_overflow[slot][i];
+      if (haven::append_ai_summary(AI_SUM_IN_FILE, 1, 0, titles[slot], body)) *sent[slot] = 1;
     }
-    if(fac->reporttwo_log_sent == 0 && fac->reporttwo_time < current_time - (3600 * 24))
-    {
-      sprintf(sout, "%d,%d,~%s~,~", 1, 0, fac->reporttwo_title);
-      writeTextToFile(AI_SUM_IN_FILE, str_dup(sout));
-      writeTextToFile(AI_SUM_IN_FILE, fac->reporttwo_text);
-      for(int i=0;i<10;i++)
-      {
-        if(strlen(fac->report_overflow[1][i]) > 2)
-        writeTextToFile(AI_SUM_IN_FILE, fac->report_overflow[1][i]);
-      }
-      writeLineToFile(AI_SUM_IN_FILE, "~");
-      fac->reporttwo_log_sent = 1;
-    }
-    if(fac->reportthree_log_sent == 0 && fac->reportthree_time < current_time - (3600 * 24))
-    {
-      sprintf(sout, "%d,%d,~%s~,~", 1, 0, fac->reportthree_title);
-      writeTextToFile(AI_SUM_IN_FILE, str_dup(sout));
-      writeTextToFile(AI_SUM_IN_FILE, fac->reportthree_text);
-      for(int i=0;i<10;i++)
-      {
-        if(strlen(fac->report_overflow[2][i]) > 2)
-        writeTextToFile(AI_SUM_IN_FILE, fac->report_overflow[2][i]);
-      }
-      writeLineToFile(AI_SUM_IN_FILE, "~");
-      fac->reportthree_log_sent = 1;
-    }
-    for(int p =0;p<20;p++)
-    {
-      if(fac->event_log_sent[p] == 0 && fac->event_time[p] < current_time - (3600 * 24) && strlen(fac->event_title[p]) > 2)
-      {
-        sprintf(sout, "%d,%d,~%s~,~", 2, fac->event_type[p], from_color(fac->event_title[p]));
-        writeTextToFile(AI_SUM_IN_FILE, str_dup(sout));
-        for(int i=0;i<20;i++)
-        {
-          if(strlen(fac->event_text[p][i]) > 2)
-          writeTextToFile(AI_SUM_IN_FILE, fac->event_text[p][i]);
-        }
-        writeLineToFile(AI_SUM_IN_FILE, "~");
+    for (int p = 0; p < 20; ++p) {
+      if (fac->event_log_sent[p] || fac->event_time[p] >= current_time - 3600 * 24 ||
+          safe_strlen(fac->event_title[p]) <= 2) continue;
+      std::string body;
+      for (int i = 0; i < 20; ++i)
+        if (safe_strlen(fac->event_text[p][i]) > 2) body += fac->event_text[p][i];
+      if (haven::append_ai_summary(AI_SUM_IN_FILE, 2, fac->event_type[p], from_color(fac->event_title[p]), body))
         fac->event_log_sent[p] = 1;
-      }
     }
-
   }
 
   void ai_minute()
   {
+    if (!haven::ai_enabled()) return;
     ai_encounter_job();
     ai_operation_job();
     ai_log_job();

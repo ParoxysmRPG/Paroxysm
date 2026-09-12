@@ -85,6 +85,6 @@ static const TerritoryRewardDefault territory_reward_defaults[] = {
   {"Celestriana", 0, 0},
   {"Hong Kong, China", 54, 0},
   {"District 82", 0, 0},
-  {"Haven", 55, 0},
+  {"Gravesend", 55, 0},
 };
 #endif

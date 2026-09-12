@@ -39,6 +39,83 @@ extern "C" {
   void influencer_process args( (void) );
 
 
+  bool start_syndicate_auction(CHAR_DATA *victim, CHAR_DATA *seller) {
+    if (!victim || IS_NPC(victim) || !victim->pcdata || !victim->in_room
+        || victim->pcdata->patrol_status == PATROL_KIDNAPPED) return FALSE;
+
+    ROOM_INDEX_DATA *room = NULL, *prison = NULL;
+    const int meetings[] = {ROOM_MEETING_WEST, ROOM_MEETING_EAST};
+    const int prisons[] = {ROOM_PRISON_WEST, ROOM_PRISON_EAST};
+    for (int i = 0; i < 2; ++i) {
+      ROOM_INDEX_DATA *meeting = get_room_index(meetings[i]);
+      ROOM_INDEX_DATA *holding = get_room_index(prisons[i]);
+      if (!meeting || !holding || pc_pop(meeting) > 0 || pc_pop(holding) > 0) continue;
+      bool reserved = FALSE;
+      for (CHAR_DATA *ch : char_list) {
+        if (!ch || IS_NPC(ch) || !ch->pcdata) continue;
+        if ((ch->pcdata->patrol_status == PATROL_BIDDING && ch->pcdata->patrol_room == meeting)
+            || (ch->pcdata->patrol_status == PATROL_COLLECTING && ch->pcdata->patrol_room == holding)) {
+          reserved = TRUE;
+          break;
+        }
+      }
+      if (!reserved) { room = meeting; prison = holding; break; }
+    }
+    if (!room) return FALSE;
+
+    act("Syndicate guards take $n away to await auction.", victim, NULL, NULL, TO_ROOM);
+    char_from_room(victim);
+    char_to_room(victim, prison);
+    victim->walking = 0;
+    REMOVE_FLAG(victim->act, PLR_BOUND);
+    REMOVE_FLAG(victim->act, PLR_BOUNDFEET);
+    REMOVE_FLAG(victim->act, PLR_SHROUD);
+    REMOVE_FLAG(victim->act, PLR_DEEPSHROUD);
+    victim->pcdata->patrol_status = PATROL_KIDNAPPED;
+    victim->pcdata->patrol_timer = 24 * 60;
+    victim->pcdata->syndicate_release_at = current_time + 24 * 60 * 60;
+    free_string(victim->pcdata->syndicate_seller);
+    victim->pcdata->syndicate_seller = str_dup(seller ? seller->name : "");
+    victim->pcdata->patrol_room = prison;
+    victim->pcdata->patrol_target = NULL;
+    victim->pcdata->patrol_amount = 0;
+    if (victim->pcdata->account)
+      victim->pcdata->account->prey_cool_s = current_time + 3600 * 24 * 16;
+    send_to_char("The syndicate locks you in a holding cell and removes your bindings. They will hold you for up to 24 hours unless you are sold or rescued first. A fixed telephone on the wall lets you call for help with call <number>.\n\r", victim);
+    save_char_obj(victim, FALSE, FALSE);
+
+    char report[MSL];
+    snprintf(report, sizeof(report), "Your scouts report that the syndicate is auctioning a prisoner in the %s. Bidding lasts 15 minutes; use patrol bid <amount> at the auction to participate.", room->name);
+    for (FACTION_TYPE *society : FacVect) {
+      if (society && society->valid && society->type == FACTION_SOCIETY)
+        send_message(society->vnum, report);
+    }
+
+    for (DESCRIPTOR_DATA *d : descriptor_list) {
+      CHAR_DATA *to = d->character;
+      if (d->connected != CON_PLAYING || !to || to == victim || to == seller || IS_NPC(to)
+          || !to->pcdata || !to->in_room || !in_haven(to->in_room)
+          || (to->pcdata->patrol_status != 0 && to->pcdata->patrol_status != PATROL_PATROL)
+          || !free_to_act(to) || get_gm(to->in_room, FALSE) || same_faction(to, victim)
+          || IS_FLAG(to->act, PLR_SHROUD) || IS_FLAG(to->act, PLR_DEEPSHROUD)) continue;
+      if (to->pcdata->patrol_habits[PATROL_DIPLOMATICHABIT] <= 0
+          && (to->faction == 0 || prof_focus(to) <= 0)) continue;
+      to->pcdata->patrol_room = room;
+      to->pcdata->patrol_status = PATROL_BIDDING;
+      to->pcdata->patrol_timer = 15;
+      to->pcdata->patrol_rp = 0;
+      to->pcdata->patrol_amount = 0;
+      to->pcdata->patrol_pledged = 0;
+      to->pcdata->patrol_target = victim;
+      free_string(to->pcdata->syndicate_prisoner);
+      to->pcdata->syndicate_prisoner = str_dup(victim->name);
+      to->pcdata->syndicate_release_at = victim->pcdata->syndicate_release_at;
+      printf_to_char(to, "You receive an alert on your phone that the syndicate is holding an auction for a prisoner in the %s. Use patrol bid (amount) to bid, or patrol bribe to find out more.\n\r", room->name);
+      save_char_obj(to, FALSE, FALSE);
+    }
+    return TRUE;
+  }
+
   bool free_to_act(CHAR_DATA *ch) {
     if (in_fight(ch) || is_helpless(ch) || is_pinned(ch) || is_ghost(ch) || locked_room(ch->in_room, ch) || !in_haven(ch->in_room) || room_hostile(ch->in_room))
     return FALSE;
@@ -533,6 +610,11 @@ extern "C" {
   }
 
   bool valid_syndicate_prey(CHAR_DATA *ch) {
+    if (!ch || IS_NPC(ch) || !ch->pcdata || !ch->in_room)
+    return FALSE;
+    if (ch->fcore > 0 || ch->fsociety > 0 || ch->legacy_society > 0
+        || ch->faction > 0 || ch->factiontwo > 0 || ch->factiontrue > 0)
+    return FALSE;
     if (IS_FLAG(ch->act, PLR_STASIS) || higher_power(ch))
     return FALSE;
 
@@ -1604,67 +1686,8 @@ extern "C" {
           vic = to;
         }
       }
-      if (maxscore > 0 && vic != NULL) {
-        ROOM_INDEX_DATA *room;
-        ROOM_INDEX_DATA *prison;
-        if (pc_pop(get_room_index(ROOM_MEETING_WEST)) <= 0) {
-          room = get_room_index(ROOM_MEETING_WEST);
-          prison = get_room_index(ROOM_PRISON_WEST);
-        }
-        else {
-          room = get_room_index(ROOM_MEETING_EAST);
-          prison = get_room_index(ROOM_PRISON_EAST);
-        }
-        ch->pcdata->patrol_room = room;
-        ch->pcdata->patrol_status = PATROL_BIDDING;
-        ch->pcdata->patrol_timer = 15;
-        ch->pcdata->patrol_rp = 0;
-        ch->pcdata->patrol_target = vic;
-        printf_to_char(
-        ch, "You receive an alert on your phone that the syndicate have kidnapped someone and is holding an auction for them in the %s.\n\r", room->name);
-        char_from_room(vic);
-        char_to_room(vic, prison);
-        vic->walking = 0;
-        if (vic->pcdata->account != NULL)
-        vic->pcdata->account->prey_cool_s = current_time + 3600 * 24 * 16;
-        if (!IS_FLAG(vic->act, PLR_BOUND))
-        SET_FLAG(vic->act, PLR_BOUND);
-        if (IS_FLAG(vic->act, PLR_SHROUD))
-        REMOVE_FLAG(vic->act, PLR_SHROUD);
-        if (IS_FLAG(vic->act, PLR_DEEPSHROUD))
-        REMOVE_FLAG(vic->act, PLR_DEEPSHROUD);
-
-        vic->pcdata->patrol_status = PATROL_KIDNAPPED;
-        vic->pcdata->patrol_timer = 32;
-        send_to_char("You feel a sharp sting in your neck, a moment later the world fades to darkness and you feel yourself being caught by a pair of arms as you slump over.\n\r", vic);
-
-        for (DescList::iterator it = descriptor_list.begin();
-        it != descriptor_list.end(); ++it) {
-          DESCRIPTOR_DATA *d = *it;
-          CHAR_DATA *to;
-          if (d->character == NULL || d->connected != CON_PLAYING)
-          continue;
-          to = d->character;
-          if (IS_NPC(to) || to->in_room == NULL || !in_haven(to->in_room))
-          continue;
-          if (to->pcdata->patrol_status != 0 && to->pcdata->patrol_status != PATROL_PATROL)
-          continue;
-          if (!free_to_act(to))
-          continue;
-          if (get_gm(to->in_room, FALSE) != NULL)
-          continue;
-          if (same_faction(to, vic))
-          continue;
-          if (to->pcdata->patrol_habits[PATROL_DIPLOMATICHABIT] > 0 || (to->faction != 0 && prof_focus(to) > 0)) {
-            to->pcdata->patrol_room = room;
-            to->pcdata->patrol_status = PATROL_BIDDING;
-            to->pcdata->patrol_timer = 15;
-            to->pcdata->patrol_rp = 0;
-            to->pcdata->patrol_target = vic;
-            printf_to_char(to, "You receive an alert on your phone that the syndicate have kidnapped someone and is holding an auction for them in the %s.\n\r", room->name);
-          }
-        }
-      }
+      if (maxscore > 0 && vic != NULL)
+        start_syndicate_auction(vic);
     }
     if (type == PATROL_ARCANEWAR) {
       if (ch == NULL || ch->faction == 0 || clan_lookup(ch->faction) == NULL || clan_lookup(ch->faction)->alliance == 0)
@@ -2318,6 +2341,12 @@ extern "C" {
 
   void patrol_update(CHAR_DATA *ch) {
 
+    syndicate_captivity_update(ch);
+    if (ch->pcdata->patrol_status == PATROL_KIDNAPPED) return;
+    if ((ch->pcdata->patrol_status == PATROL_BIDDING || ch->pcdata->patrol_status == PATROL_COLLECTING)
+        && ch->pcdata->syndicate_prisoner && ch->pcdata->syndicate_prisoner[0])
+      ch->pcdata->patrol_target = get_char_world_pc(ch->pcdata->syndicate_prisoner);
+
     if(ch->pcdata->patrol_timer <= 0 && ch->pcdata->patrol_status > 1 && !in_fight(ch) && ch->pcdata->patrol_status != PATROL_DEFENDASSISTING && ch->pcdata->patrol_status != PATROL_ATTACKASSISTING)
     ch->pcdata->patrol_status = 0;
     if (ch->pcdata->patrol_status == PATROL_HUNTING && in_fight(ch))
@@ -2509,22 +2538,35 @@ extern "C" {
       if (ch->pcdata->patrol_timer <= 0) {
         int maxbid = 0;
         CHAR_DATA *maxbidder = NULL;
-        for (CharList::iterator it = ch->in_room->people->begin();
-        it != ch->in_room->people->end();) {
-          CHAR_DATA *fch = *it;
-          ++it;
-          if (fch == NULL || IS_NPC(fch))
-          continue;
-          if (fch->pcdata->patrol_amount > maxbid) {
+        ROOM_INDEX_DATA *auction_room = ch->pcdata->patrol_room;
+        for (CHAR_DATA *fch : char_list) {
+          if (!fch || IS_NPC(fch) || !fch->pcdata || !auction_room
+              || fch->in_room != auction_room || fch->pcdata->patrol_status != PATROL_BIDDING
+              || fch->pcdata->patrol_room != auction_room
+              || fch->pcdata->syndicate_release_at != ch->pcdata->syndicate_release_at
+              || str_cmp(fch->pcdata->syndicate_prisoner, ch->pcdata->syndicate_prisoner))
+            continue;
+          if (fch->pcdata->patrol_amount > maxbid
+              && fch->pcdata->patrol_amount <= fch->pcdata->total_money / 100) {
             maxbid = fch->pcdata->patrol_amount;
             maxbidder = fch;
-            fch->pcdata->patrol_status = 0;
-            fch->pcdata->patrol_timer = 0;
-            fch->pcdata->week_tracker[TRACK_PATROL_DIPLOMATIC]++;
-            fch->pcdata->life_tracker[TRACK_PATROL_DIPLOMATIC]++;
           }
         }
+        // Resolve once for every invited bidder, including those who never arrived.
+        for (CHAR_DATA *fch : char_list) {
+          if (!fch || IS_NPC(fch) || !fch->pcdata
+              || fch->pcdata->patrol_status != PATROL_BIDDING
+              || fch->pcdata->patrol_room != auction_room
+              || fch->pcdata->syndicate_release_at != ch->pcdata->syndicate_release_at
+              || str_cmp(fch->pcdata->syndicate_prisoner, ch->pcdata->syndicate_prisoner)) continue;
+          fch->pcdata->patrol_status = 0;
+          fch->pcdata->patrol_timer = 0;
+          if (fch != maxbidder) fch->pcdata->patrol_amount = 0;
+          save_char_obj(fch, FALSE, FALSE);
+        }
         if (maxbid > 0) {
+          maxbidder->pcdata->week_tracker[TRACK_PATROL_DIPLOMATIC]++;
+          maxbidder->pcdata->life_tracker[TRACK_PATROL_DIPLOMATIC]++;
           act("The auctioneer announces that $n has won the bid and goes over to $m to discuss delivery.", maxbidder, NULL, NULL, TO_ROOM);
           maxbidder->pcdata->patrol_status = PATROL_COLLECTING;
           maxbidder->pcdata->patrol_timer = 30;
@@ -2533,17 +2575,10 @@ extern "C" {
           maxbidder->pcdata->patrol_room = get_room_index(ROOM_PRISON_WEST);
           else
           maxbidder->pcdata->patrol_room = get_room_index(ROOM_PRISON_EAST);
-          send_to_char("You have won the auction. You can use patrol collect any time in the next 25 minutes to have the victim delivered to you.\n\r", maxbidder);
+          send_to_char("You have won the auction. You can use patrol collect any time in the next 30 minutes to have the victim delivered to you.\n\r", maxbidder);
 
 
-          for (CharList::iterator it = maxbidder->pcdata->patrol_room->people->begin();
-          it != maxbidder->pcdata->patrol_room->people->end();) {
-            CHAR_DATA *fch = *it;
-            ++it;
-            if (fch == NULL || IS_NPC(fch))
-            continue;
-            fch->pcdata->patrol_timer = 30;
-          }
+          save_char_obj(maxbidder, FALSE, FALSE);
         }
       }
     }
@@ -2551,20 +2586,6 @@ extern "C" {
       ch->pcdata->patrol_timer--;
       if (ch->pcdata->patrol_timer <= 0)
       ch->pcdata->patrol_status = 0;
-    }
-    if (ch->pcdata->patrol_status == PATROL_KIDNAPPED) {
-      ch->pcdata->patrol_timer--;
-    }
-    if (ch->in_room != NULL && ch->pcdata->patrol_timer <= 0 && !IS_AFFECTED(ch, AFF_BADKIDNAPPEE) && (ch->in_room->vnum == ROOM_PRISON_WEST || ch->in_room->vnum == ROOM_PRISON_EAST)) {
-      char_from_room(ch);
-      char_to_room(ch, random_inner_forest());
-      ch->walking = 0;
-      if (IS_FLAG(ch->act, PLR_BOUND))
-      REMOVE_FLAG(ch->act, PLR_BOUND);
-      if (IS_FLAG(ch->act, PLR_BOUNDFEET))
-      REMOVE_FLAG(ch->act, PLR_BOUNDFEET);
-
-      send_to_char("You are dumped off in the forest somwhere.\n\r", ch);
     }
     if (ch->pcdata->patrol_status == PATROL_LEADING_ASSAULT) {
       ch->pcdata->patrol_timer--;
@@ -3174,13 +3195,14 @@ return;
       }
     }
     if (!str_cmp(arg1, "bid")) {
+      if (!syndicate_join_auction(ch)) return;
       if (ch->pcdata->patrol_status == PATROL_BIDDING) {
         int amount = atoi(argument);
         if (amount <= ch->pcdata->patrol_amount) {
           send_to_char("Your bid has to be higher than your last bid.\n\r", ch);
           return;
         }
-        if (amount + ch->pcdata->patrol_amount > ch->pcdata->total_money / 100) {
+        if (amount > ch->pcdata->total_money / 100) {
           send_to_char("You don't have that much cash in your account.\n\r", ch);
           return;
         }
@@ -3189,6 +3211,7 @@ return;
         act(buf, ch, NULL, NULL, TO_ROOM);
         printf_to_char(ch, "You bid $%d.\n\r", amount);
         ch->pcdata->patrol_amount = amount;
+        save_char_obj(ch, FALSE, FALSE);
         return;
       }
     }
@@ -3218,48 +3241,8 @@ return;
       }
     }
     if (!str_cmp(arg1, "collect")) {
-      if (ch->pcdata->patrol_status == PATROL_COLLECTING && ch->pcdata->patrol_timer > 0) {
-        CHAR_DATA *victim = NULL;
-        for (CharList::iterator it = ch->pcdata->patrol_room->people->begin();
-        it != ch->pcdata->patrol_room->people->end();) {
-          CHAR_DATA *fch = *it;
-          ++it;
-          if (fch == NULL || IS_NPC(fch))
-          continue;
-          victim = fch;
-        }
-        if (victim != NULL && in_haven(ch->in_room)) {
-          char_from_room(victim);
-          char_to_room(victim, ch->in_room);
-          victim->walking = 0;
-          ch->pcdata->total_money -= ch->pcdata->patrol_amount * 100;
-          act("Some men deliver $N to you.", ch, NULL, victim, TO_CHAR);
-          act("Some men deliver $N to $n.", ch, NULL, victim, TO_NOTVICT);
-          act("Some men deliver you to $n.", ch, NULL, victim, TO_VICT);
-        }
-        victim = NULL;
-        for (CharList::iterator it = ch->pcdata->patrol_room->people->begin();
-        it != ch->pcdata->patrol_room->people->end();) {
-          CHAR_DATA *fch = *it;
-          ++it;
-          if (fch == NULL || IS_NPC(fch))
-          continue;
-          victim = fch;
-        }
-        if (victim != NULL) {
-          char_from_room(victim);
-          char_to_room(victim, ch->in_room);
-          victim->walking = 0;
-          act("Some men deliver $N to you as a bonus.", ch, NULL, victim, TO_CHAR);
-          act("Some men deliver $N to $n.", ch, NULL, victim, TO_NOTVICT);
-          act("Some men deliver you to $n.", ch, NULL, victim, TO_VICT);
-        }
-        ch->pcdata->patrol_status = 0;
-        ch->pcdata->patrol_amount = 0;
-        ch->pcdata->patrol_timer = 0;
-      }
-      else
-      send_to_char("You haven't won any auctions recently.\n\r", ch);
+      syndicate_collect(ch);
+      return;
     }
 
     if (!str_cmp(arg1, "influence")) {
@@ -4482,11 +4465,11 @@ return;
           strcat(facbuf, inputbuf);
         }
         if (victim->pcdata->week_tracker[TRACK_PATROL_WARFARE] > 0) {
-          sprintf(inputbuf, ",aided in %d society conflicts in Haven", victim->pcdata->week_tracker[TRACK_PATROL_WARFARE]);
+          sprintf(inputbuf, ",aided in %d society conflicts in Gravesend", victim->pcdata->week_tracker[TRACK_PATROL_WARFARE]);
           strcat(facbuf, inputbuf);
         }
         if (victim->pcdata->week_tracker[TRACK_PATROL_ARCANE] > 0) {
-          sprintf(inputbuf, ", aided in %d arcane tasks in Haven", victim->pcdata->week_tracker[TRACK_PATROL_ARCANE]);
+          sprintf(inputbuf, ", aided in %d arcane tasks in Gravesend", victim->pcdata->week_tracker[TRACK_PATROL_ARCANE]);
           strcat(facbuf, inputbuf);
         }
         if (victim->pcdata->week_tracker[TRACK_PATROL_DIPLOMATIC] > 0) {
@@ -4516,8 +4499,8 @@ return;
         strcat(facbuf, ".");
         //	    sprintf(facbuf, "%s %s contributed $%d resources, planned %d
         //operations, attended %d operations, contributed $%d in alchemical
-        //resources, aided in %d faction conflicts in Haven, aided in %d arcane
-        //tasks in Haven, aided in %d diplomatic tasks for the faction, helped
+        //resources, aided in %d faction conflicts in Gravesend, aided in %d arcane
+        //tasks in Gravesend, aided in %d diplomatic tasks for the faction, helped
         //take down %d powerful forest creatures, helped take down %d otherworldly
         //monsters, launched %d schemes, thwarted %d and attended %d out of town
         //missions.\n\r", victim->name, victim->pcdata->last_name, //victim->pcdata->week_tracker[TRACK_CONTRIBUTED], //victim->pcdata->week_tracker[TRACK_OPERATIONS_CREATED], //victim->pcdata->week_tracker[TRACK_OPERATIONS_ATTENDED], //victim->pcdata->week_tracker[TRACK_ALCH_CONTRIBUTED], //victim->pcdata->week_tracker[TRACK_PATROL_WARFARE], //victim->pcdata->week_tracker[TRACK_PATROL_ARCANE], //victim->pcdata->week_tracker[TRACK_PATROL_DIPLOMATIC], //victim->pcdata->week_tracker[TRACK_PATROL_HUNTING], //victim->pcdata->week_tracker[TRACK_BIGMONSTER], //victim->pcdata->week_tracker[TRACK_SCHEMES_LAUNCHED], //victim->pcdata->week_tracker[TRACK_SCHEMES_THWARTED], //victim->pcdata->week_tracker[TRACK_ADVENTURES]);
@@ -4582,11 +4565,11 @@ return;
           strcat(facbuf2, inputbuf);
         }
         if (victim->pcdata->week_tracker[TRACK_PATROL_WARFARE] > 0) {
-          sprintf(inputbuf, ",aided in %d society conflicts in Haven", victim->pcdata->week_tracker[TRACK_PATROL_WARFARE]);
+          sprintf(inputbuf, ",aided in %d society conflicts in Gravesend", victim->pcdata->week_tracker[TRACK_PATROL_WARFARE]);
           strcat(facbuf2, inputbuf);
         }
         if (victim->pcdata->week_tracker[TRACK_PATROL_ARCANE] > 0) {
-          sprintf(inputbuf, ", aided in %d arcane tasks in Haven", victim->pcdata->week_tracker[TRACK_PATROL_ARCANE]);
+          sprintf(inputbuf, ", aided in %d arcane tasks in Gravesend", victim->pcdata->week_tracker[TRACK_PATROL_ARCANE]);
           strcat(facbuf2, inputbuf);
         }
         if (victim->pcdata->week_tracker[TRACK_PATROL_DIPLOMATIC] > 0) {
@@ -4616,8 +4599,8 @@ return;
         strcat(facbuf2, ".");
         //	    sprintf(facbuf2, "%s %s contributed $%d resources, planned
         //%d operations, attended %d operations, contributed $%d in alchemical
-        //resources, aided in %d faction conflicts in Haven, aided in %d arcane
-        //tasks in Haven, aided in %d diplomatic tasks for the faction, helped
+        //resources, aided in %d faction conflicts in Gravesend, aided in %d arcane
+        //tasks in Gravesend, aided in %d diplomatic tasks for the faction, helped
         //take down %d powerful forest creatures, helped take down %d otherworldly
         //monsters, launched %d schemes, thwarted %d and attended %d out of town
         //missions.\n\r", victim->name, victim->pcdata->last_name, //victim->pcdata->week_tracker[TRACK_CONTRIBUTED], //victim->pcdata->week_tracker[TRACK_OPERATIONS_CREATED], //victim->pcdata->week_tracker[TRACK_OPERATIONS_ATTENDED], //victim->pcdata->week_tracker[TRACK_ALCH_CONTRIBUTED], //victim->pcdata->week_tracker[TRACK_PATROL_WARFARE], //victim->pcdata->week_tracker[TRACK_PATROL_ARCANE], //victim->pcdata->week_tracker[TRACK_PATROL_DIPLOMATIC], //victim->pcdata->week_tracker[TRACK_PATROL_HUNTING], //victim->pcdata->week_tracker[TRACK_BIGMONSTER], //victim->pcdata->week_tracker[TRACK_SCHEMES_LAUNCHED], //victim->pcdata->week_tracker[TRACK_SCHEMES_THWARTED], //victim->pcdata->week_tracker[TRACK_ADVENTURES]);
@@ -4685,11 +4668,11 @@ return;
           strcat(facbuf3, inputbuf);
         }
         if (victim->pcdata->week_tracker[TRACK_PATROL_WARFARE] > 0) {
-          sprintf(inputbuf, ",aided in %d society conflicts in Haven", victim->pcdata->week_tracker[TRACK_PATROL_WARFARE]);
+          sprintf(inputbuf, ",aided in %d society conflicts in Gravesend", victim->pcdata->week_tracker[TRACK_PATROL_WARFARE]);
           strcat(facbuf3, inputbuf);
         }
         if (victim->pcdata->week_tracker[TRACK_PATROL_ARCANE] > 0) {
-          sprintf(inputbuf, ", aided in %d arcane tasks in Haven", victim->pcdata->week_tracker[TRACK_PATROL_ARCANE]);
+          sprintf(inputbuf, ", aided in %d arcane tasks in Gravesend", victim->pcdata->week_tracker[TRACK_PATROL_ARCANE]);
           strcat(facbuf3, inputbuf);
         }
         if (victim->pcdata->week_tracker[TRACK_PATROL_DIPLOMATIC] > 0) {
@@ -4719,8 +4702,8 @@ return;
         strcat(facbuf3, ".");
         //	    sprintf(facbuf2, "%s %s contributed $%d resources, planned
         //%d operations, attended %d operations, contributed $%d in alchemical
-        //resources, aided in %d faction conflicts in Haven, aided in %d arcane
-        //tasks in Haven, aided in %d diplomatic tasks for the faction, helped
+        //resources, aided in %d faction conflicts in Gravesend, aided in %d arcane
+        //tasks in Gravesend, aided in %d diplomatic tasks for the faction, helped
         //take down %d powerful forest creatures, helped take down %d otherworldly
         //monsters, launched %d schemes, thwarted %d and attended %d out of town
         //missions.\n\r", victim->name, victim->pcdata->last_name, //victim->pcdata->week_tracker[TRACK_CONTRIBUTED], //victim->pcdata->week_tracker[TRACK_OPERATIONS_CREATED], //victim->pcdata->week_tracker[TRACK_OPERATIONS_ATTENDED], //victim->pcdata->week_tracker[TRACK_ALCH_CONTRIBUTED], //victim->pcdata->week_tracker[TRACK_PATROL_WARFARE], //victim->pcdata->week_tracker[TRACK_PATROL_ARCANE], //victim->pcdata->week_tracker[TRACK_PATROL_DIPLOMATIC], //victim->pcdata->week_tracker[TRACK_PATROL_HUNTING], //victim->pcdata->week_tracker[TRACK_BIGMONSTER], //victim->pcdata->week_tracker[TRACK_SCHEMES_LAUNCHED], //victim->pcdata->week_tracker[TRACK_SCHEMES_THWARTED], //victim->pcdata->week_tracker[TRACK_ADVENTURES]);
@@ -5030,7 +5013,7 @@ loss = loss*hours/12;
     if(strlen(iname_three) > 2)
     offline_setflag(iname_three, PLR_INFLUENCER);
 
-    buf = haven::format_text("The current MyHaven influencers are %s, %s, and %s.\n\r", iname_one, iname_two, iname_three);
+    buf = haven::format_text("The current Meetz influencers are %s, %s, and %s.\n\r", iname_one, iname_two, iname_three);
     string += buf.data();
 
     if (most_char_influence > 1500 && safe_strlen(mcinfmessage) > 2) {
@@ -5077,21 +5060,21 @@ format_string(buftemp); sprintf(buf, "%s", buftemp); strcat(string, buf);
       string += buf.data();
     }
     if (hottest_man_number > 65) {
-      buf = haven::format_text("Gossip places %s as the most eligible bachelor in Haven.\n\r", hotmanname);
+      buf = haven::format_text("Gossip places %s as the most eligible bachelor in Gravesend.\n\r", hotmanname);
       char *buftemp = str_dup(buf.data());
       buftemp = format_string(buftemp);
       buf = haven::format_text("%s", buftemp);
       string += buf.data();
     }
     if (hottest_woman_number > 65) {
-      buf = haven::format_text("Gossip places %s as the most eligible bachelorette in Haven.\n\r", hotwomanname);
+      buf = haven::format_text("Gossip places %s as the most eligible bachelorette in Gravesend.\n\r", hotwomanname);
       char *buftemp = str_dup(buf.data());
       buftemp = format_string(buftemp);
       buf = haven::format_text("%s", buftemp);
       string += buf.data();
     }
     if (number_percent() % 3 == 0 && most_money > 4000) {
-      buf = haven::format_text("People are saying that %s might just be the richest person in Haven.\n\r", moneyname);
+      buf = haven::format_text("People are saying that %s might just be the richest person in Gravesend.\n\r", moneyname);
       char *buftemp = str_dup(buf.data());
       buftemp = format_string(buftemp);
       buf = haven::format_text("%s", buftemp);
@@ -5277,7 +5260,7 @@ format_string(buftemp); sprintf(buf, "%s", buftemp); strcat(string, buf);
 
     newstring += buf.data();
     buf.clear();
-    buf = haven::format_text("Among the societies, %s has done the best at planning operations this week, %s at attending them. %s has gathered the most resources, %s the most alchemical resources. %s has engaged in the most big game hunts, %s in the most other world monster hunts. %s in the most society conflict in Haven, %s in the most arcane tasks, %s in the most diplomatic tasks, %s has had the best attendence in out of town missions, %s the best at stopping schemes inside town and %s has built the most roads.\n\r", (max_nongeneric[TRACK_OPERATIONS_CREATED] <= 0)
+    buf = haven::format_text("Among the societies, %s has done the best at planning operations this week, %s at attending them. %s has gathered the most resources, %s the most alchemical resources. %s has engaged in the most big game hunts, %s in the most other world monster hunts. %s in the most society conflict in Gravesend, %s in the most arcane tasks, %s in the most diplomatic tasks, %s has had the best attendence in out of town missions, %s the best at stopping schemes inside town and %s has built the most roads.\n\r", (max_nongeneric[TRACK_OPERATIONS_CREATED] <= 0)
     ? "no one" : clan_lookup(max_nongeneric_point[TRACK_OPERATIONS_CREATED])->name, (max_nongeneric[TRACK_OPERATIONS_ATTENDED] <= 0)
     ? "no one" : clan_lookup(max_nongeneric_point[TRACK_OPERATIONS_ATTENDED])->name, (max_nongeneric[TRACK_CONTRIBUTED] <= 0)
     ? "no one" : clan_lookup(max_nongeneric_point[TRACK_CONTRIBUTED])->name, (max_nongeneric[TRACK_ALCH_CONTRIBUTED] <= 0)
@@ -5318,11 +5301,11 @@ format_string(buftemp); sprintf(buf, "%s", buftemp); strcat(string, buf);
     news->stats[0] = -2;
     NewsVect.push_back(news);
 
-    if(strcasestr(string.data(), "\"") == NULL && strcasestr(newstring.data(), "\"") == NULL)
+    if(haven::ai_enabled() && strcasestr(string.data(), "\"") == NULL && strcasestr(newstring.data(), "\"") == NULL)
     {
       std::string scriptbuf;
       scriptbuf = haven::format_text("5,0,\"%s\",\"%s\",,,", string.data(), newstring.data());
-      writeLineToFile(AI_IN_FILE, str_dup(scriptbuf.data()));
+      writeLineToFile(AI_IN_FILE, scriptbuf);
     }
 
     save_news();
@@ -5484,7 +5467,7 @@ format_string(buftemp); sprintf(buf, "%s", buftemp); strcat(string, buf);
         sprintf(buf, "%s's odd encounter(%s)", ch->name, gm->name);
         return str_dup(buf);
       }
-      return "An odd encounter in Haven";
+      return "An odd encounter in Gravesend";
     }
     if (type == LOGEVENT_THWART) {
       if (gm != NULL && gm->pcdata->scheme_running != NULL) {

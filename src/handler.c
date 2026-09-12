@@ -4536,6 +4536,7 @@ bool no_doors(ROOM_INDEX_DATA *room) {
 }
 
 void logon_char(CHAR_DATA *ch) {
+  syndicate_captivity_update(ch);
   process_character_recovery(ch);
 
   int minoffline;

@@ -116,7 +116,7 @@ unsigned long StaticInput::getLong() {
   putBack();
 
   skipWhite();
-  return atol(start);
+  return strtoul(start, nullptr, 10);
 }
 
 void temp_replace(string &str) {
@@ -129,119 +129,48 @@ void temp_replace(string &str) {
   }
 }
 
-char *StaticInput::getWord(char *target) {
-  char *start; //= target;
-
+string StaticInput::getWord() {
   skipWhite();
-
-  if (isEof()) {
-    perror("[Input::getWord] EOF hit before data");
-    return 0;
+  if (failed() || isEof()) return "";
+  const char first = getch();
+  if (first == '#') return "#";
+  const bool quoted = first == '\'' || first == '"';
+  string value;
+  if (!quoted) value += first;
+  while (!isEof() && (quoted ? *m_pcStart != first : !isspace(static_cast<unsigned char>(*m_pcStart))))
+    value += getch();
+  if (quoted) {
+    if (isEof()) { m_readError = true; return ""; }
+    getch();
   }
+  skipWhite();
+  temp_replace(value);
+  return value;
+}
 
-  char end = getch();
-
-  if (end == '#') {
-    target[0] = end;
-    target[1] = '\0';
-    return target;
+string StaticInput::getString() {
+  skipWhite();
+  if (failed() || isEof()) { m_readError = true; return ""; }
+  string value;
+  while (!isEof() && *m_pcStart != TERM_CHAR) {
+    const char ch = getch();
+    if (ch == '\r') continue;
+    value += ch;
+    if (ch == '\n') value += '\r';
   }
-
-  if (end == '\'' || end == '"') {
-    start = target;
-  }
-  else {
-    target[0] = end;
-    start = target + 1;
-    end = ' ';
-  }
-
-  while (!isEof() && (end == ' ' ? !isspace(*m_pcStart) : *m_pcStart != end)) {
-    *start++ = *m_pcStart++;
-  }
-
-  *start = '\0';
+  if (isEof()) { m_readError = true; return ""; }
   getch();
   skipWhite();
-
-  string str(target);
-  temp_replace(str);
-  strcpy(target, str.c_str());
-  return target;
-  /*
-char * start = target;
-//    skipWhite();
-
-if ( isEof() )
-{
-perror("Input::getWord - EOF hit before data");
-return 0;
+  temp_replace(value);
+  return value;
 }
 
-if ( (*m_pcStart == '{') || (*m_pcStart == '}') || (*m_pcStart =='#') || (*m_pcStart == ';'))
-{
-*target++ 	= *m_pcStart++;
-*target		= '\0';
-return start;
-}
-
-while ( !isEof() && !isspace(*m_pcStart) && *m_pcStart != '{' && *m_pcStart != '}' && *m_pcStart != '#' && *m_pcStart !=';' )
-{
-*target++ = *m_pcStart++;
-}
-
-*target = '\0';
-skipWhite();
-return start;
-*/
-}
-
-char *StaticInput::getString(char *target) {
-  char *start = target;
+string StaticInput::getLine() {
+  if (failed() || isEof()) return "";
+  string value;
+  while (!isEof() && *m_pcStart != '\n') value += getch();
   skipWhite();
-
-  if (isEof()) {
-    perror("Input::getString - EOF hit before data");
-    return 0;
-  }
-
-  while (!isEof() && *m_pcStart != TERM_CHAR) {
-    if (*m_pcStart != '\r') {
-      *target = *m_pcStart;
-      if (*target == '\n')
-      *(++target) = '\r';
-      target++;
-    }
-    m_pcStart++;
-  }
-
-  if (!isEof())
-  m_pcStart++;
-
-  *target = '\0';
-  skipWhite();
-
-  string str(start);
-  temp_replace(str);
-  strcpy(start, str.c_str());
-  return start;
-}
-
-char *StaticInput::getLine(char *target) {
-  char *start = target;
-  //    skipWhite();
-
-  if (isEof()) {
-    perror("Input::getLine - EOF hit before data");
-    return 0;
-  }
-
-  while (!isEof() && *m_pcStart != '\n')
-  *target++ = *m_pcStart++;
-
-  *target = '\0';
-  skipWhite();
-  return start;
+  return value;
 }
 
 void StaticInput::getBitfield(unsigned long *field) {
@@ -361,13 +290,13 @@ void Output::write(const void *src, size_t len) {
   if (!len)
   return;
 
-  if ((m_pcStart + len) < m_pcEnd) {
+  if (len <= static_cast<size_t>(m_pcEnd - m_pcStart)) {
     memcpy(m_pcStart, src, len);
     m_pcStart += len;
   }
   else {
     flush();
-    if ((m_pcStart + len) < m_pcEnd) {
+    if (len <= static_cast<size_t>(m_pcEnd - m_pcStart)) {
       memcpy(m_pcStart, src, len);
       m_pcStart += len;
     }
@@ -395,36 +324,36 @@ Output &Output::operator<<(const char *x) {
 }
 
 Output &Output::operator<<(int x) {
-  char p[20];
-  sprintf(p, "%d", x);
+  char p[3 * sizeof(unsigned long) + 3];
+  snprintf(p, sizeof(p), "%d", x);
   write(p, strlen(p));
   return *this;
 }
 
 Output &Output::operator<<(long x) {
-  char p[20];
-  sprintf(p, "%ld", x);
+  char p[3 * sizeof(unsigned long) + 3];
+  snprintf(p, sizeof(p), "%ld", x);
   write(p, strlen(p));
   return *this;
 }
 
 Output &Output::operator<<(unsigned long x) {
-  char p[20];
-  sprintf(p, "%lu", x);
+  char p[3 * sizeof(unsigned long) + 3];
+  snprintf(p, sizeof(p), "%lu", x);
   write(p, strlen(p));
   return *this;
 }
 
 Output &Output::operator<<(short int x) {
-  char p[20];
-  sprintf(p, "%d", x);
+  char p[3 * sizeof(unsigned long) + 3];
+  snprintf(p, sizeof(p), "%d", x);
   write(p, strlen(p));
   return *this;
 }
 
 Output &Output::operator<<(unsigned short int x) {
-  char p[20];
-  sprintf(p, "%d", x);
+  char p[3 * sizeof(unsigned long) + 3];
+  snprintf(p, sizeof(p), "%d", x);
   write(p, strlen(p));
   return *this;
 }

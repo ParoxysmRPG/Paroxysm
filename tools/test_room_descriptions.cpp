@@ -4,6 +4,8 @@
 #include <cstdio>
 #include <cstring>
 #include <ctime>
+#include <set>
+#include <string>
 #include "merc.h"
 #include "recycle.h"
 #include "olc.h"
@@ -58,7 +60,80 @@ int main() {
       for (EXTRA_DESCR_DATA *p = r->places; p; p = p->next) ++places;
     }
   }
-  assert(rooms > 90000 && places > 2000 && stock > 80000);
+  assert(rooms > 90000 && places > 1500 && stock > 80000);
+  // Individual interiors survive loading and ordinary procedural resets.
+  const int interiors[] = {6184, 6185, 41168, 390139, 38025};
+  for (int vnum : interiors) {
+    ROOM_INDEX_DATA *interior = get_room_index(vnum);
+    assert(interior && interior->description_decorated);
+    std::string saved = interior->description;
+    room_to_default(interior);
+    ensure_room_description(interior);
+    assert(saved == interior->description);
+  }
+  assert(strcmp(get_room_index(6184)->description, get_room_index(6185)->description));
+  assert(get_extra_descr("bed", get_room_index(41168)->places));
+  assert(get_extra_descr("stone", get_room_index(41168)->places) == NULL);
+  const int shower_rooms[] = {39030, 39031, 39032, 2467, 3015, 10842, 10863};
+  for (int vnum : shower_rooms) {
+    ROOM_INDEX_DATA *bathroom = get_room_index(vnum);
+    assert(IS_SET(bathroom->room_flags, ROOM_BATHROOM));
+    assert(get_extra_descr("shower", bathroom->places));
+    assert(get_extra_descr("sofa", bathroom->places) == NULL);
+  }
+  // Saved taxis retain distinct prose when the loader applies defaults.
+  std::set<std::string> loaded_cabs;
+  for (int vnum = 19000; vnum <= 19099; ++vnum) {
+    ROOM_INDEX_DATA *cab = get_room_index(vnum);
+    if (str_cmp(cab->name, "Taxi")) continue;
+    assert(room_uses_stock_description(cab));
+    assert(loaded_cabs.insert(cab->description).second);
+  }
+  assert(loaded_cabs.size() == 90);
+  ROOM_INDEX_DATA *saved_cab = get_room_index(19099);
+  free_string(saved_cab->name);
+  saved_cab->name = str_dup("A sidewalk");
+  saved_cab->sector_type = SECT_SIDEWALK;
+  ensure_room_description(saved_cab);
+  assert(saved_cab->places == NULL);
+  assert(!strcmp(saved_cab->description, default_room_description(saved_cab)));
+  // The real taxi setup uses this helper before setting ROOM_INDOORS. Legacy
+  // shells may have a non-car sector; each still needs the right seats and text.
+  ROOM_INDEX_DATA *cab = new_room_index();
+  std::set<std::string> generated_cabs;
+  for (int vnum = 19000; vnum <= 19099; ++vnum) {
+    cab->vnum = vnum;
+    cab->sector_type = SECT_FOREST;
+    cab->room_flags = 0;
+    free_string(cab->name);
+    cab->name = str_dup("The back of a Taxi");
+    set_generated_room_description(cab, default_room_description(cab));
+    check_room(cab);
+    assert(room_uses_stock_description(cab));
+    assert(generated_cabs.insert(cab->description).second);
+    assert(get_extra_descr("seats", cab->places));
+    free_string(cab->name);
+    cab->name = str_dup("A sidewalk");
+    cab->sector_type = SECT_SIDEWALK;
+    ensure_room_description(cab);
+    assert(cab->places == NULL);
+    assert(!strcmp(cab->description, default_room_description(cab)));
+  }
+  free_string(cab->name);
+  cab->name = str_dup("A Taxidermist's Shop");
+  cab->sector_type = SECT_SHOP;
+  ensure_room_description(cab);
+  assert(get_extra_descr("counter", cab->places));
+  assert(get_extra_descr("seats", cab->places) == NULL);
+  // Empty floor is not a separate social destination. Removing the last
+  // catalogue place must not undo decoration ownership or recreate filler.
+  const int empty_rooms[] = {45000, 1133};
+  for (int vnum : empty_rooms) {
+    ROOM_INDEX_DATA *empty = get_room_index(vnum);
+    assert(empty && empty->description_decorated && empty->places == NULL);
+    ensure_room_description(empty);
+    assert(empty->places == NULL);
+  }
   ROOM_INDEX_DATA *r = new_room_index();
   for (int sector = 0; sector < SECT_MAX; ++sector) {
     // A saved-and-loaded stock description must remain regenerable, even
@@ -111,6 +186,20 @@ int main() {
   ch->desc = new_descriptor();
   ch->desc->character = ch;
   ch->name = str_dup("RoomAudit");
+  // Exercise useful furnishings through the real keyword matcher and join.
+  struct Furnishing { int vnum; const char *keyword; const char *place; };
+  const Furnishing furnishings[] = {
+    {38025, "bed", "bed"}, {33006, "sofa", "sofa"},
+    {10128, "booths", "booths"}, {390139, "front", "front desk"},
+    {390139, "rear", "rear desks"}
+  };
+  for (const Furnishing &fixture : furnishings) {
+    ch->in_room = get_room_index(fixture.vnum);
+    assert(ch->in_room && get_extra_descr(fixture.keyword, ch->in_room->places));
+    command(ch, do_join, fixture.keyword);
+    assert(!str_cmp(ch->pcdata->place, fixture.place));
+  }
+  ch->in_room = r;
   command(ch, do_decorate, "description");
   assert(r->description_decorated && ch->desc->pString == &r->description);
   command(ch, string_add, ".c");
@@ -167,6 +256,40 @@ int main() {
   assert(strstr(r->description, "subway carriage") && r->places != NULL);
   subwaytowalk(ch);
   assert(strstr(r->description, "sidewalk") && r->places == NULL);
+  // Old automatic places can be upgraded or retired without touching custom
+  // text. A Decorate ownership marker takes precedence even over stock text.
+  r->sector_type = SECT_CLUB;
+  ensure_room_description(r);
+  assert(r->places && !strcmp(r->places->keyword, "sofa"));
+  const char *old_keyword = "seating area";
+  const char *old_description = "Seats stand back from the dance floor, leaving room for quiet company.`x\n\r";
+  auto legacy_sofa = [&]() {
+    free_string(r->places->keyword);
+    free_string(r->places->description);
+    r->places->keyword = str_dup(old_keyword);
+    r->places->description = str_dup(old_description);
+  };
+  legacy_sofa();
+  r->description_decorated = TRUE;
+  ensure_room_description(r);
+  assert(!strcmp(r->places->keyword, old_keyword));
+  assert(!strcmp(r->places->description, old_description));
+  r->description_decorated = FALSE;
+  ensure_room_description(r);
+  assert(!strcmp(r->places->keyword, "sofa"));
+  assert(strcmp(r->places->description, old_description));
+  legacy_sofa();
+  r->sector_type = SECT_SIDEWALK;
+  ensure_room_description(r);
+  assert(r->places == NULL);
+  r->sector_type = SECT_CLUB;
+  ensure_room_description(r);
+  free_string(r->places->description);
+  r->places->description = str_dup("A hand-painted sofa is embroidered with silver moths.`x\n\r");
+  const char *custom_place = r->places->description;
+  r->sector_type = SECT_SIDEWALK;
+  ensure_room_description(r);
+  assert(r->places && r->places->description == custom_place);
   // Newbie school uses its existing resets and real shop, not scenery-only
   // stock. Exercise the tutorial's numbered purchase with an ordinary PC.
   ch->trust = 0;

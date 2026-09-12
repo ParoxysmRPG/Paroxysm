@@ -31,6 +31,13 @@ of a container iterator across gameplay callbacks. Removing a character is safe;
 activating an older character during the update retains its original position;
 newly spawned characters wait until the next pass.
 
+Turn-member selection also uses this index and preserves the existing wrap and
+autoskip fallback order. Finite world-list searches for enemies and nearby fights
+no longer trip the global `fight_problem` flag merely because the world contains
+800 or more characters, or miss enemies beyond an arbitrary traversal cutoff.
+The bounded checks for actual combat-chain cycles remain in place. Shared-enemy
+checks reject candidates outside the required distance before testing hostility.
+
 After inserting a character at the front of `char_list`, call
 `register_live_character`. Call `unregister_live_character` before removing or
 freeing one, and change combat membership through `set_combat_state`. Offline
@@ -68,9 +75,8 @@ Cover, ally and carrier lookups use the combat index with the original ordering
 and eligibility filters. General targeting still considers noncombatants.
 
 Combat membership checks reject distant bystanders before calling their nested
-enemy search. Nearby checks retain visibility and turn-state handling. Search
-limits remain in place, but distant bystanders no longer run nested scans that
-could themselves increment `fight_problem` merely for exhausting the world list.
+enemy search. Nearby checks retain visibility and turn-state handling. Distant bystanders skip nested world searches; nearby checks keep the original
+distance, visibility and turn-state rules.
 
 Operation report appends reuse the current allocator bucket when possible and
 copy into a larger bucket only when necessary. Shared loaded strings are copied
@@ -78,6 +84,12 @@ before modification. The `char*` fields, report rollover rules, immediate read
 visibility, and save formats are unchanged. `append_report_text` only accepts
 strings owned by `str_dup`/`fread_string`; it must not receive stack buffers,
 string literals as the destination, or independently sized allocations.
+
+Reinforcement waves share one remaining population allowance across all empty
+faction slots, including elite spawns. Previously, each slot reused the allowance
+and could exceed the intended 12-adversary limit. Capture waves use the actual
+spawn slot rather than a shadowing soldier-loop counter. Growth arithmetic avoids
+integer overflow, and progress reports tolerate a zero upload target.
 
 ## AI result queues
 
@@ -90,8 +102,9 @@ identity lets a restarted consumer recognize the compacted suffix.
 Producers must append while holding the existing stable `<queue>.lock` file and
 reopen the queue path for each append. Partial final lines are left pending, and
 a busy lock returns immediately. Existing queues without a cursor start at zero.
-The external Python producer is not present in this checkout; these locking and
-append requirements also applied to the previous rename-based consumer.
+The Python producer in `src/run_ai_engine.py` uses these locks through
+`src/ai_queue.py`. Request acknowledgement, result validation and migration are
+described in [runtime-hardening.md](runtime-hardening.md).
 
 The cursor is local to an inode. Replacing the queue starts reading from zero;
 truncating below the cursor also resets it. For migration or backup restoration,

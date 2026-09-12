@@ -1166,7 +1166,7 @@ if(ch->in_room->time != 3000 && ch->in_room->time != room->time && room->vnum !=
     return;
 
     if (is_ghost(ch)) {
-      send_to_char("You feel unwilling and unable to part with Haven.\n\r", ch);
+      send_to_char("You feel unwilling and unable to part with Gravesend.\n\r", ch);
       return;
     }
 
@@ -1303,7 +1303,7 @@ if(ch->in_room->time != 3000 && ch->in_room->time != room->time && room->vnum !=
     }
 
     if (in_haven(room) && IS_FLAG(ch->comm, COMM_BANISHED)) {
-      send_to_char("You're banished from Haven right now.\n\r", ch);
+      send_to_char("You're banished from Gravesend right now.\n\r", ch);
       return;
     }
     if (room->area->vnum == 12 && !is_gm(ch)) {
@@ -2025,7 +2025,7 @@ return;
 
     free_string(travelroom->name);
     travelroom->name = str_dup("The back of a Taxi");
-    set_generated_room_description(travelroom, "Cracked black upholstery covers the taxi\'s `wseats`x. A protective partition separates the compact passenger space from the driver\'s area, with scuffed trim marking the places most often touched.`x\n\r");
+    set_generated_room_description(travelroom, default_room_description(travelroom));
     free_string(travelroom->shroud);
     travelroom->shroud =
     str_dup("The backseat of the taxi looks twisted, like some sort of small, surreal\nchariot.  The seats, while comfortable, looks like some sort of moss\nunderneath you, and a rusted cage prevents you from moving over the seats.\nThe steering wheel moves on its own, and the rearview mirror shows an even\nmore twisted reflection of reality as the streets blur by.");
@@ -2948,7 +2948,7 @@ printf_to_char(to, "Valid: %d, Cooldown: %d, vnum: %d, Name: %s", (*it)->valid, 
       if ((*it)->valid == FALSE || (*it)->cooldown <= 0)
       continue;
 
-      if (!str_cmp((*it)->author, "Ouroboros"))
+      if (!str_cmp((*it)->author, "a collaborative project"))
       continue;
 
       if (!str_cmp((*it)->author, "Tyr"))

@@ -191,13 +191,16 @@ void dissent_status(CHAR_DATA *ch) {
   dissent_update();
   CHAR_DATA *mob = dissent_until ? dissent_mob() : NULL;
   if (!mob || !mob->in_room) {
-    send_to_char("There is no active dissent patrol. Dissents can begin at most once every seven days.\n\r", ch);
+    send_to_char("There is no active dissent patrol.\n\r"
+                 "Dissents can begin at most once every seven days.\n\r", ch);
     return;
   }
-  printf_to_char(ch, "Dissent: a dissenting mob is protesting Cortex at %s in %s (map %d, %d). %d minute(s) remain. %s\n\r",
+  printf_to_char(ch, "`cDissent`g:`x a dissenting mob is protesting Cortex\n\r"
+                    "  at `W%s`x in `W%s`x (map %d, %d).\n\r"
+                    "`W%d minute(s)`x remain.\n\r%s`x\n\r",
       roomtitle(mob->in_room, FALSE), mob->in_room->area->name, mob->in_room->x, mob->in_room->y,
       (int)((dissent_until - current_time + 59) / 60),
-      ch->fcore == FACTION_CORTEX ? "Knock out the crowd to suppress the dissent (attack crowd)."
+      ch->fcore == FACTION_CORTEX ? "Knock out the crowd to suppress the dissent (`Wattack crowd`x)."
           : "Keep the crowd alive until the dissent ends to reward every player society.");
 }
 

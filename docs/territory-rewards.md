@@ -50,7 +50,7 @@ Witch of the Woods: +1 Incantation.
 Feywood Veteran: deal 150% damage to forest monsters.
 Darkwood Veteran: take 75% damage from forest monsters.
 
-This version of Haven has no player mana pool, so Magic In The Making is
+This version of Paroxysm has no player mana pool, so Magic In The Making is
 not currently a territory reward.
 
 New bonuses:
@@ -184,7 +184,7 @@ Nissenia: None (intentionally blank)
 Celestriana: None (intentionally blank)
 Hong Kong, China: Extra Hands
 District 82: Monthly potions (item 87); no additional bonus
-Haven: Local Connections
+Gravesend: Local Connections
 
 NPC operations:
 The scheduler keeps at least two NPC operations booked for each of the next

@@ -281,7 +281,7 @@ int main() {
   // All seven territory contacts work with no purchased rank or spare budget.
   struct ContactReward { const char *territory; int skill; };
   const ContactReward contact_rewards[] = {
-    {"Haven", SKILL_CPOLICE}, {"Richmond, Virginia", SKILL_CMILITARY},
+    {"Gravesend", SKILL_CPOLICE}, {"Richmond, Virginia", SKILL_CMILITARY},
     {"New York, New York", SKILL_CGOVERNMENT}, {"Los Angeles, California", SKILL_CMEDIA},
     {"Bangkok, Thailand", SKILL_CCRIMINAL}, {"Bucharest, Romania", SKILL_COCCULT},
     {"Bogota, Columbia", SKILL_CHOMELESS}
@@ -317,7 +317,7 @@ int main() {
   }
   // At tier one the purchased point budget is full, but a bonus is still free.
   std::fill(player.skills, player.skills + 1000, 0);
-  loc.name = "Haven"; player.tier = 1; player.professional_focus = 5;
+  loc.name = "Gravesend"; player.tier = 1; player.professional_focus = 5;
   player.skills[SKILL_CMEDIA] = 1;
   assert(!contact_purchase_allowed(&player, SKILL_CPOLICE, 0));
   assert(get_skill(&player, SKILL_CPOLICE) == 1);

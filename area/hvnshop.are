@@ -1,5 +1,5 @@
 #AREADATA
-Name Haven Shops~
+Name Gravesend Shops~
 VNUMs 45000 46999
 Completed 0
 World 0
@@ -94,8 +94,8 @@ normal~
 #45000
 The World Storehouse~
 Broad storage bays recede across a plain floor, their unadorned surfaces
-giving this repository a scale beyond any ordinary shop. The `wcentral
-standing area`x is kept clear among the bays.`x
+giving this repository a scale beyond any ordinary shop. The open floor is
+kept clear among the bays.`x
 ~
 0 0 0
 B 1
@@ -110,10 +110,6 @@ D5
 M 0 H 0
 W (null)~
 Y ~
-P
-central standing area~
-A clear area lies between the storage bays, with room to gather.`x
-~
 S
 #0
 

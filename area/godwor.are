@@ -21,10 +21,13 @@ End
 #ROOMS
 #402007
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+Two broad planes meet at an awkward angle on the far side, with pearl-gray
+paint picked out along the join. The floor carries a faint rectangular
+outline, clearer at one end than the other. The undecorated surfaces leave the
+proportions unusually easy to read, from the low corners to the open middle.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 C 0 0 0
 T 3000
@@ -34,10 +37,13 @@ Y ~
 S
 #402008
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+The right-hand end narrows around a broad structural pier faced in warm
+terracotta. The ceiling has a shallow step that makes one corner seem
+unexpectedly close. Without furniture to soften the enclosure, every small
+sound acquires a dry little echo.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 C 0 0 0
 T 3000

@@ -1,10 +1,6 @@
-from bs4 import BeautifulSoup
 import random
-import pandas as pd
-import numpy as np
 import os
 from datetime import datetime
-import openai
 import re
 import time
 import signal
@@ -13,8 +9,15 @@ import logging
 import concurrent.futures
 import csv
 import json
+from ai_queue import append_result, process_requests
 
-logging.basicConfig(filename='../log/ai.log', level=logging.INFO)
+def ai_enabled():
+    return os.environ.get('HAVEN_ENABLE_AI') == '1'
+
+
+def require_ai_enabled():
+    if not ai_enabled():
+        raise RuntimeError('AI processing is disabled; set HAVEN_ENABLE_AI=1 to enable it')
 
 class TimeoutError(Exception):
     pass
@@ -560,14 +563,8 @@ def clean_aioutput(response_content):
     cleaned_text = re.sub(pattern, '', response_content)
     return cleaned_text.strip()
 
-def append_line_to_file(file_path, line):
-    import fcntl
-    file_path = os.path.abspath(file_path)
-    # Lock a stable sidecar: the consumer atomically replaces the queue itself.
-    with open(file_path + '.lock', 'a') as lock:
-        fcntl.flock(lock, fcntl.LOCK_EX)
-        with open(file_path, 'a') as file:
-            file.write(line + '\n')
+def append_line_to_file(file_path, fields):
+    append_result(file_path, fields)
 
 
 def dstring():
@@ -615,7 +612,7 @@ def social_rate(name_one, name_two):
     response_content = response.choices[0].message.content
     onone, sone, ontwo, stwo, exp = extract_details(response_content)
 
-    outstring = "4|||" + nameone + "|||" + str(sone) + "|||" + nametwo + "|||" + str(stwo) + "|||" + exp
+    outstring = [4, nameone, sone, nametwo, stwo, exp]
     append_line_to_file("../data/ai_out.csv", outstring)
     logging.info(outstring)
         
@@ -627,7 +624,7 @@ def describe_doom(char_name, days):
     out_msg = []
     fname = "../player/" + char_name
     hist_text = extract_hist_section(fname)
-    otext = char_name + " is a character in a fictional horror setting. The setting is a small town in Massachusetts called Haven. In this setting supernatural forces such as vampires, werewolves and demons exist in secret. It is a horror setting, where power equals corruption. The character's history up to this point is:\n" + hist_text + "\nToday's date is " + dstring() + ". The character has been prophesied to die in " + str(days) + " days. Write the prophecy that foretells the character's death. It should be three of four sentences and include some details about how they are going to die. Do not include the exact date of their death. Start your response with 'Prophecy:'"
+    otext = char_name + " is a character in a fictional horror setting. The setting is a small town in Massachusetts called Gravesend. In this setting supernatural forces such as vampires, werewolves and demons exist in secret. It is a horror setting, where power equals corruption. The character's history up to this point is:\n" + hist_text + "\nToday's date is " + dstring() + ". The character has been prophesied to die in " + str(days) + " days. Write the prophecy that foretells the character's death. It should be three of four sentences and include some details about how they are going to die. Do not include the exact date of their death. Start your response with 'Prophecy:'"
     add_message(out_msg, "user", otext)
     
     
@@ -644,12 +641,12 @@ def describe_doom(char_name, days):
     response_content = response.choices[0].message.content
     response_content = clean_aioutput(response_content)
     logging.info(response_content)
-    outstring = "3|||" + char_name + "|||" + str(days) + "|||" + response_content
+    outstring = [3, char_name, days, response_content]
     logging.info(outstring)
     append_line_to_file("../data/ai_out.csv", outstring)
     
     
-def describe_operation(antag_faction, area):
+def describe_operation(antag_faction, area, territory_id=None, faction_id=None, operation_id=None):
     ai_model = "gpt-4"
     #ai_model="gpt-3.5-turbo",
     intemp = 1.0
@@ -715,7 +712,9 @@ def describe_operation(antag_faction, area):
     process=function_args.get("process")
     description=function_args.get("description")
     
-    outstring = "2|||" + antag_faction + "|||" + terrain + "|||" + area_name + "|||" + process + "|||" + description
+    outstring = [2, antag_faction, terrain, area_name, process, description]
+    if territory_id is not None and faction_id is not None:
+        outstring.extend([territory_id, faction_id, operation_id])
     append_line_to_file("../data/ai_out.csv", outstring)
     
 def get_random_name(gender):
@@ -842,11 +841,12 @@ def create_operative(gcode, cname, csurname, cdesc, fdesc, cintro):
     height_inches=function_args.get("height_inches")
     skin_description=function_args.get("skin_description")
     
-    outstring = "6|||" + cname + "|||" + nname + "|||" + nsurname + "|||" + nintro + "|||" + ndesc + "|||" + hair_color + "|||" + eye_color + "|||" + str(height_feet) + "|||" + str(height_inches) + "|||" + skin_description
+    outstring = [6, cname, nname, nsurname, nintro, ndesc, hair_color, eye_color, height_feet, height_inches, skin_description]
     append_line_to_file("../data/ai_out.csv", outstring)
     logging.info(outstring)
   except:
-    logging.info("Error creating operative for: " + cname)
+    logging.exception("Error creating operative for: " + cname)
+    raise
     
     
     
@@ -868,7 +868,7 @@ def create_encounter(base_id):
 
     erows = elist.query('ID != @base_id').sample(n=5, replace=False).sample(frac=1)
 
-    itext = "Propose an encounter for a Dungeon Master to run for an individual character or small group of characters in a modern paranormal setting. The characters are located in Haven, a small town in Massachusetts where supernatural forces such as vampires, werewolves and demons exist in secret. It is a horror setting, where power equals corruption. Encounters should be small, self-contained stories, taking no longer than an hour or two to resolve. Start your response with 'Encounter:' \n"
+    itext = "Propose an encounter for a Dungeon Master to run for an individual character or small group of characters in a modern paranormal setting. The characters are located in Gravesend, a small town in Massachusetts where supernatural forces such as vampires, werewolves and demons exist in secret. It is a horror setting, where power equals corruption. Encounters should be small, self-contained stories, taking no longer than an hour or two to resolve. Start your response with 'Encounter:' \n"
     add_message(out_msg, "user", itext)
     rtext = "Encounter: " + erows.loc[erows.index[0], 'Text']
     add_message(out_msg, "assistant", rtext)
@@ -901,7 +901,7 @@ def create_encounter(base_id):
     response_content = response.choices[0].message.content
     response_content = clean_aioutput(response_content)
     logging.info(response_content)
-    outstring = "1|||" + str(base_id) + "|||" + response_content
+    outstring = [1, base_id, response_content]
     append_line_to_file("../data/ai_out.csv", outstring)
     
 def make_html_text(otext):
@@ -1026,69 +1026,62 @@ def write_to_rplog(type, subtype, title_text, otext):
     if(subtype != 2):
         update_news_content(newscontent)
         if(summ_content != ""):
-            url = "http://havenrpg.net/wiki/pmwiki.php/" + ltype + "/" + wtitle
+            url = "http://paroxysm.net/wiki/pmwiki.php/" + ltype + "/" + wtitle
             output = summ_content + ": " + url
-            outstring = "5|||" + output + "|||" + url + "|||" + title_text
+            outstring = [5, output, url, title_text]
             append_line_to_file("../data/ai_sum_out.csv", outstring)
-            append_line_to_file("../data/ai_sum_out.tmp", outstring)
-
-
-openai.organization = ""
-openai.api_key = ""
-
-starttime = time.time()
 
 
 
-
-while True:
-  logging.info(datetime.fromtimestamp(time.time()))
-  ai_input = pd.read_csv('../data/ai_in.csv')
-  ai_input_unique = ai_input.drop_duplicates()
-  ai_input_unique.to_csv('../data/ai_in.csv', index=False, header=True)
-  ai_input = pd.read_csv('../data/ai_in.csv')
-  ai_header = pd.read_csv('../data/ai_in.csv', nrows=0)
-  ai_header.to_csv('../data/ai_in.csv', index=False, header=True)
-
-  ai_count = ai_input.shape[0]
-  
-  if(ai_count > 0):
-    for i in range(ai_count):
-#      try:
-        if(ai_input.iloc[i]['Type'] == 1):
-            create_encounter(ai_input.iloc[i]['ID'])
-        if(ai_input.iloc[i]['Type'] == 2):
-            describe_operation(ai_input.iloc[i]['ValOne'], ai_input.iloc[i]['ValTwo'])
-        if(ai_input.iloc[i]['Type'] == 3):
-            describe_doom(ai_input.iloc[i]['ValOne'], ai_input.iloc[i]['ValTwo'])
-        if(ai_input.iloc[i]['Type'] == 4):
-            social_rate(ai_input.iloc[i]['ValOne'], ai_input.iloc[i]['ValTwo'])       
-        if(ai_input.iloc[i]['Type'] == 5):
-            website_news(ai_input.iloc[i]['ValOne'], ai_input.iloc[i]['ValTwo'])      
-        if(ai_input.iloc[i]['Type'] == 6):
-            create_operative(ai_input.iloc[i]['ID'], ai_input.iloc[i]['ValOne'], ai_input.iloc[i]['ValTwo'], ai_input.iloc[i]['ValThree'], ai_input.iloc[i]['ValFour'], ai_input.iloc[i]['ValFive'])
-#      except:
-#          logging.info("Error processing row: " + str(i))
-    
-#  exit()
+def dispatch_request(row):
+    require_ai_enabled()
+    kind = int(row['Type'])
+    if kind == 1:
+        create_encounter(int(row['ID']))
+    elif kind == 2:
+        describe_operation(row['ValOne'], row['ValTwo'],
+                           int(row['ValThree']) if row['ValThree'] else None,
+                           int(row['ValFour']) if row['ValFour'] else None,
+                           int(row['ID']))
+    elif kind == 3:
+        describe_doom(row['ValOne'], int(row['ValTwo']))
+    elif kind == 4:
+        social_rate(row['ValOne'], row['ValTwo'])
+    elif kind == 5:
+        website_news(row['ValOne'], row['ValTwo'])
+    elif kind == 6:
+        create_operative(int(row['ID']), row['ValOne'], row['ValTwo'], row['ValThree'], row['ValFour'], row['ValFive'])
+    else:
+        raise ValueError('Unknown AI request type: ' + str(kind))
 
 
-  sum_input = pd.read_csv('../data/ai_sum_in.csv', quoting=csv.QUOTE_MINIMAL, quotechar='~', engine='python')
-  sum_count = sum_input.shape[0]
-  
-  # Create an empty DataFrame with the same columns
-  empty_df = pd.DataFrame(columns=sum_input.columns)
-
-# Save the empty DataFrame to the same CSV file, effectively overwriting it
-  empty_df.to_csv('../data/ai_sum_in.csv', index=False)
-  
-  if(sum_count > 0):
-      for i in range(sum_count):
-        try:
-            write_to_rplog(sum_input.iloc[i]['type'], sum_input.iloc[i]['subtype'], sum_input.iloc[i]['title'], sum_input.iloc[i]['text'])
-        except:
-          logging.info("Error processing rplog row: " + str(i))
+def dispatch_summary(row):
+    require_ai_enabled()
+    write_to_rplog(int(row['type']), int(row['subtype']), row['title'], row['text'])
 
 
-  if(10.0 - ((time.time() - starttime) % 10.0) > 0):
-    time.sleep(10.0 - ((time.time() - starttime) % 10.0))
+def main():
+    if not ai_enabled():
+        print('AI processing is disabled. Set HAVEN_ENABLE_AI=1 to enable it.')
+        return
+    # A disabled worker needs no optional packages, log files or API credentials.
+    global BeautifulSoup, pd, openai
+    from bs4 import BeautifulSoup
+    import pandas as pd
+    import openai
+    logging.basicConfig(filename='../log/ai.log', level=logging.INFO)
+    openai.organization = os.environ.get('OPENAI_ORGANIZATION', '')
+    openai.api_key = os.environ.get('OPENAI_API_KEY', '')
+    while ai_enabled():
+        for path, handler, quote in (
+                ('../data/ai_in.csv', dispatch_request, '"'),
+                ('../data/ai_sum_in.csv', dispatch_summary, '~')):
+            try:
+                process_requests(path, handler, quotechar=quote)
+            except Exception:
+                logging.exception('Unable to process AI queue %s', path)
+        time.sleep(10)
+
+
+if __name__ == '__main__':
+    main()

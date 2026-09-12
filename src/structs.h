@@ -436,6 +436,9 @@
       int     outsize;
       /** Where to start output of the buffer */
       int     outtop;
+      /** Prefix already prompted and snooped; retained across partial writes. */
+      int     out_prepared;
+      bool    out_overflow;
       /** */
       char *    showstr_head;
       /** */
@@ -3525,6 +3528,9 @@ bool	crowded_room;
       int     patrol_pledged;
       ROOM_INDEX_DATA * patrol_room;
       CHAR_DATA *     patrol_target;
+      time_t  syndicate_release_at;
+      char *  syndicate_seller;
+      char *  syndicate_prisoner;
       ROOM_INDEX_DATA * last_patrol;
       int     patrol_subtype;
 

@@ -2929,12 +2929,12 @@ return;
       return;
 
       if (safe_strlen(argument) < 3) {
-        printf_to_char(ch, "Syntax: %s create (name)\n\r", ctype);
+        printf_to_char(ch, "`cSyntax`g:`x `W%s create `g(`xname`g)`x\n\r", ctype);
         send_to_char("After creation, you may choose to worship or oppose a higher power:\n\r"
-                     "  society patron worship <higher power name>\n\r"
-                     "  society patron oppose <higher power name>\n\r"
+                     "  `Wsociety patron worship `g<`xhigher power name`g>`W`x\n\r"
+                     "  `Wsociety patron oppose `g<`xhigher power name`g>`W`x\n\r"
                      "Replace <higher power name> with the name of an existing higher power.\n\r"
-                     "This is optional; use society patron none to clear affiliations.\n\r", ch);
+                     "This is optional; use `Wsociety patron none`x to clear affiliations.`x\n\r", ch);
         return;
       }
       /*
@@ -3003,10 +3003,10 @@ return;
       ch->pcdata->society_created = TRUE;
       save_char_obj(ch, FALSE, FALSE);
       send_to_char("Your society starts with no higher-power affiliation. As its leader, you may use:\n\r"
-                   "  society patron worship <higher power name>\n\r"
-                   "  society patron oppose <higher power name>\n\r"
+                   "  `Wsociety patron worship `g<`xhigher power name`g>`W`x\n\r"
+                   "  `Wsociety patron oppose `g<`xhigher power name`g>`W`x\n\r"
                    "Replace <higher power name> with the name of an existing higher power.\n\r"
-                   "This is optional; use society patron none to clear affiliations.\n\r", ch);
+                   "This is optional; use `Wsociety patron none`x to clear affiliations.`x\n\r", ch);
 
       return;
     }
@@ -4167,7 +4167,8 @@ taken by anyone who obtains high\nenough standing, it cannot fall below
           : !str_cmp(relation, "worship") ? SOCIETY_PATRON_WORSHIP
           : !str_cmp(relation, "oppose") ? SOCIETY_PATRON_OPPOSE : -1;
       if (mode < 0 || (mode != SOCIETY_PATRON_NONE && safe_strlen(argument) < 2)) {
-        send_to_char("Syntax: society patron none | worship <higher power> | oppose <higher power>\n\r", ch);
+        send_to_char("`cSyntax`g:`W society patron none `g|`x\n\r"
+                     "        `Wworship `g<`xhigher power`g>`W | oppose `g<`xhigher power`g>`x\n\r", ch);
         return;
       }
       if (mode != SOCIETY_PATRON_NONE && !power_domain(argument)) {
@@ -4222,7 +4223,7 @@ taken by anyone who obtains high\nenough standing, it cannot fall below
       }
       if(fac->type != FACTION_SOCIETY || fac->patron_relation == SOCIETY_PATRON_NONE)
       {
-        send_to_char("Choose society patron worship or oppose first.\n\r", ch);
+        send_to_char("Choose `Wsociety patron worship`x or oppose first.`x\n\r", ch);
         return;
       }
       string_append(ch, &fac->eidilon_players);
@@ -4231,7 +4232,9 @@ taken by anyone who obtains high\nenough standing, it cannot fall below
     }
     if (!str_cmp(arg, "makeeidilon") || !str_cmp(arg, "makeeidolon")
         || !str_cmp(arg, "changeeidilon") || !str_cmp(arg, "changeeidolon")) {
-      send_to_char("Create an account-owned guest with guest higherpower <demon/fae/divine/ghost/cthulian/primal> <name> <territory>. Use society patron to declare your relationship.\n\r", ch);
+      send_to_char("Create an account-owned guest with\n\r"
+                   "  `Wguest higherpower `g<`xdemon/fae/divine/ghost/cthulian/primal`g>`W `g<`xname`g>`W `g<`xterritory`g>`x.\n\r"
+                   "Use `Wsociety patron`x to declare your relationship.\n\r", ch);
       return;
     }
     if (!str_cmp(arg, "adversary")) {
@@ -5737,7 +5740,7 @@ taken by anyone who obtains high\nenough standing, it cannot fall below
         return;
       }
       if (newbie_level(victim) <= 3) {
-        send_to_char("They are still too new to haven to be targeted by that ritual.\n\r", ch);
+        send_to_char("They are still too new to Gravesend to be targeted by that ritual.\n\r", ch);
         return;
       }
       if (guestmonster(victim) || higher_power(victim)) {
@@ -5860,7 +5863,7 @@ taken by anyone who obtains high\nenough standing, it cannot fall below
         return;
       }
       if (newbie_level(victim) <= 3) {
-        send_to_char("They are still too new to haven to be targetd by that ritual.\n\r", ch);
+        send_to_char("They are still too new to Gravesend to be targetd by that ritual.\n\r", ch);
         return;
       }
       if (institute_room(victim->in_room) || victim->race == RACE_FACULTY) {
@@ -8015,7 +8018,7 @@ library.\n\r", ch); return;
     if (is_gm(victim))
     return;
     if (!in_haven(victim->in_room)) {
-      send_to_char("You're not in Haven.\n\r", ch);
+      send_to_char("You're not in Gravesend.\n\r", ch);
       return;
     }
 
@@ -13846,7 +13849,7 @@ give_resources(lfac, reward);
       // The reinforcement cap and cover check historically count global NPCs,
       // including GMs; battle populations exclude GMs and other battlegrounds.
       const bool npc = IS_NPC(victim);
-      const int vnum = npc ? victim->pIndexData->vnum : 0;
+      const int vnum = npc && victim->pIndexData ? victim->pIndexData->vnum : 0;
       if (npc && vnum == 110)
       ++result.cover;
       if (npc && vnum == 115)
@@ -13867,6 +13870,42 @@ give_resources(lfac, reward);
     return result;
   }
 
+  static void operation_reinforcements(OPERATION_TYPE *op,
+                                       const OperationPopulation &population,
+                                       int growth, int elite_divisor) {
+    // One budget for the whole wave, including elites, across all spawn slots.
+    int remaining = UMAX(0, 12 - population.adversaries);
+    op->power = static_cast<int>(UMIN(2147483647LL, UMAX(0LL, 1LL * op->power * growth / 10)));
+    int power = op->power;
+    if (population.cover < 1) { power /= 3; remaining /= 3; }
+    if (pc_op_count() <= 1) { power /= 3; remaining /= 3; }
+    remaining = UMIN(remaining, UMAX(0, 25 - population.battle_adversaries));
+    if (remaining == 0) return;
+
+    const int value = ADVERSARY_VALUE;
+    power = UMAX(value + 1, power);
+    int total = 1;
+    for (int slot = 0; slot < 6; ++slot)
+      if (battle_factions[slot] > 0) ++total;
+    for (int slot = 0; slot < 6 && remaining > 0 && power > value; ++slot) {
+      if (battle_factions[slot] != 0) continue;
+      const bool elite = power / value >= 4 && safe_strlen(op->elitestring) > 3;
+      if (elite) {
+        make_elite(total, slot, op->size, op->adversary_type, op->elitestring,
+                   op->battleground_number, (power / value) / elite_divisor);
+        --remaining;
+        free_string(op->elitestring);
+        op->elitestring = str_dup("");
+      }
+      while (remaining > 0 && power > value) {
+        make_adversary(total, slot, op->size, op->adversary_type,
+                       op->adversary_name, op->battleground_number);
+        --remaining;
+        power -= elite ? value * 2 : value;
+      }
+    }
+  }
+
   void operations_update() {
     if (isactiveoperation == FALSE || activeoperation == NULL)
     return;
@@ -13874,7 +13913,6 @@ give_resources(lfac, reward);
     OPERATION_TYPE *op = activeoperation;
     int battleground_number = op->battleground_number;
     const OperationPopulation population = operation_population(battleground_number);
-    int maxn = 12 - population.adversaries;
     if (population.players < 1) {
       if(check_antag_win(battleground_number) == FALSE)
       {
@@ -13910,49 +13948,8 @@ give_resources(lfac, reward);
 
     if (op->type == OPERATION_INTERCEPT || op->type == OPERATION_EXTRACT) {
       op->timer--;
-      if (op->waves > 0 && op->timer % op->waves == 0) {
-        op->power = op->power * 13 / 10;
-        int max_power = op->power;
-        if (population.cover < 1) {
-          max_power /= 3;
-          maxn /= 3;
-        }
-        if (pc_op_count() <= 1) {
-          max_power /= 3;
-          maxn /= 3;
-        }
-
-        int advalue = ADVERSARY_VALUE;
-        int battle_total = 0;
-        int battlesize = op->size;
-        max_power = UMAX(advalue + 1, max_power);
-        for (int i = 0; i < 6; i++) {
-          if (battle_factions[i] > 0)
-          battle_total++;
-        }
-        battle_total++;
-        if (population.battle_adversaries < 25) {
-          for (int i = 0; i < 6; i++) {
-            if (battle_factions[i] == 0 && max_power > advalue) {
-              if (max_power / advalue >= 4 && safe_strlen(op->elitestring) > 3) {
-                make_elite(battle_total, i, battlesize, op->adversary_type, op->elitestring, battleground_number, (max_power / advalue) / 2);
-                for (int j = 0; max_power > advalue && j < maxn; j++) {
-                  make_adversary(battle_total, i, battlesize, op->adversary_type, op->adversary_name, battleground_number);
-                  max_power -= advalue * 2;
-                }
-                free_string(op->elitestring);
-                op->elitestring = str_dup("");
-              }
-              else {
-                for (int j = 0; max_power > advalue && j < maxn; j++) {
-                  make_adversary(battle_total, i, battlesize, op->adversary_type, op->adversary_name, battleground_number);
-                  max_power -= advalue;
-                }
-              }
-            }
-          }
-        }
-      }
+      if (op->waves > 0 && op->timer % op->waves == 0)
+        operation_reinforcements(op, population, 13, 2);
       char buf[MSL];
       if (op->timer > 0 && op->timer % 3 == 0) {
         sprintf(buf, "`c%d minutes until extraction.`x\n\r", op->timer);
@@ -13979,48 +13976,8 @@ give_resources(lfac, reward);
     if (op->type == OPERATION_CAPTURE || op->type == OPERATION_MULTIPLE) {
 
       op->timer--;
-      if (op->waves > 0 && op->timer % op->waves == 0) {
-        op->power = op->power * 14 / 10;
-        int max_power = op->power;
-        if (population.cover < 1) {
-          max_power /= 3;
-          maxn /= 3;
-        }
-        if (pc_op_count() <= 1) {
-          max_power /= 3;
-          maxn /= 3;
-        }
-        int advalue = ADVERSARY_VALUE;
-        int battle_total = 0;
-        int battlesize = op->size;
-        max_power = UMAX(advalue + 1, max_power);
-        for (int i = 0; i < 6; i++) {
-          if (battle_factions[i] > 0)
-          battle_total++;
-        }
-        battle_total++;
-        if (population.battle_adversaries < 25) {
-          for (int i = 0; i < 6; i++) {
-            if (battle_factions[i] == 0 && max_power > advalue) {
-              if (max_power / advalue >= 4 && safe_strlen(op->elitestring) > 3) {
-                make_elite(battle_total, i, battlesize, op->adversary_type, op->elitestring, battleground_number, max_power / advalue);
-                for (int i = 0; max_power > advalue && i < maxn; i++) {
-                  make_adversary(battle_total, i, battlesize, op->adversary_type, op->adversary_name, battleground_number);
-                  max_power -= advalue * 2;
-                }
-                free_string(op->elitestring);
-                op->elitestring = str_dup("");
-              }
-              else {
-                for (int i = 0; max_power > advalue && i < maxn; i++) {
-                  make_adversary(battle_total, i, battlesize, op->adversary_type, op->adversary_name, battleground_number);
-                  max_power -= advalue;
-                }
-              }
-            }
-          }
-        }
-      }
+      if (op->waves > 0 && op->timer % op->waves == 0)
+        operation_reinforcements(op, population, 14, 1);
       char buf[MSL];
       if (op->timer > 0 && op->timer % 3 == 0) {
         int attempts = 0;
@@ -14033,7 +13990,9 @@ give_resources(lfac, reward);
             if (op->faction == battle_factions[i])
             attempts = op->home_uploads;
 
-            sprintf(buf, "`cYou are %d percent done %s.`x", attempts * 100 / op->upload, op->upload_name);
+            snprintf(buf, sizeof(buf), "`cYou are %lld percent done %.16000s.`x",
+                     100LL * attempts / UMAX(1, op->upload),
+                     op->upload_name ? op->upload_name : "the upload");
             send_message_temp(battle_factions[i], buf);
           }
         }
@@ -15346,7 +15305,7 @@ return " ";
       ch->pcdata->ci_absorb = 1;
       if (!str_cmp(argument, "psychic")) {
         free_string(ch->pcdata->ci_short);
-        ch->pcdata->ci_short = str_dup("Haven");
+        ch->pcdata->ci_short = str_dup("Gravesend");
         ch->pcdata->ci_discipline2 = GOAL_PSYCHIC;
         send_to_char("Done.\n\r", ch);
         return;
@@ -17829,17 +17788,17 @@ return " ";
 
   _DOFUN(do_testoutput)
   {
-    FACTION_TYPE *fac = clan_lookup(FACTION_CORTEX);
-    char sout[MSL];
-    sprintf(sout, "%d,%d,~%s~,~", 1, 0, fac->reportone_title);
-    writeTextToFile(AI_SUM_IN_FILE, str_dup(sout));
-    writeTextToFile(AI_SUM_IN_FILE, fac->reportone_text);
-    for(int i=0;i<10;i++)
-    {
-      if(strlen(fac->report_overflow[0][i]) > 2)
-      writeTextToFile(AI_SUM_IN_FILE, fac->report_overflow[0][i]);
+    if (!haven::ai_enabled()) {
+      send_to_char("AI generation is currently disabled.\n\r", ch);
+      return;
     }
-    writeLineToFile(AI_SUM_IN_FILE, "~");
+    FACTION_TYPE *fac = clan_lookup(FACTION_CORTEX);
+    if (!fac) return;
+    std::string body = fac->reportone_text;
+    for (int i = 0; i < 10; ++i)
+      if (safe_strlen(fac->report_overflow[0][i]) > 2) body += fac->report_overflow[0][i];
+    if (!haven::append_ai_summary(AI_SUM_IN_FILE, 1, 0, fac->reportone_title, body))
+      send_to_char("Unable to queue the report.\n\r", ch);
   }
 
   int max_core_power(OPERATION_TYPE *op, FACTION_TYPE *host)
@@ -17961,6 +17920,10 @@ return " ";
 
   void create_ai_operative(CHAR_DATA *ch, int type)
   {
+    if (!haven::ai_enabled()) {
+      send_to_char("AI generation is currently disabled.\n\r", ch);
+      return;
+    }
     FACTION_TYPE *fac = NULL;
     if(type == FACTION_CORE)
     fac = clan_lookup(ch->fcore);
@@ -17983,7 +17946,7 @@ return " ";
       gcode = 2;
       sprintf(scriptbuf, "6,%d,%s,%s,\"%s\",\"%s\",\"%s\"", gcode, ch->name, ch->pcdata->last_name, from_color(get_default_dreamdesc(ch)), from_color(fac->description), ch->pcdata->intro_desc);
       ch->pcdata->operative_creation_faction = fac->vnum;
-      writeLineToFile(AI_IN_FILE, str_dup(scriptbuf));
+      writeLineToFile(AI_IN_FILE, scriptbuf);
       return;
     }
     send_to_char("Attempt failed.", ch);
@@ -18008,6 +17971,7 @@ return " ";
       if(safe_strlen(ch->pcdata->operative_core) < 1 || !character_exists(ch->pcdata->operative_core))
       {
         create_ai_operative(ch, type);
+        if (haven::ai_enabled())
         send_to_char("Operative requested, they may take a few minutes to arrive.", ch);
         return;
       }
@@ -18020,6 +17984,7 @@ return " ";
           ? ch->pcdata->operative_legacy_society : ch->pcdata->operative_society;
       if (safe_strlen(operative) < 1 || !character_exists(const_cast<char *>(operative))) {
         create_ai_operative(ch, type);
+        if (haven::ai_enabled())
         send_to_char("Operative requested, they may take a few minutes to arrive.", ch);
         free_string(oname);
         return;
@@ -18134,6 +18099,10 @@ return " ";
 
   _DOFUN(do_testoperative)
   {
+    if (!haven::ai_enabled()) {
+      send_to_char("AI generation is currently disabled.\n\r", ch);
+      return;
+    }
     FACTION_TYPE *fac = clan_lookup(ch->fcore);
     char scriptbuf[MSL];
     int gcode;
@@ -18144,7 +18113,7 @@ return " ";
       else
       gcode = 2;
       sprintf(scriptbuf, "6,%d,%s,%s,\"%s\",\"%s\",\"%s\"", gcode, ch->name, ch->pcdata->last_name, from_color(get_default_dreamdesc(ch)), from_color(fac->description), ch->pcdata->intro_desc);
-      writeLineToFile(AI_IN_FILE, str_dup(scriptbuf));
+      writeLineToFile(AI_IN_FILE, scriptbuf);
     }
   }
 

@@ -16,3 +16,7 @@ For the localhost command crash fix and regression test, see docs/command-dispat
 
 For runtime indexes, AI queue cursors, save tracking, and optimization tests,
 see docs/runtime-optimization.md.
+
+For reliable AI queues, socket backpressure, social matching and note I/O,
+including how to update the Python worker alongside the game, see
+docs/runtime-hardening.md.

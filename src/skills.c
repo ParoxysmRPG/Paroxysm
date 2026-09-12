@@ -3871,7 +3871,7 @@ extern "C" {
   _DOFUN(do_cauterize) {
     if (IS_NPC(ch) || !ch->pcdata) return;
     if (str_cmp(argument, ch->name)) {
-      send_to_char("Syntax: cauterize (character name)\n\r", ch);
+      send_to_char("`cSyntax`g:`W cauterize `g(`xcharacter name`g)`x\n\r", ch);
       return;
     }
     if (!IS_FLAG(ch->act, PLR_WOLFBIT)) {
@@ -6744,8 +6744,8 @@ extern "C" {
         act("\t\t`WStat Report:`x$n\n\t$e is not famous.(0)", ch, NULL, NULL, TO_ROOM);
       }
       else if (get_skill(ch, val) == 1) {
-        act("\t\t`WStat Report:`xYou\n\tYou are locally famous in Haven.(1)", ch, NULL, NULL, TO_CHAR);
-        act("\t\t`WStat Report:`x$n\n\t$e is locally famous in Haven.(1)", ch, NULL, NULL, TO_ROOM);
+        act("\t\t`WStat Report:`xYou\n\tYou are locally famous in Gravesend.(1)", ch, NULL, NULL, TO_CHAR);
+        act("\t\t`WStat Report:`x$n\n\t$e is locally famous in Gravesend.(1)", ch, NULL, NULL, TO_ROOM);
       }
       else if (get_skill(ch, val) == 3) {
         act("\t\t`WStat Report:`xYou\n\tYou are famous in some circles.(3)", ch, NULL, NULL, TO_CHAR);
@@ -8314,11 +8314,11 @@ extern "C" {
       char_from_room(ch);
       char_to_room(ch, get_room_index(60));
       if (ch->pcdata->account->haven_books > 0)
-      send_to_char("You can create a new entry in the Haven book, set in Haven Township, somewhere else in earth, or somewhere offworld.\n\r", ch);
+      send_to_char("You can create a new entry in the Gravesend book, set in Gravesend Township, somewhere else in earth, or somewhere offworld.\n\r", ch);
       if (ch->pcdata->account->earth_books > 0)
-      send_to_char("You can create a new entry in the Haven book, set somewhere else in earth, or somewhere offworld.\n\r", ch);
+      send_to_char("You can create a new entry in the Gravesend book, set somewhere else in earth, or somewhere offworld.\n\r", ch);
       if (ch->pcdata->account->world_books > 0)
-      send_to_char("You can create a new entry in the Haven book, set somewhere offworld.\n\r", ch);
+      send_to_char("You can create a new entry in the Gravesend book, set somewhere offworld.\n\r", ch);
       return;
     }
   }
@@ -8343,20 +8343,23 @@ extern "C" {
         REMOVE_FLAG(ch->act, PLR_REROLL);
         send_to_char("Guest cleared.\n\r", ch);
       }
-      send_to_char("`cChoose a guest type`g:`x Plot, Henchman, Enemy, Monster, or Higherpower.\n\r"
-                   "`cSyntax`g:`x guest <type> <name>\n\r"
-                   "`cHigher power`g:`x Choose God, Fae, or Demon with guest higherpower <kind> <name> [territory].\n\r"
-                   "`cEarned remake`g:`x guest remake <t4/t5> <name>\n\r", ch);
+      send_to_char("`cChoose a guest type`g:`x Plot, Henchman, Enemy, Monster, or Higherpower.`x\n\r"
+                   "`cSyntax`g:`x `Wguest `g<`xtype`g>`W `g<`xname`g>`W`x\n\r"
+                   "`cHigher power`g:`x Choose God, Fae, or Demon with\n\r"
+                   "  `Wguest higherpower `g<`xkind`g>`W `g<`xname`g>`W `g[`xterritory`g]`W`x.`x\n\r"
+                   "`cEarned remake`g:`x `Wguest remake `g<`xt4/t5`g>`W `g<`xname`g>`W`x\n\r", ch);
       return;
     }
     if (!str_cmp(arg1, "claim")) {
       if (!*argument || !higher_power(ch) || !claim_power_territory(ch, get_loc(argument)))
-        send_to_char("An unclaimed higher power must choose a valid territory: guest claim <territory>. The claim is permanent.\n\r", ch);
+        send_to_char("An unclaimed higher power must choose a valid territory:\n\r"
+                   "  `Wguest claim `g<`xterritory`g>`x.\n\r"
+                   "The claim is permanent.`x\n\r", ch);
       else send_to_char("Territory claimed. You are a higher-power guest.\n\r", ch);
       return;
     }
     if (guest_out_of_play(ch)) {
-      send_to_char("This guest is out of play.\n\r", ch);
+      send_to_char("This guest is out of play.`x\n\r", ch);
       return;
     }
     bool making_power = !str_cmp(arg1, "higherpower");
@@ -8370,7 +8373,7 @@ extern "C" {
       if (making_power) {
         if (!*kind) {
           send_to_char("`cChoose a higher power`g:`x God, Fae, or Demon.\n\r"
-                       "`cSyntax`g:`x guest higherpower <god/fae/demon> <name> [territory]\n\r", ch);
+                       "`cSyntax`g:`x `Wguest higherpower `g<`xgod/fae/demon`g>`W `g<`xname`g>`W `g[`xterritory`g]`W`x\n\r", ch);
           return;
         }
         if (is_gm(ch) || IS_FLAG(ch->act, PLR_GUEST) || higher_power(ch)
@@ -8388,9 +8391,9 @@ extern "C" {
         char *territory = one_argument(argument, ignored_name);
         claimed = *territory ? get_loc(territory) : NULL;
         if (!power_race || !*ignored_name || (*territory && !claimed)) {
-          send_to_char("`cSyntax`g:`x guest higherpower <kind> <name> [territory]\n\r"
+          send_to_char("`cSyntax`g:`x `Wguest higherpower `g<`xkind`g>`W `g<`xname`g>`W `g[`xterritory`g]`W`x\n\r"
                        "`cKinds`g:`x God, Fae, Demon, Ghost, Cthulian, Primal.\n\r"
-                       "`cTerritory`g:`x Choose here or use change territory <territory> during creation.\n\r", ch);
+                       "`cTerritory`g:`x Choose here or use `Wchange territory `g<`xterritory`g>`W`x during creation.`x\n\r", ch);
           return;
         }
       } else {
@@ -8398,13 +8401,13 @@ extern "C" {
         int earned = retire_guest ? guest_remake_tier(ch) : ch->pcdata->account->guest_remake_reward;
         if (!remake_tier || remake_tier > earned || is_gm(ch)
             || (!retire_guest && IS_FLAG(ch->act, PLR_GUEST))) {
-          send_to_char("You need an earned reward for that tier: guest remake <t4/t5> <new name>.\n\r", ch);
+          send_to_char("You need an earned reward for that tier: `Wguest remake `g<`xt4/t5`g>`W `g<`xnew name`g>`W`x.`x\n\r", ch);
           return;
         }
       }
       if (in_fight(ch) || is_helpless(ch) || IS_FLAG(ch->act, PLR_DEAD)
           || ch->pcdata->guest_reward_used || (ch->in_room && ch->in_room->vnum == ROOM_INDEX_GENESIS)) {
-        send_to_char("You cannot start or remake a guest right now.\n\r", ch);
+        send_to_char("You cannot start or remake a guest right now.`x\n\r", ch);
         return;
       }
     }
@@ -8473,23 +8476,27 @@ extern "C" {
         }
 
         if (fetch_guestmonster() != NULL) {
-          send_to_char("There is already a monster in Haven.\n\r", ch);
+          send_to_char("There is already a monster in Gravesend.\n\r", ch);
           return;
         }
       }
       type = GUEST_MONSTER;
     }
     else if (!str_cmp(arg1, "nightmare")) {
-      send_to_char("Monster success now earns a permanent T4/T5 remake. Use guest remake <t4/t5> <name>.\n\r", ch);
+      send_to_char("Monster success now earns a permanent T4/T5 remake.\n\r"
+                   "Use `Wguest remake `g<`xt4/t5`g>`W `g<`xname`g>`x.\n\r", ch);
       return;
     }
     else {
-      send_to_char("Syntax: guest Plot/Henchman/Enemy/Monster <name>; guest higherpower <kind> <name> [territory]; guest remake <t4/t5> <name>; guest status\n\r", ch);
+      send_to_char("`cSyntax`g:`x `Wguest Plot/Henchman/Enemy/Monster `g<`xname`g>`W`x;\n\r"
+                   "        `Wguest higherpower `g<`xkind`g>`W `g<`xname`g>`W `g[`xterritory`g]`W`x;\n\r"
+                   "        `Wguest remake `g<`xt4/t5`g>`W `g<`xname`g>`W`x;\n\r"
+                   "        `Wguest status`x\n\r", ch);
       return;
     }
 
     if (arg[0] == '\0') {
-      send_to_char("Syntax: guest (name)?\n\r", ch);
+      send_to_char("`cSyntax`g:`x `Wguest `g(`xname`g)`W`x?`x\n\r", ch);
       if (IS_FLAG(ch->act, PLR_REROLL)) {
         REMOVE_FLAG(ch->act, PLR_REROLL);
         send_to_char("Guest cleared.\n\r", ch);
@@ -8516,7 +8523,7 @@ extern "C" {
 
     if (!IS_FLAG(ch->act, PLR_REROLL)) {
       SET_FLAG(ch->act, PLR_REROLL);
-      send_to_char("Type guest (type) <name> again to continue, guest by itself to clear.\n\r", ch);
+      send_to_char("Type `Wguest `g(`xtype`g)`W `g<`xname`g>`x again to continue, `Wguest`x by itself to clear.\n\r", ch);
       return;
     }
     int tier = making_power ? 6 : remake ? remake_tier : 0;
@@ -9044,7 +9051,7 @@ extern "C" {
     if(!str_cmp(argument, "ritualist"))
     return TRUE;
 
-    if(!str_cmp(argument, "ouroboros"))
+    if(!str_cmp(argument, "a collaborative project"))
     return TRUE;
 
     if(!str_cmp(argument, "tyr"))
@@ -10908,8 +10915,12 @@ extern "C" {
   }
 
   _DOFUN(do_shroud) {
+    if (syndicate_cell(ch->in_room)) {
+      send_to_char("The cell's wards keep the nightmare out of reach.\n\r", ch);
+      return;
+    }
     if (IS_FLAG(ch->act, PLR_DEAD)) {
-      send_to_char("Haven holds your spirit fast.\n\r", ch);
+      send_to_char("Gravesend holds your spirit fast.\n\r", ch);
       return;
     }
 
@@ -10982,6 +10993,11 @@ extern "C" {
       }
 
       CHAR_DATA *pull_target = IS_NPC(victim) ? victim->your_car : victim;
+      if (syndicate_cell(victim->in_room)
+          || (pull_target && syndicate_cell(pull_target->in_room))) {
+        send_to_char("The cell's wards protect them from the nightmare.\n\r", ch);
+        return;
+      }
       if (pull_target != NULL && IS_AFFECTED(pull_target, AFF_WAKEBOUND)) {
         send_to_char("Wakebound protects them from nightmare pull.\n\r", ch);
         return;
@@ -11055,7 +11071,8 @@ extern "C" {
           continue;
           if (in_lodge(to->in_room))
           continue;
-          if (to == victim || to == ch || IS_AFFECTED(to, AFF_WAKEBOUND))
+          if (to == victim || to == ch || IS_AFFECTED(to, AFF_WAKEBOUND)
+              || syndicate_cell(to->in_room))
           continue;
 
           if (combat_distance(victim, to, FALSE) <= 200) {
@@ -21318,7 +21335,7 @@ extern "C" {
               news = new_news();
               news->timer = 1000;
               free_string(news->message);
-              news->message = str_dup("An animal attack is reported to have occured in Haven last night.");
+              news->message = str_dup("An animal attack is reported to have occured in Gravesend last night.");
               free_string(news->author);
               news->author = str_dup("Town Events");
               NewsVect.push_back(news);
@@ -21370,7 +21387,7 @@ extern "C" {
               news = new_news();
               news->timer = 1000;
               free_string(news->message);
-              news->message = str_dup("An animal attack is reported to have occured in Haven last night.");
+              news->message = str_dup("An animal attack is reported to have occured in Gravesend last night.");
               free_string(news->author);
               news->author = str_dup("Town Events");
               NewsVect.push_back(news);
@@ -21423,7 +21440,7 @@ extern "C" {
                 news = new_news();
                 news->timer = 1000;
                 free_string(news->message);
-                news->message = str_dup("An animal attack is reported to have occured in Haven last night.");
+                news->message = str_dup("An animal attack is reported to have occured in Gravesend last night.");
                 free_string(news->author);
                 news->author = str_dup("Town Events");
                 NewsVect.push_back(news);
@@ -21475,7 +21492,7 @@ extern "C" {
               news = new_news();
               news->timer = 1000;
               free_string(news->message);
-              news->message = str_dup("An animal attack is reported to have occured in Haven last night.");
+              news->message = str_dup("An animal attack is reported to have occured in Gravesend last night.");
               free_string(news->author);
               news->author = str_dup("Town Events");
               NewsVect.push_back(news);
@@ -22684,7 +22701,7 @@ extern "C" {
     else if (i == 18)
     return "a weak-chinned woman with dusky skin";
 
-    return "a Haven resident";
+    return "a Gravesend resident";
   }
 
   void habit_corpse(CHAR_DATA *ch, char *deathcause) {
@@ -32174,7 +32191,7 @@ extern "C" {
       news = new_news();
       news->timer = 1500;
       free_string(news->message);
-      news->message = str_dup("A Haven resident was found critically injured from an animal attack last night.");
+      news->message = str_dup("A Gravesend resident was found critically injured from an animal attack last night.");
       free_string(news->author);
       news->author = str_dup("Town Events");
       NewsVect.push_back(news);
@@ -36214,7 +36231,7 @@ extern "C" {
   }
 
   void wipe_char(char *name) {
-    if (!str_cmp(name, "Daed") || !str_cmp(name, "Discordance") || !str_cmp(name, "Discordancer") || !str_cmp(name, "Ouroboros") || !str_cmp(name, "Tyr") || !str_cmp(name, "GroundObjects") || !str_cmp(name, "Ritualist"))
+    if (!str_cmp(name, "Daed") || !str_cmp(name, "Discordance") || !str_cmp(name, "Discordancer") || !str_cmp(name, "a collaborative project") || !str_cmp(name, "Tyr") || !str_cmp(name, "GroundObjects") || !str_cmp(name, "Ritualist"))
     return;
 
     struct stat sb;

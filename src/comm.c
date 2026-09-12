@@ -22,6 +22,7 @@
 
 #include "telnet.h"
 #include "merc.h"
+#include "socket_output.h"
 #include "text_format.h"
 #include "runtime_io.h"
 #include "recycle.h"
@@ -1277,7 +1278,7 @@ void create_ident( DESCRIPTOR_DATA *d, long ip )
         ++it;
         if (d == NULL || d->valid == FALSE)
         continue;
-        if ((d->fcommand || d->outtop > 0) && FD_ISSET(d->descriptor, &out_set)) {
+        if (d->out_overflow || ((d->fcommand || d->outtop > 0) && FD_ISSET(d->descriptor, &out_set))) {
           if (!process_output(d, TRUE)) {
             if (d->character != NULL && d->connected == CON_PLAYING)
             save_char_obj(d->character, FALSE, FALSE);
@@ -1729,7 +1730,8 @@ void create_ident( DESCRIPTOR_DATA *d, long ip )
     /*
     * Bust a prompt.
     */
-    if (!merc_down) {
+    if (d->out_overflow) return FALSE;
+    if (!merc_down && (d->outtop > d->out_prepared || d->fcommand || d->outtop == 0)) {
       if (d->showstr_point) {
         write_to_buffer(d, "[Hit Return to continue]\n\r", 0);
       }
@@ -1768,24 +1770,14 @@ void create_ident( DESCRIPTOR_DATA *d, long ip )
     /*
     * Snoop-o-rama.
     */
-    if (d->snoop_by != NULL && !is_spyshield(d->character)) {
+    if (d->outtop > d->out_prepared && d->snoop_by != NULL && d->snoop_by != d && !is_spyshield(d->character)) {
       if (d->character != NULL)
-      write_to_descriptor(d->snoop_by->descriptor, d->character->name, 0);
-      write_to_descriptor(d->snoop_by->descriptor, "# ", 2); // MXP FIX
-      write_to_descriptor(d->snoop_by->descriptor, d->outbuf, d->outtop);
+        haven::queue_socket_output(d->snoop_by, d->character->name, strlen(d->character->name));
+      haven::queue_socket_output(d->snoop_by, "# ", 2);
+      haven::queue_socket_output(d->snoop_by, d->outbuf + d->out_prepared, d->outtop - d->out_prepared);
     }
-
-    /*
-    * OS-dependent output.
-    */
-    if (!write_to_descriptor(d->descriptor, d->outbuf, d->outtop)) {
-      d->outtop = 0;
-      return FALSE;
-    }
-    else {
-      d->outtop = 0;
-      return TRUE;
-    }
+    d->out_prepared = d->outtop;
+    return haven::flush_socket_output(d);
   }
 
   _DOFUN(do_hp) { bust_a_prompt(ch); }
@@ -2609,7 +2601,7 @@ void create_ident( DESCRIPTOR_DATA *d, long ip )
     }
     else if(ch->pcdata->ci_editing == 22)
     {
-      send_to_char("`cMyHaven Profile`x\n\r", ch);
+      send_to_char("`cMeetz Profile`x\n\r", ch);
       PROFILE_TYPE *profile = profile_lookup(ch->name);
       if(profile == NULL)
       {
@@ -3856,39 +3848,7 @@ void create_ident( DESCRIPTOR_DATA *d, long ip )
       d->outtop = 2;
     }
 
-    /*
-    * Expand the buffer as needed.
-    */
-    while (d->outtop + length >= d->outsize) {
-      char *outbuf;
-      /*
-      if (d->outsize >= 32000) {
-      bug("Buffer overflow. Closing.\n\r", 0);
-      close_desc(d);
-      return;
-      }
-      */
-      outbuf = (char *)alloc_mem(2 * d->outsize);
-      strncpy(outbuf, d->outbuf, d->outtop);
-      free_mem(d->outbuf, d->outsize);
-      d->outbuf = outbuf;
-      d->outsize *= 2;
-      // log_string("MEMCHECK: Write to buffer.");
-    }
-
-    /*
-    * Copy.
-    */
-
-    memcpy(d->outbuf + d->outtop, rendered.data(), length);
-
-    // MXP - Discordance
-    // convert_mxp_tags (d->mxp, d->outbuf + d->outtop, buffer, origlength);
-    // convert_mxp_tags (d->mxp, d->outbuf + d->outtop, newtxt, origlength);
-    // //This is going to output instead
-    d->outtop += length;
-    // free_string(newtxt);
-    return;
+    haven::queue_socket_output(d, rendered.data(), rendered.size());
   }
 
   /*
@@ -3897,24 +3857,16 @@ void create_ident( DESCRIPTOR_DATA *d, long ip )
   * If this gives errors on very long blocks (like 'ofind all'), *   try lowering the max block size.
   */
   bool write_to_descriptor(int desc, char *txt, int length) {
-    int iStart;
-    int nWrite;
-    int nBlock;
-    if (length <= 0)
-    length = safe_strlen(txt);
-    for (iStart = 0; iStart < length; iStart += nWrite) {
-      nBlock = UMIN(length - iStart, 4096);
-#if defined(_WIN32)
-      if ((nWrite = send(desc, txt + iStart, nBlock, 0)) < 0)
-#else
-      if ((nWrite = write(desc, txt + iStart, nBlock)) < 0)
-#endif
-      {
-        perror("Write_to_descriptor");
-        return FALSE;
+    if (length <= 0) length = safe_strlen(txt);
+    // Registered clients own a retryable queue, including direct protocol output.
+    for (DESCRIPTOR_DATA *d : descriptor_list) {
+      if (d && d->valid && d->descriptor == desc) {
+        haven::queue_socket_output(d, txt, length);
+        return haven::flush_socket_output(d);
       }
     }
-    return TRUE;
+    const haven::SocketWrite result = haven::write_socket(desc, txt, length);
+    return result.ok && result.sent == size_t(length);
   }
 
   void stop_idling(CHAR_DATA *ch) {
@@ -5991,7 +5943,7 @@ void create_ident( DESCRIPTOR_DATA *d, long ip )
         return FALSE;
       }
 
-      write_to_buffer(d, "Choosing a name is quite important, the world of Haven is a modern\n\r", 0);
+      write_to_buffer(d, "Choosing a name is quite important, the world of Paroxysm is a modern\n\r", 0);
       write_to_buffer(d, "paranormal one essentially identical to our own except for the addition.\n\r", 0);
       write_to_buffer(d, "of magic and demons etc. Please ensure your name fits within this world\n\r", 0);
       write_to_buffer(d, "You cannot play a character identical to any real person or established\n\r", 0);
@@ -6394,7 +6346,7 @@ void create_ident( DESCRIPTOR_DATA *d, long ip )
     case 'Y':
       writef_to_buffer(d, "New account.\n\n\r", 0);
       writef_to_buffer(
-      d, "`rNotice`x: Haven is a mature role playing game in which there are no restrictions on content. As such depictions of graphic violence, sex or other mature themes may be presented to the player over the course of their time here. By continuing you state that you are not offended by mature material and that it is legal for you to view it. If this is not the case please type 'quit' now.", 0);
+      d, "`rNotice`x: Paroxysm is a mature role playing game in which there are no restrictions on content. As such depictions of graphic violence, sex or other mature themes may be presented to the player over the course of their time here. By continuing you state that you are not offended by mature material and that it is legal for you to view it. If this is not the case please type 'quit' now.", 0);
       writef_to_buffer(d, "\n\nType either quit or select a password for %s: %s", account->name, echo_off_str);
       d->connected = CON_GET_NEW_ACCOUNT_PASSWORD;
       break;
@@ -6476,8 +6428,8 @@ void create_ident( DESCRIPTOR_DATA *d, long ip )
       fprintf(fp, "%s\n", account->upwd);
       //        fprintf( fp, "%s\n", ch->pcdata->email);
       //        fprintf( fp, "%s\n", ch->pcdata->email);
-      fprintf(fp, "none@havenrpg.net\n");
-      fprintf(fp, "none@havenrpg.net\n");
+      fprintf(fp, "none@paroxysm.net\n");
+      fprintf(fp, "none@paroxysm.net\n");
       fclose(fp);
     }
 
@@ -7272,7 +7224,7 @@ void create_ident( DESCRIPTOR_DATA *d, long ip )
     PROFILE_TYPE *char_profile = profile_lookup(ch->name);
     if(char_profile != NULL && (ch->pcdata->missed_chat_connections + ch->pcdata->missed_rp_connections >= 2 && (char_profile->plus == 1 || char_profile->premium == 1)))
     {
-      sprintf(buf, "MyHaven Plus reports there were up to %d people wanting to chat with you and %d people wanting to hang out with you yesterday.\n\r", ch->pcdata->missed_chat_connections, ch->pcdata->missed_rp_connections);
+      sprintf(buf, "Meetz Plus reports there were up to %d people wanting to chat with you and %d people wanting to hang out with you yesterday.\n\r", ch->pcdata->missed_chat_connections, ch->pcdata->missed_rp_connections);
       strcat(string, buf);
     }
 
@@ -8514,7 +8466,7 @@ void create_ident( DESCRIPTOR_DATA *d, long ip )
       */
     }
     if (guestmonster(victim) && fetch_guestmonster_exclusive(victim) != NULL && fetch_guestmonster_exclusive(victim) != victim) {
-      write_to_buffer(ddx, "There is already another monster in Haven.\n\r", 0);
+      write_to_buffer(ddx, "There is already another monster in Gravesend.\n\r", 0);
       return FALSE;
     }
     if (IS_FLAG(victim->act, PLR_GUEST) || IS_FLAG(victim->act, PLR_GM) || IS_FLAG(victim->act, PLR_SINSPIRIT))

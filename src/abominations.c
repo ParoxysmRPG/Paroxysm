@@ -260,7 +260,7 @@ extern "C" {
         news = new_news();
         news->timer = 1500;
         free_string(news->message);
-        news->message = str_dup("There are reports of a bizzarely deformed cattle birth on a farm near Haven");
+        news->message = str_dup("There are reports of a bizzarely deformed cattle birth on a farm near Gravesend");
         free_string(news->author);
         news->author = str_dup("Town Events");
         NewsVect.push_back(news);

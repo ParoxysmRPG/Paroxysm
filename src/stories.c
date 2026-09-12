@@ -10586,7 +10586,7 @@ continue;
   std::string encounter_prompt(CHAR_DATA *ch, int type) {
     if (type == 1)
     return
-    "Someone in Haven has found out about the supernatural and is freaking out about it. They're at risk of exposing the secret, hurting themselves, or hurting others. Your target and their allies are tasked with containing the situation.\n\r";
+    "Someone in Gravesend has found out about the supernatural and is freaking out about it. They're at risk of exposing the secret, hurting themselves, or hurting others. Your target and their allies are tasked with containing the situation.\n\r";
     if (type == 2)
     return
     "An amateur paranormal investigator has stumbled onto the truth of the supernatural world and has evidence. Your target and their allies are tasked with containing the situation.\n\r";
@@ -15394,7 +15394,7 @@ minutes.\n\r", 2 - ch->pcdata->dream_timer); return;
               }
             }
           }
-          if (!str_cmp(arg2, "haven")) {
+          if (!str_cmp(arg2, "gravesend")) {
             if (clinic_patient(ch) && institute_room(ch->in_room)) {
               send_to_char("You can't leave the institute.\n\r", ch);
               return;
@@ -18646,15 +18646,15 @@ return;
   void bookadd(CHAR_DATA *ch, int world) {
     if (world == -1) {
       ch->pcdata->account->haven_books++;
-      send_to_char("You can now create a new entry in the Haven book, set in Haven Township, somewhere else in earth, or somewhere offworld.\n\r", ch);
+      send_to_char("You can now create a new entry in the Gravesend book, set in Gravesend Township, somewhere else in earth, or somewhere offworld.\n\r", ch);
     }
     else if (world == WORLD_EARTH) {
       ch->pcdata->account->earth_books++;
-      send_to_char("You can now create a new entry in the Haven book, set somewhere else in earth, or somewhere offworld.\n\r", ch);
+      send_to_char("You can now create a new entry in the Gravesend book, set somewhere else in earth, or somewhere offworld.\n\r", ch);
     }
     else if (world == WORLD_OTHER) {
       ch->pcdata->account->world_books++;
-      send_to_char("You can now create a new entry in the Haven book, set somewhere offworld.\n\r", ch);
+      send_to_char("You can now create a new entry in the Gravesend book, set somewhere offworld.\n\r", ch);
     }
   }
 
@@ -18732,10 +18732,10 @@ return;
       }
       return;
     }
-    if (!str_cmp(arg1, "index") && !str_cmp(arg2, "haven")) {
+    if (!str_cmp(arg1, "index") && !str_cmp(arg2, "gravesend")) {
       page = 1;
       entry = 0;
-      printf_to_char(ch, "`WHaven Index:\n\r");
+      printf_to_char(ch, "`WGravesend Index:\n\r");
       bool unread = FALSE;
       for (vector<PAGE_TYPE *>::iterator it = PageVect.begin();
       it != PageVect.end(); ++it) {
@@ -18993,7 +18993,7 @@ return;
       printf_to_char(ch, "                                                                         `wPage %2d\n\r", point);
       return;
     }
-    if (!str_cmp(arg1, "read") && !str_cmp(arg2, "haven") && !str_cmp(arg3, "")) {
+    if (!str_cmp(arg1, "read") && !str_cmp(arg2, "gravesend") && !str_cmp(arg3, "")) {
       int point = 0;
       page = 1;
       entry = 0;
@@ -19222,7 +19222,7 @@ return;
       printf_to_char(ch, "                                                                         `wPage %2d\n\r", point);
       return;
     }
-    if (!str_cmp(arg1, "read") && !str_cmp(arg2, "haven") && is_number(arg3)) {
+    if (!str_cmp(arg1, "read") && !str_cmp(arg2, "gravesend") && is_number(arg3)) {
       int point = atoi(arg3);
       page = 1;
       entry = 0;
@@ -19351,7 +19351,7 @@ return;
         continue;
         maxpage = UMAX(maxpage, (*it)->number);
       }
-      if (!str_cmp(arg2, "haven")) {
+      if (!str_cmp(arg2, "gravesend")) {
         if (ch->pcdata->account->haven_books < 1 && str_cmp(ch->name, "Tyr")) {
           send_to_char("You don't have any saved entries.\n\r", ch);
           return;
@@ -24854,7 +24854,7 @@ return;
     if (troom->sector_type == SECT_AIR)
     strcat(buf, "(Airborne)");
     if (!in_haven(troom))
-    strcat(buf, "(Not Haven)");
+    strcat(buf, "(Not Gravesend)");
     return str_dup(buf);
   }
 
@@ -26393,11 +26393,12 @@ return;
 
   void find_doom(CHAR_DATA *ch)
   {
+    if (!haven::ai_enabled()) return;
     char buf[MSL];
     int doomdays = doom_days(ch);
     sprintf(buf, "3,0,%s,%d,,,", ch->name, doomdays);
     log_string(buf);
-    writeLineToFile(AI_IN_FILE, str_dup(buf));
+    writeLineToFile(AI_IN_FILE, buf);
   }
 
   void set_doom(CHAR_DATA *ch) {

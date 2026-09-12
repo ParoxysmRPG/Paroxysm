@@ -1072,7 +1072,7 @@ if(pToRoom->vnum==pRoom1->vnum)
       sprintf(buf, "District:   [%s]\n\r", "Institute");
     }
     else if (district == 6) {
-      sprintf(buf, "District:   [%s]\n\r", "Westhaven");
+      sprintf(buf, "District:   [%s]\n\r", "West Gravesend");
     }
     else if (district == 7) {
       sprintf(buf, "District:   [%s]\n\r", "Farm");

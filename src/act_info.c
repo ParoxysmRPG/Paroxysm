@@ -3365,7 +3365,7 @@ extern "C" {
 
         if (!is_masked(victim) && !guestmonster(victim) && photo == FALSE && !higher_power(victim)) {
           if (victim->played / 3600 < 50) {
-            buf = haven::format_text("They seem like a newcomer to Haven.\n\r");
+            buf = haven::format_text("They seem like a newcomer to Gravesend.\n\r");
             string += buf.data();
           }
           else if (social_standing(victim) >= 75) {
@@ -4048,7 +4048,7 @@ extern "C" {
     sprintf(attractstring, "You would judge %s to be a %s%0.1f`x out of 10", (victim->sex == SEX_MALE) ? "him" : "her", attract_color(attraction), (float)attraction / 10);
 
     if (victim->played / 3600 < 50) {
-      sprintf(buf, "They seem like a newcomer to Haven.\n\r");
+      sprintf(buf, "They seem like a newcomer to Gravesend.\n\r");
       strcat(string, buf);
     }
     else if (social_standing(victim) >= 75) {
@@ -10089,10 +10089,10 @@ extern "C" {
     }
     /* Disabling wiki links for general release - Disco
     if (is_gm(victim)) {
-      sprintf(wikipage, "http://havenrpg.net/wiki/pmwiki.php/StoryRunners/%s", victim->name);
+      sprintf(wikipage, "http://paroxysm.net/wiki/pmwiki.php/StoryRunners/%s", victim->name);
     }
     else if (higher_power(victim)) {
-      sprintf(wikipage, "http://havenrpg.net/wiki/pmwiki.php/HigherPower/%s", victim->name);
+      sprintf(wikipage, "http://paroxysm.net/wiki/pmwiki.php/HigherPower/%s", victim->name);
     }
     else {
       char *dupLastName;
@@ -10131,7 +10131,7 @@ extern "C" {
       }
       compLastName[cap] = '\0';
 
-      sprintf(wikipage, "http://havenrpg.net/wiki/pmwiki.php/Characters/%s%s", victim->name, compLastName);
+      sprintf(wikipage, "http://paroxysm.net/wiki/pmwiki.php/Characters/%s%s", victim->name, compLastName);
     }
     */
 
@@ -10920,7 +10920,7 @@ extern "C" {
       }
     }
     if (obj->faction == -1) {
-      sprintf(buf, "It has the symbol of Haven Sheriff's Department on it.\n\r");
+      sprintf(buf, "It has the symbol of Gravesend Sheriff's Department on it.\n\r");
       strcat(otext, buf);
     }
     else if (obj->faction == -2 && get_skill(ch, SKILL_DEMONOLOGY) >= 1) {

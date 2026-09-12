@@ -3044,7 +3044,7 @@ extern "C" {
     if (is_town_blackout() && !IS_IMMORTAL(ch))
     return FALSE;
 
-    if (!spyroom(ch, victim->in_room) && !is_dreaming(victim) && (ch->level < 106 || !str_cmp(ch->name, "Ouroboros"))) {
+    if (!spyroom(ch, victim->in_room) && !is_dreaming(victim) && (ch->level < 106 || !str_cmp(ch->name, "a collaborative project"))) {
       return FALSE;
     }
 
@@ -5615,24 +5615,24 @@ extern "C" {
       return 10;
     }
     if (ch->in_room != NULL && ch->in_room->vnum < 300 && ch->in_room->vnum > 1) {
-      if (view != NULL) send_to_char("  Creation room - Lifeforce fixed at 100 LF.\n\r", view);
+      if (view != NULL) send_to_char("  `cCreation room`x - Lifeforce fixed at 100 LF.\n\r", view);
       ch->lifeforce = 10000;
       ch->lf_taken = 0;
       ch->lf_used = 0;
       return 100;
     }
     if (higher_power(ch)) {
-      if (view != NULL) send_to_char("  Higher power - Special lifeforce rule applies.\n\r", view);
+      if (view != NULL) send_to_char("  `cHigher power`x - Special lifeforce rule applies.\n\r", view);
       return 100;
     }
 
     if (guestmonster(ch)) {
-      if (view != NULL) send_to_char("  Monster guest: average of base lifeforce and 100 - Special lifeforce rule applies.\n\r", view);
+      if (view != NULL) send_to_char("  `cMonster guest`g:`x average of base lifeforce and 100 - Special lifeforce rule applies.\n\r", view);
       return (base_lifeforce(ch) / 100 + 100) / 2;
     }
 
     if (is_gm(ch) && !IS_IMMORTAL(ch)) {
-      if (view != NULL) send_to_char("  Storyrunner - Special lifeforce rule applies.\n\r", view);
+      if (view != NULL) send_to_char("  `cStoryrunner`x - Special lifeforce rule applies.\n\r", view);
       return 100;
     }
 
@@ -5654,7 +5654,7 @@ extern "C" {
     }
 
     if (IS_FLAG(ch->act, PLR_SINSPIRIT)) {
-      if (view != NULL) send_to_char("  Sin spirit - Special lifeforce rule applies.\n\r", view);
+      if (view != NULL) send_to_char("  `cSin spirit`x - Special lifeforce rule applies.\n\r", view);
       return 120;
     }
 
@@ -5672,16 +5672,16 @@ extern "C" {
 
     if (view != NULL)
     {
-      printf_to_char(view, "  Stored lifeforce: %.2f LF\n\r", ch->lifeforce / 100.0);
+      printf_to_char(view, "  `cStored lifeforce`g:`x %.2f LF\n\r", ch->lifeforce / 100.0);
       if (feeding_lf_penalty(ch) != 0)
         printf_to_char(view, "  `YFeeding hunger`x - Reduces base lifeforce by %.2f LF.\n\r", feeding_lf_penalty(ch) / 100.0);
       if (ch->lf_used != 0)
-        printf_to_char(view, "  Energy spent / restored: %+.2f LF\n\r", -ch->lf_used / 100.0);
+        printf_to_char(view, "  `cEnergy spent / restored`g:`x %+.2f LF\n\r", -ch->lf_used / 100.0);
       if (ch->lf_taken != 0)
-        printf_to_char(view, "  Lifeforce lost / gained (including feeding and victimizing): %+.2f LF\n\r", -ch->lf_taken / 100.0);
+        printf_to_char(view, "  `cLifeforce lost / gained (including feeding and victimizing)`g:`x %+.2f LF\n\r", -ch->lf_taken / 100.0);
       if (ch->lf_sused != 0)
-        printf_to_char(view, "  Additional expenditure / recovery: %+.2f LF\n\r", -ch->lf_sused / 100.0);
-      printf_to_char(view, "  Base lifeforce: %.2f LF\n\r", val / 100.0);
+        printf_to_char(view, "  `cAdditional expenditure / recovery`g:`x %+.2f LF\n\r", -ch->lf_sused / 100.0);
+      printf_to_char(view, "  `cBase lifeforce`g:`x %.2f LF\n\r", val / 100.0);
     }
 
     if (!used)
@@ -5689,7 +5689,7 @@ extern "C" {
 
     int base_modifier = lifeforce_mod(ch, view);
     if (view != NULL)
-      printf_to_char(view, "  Combined base multiplier: %d%%\n\r", base_modifier);
+      printf_to_char(view, "  `cCombined base multiplier`g:`x %d%%\n\r", base_modifier);
     val = val * base_modifier / 100;
     val /= 100;
 
@@ -5757,7 +5757,7 @@ extern "C" {
     if (is_vampire(ch) || is_werewolf(ch)) {
       int monster_modifier = monster_lf_mod(ch, view);
       if (view != NULL)
-        printf_to_char(view, "  Combined monster multiplier: %d%%\n\r", monster_modifier);
+        printf_to_char(view, "  `cCombined monster multiplier`g:`x %d%%\n\r", monster_modifier);
       val = val * monster_modifier / 100;
     }
 
@@ -5840,13 +5840,13 @@ extern "C" {
     if (IS_NPC(ch) || ch->pcdata == NULL)
       return;
     if (argument[0] != '\0') {
-      send_to_char("`WSyntax:`x affect or affects\n\r", ch);
+      send_to_char("`cSyntax`g:`W affect `xor `Waffects`x\n\r", ch);
       return;
     }
     int displayed = get_display_lifeforce(ch);
-    send_to_char("`B----------------------------------------`x\n\r"
+    send_to_char("`c----------------------------------------`x\n\r"
                  "  `WLifeForce Affecting Factors`x\n\r"
-                 "`B----------------------------------------`x\n\r", ch);
+                 "`c----------------------------------------`x\n\r", ch);
     char heading[MIL];
     snprintf(heading, sizeof(heading), "Current LifeForce: %d", displayed);
     int padding = UMAX(0, (40 - (int)strlen(heading)) / 2);
@@ -5854,7 +5854,7 @@ extern "C" {
     int actual = get_lifeforce(ch, TRUE, ch);
     if (IS_AFFECTED(ch, AFF_BITTEN) && ch->pcdata->bittenloss > 0)
       printf_to_char(ch, "  `cBite aftereffect`x - Display adjustment: %+d LF.\n\r", displayed - actual);
-    send_to_char("`B----------------------------------------`x\n\r", ch);
+    send_to_char("`c----------------------------------------`x\n\r", ch);
   }
 
   int get_display_lfmod(CHAR_DATA *ch) {

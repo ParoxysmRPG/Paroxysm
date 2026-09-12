@@ -7666,7 +7666,8 @@ return;
   }
 
   void cortex_enforcer_defeat(CHAR_DATA *mob, CHAR_DATA *victim) {
-    if (!cortex_enforcer(mob) || !victim || IS_NPC(victim) || !victim->in_room) return;
+    if (!cortex_enforcer(mob) || mob->ttl <= 0 || !victim || IS_NPC(victim)
+        || !victim->pcdata || !victim->in_room) return;
     bool public_response = cortex_public_enforcer(mob);
     // Retire this squad without extracting characters during the combat iteration.
     for (CHAR_DATA *enforcer : char_list) {
@@ -7685,10 +7686,14 @@ return;
       act("The Cortex enforcers leave $n unconscious at the defender's mercy and withdraw.", victim, NULL, NULL, TO_ROOM);
       return;
     }
-    send_to_char("The enforcers leave you unconscious. You come round as a monster closes in.\n\r", victim);
-    victim->pcdata->sleeping = 0;
-    victim->hit = max_hp(victim);
-    cortex_monster_ambush(victim, true);
+    victim->hit = 0;
+    if (start_syndicate_auction(victim)) {
+      victim->pcdata->sleeping = 0;
+    }
+    else {
+      victim->pcdata->sleeping = UMAX(victim->pcdata->sleeping, 240);
+      send_to_char("The Cortex enforcers knock you out and withdraw; no auction holding cell is available.\n\r", victim);
+    }
   }
 
   static time_t cortex_breach_until = 0;
@@ -8781,11 +8786,11 @@ create_crystal(spawnroom, 1);
     if (ch->faction != 0 && victim->played / 3600 > 10 && ch->played / 3600 > 5 && !is_abom(victim) && !guestmonster(victim) && !IS_FLAG(victim->act, PLR_GUEST)) {
       if (victim->desc == NULL) {
         send_message(
-        ch->faction, "Headquarters are unhappy at the rising death toll in Haven.");
+        ch->faction, "Headquarters are unhappy at the rising death toll in Gravesend.");
       }
       else {
         send_message(
-        ch->faction, "Headquarters are unhappy at the rising death toll in Haven.");
+        ch->faction, "Headquarters are unhappy at the rising death toll in Gravesend.");
       }
     }
 
@@ -9205,7 +9210,7 @@ create_crystal(spawnroom, 1);
     send_to_char("You report them.\n\r", ch);
 
     if (!spammer(ch) && !IS_FLAG(ch->pcdata->account->flags, ACCOUNT_NOTELL)) {
-      send_to_char("Someone believes you have violated Haven's emote standards, please read help emote standards.\n\r", victim);
+      send_to_char("Someone believes you have violated Paroxysm's emote standards, please read help emote standards.\n\r", victim);
       CHAR_DATA *rch;
       for (DescList::iterator it = descriptor_list.begin();
       it != descriptor_list.end(); ++it) {
@@ -10542,10 +10547,10 @@ displace(rch, to, size);
 
   _DOFUN(do_map) {
     if (!in_fight(ch)) {
-      send_to_char("`yTown`g:`x `chttp://havenrpg.net/town.php`x\n\r", ch);
-      send_to_char("`gNorth Forest`y:`x `chttp://havenrpg.net/northforest.php`x\n\r", ch);
-      send_to_char("`gSouth Forest`y:`x `chttp://havenrpg.net/southforest.php`x\n\r", ch);
-      send_to_char("`gWest Forest`y:`x `chttp://havenrpg.net/westforest.php`x\n\r", ch);
+      send_to_char("`yTown`g:`x `chttp://paroxysm.net/town.php`x\n\r", ch);
+      send_to_char("`gNorth Forest`y:`x `chttp://paroxysm.net/northforest.php`x\n\r", ch);
+      send_to_char("`gSouth Forest`y:`x `chttp://paroxysm.net/southforest.php`x\n\r", ch);
+      send_to_char("`gWest Forest`y:`x `chttp://paroxysm.net/westforest.php`x\n\r", ch);
 
       return;
     }
@@ -13727,7 +13732,7 @@ printf_to_char(victim, "Enemy Check: %s, %s, ch->vic aggro: %d, vic->ch aggro
   }
 
   bool has_enemy(CHAR_DATA *ch) {
-    if (fight_problem == 1)
+    if (!ch || !ch->in_room || fight_problem > 0)
     return FALSE;
     if (IS_NPC(ch) && IS_FLAG(ch->act, ACT_SENTINEL))
     return FALSE;
@@ -13735,28 +13740,22 @@ printf_to_char(victim, "Enemy Check: %s, %s, ch->vic aggro: %d, vic->ch aggro
     return FALSE;
 
     CHAR_DATA *wch;
-    int limit = 0;
     for (CharList::iterator it = char_list.begin();
-    it != char_list.end() && limit < 1000; ++it) {
-      limit++;
+    it != char_list.end(); ++it) {
       wch = *it;
 
-      if (ch == wch)
+      if (!wch || ch == wch)
       continue;
 
       if (is_enemy(ch, wch)) {
         return TRUE;
       }
     }
-    if (limit > 800) {
-      log_string("FIGHTPROBLEM: Has enemy");
-      fight_problem += 1;
-    }
     return FALSE;
   }
 
   bool same_fight(CHAR_DATA *ch, CHAR_DATA *victim) {
-    if (fight_problem > 0)
+    if (!ch || !victim || fight_problem > 0)
     return FALSE;
     if (ch == victim)
     return TRUE;
@@ -13786,22 +13785,16 @@ printf_to_char(victim, "Enemy Check: %s, %s, ch->vic aggro: %d, vic->ch aggro
     if (is_enemy(ch, victim))
     return TRUE;
     CHAR_DATA *wch;
-    int limit = 0;
     for (CharList::iterator it = char_list.begin();
-    it != char_list.end() && limit < 2000; ++it) {
+    it != char_list.end(); ++it) {
       wch = *it;
-      if (ch == wch)
+      if (!wch || !wch->in_room || ch == wch)
       continue;
 
-      if (is_enemy(ch, wch) && combat_distance(victim, wch, FALSE) <= 250)
+      if (combat_distance(victim, wch, FALSE) <= 250 && is_enemy(ch, wch))
       return TRUE;
-      if (is_enemy(victim, wch) && combat_distance(ch, wch, FALSE) <= 250)
+      if (combat_distance(ch, wch, FALSE) <= 250 && is_enemy(victim, wch))
       return TRUE;
-      limit++;
-    }
-    if (limit > 1500) {
-      log_string("FIGHTPROBLEM: Same Fight");
-      fight_problem++;
     }
 
     return FALSE;
@@ -13813,7 +13806,7 @@ printf_to_char(victim, "Enemy Check: %s, %s, ch->vic aggro: %d, vic->ch aggro
     return ch->in_fight;
   }
   bool check_fight(CHAR_DATA *ch) {
-    if (fight_problem > 0)
+    if (!ch || fight_problem > 0)
     return FALSE;
     if (is_ghost(ch) || is_gm(ch))
     return FALSE;
@@ -13834,10 +13827,8 @@ printf_to_char(victim, "Enemy Check: %s, %s, ch->vic aggro: %d, vic->ch aggro
     return TRUE;
 
     CHAR_DATA *wch;
-    int limit = 0;
     for (CharList::iterator it = char_list.begin();
-    it != char_list.end() && limit < 1000; ++it) {
-      limit++;
+    it != char_list.end(); ++it) {
       wch = *it;
       if (wch == NULL || wch->in_room == NULL)
       continue;
@@ -13863,147 +13854,40 @@ printf_to_char(victim, "Enemy Check: %s, %s, ch->vic aggro: %d, vic->ch aggro
         return TRUE;
       }
     }
-    if (limit > 800) {
-      log_string("FIGHTPROBLEM: Check fight");
-      fight_problem += 1;
-    }
     return FALSE;
   }
 
-  CHAR_DATA *next_fight_member(CHAR_DATA *current) {
-    bool found = FALSE;
-    CHAR_DATA *wch;
-    int count = 0;
-    if (fight_problem > 0)
-    return NULL;
-    for (CharList::iterator it = char_list.begin();
-    it != char_list.end() && count < 2000; ++it) {
-      wch = *it;
-      if (current == wch)
-      found = TRUE;
-      else if (found != TRUE)
-      continue;
-
-      if (current->fight_fast == FALSE && !IS_NPC(wch) && wch->pcdata->autoskip == 1)
-      continue;
-
-      if (in_fight(wch) && same_fight(current, wch) && wch != current)
-      return wch;
-
-      count++;
+  static CHAR_DATA *find_next_fight_member(CHAR_DATA *current, bool initializing) {
+    if (!current || fight_problem > 0) return NULL;
+    // same_fight requires active combat membership. Iterate that index instead
+    // of walking (and counting) every unrelated character in the world.
+    bool found = false;
+    for (int pass = 0; pass < 3; ++pass) {
+      unsigned long long cursor = 0;
+      CHAR_DATA *member;
+      while ((member = next_combat_character(&cursor)) != NULL) {
+        if (pass < 2) {
+          if (member == current) found = true;
+          else if (!found) continue;
+        }
+        // First prefer turns without autoskip, then retry the tail before
+        // wrapping to the head. Preserve the existing fallback order.
+        if (pass != 1 && !current->fight_fast && !IS_NPC(member) &&
+            member->pcdata->autoskip == 1) continue;
+        if (pass == 2 && member == current) return current;
+        if ((initializing ? check_fight(member) : in_fight(member)) &&
+            same_fight(current, member) && member != current) return member;
+      }
     }
-    if (count > 1500) {
-      log_string("FIGHTPROBLEM: Next_fight_member_a");
-      fight_problem++;
-    }
-    count = 0;
-    for (CharList::iterator it = char_list.begin();
-    it != char_list.end() && count < 2000; ++it) {
-      wch = *it;
-      if (current == wch)
-      found = TRUE;
-      else if (found != TRUE)
-      continue;
-
-      if (in_fight(wch) && same_fight(current, wch) && wch != current)
-      return wch;
-
-      count++;
-    }
-    if (count > 1500) {
-      log_string("FIGHTPROBLEM: Next_fight_member_a");
-      fight_problem++;
-    }
-    count = 0;
-
-    for (CharList::iterator it = char_list.begin();
-    it != char_list.end() && count < 2000; ++it) {
-
-      wch = *it;
-
-      if (current->fight_fast == FALSE && !IS_NPC(wch) && wch->pcdata->autoskip == 1)
-      continue;
-
-      if (wch == current)
-      return current;
-
-      if (in_fight(wch) && same_fight(current, wch))
-      return wch;
-      count++;
-    }
-    if (count > 1500) {
-      log_string("FIGHTPROBLEM: Next_fight_member_b");
-      fight_problem++;
-    }
-
     return NULL;
   }
 
+  CHAR_DATA *next_fight_member(CHAR_DATA *current) {
+    return find_next_fight_member(current, false);
+  }
+
   CHAR_DATA *next_fight_member_init(CHAR_DATA *current) {
-    bool found = FALSE;
-    CHAR_DATA *wch;
-    int count = 0;
-    if (fight_problem > 0)
-    return NULL;
-    for (CharList::iterator it = char_list.begin();
-    it != char_list.end() && count < 1000; ++it) {
-      count++;
-      wch = *it;
-      if (current == wch)
-      found = TRUE;
-      else if (found != TRUE)
-      continue;
-
-      if (current->fight_fast == FALSE && !IS_NPC(wch) && wch->pcdata->autoskip == 1)
-      continue;
-
-      if (check_fight(wch) && same_fight(current, wch) && wch != current)
-      return wch;
-    }
-    if (count > 800) {
-      log_string("FIGHTPROBLEM: Next_fight_member_init_a");
-      fight_problem++;
-    }
-
-    count = 0;
-    for (CharList::iterator it = char_list.begin();
-    it != char_list.end() && count < 1000; ++it) {
-      count++;
-      wch = *it;
-      if (current == wch)
-      found = TRUE;
-      else if (found != TRUE)
-      continue;
-
-      if (check_fight(wch) && same_fight(current, wch) && wch != current)
-      return wch;
-    }
-    if (count > 800) {
-      log_string("FIGHTPROBLEM: Next_fight_member_init_a");
-      fight_problem++;
-    }
-
-    count = 0;
-
-    for (CharList::iterator it = char_list.begin();
-    it != char_list.end() && count < 1000; ++it) {
-      count++;
-      wch = *it;
-      if (current->fight_fast == FALSE && !IS_NPC(wch) && wch->pcdata->autoskip == 1)
-      continue;
-
-      if (wch == current)
-      return current;
-
-      if (check_fight(wch) && same_fight(current, wch))
-      return wch;
-    }
-    if (count > 800) {
-      log_string("FIGHTPROBLEM: Next_fight_member_init_b");
-      fight_problem++;
-    }
-
-    return NULL;
+    return find_next_fight_member(current, true);
   }
 
   bool room_fight(ROOM_INDEX_DATA *room, bool shroud, bool deepshroud, bool any) {

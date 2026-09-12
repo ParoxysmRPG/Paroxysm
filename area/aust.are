@@ -24,10 +24,12 @@ End
 #ROOMS
 #39000
 Sydney Opera House~
-Plastered walls enclose a modest domestic interior. A scuffed floor leaves a
-clear central area, with the quieter edges of the room set apart from the
-space used for passing through. `wsitting area`x provides a distinct place to
-gather.`x
+Broad curves lift above the Opera House's `waudience seats`x, drawing the eye
+away from the close ranks of upholstery toward the height of the hall. Fine
+wooden ribs make a warmer pattern within the larger shell. The armrests shine
+more brightly than the backs, polished by waiting hands. Even in the hush, the
+room seems built around the possibility of one clear note reaching everyone at
+once.`x
 ~
 0 36 1
 B 1
@@ -36,16 +38,21 @@ T 3000
 M 100 H 0
 W ~
 P
-sitting area~
-A small group of seats occupies one edge of the domestic space.`x
+audience seats~
+The seats face the performance space in close rows. Fabric softens the small
+sounds of settling in, while worn armrests mark where earlier audiences have
+waited, watched, and leaned toward their companions.`x
 ~
 S
 #39001
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+Two broad planes meet at an awkward angle on the near side, with muted green
+paint picked out along the join. The floor carries a faint rectangular
+outline, clearer at one end than the other. The open floor makes the slightest
+unevenness conspicuous, a landscape of small seams and shallow shadows.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -53,10 +60,13 @@ W ~
 S
 #39002
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+The near end narrows around a broad structural pier faced in pearl-gray paint.
+A narrow shadow lies inside the deepest joint, emphasizing the spare geometry.
+The quiet has an unfinished quality, as though the next ordinary use might
+finally give the space a character.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -64,10 +74,13 @@ W ~
 S
 #39003
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+The near end narrows around a broad structural pier faced in warm terracotta.
+A hairline seam crosses the floor and disappears beneath the base of the wall.
+The quiet has an unfinished quality, as though the next ordinary use might
+finally give the space a character.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -75,10 +88,13 @@ W ~
 S
 #39004
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+A shallow recess interrupts the left-hand wall, outlined by a narrow lip of
+warm terracotta. Fine tool strokes remain visible beneath the last layer of
+wall finish. The quiet has an unfinished quality, as though the next ordinary
+use might finally give the space a character.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -86,10 +102,13 @@ W ~
 S
 #39005
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+Near the far wall, the floor rises into a low ridge edged with pearl-gray
+paint. Small pinholes form an uneven line just above the height of a raised
+hand. Without furniture to soften the enclosure, every small sound acquires a
+dry little echo.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -97,10 +116,14 @@ W ~
 S
 #39006
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+A strip of honey-colored wood stops short of the right-hand corner, exposing
+the construction beneath the finish. The floor carries a faint rectangular
+outline, clearer at one end than the other. There is a faint mineral smell
+beneath the dry air, the scent of a room reduced to the materials that make
+it.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -108,10 +131,13 @@ W ~
 S
 #39007
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+A square patch of cream plaster marks the far wall where the surrounding
+finish changes depth. The floor carries a faint rectangular outline, clearer
+at one end than the other. The undecorated surfaces leave the proportions
+unusually easy to read, from the low corners to the open middle.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -119,10 +145,13 @@ W ~
 S
 #39008
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+Near the right-hand wall, the floor rises into a low ridge edged with cream
+plaster. The floor carries a faint rectangular outline, clearer at one end
+than the other. The quiet has an unfinished quality, as though the next
+ordinary use might finally give the space a character.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -130,10 +159,13 @@ W ~
 S
 #39009
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+A square patch of pearl-gray paint marks the far wall where the surrounding
+finish changes depth. Small pinholes form an uneven line just above the height
+of a raised hand. The undecorated surfaces leave the proportions unusually
+easy to read, from the low corners to the open middle.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -141,10 +173,13 @@ W ~
 S
 #39010
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+Near the right-hand wall, the floor rises into a low ridge edged with
+smoke-blue paint. A hairline seam crosses the floor and disappears beneath the
+base of the wall. Without furniture to soften the enclosure, every small sound
+acquires a dry little echo.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -152,10 +187,13 @@ W ~
 S
 #39011
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+A shallow recess interrupts the left-hand wall, outlined by a narrow lip of
+chalk-white wood. Fine tool strokes remain visible beneath the last layer of
+wall finish. The quiet has an unfinished quality, as though the next ordinary
+use might finally give the space a character.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -163,10 +201,13 @@ W ~
 S
 #39012
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+A strip of warm terracotta stops short of the left-hand corner, exposing the
+construction beneath the finish. Small pinholes form an uneven line just above
+the height of a raised hand. The quiet has an unfinished quality, as though
+the next ordinary use might finally give the space a character.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -174,10 +215,13 @@ W ~
 S
 #39013
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+A shallow recess interrupts the near wall, outlined by a narrow lip of
+pearl-gray paint. The lower edges are rounded where an otherwise sharp finish
+meets the floor. There is a faint mineral smell beneath the dry air, the scent
+of a room reduced to the materials that make it.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -185,10 +229,13 @@ W ~
 S
 #39014
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+A strip of cream plaster stops short of the left-hand corner, exposing the
+construction beneath the finish. The lower edges are rounded where an
+otherwise sharp finish meets the floor. The quiet has an unfinished quality,
+as though the next ordinary use might finally give the space a character.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -196,10 +243,13 @@ W ~
 S
 #39015
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+The right-hand end narrows around a broad structural pier faced in warm
+terracotta. A narrow shadow lies inside the deepest joint, emphasizing the
+spare geometry. Without furniture to soften the enclosure, every small sound
+acquires a dry little echo.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -207,10 +257,13 @@ W ~
 S
 #39016
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+Near the right-hand wall, the floor rises into a low ridge edged with warm
+terracotta. The floor carries a faint rectangular outline, clearer at one end
+than the other. The undecorated surfaces leave the proportions unusually easy
+to read, from the low corners to the open middle.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -218,10 +271,13 @@ W ~
 S
 #39017
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+The right-hand end narrows around a broad structural pier faced in pearl-gray
+paint. A hairline seam crosses the floor and disappears beneath the base of
+the wall. Without furniture to soften the enclosure, every small sound
+acquires a dry little echo.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -229,10 +285,13 @@ W ~
 S
 #39018
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+A shallow recess interrupts the right-hand wall, outlined by a narrow lip of
+cream plaster. The ceiling has a shallow step that makes one corner seem
+unexpectedly close. The quiet has an unfinished quality, as though the next
+ordinary use might finally give the space a character.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -240,10 +299,13 @@ W ~
 S
 #39019
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+A strip of honey-colored wood stops short of the right-hand corner, exposing
+the construction beneath the finish. Fine tool strokes remain visible beneath
+the last layer of wall finish. The quiet has an unfinished quality, as though
+the next ordinary use might finally give the space a character.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -251,10 +313,13 @@ W ~
 S
 #39020
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+Two broad planes meet at an awkward angle on the near side, with cream plaster
+picked out along the join. A narrow shadow lies inside the deepest joint,
+emphasizing the spare geometry. There is a faint mineral smell beneath the dry
+air, the scent of a room reduced to the materials that make it.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -262,10 +327,13 @@ W ~
 S
 #39021
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+The near end narrows around a broad structural pier faced in muted green
+paint. The ceiling has a shallow step that makes one corner seem unexpectedly
+close. Without furniture to soften the enclosure, every small sound acquires a
+dry little echo.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -273,10 +341,13 @@ W ~
 S
 #39022
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+Near the near wall, the floor rises into a low ridge edged with smoke-blue
+paint. Small pinholes form an uneven line just above the height of a raised
+hand. The undecorated surfaces leave the proportions unusually easy to read,
+from the low corners to the open middle.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -284,10 +355,13 @@ W ~
 S
 #39023
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+Two broad planes meet at an awkward angle on the right-hand side, with
+smoke-blue paint picked out along the join. Fine tool strokes remain visible
+beneath the last layer of wall finish. Without furniture to soften the
+enclosure, every small sound acquires a dry little echo.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -295,10 +369,13 @@ W ~
 S
 #39024
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+A strip of pearl-gray paint stops short of the near corner, exposing the
+construction beneath the finish. A narrow shadow lies inside the deepest
+joint, emphasizing the spare geometry. Without furniture to soften the
+enclosure, every small sound acquires a dry little echo.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -306,10 +383,13 @@ W ~
 S
 #39025
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+A shallow recess interrupts the left-hand wall, outlined by a narrow lip of
+warm terracotta. A narrow shadow lies inside the deepest joint, emphasizing
+the spare geometry. The quiet has an unfinished quality, as though the next
+ordinary use might finally give the space a character.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -317,10 +397,13 @@ W ~
 S
 #39026
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+Near the right-hand wall, the floor rises into a low ridge edged with
+pearl-gray paint. The lower edges are rounded where an otherwise sharp finish
+meets the floor. The open floor makes the slightest unevenness conspicuous, a
+landscape of small seams and shallow shadows.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -328,10 +411,13 @@ W ~
 S
 #39027
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+A square patch of pearl-gray paint marks the right-hand wall where the
+surrounding finish changes depth. A narrow shadow lies inside the deepest
+joint, emphasizing the spare geometry. There is a faint mineral smell beneath
+the dry air, the scent of a room reduced to the materials that make it.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -339,10 +425,13 @@ W ~
 S
 #39028
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+A strip of chalk-white wood stops short of the left-hand corner, exposing the
+construction beneath the finish. A narrow shadow lies inside the deepest
+joint, emphasizing the spare geometry. The quiet has an unfinished quality, as
+though the next ordinary use might finally give the space a character.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -350,10 +439,13 @@ W ~
 S
 #39029
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+A square patch of muted green paint marks the right-hand wall where the
+surrounding finish changes depth. The lower edges are rounded where an
+otherwise sharp finish meets the floor. The undecorated surfaces leave the
+proportions unusually easy to read, from the low corners to the open middle.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -361,10 +453,13 @@ W ~
 S
 #39030
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+Near the right-hand wall, the floor rises into a low ridge edged with
+smoke-blue paint. Fine tool strokes remain visible beneath the last layer of
+wall finish. There is a faint mineral smell beneath the dry air, the scent of
+a room reduced to the materials that make it.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -372,10 +467,13 @@ W ~
 S
 #39031
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+Two broad planes meet at an awkward angle on the near side, with honey-colored
+wood picked out along the join. A narrow shadow lies inside the deepest joint,
+emphasizing the spare geometry. The open floor makes the slightest unevenness
+conspicuous, a landscape of small seams and shallow shadows.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -383,10 +481,13 @@ W ~
 S
 #39032
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+A shallow recess interrupts the left-hand wall, outlined by a narrow lip of
+muted green paint. Fine tool strokes remain visible beneath the last layer of
+wall finish. The undecorated surfaces leave the proportions unusually easy to
+read, from the low corners to the open middle.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -394,10 +495,13 @@ W ~
 S
 #39033
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+Near the right-hand wall, the floor rises into a low ridge edged with dark
+walnut. Small pinholes form an uneven line just above the height of a raised
+hand. The quiet has an unfinished quality, as though the next ordinary use
+might finally give the space a character.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -405,10 +509,13 @@ W ~
 S
 #39034
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+Two broad planes meet at an awkward angle on the far side, with cream plaster
+picked out along the join. A hairline seam crosses the floor and disappears
+beneath the base of the wall. Without furniture to soften the enclosure, every
+small sound acquires a dry little echo.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -416,10 +523,13 @@ W ~
 S
 #39035
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+A strip of honey-colored wood stops short of the far corner, exposing the
+construction beneath the finish. A narrow shadow lies inside the deepest
+joint, emphasizing the spare geometry. The undecorated surfaces leave the
+proportions unusually easy to read, from the low corners to the open middle.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -427,10 +537,13 @@ W ~
 S
 #39036
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+A square patch of smoke-blue paint marks the left-hand wall where the
+surrounding finish changes depth. Fine tool strokes remain visible beneath the
+last layer of wall finish. The quiet has an unfinished quality, as though the
+next ordinary use might finally give the space a character.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -438,10 +551,13 @@ W ~
 S
 #39037
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+Two broad planes meet at an awkward angle on the far side, with pearl-gray
+paint picked out along the join. A hairline seam crosses the floor and
+disappears beneath the base of the wall. Without furniture to soften the
+enclosure, every small sound acquires a dry little echo.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -449,10 +565,13 @@ W ~
 S
 #39038
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+The far end narrows around a broad structural pier faced in honey-colored
+wood. An old repair has dried to a slightly different shade, revealing the
+shape of the patch. The open floor makes the slightest unevenness conspicuous,
+a landscape of small seams and shallow shadows.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -460,10 +579,13 @@ W ~
 S
 #39039
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+A shallow recess interrupts the near wall, outlined by a narrow lip of cream
+plaster. An old repair has dried to a slightly different shade, revealing the
+shape of the patch. The undecorated surfaces leave the proportions unusually
+easy to read, from the low corners to the open middle.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -471,10 +593,13 @@ W ~
 S
 #39040
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+A strip of muted green paint stops short of the left-hand corner, exposing the
+construction beneath the finish. Fine tool strokes remain visible beneath the
+last layer of wall finish. There is a faint mineral smell beneath the dry air,
+the scent of a room reduced to the materials that make it.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -482,10 +607,13 @@ W ~
 S
 #39041
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+A strip of pearl-gray paint stops short of the right-hand corner, exposing the
+construction beneath the finish. The lower edges are rounded where an
+otherwise sharp finish meets the floor. The undecorated surfaces leave the
+proportions unusually easy to read, from the low corners to the open middle.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -493,10 +621,14 @@ W ~
 S
 #39042
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+Two broad planes meet at an awkward angle on the right-hand side, with
+smoke-blue paint picked out along the join. The ceiling has a shallow step
+that makes one corner seem unexpectedly close. The open floor makes the
+slightest unevenness conspicuous, a landscape of small seams and shallow
+shadows.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -504,10 +636,14 @@ W ~
 S
 #39043
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+A strip of chalk-white wood stops short of the right-hand corner, exposing the
+construction beneath the finish. The floor carries a faint rectangular
+outline, clearer at one end than the other. The quiet has an unfinished
+quality, as though the next ordinary use might finally give the space a
+character.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -515,10 +651,13 @@ W ~
 S
 #39044
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+A square patch of pearl-gray paint marks the left-hand wall where the
+surrounding finish changes depth. The ceiling has a shallow step that makes
+one corner seem unexpectedly close. The undecorated surfaces leave the
+proportions unusually easy to read, from the low corners to the open middle.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -526,10 +665,13 @@ W ~
 S
 #39045
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+A shallow recess interrupts the right-hand wall, outlined by a narrow lip of
+cream plaster. Fine tool strokes remain visible beneath the last layer of wall
+finish. There is a faint mineral smell beneath the dry air, the scent of a
+room reduced to the materials that make it.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -537,10 +679,13 @@ W ~
 S
 #39046
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+Two broad planes meet at an awkward angle on the near side, with pearl-gray
+paint picked out along the join. A hairline seam crosses the floor and
+disappears beneath the base of the wall. The undecorated surfaces leave the
+proportions unusually easy to read, from the low corners to the open middle.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -548,10 +693,13 @@ W ~
 S
 #39047
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+A shallow recess interrupts the left-hand wall, outlined by a narrow lip of
+warm terracotta. A hairline seam crosses the floor and disappears beneath the
+base of the wall. The open floor makes the slightest unevenness conspicuous, a
+landscape of small seams and shallow shadows.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -559,10 +707,13 @@ W ~
 S
 #39048
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+Two broad planes meet at an awkward angle on the far side, with muted green
+paint picked out along the join. The ceiling has a shallow step that makes one
+corner seem unexpectedly close. There is a faint mineral smell beneath the dry
+air, the scent of a room reduced to the materials that make it.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -570,10 +721,13 @@ W ~
 S
 #39049
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+Near the far wall, the floor rises into a low ridge edged with muted green
+paint. Fine tool strokes remain visible beneath the last layer of wall finish.
+The quiet has an unfinished quality, as though the next ordinary use might
+finally give the space a character.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -581,10 +735,13 @@ W ~
 S
 #39050
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+Two broad planes meet at an awkward angle on the far side, with smoke-blue
+paint picked out along the join. A narrow shadow lies inside the deepest
+joint, emphasizing the spare geometry. The undecorated surfaces leave the
+proportions unusually easy to read, from the low corners to the open middle.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -592,10 +749,13 @@ W ~
 S
 #39051
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+A shallow recess interrupts the right-hand wall, outlined by a narrow lip of
+cream plaster. The lower edges are rounded where an otherwise sharp finish
+meets the floor. The open floor makes the slightest unevenness conspicuous, a
+landscape of small seams and shallow shadows.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -603,10 +763,13 @@ W ~
 S
 #39052
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+The left-hand end narrows around a broad structural pier faced in dark walnut.
+Fine tool strokes remain visible beneath the last layer of wall finish. The
+undecorated surfaces leave the proportions unusually easy to read, from the
+low corners to the open middle.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -614,10 +777,13 @@ W ~
 S
 #39053
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+The right-hand end narrows around a broad structural pier faced in muted green
+paint. An old repair has dried to a slightly different shade, revealing the
+shape of the patch. Without furniture to soften the enclosure, every small
+sound acquires a dry little echo.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -625,10 +791,14 @@ W ~
 S
 #39054
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+Two broad planes meet at an awkward angle on the near side, with pearl-gray
+paint picked out along the join. A hairline seam crosses the floor and
+disappears beneath the base of the wall. There is a faint mineral smell
+beneath the dry air, the scent of a room reduced to the materials that make
+it.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -636,10 +806,13 @@ W ~
 S
 #39055
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+A square patch of cream plaster marks the left-hand wall where the surrounding
+finish changes depth. The ceiling has a shallow step that makes one corner
+seem unexpectedly close. The open floor makes the slightest unevenness
+conspicuous, a landscape of small seams and shallow shadows.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -647,10 +820,14 @@ W ~
 S
 #39056
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+Two broad planes meet at an awkward angle on the far side, with warm
+terracotta picked out along the join. The ceiling has a shallow step that
+makes one corner seem unexpectedly close. There is a faint mineral smell
+beneath the dry air, the scent of a room reduced to the materials that make
+it.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -658,10 +835,13 @@ W ~
 S
 #39057
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+A shallow recess interrupts the near wall, outlined by a narrow lip of
+pearl-gray paint. The lower edges are rounded where an otherwise sharp finish
+meets the floor. The open floor makes the slightest unevenness conspicuous, a
+landscape of small seams and shallow shadows.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -669,10 +849,13 @@ W ~
 S
 #39058
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+A shallow recess interrupts the near wall, outlined by a narrow lip of dark
+walnut. The floor carries a faint rectangular outline, clearer at one end than
+the other. The undecorated surfaces leave the proportions unusually easy to
+read, from the low corners to the open middle.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -680,10 +863,13 @@ W ~
 S
 #39059
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+Near the left-hand wall, the floor rises into a low ridge edged with muted
+green paint. Small pinholes form an uneven line just above the height of a
+raised hand. There is a faint mineral smell beneath the dry air, the scent of
+a room reduced to the materials that make it.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -691,10 +877,13 @@ W ~
 S
 #39060
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+Two broad planes meet at an awkward angle on the left-hand side, with dark
+walnut picked out along the join. A hairline seam crosses the floor and
+disappears beneath the base of the wall. The quiet has an unfinished quality,
+as though the next ordinary use might finally give the space a character.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -702,10 +891,13 @@ W ~
 S
 #39061
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+Two broad planes meet at an awkward angle on the near side, with smoke-blue
+paint picked out along the join. A narrow shadow lies inside the deepest
+joint, emphasizing the spare geometry. The open floor makes the slightest
+unevenness conspicuous, a landscape of small seams and shallow shadows.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -713,10 +905,13 @@ W ~
 S
 #39062
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+Near the near wall, the floor rises into a low ridge edged with dark walnut.
+The lower edges are rounded where an otherwise sharp finish meets the floor.
+The open floor makes the slightest unevenness conspicuous, a landscape of
+small seams and shallow shadows.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -724,10 +919,13 @@ W ~
 S
 #39063
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+Near the far wall, the floor rises into a low ridge edged with warm
+terracotta. The ceiling has a shallow step that makes one corner seem
+unexpectedly close. Without furniture to soften the enclosure, every small
+sound acquires a dry little echo.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -735,10 +933,13 @@ W ~
 S
 #39064
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+The far end narrows around a broad structural pier faced in warm terracotta.
+The ceiling has a shallow step that makes one corner seem unexpectedly close.
+The undecorated surfaces leave the proportions unusually easy to read, from
+the low corners to the open middle.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -746,10 +947,14 @@ W ~
 S
 #39065
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+Two broad planes meet at an awkward angle on the left-hand side, with
+chalk-white wood picked out along the join. The floor carries a faint
+rectangular outline, clearer at one end than the other. There is a faint
+mineral smell beneath the dry air, the scent of a room reduced to the
+materials that make it.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -757,10 +962,13 @@ W ~
 S
 #39066
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+The left-hand end narrows around a broad structural pier faced in warm
+terracotta. A narrow shadow lies inside the deepest joint, emphasizing the
+spare geometry. The undecorated surfaces leave the proportions unusually easy
+to read, from the low corners to the open middle.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -768,10 +976,13 @@ W ~
 S
 #39067
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+Near the near wall, the floor rises into a low ridge edged with smoke-blue
+paint. The ceiling has a shallow step that makes one corner seem unexpectedly
+close. The quiet has an unfinished quality, as though the next ordinary use
+might finally give the space a character.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -779,10 +990,13 @@ W ~
 S
 #39068
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+Near the near wall, the floor rises into a low ridge edged with honey-colored
+wood. The lower edges are rounded where an otherwise sharp finish meets the
+floor. Without furniture to soften the enclosure, every small sound acquires a
+dry little echo.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -790,10 +1004,13 @@ W ~
 S
 #39069
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+A strip of smoke-blue paint stops short of the near corner, exposing the
+construction beneath the finish. The ceiling has a shallow step that makes one
+corner seem unexpectedly close. The quiet has an unfinished quality, as though
+the next ordinary use might finally give the space a character.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -801,10 +1018,13 @@ W ~
 S
 #39070
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+A strip of muted green paint stops short of the right-hand corner, exposing
+the construction beneath the finish. Small pinholes form an uneven line just
+above the height of a raised hand. Without furniture to soften the enclosure,
+every small sound acquires a dry little echo.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -812,10 +1032,13 @@ W ~
 S
 #39071
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+A strip of pearl-gray paint stops short of the near corner, exposing the
+construction beneath the finish. Fine tool strokes remain visible beneath the
+last layer of wall finish. The quiet has an unfinished quality, as though the
+next ordinary use might finally give the space a character.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -823,10 +1046,13 @@ W ~
 S
 #39072
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+A shallow recess interrupts the left-hand wall, outlined by a narrow lip of
+muted green paint. The ceiling has a shallow step that makes one corner seem
+unexpectedly close. There is a faint mineral smell beneath the dry air, the
+scent of a room reduced to the materials that make it.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -834,10 +1060,13 @@ W ~
 S
 #39073
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+A shallow recess interrupts the right-hand wall, outlined by a narrow lip of
+dark walnut. A hairline seam crosses the floor and disappears beneath the base
+of the wall. The quiet has an unfinished quality, as though the next ordinary
+use might finally give the space a character.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -845,10 +1074,13 @@ W ~
 S
 #39074
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+A square patch of warm terracotta marks the far wall where the surrounding
+finish changes depth. Fine tool strokes remain visible beneath the last layer
+of wall finish. The open floor makes the slightest unevenness conspicuous, a
+landscape of small seams and shallow shadows.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -856,10 +1088,13 @@ W ~
 S
 #39075
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+Two broad planes meet at an awkward angle on the near side, with pearl-gray
+paint picked out along the join. A narrow shadow lies inside the deepest
+joint, emphasizing the spare geometry. The undecorated surfaces leave the
+proportions unusually easy to read, from the low corners to the open middle.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -867,10 +1102,13 @@ W ~
 S
 #39076
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+The left-hand end narrows around a broad structural pier faced in warm
+terracotta. The ceiling has a shallow step that makes one corner seem
+unexpectedly close. There is a faint mineral smell beneath the dry air, the
+scent of a room reduced to the materials that make it.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -878,10 +1116,13 @@ W ~
 S
 #39077
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+A shallow recess interrupts the far wall, outlined by a narrow lip of dark
+walnut. Fine tool strokes remain visible beneath the last layer of wall
+finish. Without furniture to soften the enclosure, every small sound acquires
+a dry little echo.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -889,10 +1130,13 @@ W ~
 S
 #39078
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+Two broad planes meet at an awkward angle on the right-hand side, with dark
+walnut picked out along the join. A narrow shadow lies inside the deepest
+joint, emphasizing the spare geometry. The open floor makes the slightest
+unevenness conspicuous, a landscape of small seams and shallow shadows.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -900,10 +1144,14 @@ W ~
 S
 #39079
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+A strip of chalk-white wood stops short of the left-hand corner, exposing the
+construction beneath the finish. A hairline seam crosses the floor and
+disappears beneath the base of the wall. There is a faint mineral smell
+beneath the dry air, the scent of a room reduced to the materials that make
+it.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -911,10 +1159,14 @@ W ~
 S
 #39080
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+A strip of pearl-gray paint stops short of the far corner, exposing the
+construction beneath the finish. A hairline seam crosses the floor and
+disappears beneath the base of the wall. There is a faint mineral smell
+beneath the dry air, the scent of a room reduced to the materials that make
+it.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -922,10 +1174,13 @@ W ~
 S
 #39081
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+A shallow recess interrupts the left-hand wall, outlined by a narrow lip of
+honey-colored wood. A hairline seam crosses the floor and disappears beneath
+the base of the wall. The undecorated surfaces leave the proportions unusually
+easy to read, from the low corners to the open middle.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -933,10 +1188,13 @@ W ~
 S
 #39082
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+A strip of pearl-gray paint stops short of the near corner, exposing the
+construction beneath the finish. Fine tool strokes remain visible beneath the
+last layer of wall finish. Without furniture to soften the enclosure, every
+small sound acquires a dry little echo.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -944,10 +1202,13 @@ W ~
 S
 #39083
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+A shallow recess interrupts the left-hand wall, outlined by a narrow lip of
+cream plaster. Small pinholes form an uneven line just above the height of a
+raised hand. The open floor makes the slightest unevenness conspicuous, a
+landscape of small seams and shallow shadows.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -955,10 +1216,13 @@ W ~
 S
 #39084
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+A strip of dark walnut stops short of the left-hand corner, exposing the
+construction beneath the finish. Fine tool strokes remain visible beneath the
+last layer of wall finish. The open floor makes the slightest unevenness
+conspicuous, a landscape of small seams and shallow shadows.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -966,10 +1230,13 @@ W ~
 S
 #39085
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+Near the left-hand wall, the floor rises into a low ridge edged with muted
+green paint. A hairline seam crosses the floor and disappears beneath the base
+of the wall. The open floor makes the slightest unevenness conspicuous, a
+landscape of small seams and shallow shadows.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -977,10 +1244,13 @@ W ~
 S
 #39086
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+A strip of cream plaster stops short of the near corner, exposing the
+construction beneath the finish. The floor carries a faint rectangular
+outline, clearer at one end than the other. The open floor makes the slightest
+unevenness conspicuous, a landscape of small seams and shallow shadows.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -988,10 +1258,13 @@ W ~
 S
 #39087
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+A square patch of cream plaster marks the left-hand wall where the surrounding
+finish changes depth. The lower edges are rounded where an otherwise sharp
+finish meets the floor. The quiet has an unfinished quality, as though the
+next ordinary use might finally give the space a character.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -999,10 +1272,13 @@ W ~
 S
 #39088
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+The left-hand end narrows around a broad structural pier faced in muted green
+paint. Small pinholes form an uneven line just above the height of a raised
+hand. Without furniture to soften the enclosure, every small sound acquires a
+dry little echo.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -1010,10 +1286,13 @@ W ~
 S
 #39089
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+A shallow recess interrupts the far wall, outlined by a narrow lip of
+chalk-white wood. An old repair has dried to a slightly different shade,
+revealing the shape of the patch. The open floor makes the slightest
+unevenness conspicuous, a landscape of small seams and shallow shadows.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -1021,10 +1300,13 @@ W ~
 S
 #39090
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+Near the right-hand wall, the floor rises into a low ridge edged with
+pearl-gray paint. An old repair has dried to a slightly different shade,
+revealing the shape of the patch. The open floor makes the slightest
+unevenness conspicuous, a landscape of small seams and shallow shadows.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -1032,10 +1314,13 @@ W ~
 S
 #39091
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+A shallow recess interrupts the left-hand wall, outlined by a narrow lip of
+smoke-blue paint. An old repair has dried to a slightly different shade,
+revealing the shape of the patch. The undecorated surfaces leave the
+proportions unusually easy to read, from the low corners to the open middle.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -1043,10 +1328,13 @@ W ~
 S
 #39092
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+Near the near wall, the floor rises into a low ridge edged with smoke-blue
+paint. The lower edges are rounded where an otherwise sharp finish meets the
+floor. The undecorated surfaces leave the proportions unusually easy to read,
+from the low corners to the open middle.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -1054,10 +1342,13 @@ W ~
 S
 #39093
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+Near the near wall, the floor rises into a low ridge edged with pearl-gray
+paint. Small pinholes form an uneven line just above the height of a raised
+hand. The open floor makes the slightest unevenness conspicuous, a landscape
+of small seams and shallow shadows.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -1065,10 +1356,13 @@ W ~
 S
 #39094
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+The left-hand end narrows around a broad structural pier faced in chalk-white
+wood. Small pinholes form an uneven line just above the height of a raised
+hand. The quiet has an unfinished quality, as though the next ordinary use
+might finally give the space a character.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -1076,10 +1370,13 @@ W ~
 S
 #39095
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+A strip of chalk-white wood stops short of the left-hand corner, exposing the
+construction beneath the finish. The floor carries a faint rectangular
+outline, clearer at one end than the other. The open floor makes the slightest
+unevenness conspicuous, a landscape of small seams and shallow shadows.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -1087,10 +1384,13 @@ W ~
 S
 #39096
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+Near the near wall, the floor rises into a low ridge edged with pearl-gray
+paint. The ceiling has a shallow step that makes one corner seem unexpectedly
+close. The open floor makes the slightest unevenness conspicuous, a landscape
+of small seams and shallow shadows.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -1098,10 +1398,13 @@ W ~
 S
 #39097
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+The far end narrows around a broad structural pier faced in dark walnut. An
+old repair has dried to a slightly different shade, revealing the shape of the
+patch. There is a faint mineral smell beneath the dry air, the scent of a room
+reduced to the materials that make it.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -1109,10 +1412,13 @@ W ~
 S
 #39098
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+Two broad planes meet at an awkward angle on the right-hand side, with muted
+green paint picked out along the join. Fine tool strokes remain visible
+beneath the last layer of wall finish. The open floor makes the slightest
+unevenness conspicuous, a landscape of small seams and shallow shadows.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -1120,10 +1426,13 @@ W ~
 S
 #39099
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+A shallow recess interrupts the right-hand wall, outlined by a narrow lip of
+honey-colored wood. A narrow shadow lies inside the deepest joint, emphasizing
+the spare geometry. The undecorated surfaces leave the proportions unusually
+easy to read, from the low corners to the open middle.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0
@@ -1131,10 +1440,13 @@ W ~
 S
 #39100
 ~
-A plain floor meets unadorned walls around a clear central space. The
-restrained surroundings leave little to distract from anyone sharing the room.`x
+A shallow recess interrupts the left-hand wall, outlined by a narrow lip of
+smoke-blue paint. An old repair has dried to a slightly different shade,
+revealing the shape of the patch. The open floor makes the slightest
+unevenness conspicuous, a landscape of small seams and shallow shadows.`x
 ~
 0 4 0
+B 1
 G 0 0 0 0 0
 T 3000
 M 100 H 0

@@ -7,7 +7,7 @@ Lighting, weather, exits, the ATM notice, and the pager are engine output.
 LESSONS = {
 50: ('Movement and Helpfiles', """
 Information about all the game's systems and lore is available in helpfiles.
-You can also find it all on our website, http://havenrpg.net
+You can also find it all on our website, http://paroxysm.net
 
 To look at a helpfile type help (file name). If there is more than one
 match you can use help 2.(file name) etc. You can use helpsearch (argument)
@@ -80,7 +80,7 @@ Characters also require some secrets, you can use the secrets command to
 write a description of yours. These are generally invisible to most other
 players unless they have a specific legendary power.
 
-You should also consider your character's drives, in Haven drives are
+You should also consider your character's drives, in Paroxysm drives are
 either fears or ambitions. When your drives negatively impact your
 character you have a chance to gain a bonus, see help cdrives for more
 information.
@@ -95,11 +95,11 @@ All of these fields can be seen by typing lookup self, and your basic
 information can be seen with score.
 """),
 59: ('Setting', """
-Haven is a modern, paranormal horror game set in the city of New Haven, a
+Paroxysm is a modern, paranormal horror game set in the city of Gravesend, a
 city that exists in the liminal space between worlds with an unclear
 origin.
 
-Haven is a horror setting in which the foundational principle is that power
+Paroxysm is a horror setting in which the foundational principle is that power
 equals corruption. It is not just a saying that power corrupts in this
 world, it is an unbreakable metaphysical law. All the most powerful
 individuals are corrupt and so are most of the more powerful organizations.
@@ -123,7 +123,7 @@ elements function as metaphors for real world psychological or social conflicts.
 It also has a heavy emphasis on conveying a general feeling of unease or
 haunting.
 
-In Haven all the Demons, Gods, Fae etc used to be human, and many
+In Paroxysm all the Demons, Gods, Fae etc used to be human, and many
 supernatural elements function as exaggerations of real human traits or
 what-ifs that can function as the basis for psychological exploration.
 
@@ -166,7 +166,7 @@ disciplines cost to see the cost of raising any of them.
 Characters should have a description. The simplest way to describe your
 character is to simply type describe self. This will put you into an editor
 where you can write a few lines about what your character looks like. If
-you are feeling more adventurous however, Haven has a much more detailed
+you are feeling more adventurous however, Paroxysm has a much more detailed
 description system you can make use of.
 
 To do this type describe (location) to start writing a description of each part
@@ -230,7 +230,7 @@ manipulate worn clothes, help expose.
 A `wshower`x provides a place to wash before getting dressed.
 """),
 53: ('Organizations', """
-Much of what happens in New Haven is a political struggle between different
+Much of what happens in Gravesend is a political struggle between different
 organizations. While you don't have to join one of these organizations it
 is generally harder to find things to do or purpose if you do not.
 
@@ -264,7 +264,7 @@ players can work for while on plots and the like, you can see help
 associations for a list of those.
 """),
 54: ('Combat', """
-There are three types of combat in Haven. Fast combat is real time and what
+There are three types of combat in Paroxysm. Fast combat is real time and what
 will happen if you type attack (target).
 Slow Combat is turn based and what will happen if you type spar (target).
 RP Combat is semi-turn based and more of a coded support system for narrative
@@ -291,7 +291,7 @@ You can use the speed command to alter your default combat speed when fighting
 NPCs, see help speed.
 """),
 61: ('Rules', """
-Haven is an IC enforced game. That means once you leave newbie school and
+Paroxysm is an IC enforced game. That means once you leave newbie school and
 enter out into the game world you will be behaving as your character at all
 times. Most of the rules are simply about ensuring everyone is playing ICly
 and preventing common internet abuse. See help rules for a full list. You
@@ -302,7 +302,7 @@ If you need to contact the staff of the game for any reason, you should use
 a petition, see help petition.
 """),
 55: ('Roleplaying', """
-Haven is a roleplay enforced game, that means at all times while in the
+Paroxysm is a roleplay enforced game, that means at all times while in the
 game your character should act like a real person, a fictional character
 with their own identity and actions, and not simply as a video game avatar.
 You can think of it like writing an interactive story. If you've never

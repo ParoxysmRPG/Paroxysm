@@ -88,7 +88,7 @@
 [19119] Olivia: 9
 [28817] Lyle: So, I noticed what seemed like a bug, figured it was worth posting up. I don't currently have any (visible) penalties to my disciplines when outside during the day, when it's cloudy like it is. But, I do receive penalties when I'm in transit from the taxi. So, it seems like the weather code doesn't apply when you're Traveling, at least in a taxi.
 [19408] Kacey: have shirt and jeans in inventory (or carried).  wear shirt gets "Done."  Look at self, its still not worn, but in my inventory.  same with jeans and a dress I'm carrying.
-[27007] Kirin: there's a lack of a south exit back to the haven high school hallway from when you go north from that hallway to the gym
+[27007] Kirin: there's a lack of a south exit back to the gravesend high school hallway from when you go north from that hallway to the gym
 [47590] Kacey: feedback doesn't seem to work as the help file indicates.  I tried feedback view <name>, feedback view, feedback <name> and just get a command not found
 [   50] Timothy: Reroll self gave me extra points somehow
 [   50] Timothy: Having issues with training in chargen. After spending around 10-11 points, can't train anything.
@@ -126,7 +126,7 @@
 [   52] Isabella: 3
 [205443451] Austin: I've tried using PROMPT to toggle my ptompr on, and PROMPT STARTER, but while hunting, my prompt refuses to start up. I even relogged and made sure that color and mxp are on just in case they got turned off somehow.
 [205549446] Fate: I was in the forest when I got this echo: A family passes you on the street.
-[405510494] Jacen: Clone is causing Haven to crash, specifically when being used on the protein bars from the hunting shop.
+[405510494] Jacen: Clone is causing Paroxysm to crash, specifically when being used on the protein bars from the hunting shop.
 [405510494] Kaine: 1
 [405510494] Kaine: 1
 [305471487] Lorna: 8

@@ -65,8 +65,21 @@ def main():
         shutil.copytree(source, destination, symlinks=False, dirs_exist_ok=True)
 
     settings_path = root / ".vscode/c_cpp_properties.json"
-    settings = json.loads(settings_path.read_text())
-    windows = next(c for c in settings["configurations"] if c["name"] == "Win32")
+    settings = (json.loads(settings_path.read_text()) if settings_path.exists()
+                else {"configurations": [], "version": 4})
+    configurations = settings.setdefault("configurations", [])
+    windows = next((c for c in configurations if c["name"] == "Win32"), None)
+    if windows is None:
+        windows = {"name": "Win32"}
+        configurations.append(windows)
+    if not any(c["name"] == "Linux" for c in configurations):
+        configurations.append({
+            "name": "Linux",
+            "compilerPath": compiler,
+            "intelliSenseMode": "linux-gcc-x64",
+            "includePath": ["${workspaceFolder}/src", "${workspaceFolder}/src/rapidjson"],
+            "cppStandard": "gnu++17",
+        })
     limits = compiler_integer_limits(compiler)
     defines = [d for d in windows.get("defines", []) if d.split("=", 1)[0] not in limits]
     defines.extend(name + "=" + value for name, value in limits.items())
@@ -83,6 +96,14 @@ def main():
     temporary = settings_path.with_suffix(".json.tmp")
     temporary.write_text(json.dumps(settings, indent=4) + "\n")
     temporary.replace(settings_path)
+
+    # The Makefile uses g++ even for .c files; VS Code otherwise treats them as C.
+    editor_path = root / ".vscode/settings.json"
+    editor = json.loads(editor_path.read_text()) if editor_path.exists() else {}
+    editor.setdefault("files.associations", {}).update({"*.c": "cpp", "*.h": "cpp"})
+    temporary = editor_path.with_suffix(".json.tmp")
+    temporary.write_text(json.dumps(editor, indent=4) + "\n")
+    temporary.replace(editor_path)
     print("Windows IntelliSense now uses local Linux headers. Reload VS Code if diagnostics persist.")
 
 

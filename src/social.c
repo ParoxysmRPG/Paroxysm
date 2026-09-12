@@ -22,6 +22,8 @@
 #include "lookup.h"
 #include "global.h"
 #include <random>
+#include "social_lookup.h"
+#include "performance.h"
 
 #if defined(__cplusplus)
 extern "C" {
@@ -1199,7 +1201,7 @@ int last_msg;
     return count;
   }
 
-  bool chat_viable(CHAR_DATA *ch, CHAR_DATA *victim)
+  static bool chat_viable_match(CHAR_DATA *ch, CHAR_DATA *victim, MATCH_TYPE *match)
   {
     if(IS_FLAG(victim->comm, COMM_AFK))
     {
@@ -1229,7 +1231,6 @@ int last_msg;
     {
       return FALSE;
     }
-    MATCH_TYPE *match = match_find(ch, victim);
     if(match == NULL)
     {
       return FALSE;
@@ -1256,7 +1257,11 @@ int last_msg;
   }
 
 
-  bool meet_viable(CHAR_DATA *ch, CHAR_DATA *victim)
+  bool chat_viable(CHAR_DATA *ch, CHAR_DATA *victim) {
+    return chat_viable_match(ch, victim, match_find(ch, victim));
+  }
+
+  static bool meet_viable_match(CHAR_DATA *ch, CHAR_DATA *victim, MATCH_TYPE *match)
   {
     if(IS_FLAG(victim->comm, COMM_AFK))
     {
@@ -1286,7 +1291,6 @@ int last_msg;
     {
       return FALSE;
     }
-    MATCH_TYPE *match = match_find(ch, victim);
     if(match == NULL)
     {
       return FALSE;
@@ -1331,8 +1335,14 @@ int last_msg;
   }
 
 
+  bool meet_viable(CHAR_DATA *ch, CHAR_DATA *victim) {
+    return meet_viable_match(ch, victim, match_find(ch, victim));
+  }
+
   void social_update()
   {
+    haven::ScopedTimer timer("social_update");
+    haven::SocialLookup lookups(ProfileVect, MatchVect);
     CHAR_DATA *to;
     CHAR_DATA *victim;
     for (DescList::iterator it = descriptor_list.begin();
@@ -1343,14 +1353,14 @@ int last_msg;
         to = d->character;
         if (IS_NPC(to))
         continue;
-        PROFILE_TYPE *char_profile = profile_lookup(to->name);
+        PROFILE_TYPE *char_profile = lookups.profile(to->name);
         if(char_profile == NULL)
         continue;
         edit_profile(char_profile)->last_logon = current_time;
 
         if(pc_pop(to->in_room) == 1 && !IS_FLAG(to->comm, COMM_AFK) && to->pcdata->availability != AVAIL_LOW && number_percent() % 76 == 0 && chat_with_count(to) == 0 && rp_with_count(to) == 0)
         {
-          send_to_char("You get a notification on your phone from MyHaven that you aren't currently trying to chat with or meet with anyone.\n\r", to);
+          send_to_char("You get a notification on your phone from Meetz that you aren't currently trying to chat with or meet with anyone.\n\r", to);
         }
 
         int rp_you = rp_you_count(to);
@@ -1383,7 +1393,7 @@ int last_msg;
             continue;
             if(to->pcdata->account == victim->pcdata->account)
             continue;
-            PROFILE_TYPE *vic_profile = profile_lookup(victim->name);
+            PROFILE_TYPE *vic_profile = lookups.profile(victim->name);
             if(vic_profile == NULL)
             continue;
 
@@ -1393,13 +1403,14 @@ int last_msg;
             if(victim->pcdata->suspend_myhaven == 1)
             continue;
 
-            if(meet_viable(to, victim) && number_percent() % 4 == 0)
+            MATCH_TYPE *match = lookups.match(to->name, victim->name);
+            const bool can_meet = meet_viable_match(to, victim, match);
+            if(can_meet && number_percent() % 4 == 0)
             {
               edit_profile(char_profile)->last_active = current_time;
               edit_profile(vic_profile)->last_active = current_time;
-              MATCH_TYPE *match = match_find(to, victim);
-              printf_to_char(to, "[`087MyHaven`x] You have been matched to meet up with %s(%s), you should pick the place/activity.\n\r", vic_profile->handle, match_string(match));
-              printf_to_char(victim, "[`087MyHaven`x] You have been matched to meet up with %s(%s), they will pick the place/activity.\n\r", char_profile->handle, match_string(match));
+              printf_to_char(to, "[`087Meetz`x] You have been matched to meet up with %s(%s), you should pick the place/activity.\n\r", vic_profile->handle, match_string(match));
+              printf_to_char(victim, "[`087Meetz`x] You have been matched to meet up with %s(%s), they will pick the place/activity.\n\r", char_profile->handle, match_string(match));
               match->last_rp_when = current_time;
               match->last_rp_count = match->rp_count;
               if(!str_cmp(to->name, match->nameone))
@@ -1408,13 +1419,12 @@ int last_msg;
               match->rp_initiatior = 2;
               return;
             }
-            if(!meet_viable(to, victim) && chat_viable(to, victim) && number_percent() % 3 == 0)
+            if(!can_meet && chat_viable_match(to, victim, match) && number_percent() % 3 == 0)
             {
               edit_profile(char_profile)->last_active = current_time;
               edit_profile(vic_profile)->last_active = current_time;
-              MATCH_TYPE *match = match_find(to, victim);
-              printf_to_char(to, "[`087MyHaven`x] You have been matched to chat with %s(%s), you should start the conversation. You can use text %s (message) to do so.\n\r", vic_profile->handle, match_string(match), vic_profile->handle);
-              printf_to_char(victim, "[`087MyHaven`x] You have been matched to chat with %s(%s), they will start the conversation.\n\r", char_profile->handle, match_string(match));
+              printf_to_char(to, "[`087Meetz`x] You have been matched to chat with %s(%s), you should start the conversation. You can use text %s (message) to do so.\n\r", vic_profile->handle, match_string(match), vic_profile->handle);
+              printf_to_char(victim, "[`087Meetz`x] You have been matched to chat with %s(%s), they will start the conversation.\n\r", char_profile->handle, match_string(match));
               match->last_chat_when = current_time;
               match->last_chat_count = match->chat_count;
               if(!str_cmp(to->name, match->nameone))
@@ -1449,6 +1459,7 @@ int last_msg;
         {
           match->success_chat_one++;
           match->failed_chat_two++;
+          match->chat_initiatior = 0;
         }
       }
       if(match->chat_initiatior == 2 && match->last_chat_when < current_time - (3600*3))
@@ -1470,6 +1481,7 @@ int last_msg;
         {
           match->failed_chat_one++;
           match->success_chat_two++;
+          match->chat_initiatior = 0;
         }
       }
       if(match->rp_initiatior == 1 && match->last_rp_when < current_time - (3600*6))
@@ -1610,7 +1622,7 @@ CHAR_DATA * cam_spy_char;
 
   //Chatroom commands: chat (message), chat create (roomname), chat listen (roomname), chat join (roomname), chat who (roomname), chat history (roomname)
 
-  //myhaven commands: myhaven setup, myhaven browse, myhaven match (character) (friends/date/professional), myhaven viewprofile (handle), myhaven chatwith (character list), myhaven hangoutwith (character list), myhaven camhack (person), myhaven telekinesis (person) (message), myhaven hypnotise (person) (command), myhaven forcechat (person), myhaven forcehangout (person)
+  //meetz commands: meetz setup, meetz browse, meetz match (character) (friends/date/professional), meetz viewprofile (handle), meetz chatwith (character list), meetz hangoutwith (character list), meetz camhack (person), meetz telekinesis (person) (message), meetz hypnotise (person) (command), meetz forcechat (person), meetz forcehangout (person)
 
   bool can_social_hack(CHAR_DATA *ch, CHAR_DATA *victim)
   {
@@ -1673,7 +1685,7 @@ CHAR_DATA * cam_spy_char;
     }
     char buf[MSL];
     if(profile->influencer == 1)
-    sprintf(buf, "%0.1f*`x[`242%d`x, `229MyHaven Influencer`x]", drating, profile->rating_count);
+    sprintf(buf, "%0.1f*`x[`242%d`x, `229Meetz Influencer`x]", drating, profile->rating_count);
     else
     sprintf(buf, "%0.1f*`x[`242%d`x]", drating, profile->rating_count);
     return str_dup(buf);
@@ -1694,6 +1706,7 @@ CHAR_DATA * cam_spy_char;
 
   void ai_social_score(MATCH_TYPE *match)
   {
+    if (!haven::ai_enabled() || !match) return;
     TEXTHISTORY_TYPE *thist = get_thist(match->nameone, match->nametwo);
     if(thist == NULL)
     return;
@@ -1703,7 +1716,7 @@ CHAR_DATA * cam_spy_char;
     char buf[MSL];
     sprintf(buf, "4,0,%s,%s,,,", match->nameone, match->nametwo);
 
-    writeLineToFile(AI_IN_FILE, str_dup(buf));
+    writeLineToFile(AI_IN_FILE, buf);
   }
 
   int auto_score_mod(int score)
@@ -1721,7 +1734,7 @@ CHAR_DATA * cam_spy_char;
     PROFILE_TYPE *char_profile = profile_lookup(ch->name);
     if(char_profile == NULL)
     {
-      send_to_char("You should consider setting up a MyHaven profile.\n\r", ch);
+      send_to_char("You should consider setting up a Meetz profile.\n\r", ch);
       return;
     }
 
@@ -1792,18 +1805,20 @@ CHAR_DATA * cam_spy_char;
         if((*it)->chat_count >= 50 && (*it)->score_two_manual_chat == 0)
         {
           PROFILE_TYPE *profile = profile_lookup((*it)->nametwo);
-          printf_to_char(ch, "You can now anonymously rate %s on how fun they are to chat with, use myhaven rate %s (0.1 - 5.0)\n\r", profile->handle, profile->handle);
+          if (!profile) continue;
+          printf_to_char(ch, "You can now anonymously rate %s on how fun they are to chat with, use meetz rate %s (0.1 - 5.0)\n\r", profile->handle, profile->handle);
         }
         else if((*it)->rp_count >= 25 && (*it)->score_two_manual_inperson == 0 && (*it)->score_two_manual_chat != 0)
         {
           PROFILE_TYPE *profile = profile_lookup((*it)->nametwo);
-          printf_to_char(ch, "You can now anonymously rate %s on how fun they are to hangout with, use myhaven rate %s (0.1 - 5.0)\n\r", profile->handle, profile->handle);
+          if (!profile) continue;
+          printf_to_char(ch, "You can now anonymously rate %s on how fun they are to hangout with, use meetz rate %s (0.1 - 5.0)\n\r", profile->handle, profile->handle);
         }
         else if((*it)->rate_party_two == 1)
         {
           sprintf(logs, "PARTYRATE %s, %s", ch->name, (*it)->party_two_title);
           log_string(logs);
-          printf_to_char(ch, "You can rate %s on how fun it was, use myhaven rateevent (0.1 - 5.0)\n\r", (*it)->party_two_title);
+          printf_to_char(ch, "You can rate %s on how fun it was, use meetz rateevent (0.1 - 5.0)\n\r", (*it)->party_two_title);
         }
       }
       if(!str_cmp(ch->name, (*it)->nametwo))
@@ -1847,18 +1862,20 @@ CHAR_DATA * cam_spy_char;
         if((*it)->chat_count >= 50 && (*it)->score_one_manual_chat == 0)
         {
           PROFILE_TYPE *profile = profile_lookup((*it)->nameone);
-          printf_to_char(ch, "You can now anonymously rate %s on how fun they are to chat with, use myhaven rate %s (0.1 - 5.0)\n\r", profile->handle, profile->handle);
+          if (!profile) continue;
+          printf_to_char(ch, "You can now anonymously rate %s on how fun they are to chat with, use meetz rate %s (0.1 - 5.0)\n\r", profile->handle, profile->handle);
         }
         else if((*it)->rp_count >= 25 && (*it)->score_one_manual_inperson == 0 && (*it)->score_one_manual_chat != 0)
         {
           PROFILE_TYPE *profile = profile_lookup((*it)->nameone);
-          printf_to_char(ch, "You can now anonymously rate %s on how fun they are to hangout with, use myhaven rate %s (0.1 - 5.0)\n\r", profile->handle, profile->handle);
+          if (!profile) continue;
+          printf_to_char(ch, "You can now anonymously rate %s on how fun they are to hangout with, use meetz rate %s (0.1 - 5.0)\n\r", profile->handle, profile->handle);
         }
         else if((*it)->rate_party_one == 1 && (*it)->rate_party_two == 0)
         {
           sprintf(logs, "PARTYRATE %s, %s", ch->name, (*it)->party_one_title);
           log_string(logs);
-          printf_to_char(ch, "You can rate %s on how fun it was, use myhaven rateevent (0.1 - 5.0)\n\r", (*it)->party_one_title);
+          printf_to_char(ch, "You can rate %s on how fun it was, use meetz rateevent (0.1 - 5.0)\n\r", (*it)->party_one_title);
         }
       }
     }
@@ -1942,7 +1959,7 @@ CHAR_DATA * cam_spy_char;
     PROFILE_TYPE *my_profile = profile_lookup(ch->name);
     if(my_profile == NULL && !IS_IMMORTAL(ch))
     {
-      send_to_char("Use myhaven setup first.\n\r", ch);
+      send_to_char("Use meetz setup first.\n\r", ch);
       return;
     }
 
@@ -2034,7 +2051,7 @@ CHAR_DATA * cam_spy_char;
       }
       if(safe_strlen(argument) < 3)
       {
-        send_to_char("Syntax: MyHaven Telekinesis (person) (message).\n\r", ch);
+        send_to_char("Syntax: Meetz Telekinesis (person) (message).\n\r", ch);
         return;
       }
       PROFILE_TYPE *victim_profile = profile_handle_lookup(arg2);
@@ -2057,7 +2074,7 @@ CHAR_DATA * cam_spy_char;
 
       if(safe_strlen(argument) < 3)
       {
-        send_to_char("Syntax: MyHaven Telekinesis (person) (message).\n\r", ch);
+        send_to_char("Syntax: Meetz Telekinesis (person) (message).\n\r", ch);
         return;
       }
       printf_to_char(ch, "[Remotely] %s\n\r", argument);
@@ -2076,7 +2093,7 @@ CHAR_DATA * cam_spy_char;
       }
       if(safe_strlen(argument) < 3)
       {
-        send_to_char("Syntax: MyHaven forcechat (person).\n\r", ch);
+        send_to_char("Syntax: Meetz forcechat (person).\n\r", ch);
         return;
       }
       PROFILE_TYPE *victim_profile = profile_handle_lookup(argument);
@@ -2109,8 +2126,8 @@ CHAR_DATA * cam_spy_char;
       }
       edit_profile(char_profile)->last_active = current_time;
       edit_profile(victim_profile)->last_active = current_time;
-      printf_to_char(ch, "[MyHaven] You have been matched to chat with %s(%s), you should start the conversation. You can use text %s (message) to do so.\n\r", victim_profile->handle, match_string(match), victim_profile->handle);
-      printf_to_char(victim, "[MyHaven] You have been matched to chat with %s(%s), they will start the conversation.\n\r", char_profile->handle, match_string(match));
+      printf_to_char(ch, "[Meetz] You have been matched to chat with %s(%s), you should start the conversation. You can use text %s (message) to do so.\n\r", victim_profile->handle, match_string(match), victim_profile->handle);
+      printf_to_char(victim, "[Meetz] You have been matched to chat with %s(%s), they will start the conversation.\n\r", char_profile->handle, match_string(match));
       match->last_chat_when = current_time;
       match->last_chat_count = match->chat_count;
       if(!str_cmp(ch->name, match->nameone))
@@ -2129,7 +2146,7 @@ CHAR_DATA * cam_spy_char;
       }
       if(safe_strlen(argument) < 3)
       {
-        send_to_char("Syntax: MyHaven forcemeet (person).\n\r", ch);
+        send_to_char("Syntax: Meetz forcemeet (person).\n\r", ch);
         return;
       }
       PROFILE_TYPE *victim_profile = profile_handle_lookup(argument);
@@ -2162,8 +2179,8 @@ CHAR_DATA * cam_spy_char;
       }
       edit_profile(char_profile)->last_active = current_time;
       edit_profile(victim_profile)->last_active = current_time;
-      printf_to_char(ch, "[MyHaven] You have been matched to meet up with %s(%s), you should pick the place/activity.\n\r", victim_profile->handle, match_string(match));
-      printf_to_char(victim, "[MyHaven] You have been matched to meet up with %s(%s), they will pick the place/activity.\n\r", char_profile->handle, match_string(match));
+      printf_to_char(ch, "[Meetz] You have been matched to meet up with %s(%s), you should pick the place/activity.\n\r", victim_profile->handle, match_string(match));
+      printf_to_char(victim, "[Meetz] You have been matched to meet up with %s(%s), they will pick the place/activity.\n\r", char_profile->handle, match_string(match));
       match->last_rp_when = current_time;
       match->last_rp_count = match->rp_count;
       if(!str_cmp(ch->name, match->nameone))
@@ -2191,7 +2208,7 @@ CHAR_DATA * cam_spy_char;
       }
       if(safe_strlen(argument) < 3)
       {
-        send_to_char("Syntax: MyHaven Hypnotise (person) (message).\n\r", ch);
+        send_to_char("Syntax: Meetz Hypnotise (person) (message).\n\r", ch);
         return;
       }
       PROFILE_TYPE *victim_profile = profile_handle_lookup(arg);
@@ -2215,7 +2232,7 @@ CHAR_DATA * cam_spy_char;
 
       if(safe_strlen(argument) < 3)
       {
-        send_to_char("Syntax: MyHaven hypnotize (person) (type) (pressures) (message).\n\r", ch);
+        send_to_char("Syntax: Meetz hypnotize (person) (type) (pressures) (message).\n\r", ch);
         return;
       }
       if (!str_cmp(arg2, "instruction")) {
@@ -2894,7 +2911,7 @@ CHAR_DATA * cam_spy_char;
     {
       if(safe_strlen(argument) < 3)
       {
-        send_to_char("Syntax: Myhaven rateevent (0.1-5.0).\n\r", ch);
+        send_to_char("Syntax: Meetz rateevent (0.1-5.0).\n\r", ch);
         return;
       }
       if(IS_IMMORTAL(ch))
@@ -3024,7 +3041,7 @@ CHAR_DATA * cam_spy_char;
 
       if(safe_strlen(arg2) < 3)
       {
-        send_to_char("Syntax: Myhaven rate (handle).\n\r", ch);
+        send_to_char("Syntax: Meetz rate (handle).\n\r", ch);
         return;
       }
       PROFILE_TYPE * char_profile = profile_lookup(ch->name);
@@ -3131,7 +3148,7 @@ CHAR_DATA * cam_spy_char;
       {
         sprintf(buf, "%s(`228%s`x)\n%s\n\n\rAbout Me: %s\n\rQuote: %s\n\rJoke: %s\n\rAttracted To: %s\n\r", char_profile->display_handle, display_profile_rating(char_profile), char_profile->photo, char_profile->profile, char_profile->quote, char_profile->joke, char_profile->prefs);
         send_to_char(buf, ch);
-        send_to_char("Syntax: Myhaven Viewprofile (handle).\n\r", ch);
+        send_to_char("Syntax: Meetz Viewprofile (handle).\n\r", ch);
         return;
       }
       PROFILE_TYPE *profile = profile_handle_lookup(argument);
@@ -3170,7 +3187,7 @@ CHAR_DATA * cam_spy_char;
       }
       if(match != NULL && match->status_one == 1 && match->status_two == 1)
       {
-        sprintf(buf, "You are matched with %s on MyHaven as %s.\n\r", profile->display_handle, match_string(match));
+        sprintf(buf, "You are matched with %s on Meetz as %s.\n\r", profile->display_handle, match_string(match));
         send_to_char(buf, ch);
       }
       return;
@@ -3180,7 +3197,7 @@ CHAR_DATA * cam_spy_char;
       PROFILE_TYPE *char_profile = profile_lookup(ch->name);
       if(char_profile == NULL)
       {
-        send_to_char("Use myhaven setup first.\n\r", ch);
+        send_to_char("Use meetz setup first.\n\r", ch);
         return;
       }
       if(char_profile->plus == 0)
@@ -3353,7 +3370,7 @@ CHAR_DATA * cam_spy_char;
       pmatch = 1;
       if(fmatch == 0 && dmatch == 0 && pmatch == 0)
       {
-        send_to_char("Syntax: Myhaven Match (handle) (Any combination of: friend/date/professional).\n\r", ch);
+        send_to_char("Syntax: Meetz Match (handle) (Any combination of: friend/date/professional).\n\r", ch);
         return;
       }
       MATCH_TYPE *match = match_find_by_name(ch->name, profile->name);
@@ -3373,7 +3390,7 @@ CHAR_DATA * cam_spy_char;
         CHAR_DATA *victim = get_char_world_pc(profile->name);
         if(victim != NULL)
         {
-          send_to_char("Someone matched with you on MyHaven.\n\r", victim);
+          send_to_char("Someone matched with you on Meetz.\n\r", victim);
         }
       }
       else
@@ -3416,16 +3433,16 @@ CHAR_DATA * cam_spy_char;
           return;
         }
         PROFILE_TYPE *char_profile = profile_lookup(ch->name);
-        printf_to_char(ch, "You have matched with %s on MyHaven as %s. Use text %s (message) to start chatting.\n\r", profile->handle, buf, profile->handle);
+        printf_to_char(ch, "You have matched with %s on Meetz as %s. Use text %s (message) to start chatting.\n\r", profile->handle, buf, profile->handle);
         CHAR_DATA *victim = get_char_world_pc(profile->name);
         if(victim != NULL)
         {
-          printf_to_char(victim, "%s has matched with you on MyHaven as %s. Use text %s (message) to start chatting.\n\r", char_profile->handle, buf, char_profile->handle);
+          printf_to_char(victim, "%s has matched with you on Meetz as %s. Use text %s (message) to start chatting.\n\r", char_profile->handle, buf, char_profile->handle);
         }
         else
         {
           std::string msg;
-          msg = haven::format_text("%s has matched with you on MyHaven as %s.\n\r", char_profile->handle, buf);
+          msg = haven::format_text("%s has matched with you on Meetz as %s.\n\r", char_profile->handle, buf);
           offline_message(profile->name, msg.data());
         }
       }

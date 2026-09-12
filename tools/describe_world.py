@@ -17,6 +17,7 @@ import textwrap
 from room_catalogue import TERRAIN, REALM_FORESTS, RULES, TRAITS, THEMES, EXACT
 from room_interiors import BY_ID, SUBAREA
 import newbie_school
+from indoor_rooms import authored_room, in_scope
 
 ROOT = Path(__file__).resolve().parents[1]
 ROOM = re.compile(r'^#(\d+)\n([^~]*)~\n([^~]*)~\n([^\n]*)\n(.*?)(?=^#\d+\n)', re.M | re.S)
@@ -58,6 +59,10 @@ def describe(filename, m):
         vnum = int(m[1])
         return newbie_school.description(vnum), newbie_school.places(vnum), 'newbie-school'
     name = plain(m[2])
+    interior = authored_room(filename, int(m[1]), name)
+    if interior:
+        prose, places = interior
+        return finish(prose), places, 'indoor-authored'
     sector = int(m[4].split()[-1])
     key = name.casefold()
     if (filename, int(m[1])) in BY_ID:
@@ -138,6 +143,7 @@ def main():
     active_files = set((ROOT/'area'/'area.lst').read_text().split()) - {'$'}
     report = {'rooms': 0, 'active_rooms': 0, 'decorated_rooms': 0, 'places': 0, 'files': {}, 'categories': collections.Counter(), 'errors': [], 'structural_sha256': {}}
     unique_descriptions = set()
+    indoor_descriptions = collections.defaultdict(list)
     fallback = {}
     for path in sorted((ROOT/'area').glob('*.are')):
         raw = path.read_bytes()
@@ -191,6 +197,11 @@ def main():
             unique_descriptions.add(m[3])
             report['decorated_rooms'] += bool(re.search(r'^B\s+1\s*$', m[5], re.M))
             location = path.name+':'+m[1]
+            if in_scope(plain(m[2]), int(m[4].split()[1]), int(m[4].split()[2])):
+                normalized = ' '.join(plain(m[3]).casefold().split())
+                indoor_descriptions[normalized].append(location)
+                if not authored_room(path.name, int(m[1]), plain(m[2])):
+                    report['errors'].append(location+': missing interior catalogue entry')
             if PLACEHOLDER.fullmatch(m[3]) or len(plain(m[3])) < 40:
                 report['errors'].append(location+': blank/placeholder/short description')
             for error in color_errors(m[3]):
@@ -214,6 +225,12 @@ def main():
                 for error in color_errors(p[2]):
                     report['errors'].append(location+': place '+error)
     out = ROOT/'docs'/'room-description-audit.json'
+    duplicates = [locations for locations in indoor_descriptions.values() if len(locations) > 1]
+    for locations in duplicates:
+        report['errors'].append('Duplicate indoor description: '+', '.join(locations))
+    report['indoor_rooms'] = sum(map(len, indoor_descriptions.values()))
+    report['unique_indoor_descriptions'] = len(indoor_descriptions)
+    report['duplicate_indoor_groups'] = len(duplicates)
     report['unique_descriptions'] = len(unique_descriptions)
     if args.write:
         managed_path.write_text(json.dumps({'descriptions': sorted(new_desc | known_desc), 'places': sorted(new_places_hash | known_places)}, indent=2)+'\n')

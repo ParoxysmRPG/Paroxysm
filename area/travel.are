@@ -21,27 +21,32 @@ End
 #ROOMS
 #19000
 `rT`Rr`yo`Yl`rl`Ry`w`x~
-Upholstered seats fit tightly within the vehicle's metal body. The compact
-passenger space carries the familiar smells of fabric, rubber, and enclosed
-travel.`x
+The passenger `wseats`x face a near interior panel edged with burgundy
+upholstery. The seat backs have broad, shallow pockets that deepen the shadows
+between the fitted cushions. The padded interior softens the harder shell
+around it without disguising the tight passenger proportions.`x
 ~
 0 67108908 17
-P
-seats~
-The passenger seats fit closely within the vehicle's body.`x
-~
 G 0 0 80 0 0
 C 0 0 0
 T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19001
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+The far passenger space narrows beside the `wseats`x, where black rubber
+outlines a shallow fitted recess. A pale repair stitch crosses one short
+section of the upholstery without matching the original spacing. The vehicle
+feels compact even while still, every surface shaped around the practical
+business of carrying people.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -50,12 +55,19 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19002
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+A curved trim panel of dark imitation wood frames the `wseats`x on the far
+side of the vehicle. A stitched diamond pattern runs through the seat backs,
+fading to a smoother texture near the edges. The enclosed air carries fabric
+and rubber, the familiar smell of a small space used for many journeys.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -64,12 +76,20 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19003
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+The near bodywork curves around the `wseats`x, fitting each panel closely
+against a border of tan leatherette. A rubber floor mat carries a series of
+broad parallel ribs, with fine dust held between them. The enclosed air
+carries fabric and rubber, the familiar smell of a small space used for many
+journeys.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -78,12 +98,19 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19004
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+A broad inset of dark imitation wood breaks up the far paneling beside the
+passenger `wseats`x. The nearest seat seam changes direction around a
+carefully fitted corner. It's a small enclosure full of fitted curves, made to
+keep company close while the wider world lies outside.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -92,12 +119,20 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19005
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+A curved trim panel of faded blue fabric frames the `wseats`x on the
+right-hand side of the vehicle. A pale repair stitch crosses one short section
+of the upholstery without matching the original spacing. It's a small
+enclosure full of fitted curves, made to keep company close while the wider
+world lies outside.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -106,12 +141,19 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19006
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+A curved trim panel of black rubber frames the `wseats`x on the near side of
+the vehicle. A stitched diamond pattern runs through the seat backs, fading to
+a smoother texture near the edges. The padded interior softens the harder
+shell around it without disguising the tight passenger proportions.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -120,12 +162,19 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19007
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+The `wseats`x sit close to the far lining, beneath a narrow strip of black
+rubber. The nearest armrest has a small circular indentation in the padding.
+It's a small enclosure full of fitted curves, made to keep company close while
+the wider world lies outside.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -134,12 +183,19 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19008
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+The `wseats`x sit close to the near lining, beneath a narrow strip of tan
+leatherette. The nearest seat seam changes direction around a carefully fitted
+corner. The padded interior softens the harder shell around it without
+disguising the tight passenger proportions.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -148,12 +204,19 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19009
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+A curved trim panel of dark imitation wood frames the `wseats`x on the
+right-hand side of the vehicle. The nearest armrest has a small circular
+indentation in the padding. The vehicle feels compact even while still, every
+surface shaped around the practical business of carrying people.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -162,71 +225,89 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19010
 `236a gl`237oss`238y bl`239ack and `052r`088ed `12420`16006 `196Lo`160tus `124El`088is`052e `239con`238ver`237tib`236le`w~
-Upholstered seats fit tightly within the vehicle's metal body. The compact
-passenger space carries the familiar smells of fabric, rubber, and enclosed
-travel.`x
+A broad inset of charcoal vinyl breaks up the near paneling beside the
+passenger `wseats`x. The seat backs have broad, shallow pockets that deepen
+the shadows between the fitted cushions. The enclosed air carries fabric and
+rubber, the familiar smell of a small space used for many journeys.`x
 ~
 0 1048588 17
-P
-seats~
-The passenger seats fit closely within the vehicle's body.`x
-~
 G -1 2 20 0 0
 C 0 0 0
 T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19011
 a rusted 2005 Ford Focus~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+A curved trim panel of charcoal vinyl frames the `wseats`x on the near side of
+the vehicle. The handle recess has a softer finish than the harder trim
+surrounding it. The padded interior softens the harder shell around it without
+disguising the tight passenger proportions.`x
 ~
 0 12 23
-P
-seats~
-The passenger seats fit closely within the vehicle's body.`x
-~
 G 0 1 20 0 0
 C 0 0 0
 T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19012
 `#432d2fan `#413a3aupsc`#4c0711ale,`#49131b bla`#462025ck a`#413a3and `#432d2fred `#462025Buic`#49131bk Ve`#4c0711rano`q~
-Upholstered seats fit tightly within the vehicle's metal body. The compact
-passenger space carries the familiar smells of fabric, rubber, and enclosed
-travel.`x
+The passenger `wseats`x face a right-hand interior panel edged with tan
+leatherette. The handle recess has a softer finish than the harder trim
+surrounding it. The padded interior softens the harder shell around it without
+disguising the tight passenger proportions.`x
 ~
 0 12 17
-P
-seats~
-The passenger seats fit closely within the vehicle's body.`x
-~
 G 0 0 20 0 0
 C 0 0 0
 T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19013
 `140a Kaw`134asaki`128 Z H2 in pu`129rple `250an`248d ma`245tte si`243lver`x~
-A narrow saddle fits above the motorcycle's compact frame. Close-set metal and
-molded body panels define the riding position, with little separation between
-rider and machine.`x
+A narrow `wsaddle`x fits above the motorcycle's compact frame. Fine dust has
+settled along the seams, and handled metal shows brighter through the duller
+finish. Everything lies close to the riding position, leaving little between
+the rider, the machine, and the surrounding air.`x
 ~
 0 4 23
 P
 saddle~
-The saddle provides the motorcycle's narrow riding seat.`x
+The motorcycle's narrow saddle is smooth through the middle, with dust caught
+along the stitched seams. The raised contours keep the riding position close
+to the frame and open to the surrounding air.`x
 ~
 G 0 0 20 0 0
 C 0 0 0
@@ -237,99 +318,117 @@ Y (null)~
 S
 #19014
 a battered Honda civic~
-`gTree trunks`x crowd the uneven forest floor. Roots break through a layer of
-old leaves and fallen twigs, while overlapping branches divide the woodland
-into close, irregular spaces.`x
+The `wseats`x sit close to the near lining, beneath a narrow strip of charcoal
+vinyl. The seat backs have broad, shallow pockets that deepen the shadows
+between the fitted cushions. The padded interior softens the harder shell
+around it without disguising the tight passenger proportions.`x
 ~
 0 12 23
-P
-seats~
-The passenger seats fit closely within the vehicle's body.`x
-~
 G 0 0 20 0 0
 C 0 0 0
 T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19015
 A `dblack`w 1998 `dchevy cavalier`w~
-Upholstered seats fit tightly within the vehicle's metal body. The compact
-passenger space carries the familiar smells of fabric, rubber, and enclosed
-travel.`x
+The near passenger space narrows beside the `wseats`x, where tan leatherette
+outlines a shallow fitted recess. A small vent has rounded fins, their edges
+darker than the surrounding panel. The close seating brings a traveling
+companion within easy speaking distance, with little room wasted between the
+fittings.`x
 ~
 0 12 17
-P
-seats~
-The passenger seats fit closely within the vehicle's body.`x
-~
 G 0 0 20 0 0
 C 0 0 0
 T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19016
 `Wa somewhat dated Ford Taurus Police Interceptor`x~
-Upholstered seats fit tightly within the vehicle's metal body. The compact
-passenger space carries the familiar smells of fabric, rubber, and enclosed
-travel.`x
+The `wseats`x sit close to the near lining, beneath a narrow strip of dull
+silver trim. The nearest armrest has a small circular indentation in the
+padding. The padded interior softens the harder shell around it without
+disguising the tight passenger proportions.`x
 ~
 0 12 17
-P
-seats~
-The passenger seats fit closely within the vehicle's body.`x
-~
 G 0 0 40 0 0
 C 0 0 0
 T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19017
 Inside a Car~
-Upholstered seats fit tightly within the vehicle's metal body. The compact
-passenger space carries the familiar smells of fabric, rubber, and enclosed
-travel.`x
+The passenger `wseats`x face a near interior panel edged with faded blue
+fabric. The nearest seat seam changes direction around a carefully fitted
+corner. The padded interior softens the harder shell around it without
+disguising the tight passenger proportions.`x
 ~
 0 12 17
-P
-seats~
-The passenger seats fit closely within the vehicle's body.`x
-~
 G 0 0 40 0 0
 C 0 0 0
 T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19018
 `rRed `WFord F-250 `DLariat `WCrew Cab `R4x4`w~
-Upholstered seats fit tightly within the vehicle's metal body. The compact
-passenger space carries the familiar smells of fabric, rubber, and enclosed
-travel.`x
+The `wseats`x sit close to the left-hand lining, beneath a narrow strip of
+burgundy upholstery. A small vent has rounded fins, their edges darker than
+the surrounding panel. The enclosed air carries fabric and rubber, the
+familiar smell of a small space used for many journeys.`x
 ~
 0 12 17
-P
-seats~
-The passenger seats fit closely within the vehicle's body.`x
-~
 G 0 0 40 0 0
 C 0 0 0
 T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19019
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+The far bodywork curves around the `wseats`x, fitting each panel closely
+against a border of burgundy upholstery. A stitched diamond pattern runs
+through the seat backs, fading to a smoother texture near the edges. The close
+seating brings a traveling companion within easy speaking distance, with
+little room wasted between the fittings.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -338,12 +437,19 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19020
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+A curved trim panel of tan leatherette frames the `wseats`x on the near side
+of the vehicle. A map pocket follows the back of a seat, the upper edge
+stretched into a shallow curve. The padded interior softens the harder shell
+around it without disguising the tight passenger proportions.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -352,12 +458,19 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19021
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+A curved trim panel of charcoal vinyl frames the `wseats`x on the right-hand
+side of the vehicle. The interior lining has a subtle woven pattern that
+becomes visible at close range. The vehicle feels compact even while still,
+every surface shaped around the practical business of carrying people.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -366,12 +479,19 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19022
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+A broad inset of smoke-gray plastic breaks up the far paneling beside the
+passenger `wseats`x. A small vent has rounded fins, their edges darker than
+the surrounding panel. The close seating brings a traveling companion within
+easy speaking distance, with little room wasted between the fittings.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -380,12 +500,19 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19023
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+A curved trim panel of black rubber frames the `wseats`x on the right-hand
+side of the vehicle. The handle recess has a softer finish than the harder
+trim surrounding it. The vehicle feels compact even while still, every surface
+shaped around the practical business of carrying people.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -394,12 +521,19 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19024
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+The far passenger space narrows beside the `wseats`x, where dark imitation
+wood outlines a shallow fitted recess. The nearest seat seam changes direction
+around a carefully fitted corner. The enclosed air carries fabric and rubber,
+the familiar smell of a small space used for many journeys.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -408,12 +542,20 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19025
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+The left-hand passenger space narrows beside the `wseats`x, where dark
+imitation wood outlines a shallow fitted recess. A stitched diamond pattern
+runs through the seat backs, fading to a smoother texture near the edges. The
+close seating brings a traveling companion within easy speaking distance, with
+little room wasted between the fittings.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -422,12 +564,19 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19026
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+A curved trim panel of black rubber frames the `wseats`x on the right-hand
+side of the vehicle. A rubber floor mat carries a series of broad parallel
+ribs, with fine dust held between them. It's a small enclosure full of fitted
+curves, made to keep company close while the wider world lies outside.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -436,12 +585,19 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19027
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+A curved trim panel of charcoal vinyl frames the `wseats`x on the near side of
+the vehicle. A stitched diamond pattern runs through the seat backs, fading to
+a smoother texture near the edges. The padded interior softens the harder
+shell around it without disguising the tight passenger proportions.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -450,12 +606,20 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19028
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+The left-hand bodywork curves around the `wseats`x, fitting each panel closely
+against a border of black rubber. A small vent has rounded fins, their edges
+darker than the surrounding panel. The close seating brings a traveling
+companion within easy speaking distance, with little room wasted between the
+fittings.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -464,12 +628,19 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19029
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+A curved trim panel of dark imitation wood frames the `wseats`x on the near
+side of the vehicle. A map pocket follows the back of a seat, the upper edge
+stretched into a shallow curve. The vehicle feels compact even while still,
+every surface shaped around the practical business of carrying people.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -478,12 +649,20 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19030
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+A curved trim panel of burgundy upholstery frames the `wseats`x on the
+left-hand side of the vehicle. A stitched diamond pattern runs through the
+seat backs, fading to a smoother texture near the edges. The vehicle feels
+compact even while still, every surface shaped around the practical business
+of carrying people.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -492,12 +671,19 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19031
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+The `wseats`x sit close to the far lining, beneath a narrow strip of charcoal
+vinyl. The seat backs have broad, shallow pockets that deepen the shadows
+between the fitted cushions. The enclosed air carries fabric and rubber, the
+familiar smell of a small space used for many journeys.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -506,12 +692,19 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19032
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+The `wseats`x sit close to the near lining, beneath a narrow strip of black
+rubber. The nearest seat seam changes direction around a carefully fitted
+corner. The vehicle feels compact even while still, every surface shaped
+around the practical business of carrying people.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -520,12 +713,19 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19033
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+The far passenger space narrows beside the `wseats`x, where charcoal vinyl
+outlines a shallow fitted recess. A map pocket follows the back of a seat, the
+upper edge stretched into a shallow curve. It's a small enclosure full of
+fitted curves, made to keep company close while the wider world lies outside.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -534,12 +734,19 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19034
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+The `wseats`x sit close to the right-hand lining, beneath a narrow strip of
+smoke-gray plastic. The nearest armrest has a small circular indentation in
+the padding. The padded interior softens the harder shell around it without
+disguising the tight passenger proportions.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -548,12 +755,20 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19035
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+A curved trim panel of smoke-gray plastic frames the `wseats`x on the far side
+of the vehicle. A rubber floor mat carries a series of broad parallel ribs,
+with fine dust held between them. The close seating brings a traveling
+companion within easy speaking distance, with little room wasted between the
+fittings.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -562,12 +777,19 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19036
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+A curved trim panel of charcoal vinyl frames the `wseats`x on the left-hand
+side of the vehicle. The nearest armrest has a small circular indentation in
+the padding. It's a small enclosure full of fitted curves, made to keep
+company close while the wider world lies outside.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -576,12 +798,19 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19037
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+The passenger `wseats`x face a left-hand interior panel edged with charcoal
+vinyl. A small vent has rounded fins, their edges darker than the surrounding
+panel. The close seating brings a traveling companion within easy speaking
+distance, with little room wasted between the fittings.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -590,12 +819,19 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19038
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+The right-hand bodywork curves around the `wseats`x, fitting each panel
+closely against a border of charcoal vinyl. The handle recess has a softer
+finish than the harder trim surrounding it. The padded interior softens the
+harder shell around it without disguising the tight passenger proportions.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -604,12 +840,20 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19039
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+The near passenger space narrows beside the `wseats`x, where dark imitation
+wood outlines a shallow fitted recess. A rubber floor mat carries a series of
+broad parallel ribs, with fine dust held between them. The padded interior
+softens the harder shell around it without disguising the tight passenger
+proportions.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -618,12 +862,19 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19040
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+The far bodywork curves around the `wseats`x, fitting each panel closely
+against a border of dull silver trim. The nearest seat seam changes direction
+around a carefully fitted corner. The enclosed air carries fabric and rubber,
+the familiar smell of a small space used for many journeys.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -632,12 +883,19 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19041
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+The `wseats`x sit close to the far lining, beneath a narrow strip of
+smoke-gray plastic. A map pocket follows the back of a seat, the upper edge
+stretched into a shallow curve. The close seating brings a traveling companion
+within easy speaking distance, with little room wasted between the fittings.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -646,12 +904,19 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19042
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+The passenger `wseats`x face a right-hand interior panel edged with smoke-gray
+plastic. A map pocket follows the back of a seat, the upper edge stretched
+into a shallow curve. The enclosed air carries fabric and rubber, the familiar
+smell of a small space used for many journeys.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -660,12 +925,19 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19043
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+A broad inset of tan leatherette breaks up the right-hand paneling beside the
+passenger `wseats`x. A rubber floor mat carries a series of broad parallel
+ribs, with fine dust held between them. The vehicle feels compact even while
+still, every surface shaped around the practical business of carrying people.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -674,12 +946,19 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19044
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+A broad inset of dark imitation wood breaks up the far paneling beside the
+passenger `wseats`x. A map pocket follows the back of a seat, the upper edge
+stretched into a shallow curve. It's a small enclosure full of fitted curves,
+made to keep company close while the wider world lies outside.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -688,12 +967,19 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19045
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+The passenger `wseats`x face a right-hand interior panel edged with tan
+leatherette. The interior lining has a subtle woven pattern that becomes
+visible at close range. The enclosed air carries fabric and rubber, the
+familiar smell of a small space used for many journeys.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -702,12 +988,20 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19046
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+The left-hand passenger space narrows beside the `wseats`x, where dark
+imitation wood outlines a shallow fitted recess. A pale repair stitch crosses
+one short section of the upholstery without matching the original spacing. The
+vehicle feels compact even while still, every surface shaped around the
+practical business of carrying people.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -716,12 +1010,20 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19047
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+A curved trim panel of charcoal vinyl frames the `wseats`x on the right-hand
+side of the vehicle. A stitched diamond pattern runs through the seat backs,
+fading to a smoother texture near the edges. The vehicle feels compact even
+while still, every surface shaped around the practical business of carrying
+people.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -730,12 +1032,20 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19048
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+The far passenger space narrows beside the `wseats`x, where dark imitation
+wood outlines a shallow fitted recess. The interior lining has a subtle woven
+pattern that becomes visible at close range. The close seating brings a
+traveling companion within easy speaking distance, with little room wasted
+between the fittings.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -744,12 +1054,20 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19049
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+The near bodywork curves around the `wseats`x, fitting each panel closely
+against a border of faded blue fabric. A pale repair stitch crosses one short
+section of the upholstery without matching the original spacing. The close
+seating brings a traveling companion within easy speaking distance, with
+little room wasted between the fittings.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -758,12 +1076,19 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19050
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+The passenger `wseats`x face a near interior panel edged with tan leatherette.
+The seat backs have broad, shallow pockets that deepen the shadows between the
+fitted cushions. The vehicle feels compact even while still, every surface
+shaped around the practical business of carrying people.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -772,12 +1097,20 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19051
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+The right-hand passenger space narrows beside the `wseats`x, where burgundy
+upholstery outlines a shallow fitted recess. The nearest seat seam changes
+direction around a carefully fitted corner. The close seating brings a
+traveling companion within easy speaking distance, with little room wasted
+between the fittings.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -786,12 +1119,19 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19052
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+A curved trim panel of dark imitation wood frames the `wseats`x on the
+left-hand side of the vehicle. The interior lining has a subtle woven pattern
+that becomes visible at close range. The vehicle feels compact even while
+still, every surface shaped around the practical business of carrying people.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -800,12 +1140,19 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19053
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+A curved trim panel of charcoal vinyl frames the `wseats`x on the far side of
+the vehicle. The interior lining has a subtle woven pattern that becomes
+visible at close range. The enclosed air carries fabric and rubber, the
+familiar smell of a small space used for many journeys.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -814,12 +1161,19 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19054
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+A broad inset of charcoal vinyl breaks up the left-hand paneling beside the
+passenger `wseats`x. A map pocket follows the back of a seat, the upper edge
+stretched into a shallow curve. The enclosed air carries fabric and rubber,
+the familiar smell of a small space used for many journeys.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -828,12 +1182,19 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19055
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+A curved trim panel of black rubber frames the `wseats`x on the near side of
+the vehicle. A rubber floor mat carries a series of broad parallel ribs, with
+fine dust held between them. It's a small enclosure full of fitted curves,
+made to keep company close while the wider world lies outside.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -842,12 +1203,20 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19056
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+A broad inset of burgundy upholstery breaks up the far paneling beside the
+passenger `wseats`x. A pale repair stitch crosses one short section of the
+upholstery without matching the original spacing. The close seating brings a
+traveling companion within easy speaking distance, with little room wasted
+between the fittings.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -856,12 +1225,19 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19057
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+A curved trim panel of charcoal vinyl frames the `wseats`x on the far side of
+the vehicle. A small vent has rounded fins, their edges darker than the
+surrounding panel. The padded interior softens the harder shell around it
+without disguising the tight passenger proportions.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -870,12 +1246,19 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19058
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+A broad inset of black rubber breaks up the far paneling beside the passenger
+`wseats`x. The nearest seat seam changes direction around a carefully fitted
+corner. The close seating brings a traveling companion within easy speaking
+distance, with little room wasted between the fittings.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -884,12 +1267,19 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19059
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+The `wseats`x sit close to the near lining, beneath a narrow strip of burgundy
+upholstery. A small vent has rounded fins, their edges darker than the
+surrounding panel. The close seating brings a traveling companion within easy
+speaking distance, with little room wasted between the fittings.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -898,12 +1288,19 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19060
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+A curved trim panel of faded blue fabric frames the `wseats`x on the far side
+of the vehicle. The interior lining has a subtle woven pattern that becomes
+visible at close range. The close seating brings a traveling companion within
+easy speaking distance, with little room wasted between the fittings.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -912,12 +1309,19 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19061
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+A curved trim panel of black rubber frames the `wseats`x on the right-hand
+side of the vehicle. A small vent has rounded fins, their edges darker than
+the surrounding panel. The vehicle feels compact even while still, every
+surface shaped around the practical business of carrying people.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -926,12 +1330,20 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19062
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+The far bodywork curves around the `wseats`x, fitting each panel closely
+against a border of black rubber. The interior lining has a subtle woven
+pattern that becomes visible at close range. The close seating brings a
+traveling companion within easy speaking distance, with little room wasted
+between the fittings.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -940,12 +1352,19 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19063
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+The passenger `wseats`x face a right-hand interior panel edged with tan
+leatherette. A pale repair stitch crosses one short section of the upholstery
+without matching the original spacing. It's a small enclosure full of fitted
+curves, made to keep company close while the wider world lies outside.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -954,12 +1373,19 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19064
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+The far bodywork curves around the `wseats`x, fitting each panel closely
+against a border of tan leatherette. A small vent has rounded fins, their
+edges darker than the surrounding panel. It's a small enclosure full of fitted
+curves, made to keep company close while the wider world lies outside.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -968,12 +1394,20 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19065
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+A broad inset of black rubber breaks up the near paneling beside the passenger
+`wseats`x. A stitched diamond pattern runs through the seat backs, fading to a
+smoother texture near the edges. The close seating brings a traveling
+companion within easy speaking distance, with little room wasted between the
+fittings.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -982,12 +1416,19 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19066
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+A broad inset of dark imitation wood breaks up the far paneling beside the
+passenger `wseats`x. The nearest armrest has a small circular indentation in
+the padding. The vehicle feels compact even while still, every surface shaped
+around the practical business of carrying people.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -996,12 +1437,19 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19067
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+The passenger `wseats`x face a right-hand interior panel edged with tan
+leatherette. A stitched diamond pattern runs through the seat backs, fading to
+a smoother texture near the edges. The enclosed air carries fabric and rubber,
+the familiar smell of a small space used for many journeys.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -1010,12 +1458,19 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19068
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+The passenger `wseats`x face a left-hand interior panel edged with faded blue
+fabric. A stitched diamond pattern runs through the seat backs, fading to a
+smoother texture near the edges. The vehicle feels compact even while still,
+every surface shaped around the practical business of carrying people.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -1024,12 +1479,19 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19069
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+The far bodywork curves around the `wseats`x, fitting each panel closely
+against a border of smoke-gray plastic. A map pocket follows the back of a
+seat, the upper edge stretched into a shallow curve. The enclosed air carries
+fabric and rubber, the familiar smell of a small space used for many journeys.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -1038,12 +1500,19 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19070
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+A broad inset of dark imitation wood breaks up the left-hand paneling beside
+the passenger `wseats`x. The handle recess has a softer finish than the harder
+trim surrounding it. The close seating brings a traveling companion within
+easy speaking distance, with little room wasted between the fittings.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -1052,12 +1521,19 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19071
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+The `wseats`x sit close to the far lining, beneath a narrow strip of dark
+imitation wood. A rubber floor mat carries a series of broad parallel ribs,
+with fine dust held between them. The vehicle feels compact even while still,
+every surface shaped around the practical business of carrying people.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -1066,12 +1542,19 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19072
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+A curved trim panel of dark imitation wood frames the `wseats`x on the
+left-hand side of the vehicle. The handle recess has a softer finish than the
+harder trim surrounding it. The vehicle feels compact even while still, every
+surface shaped around the practical business of carrying people.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -1080,12 +1563,20 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19073
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+A curved trim panel of faded blue fabric frames the `wseats`x on the far side
+of the vehicle. A stitched diamond pattern runs through the seat backs, fading
+to a smoother texture near the edges. The close seating brings a traveling
+companion within easy speaking distance, with little room wasted between the
+fittings.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -1094,12 +1585,20 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19074
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+The `wseats`x sit close to the right-hand lining, beneath a narrow strip of
+burgundy upholstery. A pale repair stitch crosses one short section of the
+upholstery without matching the original spacing. The close seating brings a
+traveling companion within easy speaking distance, with little room wasted
+between the fittings.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -1108,12 +1607,19 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19075
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+A curved trim panel of dark imitation wood frames the `wseats`x on the near
+side of the vehicle. The interior lining has a subtle woven pattern that
+becomes visible at close range. The padded interior softens the harder shell
+around it without disguising the tight passenger proportions.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -1122,12 +1628,19 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19076
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+A curved trim panel of burgundy upholstery frames the `wseats`x on the far
+side of the vehicle. The nearest seat seam changes direction around a
+carefully fitted corner. The close seating brings a traveling companion within
+easy speaking distance, with little room wasted between the fittings.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -1136,12 +1649,20 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19077
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+The right-hand bodywork curves around the `wseats`x, fitting each panel
+closely against a border of dark imitation wood. A small vent has rounded
+fins, their edges darker than the surrounding panel. The vehicle feels compact
+even while still, every surface shaped around the practical business of
+carrying people.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -1150,12 +1671,19 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19078
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+The `wseats`x sit close to the right-hand lining, beneath a narrow strip of
+tan leatherette. A stitched diamond pattern runs through the seat backs,
+fading to a smoother texture near the edges. The enclosed air carries fabric
+and rubber, the familiar smell of a small space used for many journeys.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -1164,12 +1692,20 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19079
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+A broad inset of burgundy upholstery breaks up the right-hand paneling beside
+the passenger `wseats`x. A stitched diamond pattern runs through the seat
+backs, fading to a smoother texture near the edges. The padded interior
+softens the harder shell around it without disguising the tight passenger
+proportions.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -1178,12 +1714,19 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19080
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+The right-hand passenger space narrows beside the `wseats`x, where burgundy
+upholstery outlines a shallow fitted recess. A small vent has rounded fins,
+their edges darker than the surrounding panel. It's a small enclosure full of
+fitted curves, made to keep company close while the wider world lies outside.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -1192,12 +1735,19 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19081
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+A broad inset of tan leatherette breaks up the near paneling beside the
+passenger `wseats`x. The nearest seat seam changes direction around a
+carefully fitted corner. The enclosed air carries fabric and rubber, the
+familiar smell of a small space used for many journeys.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -1206,12 +1756,20 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19082
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+The far bodywork curves around the `wseats`x, fitting each panel closely
+against a border of black rubber. A rubber floor mat carries a series of broad
+parallel ribs, with fine dust held between them. The close seating brings a
+traveling companion within easy speaking distance, with little room wasted
+between the fittings.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -1220,12 +1778,20 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19083
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+The right-hand bodywork curves around the `wseats`x, fitting each panel
+closely against a border of smoke-gray plastic. A stitched diamond pattern
+runs through the seat backs, fading to a smoother texture near the edges. It's
+a small enclosure full of fitted curves, made to keep company close while the
+wider world lies outside.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -1234,12 +1800,19 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19084
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+The passenger `wseats`x face a right-hand interior panel edged with dark
+imitation wood. The nearest armrest has a small circular indentation in the
+padding. It's a small enclosure full of fitted curves, made to keep company
+close while the wider world lies outside.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -1248,12 +1821,19 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19085
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+The passenger `wseats`x face a far interior panel edged with burgundy
+upholstery. The nearest seat seam changes direction around a carefully fitted
+corner. The padded interior softens the harder shell around it without
+disguising the tight passenger proportions.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -1262,12 +1842,20 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19086
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+The right-hand bodywork curves around the `wseats`x, fitting each panel
+closely against a border of burgundy upholstery. A rubber floor mat carries a
+series of broad parallel ribs, with fine dust held between them. It's a small
+enclosure full of fitted curves, made to keep company close while the wider
+world lies outside.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -1276,12 +1864,19 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19087
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+A curved trim panel of black rubber frames the `wseats`x on the right-hand
+side of the vehicle. The nearest armrest has a small circular indentation in
+the padding. The close seating brings a traveling companion within easy
+speaking distance, with little room wasted between the fittings.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -1290,12 +1885,20 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19088
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+The near passenger space narrows beside the `wseats`x, where dark imitation
+wood outlines a shallow fitted recess. A pale repair stitch crosses one short
+section of the upholstery without matching the original spacing. The vehicle
+feels compact even while still, every surface shaped around the practical
+business of carrying people.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -1304,12 +1907,19 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19089
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+A broad inset of dark imitation wood breaks up the near paneling beside the
+passenger `wseats`x. A map pocket follows the back of a seat, the upper edge
+stretched into a shallow curve. The close seating brings a traveling companion
+within easy speaking distance, with little room wasted between the fittings.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -1318,12 +1928,19 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19090
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+A broad inset of smoke-gray plastic breaks up the right-hand paneling beside
+the passenger `wseats`x. The nearest armrest has a small circular indentation
+in the padding. The vehicle feels compact even while still, every surface
+shaped around the practical business of carrying people.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -1332,12 +1949,20 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19091
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+The near bodywork curves around the `wseats`x, fitting each panel closely
+against a border of dark imitation wood. The seat backs have broad, shallow
+pockets that deepen the shadows between the fitted cushions. The vehicle feels
+compact even while still, every surface shaped around the practical business
+of carrying people.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -1346,12 +1971,19 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19092
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+The left-hand bodywork curves around the `wseats`x, fitting each panel closely
+against a border of black rubber. A small vent has rounded fins, their edges
+darker than the surrounding panel. The vehicle feels compact even while still,
+every surface shaped around the practical business of carrying people.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -1360,12 +1992,19 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19093
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+A broad inset of burgundy upholstery breaks up the left-hand paneling beside
+the passenger `wseats`x. A rubber floor mat carries a series of broad parallel
+ribs, with fine dust held between them. The enclosed air carries fabric and
+rubber, the familiar smell of a small space used for many journeys.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -1374,12 +2013,20 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19094
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+A broad inset of faded blue fabric breaks up the left-hand paneling beside the
+passenger `wseats`x. A pale repair stitch crosses one short section of the
+upholstery without matching the original spacing. The close seating brings a
+traveling companion within easy speaking distance, with little room wasted
+between the fittings.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -1388,12 +2035,19 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19095
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+A broad inset of dark imitation wood breaks up the near paneling beside the
+passenger `wseats`x. A map pocket follows the back of a seat, the upper edge
+stretched into a shallow curve. It's a small enclosure full of fitted curves,
+made to keep company close while the wider world lies outside.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -1402,12 +2056,19 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19096
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+A curved trim panel of dull silver trim frames the `wseats`x on the near side
+of the vehicle. A stitched diamond pattern runs through the seat backs, fading
+to a smoother texture near the edges. It's a small enclosure full of fitted
+curves, made to keep company close while the wider world lies outside.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -1416,12 +2077,19 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19097
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+The `wseats`x sit close to the near lining, beneath a narrow strip of burgundy
+upholstery. The interior lining has a subtle woven pattern that becomes
+visible at close range. The vehicle feels compact even while still, every
+surface shaped around the practical business of carrying people.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -1430,12 +2098,19 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19098
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+The `wseats`x sit close to the near lining, beneath a narrow strip of dull
+silver trim. A pale repair stitch crosses one short section of the upholstery
+without matching the original spacing. The padded interior softens the harder
+shell around it without disguising the tight passenger proportions.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -1444,12 +2119,20 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #19099
 Taxi~
-A compact passenger space fits within the craft's structural shell. Close-set
-surfaces and repeated joints make every part of the interior feel shaped by
-the demands of travel.`x
+The near passenger space narrows beside the `wseats`x, where black rubber
+outlines a shallow fitted recess. A pale repair stitch crosses one short
+section of the upholstery without matching the original spacing. The enclosed
+air carries fabric and rubber, the familiar smell of a small space used for
+many journeys.`x
 ~
 0 12 17
 G 0 0 40 0 0
@@ -1458,6 +2141,12 @@ T 3000
 M 100 H 0
 W (null)~
 Y (null)~
+P
+seats~
+The passenger seats fit closely inside the vehicle. Creased upholstery holds a
+faint fabric smell, and the padded backs offer a compact place to settle
+beside a traveling companion.`x
+~
 S
 #0
 
