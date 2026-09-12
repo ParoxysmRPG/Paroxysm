@@ -33,7 +33,7 @@ PC 1
 
 Name brown~
 WhoName `cBrown Student`x~
-PC 1
+PC 0
 
 Name important~
 WhoName `cImportant Local`x~

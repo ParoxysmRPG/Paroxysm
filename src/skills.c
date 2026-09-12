@@ -1641,6 +1641,11 @@ extern "C" {
   }
 
   bool has_requirements(CHAR_DATA *ch, int skill, int level, bool show) {
+    if (skill == SKILL_COLLEGECONTRACT && ch->fcore != FACTION_CORTEX) {
+      if (show)
+        send_to_char("Only members of the Cortex can take College Contracts.\n\r", ch);
+      return FALSE;
+    }
     if (skill == SKILL_MENTALDISCIPLINE && get_tier(ch) == 4
         && level > ch->skills[skill]) {
       if (show) send_to_char("You're too far gone to find salvation now.\n\r", ch);

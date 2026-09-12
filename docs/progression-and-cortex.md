@@ -37,3 +37,7 @@ their existing monthly potions and no additional bonus. The remaining 80
 records share 17 bonuses, with each appearing four or five times. Duplicate
 bonuses do not stack. Navorost now grants Import-Export; the separate legacy
 daily treasure payout is removed to avoid awarding it a second reward.
+
+Brown Student is no longer available for character creation or archetype changes.
+Only Cortex members can acquire College Contracts.
+New accounts begin with zero karma, personal karma, and banked karma.

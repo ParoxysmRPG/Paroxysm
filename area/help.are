@@ -1267,12 +1267,6 @@ Text The following modifiers are available for natural, non-supernatural charact
  
 
 `c[`WTier 2`c]`g:`x
- `yBrown Student`g:`x
-  `cNegative Modifiers`g:`x
-   None
-  `cPositive Modifiers`g:`x
-   Fleshformed`g,`x Demonic Pact Holder
- 
  `yDreamchild`g:`x
   `cNegative Modifiers`g:`x
    Addicted`g,`x Injured`g,`x Ill`g,`x Mentally Ill
@@ -12102,27 +12096,6 @@ Pact Holder
 ~
 End
 
-Keyword Brown Student~
-SeeAlso ~
-Level 0
-Online 0
-Type 0
-Text `cTier Two Archetype`x
-
-Human
-
-This archetype represents college students studying at the nearby Ivy League
-school of Brown.  
-
-`WMinimum Age:`x 18
-
-`WAvailable Positive Modifiers:`x Demonic Pact Holder, Fleshformed
-
-`WFocuses:`x Obtains no points to spend on focus stats, but is counted as having
-one point in the professional focus family for all other stat requirements. 
-~
-End
-
 Keyword Wildling~
 SeeAlso ~
 Level 0
@@ -12317,7 +12290,7 @@ also more monstrous.  The possible archetypes are:
 
 `WTier One:`x Local, Visitor, Student, Civic Educator, Fantasy`x
 
-`WTier Two:`x `cSoldier`x, `cTimeswept`x, `cWildling`x, `cBrown Student`x, `cImportant Local`x,
+`WTier Two:`x `cSoldier`x, `cTimeswept`x, `cWildling`x, `cImportant Local`x,
 `cCivil Servant`x, `DVampire`x, `yWerewolf`x, `gFaeborn`x, `WAngelborn`x, `rDemonborn`x, `CDemigod`x,
 `YGifted`x, `cDreamchild`x, `mElseborn`x
 

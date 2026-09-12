@@ -1112,7 +1112,7 @@ const struct race_type race_table[] = {
 {"soldier",          "`cSoldier`x",            TRUE,  TRUE, RACE_SOLDIER,         2, FALSE,  TRUE,  18,    50, 18,   50},
 {"timeswept",        "`cTimeswept`x",          TRUE,  TRUE, RACE_TIMESWEPT,       2, FALSE, FALSE,  18,    80, 18,   80},
 {"wildling",         "`cWildling`x",           TRUE,  TRUE, RACE_WILDLING,        2, FALSE, FALSE,  18,    80, 18,   80},
-{"brown",            "`cBrown Student`x",      TRUE,  TRUE, RACE_BROWN,           2, FALSE,  TRUE,  18,    60, 18,   60},
+{"brown",            "`cBrown Student`x",     FALSE, FALSE, RACE_BROWN,           2, FALSE, FALSE,  18,    60, 18,   60},
 {"important",        "`cImportant Local`x",    TRUE,  TRUE, RACE_IMPORTANT,       2, FALSE,  TRUE,  24,    80, 24,   80},
 {"civil servant",           "`cCivil Servant`x",     TRUE,  TRUE, RACE_CIVIL_SERVANT,          2, FALSE,  TRUE,  22,    50, 22,   50},
 {"newvampire",       "`DVampire`x",            TRUE,  TRUE, RACE_NEWVAMPIRE,      2,  TRUE,  TRUE,  18,    70, 18,   50},
