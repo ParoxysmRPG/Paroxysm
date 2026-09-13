@@ -56,7 +56,7 @@ extern "C" {
   static CMD_TYPE *lookup_command(const char *name, int trust) {
     if (!name || !*name) return NULL;
     CMD_TYPE *prefix = NULL;
-    for (CMD_TYPE *cmd = command_hash[LOWER(name[0]) % MAX_COMMAND_HASH]; cmd; cmd = cmd->next) {
+    for (CMD_TYPE *cmd = command_hash[LOWER(static_cast<unsigned char>(name[0])) % MAX_COMMAND_HASH]; cmd; cmd = cmd->next) {
       if (cmd->level > trust) continue;
       if (!str_cmp(name, cmd->name)) return cmd;
       if (!prefix && cmd->do_fun && !str_prefix(name, cmd->name)) prefix = cmd;
@@ -79,6 +79,12 @@ extern "C" {
     int trust;
     bool found;
     struct timeval time_used;
+    if (!ch || !argument) return;
+    // Internal callers and stored aliases must obey the same limit as sockets.
+    if (strlen(argument) >= MAX_INPUT_LENGTH) {
+      send_to_char("Command too long.\n\r", ch);
+      return;
+    }
     smash_tilde( argument );
     if (!IS_NPC(ch) && guest_out_of_play(ch)) {
       char guest_command[MAX_INPUT_LENGTH];
@@ -92,7 +98,7 @@ extern "C" {
     /*
 * Strip leading spaces.
 */
-    while (isspace(*argument))
+    while (isspace(static_cast<unsigned char>(*argument)))
     argument++;
     if (argument[0] == '\0') {
       if (ch->in_room != NULL && ch->in_room->vnum == ROOM_INDEX_GENESIS)
@@ -140,11 +146,11 @@ extern "C" {
     else
     last_command = buf;
 
-    if (!isalpha(argument[0]) && !isdigit(argument[0])) {
+    if (!isalpha(static_cast<unsigned char>(argument[0])) && !isdigit(static_cast<unsigned char>(argument[0]))) {
       command[0] = argument[0];
       command[1] = '\0';
       argument++;
-      while (isspace(*argument))
+      while (isspace(static_cast<unsigned char>(*argument)))
       argument++;
     }
     else {
@@ -159,7 +165,7 @@ extern "C" {
       return;
     }
 
-    if (is_number(command) && ch->in_room->vnum != ROOM_INDEX_GENESIS) {
+    if (!IS_NPC(ch) && is_number(command) && ch->in_room->vnum != ROOM_INDEX_GENESIS) {
       if (ch->pcdata->survey_stage > 0 && ch->pcdata->survey_stage < 10 && safe_strlen(ch->pcdata->surveying) > 2) {
         process_survey_number(ch, command);
         return;
@@ -211,7 +217,7 @@ extern "C" {
 * Look for command in socials table.
 */
       if (!check_social(ch, command, argument)) {
-        if (is_number(command) && ch->in_room->vnum != ROOM_INDEX_GENESIS) {
+        if (!IS_NPC(ch) && is_number(command) && ch->in_room->vnum != ROOM_INDEX_GENESIS) {
           if (ch->pcdata->survey_stage > 0) {
             process_survey_number(ch, command);
           }
@@ -249,12 +255,17 @@ extern "C" {
         else {
           CMD_TYPE *commandlist;
           int hash;
+          const int command_length = safe_strlen(command);
           send_to_char("Command not found. Did you mean one of these ", ch);
           for (hash = 0; hash < MAX_COMMAND_HASH; hash++)
           for (commandlist = command_hash[hash]; commandlist;
           commandlist = commandlist->next) {
-            if (commandlist->level < LEVEL_HERO && commandlist->level <= get_trust(ch)) {
-              if (levenshtein_distance(commandlist->name, command) < 3 && levenshtein_distance(commandlist->name, command) > 0) {
+            if (commandlist->do_fun && commandlist->level < LEVEL_HERO && commandlist->level <= trust) {
+              // Edit distance is at least the difference in string lengths.
+              const int length_difference = static_cast<int>(safe_strlen(commandlist->name)) - command_length;
+              if (length_difference <= -3 || length_difference >= 3) continue;
+              const int distance = levenshtein_distance(commandlist->name, command);
+              if (distance > 0 && distance < 3) {
                 printf_to_char(ch, ", %s", commandlist->name);
               }
             }
@@ -1211,7 +1222,7 @@ ch, to  ), command, arg, argument); act(buf, to, NULL, NULL, TO_CHAR); continue;
     int hash;
 
     if (!command || !*command) return NULL;
-    hash = LOWER(command[0]) % MAX_COMMAND_HASH;
+    hash = LOWER(static_cast<unsigned char>(command[0])) % MAX_COMMAND_HASH;
 
     for (cmd = command_hash[hash]; cmd; cmd = cmd->next) {
       if (!str_cmp(command, cmd->name)) return cmd;
@@ -1511,37 +1522,27 @@ ch, to  ), command, arg, argument); act(buf, to, NULL, NULL, TO_CHAR); continue;
   int levenshtein_distance(char *s, char *t)
   /*Compute levenshtein distance between s and t*/
   {
-    // Step 1
-    int k, i, j, n, m, cost, *d, distance;
-    n = safe_strlen(s);
-    m = safe_strlen(t);
-    if (n != 0 && m != 0) {
-      d = (int *)(malloc((sizeof(int)) * (m + 1) * (n + 1)));
-      m++;
-      n++;
-      // Step 2
-      for (k = 0; k < n; k++)
-      d[k] = k;
-      for (k = 0; k < m; k++)
-      d[k * n] = k;
-      // Step 3 and 4
-      for (i = 1; i < n; i++)
-      for (j = 1; j < m; j++) {
-        // Step 5
-        if (s[i - 1] == t[j - 1])
-        cost = 0;
-        else
-        cost = 1;
-        // Step 6
-        d[j * n + i] = minimum(d[(j - 1) * n + i] + 1, d[j * n + i - 1] + 1, d[(j - 1) * n + i - 1] + cost);
-      }
-      distance = d[n * m - 1];
-      free(d);
-      return distance;
+    size_t n = safe_strlen(s), m = safe_strlen(t);
+    // Keep the existing empty-input convention used by command/help matching.
+    if (!n || !m) return -1;
+    if (n > m) {
+      std::swap(s, t);
+      std::swap(n, m);
     }
-    else
-    return -1; // a negative return value means that one or both strings are
-    // empty.
+    // Only the preceding row is needed, instead of an entire n*m matrix.
+    std::vector<int> row(n + 1);
+    for (size_t i = 0; i <= n; ++i) row[i] = static_cast<int>(i);
+    for (size_t j = 1; j <= m; ++j) {
+      int diagonal = row[0];
+      row[0] = static_cast<int>(j);
+      for (size_t i = 1; i <= n; ++i) {
+        const int previous = row[i];
+        row[i] = minimum(previous + 1, row[i - 1] + 1,
+                         diagonal + (s[i - 1] != t[j - 1]));
+        diagonal = previous;
+      }
+    }
+    return row[n];
   }
 
   int minimum(int a, int b, int c)

@@ -93,6 +93,7 @@ int main() {
     assert(message.second.find("The Golden Shadow") != std::string::npos);
     assert(message.second.find("Lauriea") != std::string::npos);
     assert(message.second.find("12:00") != std::string::npos);
+    assert(message.second.find("Haven") == std::string::npos);
     assert(message.second.find("operation signup") != std::string::npos);
     assert(message.second.find("Your comms announce") == std::string::npos);
   }

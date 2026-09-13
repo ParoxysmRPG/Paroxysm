@@ -16,6 +16,7 @@
 #include "merc.h"
 #include <unordered_map>
 #include "text_format.h"
+#include "equipment_snapshot.h"
 #include "spy_camera.h"
 #include "olc.h"
 #include "gsn.h"
@@ -25,6 +26,7 @@
 #include "tables.h"
 
 #include <math.h>
+#include <limits.h>
 
 #if defined(__cplusplus)
 extern "C" {
@@ -1363,6 +1365,45 @@ extern "C" {
     }
   }
 
+  // Cash objects and transactions store whole cents in an int. Parse decimal
+  // dollars directly so floating-point rounding cannot discard a cent.
+  static bool parse_cash_amount(const char *text, int *amount) {
+    if (text == NULL || amount == NULL)
+      return FALSE;
+    if (*text == '+')
+      ++text;
+
+    int dollars = 0, cents = 0, digits = 0;
+    bool has_digit = FALSE;
+    while (*text >= '0' && *text <= '9') {
+      has_digit = TRUE;
+      int digit = *text++ - '0';
+      if (dollars > (INT_MAX / 100 - digit) / 10)
+        return FALSE;
+      dollars = dollars * 10 + digit;
+    }
+    if (*text == '.') {
+      ++text;
+      while (*text >= '0' && *text <= '9') {
+        has_digit = TRUE;
+        if (++digits > 2)
+          return FALSE;
+        cents = cents * 10 + (*text++ - '0');
+      }
+    }
+    if (*text != '\0' || !has_digit)
+      return FALSE;
+    if (digits == 1)
+      cents *= 10;
+    if (dollars > (INT_MAX - cents) / 100)
+      return FALSE;
+    int total = dollars * 100 + cents;
+    if (total <= 0)
+      return FALSE;
+    *amount = total;
+    return TRUE;
+  }
+
   _DOFUN(do_drop) {
     char arg[MAX_INPUT_LENGTH];
     OBJ_DATA *obj;
@@ -1390,21 +1431,15 @@ extern "C" {
       return;
     }
 
-    if (is_number(arg)) {
+    if (is_number_float(arg)) {
       /* 'drop NNNN coins' */
       int amount;
-      float cash;
-
-      cash = atof(arg);
-      cash *= 100;
-      amount = (int)cash;
-
-      argument = one_argument(argument, arg);
-
-      if (amount <= 0) {
-        send_to_char("Sorry, you can't do that.\n\r", ch);
+      if (!parse_cash_amount(arg, &amount)) {
+        printf_to_char(ch, "Use a dollar amount from 0.01 to %d.%02d, with at most two decimal places.\n\r", INT_MAX / 100, INT_MAX % 100);
         return;
       }
+
+      argument = one_argument(argument, arg);
 
       if (ch->money < amount) {
         send_to_char("You don't have that much money.\n\r", ch);
@@ -1587,17 +1622,14 @@ extern "C" {
       if ((is_gm(ch) || higher_power(ch)) && !IS_IMMORTAL(ch))
       return;
       /* 'give NNNN coins victim' */
-      double amount;
-      amount = atof(arg1);
-      amount *= 100;
-
-      if (ch->money < amount) {
-        send_to_char("You don't have that much money.\n\r", ch);
+      int amount;
+      if (!parse_cash_amount(arg1, &amount)) {
+        printf_to_char(ch, "Use a dollar amount from 0.01 to %d.%02d, with at most two decimal places.\n\r", INT_MAX / 100, INT_MAX % 100);
         return;
       }
 
-      if (amount < 1) {
-        send_to_char("Well that's just silly.\n\r", ch);
+      if (ch->money < amount) {
+        send_to_char("You don't have that much money.\n\r", ch);
         return;
       }
 
@@ -1608,6 +1640,11 @@ extern "C" {
 
       if ((victim = get_char_room(ch, NULL, argument)) == NULL) {
         send_to_char("They aren't here.\n\r", ch);
+        return;
+      }
+
+      if (victim != ch && victim->money > LONG_MAX - amount) {
+        send_to_char("They can't carry that much money.\n\r", ch);
         return;
       }
 
@@ -1658,18 +1695,18 @@ extern "C" {
         }
       }
       // Cash transaction logging
-      sprintf(buf, "CASH: %s gets given %d by %s.\n\r", victim->name, (int)amount, ch->name);
+      sprintf(buf, "CASH: %s gets given %d by %s.\n\r", victim->name, amount, ch->name);
       log_string(buf);
       wiznet(buf, NULL, NULL, WIZ_LOGINS, 0, 0);
 
       alter_character(ch);
-      ch->money -= (int)(amount);
-      victim->money += (int)(amount);
+      ch->money -= amount;
+      victim->money += amount;
 
-      sprintf(buf, "$n gives you %.2f dollars.", amount / 100);
+      sprintf(buf, "$n gives you %.2f dollars.", amount / 100.0);
       act(buf, ch, NULL, victim, TO_VICT);
       act("$n gives $N some money.", ch, NULL, victim, TO_NOTVICT);
-      sprintf(buf, "You give $N %.2f dollars.", amount / 100);
+      sprintf(buf, "You give $N %.2f dollars.", amount / 100.0);
       act(buf, ch, NULL, victim, TO_CHAR);
 
       /*
@@ -1747,8 +1784,8 @@ extern "C" {
       }
     }
 
-    if (obj->item_type == ITEM_PHONE) {
-      if (ch->pcdata->connected_to != NULL && victim->pcdata->connected_to == NULL) {
+    if (obj->item_type == ITEM_PHONE && ch->pcdata != NULL) {
+      if (ch->pcdata->connected_to != NULL && victim->pcdata != NULL && victim->pcdata->connected_to == NULL) {
         ch->pcdata->connected_to->pcdata->connected_to = victim;
         victim->pcdata->connected_to = ch->pcdata->connected_to;
         victim->pcdata->connection_stage = ch->pcdata->connection_stage;
@@ -12010,13 +12047,13 @@ extern "C" {
       act("You adjust your $a $p.", ch, obj, NULL, TO_CHAR);
       act("$n adjusts $s $p.", ch, obj, NULL, TO_ROOM);
 
+      const haven::EquipmentSnapshot equipment(ch);
       for (i = 0; i < MAX_COVERS; i++) {
         obj->exposed = 0;
-        if (is_covered(ch, cover_table[i])) {
+        if (is_covered_equipped(ch, cover_table[i], equipment)) {
           obj->exposed = 111;
-          if (!is_covered(ch, cover_table[i]) && safe_strlen(ch->pcdata->focused_descs[i]) > 5) {
-            buf2 = str_dup(ch->pcdata->focused_descs[i]);
-            buf2 = one_argument_nouncap(buf2, arg1);
+          if (!is_covered_equipped(ch, cover_table[i], equipment) && safe_strlen(ch->pcdata->focused_descs[i]) > 5) {
+            buf2 = one_argument_nouncap(ch->pcdata->focused_descs[i], arg1);
             if (is_number(arg1))
             buf = haven::format_text("Revealing that; %s", buf2);
             else
@@ -12028,9 +12065,10 @@ extern "C" {
       }
       for (iWear = 0; iWear < MAX_WEAR; iWear++) {
         obj->exposed = 0;
-        if ((obj2 = get_eq_char(ch, iWear)) == NULL || !can_see_obj(ch, obj) || !can_see_wear(ch, iWear)) {
+        obj2 = equipment.get(iWear);
+        if (obj2 == NULL || !can_see_obj(ch, obj) || !can_see_wear_equipped(ch, iWear, equipment)) {
           obj->exposed = 111;
-          if ((obj2 = get_eq_char(ch, iWear)) != NULL && can_see_obj(ch, obj) && can_see_wear(ch, iWear)) {
+          if (obj2 != NULL && can_see_obj(ch, obj) && can_see_wear_equipped(ch, iWear, equipment)) {
             buf = haven::format_text("Revealing;%s $o", obj2->wear_string);
             act(buf.data(), ch, obj2, NULL, TO_CHAR);
             act(buf.data(), ch, obj2, NULL, TO_ROOM);
@@ -12045,20 +12083,19 @@ extern "C" {
     act("You adjust your clothes.", ch, NULL, NULL, TO_CHAR);
     act("$n adjusts $s clothes.", ch, NULL, NULL, TO_ROOM);
 
-    for (i = 0; i < MAX_COVERS; i++) {
-      ch->pcdata->exposed[location] = 0;
-      if (is_covered(ch, cover_table[i])) {
-        ch->pcdata->exposed[location] = 111;
-        if (!is_covered(ch, cover_table[i]) && safe_strlen(ch->pcdata->focused_descs[i]) > 5) {
-          buf2 = str_dup(ch->pcdata->focused_descs[i]);
-          buf2 = one_argument_nouncap(buf2, arg1);
-          if (is_number(arg1))
-          buf = haven::format_text("Revealing that; %s", buf2);
-          else
-          buf = haven::format_text("Revealing that; %s %s", arg1, buf2);
-          act(buf.data(), ch, NULL, NULL, TO_CHAR);
-          act(buf.data(), ch, NULL, NULL, TO_ROOM);
-        }
+    // Changing one body location cannot affect any other location's coverage.
+    const haven::EquipmentSnapshot equipment(ch);
+    ch->pcdata->exposed[location] = 0;
+    if (is_covered_equipped(ch, cover_table[location], equipment)) {
+      ch->pcdata->exposed[location] = 111;
+      if (!is_covered_equipped(ch, cover_table[location], equipment) && safe_strlen(ch->pcdata->focused_descs[location]) > 5) {
+        buf2 = one_argument_nouncap(ch->pcdata->focused_descs[location], arg1);
+        if (is_number(arg1))
+        buf = haven::format_text("Revealing that; %s", buf2);
+        else
+        buf = haven::format_text("Revealing that; %s %s", arg1, buf2);
+        act(buf.data(), ch, NULL, NULL, TO_CHAR);
+        act(buf.data(), ch, NULL, NULL, TO_ROOM);
       }
     }
 
@@ -12120,13 +12157,13 @@ extern "C" {
       act("You adjust your $a $p.", ch, obj, NULL, TO_CHAR);
       act("$n adjusts $s $p.", ch, obj, NULL, TO_ROOM);
 
+      const haven::EquipmentSnapshot equipment(ch);
       for (i = 0; i < MAX_COVERS; i++) {
         obj->exposed = 111;
-        if (!is_covered(ch, cover_table[i])) {
+        if (!is_covered_equipped(ch, cover_table[i], equipment)) {
           obj->exposed = 0;
-          if (is_covered(ch, cover_table[i]) && safe_strlen(ch->pcdata->focused_descs[i]) > 5) {
-            buf2 = str_dup(ch->pcdata->focused_descs[i]);
-            buf2 = one_argument_nouncap(buf2, arg1);
+          if (is_covered_equipped(ch, cover_table[i], equipment) && safe_strlen(ch->pcdata->focused_descs[i]) > 5) {
+            buf2 = one_argument_nouncap(ch->pcdata->focused_descs[i], arg1);
             if (is_number(arg1))
             buf = haven::format_text("Concealing that; %s", buf2);
             else
@@ -12138,9 +12175,10 @@ extern "C" {
       }
       for (iWear = 0; iWear < MAX_WEAR; iWear++) {
         obj->exposed = 111;
-        if ((obj2 = get_eq_char(ch, iWear)) == NULL || !can_see_obj(ch, obj) || can_see_wear(ch, iWear)) {
+        obj2 = equipment.get(iWear);
+        if (obj2 == NULL || !can_see_obj(ch, obj) || can_see_wear_equipped(ch, iWear, equipment)) {
           obj->exposed = 0;
-          if ((obj2 = get_eq_char(ch, iWear)) != NULL && can_see_obj(ch, obj) && !can_see_wear(ch, iWear)) {
+          if (obj2 != NULL && can_see_obj(ch, obj) && !can_see_wear_equipped(ch, iWear, equipment)) {
             buf = haven::format_text("Concealing;%s $o", obj2->wear_string);
             act(buf.data(), ch, obj2, NULL, TO_CHAR);
             act(buf.data(), ch, obj2, NULL, TO_ROOM);
@@ -12155,20 +12193,19 @@ extern "C" {
     act("You adjust your clothes.", ch, NULL, NULL, TO_CHAR);
     act("$n adjusts $s clothes.", ch, NULL, NULL, TO_ROOM);
 
-    for (i = 0; i < MAX_COVERS; i++) {
-      ch->pcdata->exposed[location] = 111;
-      if (!is_covered(ch, cover_table[i])) {
-        ch->pcdata->exposed[location] = 0;
-        if (is_covered(ch, cover_table[i]) && safe_strlen(ch->pcdata->focused_descs[i]) > 5) {
-          buf2 = str_dup(ch->pcdata->focused_descs[i]);
-          buf2 = one_argument_nouncap(buf2, arg1);
-          if (is_number(arg1))
-          buf = haven::format_text("Concealing that; %s", buf2);
-          else
-          buf = haven::format_text("Concealing that; %s %s", arg1, buf2);
-          act(buf.data(), ch, NULL, NULL, TO_CHAR);
-          act(buf.data(), ch, NULL, NULL, TO_ROOM);
-        }
+    // Changing one body location cannot affect any other location's coverage.
+    const haven::EquipmentSnapshot equipment(ch);
+    ch->pcdata->exposed[location] = 111;
+    if (!is_covered_equipped(ch, cover_table[location], equipment)) {
+      ch->pcdata->exposed[location] = 0;
+      if (is_covered_equipped(ch, cover_table[location], equipment) && safe_strlen(ch->pcdata->focused_descs[location]) > 5) {
+        buf2 = one_argument_nouncap(ch->pcdata->focused_descs[location], arg1);
+        if (is_number(arg1))
+        buf = haven::format_text("Concealing that; %s", buf2);
+        else
+        buf = haven::format_text("Concealing that; %s %s", arg1, buf2);
+        act(buf.data(), ch, NULL, NULL, TO_CHAR);
+        act(buf.data(), ch, NULL, NULL, TO_ROOM);
       }
     }
 

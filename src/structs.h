@@ -3872,6 +3872,8 @@ bool	crowded_room;
       int     job;
       
       int     habit[30];
+      int     next_sin_event;
+      int     last_sin_story;
       int     habits_done;
       
       int     litup;

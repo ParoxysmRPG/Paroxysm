@@ -1450,6 +1450,8 @@ extern "C" {
 
     int skillpoint(int val) {
       switch (val) {
+      case -2:
+        return -2;
       case -1:
         return -1;
         break;

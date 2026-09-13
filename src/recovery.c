@@ -97,8 +97,10 @@ static RecoveryIncident incident(CHAR_DATA *ch, CHAR_DATA *actor, bool monster) 
   if (record.forest) return record;
   // Ritual protection is recovery coverage, never combat immunity.
   if (sanctuary_population_blocked()) return record;
+  const bool black = under_black(ch, actor ? actor : ch);
+  if (black) record.cost_percent = 20;
   if (IS_AFFECTED(ch, AFF_UNDERSTANDING)) record.source = RECOVERY_RITUAL;
-  else if (under_understanding(ch, actor ? actor : ch)) {
+  else if (under_sanctuary(ch, actor ? actor : ch) || black) {
     record.source = RECOVERY_SANCTUARY;
     record.payer = recovery_payer(ch);
   }
@@ -160,9 +162,10 @@ static bool charge_recovery(CHAR_DATA *ch, const RecoveryIncident &record, int c
     // Unaffiliated humans pay per death only, never for maims or weekly upkeep.
     // The balance and consumed incident are saved together by the recovery pass.
     if (cost != SANCTUARY_DEATH_COST) return true;
-    if (ch->pcdata->total_money < LONG_MIN + PERSONAL_SANCTUARY_DEATH_COST) return false;
-    ch->pcdata->total_money -= PERSONAL_SANCTUARY_DEATH_COST;
-    printf_to_char(ch, "Sanctuary death recovery costs $%ld, charged to your personal bank account.\n\r", PERSONAL_SANCTUARY_DEATH_COST / 100);
+    const long fee = PERSONAL_SANCTUARY_DEATH_COST * record.cost_percent / 100;
+    if (ch->pcdata->total_money < LONG_MIN + fee) return false;
+    ch->pcdata->total_money -= fee;
+    printf_to_char(ch, "Sanctuary death recovery costs $%ld, charged to your personal bank account.\n\r", fee / 100);
     if (ch->pcdata->total_money < 0)
       send_to_char("You are an indentured servant until your bank debt is repaid: sixteen-hour work days cap LF at 30 and provide double full-time base pay.\n\r", ch);
     if (ch->pcdata->total_money <= -PERSONAL_SANCTUARY_DEBT_LIMIT)
@@ -178,7 +181,7 @@ static bool charge_recovery(CHAR_DATA *ch, const RecoveryIncident &record, int c
   // Every non-exempt priority raises both recovery fees by 25%, additively.
   // Round resource units up and preserve the durable receipt's one-charge rule.
   const long long charged = (static_cast<long long>(cost)
-      * (100LL + 25LL * containment_priority_count(fac, ch)) + 99) / 100;
+      * (100LL + 25LL * containment_priority_count(fac, ch)) * record.cost_percent + 9999) / 10000;
   if (charged > INT_MAX) return false;
   cost = static_cast<int>(charged);
   if (fac->resource < INT_MIN + cost) return false;
@@ -315,8 +318,9 @@ void write_recovery(FILE *fp, CHAR_DATA *ch) {
   fprintf(fp, "WoundsTreated %d\n", ch->wounds >= 2 && state.wounds_treated);
   fprintf(fp, "RecoveryState %lu %d %d\n", state.serial, state.operation_dead, state.operation_ghost);
   auto write = [fp](int kind, const RecoveryIncident &record) {
-    fprintf(fp, "RecoveryIncidentV2 %d %d %d %d %ld %lu %s~ %s~\n", kind, record.source,
-            record.payer, record.forest, record.due, record.serial, record.description.c_str(), record.receipt.c_str());
+    fprintf(fp, "RecoveryIncidentV3 %d %d %d %d %ld %lu %d %s~ %s~\n", kind, record.source,
+            record.payer, record.forest, record.due, record.serial, record.cost_percent,
+            record.description.c_str(), record.receipt.c_str());
   };
   if (state.death.serial) write(0, state.death);
   if (state.critical.serial && ch->wounds == 3) write(1, state.critical);
@@ -336,7 +340,8 @@ bool read_recovery(FILE *fp, CHAR_DATA *ch, const char *word) {
     return true;
   }
   const bool version2 = !str_cmp(word, "RecoveryIncidentV2");
-  if (!version2 && str_cmp(word, "RecoveryIncident")) return false;
+  const bool version3 = !str_cmp(word, "RecoveryIncidentV3");
+  if (!version2 && !version3 && str_cmp(word, "RecoveryIncident")) return false;
   int kind = fread_number(fp);
   RecoveryIncident record;
   record.source = fread_number(fp);
@@ -344,10 +349,11 @@ bool read_recovery(FILE *fp, CHAR_DATA *ch, const char *word) {
   record.forest = fread_number(fp) != 0;
   record.due = fread_number(fp);
   record.serial = fread_number(fp);
+  if (version3) record.cost_percent = fread_number(fp) == 20 ? 20 : 100;
   char *text = fread_string(fp);
   record.description = text;
   free_string(text);
-  if (version2) {
+  if (version2 || version3) {
     text = fread_string(fp);
     record.receipt = text;
     free_string(text);

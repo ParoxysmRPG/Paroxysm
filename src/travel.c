@@ -2192,7 +2192,7 @@ return;
 
   bool has_town_vehicle(CHAR_DATA *ch) {
     for (int i = 0; i < 10; i++) {
-      if (ch->pcdata->garage_status[i] == GARAGE_ACTIVE || ch->pcdata->garage_status[i] == GARAGE_GARAGED) {
+      if (ch->pcdata->garage_cost[i] > 0 && (ch->pcdata->garage_status[i] == GARAGE_ACTIVE || ch->pcdata->garage_status[i] == GARAGE_GARAGED)) {
         if (ch->pcdata->garage_typeone[i] != CAR_HORSE)
         return TRUE;
       }
@@ -2201,7 +2201,7 @@ return;
   }
   bool has_world_vehicle(CHAR_DATA *ch) {
     for (int i = 0; i < 10; i++) {
-      if (ch->pcdata->garage_status[i] == GARAGE_ACTIVE || ch->pcdata->garage_status[i] == GARAGE_GARAGED) {
+      if (ch->pcdata->garage_cost[i] > 0 && (ch->pcdata->garage_status[i] == GARAGE_ACTIVE || ch->pcdata->garage_status[i] == GARAGE_GARAGED)) {
         if (ch->pcdata->garage_typeone[i] == CAR_HORSE)
         return TRUE;
       }
@@ -2330,9 +2330,6 @@ return;
     if (clinic_patient(ch))
     return;
 
-    if (IS_FLAG(ch->act, PLR_HIDE))
-    REMOVE_FLAG(ch->act, PLR_HIDE);
-
     if (!str_cmp(arg1, "list")) {
       send_to_char("You can drive to the following locations. See (`chelp landmarks`x) for more.\n\r", ch);
       for (i = 0; i < MAX_TAXIS; i++) {
@@ -2370,7 +2367,6 @@ return;
       return;
     }
 
-    ch->pcdata->driving_around = FALSE;
     if (!is_number(arg1)) {
       for (i = 0; i < MAX_TAXIS; i++) {
         if ((room = get_room_index(taxi_table[i].vnum)) != NULL) {
@@ -2484,6 +2480,10 @@ return;
       send_to_char("There is no room to begin your journey right now. Try again shortly.\n\r", ch);
       return;
     }
+
+    if (IS_FLAG(ch->act, PLR_HIDE))
+    REMOVE_FLAG(ch->act, PLR_HIDE);
+    ch->pcdata->driving_around = FALSE;
 
     if (!IS_NPC(ch) && ch->pcdata->process_timer > 0) {
       ch->pcdata->process_timer = 0;
@@ -7017,6 +7017,7 @@ return;
   }
 
   _DOFUN(do_garage) {
+    if (!ch || IS_NPC(ch) || !ch->pcdata || !ch->in_room) return;
     char arg1[MSL];
     char arg2[MSL];
     char arg3[MSL];
@@ -7350,44 +7351,6 @@ return;
       else {
         send_to_char("You don't have the key for that, try garage recover (number) instead to pay to have it returned.\n\r", ch);
         return;
-        CHAR_DATA *victim;
-        for (DescList::iterator it = descriptor_list.begin();
-        it != descriptor_list.end(); ++it) {
-          DESCRIPTOR_DATA *d = *it;
-          if (d->connected != CON_PLAYING)
-          continue;
-          victim = CH(d);
-          if (victim == NULL)
-          continue;
-          if (IS_NPC(victim))
-          continue;
-          haskey = FALSE;
-          for (obj = victim->carrying; haskey == FALSE && obj != NULL;
-          obj = obj_next) {
-            obj_next = obj->next_content;
-            if (IS_SET(obj->extra_flags, ITEM_WARDROBE))
-            continue;
-
-            if (obj->item_type == ITEM_KEY && is_key_for(obj, ch->pcdata->garage_lplate[num])) {
-              haskey = TRUE;
-              if (obj->value[3] == 1)
-              ch->pcdata->garage_status[num] = GARAGE_LOANEDDAMAGED;
-              extract_obj(obj);
-              break;
-            }
-          }
-        }
-        if (ch->pcdata->garage_status[num] == GARAGE_LOANED) {
-          ch->pcdata->garage_status[num] = GARAGE_RECOVER;
-          ch->pcdata->garage_timer[num] = (60 * 24);
-        }
-        else {
-          ch->pcdata->garage_status[num] = GARAGE_RECOVERREPAIR;
-          ch->pcdata->garage_timer[num] = (60 * 24);
-        }
-        ch->pcdata->total_money -= 20000;
-        printf_to_char(ch, "You pay to have your %s recovered.\n\r", ch->pcdata->garage_name[num]);
-        return;
       }
     }
     if (!str_cmp(arg1, "recover")) {
@@ -7397,7 +7360,7 @@ return;
         return;
       }
       if (!is_number(arg2) || atoi(arg2) > 10 || atoi(arg2) < 1) {
-        send_to_char("Syntax: garage reclaim (1-10)\n\r", ch);
+        send_to_char("Syntax: garage recover (1-10)\n\r", ch);
         return;
       }
       int num = atoi(arg2);
@@ -7419,15 +7382,15 @@ return;
 
         if (obj->item_type == ITEM_KEY && is_key_for(obj, ch->pcdata->garage_lplate[num])) {
           haskey = TRUE;
-          if (obj->value[3] == 1)
-          ch->pcdata->garage_status[num] = GARAGE_LOANEDDAMAGED;
-
-          extract_obj(obj);
           break;
         }
       }
       if (haskey == TRUE) {
         send_to_char("You already have the key for that, try garage reclaim (number) instead.\n\r", ch);
+        return;
+      }
+      if (ch->pcdata->total_money < 10000) {
+        send_to_char("You need $100 in the bank to recover that vehicle.\n\r", ch);
         return;
       }
       else {
@@ -7443,8 +7406,6 @@ return;
           if (IS_NPC(victim))
           continue;
           haskey = FALSE;
-          for (obj = victim->carrying; haskey == FALSE && obj != NULL;
-          obj = obj_next)
           for (obj = victim->carrying; haskey == FALSE && obj != NULL;
           obj = obj_next) {
             obj_next = obj->next_content;
@@ -7475,7 +7436,7 @@ return;
     }
     if (!str_cmp(arg1, "locate")) {
       if (!is_number(arg2) || atoi(arg2) > 10 || atoi(arg2) < 1) {
-        send_to_char("Syntax: garage reclaim (1-10)\n\r", ch);
+        send_to_char("Syntax: garage locate (1-10)\n\r", ch);
         return;
       }
       int num = atoi(arg2);
@@ -7484,7 +7445,6 @@ return;
         send_to_char("No such vehicle in your garage.\n\r", ch);
         return;
       }
-      ch->pcdata->total_money -= 500;
       if (ch->pcdata->garage_location[num] == 0) {
         send_to_char("That vehicle is in your garage.\n\r", ch);
         return;
@@ -7496,6 +7456,11 @@ return;
         send_to_char("That vehicle is in your garage.\n\r", ch);
         return;
       }
+      if (ch->pcdata->total_money < 500) {
+        send_to_char("You need $5 in the bank to locate that vehicle.\n\r", ch);
+        return;
+      }
+      ch->pcdata->total_money -= 500;
       char_from_room(ch);
       char_to_room(ch, newroom);
       maketownmap(ch);
@@ -7504,7 +7469,7 @@ return;
       return;
     }
 
-    send_to_char("Garage lease/unlease/view/drive/loan/locate/reclaim/name/describe\n\r", ch);
+    send_to_char("Garage lease/unlease/view/drive/loan/locate/reclaim/recover/name/describe\n\r", ch);
   }
 
   bool valid_parking_spot(ROOM_INDEX_DATA *room) {

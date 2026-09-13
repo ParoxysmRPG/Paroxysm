@@ -1635,9 +1635,7 @@ extern "C" {
       send_to_char("The target must be helpless.\n\r", recipient);
       return FALSE;
     }
-    if (IS_AFFECTED(ch, AFF_UNDERSTANDING) || IS_AFFECTED(victim, AFF_UNDERSTANDING)
-        || under_understanding(ch, victim) || under_understanding(victim, ch)
-        || under_limited(ch, victim) || under_limited(victim, ch)) {
+    if (full_sanctuary_protection(ch, victim) || full_sanctuary_protection(victim, ch)) {
       send_to_char("Sanctuary prevents that action.\n\r", recipient);
       return FALSE;
     }
@@ -1750,11 +1748,11 @@ extern "C" {
           victim->pcdata->last_true_sexed_ID = ch->id;
 
           if (ch->privaterpexp < 100 && get_tier(ch) < get_tier(victim)) {
-            psychic_feast(ch, PSYCHIC_LUST, 120);
+            psychic_feast(ch, PSYCHIC_SEX, 1);
           }
 
           if (victim->privaterpexp < 100 && get_tier(ch) > get_tier(victim)) {
-            psychic_feast(victim, PSYCHIC_LUST, 120);
+            psychic_feast(victim, PSYCHIC_SEX, 1);
           }
 
           if (!str_cmp(ch->pcdata->last_sexed[0], victim->name)) {
@@ -2217,7 +2215,7 @@ extern "C" {
     }
 
     // sanctuary loss for sex
-    if (under_understanding(top, bottom)) {
+    if (under_sanctuary(top, bottom)) {
       if ((str_cmp(top->pcdata->last_sexed[0], bottom->name)
             && (get_attract(top, bottom) < (get_attract(bottom, top) - 10) && number_percent() % 4 == 0))) {
         AFFECT_DATA af;
@@ -2249,7 +2247,7 @@ extern "C" {
         nounderglow(top); // broadcasts aura change
       }
 
-      if (under_understanding(bottom, top)) {
+      if (under_sanctuary(bottom, top)) {
         if ((str_cmp(bottom->pcdata->last_sexed[0], top->name)
               && (get_attract(top, bottom) > (get_attract(bottom, top) + 10) && number_percent() % 4 == 0))) {
           AFFECT_DATA af;

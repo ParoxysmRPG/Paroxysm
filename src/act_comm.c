@@ -990,6 +990,26 @@ extern "C" {
     *history = str_dup(next.c_str());
   }
 
+  // Fictional victims have no dialable contact or player conversation history.
+  // The caller saves the inbox together with the event's new cooldown.
+  bool deliver_sin_text(CHAR_DATA *ch, const char *message) {
+    if (!ch || IS_NPC(ch) || !ch->pcdata || !ch->in_room || !cell_signal(ch)) return false;
+    OBJ_DATA *phone = get_phone(ch);
+    char history[MSL], line[MSL];
+    if (!phone || IS_SET(phone->extra_flags, ITEM_OFF)
+        || !format_phone_text(phone, "Unknown number", message, history, line)) return false;
+    free_string(phone->material);
+    phone->material = str_dup(history);
+    if (IS_SET(phone->extra_flags, ITEM_SILENT))
+      act("Your $p vibrates.", ch, phone, NULL, TO_CHAR);
+    else {
+      act("Your $p beeps.", ch, phone, NULL, TO_CHAR);
+      act("$n's $p beeps.", ch, phone, NULL, TO_ROOM);
+    }
+    printf_to_char(ch, "%s\n\r", line);
+    return true;
+  }
+
   static bool compromised_text_sender(CHAR_DATA *ch) {
     if (!ch || IS_NPC(ch) || !ch->pcdata) return false;
     for (vector<EVENT_TYPE *>::iterator it = EventVect.begin(); it != EventVect.end(); ++it) {
@@ -4233,12 +4253,28 @@ extern "C" {
       sprintf(buf, "A short bolded phrase appears on the display '%s'", capitalize(argument));
       act(buf, ch, NULL, NULL, TO_ROOM);
     }
-    if (is_name("afraid", argument) || is_name("fear", argument) || is_name("scared", argument))
-    psychic_feast(ch, PSYCHIC_FEAR, 5);
+    remove_color(buf, argument);
+    // Match whole emotion words, including punctuation around them.
+    for (int i = 0; buf[i] != '\0'; ++i)
+      if (!isalpha((unsigned char)buf[i])) buf[i] = ' ';
+    if (is_exact_name("afraid", buf) || is_exact_name("fear", buf) || is_exact_name("scared", buf)
+        || is_exact_name("fearful", buf) || is_exact_name("frightened", buf) || is_exact_name("terrified", buf)
+        || is_exact_name("terror", buf) || is_exact_name("dread", buf) || is_exact_name("panic", buf)
+        || is_exact_name("panicked", buf) || is_exact_name("panicking", buf) || is_exact_name("panicky", buf)
+        || is_exact_name("petrified", buf) || is_exact_name("intimidated", buf) || is_exact_name("alarmed", buf)
+        || is_exact_name("spooked", buf) || is_exact_name("unnerved", buf) || is_exact_name("dreading", buf)
+        || is_exact_name("anxious", buf) || is_exact_name("anxiety", buf) || is_exact_name("nervous", buf)
+        || is_exact_name("apprehensive", buf) || is_exact_name("apprehension", buf))
+    feel_feeding(ch, PSYCHIC_FEAR);
     else if (is_name("anger", argument) || is_name("rage", argument) || is_name("angry", argument))
     psychic_feast(ch, PSYCHIC_ANGER, 10);
-    else if (is_name("lust", argument) || is_name("desire", argument) || is_name("horny", argument) || is_name("aroused", argument))
-    psychic_feast(ch, PSYCHIC_LUST, 5);
+    else if (is_exact_name("lust", buf) || is_exact_name("desire", buf) || is_exact_name("horny", buf)
+        || is_exact_name("aroused", buf) || is_exact_name("lustful", buf) || is_exact_name("arousal", buf)
+        || is_exact_name("desirous", buf) || is_exact_name("randy", buf) || is_exact_name("randiness", buf)
+        || is_exact_name("lusting", buf) || is_exact_name("lustfully", buf) || is_exact_name("horniness", buf)
+        || is_exact_name("lecherous", buf) || is_exact_name("lascivious", buf) || is_exact_name("libidinous", buf)
+        || is_exact_name("amorous", buf) || is_exact_name("lewd", buf))
+    feel_feeding(ch, PSYCHIC_LUST);
     else
     psychic_feast(ch, PSYCHIC_AMBIANT, 4);
   }
@@ -10371,6 +10407,8 @@ extern "C" {
       }
     }
     sprintf(buf, "\nCharacter Habits:\n\n\r");
+    strcat(string, buf);
+    sprintf(buf, "Sin: %s\n\r", habit_level(HABIT_SIN, sin_habit(victim)));
     strcat(string, buf);
     
     if (is_vampire(victim) && level >= 2 && level < 10) {

@@ -33,6 +33,7 @@ CHAR_DATA *full = nullptr, *limited = nullptr;
 bool present = true, visible = true, contraceptive = true, dreaming = false;
 bool ghost = false, manifest = false, pool = true, dead = false;
 int prompts = 0, records = 0;
+std::vector<CHAR_DATA *> feed_sources;
 char *str_dup(const char *s) { char *p = strdup(s ? s : ""); allocations.push_back(p); return p; }
 void free_string(char *) {} // Arena released after all scenarios.
 bool str_cmp(const char *a, const char *b) { return strcasecmp(a ? a : "", b ? b : "") != 0; }
@@ -46,7 +47,10 @@ void act_new(const char *s, CHAR_DATA *, const void *, const void *, int, int) {
 void wiznet(char *, CHAR_DATA *, OBJ_DATA *, long, long, int) { ++records; }
 bool is_helpless(CHAR_DATA *ch) { return ch->wounds > 3; }
 bool under_understanding(CHAR_DATA *ch, CHAR_DATA *) { return ch == full; }
-bool under_limited(CHAR_DATA *ch, CHAR_DATA *) { return ch == limited; }
+bool under_limited(CHAR_DATA *ch, CHAR_DATA *) { return ch == limited && ch != full; }
+bool under_sanctuary(CHAR_DATA *ch, CHAR_DATA *pers) {
+  return under_understanding(ch, pers) || under_limited(ch, pers);
+}
 int get_trust(CHAR_DATA *ch) { return ch == &admin ? LEVEL_IMMORTAL : 1; }
 bool is_gm(CHAR_DATA *) { return false; }
 bool is_dreaming(CHAR_DATA *) { return dreaming; }
@@ -60,11 +64,14 @@ bool is_angelborn(CHAR_DATA *) { return false; }
 bool is_vampire(CHAR_DATA *) { return false; }
 bool is_demigod(CHAR_DATA *) { return false; }
 bool is_super(CHAR_DATA *) { return false; }
-int get_tier(CHAR_DATA *) { return 2; }
+int get_tier(CHAR_DATA *ch) { return ch->level ? ch->level : 2; }
 int get_skill(CHAR_DATA *ch, int skill) { return ch->skills[skill]; }
 int get_attract(CHAR_DATA *, CHAR_DATA *) { return 50; }
 int number_percent() { return 50; }
-void psychic_feast(CHAR_DATA *, int, int) {}
+void psychic_feast(CHAR_DATA *ch, int type, int mod) {
+  assert(type == PSYCHIC_SEX && mod == 1);
+  feed_sources.push_back(ch);
+}
 void social_behave_mod(CHAR_DATA *, int, char *) {}
 void update_standards(CHAR_DATA *, CHAR_DATA *) {}
 void disease_check(CHAR_DATA *, CHAR_DATA *) {}
@@ -96,6 +103,9 @@ void sex_category(CHAR_DATA *, char *, char *) {}
 void append_file(CHAR_DATA *, char *, char *) {}
 void apply_seekingsex(CHAR_DATA *ch, int) { ++prompts; SET_FLAG(ch->affected_by, AFF_SEEKINGSEX); }
 '''
+lookup = (ROOT / 'src/lookup.c').read_text()
+helper_start = lookup.index('  bool full_sanctuary_protection(')
+source += lookup[helper_start:lookup.index('  int fight_speed(', helper_start)]
 source += section('  void apply_godlysex(', '  // For time limitation on sex propositions')
 source += section('  void baby_batter(', '  // Handles valid type arguments and interpretations')
 source += section('  char *process_type_arguments(', '  void update_standards(')
@@ -117,7 +127,7 @@ void reset() {
   full = limited = nullptr;
   present = visible = contraceptive = pool = true;
   ghost = manifest = dreaming = dead = false;
-  prompts = records = 0; output.clear();
+  prompts = records = 0; output.clear(); feed_sources.clear();
 }
 void command(DO_FUN *fn, CHAR_DATA *ch, const char *input) {
   char buffer[MSL]; strcpy(buffer, input); fn(ch, buffer);
@@ -145,16 +155,24 @@ void assert_blocked(const char *input = "Target coital", CHAR_DATA *ch = &actor)
 }
 int main() {
   reset(); target.wounds = 0; assert_blocked();
-  // Each sanctuary source on either participant blocks ordinary and admin invocation.
-  for (int side = 0; side < 2; ++side) for (int source = 0; source < 3; ++source) {
+  // Full sanctuary on either participant blocks ordinary and admin invocation.
+  for (int side = 0; side < 2; ++side) for (int source = 0; source < 2; ++source) {
     for (bool immortal : {false, true}) {
       reset(); CHAR_DATA *protected_ch = side ? &target : &actor;
       if (source == 0) full = protected_ch;
-      if (source == 1) limited = protected_ch;
-      if (source == 2) SET_FLAG(protected_ch->affected_by, AFF_UNDERSTANDING);
+      if (source == 1) SET_FLAG(protected_ch->affected_by, AFF_UNDERSTANDING);
       assert_blocked(immortal ? "Actor Target none coital" : "Target coital", immortal ? &admin : &actor);
       assert(output.find("Sanctuary") != std::string::npos);
     }
+  }
+  // Limited sanctuary alone permits the scene, including admin invocation.
+  for (int side = 0; side < 2; ++side) for (bool immortal : {false, true}) {
+    reset(); limited = side ? &target : &actor;
+    command(do_rape, immortal ? &admin : &actor,
+        immortal ? "Actor Target none coital" : "Target coital");
+    assert(records == 1 && prompts == 0 && target_pc.last_sex == current_time);
+    reset(); limited = side ? &target : &actor; full = &target;
+    assert_blocked();
   }
   reset(); assert_blocked("Actor coital");
   reset(); present = false; assert_blocked();
@@ -167,9 +185,35 @@ int main() {
   reset(); ghost = true; assert_blocked();
   reset(); ghost = manifest = true; pool = false; assert_blocked();
   reset(); dead = true; assert_blocked();
+  // Permanent orange and black never acquire full protection from rituals.
+  for (int level : {-1, -2}) for (int side = 0; side < 2; ++side) {
+    reset(); CHAR_DATA *reduced = side ? &target : &actor;
+    reduced->skills[SKILL_SECONDCLASS] = level;
+    SET_FLAG(reduced->affected_by, AFF_UNDERSTANDING);
+    command(do_rape, &actor, "Target coital");
+    assert(records == 1 && prompts == 0);
+  }
   // Normal sex still prompts even when sanctuary is present.
-  reset(); full = &target; command(do_sex, &actor, "Target coital");
-  assert(prompts == 1 && records == 0 && target_pc.sexing == &actor);
+  for (bool is_full : {false, true}) {
+    reset(); if (is_full) full = &target; else limited = &target;
+    command(do_sex, &actor, "Target coital");
+    assert(prompts == 1 && records == 0 && target_pc.sexing == &actor);
+    assert(feed_sources.empty()); // No feeding before consent.
+    char risk[MSL] = "none", type[MSL] = "coital";
+    have_sex(&actor, &target, risk, type, &target);
+    assert(target_pc.last_sex == current_time);
+  }
+  // Both commands and both tier orientations use the reduced feeding path.
+  for (bool clinical : {false, true}) for (bool reverse : {false, true}) {
+    reset(); actor.level = reverse ? 4 : 2; target.level = reverse ? 2 : 4;
+    command(clinical ? do_rape : do_sex, &actor, "Target coital");
+    if (!clinical) {
+      assert(feed_sources.empty());
+      char risk[MSL] = "none", type[MSL] = "coital";
+      have_sex(&actor, &target, risk, type, &target);
+    }
+    assert(feed_sources.size() == 1 && feed_sources[0] == (reverse ? &target : &actor));
+  }
   // Compare actual shared consequences across risk/type and anatomical orientation.
   for (int risk = 0; risk < 6; ++risk) for (bool reverse : {false, true}) {
     for (const char *type : {"coital", "noncoital", "outercourse"}) {
@@ -195,7 +239,7 @@ int main() {
   reset(); command(do_rape, &admin, "Actor Target condom coital");
   assert(records == 1 && prompts == 0 && target_pc.inseminated == 0);
   for (char *p : allocations) free(p);
-  puts("PASS: helplessness, all sanctuary sources, admin restrictions, rejection state, consent preservation, neutral output and 36 aftermath comparisons.");
+  puts("PASS: full/limited sanctuary, helplessness, admin restrictions, consent, feeding dispatch, neutral output and 36 aftermath comparisons.");
 }
 '''
 

@@ -28,6 +28,9 @@ int faction_secrecy(FACTION_TYPE *, CHAR_DATA *);
 int focus_point_per_tier(CHAR_DATA *);
 bool faction_hardelligible(CHAR_DATA *, FACTION_TYPE *, bool, CHAR_DATA *);
 void process_order(CHAR_DATA *, int);
+bool can_raise(int, CHAR_DATA *);
+int train_skill_cost(CHAR_DATA *, int, int);
+void do_train(CHAR_DATA *, char *);
 }
 static void assign(char *&field, const char *value) {
   free_string(field); field = str_dup(value);
@@ -82,6 +85,131 @@ static void next_day() { current_time = next_sanctuary_recovery(); }
 static std::string bytes(const std::string &path) {
   std::ifstream f(path, std::ios::binary);
   return std::string(std::istreambuf_iterator<char>(f), {});
+}
+static void second_class_recovery(FACTION_TYPE *fac, CHAR_DATA *forest, CHAR_DATA *civilian) {
+  auto *ch = player("Secondclass");
+  ch->newrpexp = 100000;
+  ch->pcdata->rpexp_cap = 1000000;
+  assert(skilltype(SKILL_SECONDCLASS) == STYPE_SOCIAL);
+  assert(skillpoint(-2) == -2 && skillpoint(-1) == -1);
+  assert(has_requirements(ch, SKILL_SECONDCLASS, -2, false)); // Creation.
+  assert(!can_raise(SKILL_SECONDCLASS, ch));
+  do_negtrain(ch, (char *)"Second Class Citizen");
+  assert(ch->skills[SKILL_SECONDCLASS] == -1);
+  do_negtrain(ch, (char *)"Second Class Citizen");
+  assert(ch->skills[SKILL_SECONDCLASS] == -2);
+  do_negtrain(ch, (char *)"Second Class Citizen");
+  assert(ch->skills[SKILL_SECONDCLASS] == -2);
+  for (int expected : {-1, 0}) {
+    assert(can_raise(SKILL_SECONDCLASS, ch));
+    assert(train_skill_cost(ch, SKILL_SECONDCLASS, TRAINED_NATURAL) == BASE_STAT_COST);
+    int before = available_rpexp(ch);
+    do_train(ch, (char *)"Second Class Citizen");
+    assert(ch->skills[SKILL_SECONDCLASS] == expected);
+    assert(available_rpexp(ch) == before - BASE_STAT_COST);
+  }
+  do_train(ch, (char *)"Second Class Citizen");
+  assert(ch->skills[SKILL_SECONDCLASS] == 0);
+  auto *observer = player("Auraviewer");
+  SET_FLAG(observer->act, PLR_GM);
+  for (int level : {0, -1, -2}) {
+    ch->skills[SKILL_SECONDCLASS] = level;
+    assert(get_skill(ch, SKILL_SECONDCLASS) == level);
+    assert(under_understanding(ch, ch) == (level == 0));
+    assert(under_limited(ch, ch) == (level == -1));
+    assert(under_black(ch, ch) == (level == -2));
+    assert(under_sanctuary(ch, ch) == (level != -2));
+    assert(full_sanctuary_protection(ch, ch) == (level == 0));
+    assert(seems_under_understanding(ch, observer) == (level == 0));
+    assert(seems_under_limited(ch, observer) == (level == -1));
+    assert(seems_under_black(ch, observer) == (level == -2));
+    if (level < 0) {
+      observer->desc->outtop = 0; observer->desc->outbuf[0] = '\0';
+      show_char_to_char_1(ch, observer, 0, false);
+      if (!strstr(observer->desc->outbuf, level == -2 ? "black" : "orange"))
+        fprintf(stderr, "Aura output at %d: %s\n", level, observer->desc->outbuf);
+      assert(strstr(observer->desc->outbuf, level == -2 ? "black" : "orange"));
+    }
+    record_death_recovery(ch, civilian, false, false);
+    assert(ch->pcdata->recovery->death.source == RECOVERY_SANCTUARY);
+    record_death_recovery(ch, forest, false, false);
+    assert(ch->pcdata->recovery->death.source == RECOVERY_NONE);
+  }
+  // Full sanctuary from a society or ritual cannot upgrade either drawback.
+  ch->fsociety = fac->vnum;
+  for (int level : {-1, -2}) {
+    ch->skills[SKILL_SECONDCLASS] = level;
+    assert(!under_understanding(ch, ch));
+    AFFECT_DATA af = {}; af.where = TO_AFFECTS; af.duration = 100;
+    af.bitvector = AFF_UNDERSTANDING; affect_to_char(ch, &af);
+    assert(!full_sanctuary_protection(ch, ch));
+    coverage(ch, RECOVERY_NONE); // Also removes ritual affect.
+    assert(!under_limited(ch, ch) && !under_black(ch, ch));
+    assign(ch->pcdata->understanding, "All");
+    restore_sanctuary_population(true);
+    assert(!under_limited(ch, ch) && !under_black(ch, ch));
+    restore_sanctuary_population(false);
+  }
+  ch->skills[SKILL_SECONDCLASS] = 0;
+  assign(ch->pcdata->understanding, "Limited");
+  assert(under_sanctuary(ch, ch) && !full_sanctuary_protection(ch, ch));
+  assert(!strcmp(ch->pcdata->understanding, "Limited"));
+  assign(ch->pcdata->understanding, "All");
+  // All tiers, mixed orange/black maims, critical provenance and persistent fees.
+  const int old_stance = fac->axes[AXES_CORRUPT];
+  fac->axes[AXES_CORRUPT] = AXES_DEMONIC;
+  for (int tier = 1; tier <= 6; ++tier) {
+    ch->pcdata->tier_raised += tier - get_tier(ch);
+    ch->skills[SKILL_SECONDCLASS] = -1;
+    record_maim(ch, "orange injury", ch, false);
+    ch->skills[SKILL_SECONDCLASS] = -2;
+    record_maim(ch, "black injury", ch, false);
+    record_critical_injury(ch, ch, false);
+    ch->skills[SKILL_SECONDCLASS] = 0;
+    record_death_recovery(ch, ch, true, false);
+    assert(ch->pcdata->recovery->death.cost_percent == 20);
+    SET_FLAG(ch->act, PLR_DEAD);
+    save_char_obj(ch, false, false); ch = reload(ch);
+    const RecoveryState stale = *ch->pcdata->recovery;
+    const int before = fac->resource;
+    next_day(); assert(process_character_recovery(ch));
+    const int multiplier = UMIN(5, tier);
+    assert(fac->resource == before - multiplier * (SANCTUARY_DEATH_COST / 5
+        + SANCTUARY_MAIM_COST + SANCTUARY_MAIM_COST / 5));
+    assert(!IS_FLAG(ch->act, PLR_DEAD) && !*ch->pcdata->maim);
+    assert(!process_character_recovery(ch));
+    const int charged_balance = fac->resource;
+    *ch->pcdata->recovery = stale;
+    SET_FLAG(ch->act, PLR_DEAD);
+    assign(ch->pcdata->maim, "orange injury and black injury");
+    assert(process_character_recovery(ch));
+    assert(fac->resource == charged_balance);
+  }
+  fac->axes[AXES_CORRUPT] = old_stance;
+  ch->fsociety = 0;
+  ch->pcdata->tier_raised = 0;
+  ch->skills[SKILL_SECONDCLASS] = -2;
+  ch->pcdata->total_money = 0;
+  record_death_recovery(ch, ch, false, false);
+  SET_FLAG(ch->act, PLR_DEAD);
+  save_char_obj(ch, false, false); ch = reload(ch);
+  assert(ch->skills[SKILL_SECONDCLASS] == -2);
+  next_day(); assert(process_character_recovery(ch));
+  assert(ch->pcdata->total_money == -PERSONAL_SANCTUARY_DEATH_COST / 5);
+  assert(!process_character_recovery(ch));
+  ch->pcdata->total_money = -PERSONAL_SANCTUARY_DEBT_LIMIT;
+  assert(!under_black(ch, ch));
+  ch->pcdata->total_money = 0;
+  save_char_obj(ch, false, false);
+  // Older incident formats retain the original full fee.
+  for (const char *version : {"RecoveryIncident", "RecoveryIncidentV2"}) {
+    FILE *fp = tmpfile(); assert(fp);
+    fprintf(fp, "0 1 0 0 1 123 old~ %s", !strcmp(version, "RecoveryIncidentV2") ? "receipt~" : "");
+    rewind(fp); assert(read_recovery(fp, ch, version)); fclose(fp);
+    assert(ch->pcdata->recovery->death.cost_percent == 100);
+  }
+  ch->pcdata->recovery->death = RecoveryIncident();
+  puts("PASS: second-class stat training, orange/black aura display, protection matrix, exclusions, tiered discounted fees, mixed incidents, critical provenance and old/new saves.");
 }
 static void personal_recovery(FACTION_TYPE *fac) {
   auto *ch = player("Personalrecovery"); coverage(ch, RECOVERY_SANCTUARY);
@@ -423,6 +551,14 @@ static void containment_recovery_costs() {
   balance = fac->resource;
   next_day(); assert(process_character_recovery(patient));
   assert(fac->resource == balance - 1563);
+  patient->skills[SKILL_SECONDCLASS] = -2;
+  record_maim(patient, "discounted rounded injury", patient, false);
+  record_death_recovery(patient, patient, false, false);
+  SET_FLAG(patient->act, PLR_DEAD);
+  balance = fac->resource;
+  next_day(); assert(process_character_recovery(patient));
+  assert(fac->resource == balance - 1250 - 313);
+  patient->skills[SKILL_SECONDCLASS] = 0;
   do_society(patient, (char *)"position corrupt demonic");
   assert(fac->axes[AXES_CORRUPT] == AXES_DEMONIC);
   do_society(patient, (char *)"info ContainmentTest");
@@ -520,6 +656,7 @@ int main(int argc, char **) {
   current_time += 60; assert(next_sanctuary_recovery() == current_time + 86400);
   current_time += 60; assert(next_sanctuary_recovery() == current_time + 86340);
   puts("PASS: next 06:00 uses server time at 05:59, 06:00 and 06:01.");
+  second_class_recovery(fac, monster, civilian);
   personal_recovery(fac);
   deaths(fac, monster, civilian); injuries(fac, monster); regeneration_and_operations(fac);
   clinic_recovery(fac);
@@ -571,7 +708,8 @@ int main(int argc, char **) {
   assert(strlen(ch->pcdata->messages) >= long_message.size());
   auto *other = player("Protectedsex"); coverage(ch, RECOVERY_NONE); coverage(other, RECOVERY_SANCTUARY);
   const int before_sex = other->pcdata->last_sex;
-  have_sex(ch, other, (char *)"none", (char *)"coital", ch);
+  other->wounds = 4;
+  do_rape(ch, (char *)"Protectedsex coital");
   assert(other->pcdata->last_sex == before_sex);
   assert(strstr(ch->desc->outbuf, "Sanctuary prevents"));
   puts("PASS: empty/whitespace/digit focused edits, long messages, and sexual Sanctuary protection.");

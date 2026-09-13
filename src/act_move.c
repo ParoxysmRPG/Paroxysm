@@ -167,6 +167,9 @@ extern "C" {
   }
 
   int find_exit(CHAR_DATA *ch, char *arg) {
+    if (ch == NULL || ch->in_room == NULL || arg == NULL || arg[0] == '\0')
+      return -1;
+
     EXIT_DATA *pexit;
     int door = -1;
 
@@ -195,7 +198,7 @@ extern "C" {
       door = 9;
       else {
         for (door = 0; door <= 9; door++) {
-          if ((pexit = ch->in_room->exit[door]) != NULL)
+          if ((pexit = ch->in_room->exit[door]) != NULL && pexit->keyword != NULL && is_name(arg, pexit->keyword))
           return door;
         }
         return -1;
@@ -210,7 +213,7 @@ extern "C" {
     }
     if (door == -1) {
       for (door = 0; door <= 9; door++) {
-        if ((pexit = ch->in_room->exit[door]) != NULL)
+        if ((pexit = ch->in_room->exit[door]) != NULL && pexit->keyword != NULL && is_name(arg, pexit->keyword))
         return door;
       }
       return -1;
@@ -1584,7 +1587,7 @@ extern "C" {
     if (IS_FLAG(ch->comm, COMM_HOTSPOT))
     REMOVE_FLAG(ch->comm, COMM_HOTSPOT);
     if (IS_FLAG(ch->act, PLR_HIDE))
-    REMOVE_FLAG(ch->comm, PLR_HIDE);
+    REMOVE_FLAG(ch->act, PLR_HIDE);
 
     ch->pcdata->travel_to = to_room->vnum;
     ch->pcdata->travel_type = TRAVEL_CLIMB;

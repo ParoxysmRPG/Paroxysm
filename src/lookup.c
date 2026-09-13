@@ -1871,7 +1871,7 @@ extern "C" {
   }
 
   bool illegal_augmentation(int skill) {
-    if (skill == SKILL_WEALTH)
+    if (skill == SKILL_WEALTH || skill == SKILL_SECONDCLASS)
     return TRUE;
     if (skill == SKILL_POWERARMOR)
     return TRUE;
@@ -1907,6 +1907,7 @@ extern "C" {
 
   static int get_skill_without_territory(CHAR_DATA *ch, int skill) {
     int val = ch->skills[skill];
+    if (skill == SKILL_SECONDCLASS) return URANGE(-2, val, 0);
     int i;
     if (IS_NPC(ch)) {
       return val;
@@ -3461,6 +3462,13 @@ extern "C" {
   }
 
   bool seems_under_understanding(CHAR_DATA *ch, CHAR_DATA *pers) {
+    return seems_sanctuary_eligible(ch, pers, FALSE);
+  }
+
+  bool seems_sanctuary_eligible(CHAR_DATA *ch, CHAR_DATA *pers, bool limited) {
+    if (!ch || !pers || !ch->in_room || !ch->in_room->area || IS_NPC(ch) || !ch->pcdata)
+      return FALSE;
+    if (!limited && ch->skills[SKILL_SECONDCLASS] < 0) return FALSE;
     if (debt_blocks_sanctuary(ch)) return FALSE;
     if (sanctuary_population_blocked() || feeding_blocks_sanctuary(ch)) return FALSE;
     if (IS_NPC(ch))
@@ -3477,12 +3485,12 @@ extern "C" {
 
     if (ch->pcdata->destiny_feature == DEST_FEAT_NOSANC)
     return FALSE;
-    if (ch->pcdata->destiny_feature == DEST_FEAT_LIMITED)
+    if (!limited && ch->pcdata->destiny_feature == DEST_FEAT_LIMITED)
     return FALSE;
 
     if (!str_cmp(ch->pcdata->understanding, "None"))
     return FALSE;
-    if (!str_cmp(ch->pcdata->understanding, "Limited"))
+    if (!limited && !str_cmp(ch->pcdata->understanding, "Limited"))
     return FALSE;
 
     if (institute_room(ch->in_room)) {
@@ -3537,6 +3545,9 @@ extern "C" {
     if (IS_AFFECTED(ch, AFF_COMMUTE))
     return FALSE;
 
+    // The social drawback supplies continuing coverage without a faction.
+    if (limited && ch->skills[SKILL_SECONDCLASS] < 0) return TRUE;
+
     if (ch->race == RACE_FACULTY) {
       if (college_staff(ch, FALSE) || clinic_staff(ch, FALSE)) {
         return TRUE;
@@ -3566,6 +3577,13 @@ extern "C" {
   }
 
   bool under_understanding(CHAR_DATA *ch, CHAR_DATA *pers) {
+    return sanctuary_eligible(ch, pers, FALSE);
+  }
+
+  bool sanctuary_eligible(CHAR_DATA *ch, CHAR_DATA *pers, bool limited) {
+    if (!ch || !pers || !ch->in_room || !ch->in_room->area || IS_NPC(ch) || !ch->pcdata)
+      return FALSE;
+    if (!limited && ch->skills[SKILL_SECONDCLASS] < 0) return FALSE;
     if (debt_blocks_sanctuary(ch)) return FALSE;
     if (sanctuary_population_blocked() || feeding_blocks_sanctuary(ch)) return FALSE;
     if (!ch || !pers || !ch->in_room || !ch->in_room->area || IS_NPC(ch))
@@ -3585,12 +3603,12 @@ extern "C" {
 
     if (!str_cmp(ch->pcdata->understanding, "None"))
     return FALSE;
-    if (!str_cmp(ch->pcdata->understanding, "Limited"))
+    if (!limited && !str_cmp(ch->pcdata->understanding, "Limited"))
     return FALSE;
 
     if (ch->pcdata->destiny_feature == DEST_FEAT_NOSANC)
     return FALSE;
-    if (ch->pcdata->destiny_feature == DEST_FEAT_LIMITED)
+    if (!limited && ch->pcdata->destiny_feature == DEST_FEAT_LIMITED)
     return FALSE;
 
     for (vector<EVENT_TYPE *>::iterator it = EventVect.begin(); it != EventVect.end(); ++it) {
@@ -3657,6 +3675,9 @@ extern "C" {
       else
       return FALSE;
     }
+    // The social drawback supplies continuing coverage without a faction.
+    if (limited && ch->skills[SKILL_SECONDCLASS] < 0) return TRUE;
+
     if (ch->race == RACE_FACULTY) {
       if (college_staff(ch, FALSE) || clinic_staff(ch, FALSE))
       return TRUE;
@@ -3683,6 +3704,30 @@ extern "C" {
 
 
     return FALSE;
+  }
+
+  bool under_sanctuary(CHAR_DATA *ch, CHAR_DATA *pers) {
+    return under_understanding(ch, pers) || under_limited(ch, pers);
+  }
+
+  bool under_black(CHAR_DATA *ch, CHAR_DATA *pers) {
+    return ch && !IS_NPC(ch) && ch->skills[SKILL_SECONDCLASS] <= -2
+      && sanctuary_eligible(ch, pers, TRUE);
+  }
+
+  bool seems_under_black(CHAR_DATA *ch, CHAR_DATA *pers) {
+    return ch && !IS_NPC(ch) && ch->skills[SKILL_SECONDCLASS] <= -2
+      && seems_sanctuary_eligible(ch, pers, TRUE);
+  }
+
+  bool full_sanctuary_protection(CHAR_DATA *ch, CHAR_DATA *pers) {
+    if (!ch || IS_NPC(ch) || !ch->pcdata) return FALSE;
+    // Ritual coverage cannot upgrade a permanently reduced aura.
+    if (ch->skills[SKILL_SECONDCLASS] < 0
+        || ch->pcdata->destiny_feature == DEST_FEAT_LIMITED
+        || !str_cmp(ch->pcdata->understanding, "Limited")
+        || under_limited(ch, pers)) return FALSE;
+    return IS_AFFECTED(ch, AFF_UNDERSTANDING) || under_understanding(ch, pers);
   }
 
   int fight_speed(CHAR_DATA *ch) {
@@ -5461,7 +5506,7 @@ extern "C" {
 
     if (!IS_FLAG(ch->act, PLR_GUEST)) //exempting institute PCs and guests -- Disco
     {
-      if (is_super(ch) && !under_understanding(ch, ch) && !under_limited(ch, ch)
+      if (is_super(ch) && !under_sanctuary(ch, ch)
       && (ch->faction == 0 || clan_lookup(ch->faction) == NULL || clan_lookup(ch->faction)->resource < 8000)
       && str_cmp(ch->name, "Ritualist")) {
         if (ch->in_room != NULL && in_haven(ch->in_room)
@@ -5894,7 +5939,7 @@ extern "C" {
     }
 
     if (!IS_FLAG(ch->act, PLR_GUEST)) {
-      if (is_super(ch) && !under_understanding(ch, ch) && (ch->faction == 0 || clan_lookup(ch->faction) == NULL || clan_lookup(ch->faction)->resource < 10000) && str_cmp(ch->name, "Ritualist"))
+      if (is_super(ch) && !under_sanctuary(ch, ch) && (ch->faction == 0 || clan_lookup(ch->faction) == NULL || clan_lookup(ch->faction)->resource < 10000) && str_cmp(ch->name, "Ritualist"))
       send_to_char("Unprotected: -15%\n\r", view);
 
       if (get_tier(ch) == 2 && ch->faction == 0 && ch->vassal == 0)

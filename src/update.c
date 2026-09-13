@@ -762,6 +762,16 @@ extern "C" {
     if (!ch || !ch->name)
     return;
 
+    if (sin_cortex_guard(ch)) {
+      sin_cortex_guard_update(ch);
+      if (ch->ttl == 0) extract_char(ch, TRUE);
+      return;
+    }
+    if (sin_vigilante(ch)) {
+      sin_vigilante_update(ch);
+      if (ch->ttl == 0) extract_char(ch, TRUE);
+      return;
+    }
     if (full_moon_pack(ch)) {
       if (ch->ttl == 0 || ch->wounds >= 2) {
         extract_char(ch, TRUE);
@@ -3644,7 +3654,7 @@ end_battle();
       }
 
       // Restore the original sanctuary prisoner-care deadline and event release rules.
-      if (in_haven(ch->in_room) && under_understanding(ch, ch) && event_cleanse == 0 && (IS_FLAG(ch->act, PLR_BOUND) || IS_FLAG(ch->act, PLR_BOUNDFEET) || trapped_room(ch->in_room, ch))) {
+      if (in_haven(ch->in_room) && under_sanctuary(ch, ch) && event_cleanse == 0 && (IS_FLAG(ch->act, PLR_BOUND) || IS_FLAG(ch->act, PLR_BOUNDFEET) || trapped_room(ch->in_room, ch))) {
         if (ch->pcdata->prison_mult == 0) {
           ch->pcdata->prison_mult = 1;
           ch->pcdata->prison_care = current_time + (3600 * 5);
@@ -6293,6 +6303,7 @@ obj->value[4] += 3;
         if (ch->pcdata->weakness_status == WEAKNESS_DREAMSNARED)
           ch->pcdata->weakness_status = 0;
         feeding_update(ch);
+        sin_update(ch);
         pc_update(ch, save_number);
         if (ch->desc == NULL)
         linkdeadtravel(ch);
@@ -9828,7 +9839,7 @@ world: %d, room area: %d, desti area: %d\n\r", room->vnum, desti->vnum, vehicle_
         char message[MSL];
         // An absolute time also stays accurate when this tick arrives late.
         snprintf(message, sizeof(message),
-          "%s's operation in %s departs at %02d:00 Haven time. Use operation list, then operation signup (number) to take part.",
+          "%s's operation in %s departs at %02d:00. Use operation list, then operation signup (number) to take part.",
           host && host->name ? host->name : "A faction",
           location && location->name ? location->name : "an unknown location", (*it)->hour);
         send_message_temp((*it)->faction, message);

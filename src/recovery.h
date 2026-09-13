@@ -14,6 +14,7 @@ struct RecoveryIncident {
   int source = RECOVERY_NONE;
   int payer = 0;
   bool forest = false;
+  int cost_percent = 100; // Captured with coverage; black aura pays 20%.
   long due = 0;
   unsigned long serial = 0;
   std::string description;

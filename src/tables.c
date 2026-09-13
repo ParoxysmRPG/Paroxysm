@@ -1206,6 +1206,7 @@ const struct skill_type skill_table[] = {
 {SKILL_TELEPATHY,          "Telepathy",             { 2, 0, 0, 0, 0, 0}},
 {SKILL_ATTRACTIVENESS,     "Attractiveness",        {-1, 1, 0, 0, 0, 0}},
 {SKILL_HYPNOTISM,          "Hypnotism",             { 1, 2, 3, 4, 0, 0}},
+{SKILL_SECONDCLASS,        "Second Class Citizen",  {-2,-1, 0, 0, 0, 0}},
 {SKILL_WEALTH,             "Wealth",                {-1, 1, 2, 3, 4, 5}},
 {SKILL_DARKSORC,           "Dark Sorcery",          { 2, 0, 0, 0, 0, 0}},
 {SKILL_FIRESORC,           "Fire Sorcery",          { 2, 0, 0, 0, 0, 0}},

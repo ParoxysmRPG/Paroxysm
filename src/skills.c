@@ -126,6 +126,7 @@ extern "C" {
     case SKILL_ART2:
     case SKILL_ART3:
     case SKILL_MINIONS:
+    case SKILL_SECONDCLASS:
     case SKILL_WEALTH:
     case SKILL_CLINICCONTRACT:
     case SKILL_COLLEGECONTRACT:
@@ -360,6 +361,7 @@ extern "C" {
   }
 
   bool can_raise(int skillvnum, CHAR_DATA *target) {
+    if (skillvnum == SKILL_SECONDCLASS) return target->skills[skillvnum] < 0;
     int tpoints = 0;
     int j, orig, points, i = -1, pointer = 0;
 
@@ -1317,6 +1319,18 @@ extern "C" {
           }
         }
 
+        if (skill_table[i].vnum == SKILL_SECONDCLASS) {
+          if (target->skills[SKILL_SECONDCLASS] <= -2) {
+            send_to_char("Your Second Class Citizen stat is already as low as it can go.\n\r", ch);
+            return;
+          }
+          --target->skills[SKILL_SECONDCLASS];
+          if (!IS_IMMORTAL(ch)) refund_rpexp(target, BASE_STAT_COST, TRUE);
+          send_to_char("You lower your Second Class Citizen stat.\n\r", ch);
+          limunderglow(target);
+          return;
+        }
+
         // Exceptions to make sure stats aren't dropped below their minimums
         if (target->skills[skill_table[i].vnum] <= -1) {
           printf_to_char(ch, "Your %s stat is already as low as it can go.\n\r", skill_table[i].name);
@@ -1339,7 +1353,7 @@ extern "C" {
             target->spentnewrpexp = 0;
             for (int i = 0; i < DIS_USED; i++)
             target->disciplines[i] = 0;
-            for (int i = 0; i < SKILL_USED; i++)
+            for (int i = 0; i <= SKILL_USED; i++)
             target->skills[i] = 0;
             send_to_char("Character reset.\n\r", ch);
             for (int x = 0; x < 300; x++) {
@@ -1641,6 +1655,7 @@ extern "C" {
   }
 
   bool has_requirements(CHAR_DATA *ch, int skill, int level, bool show) {
+    if (skill == SKILL_SECONDCLASS) return level <= 0 || ch->skills[skill] < 0;
     if (skill == SKILL_COLLEGECONTRACT && ch->fcore != FACTION_CORTEX) {
       if (show)
         send_to_char("Only members of the Cortex can take College Contracts.\n\r", ch);
@@ -3405,6 +3420,7 @@ extern "C" {
   }
 
   int train_skill_cost(CHAR_DATA *ch, int skill, int method) {
+    if (skill == SKILL_SECONDCLASS) return ch->skills[skill] < 0 ? BASE_STAT_COST : 0;
     int pointer = -1, trains;
     for (int i = 0; i < skill_table_count; i++) {
       if (skill_table[i].vnum == skill) {
@@ -3580,7 +3596,14 @@ extern "C" {
     for (i = 0; i < skill_table_count; i++) {
       int pointer = 0;
       if (!str_cmp(skill_table[i].name, argument)) {
-        if (target->skills[skill_table[i].vnum] == 0) {
+        if (skill_table[i].vnum == SKILL_SECONDCLASS) {
+          if (target->skills[SKILL_SECONDCLASS] >= 0) {
+            send_to_char("You can't raise it that high.\n\r", target);
+            return;
+          }
+          points = target->skills[SKILL_SECONDCLASS] + 1;
+        }
+        else if (target->skills[skill_table[i].vnum] == 0) {
           if (skill_table[i].levels[0] == -1)
           points = skill_table[i].levels[1];
           else
@@ -3602,9 +3625,9 @@ extern "C" {
           points = skill_table[i].levels[j + 1];
         }
 
-        if (target->skills[skill_table[i].vnum] == -1) {
+        if (target->skills[skill_table[i].vnum] < 0) {
           tpoints = 1;
-          orig = -1;
+          orig = target->skills[skill_table[i].vnum];
         }
         else {
           orig = target->skills[skill_table[i].vnum];
@@ -3661,12 +3684,12 @@ extern "C" {
           send_to_char("You're already at your  rpxp cap.\n\r", ch);
           return;
         }
-        if (target->skills[skill_table[i].vnum] == -1) {
+        if (target->skills[skill_table[i].vnum] < 0) {
           if (BASE_STAT_COST > available_rpexp(target)) {
             printf_to_char(ch, "You'd need %d rpxp to train that.\n\r", BASE_STAT_COST);
             return;
           }
-          target->skills[skill_table[i].vnum] = 0;
+          target->skills[skill_table[i].vnum] = points;
           charge_rpexp(target, BASE_STAT_COST);
           printf_to_char(ch, "You train %s.\n\r", skill_table[i].name);
           return;
@@ -11711,7 +11734,7 @@ extern "C" {
 
     if (imprinter != NULL && !IS_NPC(imprinter) && imprinter->in_room != NULL) {
       if ((resistone == HYPNO_LUST || resisttwo == HYPNO_LUST || resistthree == HYPNO_LUST)
-          && under_understanding(victim, imprinter))
+          && under_sanctuary(victim, imprinter))
       base += 500;
 
       base += get_tier(imprinter) * get_tier(imprinter) * 5;
@@ -11849,9 +11872,8 @@ extern "C" {
 
   static bool sanctuary_blocks_imprint_lock(CHAR_DATA *victim, CHAR_DATA *imprinter) {
     if (!victim || IS_NPC(victim)) return FALSE;
-    if (IS_AFFECTED(victim, AFF_UNDERSTANDING)) return TRUE;
     CHAR_DATA *source = imprinter ? imprinter : victim;
-    return under_understanding(victim, source) || under_limited(victim, source);
+    return full_sanctuary_protection(victim, source);
   }
 
   _DOFUN(do_imprint) {
@@ -15018,7 +15040,7 @@ extern "C" {
       if (IS_FLAG(victim->act, PLR_BOUNDFEET))
       REMOVE_FLAG(victim->act, PLR_BOUNDFEET);
 
-      if (under_understanding(victim, ch)) {
+      if (under_sanctuary(victim, ch) || under_black(victim, ch)) {
         under_taint(ch, victim, 12 * 60 * 20);
       }
       victim->pcdata->blood_date = current_time;
@@ -15193,7 +15215,7 @@ extern "C" {
       if (IS_FLAG(victim->act, PLR_BOUNDFEET))
       REMOVE_FLAG(victim->act, PLR_BOUNDFEET);
 
-      if (under_understanding(victim, ch)) {
+      if (under_sanctuary(victim, ch) || under_black(victim, ch)) {
         under_taint(ch, victim, 12 * 60 * 20);
       }
     }
@@ -19653,6 +19675,10 @@ extern "C" {
 
   char *habit_level(int habit, int level) {
     switch (habit) {
+    case HABIT_SIN:
+      if (level == SIN_SCAMMER) return "Scammer";
+      if (level == SIN_CORRUPT) return "Corrupt";
+      return "Murderer";
     case HABIT_EATING:
       if (level == 0) {
         return "Normal";
@@ -19962,6 +19988,7 @@ extern "C" {
   }
 
   _DOFUN(do_habit) {
+    if (!ch || IS_NPC(ch) || !ch->pcdata) return;
     int i;
     char arg[MSL];
     argument = one_argument_nouncap(argument, arg);
@@ -19979,6 +20006,21 @@ extern "C" {
       return;
     }
 
+    if (!str_cmp(arg, "sin")) {
+      for (i = SIN_MURDERER; i <= SIN_CORRUPT; ++i) {
+        if (!str_cmp(argument, habit_level(HABIT_SIN, i))) {
+          ch->pcdata->habit[HABIT_SIN] = i;
+          // A habit change never clears or brings forward an existing cooldown.
+          sin_update(ch);
+          save_char_obj(ch, FALSE, FALSE);
+          printf_to_char(ch, "Your sin habit is set to %s.\n\r", habit_level(HABIT_SIN, i));
+          return;
+        }
+      }
+      printf_to_char(ch, "Sin: %s. Syntax: habit sin murderer/scammer/corrupt.\n\r",
+          habit_level(HABIT_SIN, sin_habit(ch)));
+      return;
+    }
     if (!str_cmp(arg, "hunting")) {
       if (ch->pcdata->patrol_habits[PATROL_HUNTHABIT] != 0) {
         ch->pcdata->patrol_habits[PATROL_HUNTHABIT] = 0;
@@ -20503,6 +20545,7 @@ extern "C" {
       printf_to_char(
       ch, "Sadism: %s\n\r", habit_level(HABIT_SADISM, ch->pcdata->habit[HABIT_SADISM]));
 
+      printf_to_char(ch, "Sin: %s\n\r", habit_level(HABIT_SIN, sin_habit(ch)));
       printf_to_char(ch, "Eating: %s\n\r", habit_level(HABIT_EATING, ch->pcdata->habit[HABIT_EATING]));
       printf_to_char(ch, "Sex: %s\n\r", habit_level(HABIT_SEX, ch->pcdata->habit[HABIT_SEX]));
       printf_to_char(
@@ -34849,7 +34892,14 @@ extern "C" {
     for (int i = 0; i < skill_table_count; i++) {
       int pointer = 0;
       if (skill_table[i].vnum == number) {
-        if (target->skills[skill_table[i].vnum] == 0) {
+        if (skill_table[i].vnum == SKILL_SECONDCLASS) {
+          if (target->skills[SKILL_SECONDCLASS] >= 0) {
+            target->pcdata->training_stat = 0;
+            return;
+          }
+          points = target->skills[SKILL_SECONDCLASS] + 1;
+        }
+        else if (target->skills[skill_table[i].vnum] == 0) {
           if (skill_table[i].levels[0] == -1)
           points = skill_table[i].levels[1];
           else
@@ -34894,7 +34944,14 @@ extern "C" {
         charge_rpexp(target, cost);
         printf_to_char(target, "`RYour %s stat increases!`x\n\r", skill_table[i].name);
 
-        if (target->skills[skill_table[i].vnum] == 0) {
+        if (skill_table[i].vnum == SKILL_SECONDCLASS) {
+          if (target->skills[SKILL_SECONDCLASS] >= 0) {
+            target->pcdata->training_stat = 0;
+            return;
+          }
+          points = target->skills[SKILL_SECONDCLASS] + 1;
+        }
+        else if (target->skills[skill_table[i].vnum] == 0) {
           if (skill_table[i].levels[0] == -1)
           points = skill_table[i].levels[1];
           else
@@ -35342,7 +35399,14 @@ extern "C" {
     for (i = 0; i < skill_table_count; i++) {
       int pointer = 0;
       if (skill_table[i].vnum == stat) {
-        if (target->skills[skill_table[i].vnum] == 0) {
+        if (skill_table[i].vnum == SKILL_SECONDCLASS) {
+          if (target->skills[SKILL_SECONDCLASS] >= 0) {
+            send_to_char("You can't raise it that high.\n\r", target);
+            return;
+          }
+          points = target->skills[SKILL_SECONDCLASS] + 1;
+        }
+        else if (target->skills[skill_table[i].vnum] == 0) {
           if (skill_table[i].levels[0] == -1)
           points = skill_table[i].levels[1];
           else
@@ -35364,9 +35428,9 @@ extern "C" {
           points = skill_table[i].levels[j + 1];
         }
 
-        if (target->skills[skill_table[i].vnum] == -1) {
+        if (target->skills[skill_table[i].vnum] < 0) {
           tpoints = 1;
-          orig = -1;
+          orig = target->skills[skill_table[i].vnum];
         }
         else {
           orig = target->skills[skill_table[i].vnum];

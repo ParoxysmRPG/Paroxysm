@@ -5,10 +5,25 @@ Dormitory Nexus (3347). The ground entrance is 16156. From the nexus, Queenson
 is north, Kingson northwest, Bishop south, and Rook southwest. The laundry room
 is west and the shared sitting room east.
 
-Use `rent 1` through `rent 5` in a house's common room. Rental is free for college
-students; `rent` lists vacancies, `rent stop` ends a rental, and `roomie <number>`
-claims an available roommate slot. A resident or roommate can `open <direction>`
-to use their rental key. The bedroom doors start closed and locked.
+Use `rent 1` through `rent 5` in a house's common room or upstairs landing.
+Rental is free for college students; `rent` lists vacancies, `rent stop` ends a
+rental, and `roomie <number>` claims an available roommate slot. A resident or
+roommate can `open <direction>` to use their rental key. The bedroom doors start
+closed and locked.
+
+Each house entrance displays a resident roster with rooms 1 through 5, residents,
+roommates, and vacancies. Use `look roster` to read it again. The ground entrance
+and nexus display the complete directory for all four houses. Rosters read the
+current rental records, so renting, leaving, and inactivity cleanup update them
+immediately. Rental changes are saved immediately and survive a restart.
+
+Each student can hold one dorm assignment, as either resident or roommate.
+Inactive characters lose their assignment during the regular college update:
+the existing college inactivity counter exceeds 500, or they have more than
+seven full days of inactivity. Deleted characters and former students also lose
+their assignments. Online students keep their rooms. If a resident leaves or is
+removed, an active roommate takes over the rental; when both leave, the room
+becomes vacant.
 
 | House | Common room | Upstairs landing | Rooms 1–5 |
 | --- | --- | --- | --- |
@@ -41,9 +56,11 @@ existing restrictions.
 
 Build and restart the server to load the code and area changes. Verification
 boots a disposable copy of the world and exercises all twenty rentals, door
-resets, movement, outsider rejection, roommate access, and saved assignments:
+resets, movement, outsider rejection, roommate access, live rosters, inactivity
+cleanup, and saved assignments:
 
 ```sh
 make -C src -j4
 python3 tools/run_dorm_integration.py
+python3 tools/test_dorm_inactivity.py
 ```

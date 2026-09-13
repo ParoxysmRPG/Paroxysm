@@ -81,6 +81,11 @@ int damage_mod(int distance,int range) { return std::max(10,range-distance); }
 bool is_in_cover(CHAR_DATA *c) { return c->cover; }
 CHAR_DATA *get_cover(CHAR_DATA *c) { return c->cover; }
 bool full_moon_pack(CHAR_DATA *) { return false; }
+bool sin_vigilante(CHAR_DATA *) { return false; }
+bool sin_cortex_guard(CHAR_DATA *) { return false; }
+CHAR_DATA *sin_cortex_guard_prey(CHAR_DATA *) { return nullptr; }
+bool sin_vigilante_target(CHAR_DATA *, CHAR_DATA *) { return false; }
+CHAR_DATA *sin_vigilante_prey(CHAR_DATA *) { return nullptr; }
 CHAR_DATA *full_moon_pack_prey(CHAR_DATA *) { return nullptr; }
 bool dissent_crowd(CHAR_DATA *) { return false; }
 bool cortex_public_enforcer(CHAR_DATA *) { return false; }

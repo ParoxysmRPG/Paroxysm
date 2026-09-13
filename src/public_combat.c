@@ -5,10 +5,12 @@ extern "C" {
 
 bool public_target_excluded(CHAR_DATA *ch, CHAR_DATA *victim) {
   // Preserve the existing ROOM_PUBLIC target exclusion and breach/enforcer
-  // handling, with exceptions for dissenting crowds and full-moon packs.
+  // handling, with exceptions for dissenting crowds, full-moon packs and
+  // the two participants in a sin encounter.
   if (state_of_emergency() || !ch || !victim || cortex_breach_monster(ch) || cortex_breach_monster(victim)
       || dissent_crowd(ch) || dissent_crowd(victim)
       || full_moon_pack(ch) || full_moon_pack(victim)) return FALSE;
+  if (sin_vigilante_target(ch, victim) || sin_vigilante_target(victim, ch)) return FALSE;
   return (victim->in_room && IS_SET(victim->in_room->room_flags, ROOM_PUBLIC)
           && !IS_FLAG(victim->act, PLR_SHROUD))
       || (ch->in_room && IS_SET(ch->in_room->room_flags, ROOM_PUBLIC)
@@ -20,6 +22,7 @@ bool cortex_public_enforcer(CHAR_DATA *ch) {
 }
 
 void cortex_public_response(CHAR_DATA *attacker, CHAR_DATA *defender) {
+  if (sin_vigilante_target(defender, attacker)) return;
   if (state_of_emergency() || !attacker || !defender || attacker == defender || IS_NPC(attacker)
       || !attacker->pcdata || !attacker->in_room || !defender->in_room
       || IS_FLAG(attacker->act, PLR_SHROUD) || IS_FLAG(attacker->act, PLR_DEEPSHROUD)

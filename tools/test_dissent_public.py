@@ -28,6 +28,11 @@ ROOM_INDEX_DATA *room_index_hash[MAX_KEY_HASH] = {};
 time_t current_time = 2000000000;
 int event_cleanse = 0, fight_problem = 0;
 bool full_moon_pack(CHAR_DATA *) { return false; }
+bool sin_vigilante(CHAR_DATA *) { return false; }
+bool sin_cortex_guard(CHAR_DATA *) { return false; }
+CHAR_DATA *sin_cortex_guard_prey(CHAR_DATA *) { return nullptr; }
+bool sin_vigilante_target(CHAR_DATA *, CHAR_DATA *) { return false; }
+CHAR_DATA *sin_vigilante_prey(CHAR_DATA *) { return nullptr; }
 CHAR_DATA *full_moon_pack_prey(CHAR_DATA *) { return nullptr; }
 bool emergency = false;
 bool state_of_emergency(void) { return emergency; }

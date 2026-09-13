@@ -54,6 +54,35 @@ twice. Leaving the scene or becoming free invalidates the interaction.
 Response menus include tied rewards and only offer intel at 1,000 or more.
 Bleeding has a consistent four-day cooldown.
 
+Completed `sex` and `rape` scenes use a victimization-sized feeding exchange
+instead of the old 120x lust multiplier: at most 1 LF drained per feeder,
+sharing victimization's 10-LF accumulated drain limit. Rewards use the source's
+tier, Mental Discipline, new-character reduction, weaknesses, and abduction
+modifier, then victimization's 1.5x reward multiplier. Feeding again from the
+same most recent partner halves the reward. This exchange does not apply the
+old lust-feeding illness or collapse effects. Existing feeding eligibility
+and recipient LF ceilings still apply.
+
+`rape` requires a helpless target and is blocked by full sanctuary on either
+participant, including an active sanctuary affect. Limited sanctuary alone
+does not block it. `sex` uses its consent prompt and has no sanctuary gate.
+
+Fear keywords in `feel` feed nearby eligible supernatural characters at tier
+3 or higher; lust keywords feed tier 4 or higher. These thresholds apply even
+when `feed` is enabled and do not require the feeder to outrank the feeler.
+Fear words are afraid, fear, scared, fearful, frightened, terrified, terror,
+dread, panic, panicked, panicking, panicky, petrified, intimidated, alarmed,
+spooked, unnerved, dreading, anxious, anxiety, nervous, apprehensive, and
+apprehension. Lust words are lust, desire, horny, aroused, lustful, arousal,
+desirous, randy, randiness, lusting, lustfully, horniness, lecherous, lascivious,
+libidinous, amorous, and lewd. Matching ignores case, color, and surrounding
+punctuation, and uses whole words, including within longer feels such as
+`feel a little randy`. Other psychic feeding keeps its existing
+eligibility rules. Each successful fear/lust `feel` feed and completed-scene
+feed tells both participants who fed and how much LF was lost or gained.
+Positive gains reset the usual hunger clock; blocked or zero-gain feeds do
+not send feeding notices.
+
 Tier 4 characters cannot purchase Mental Discipline and receive
 `You're too far gone to find salvation now.` Existing purchases are retained.
 

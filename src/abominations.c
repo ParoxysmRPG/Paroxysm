@@ -407,7 +407,8 @@ extern "C" {
       continue;
 
       if (can_shroud(victim))
-      act("$n starts to emit a faint orange aura.", ch, NULL, victim, TO_VICT);
+      act(under_black(ch, victim) ? "$n starts to emit a faint black aura."
+                                 : "$n starts to emit a faint orange aura.", ch, NULL, victim, TO_VICT);
     }
   }
 
@@ -422,6 +423,10 @@ extern "C" {
   }
 
   bool seems_under_limited(CHAR_DATA *ch, CHAR_DATA *victim) {
+    if (!ch || !victim || !ch->in_room || !ch->in_room->area || IS_NPC(ch) || !ch->pcdata)
+      return FALSE;
+    if (ch->skills[SKILL_SECONDCLASS] <= -2) return FALSE;
+    if (ch->skills[SKILL_SECONDCLASS] == -1) return seems_sanctuary_eligible(ch, victim, TRUE);
     if (debt_blocks_sanctuary(ch)) return FALSE;
     if (sanctuary_population_blocked() || feeding_blocks_sanctuary(ch)) return FALSE;
     if (IS_NPC(ch) || IS_NPC(victim))
@@ -461,16 +466,15 @@ extern "C" {
     return TRUE;
 
     if (!str_cmp(ch->pcdata->understanding, "Limited")) {
-      free_string(ch->pcdata->understanding);
-      ch->pcdata->understanding = str_dup("");
-      bool under = seems_under_understanding(ch, victim);
-      free_string(ch->pcdata->understanding);
-      ch->pcdata->understanding = str_dup("Limited");
-      return under;
+      return seems_sanctuary_eligible(ch, victim, TRUE);
     }
     return FALSE;
   }
   bool under_limited(CHAR_DATA *ch, CHAR_DATA *victim) {
+    if (!ch || !victim || !ch->in_room || !ch->in_room->area || IS_NPC(ch) || !ch->pcdata)
+      return FALSE;
+    if (ch->skills[SKILL_SECONDCLASS] <= -2) return FALSE;
+    if (ch->skills[SKILL_SECONDCLASS] == -1) return sanctuary_eligible(ch, victim, TRUE);
     if (debt_blocks_sanctuary(ch)) return FALSE;
     if (sanctuary_population_blocked() || feeding_blocks_sanctuary(ch)) return FALSE;
     if (!ch || !victim || !ch->in_room || !ch->in_room->area || IS_NPC(ch) || IS_NPC(victim))
@@ -535,12 +539,7 @@ extern "C" {
     return TRUE;
 
     if (!str_cmp(ch->pcdata->understanding, "Limited")) {
-      free_string(ch->pcdata->understanding);
-      ch->pcdata->understanding = str_dup("");
-      bool under = under_understanding(ch, victim);
-      free_string(ch->pcdata->understanding);
-      ch->pcdata->understanding = str_dup("Limited");
-      return under;
+      return sanctuary_eligible(ch, victim, TRUE);
     }
     return FALSE;
   }
@@ -1108,7 +1107,7 @@ extern "C" {
       }
     }
 
-    if (under_understanding(victim, ch) && (!str_cmp(arg2, "gender") || !str_cmp(arg2, "bust") || !str_cmp(arg2, "penis")))
+    if (under_sanctuary(victim, ch) && (!str_cmp(arg2, "gender") || !str_cmp(arg2, "bust") || !str_cmp(arg2, "penis")))
     {
       send_to_char("Your body won't do that.\n\r", ch);
       return;
@@ -2278,13 +2277,46 @@ extern "C" {
     }
   }
 
-  void psychic_feast(CHAR_DATA *ch, int type, int mod) {
+  static void feeding_notice(CHAR_DATA *source, CHAR_DATA *feeder, const char *emotion, int taken, int given) {
+    printf_to_char(source, "[Feeding: %s feeds on your %s. You lose %.2f LF.]\n\r",
+        PERS(feeder, source), emotion, taken / 100.0);
+    printf_to_char(feeder, "[Feeding: You feed on %s's %s and gain %.2f LF.]\n\r",
+        PERS(source, feeder), emotion, given / 100.0);
+  }
+
+  static void sex_feeding(CHAR_DATA *source, CHAR_DATA *feeder, int cap) {
+    // One victimization-sized exchange, sharing its accumulated drain budget.
+    int taken = UMAX(0, UMIN(100, 1000 - source->lf_taken));
+    taken = UMIN(taken, base_lifeforce(source) - 5000);
+    if (taken <= 0) return;
+    int value = taken;
+    if (get_tier(source) == 1) value /= 3;
+    if (get_tier(source) > 2
+        || (get_tier(source) == 2 && source->skills[SKILL_MENTALDISCIPLINE] > 0))
+      value = value * 13 / 10;
+    if (source->played / 3600 < 20) value /= 5;
+    if (has_weakness(feeder, source)) value = value * 2 / 3;
+    else if (is_weakness(feeder, source) && source->faction != 0) value = value * 3 / 2;
+    if (!str_cmp(source->pcdata->last_sexed[0], feeder->name)) value /= 2;
+    if (IS_AFFECTED(source, AFF_ABDUCTED)) value /= 2;
+    int given = UMAX(0, UMIN(cap - base_lifeforce(feeder), UMAX(value, 5) * 3 / 2));
+    if (given <= 0) return;
+    give_lifeforce(feeder, given, "Lust feeding");
+    take_lifeforce(source, taken, "Lust feeding");
+    feeding_notice(source, feeder, "lust", taken, given);
+  }
+
+  static void psychic_feast_impl(CHAR_DATA *ch, int type, int mod, bool from_feel) {
     CHAR_DATA *victim;
     char buf[MSL];
     int amount = 0;
-    if (ch->in_room == NULL)
+    if (!ch || ch->in_room == NULL || !ch->in_room->people)
     return;
     if (IS_NPC(ch))
+    return;
+    if (!ch->pcdata)
+    return;
+    if (from_feel && is_neutralized(ch))
     return;
     int cap;
     if (get_tier(ch) == 1)
@@ -2311,6 +2343,8 @@ extern "C" {
       continue;
       if (IS_NPC(victim))
       continue;
+      if (victim == ch || !victim->pcdata)
+      continue;
       if (is_gm(victim) || is_ghost(victim))
       continue;
       if (IS_FLAG(victim->act, PLR_GUEST) && victim->pcdata->guest_type != GUEST_NIGHTMARE)
@@ -2325,7 +2359,12 @@ extern "C" {
 
       if (!is_super(victim))
       continue;
-      if (get_tier(victim) <= get_tier(ch) && (get_tier(victim) < get_tier(ch) || !IS_FLAG(victim->comm, COMM_FEEDING) || IS_FLAG(ch->comm, COMM_FEEDING)))
+      if (from_feel) {
+        if (get_tier(victim) < (type == PSYCHIC_FEAR ? 3 : 4)
+            || is_neutralized(victim) || silenced(victim))
+          continue;
+      }
+      else if (get_tier(victim) <= get_tier(ch) && (get_tier(victim) < get_tier(ch) || !IS_FLAG(victim->comm, COMM_FEEDING) || IS_FLAG(ch->comm, COMM_FEEDING)))
       continue;
       if (ch->in_room != victim->in_room)
       continue;
@@ -2334,10 +2373,18 @@ extern "C" {
       if (institute_room(victim->in_room) && (college_student(victim, FALSE) || clinic_patient(victim)))
       continue;
 
+      if (type == PSYCHIC_SEX) {
+        if (higher_power(ch) || get_tier(victim) >= 4
+            || (get_tier(victim) == 3 && IS_FLAG(victim->comm, COMM_FEEDING)))
+          sex_feeding(ch, victim, cap);
+        continue;
+      }
+
       if (type == PSYCHIC_FEAR && !is_helpless(victim)) // Every minute.
       {
         if (get_tier(victim) >= 3 || (get_tier(victim) == 2 && IS_FLAG(victim->comm, COMM_FEEDING))) {
           amount = get_tier(victim) - get_tier(ch);
+          if (from_feel) amount = UMAX(amount, 1);
           if (IS_FLAG(victim->comm, COMM_FEEDING))
           amount++;
           amount *= 20;
@@ -2357,7 +2404,9 @@ extern "C" {
           if (amount <= 0)
           return;
 
-          give_lifeforce(victim, UMAX(0, UMIN(cap - base_lifeforce(victim), amount * 3 / 4)), "Fear Feeding");
+          int given = UMAX(0, UMIN(cap - base_lifeforce(victim), amount * 3 / 4));
+          if (from_feel && given <= 0) continue;
+          give_lifeforce(victim, given, "Fear Feeding");
           if (IS_FLAG(victim->comm, COMM_FEEDING)) {
             if (same_faction(ch, victim))
             victim->pcdata->monster_fed += amount * 2;
@@ -2365,6 +2414,7 @@ extern "C" {
             victim->pcdata->monster_fed += amount / 10;
           }
           take_lifeforce(ch, amount, "Fear feeding");
+          if (from_feel) feeding_notice(ch, victim, "fear", amount, given);
           ch->pcdata->ill_count += amount / 3;
         }
       }
@@ -2415,6 +2465,7 @@ extern "C" {
       {
         if (higher_power(ch) || get_tier(victim) >= 4 || (get_tier(victim) == 3 && IS_FLAG(victim->comm, COMM_FEEDING))) {
           amount = get_tier(victim) - get_tier(ch);
+          if (from_feel) amount = UMAX(amount, 1);
           if (IS_FLAG(victim->comm, COMM_FEEDING))
           amount++;
 
@@ -2443,7 +2494,9 @@ extern "C" {
           if (amount <= 0)
           return;
 
-          give_lifeforce(victim, UMAX(0, UMIN(cap - base_lifeforce(victim), amount * 3 / 8)), "Lust feeding");
+          int given = UMAX(0, UMIN(cap - base_lifeforce(victim), amount * 3 / 8));
+          if (from_feel && given <= 0) continue;
+          give_lifeforce(victim, given, "Lust feeding");
           if (str_cmp(ch->pcdata->last_sexed[0], victim->name) && str_cmp(ch->pcdata->last_sexed[1], victim->name) && str_cmp(ch->pcdata->last_sexed[2], victim->name))
           amount = amount * 3 / 2;
           amount = UMIN(amount, 3800);
@@ -2451,6 +2504,7 @@ extern "C" {
           amount = UMIN(amount, 3000);
 
           take_lifeforce(ch, amount, "Lust feeding");
+          if (from_feel) feeding_notice(ch, victim, "lust", amount, given);
           if (IS_FLAG(victim->comm, COMM_FEEDING)) {
             if (same_faction(ch, victim))
             victim->pcdata->monster_fed += amount * 2;
@@ -2539,6 +2593,15 @@ extern "C" {
         }
       }
     }
+  }
+
+  void psychic_feast(CHAR_DATA *ch, int type, int mod) {
+    psychic_feast_impl(ch, type, mod, FALSE);
+  }
+
+  void feel_feeding(CHAR_DATA *ch, int type) {
+    if (type == PSYCHIC_FEAR || type == PSYCHIC_LUST)
+      psychic_feast_impl(ch, type, 5, TRUE);
   }
 
   _DOFUN(do_feed) {

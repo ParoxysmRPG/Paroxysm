@@ -10695,6 +10695,8 @@ mob->protecting = str_dup("The Order");
     if (op->goal == GOAL_PSYCHIC) {
       if (faction != 300000) {
         end_battle();
+        op->hour = 0;
+        if (op == activeoperation) isactiveoperation = FALSE;
         return;
       }
       comafy(op->target);
@@ -10724,6 +10726,8 @@ mob->protecting = str_dup("The Order");
         printf_to_char(victim, "Your comms report %s was defeated in psychic battle.\n\r", op->target);
       }
 
+      op->hour = 0;
+      if (op == activeoperation) isactiveoperation = FALSE;
       return;
     }
     if (active && fac && fac->antagonist == 1) {
@@ -11334,8 +11338,10 @@ mob->protecting = str_dup("The Order");
         }
       }
     }
-    if (activeoperation != NULL)
-    activeoperation->hour = 0;
+    // A bribe resolves the supplied operation, which need not be the last
+    // battlefield operation stored in activeoperation.
+    op->hour = 0;
+    if (op == activeoperation)
     isactiveoperation = FALSE;
   }
 
@@ -13246,6 +13252,22 @@ give_resources(lfac, reward);
     }
   }
 
+  // Command numbers must use the same live, visible operations as the list.
+  static bool visible_operation(CHAR_DATA *ch, OPERATION_TYPE *op) {
+    if (op == NULL || !op->valid || op->hour == 0 || op->territoryvnum == 0 ||
+        clan_lookup(op->faction) == NULL)
+      return FALSE;
+    return op->competition != COMPETE_CLOSED || op->faction == ch->faction ||
+           op->faction == ch->factiontwo;
+  }
+
+  static bool operation_has_departed(CHAR_DATA *ch, OPERATION_TYPE *op) {
+    if (!isactiveoperation || activeoperation != op)
+      return FALSE;
+    send_to_char("That operation has already launched.\n\r", ch);
+    return TRUE;
+  }
+
   _DOFUN(do_operation) {
     char arg[MSL];
     argument = one_argument_nouncap(argument, arg);
@@ -13255,13 +13277,7 @@ give_resources(lfac, reward);
       int count = 1;
       for (vector<OPERATION_TYPE *>::iterator it = OpVect.begin();
       it != OpVect.end(); ++it) {
-        if ((*it)->territoryvnum == 0)
-        (*it)->hour = 0;
-
-        if ((*it)->hour == 0)
-        continue;
-
-        if ((*it)->faction != ch->faction && (*it)->faction != ch->factiontwo && (*it)->competition == COMPETE_CLOSED)
+        if (!visible_operation(ch, *it))
         continue;
 
         signup = FALSE;
@@ -13286,10 +13302,7 @@ give_resources(lfac, reward);
       int val = atoi(argument);
       for (vector<OPERATION_TYPE *>::iterator it = OpVect.begin();
       it != OpVect.end(); ++it) {
-        if ((*it)->hour == 0)
-        continue;
-
-        if ((*it)->faction != ch->faction && (*it)->faction != ch->factiontwo && (*it)->competition == COMPETE_CLOSED)
+        if (!visible_operation(ch, *it))
         continue;
 
         if (count == val)
@@ -13303,10 +13316,7 @@ give_resources(lfac, reward);
       int val = atoi(argument);
       for (vector<OPERATION_TYPE *>::iterator it = OpVect.begin();
       it != OpVect.end(); ++it) {
-        if ((*it)->hour == 0)
-        continue;
-
-        if ((*it)->faction != ch->faction && (*it)->faction != ch->factiontwo && (*it)->competition == COMPETE_CLOSED)
+        if (!visible_operation(ch, *it))
         continue;
 
         if (count == val)
@@ -13358,10 +13368,7 @@ give_resources(lfac, reward);
       int val = atoi(argument);
       for (vector<OPERATION_TYPE *>::iterator it = OpVect.begin();
       it != OpVect.end(); ++it) {
-        if ((*it)->hour == 0)
-        continue;
-
-        if ((*it)->faction != ch->faction && (*it)->faction != ch->factiontwo && (*it)->competition == COMPETE_CLOSED)
+        if (!visible_operation(ch, *it))
         continue;
 
         if (count == val)
@@ -13377,13 +13384,11 @@ give_resources(lfac, reward);
       int val = atoi(arg2);
       for (vector<OPERATION_TYPE *>::iterator it = OpVect.begin();
       it != OpVect.end(); ++it) {
-        if ((*it)->hour == 0)
-        continue;
-
-        if ((*it)->faction != ch->faction && (*it)->faction != ch->factiontwo && (*it)->competition == COMPETE_CLOSED)
+        if (!visible_operation(ch, *it))
         continue;
 
         if (count == val) {
+          if (operation_has_departed(ch, *it)) return;
           if (str_cmp((*it)->target, ch->name) && (str_cmp((*it)->author, ch->name) || (*it)->day < 2)) {
             send_to_char("That operation isn't targeting you.\n\r", ch);
             return;
@@ -13418,10 +13423,10 @@ give_resources(lfac, reward);
           }
           for (vector<OPERATION_TYPE *>::iterator ik = OpVect.begin();
           ik != OpVect.end(); ++ik) {
-            if ((*ik)->hour == 0)
+            if (*ik == NULL || !(*ik)->valid || (*ik)->hour == 0)
             continue;
 
-            if ((*ik)->hour == (*it)->hour && (*ik)->day == (*it)->day)
+            if (*ik == *it)
             continue;
             if ((*ik)->hour == newhour && (*ik)->day == newdays) {
               send_to_char("There's already an operation set to depart then.\n\r", ch);
@@ -13442,15 +13447,11 @@ give_resources(lfac, reward);
         send_to_char("You must wait for the current operation to conclude.\n\r", ch);
         return;
       }
-      int count = 0;
+      int count = 1;
       int val = atoi(argument);
       for (vector<OPERATION_TYPE *>::iterator it = OpVect.begin();
       it != OpVect.end(); ++it) {
-        count++;
-        if ((*it)->hour == 0)
-        continue;
-
-        if ((*it)->faction != ch->faction && (*it)->faction != ch->factiontwo && (*it)->competition == COMPETE_CLOSED)
+        if (!visible_operation(ch, *it))
         continue;
 
         if (count == val) {
@@ -13500,6 +13501,7 @@ give_resources(lfac, reward);
             return;
           }
         }
+        count++;
       }
     }
     else if (!str_cmp(arg, "cancel")) {
@@ -13507,13 +13509,11 @@ give_resources(lfac, reward);
       int val = atoi(argument);
       for (vector<OPERATION_TYPE *>::iterator it = OpVect.begin();
       it != OpVect.end(); ++it) {
-        if ((*it)->hour == 0)
-        continue;
-
-        if ((*it)->faction != ch->faction && (*it)->faction != ch->factiontwo && (*it)->competition == COMPETE_CLOSED)
+        if (!visible_operation(ch, *it))
         continue;
 
         if (count == val) {
+          if (operation_has_departed(ch, *it)) return;
           if ((*it)->goal == GOAL_FOOTHOLD || (*it)->goal == GOAL_UPROOT || (*it)->goal == GOAL_PSYCHIC) {
             send_to_char("That cannot be canceled.\n\r", ch);
             return;
@@ -13549,10 +13549,7 @@ give_resources(lfac, reward);
       int val = atoi(arg2);
       for (vector<OPERATION_TYPE *>::iterator it = OpVect.begin();
       it != OpVect.end(); ++it) {
-        if ((*it)->hour == 0)
-        continue;
-
-        if ((*it)->faction != ch->faction && (*it)->faction != ch->factiontwo && (*it)->competition == COMPETE_CLOSED)
+        if (!visible_operation(ch, *it))
         continue;
 
         if (count == val) {
@@ -13646,13 +13643,11 @@ give_resources(lfac, reward);
       int val = atoi(argument);
       for (vector<OPERATION_TYPE *>::iterator it = OpVect.begin();
       it != OpVect.end(); ++it) {
-        if ((*it)->hour == 0)
-        continue;
-
-        if ((*it)->faction != ch->faction && (*it)->faction != ch->factiontwo && (*it)->competition == COMPETE_CLOSED)
+        if (!visible_operation(ch, *it))
         continue;
 
         if (count == val) {
+          if (operation_has_departed(ch, *it)) return;
           if (IS_IMMORTAL(ch)) {
             launch_operation((*it));
             return;
@@ -13669,13 +13664,11 @@ give_resources(lfac, reward);
       int val = atoi(argument);
       for (vector<OPERATION_TYPE *>::iterator it = OpVect.begin();
       it != OpVect.end(); ++it) {
-        if ((*it)->hour == 0)
-        continue;
-
-        if ((*it)->faction != ch->faction && (*it)->faction != ch->factiontwo && (*it)->competition == COMPETE_CLOSED)
+        if (!visible_operation(ch, *it))
         continue;
 
         if (count == val) {
+          if (operation_has_departed(ch, *it)) return;
           if (IS_IMMORTAL(ch)) {
             (*it)->speed = 1;
             launch_operation((*it));
@@ -13695,13 +13688,11 @@ give_resources(lfac, reward);
       int val = atoi(arg2);
       for (vector<OPERATION_TYPE *>::iterator it = OpVect.begin();
       it != OpVect.end(); ++it) {
-        if ((*it)->hour == 0)
-        continue;
-
-        if ((*it)->faction != ch->faction && (*it)->faction != ch->factiontwo && (*it)->competition == COMPETE_CLOSED)
+        if (!visible_operation(ch, *it))
         continue;
 
         if (count == val) {
+          if (operation_has_departed(ch, *it)) return;
           if ((*it)->goal == GOAL_PSYCHIC) {
             send_to_char("You can't reinforce that type of operation.\n\r", ch);
             return;
@@ -13718,7 +13709,7 @@ give_resources(lfac, reward);
           for (int i = 0; i < 10; i++) {
             if (ch->faction == (*it)->enrolled[i] && has_trust(ch, TRUST_WAR, ch->faction)) {
               int amount = atoi(argument);
-              if (amount > (*it)->home_soldiers || amount <= 0)
+              if (amount > (*it)->soldiers[i] || amount <= 0)
               amount = (*it)->soldiers[i];
               (*it)->soldiers[i] -= amount;
               clan_lookup(ch->faction)->manpower += amount;
@@ -13738,31 +13729,38 @@ give_resources(lfac, reward);
       int val = atoi(arg2);
       for (vector<OPERATION_TYPE *>::iterator it = OpVect.begin();
       it != OpVect.end(); ++it) {
-        if ((*it)->hour == 0)
-        continue;
-
-        if ((*it)->faction != ch->faction && (*it)->faction != ch->factiontwo && (*it)->competition == COMPETE_CLOSED)
+        if (!visible_operation(ch, *it))
         continue;
 
         if (count == val) {
+          if (operation_has_departed(ch, *it)) return;
           if ((*it)->goal == GOAL_PSYCHIC) {
             send_to_char("You can't reinforce that type of operation.\n\r", ch);
             return;
           }
-          if (ch->faction == (*it)->faction && has_trust(ch, TRUST_WAR, (*it)->faction)) {
-            int amount = atoi(argument);
-            int max = UMIN(10, (*it)->max_pcs * 2);
-            max -= border_count(clan_lookup(ch->faction)) * 3;
-            if (amount > clan_lookup(ch->faction)->manpower || amount < 1) {
-              send_to_char("You don't have that many soldiers to send.\n\r", ch);
-              return;
-            }
-            if (amount + (*it)->home_soldiers > max) {
+          FACTION_TYPE *faction = clan_lookup(ch->faction);
+          if (faction == NULL || !has_trust(ch, TRUST_WAR, ch->faction)) {
+            send_to_char("You lack the authority to do that.\n\r", ch);
+            return;
+          }
+          int amount = atoi(argument);
+          if (amount > faction->manpower || amount < 1) {
+            send_to_char("You don't have that many soldiers to send.\n\r", ch);
+            return;
+          }
+          int max = UMIN(10LL, 2LL * (*it)->max_pcs);
+          max -= border_count(faction) * 3;
+          if (amount > max) {
+            send_to_char("You can't muster that many reinforcements for that operation.\n\r", ch);
+            return;
+          }
+          if (ch->faction == (*it)->faction) {
+            if (1LL * amount + (*it)->home_soldiers > max) {
               send_to_char("You can't muster that many reinforcements for that operation.\n\r", ch);
               return;
             }
             (*it)->home_soldiers += amount;
-            clan_lookup(ch->faction)->manpower -= amount;
+            faction->manpower -= amount;
             printf_to_char(ch, "You will deploy with %d soldiers in support.\n\r", (*it)->home_soldiers);
             return;
           }
@@ -13771,20 +13769,13 @@ give_resources(lfac, reward);
             return;
           }
           for (int i = 0; i < 10; i++) {
-            if (ch->faction == (*it)->enrolled[i] && has_trust(ch, TRUST_WAR, ch->faction)) {
-              int amount = atoi(argument);
-              int max = UMIN(10, (*it)->max_pcs * 2);
-              max -= border_count(clan_lookup(ch->faction)) * 3;
-              if (amount > clan_lookup(ch->faction)->manpower || amount < 1) {
-                send_to_char("You don't have that many soldiers to send.\n\r", ch);
-                return;
-              }
-              if (amount + (*it)->soldiers[i] > max) {
+            if (ch->faction == (*it)->enrolled[i]) {
+              if (1LL * amount + (*it)->soldiers[i] > max) {
                 send_to_char("You can't muster that many reinforcements for that operation.\n\r", ch);
                 return;
               }
               (*it)->soldiers[i] += amount;
-              clan_lookup(ch->faction)->manpower -= amount;
+              faction->manpower -= amount;
               printf_to_char(ch, "You will deploy with %d soldiers in support.\n\r", (*it)->soldiers[i]);
               return;
             }
@@ -17976,7 +17967,7 @@ return " ";
         if(is_helpless(victim))
         continue;
 
-        if(seems_under_understanding(victim, ch) == FALSE)
+        if (!seems_under_understanding(victim, ch) && !seems_under_limited(victim, ch))
         return FALSE;
       }
 

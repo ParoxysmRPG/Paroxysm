@@ -7768,14 +7768,41 @@ send_to_char("That isn't a valid apartment, Syntax: Buzz (101-400)
     return TRUE;
   }
 
-  _DOFUN(do_abduct) {
-    Buffer outbuf;
-    DESCRIPTOR_DATA *d;
-    CHAR_DATA *victim;
-    bool isChar = FALSE;
-    char name[MAX_INPUT_LENGTH];
+  ACCOUNT_TYPE *get_online_account args((char *name));
 
-    d = new_descriptor();
+  // Inspect offline sleepers without adding them to the live world or running
+  // quit logic. Even a failed load can allocate a character that needs freeing.
+  static void free_sleeping_player(CHAR_DATA *victim) {
+    if (victim->pcdata != NULL && victim->pcdata->account != NULL) {
+      ACCOUNT_TYPE *account = victim->pcdata->account;
+      // reload_account borrows connected accounts and allocates other accounts.
+      if (get_online_account(account->name) != account)
+      free_account(account);
+      victim->pcdata->account = NULL;
+    }
+    free_char(victim);
+  }
+
+  static CHAR_DATA *load_sleeping_player(char *name) {
+    DESCRIPTOR_DATA descriptor = {};
+    descriptor.descriptor = -1;
+    bool found = load_char_obj(&descriptor, name);
+    CHAR_DATA *victim = descriptor.character;
+    if (victim != NULL)
+    victim->desc = NULL;
+    if (!found || victim == NULL || IS_NPC(victim) || victim->pcdata == NULL) {
+      if (victim != NULL)
+      free_sleeping_player(victim);
+      return NULL;
+    }
+    return victim;
+  }
+
+  _DOFUN(do_abduct) {
+    if (ch == NULL || IS_NPC(ch) || ch->pcdata == NULL)
+    return;
+    CHAR_DATA *victim;
+    char name[MAX_INPUT_LENGTH];
 
     int chskill = 100;
     int vicskill = 100;
@@ -7827,53 +7854,47 @@ send_to_char("That isn't a valid apartment, Syntax: Buzz (101-400)
     }
     log_string("DESCRIPTOR: Abduct");
 
-    isChar = load_char_obj(d, name);
-    if (!isChar) {
+    victim = load_sleeping_player(name);
+    if (victim == NULL) {
       send_to_char("They don't seem to be here..\n\r", ch);
       return;
     }
-    d->character->desc = NULL;
-    char_list.push_front(d->character);
-    register_live_character(d->character);
-    d->connected = CON_PLAYING;
-
-    victim = d->character;
 
     if (is_gm(victim)) {
       send_to_char("Story Runners can't be abducted.\n\r", ch);
-      real_quit(victim);
+      free_sleeping_player(victim);
       return;
     }
     if (guestmonster(victim) || is_ghost(victim) || higher_power(ch) || higher_power(victim)) {
-      real_quit(victim);
+      free_sleeping_player(victim);
       return;
     }
     if (IS_FLAG(victim->act, PLR_FREEZE)) {
       send_to_char("They don't seem to be here\n\r", ch);
-      real_quit(victim);
+      free_sleeping_player(victim);
       return;
     }
     if (IS_FLAG(victim->act, PLR_STASIS)) {
       send_to_char("They don't seem to be here\n\r", ch);
-      real_quit(victim);
+      free_sleeping_player(victim);
       return;
     }
 
     if (ch->played / 3600 < 50) {
       send_to_char("They don't seem to be here\n\r", ch);
-      real_quit(victim);
+      free_sleeping_player(victim);
       return;
     }
 
     if (victim->in_room != ch->in_room) {
       send_to_char("They don't seem to be here\n\r", ch);
-      real_quit(victim);
+      free_sleeping_player(victim);
       return;
     }
 
     if (current_time - victim->lastlogoff > (3600 * 24 * 4) && !IS_FLAG(victim->act, PLR_BOUND) && !IS_FLAG(victim->act, PLR_BOUNDFEET)) {
       send_to_char("They don't seem to be here,\n\r", ch);
-      real_quit(victim);
+      free_sleeping_player(victim);
       return;
     }
 
@@ -7899,7 +7920,18 @@ send_to_char("That isn't a valid apartment, Syntax: Buzz (101-400)
 
     if (cost > 0 && ch->money < cost) {
       send_to_char("It would cost $50 for the drugs to do that.\n\r", ch);
-      real_quit(victim);
+      free_sleeping_player(victim);
+      return;
+    }
+
+    // Reject unauthorized attempts before bodyguards are summoned or consumed.
+    bool clinic_power = has_clinic_power_chars(ch, victim);
+    if (!clinic_power && institute_room(ch->in_room)
+        && !college_student(ch, FALSE) && !clinic_patient(ch)
+        && ch->race != RACE_FACULTY && !college_staff(ch, FALSE)
+        && !clinic_staff(ch, FALSE) && !IS_IMMORTAL(ch)) {
+      send_to_char("The security staff won't allow you to do that.\n\r", ch);
+      free_sleeping_player(victim);
       return;
     }
 
@@ -8045,16 +8077,8 @@ send_to_char("That isn't a valid apartment, Syntax: Buzz (101-400)
     if (victim->pcdata->patrol_habits[PATROL_RECKLESSHABIT] > 0) {
       vicskill = 0;
     }
-    if (has_clinic_power_chars(ch, victim)) {
+    if (clinic_power) {
       vicskill = 0;
-    }
-    else {
-      if (institute_room(ch->in_room) && !college_student(ch, FALSE)
-          && !clinic_patient(ch) && ch->race != RACE_FACULTY && !college_staff(ch, FALSE)
-          && !clinic_staff(ch, FALSE) && !IS_IMMORTAL(ch)) {
-        send_to_char("The security staff won't allow you to do that.\n\r", ch);
-        return;
-      }
     }
 
     if (vicskill > chskill && !IS_IMMORTAL(ch) && can_house_flee(victim)) {
@@ -8062,7 +8086,9 @@ send_to_char("That isn't a valid apartment, Syntax: Buzz (101-400)
       act("$n moves stealthily towards $N but then $E wakes up and flees.", ch, NULL, victim, TO_ROOM);
       char buf[MSL];
       sprintf(buf, "%s", victim->name);
-      real_quit(victim);
+      // Persist any defending guards spent before reloading for the escape.
+      save_char_obj(victim, FALSE, FALSE);
+      free_sleeping_player(victim);
       autohouseflee(buf, in_prop(ch), ch->name);
       return;
     }
@@ -8108,8 +8134,9 @@ send_to_char("That isn't a valid apartment, Syntax: Buzz (101-400)
       if (IS_FLAG(victim->act, PLR_HIDE))
       REMOVE_FLAG(victim->act, PLR_HIDE);
 
-      if (ch->in_room != NULL)
-      char_to_room(victim, ch->in_room); /* put in room imm is in */
+      char_list.push_front(victim);
+      register_live_character(victim);
+      char_to_room(victim, ch->in_room);
 
       if (in_prop(ch) != NULL && in_prop(ch)->logoffs > 0) {
         in_prop(ch)->logoffs--;
@@ -8175,10 +8202,9 @@ send_to_char("That isn't a valid apartment, Syntax: Buzz (101-400)
   }
 
   _DOFUN(do_lookfor) {
-    Buffer outbuf;
-    DESCRIPTOR_DATA *d;
+    if (ch == NULL || IS_NPC(ch) || ch->pcdata == NULL || ch->in_room == NULL)
+    return;
     CHAR_DATA *victim;
-    bool isChar = FALSE;
     char name[MAX_INPUT_LENGTH];
 
     if (is_helpless(ch) || in_fight(ch)) {
@@ -8201,37 +8227,29 @@ send_to_char("That isn't a valid apartment, Syntax: Buzz (101-400)
     }
     log_string("DESCRIPTOR: Abduct2");
 
-    d = new_descriptor();
-    isChar = load_char_obj(d, name); /* char pfile exists? */
-
-    if (!isChar) {
+    victim = load_sleeping_player(name);
+    if (victim == NULL) {
       send_to_char("They don't seem to be here.\n\r", ch);
       return;
     }
-    d->character->desc = NULL;
-    char_list.push_front(d->character);
-    register_live_character(d->character);
-    d->connected = CON_PLAYING;
-    //                  reset_char(d->character);
-    victim = d->character;
-
     if (is_gm(victim)) {
       send_to_char("Story Runners can't be abducted.\n\r", ch);
+      free_sleeping_player(victim);
       return;
     }
 
     if (victim->in_room != ch->in_room) {
       send_to_char("They don't seem to be here.\n\r", ch);
-      extract_char(victim, TRUE);
+      free_sleeping_player(victim);
       return;
     }
     if (current_time - victim->lastlogoff > 48200 && !IS_FLAG(victim->act, PLR_BOUND)) {
       send_to_char("They don't seem to be here.\n\r", ch);
-      extract_char(victim, TRUE);
+      free_sleeping_player(victim);
       return;
     }
     send_to_char("They are asleep here.\n\r", ch);
-    extract_char(victim, TRUE);
+    free_sleeping_player(victim);
   }
 
   int get_price(ROOM_INDEX_DATA *start, int size) {
@@ -11815,57 +11833,81 @@ like to purchase a %s plot to the %s?`x\n\r", arg1, arg2);
     }
   }
 
-  void dorms_update() {
-    struct stat sb;
-    DESCRIPTOR_DATA d;
-    bool online = FALSE;
-    CHAR_DATA *victim;
-    d.original = NULL;
-    char buf[MSL];
+  static bool active_dorm_resident(char *name) {
+    if (safe_strlen(name) <= 2 || !strcmp(name, "(null)"))
+    return FALSE;
 
-    for (int i = 0; i < MAX_DORMROOMS; i++) {
-      if (safe_strlen(enclave_room[i]) > 2) {
-        if (!strcmp(enclave_room[i], "(null)")) {
-          free_string(enclave_room[i]);
-          enclave_room[i] = str_dup("");
-        }
-        if ((victim = get_char_world_pc(enclave_room[i])) !=
-            NULL) { // Online check
-          online = TRUE;
-        }
-        else {
-          // Deleted PC check and offline load
-          if (!load_char_obj(&d, enclave_room[i])) {
-            free_string(enclave_room[i]);
-            enclave_room[i] = str_dup("");
-            continue;
-          }
-          sprintf(buf, "%s%s", PLAYER_DIR, capitalize(enclave_room[i]));
-          stat(buf, &sb);
-          victim = d.character;
-        }
+    // A live resident takes precedence over stale weekly/institute activity.
+    CHAR_DATA *resident = get_char_world_pc(name);
+    if (resident != NULL)
+    return !IS_NPC(resident) && !IS_FLAG(resident->act, PLR_DEAD)
+        && college_student(resident, TRUE);
 
-        // NPC catch just in case similar names cause mismatch
-        if (IS_NPC(victim)) {
-          if (!online) {
-            free_char(victim);
-          }
-          // Freeing room if NPC mismatch so NPC doesn't hold room for nonexistent
-          // char
-          free_string(enclave_room[i]);
-          enclave_room[i] = str_dup("");
-          continue;
-        }
-
-        if (daysidle(enclave_room[i]) > 7 || !college_student(victim, TRUE)) {
-          free_string(enclave_room[i]);
-          enclave_room[i] = str_dup("");
-        }
-        if (!online) {
-          free_char(victim);
-        }
+    bool enrolled = FALSE;
+    for (vector<INSTITUTE_TYPE *>::iterator it = InVect.begin();
+    it != InVect.end(); ++it) {
+      if (!str_cmp((*it)->name, name) && (*it)->college_prestige > 0) {
+        enrolled = (*it)->inactivity <= 500;
+        break;
       }
     }
+    if (!enrolled)
+    return FALSE;
+
+    // A weekly entry can outlive a deleted player file. Check the file before
+    // using its cached activity, without loading every offline resident.
+    struct stat sb;
+    char path[MSL];
+    snprintf(path, sizeof(path), "%s%s", PLAYER_DIR, capitalize(name));
+    if (stat(path, &sb) != 0) {
+      snprintf(path, sizeof(path), "%s%s.gz", PLAYER_DIR, capitalize(name));
+      if (stat(path, &sb) != 0)
+      return FALSE;
+    }
+    for (vector<WEEKLY_TYPE *>::iterator it = WeeklyVect.begin();
+    it != WeeklyVect.end(); ++it) {
+      if ((*it)->valid && !str_cmp((*it)->charname, name)) {
+        return (*it)->logon <= 0
+            || (current_time - (*it)->logon) / (3600 * 24) <= 7;
+      }
+    }
+
+    // Match daysidle's fallback, but load only once and free failed loads too.
+    DESCRIPTOR_DATA descriptor = {};
+    bool found = load_char_obj(&descriptor, name);
+    resident = descriptor.character;
+    bool active = FALSE;
+    if (found && resident != NULL && !IS_NPC(resident)
+        && !IS_FLAG(resident->act, PLR_DEAD)) {
+      time_t last_active = resident->activeat > 0 ? resident->activeat : sb.st_mtime;
+      active = (current_time - last_active) / (3600 * 24) <= 7;
+    }
+    if (resident != NULL)
+    free_char(resident);
+    return active;
+  }
+
+  void dorms_update() {
+    bool changed = FALSE;
+    for (int i = 0; i < 2 * MAX_DORMROOMS; ++i) {
+      if (safe_strlen(enclave_room[i]) > 0 && !active_dorm_resident(enclave_room[i])) {
+        free_string(enclave_room[i]);
+        enclave_room[i] = str_dup("");
+        changed = TRUE;
+      }
+    }
+    // An active roommate keeps the room when its primary resident leaves.
+    for (int i = 0; i < MAX_DORMROOMS; ++i) {
+      if (safe_strlen(enclave_room[i]) == 0
+          && safe_strlen(enclave_room[i + MAX_DORMROOMS]) > 2) {
+        free_string(enclave_room[i]);
+        enclave_room[i] = enclave_room[i + MAX_DORMROOMS];
+        enclave_room[i + MAX_DORMROOMS] = str_dup("");
+        changed = TRUE;
+      }
+    }
+    if (changed)
+    save_dorms();
   }
 
   void save_containers() {
@@ -12512,198 +12554,108 @@ like to purchase a %s plot to the %s?`x\n\r", arg1, arg2);
     return FALSE;
   }
 
-  _DOFUN(do_roomie) {
-    int rnum = 0;
-    int i = 0;
-    int house_mod = 0;
-    bool found = FALSE;
+  static void student_dorm_rental_directions(CHAR_DATA *ch) {
+    if (ch->in_room != NULL && ch->in_room->vnum == 16156)
+      send_to_char("Go upstairs to reach the Student Dormitory Nexus.\n\r", ch);
+    send_to_char("Rent a room in a house's common room or upstairs landing.\n\r"
+      "From the Student Dormitory Nexus: Bishop is south, Rook southwest, "
+      "Queenson north, and Kingson northwest.\n\r"
+      "Use rent 1 through rent 5, or roomie <number> to share a room.\n\r", ch);
+  }
 
-    if ((ch->in_room == NULL
-          ||  (ch->in_room->vnum != 3881   // Bishop
-            &&   ch->in_room->vnum != 8996   // Rook
-            &&   ch->in_room->vnum != 3894   // Queenson
-            &&   ch->in_room->vnum != 9032)) // Kingson
-        && str_cmp(argument, "stop")) {
-      send_to_char("There's nothing here to rent.\n\r", ch);
-      return;
+  static void student_dorm_vacancies(CHAR_DATA *ch, int house, bool roommate) {
+    bool found = FALSE;
+    send_to_char("Available room numbers: ", ch);
+    for (int number = 1; number <= 5; ++number) {
+      const int slot = house * 5 + number - 1;
+      const bool occupied = safe_strlen(enclave_room[slot]) > 0;
+      const bool shared = safe_strlen(enclave_room[slot + MAX_DORMROOMS]) > 0;
+      if ((roommate && occupied && !shared) || (!roommate && !occupied && !shared)) {
+        printf_to_char(ch, "%s%d", found ? ", " : "", number);
+        found = TRUE;
+      }
     }
+    send_to_char(found ? ".\n\r" : "none.\n\r", ch);
+  }
+
+  _DOFUN(do_roomie) {
+    if (IS_NPC(ch)) return;
+    int house = student_dorm_house(ch->in_room);
 
     if (!str_cmp(argument, "stop")) {
-      for (i = 0; i < MAX_DORMROOMS; i++) {
+      bool found = FALSE;
+      for (int i = 0; i < MAX_DORMROOMS; ++i) {
         if (!str_cmp(ch->name, enclave_room[i + MAX_DORMROOMS])) {
           free_string(enclave_room[i + MAX_DORMROOMS]);
           enclave_room[i + MAX_DORMROOMS] = str_dup("");
           found = TRUE;
         }
       }
-
-      if (found == TRUE) {send_to_char("Done.`x\n\r", ch);}
-      else {send_to_char("You weren't rooming with anyone.\n\r", ch);}
-
+      if (found) {
+        save_dorms();
+        send_to_char("Done.`x\n\r", ch);
+      }
+      else send_to_char("You weren't rooming with anyone.\n\r", ch);
       return;
     }
-    else {
-      //dorm checks
-      if (!college_student(ch, FALSE) && !IS_IMMORTAL(ch)) {
-        send_to_char("The dormitory enclave is for students only.\n\r", ch);
+
+    if (house < 0) {
+      if (student_dormitory(ch->in_room)) student_dorm_rental_directions(ch);
+      else send_to_char("There's nothing here to rent.\n\r", ch);
+      return;
+    }
+    if (!college_student(ch, FALSE) && !IS_IMMORTAL(ch)) {
+      send_to_char("The dormitory enclave is for students only.\n\r", ch);
+      return;
+    }
+    if (!is_number(argument)) {
+      send_to_char("`cSyntax`g: `Wroomie `g(`Wroom number `g/ `Wstop`g)`x\n\r", ch);
+      student_dorm_vacancies(ch, house, TRUE);
+      return;
+    }
+
+    int number = atoi(argument);
+    if (number < 1 || number > 5) {
+      send_to_char("That room doesn't exist.\n\r", ch);
+      return;
+    }
+    for (int i = 0; i < MAX_DORMROOMS; ++i) {
+      if (!str_cmp(enclave_room[i], ch->name)) {
+        send_to_char("You already have a room. Use rent stop before moving.\n\r", ch);
         return;
       }
-      for (i = 0; i < MAX_DORMROOMS; i++) {
-        if (!str_cmp(enclave_room[i], ch->name)) {
-          send_to_char("You already have a room.\n\r", ch);
-          return;
-        }
-      }
-
-      for (i = 0; i < MAX_DORMROOMS; i++) {
-        if (!str_cmp(enclave_room[i + MAX_DORMROOMS], ch->name)) {
-          send_to_char("You are already rooming with someone.\n\r", ch);
-          return;
-        }
-      }
-
-      //house number modifiers
-      if      (ch->in_room->vnum == 3881) {house_mod = 10;} // House Bishop
-      else if (ch->in_room->vnum == 8996) {house_mod = 20;} // House Rook
-      else if (ch->in_room->vnum == 3894) {house_mod = 30;} // House Queen
-      else if (ch->in_room->vnum == 9032) {house_mod = 40;} // House King
-
-      // checks if room is owned by another character
-      if (is_number(argument)) {
-        rnum = atoi(argument);
-
-        if (rnum < 1 || rnum > 8) {
-          send_to_char("That room doesn't exist.\n\r", ch);
-          return;
-        }
-
-        rnum = rnum + house_mod;
-
-        if (!enclave_room_occupied(rnum)) {
-          send_to_char("That room is empty.  There's no one to room with.\n\r",ch);
-          return;
-        }
-        else if (enclave_roomie_occupied(rnum)) {
-          send_to_char("That room is already full.\n\r", ch);
-          return;
-        }
-        else {
-          // House Bishop
-          if (rnum == 11) {
-            free_string(enclave_room[0 + MAX_DORMROOMS]);
-            enclave_room[0 + MAX_DORMROOMS] = str_dup(ch->name);
-          }
-          else if (rnum == 12) {
-            free_string(enclave_room[1 + MAX_DORMROOMS]);
-            enclave_room[1 + MAX_DORMROOMS] = str_dup(ch->name);
-          }
-          else if (rnum == 13) {
-            free_string(enclave_room[2 + MAX_DORMROOMS]);
-            enclave_room[2 + MAX_DORMROOMS] = str_dup(ch->name);
-          }
-          else if (rnum == 14) {
-            free_string(enclave_room[3 + MAX_DORMROOMS]);
-            enclave_room[3 + MAX_DORMROOMS] = str_dup(ch->name);
-          }
-          else if (rnum == 15) {
-            free_string(enclave_room[4 + MAX_DORMROOMS]);
-            enclave_room[4 + MAX_DORMROOMS] = str_dup(ch->name);
-          }
-          // House Rook
-          else if (rnum == 21) {
-            free_string(enclave_room[5 + MAX_DORMROOMS]);
-            enclave_room[5 + MAX_DORMROOMS] = str_dup(ch->name);
-          }
-          else if (rnum == 22) {
-            free_string(enclave_room[6 + MAX_DORMROOMS]);
-            enclave_room[6 + MAX_DORMROOMS] = str_dup(ch->name);
-          }
-          else if (rnum == 23) {
-            free_string(enclave_room[7 + MAX_DORMROOMS]);
-            enclave_room[7 + MAX_DORMROOMS] = str_dup(ch->name);
-          }
-          else if (rnum == 24) {
-            free_string(enclave_room[8 + MAX_DORMROOMS]);
-            enclave_room[8 + MAX_DORMROOMS] = str_dup(ch->name);
-          }
-          else if (rnum == 25) {
-            free_string(enclave_room[9 + MAX_DORMROOMS]);
-            enclave_room[9 + MAX_DORMROOMS] = str_dup(ch->name);
-          }
-          // House Queenson
-          else if (rnum == 31) {
-            free_string(enclave_room[10 + MAX_DORMROOMS]);
-            enclave_room[10 + MAX_DORMROOMS] = str_dup(ch->name);
-          }
-          else if (rnum == 32) {
-            free_string(enclave_room[11 + MAX_DORMROOMS]);
-            enclave_room[11 + MAX_DORMROOMS] = str_dup(ch->name);
-          }
-          else if (rnum == 33) {
-            free_string(enclave_room[12 + MAX_DORMROOMS]);
-            enclave_room[12 + MAX_DORMROOMS] = str_dup(ch->name);
-          }
-          else if (rnum == 34) {
-            free_string(enclave_room[13 + MAX_DORMROOMS]);
-            enclave_room[13 + MAX_DORMROOMS] = str_dup(ch->name);
-          }
-          else if (rnum == 35) {
-            free_string(enclave_room[14 + MAX_DORMROOMS]);
-            enclave_room[14 + MAX_DORMROOMS] = str_dup(ch->name);
-          }
-          // House Kingson
-          else if (rnum == 41) {
-            free_string(enclave_room[15 + MAX_DORMROOMS]);
-            enclave_room[15 + MAX_DORMROOMS] = str_dup(ch->name);
-          }
-          else if (rnum == 42) {
-            free_string(enclave_room[16 + MAX_DORMROOMS]);
-            enclave_room[16 + MAX_DORMROOMS] = str_dup(ch->name);
-          }
-          else if (rnum == 43) {
-            free_string(enclave_room[17 + MAX_DORMROOMS]);
-            enclave_room[17 + MAX_DORMROOMS] = str_dup(ch->name);
-          }
-          else if (rnum == 44) {
-            free_string(enclave_room[18 + MAX_DORMROOMS]);
-            enclave_room[18 + MAX_DORMROOMS] = str_dup(ch->name);
-          }
-          else if (rnum == 45) {
-            free_string(enclave_room[19 + MAX_DORMROOMS]);
-            enclave_room[19 + MAX_DORMROOMS] = str_dup(ch->name);
-          }
-          else {
-            send_to_char("`cSyntax`g: `Wroomie `g(`Wroom number `g/ `Wstop`g)`x\n\r", ch);
-            printf_to_char(ch, "`cAvailable room numbers`g: `W%s%s%s%s%s%s%s%s%s`x\n\r", (enclave_room_occupied(1 + house_mod) && !enclave_roomie_occupied(1 + house_mod)) ? "1": "", (enclave_room_occupied(2 + house_mod) && !enclave_roomie_occupied(2 + house_mod)) ? ", ": "", (enclave_room_occupied(2 + house_mod) && !enclave_roomie_occupied(2 + house_mod)) ? "2": "", (enclave_room_occupied(3 + house_mod) && !enclave_roomie_occupied(3 + house_mod)) ? ", ": "", (enclave_room_occupied(3 + house_mod) && !enclave_roomie_occupied(3 + house_mod)) ? "3": "", (enclave_room_occupied(4 + house_mod) && !enclave_roomie_occupied(4 + house_mod)) ? ", ": "", (enclave_room_occupied(4 + house_mod) && !enclave_roomie_occupied(4 + house_mod)) ? "4": "", (enclave_room_occupied(5 + house_mod) && !enclave_roomie_occupied(5 + house_mod)) ? ", ": "", (enclave_room_occupied(5 + house_mod) && !enclave_roomie_occupied(5 + house_mod)) ? "5": "");
-            return;
-          }
-          printf_to_char(ch, "You get the key for room %d.\n\r",rnum - house_mod);
-          return;
-        }
-      }
-      else {
-        send_to_char("`cSyntax`g: `Wroomie `g(`Wroom number `g/ `Wstop`g)`x\n\r",ch);
-        printf_to_char(ch, "`cAvailable room numbers`g: `W%s%s%s%s%s%s%s%s%s`x\n\r", (enclave_room_occupied(1 + house_mod) && !enclave_roomie_occupied(1 + house_mod)) ? "1": "", (enclave_room_occupied(2 + house_mod) && !enclave_roomie_occupied(2 + house_mod)) ? ", ": "", (enclave_room_occupied(2 + house_mod) && !enclave_roomie_occupied(2 + house_mod)) ? "2": "", (enclave_room_occupied(3 + house_mod) && !enclave_roomie_occupied(3 + house_mod)) ? ", ": "", (enclave_room_occupied(3 + house_mod) && !enclave_roomie_occupied(3 + house_mod)) ? "3": "", (enclave_room_occupied(4 + house_mod) && !enclave_roomie_occupied(4 + house_mod)) ? ", ": "", (enclave_room_occupied(4 + house_mod) && !enclave_roomie_occupied(4 + house_mod)) ? "4": "", (enclave_room_occupied(5 + house_mod) && !enclave_roomie_occupied(5 + house_mod)) ? ", ": "", (enclave_room_occupied(5 + house_mod) && !enclave_roomie_occupied(5 + house_mod)) ? "5": "");
+      if (!str_cmp(enclave_room[i + MAX_DORMROOMS], ch->name)) {
+        send_to_char("You are already rooming with someone. Use roomie stop before moving.\n\r", ch);
         return;
       }
     }
+
+    const int slot = house * 5 + number - 1;
+    if (safe_strlen(enclave_room[slot]) == 0) {
+      send_to_char("That room is empty. There's no one to room with.\n\r", ch);
+      return;
+    }
+    if (safe_strlen(enclave_room[slot + MAX_DORMROOMS]) > 0) {
+      send_to_char("That room is already full.\n\r", ch);
+      return;
+    }
+    free_string(enclave_room[slot + MAX_DORMROOMS]);
+    enclave_room[slot + MAX_DORMROOMS] = str_dup(ch->name);
+    save_dorms();
+    printf_to_char(ch, "You get the key for room %d.\n\r", number);
   }
 
   _DOFUN(do_rent) {
-    int rnum = 0;
+    if (IS_NPC(ch)) return;
     int i = 0;
-    int house_mod = 0;
+    int house = student_dorm_house(ch->in_room);
     bool found = FALSE;
 
-    if ((ch->in_room == NULL
-          ||  (ch->in_room->vnum != 1651    // Shipping
-            &&   ch->in_room->vnum != 3881    // Bishop
-            &&   ch->in_room->vnum != 8996    // Rook
-            &&   ch->in_room->vnum != 3894    // Queenson
-            &&   ch->in_room->vnum != 9032    // Kingson
-            &&   ch->in_room->vnum != 15045)) // Hotel Antlers
+    if ((ch->in_room == NULL || (house < 0
+          && ch->in_room->vnum != 1651 && ch->in_room->vnum != 15045))
         && str_cmp(argument, "stop")) {
-      send_to_char("There's nothing here to rent.\n\r", ch);
+      if (student_dormitory(ch->in_room)) student_dorm_rental_directions(ch);
+      else send_to_char("There's nothing here to rent.\n\r", ch);
       return;
     }
 
@@ -12744,11 +12696,29 @@ like to purchase a %s plot to the %s?`x\n\r", arg1, arg2);
       else if (!str_cmp(ch->name, cont_ten))       {free_string(cont_ten);cont_ten             = str_dup("");found = TRUE;}
       else if (!str_cmp(ch->name, cont_eleven))    {free_string(cont_eleven);cont_eleven       = str_dup("");found = TRUE;}
       else if (!str_cmp(ch->name, cont_twelve))    {free_string(cont_twelve);cont_twelve       = str_dup("");found = TRUE;}
-      // Dorms
-      else {
-        for (i = 0; i < MAX_DORMROOMS; i++) {
-          if (!str_cmp(ch->name, enclave_room[i]))    {free_string(enclave_room[i]);enclave_room[i]     = str_dup("");found = TRUE;}
+      // Preserve a remaining roommate's room and rental key when its owner leaves.
+      bool dorm_changed = FALSE;
+      for (i = 0; i < MAX_DORMROOMS; ++i) {
+        if (!str_cmp(ch->name, enclave_room[i + MAX_DORMROOMS])) {
+          free_string(enclave_room[i + MAX_DORMROOMS]);
+          enclave_room[i + MAX_DORMROOMS] = str_dup("");
+          dorm_changed = TRUE;
         }
+        if (!str_cmp(ch->name, enclave_room[i])) {
+          free_string(enclave_room[i]);
+          if (active_dorm_resident(enclave_room[i + MAX_DORMROOMS]))
+            enclave_room[i] = enclave_room[i + MAX_DORMROOMS];
+          else {
+            free_string(enclave_room[i + MAX_DORMROOMS]);
+            enclave_room[i] = str_dup("");
+          }
+          enclave_room[i + MAX_DORMROOMS] = str_dup("");
+          dorm_changed = TRUE;
+        }
+      }
+      if (dorm_changed) {
+        save_dorms();
+        found = TRUE;
       }
 
       if (found == TRUE) {send_to_char("Done.`x\n\r", ch);}
@@ -13117,72 +13087,42 @@ like to purchase a %s plot to the %s?`x\n\r", arg1, arg2);
       }
     }
 
-    else if (ch->in_room->vnum == 3881 || ch->in_room->vnum == 8996 || ch->in_room->vnum == 3894 || ch->in_room->vnum == 9032) {
+    else if (house >= 0) {
       if (!college_student(ch, FALSE) && !IS_IMMORTAL(ch)) {
         send_to_char("The dorms are for college students.\n\r", ch);
         return;
       }
-
-      //house number mods
-      if      (ch->in_room->vnum == 3881) {house_mod = 10;} // House Bishop
-      else if (ch->in_room->vnum == 8996) {house_mod = 20;} // House Rook
-      else if (ch->in_room->vnum == 3894) {house_mod = 30;} // House Queen
-      else if (ch->in_room->vnum == 9032) {house_mod = 40;} // House King
-
-      // checks if room is owned by another character
-      if (is_number(argument)) { //  && atoi(argument)>0 && atoi(argument)<=6){
-        rnum = atoi(argument);
-
-        if (rnum < 1 || rnum > 5) {
-          send_to_char("That room doesn't exist.\n\r", ch);
-          return;
-        }
-
-        rnum = rnum + house_mod;
-
-        if (enclave_room_occupied(rnum)) {
-          send_to_char("That room is already taken.\n\r", ch);
-          return;
-        }
-        else {
-          // House Bishop
-          if      (rnum == 11) {free_string(enclave_room[0]);enclave_room[0]  = str_dup(ch->name);}
-          else if (rnum == 12) {free_string(enclave_room[1]);enclave_room[1]  = str_dup(ch->name);}
-          else if (rnum == 13) {free_string(enclave_room[2]);enclave_room[2]  = str_dup(ch->name);}
-          else if (rnum == 14) {free_string(enclave_room[3]);enclave_room[3]  = str_dup(ch->name);}
-          else if (rnum == 15) {free_string(enclave_room[4]);enclave_room[4]  = str_dup(ch->name);}
-          // House Rook
-          else if (rnum == 21) {free_string(enclave_room[5]);enclave_room[5]  = str_dup(ch->name);}
-          else if (rnum == 22) {free_string(enclave_room[6]);enclave_room[6]  = str_dup(ch->name);}
-          else if (rnum == 23) {free_string(enclave_room[7]);enclave_room[7]  = str_dup(ch->name);}
-          else if (rnum == 24) {free_string(enclave_room[8]);enclave_room[8]  = str_dup(ch->name);}
-          else if (rnum == 25) {free_string(enclave_room[9]);enclave_room[9]  = str_dup(ch->name);}
-          // House Queenson
-          else if (rnum == 31) {free_string(enclave_room[10]);enclave_room[10] = str_dup(ch->name);}
-          else if (rnum == 32) {free_string(enclave_room[11]);enclave_room[11] = str_dup(ch->name);}
-          else if (rnum == 33) {free_string(enclave_room[12]);enclave_room[12] = str_dup(ch->name);}
-          else if (rnum == 34) {free_string(enclave_room[13]);enclave_room[13] = str_dup(ch->name);}
-          else if (rnum == 35) {free_string(enclave_room[14]);enclave_room[14] = str_dup(ch->name);}
-          // House Kingson
-          else if (rnum == 41) {free_string(enclave_room[15]);enclave_room[15] = str_dup(ch->name);}
-          else if (rnum == 42) {free_string(enclave_room[16]);enclave_room[16] = str_dup(ch->name);}
-          else if (rnum == 43) {free_string(enclave_room[17]);enclave_room[17] = str_dup(ch->name);}
-          else if (rnum == 44) {free_string(enclave_room[18]);enclave_room[18] = str_dup(ch->name);}
-          else if (rnum == 45) {free_string(enclave_room[19]);enclave_room[19] = str_dup(ch->name);}
-          else {
-            send_to_char("`cSyntax`g: `Wrent `g(`Wroom number `g/ `Wstop`g)`x\n\r", ch);
-            printf_to_char(ch, "`cAvailable room numbers`g: `W%s%s%s%s%s%s%s%s%s`x\n\r", (!enclave_room_occupied(1 + house_mod)) ? "1" : "", (!enclave_room_occupied(2 + house_mod)) ? ", " : "", (!enclave_room_occupied(2 + house_mod)) ? "2" : "", (!enclave_room_occupied(3 + house_mod)) ? ", " : "", (!enclave_room_occupied(3 + house_mod)) ? "3" : "", (!enclave_room_occupied(4 + house_mod)) ? ", " : "", (!enclave_room_occupied(4 + house_mod)) ? "4" : "", (!enclave_room_occupied(5 + house_mod)) ? ", " : "", (!enclave_room_occupied(5 + house_mod)) ? "5" : "");
-            return;
-          }
-          printf_to_char(ch, "You get the key for room %d.\n\r", rnum - house_mod);
-          return;
-        }
-      }
-      else {
+      if (!is_number(argument)) {
         send_to_char("`cSyntax`g: `Wrent `g(`Wroom number `g/ `Wstop`g)`x\n\r", ch);
-        printf_to_char(ch, "`cAvailable room numbers`g: `W%s%s%s%s%s%s%s%s%s`x`x\n\r", (!enclave_room_occupied(1 + house_mod)) ? "1" : "", (!enclave_room_occupied(2 + house_mod)) ? ", " : "", (!enclave_room_occupied(2 + house_mod)) ? "2" : "", (!enclave_room_occupied(3 + house_mod)) ? ", " : "", (!enclave_room_occupied(3 + house_mod)) ? "3" : "", (!enclave_room_occupied(4 + house_mod)) ? ", " : "", (!enclave_room_occupied(4 + house_mod)) ? "4" : "", (!enclave_room_occupied(5 + house_mod)) ? ", " : "", (!enclave_room_occupied(5 + house_mod)) ? "5" : "");
+        student_dorm_vacancies(ch, house, FALSE);
         return;
       }
+      int number = atoi(argument);
+      if (number < 1 || number > 5) {
+        send_to_char("That room doesn't exist.\n\r", ch);
+        return;
+      }
+      for (i = 0; i < MAX_DORMROOMS; ++i) {
+        if (!str_cmp(enclave_room[i], ch->name)) {
+          send_to_char("You already have a room. Use rent stop before moving.\n\r", ch);
+          return;
+        }
+        if (!str_cmp(enclave_room[i + MAX_DORMROOMS], ch->name)) {
+          send_to_char("You are already rooming with someone. Use roomie stop before moving.\n\r", ch);
+          return;
+        }
+      }
+      const int slot = house * 5 + number - 1;
+      if (safe_strlen(enclave_room[slot]) > 0
+          || safe_strlen(enclave_room[slot + MAX_DORMROOMS]) > 0) {
+        send_to_char("That room is already taken.\n\r", ch);
+        return;
+      }
+      free_string(enclave_room[slot]);
+      enclave_room[slot] = str_dup(ch->name);
+      save_dorms();
+      printf_to_char(ch, "You get the key for room %d.\n\r", number);
+      return;
     }
     else {
       send_to_char("`cSyntax`g: `Wrent `g(`Wroom number `g/ `Wstop`g)\n\r", ch);
@@ -13203,6 +13143,19 @@ like to purchase a %s plot to the %s?`x\n\r", arg1, arg2);
     return -1;
   }
 
+  int student_dorm_house(ROOM_INDEX_DATA *room) {
+    if (room == NULL) return -1;
+    int slot = student_dorm_slot(room);
+    if (slot >= 0) return slot / 5;
+    switch (room->vnum) {
+      case 3881: case 9023: case 9026: return 0; // Bishop
+      case 8996: case 9431: case 9000: return 1; // Rook
+      case 3894: case 3963: case 9053: return 2; // Queenson
+      case 9032: case 9465: case 9047: return 3; // Kingson
+      default: return -1;
+    }
+  }
+
   bool student_dormitory(ROOM_INDEX_DATA *room) {
     if (room == NULL) return FALSE;
     if (student_dorm_slot(room) >= 0) return TRUE;
@@ -13214,6 +13167,39 @@ like to purchase a %s plot to the %s?`x\n\r", arg1, arg2);
         return TRUE;
       default: return FALSE;
     }
+  }
+
+  bool student_dorm_roster(CHAR_DATA *ch, ROOM_INDEX_DATA *room) {
+    if (ch == NULL || room == NULL || IS_NPC(ch)) return FALSE;
+
+    // Each house entrance has its own board. The shared entrance and nexus
+    // carry the complete directory, using the same slots as rental keys.
+    bool directory = room->vnum == 16156 || room->vnum == 3347;
+    if (!directory && room->vnum != 3881 && room->vnum != 8996
+        && room->vnum != 3894 && room->vnum != 9032)
+      return FALSE;
+
+    static const char *houses[] = {"Bishop", "Rook", "Queenson", "Kingson"};
+    int first = directory ? 0 : student_dorm_house(room);
+    int last = directory ? 3 : first;
+    send_to_char("\n\rA resident roster is posted by the entrance. (Look roster)\n\r", ch);
+    for (int house = first; house <= last; ++house) {
+      printf_to_char(ch, "`cHouse %s Roster`x\n\r", houses[house]);
+      for (int number = 1; number <= 5; ++number) {
+        int slot = house * 5 + number - 1;
+        const char *resident = enclave_room[slot];
+        const char *roommate = enclave_room[slot + MAX_DORMROOMS];
+        if (!safe_strlen(resident) && !safe_strlen(roommate))
+          printf_to_char(ch, "Room %d: Vacant\n\r", number);
+        else
+          printf_to_char(ch, "Room %d: %s | Roommate: %s\n\r", number,
+                         safe_strlen(resident) ? resident : "Vacant",
+                         safe_strlen(roommate) ? roommate : "Vacant");
+      }
+    }
+    send_to_char("Rent is free for college students. Use rent 1 through rent 5 in a house\n\r"
+                 "or its upstairs landing; roomie <number> shares an occupied room.\n\r", ch);
+    return TRUE;
   }
 
   bool bblocked(ROOM_INDEX_DATA *to_room, CHAR_DATA *ch) {
@@ -15869,69 +15855,50 @@ first->description = str_dup("");
   }
 
   void autohouseflee(char *name, PROP_TYPE *prop, char *creepname) {
-    struct stat sb;
-    char buf[MIL];
-    Buffer outbuf;
-    DESCRIPTOR_DATA d;
-    bool online = FALSE;
-    CHAR_DATA *victim;
-    d.original = NULL;
     if (safe_strlen(name) < 2)
     return;
-    if ((victim = get_char_world_pc(name)) != NULL) // Victim is online.
-    online = TRUE;
-    else {
-      log_string("DESCRIPTOR: Auto house flee");
-
-      if (!load_char_obj(&d, name)) {
-        return;
-      }
-      sprintf(buf, "%s%s", PLAYER_DIR, capitalize(name));
-      stat(buf, &sb);
-      victim = d.character;
-    }
-    if (IS_NPC(victim)) {
-      if (!online)
-      free_char(victim);
-      return;
-    }
-    if (online)
+    if (get_char_world_pc(name) != NULL)
+    return;
+    log_string("DESCRIPTOR: Auto house flee");
+    CHAR_DATA *victim = load_sleeping_player(name);
+    if (victim == NULL)
     return;
     /*
 if(current_time - victim->lastlogoff < 300)
 {
-free_char(victim);
+free_sleeping_player(victim);
 return;
 }
 */
     if (IS_FLAG(victim->act, PLR_BOUND)) {
-      free_char(victim);
+      free_sleeping_player(victim);
       return;
     }
     if (is_weakness(NULL, victim) || IS_FLAG(victim->comm, COMM_MANDRAKE)) {
       if (number_percent() % 2 == 0) {
-        free_char(victim);
+        free_sleeping_player(victim);
         return;
       }
     }
 
     if (in_prop(victim) != NULL && prop != NULL && in_prop(victim) != prop) {
-      free_char(victim);
+      free_sleeping_player(victim);
       return;
     }
     if (victim->in_room == NULL || victim->in_room->vnum < 300) {
-      free_char(victim);
+      free_sleeping_player(victim);
       return;
     }
     if (victim->pcdata->patrol_habits[PATROL_RECKLESSHABIT] > 0) {
-      free_char(victim);
+      free_sleeping_player(victim);
       return;
     }
 
     ROOM_INDEX_DATA *fleeroom = get_fleeroom(victim, prop);
     if (fleeroom != NULL) {
-      char_from_room(victim);
-      char_to_room(victim, fleeroom);
+      // This character is offline: room-list insertion would leave a dangling
+      // occupant after free_char and incorrectly change live player counts.
+      victim->in_room = fleeroom;
       if (safe_strlen(creepname) < 2)
       append_messages(victim, "You flee the property in the night.");
       else {
@@ -15942,11 +15909,11 @@ return;
       if (prop != NULL)
       from_sleepers(victim, prop);
       save_char_obj(victim, FALSE, FALSE);
-      free_char(victim);
+      free_sleeping_player(victim);
       return;
     }
 
-    free_char(victim);
+    free_sleeping_player(victim);
   }
 
   _DOFUN(do_houseeval) {

@@ -249,6 +249,8 @@ ch = ch->desc->original;
     fprintf(fp, "LastFeeding %d\n", ch->pcdata->last_feeding);
     fprintf(fp, "LastBloodSale %d\n", ch->pcdata->last_blood_sale);
     fprintf(fp, "FeedingReminder %d\n", ch->pcdata->feeding_reminder);
+    fprintf(fp, "NextSinEvent %d\n", ch->pcdata->next_sin_event);
+    fprintf(fp, "LastSinStory %d\n", ch->pcdata->last_sin_story);
     fprintf(fp, "LifeForce %d\n", ch->lifeforce);
     fprintf(fp, "LifeForceCooldown %d\n", ch->pcdata->lifeforcecooldown);
     fprintf(fp, "LFCount %d\n", ch->pcdata->lfcount);
@@ -3497,6 +3499,7 @@ KEYS( "ChatHistory", ch->pcdata->chat_history,      fread_string( fp )
         KEY("LastVictimBled", ch->pcdata->last_victim_bled, fread_number(fp));
         KEY("LastImbue", ch->pcdata->last_imbue, fread_number(fp));
         KEY("LastFeeding", ch->pcdata->last_feeding, fread_number(fp));
+        KEY("LastSinStory", ch->pcdata->last_sin_story, fread_number(fp));
         KEY("LastBloodSale", ch->pcdata->last_blood_sale, fread_number(fp));
         KEY("LifeForce", ch->lifeforce, fread_number(fp));
         KEY("LifeForceCooldown", ch->pcdata->lifeforcecooldown, fread_number(fp));
@@ -3730,6 +3733,7 @@ KEYS( "ChatHistory", ch->pcdata->chat_history,      fread_string( fp )
         KEY("Neutralized", ch->pcdata->neutralized, fread_number(fp));
         KEY("NextHenchman", ch->pcdata->next_henchman, fread_number(fp));
         KEY("NextEnemy", ch->pcdata->next_enemy, fread_number(fp));
+        KEY("NextSinEvent", ch->pcdata->next_sin_event, fread_number(fp));
         KEY("NextMonster", ch->pcdata->next_monster, fread_number(fp));
         KEY("NightmareShifted", ch->pcdata->nightmare_shifted, fread_number(fp));
         KEY("NightMaredragged", ch->pcdata->nightmare_dragged, fread_number(fp));

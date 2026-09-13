@@ -3149,6 +3149,8 @@ extern "C" {
         ins->asylum_notes = str_dup(buf);
       }
     }
+    // Reclaim student rentals after online activity has been refreshed.
+    dorms_update();
   }
 
   void fread_institute(FILE *fp) {

@@ -62,7 +62,7 @@ int combat_distance(CHAR_DATA *a, CHAR_DATA *, bool) { return a->distance; }
 int rolls=0;
 int number_range(int, int) { ++rolls; return 1; }
 '''
-source += section(fight, '  static CHAR_DATA *confused_target(', '  void move_towards(')
+source += section(fight, '  static CHAR_DATA *confused_target(', '  // Retreat vectors are extended')
 branches = section(skills, '    else if (!str_cmp(arg1, "bewilder"))',
                    '    else if (!str_cmp(arg1, "distract"))')
 source += 'void ability(CHAR_DATA *ch, const char *arg1) {\nconst char *arg2="target"; CHAR_DATA *victim;\nif (false) {}\n' + branches + '\n}\n'
@@ -116,7 +116,7 @@ queue = section(skills, '  _DOFUN(do_ability)', '    if (!in_fight(ch)) {')
 assert queue.index('snprintf(queued_argument') < queue.index('one_argument_nouncap')
 assert queue.count('str_dup(queued_argument)') == 2
 assert 'ch->abilmove = str_dup(argument)' not in queue
-assert fight.count('same_fight(ch, ch->afraid_of)') == 2
+assert fight.count('same_fight(ch, ch->afraid_of)') == 1  # Shared approach/retreat handler.
 with tempfile.TemporaryDirectory(prefix='haven-psychic-') as tmp:
     cpp = Path(tmp) / 'psychic.cpp'
     binary = Path(tmp) / 'psychic'

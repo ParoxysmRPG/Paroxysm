@@ -2494,6 +2494,9 @@ REMOVE_FLAG(victim->act, PLR_SHROUD);
   }
 
   void damage(CHAR_DATA *victim, CHAR_DATA *ch, int amount) {
+    if (sin_cortex_guard(ch) && !sin_cortex_guard_target(ch, victim)) return;
+    if (sin_vigilante(ch) && !sin_vigilante_target(ch, victim)) return;
+    if (sin_vigilante(victim) && victim->ttl <= 0) return;
     if (full_moon_pack(ch) && !full_moon_pack_target(ch, victim)) return;
     if (cortex_public_enforcer(ch)
         && (ch->ttl <= 0 || IS_NPC(victim) || str_cmp(ch->aggression, victim->name)
@@ -2597,6 +2600,18 @@ REMOVE_FLAG(victim->act, PLR_SHROUD);
     }
 
     if (amount >= victim->hit) {
+      if (sin_vigilante(ch)) {
+        sin_vigilante_defeat(ch, victim);
+        return;
+      }
+      if (sin_vigilante(victim)) {
+        act("$n crumples, clutching a creased photograph. 'I told them I would make you listen.'",
+            victim, NULL, NULL, TO_ROOM);
+        victim->hit = 0;
+        victim->ttl = 0;
+        set_combat_state(victim, FALSE);
+        return;
+      }
       if (full_moon_pack(ch)) {
         full_moon_pack_defeat(ch, victim);
         return;
@@ -3499,7 +3514,8 @@ REMOVE_FLAG(victim->act, PLR_SHROUD);
     return selected;
   }
 
-  void move_towards(CHAR_DATA *ch, int tox, int toy, int dist, int z, bool voluntary) {
+  // Retreat vectors are extended past the target, so keep their components wide.
+  static void move_combat_vector(CHAR_DATA *ch, long long tox, long long toy, int dist, int z, bool voluntary) {
     if (IS_NPC(ch)) {
       if (IS_FLAG(ch->act, ACT_COVER) || IS_FLAG(ch->act, ACT_TURRET))
       return;
@@ -3511,17 +3527,9 @@ REMOVE_FLAG(victim->act, PLR_SHROUD);
       return;
     }
 
-    if (dist < 0) {
-      move_away(ch, tox, toy, dist * -1, z, voluntary);
-      return;
-    }
-
     dist = move_caff_mod(ch, dist);
     if (dist <= 0)
     return;
-
-    int proportion;
-    int xmove, ymove;
 
     if (is_in_cover(ch)) {
       if (has_caff(get_cover(ch), CAFF_SUPPRESSED)) {
@@ -3529,26 +3537,34 @@ REMOVE_FLAG(victim->act, PLR_SHROUD);
         ch->hit -= (max_hp(ch) / 10);
       }
     }
-    int totaldist = (tox) * (tox) + (toy) * (toy);
-    totaldist = UMAX(totaldist, 1);
-    totaldist = (int)(sqrt((double)totaldist));
+    const long long totaldist = UMAX(1LL, (long long)hypot((double)tox, (double)toy));
 
     int origx = ch->x;
     int origy = ch->y;
-    ch->facing = roomdirection(0, 0, tox, toy);
+    // The general roomdirection helper uses int differences and doubled magnitudes.
+    const long long absx = tox < 0 ? -tox : tox;
+    const long long absy = toy < 0 ? -toy : toy;
+    if (absx > absy * 2)
+      ch->facing = tox > 0 ? DIR_EAST : DIR_WEST;
+    else if (absy > absx * 2)
+      ch->facing = toy < 0 ? DIR_SOUTH : DIR_NORTH;
+    else if (tox > 0)
+      ch->facing = toy < 0 ? DIR_SOUTHEAST : DIR_NORTHEAST;
+    else
+      ch->facing = toy < 0 ? DIR_SOUTHWEST : DIR_NORTHWEST;
     ch->run_dir = ch->facing;
     ROOM_INDEX_DATA *origroom = ch->in_room;
     if (dist >= totaldist) {
       move_relative(ch, tox, toy, z);
     }
     else {
-      proportion = 10000 * dist / totaldist;
-      ymove = (int)((toy)*proportion / 10000);
-      xmove = (int)((tox)*proportion / 10000);
+      // Scale before converting to int; large targets must not round the ratio to zero.
+      const int ymove = (int)((double)toy * dist / totaldist);
+      const int xmove = (int)((double)tox * dist / totaldist);
       move_relative(ch, xmove, ymove, z);
     }
 
-    ch->moved += UMIN(dist, totaldist);
+    ch->moved = (int)UMIN((long long)INT_MAX, (long long)ch->moved + UMIN(dist, totaldist));
 
     if (ch->x < 0)
     ch->x = 0;
@@ -3614,129 +3630,21 @@ REMOVE_FLAG(victim->act, PLR_SHROUD);
     if (voluntary == TRUE)
     ch->move_timer = FIGHT_WAIT * fight_speed(ch);
   }
-  void move_away(CHAR_DATA *ch, int tox, int toy, int dist, int z, bool voluntary) {
-    if (IS_NPC(ch)) {
-      if (IS_FLAG(ch->act, ACT_COVER) || IS_FLAG(ch->act, ACT_TURRET))
-      return;
-    }
-
-    if (has_caff(ch, CAFF_FEAR) && ch->afraid_of != NULL && ch->afraid_of->in_room != NULL && same_fight(ch, ch->afraid_of)) {
-      remove_caff(ch, CAFF_FEAR);
-      act("You are gripped by a sudden fear.", ch, NULL, NULL, TO_CHAR);
-      move_away(ch, relative_x(ch, ch->afraid_of->in_room, ch->afraid_of->x), relative_y(ch, ch->afraid_of->in_room, ch->afraid_of->y), get_speed(ch), 0, voluntary);
-      return;
-    }
-
+  void move_towards(CHAR_DATA *ch, int tox, int toy, int dist, int z, bool voluntary) {
     if (dist < 0) {
-      move_towards(ch, tox, toy, dist * -1, z, voluntary);
+      move_away(ch, tox, toy, dist == INT_MIN ? INT_MAX : -dist, z, voluntary);
       return;
     }
-    dist = move_caff_mod(ch, dist);
-    if (dist <= 0)
-    return;
+    move_combat_vector(ch, tox, toy, dist, z, voluntary);
+  }
 
-    if (tox == 0) {
-      tox++;
+  void move_away(CHAR_DATA *ch, int tox, int toy, int dist, int z, bool voluntary) {
+    if (dist < 0) {
+      move_towards(ch, tox, toy, dist == INT_MIN ? INT_MAX : -dist, z, voluntary);
+      return;
     }
-    if (toy == 0) {
-      toy++;
-    }
-    tox = tox * -50;
-    toy = toy * -50;
-
-    move_towards(ch, tox, toy, dist, z, voluntary);
-    return;
-
-    int fromx = ch->x;
-    int fromy = ch->y;
-    int proportion;
-    int xmove, ymove;
-    ROOM_INDEX_DATA *origroom = ch->in_room;
-    if (is_in_cover(ch)) {
-      if (has_caff(get_cover(ch), CAFF_SUPPRESSED)) {
-        act("You are shot as you leave cover.\n\r", ch, NULL, NULL, TO_CHAR);
-        ch->hit -= (max_hp(ch) / 10);
-      }
-    }
-
-    int origx = ch->x;
-    int origy = ch->y;
-
-    if (tox == 0 && toy == 0)
-    tox += 1;
-    int totaldist = (tox) * (tox) + (toy) * (toy);
-    totaldist = UMAX(totaldist, 1);
-    ch->facing = roomdirection(0, 0, tox, toy);
-    ch->run_dir = ch->facing;
-
-    totaldist = (int)(sqrt((double)totaldist));
-    proportion = 100 * dist / totaldist;
-    ymove = (int)((toy - fromy) * proportion / 100);
-    xmove = (int)((tox - fromx) * proportion / 100);
-    move_relative(ch, xmove, ymove, z);
-
-    if (ch->x < 0)
-    ch->x = 0;
-    if (ch->y < 0)
-    ch->y = 0;
-    if (ch->x > ch->in_room->size)
-    ch->x = ch->in_room->size;
-    if (ch->y > ch->in_room->size)
-    ch->y = ch->in_room->size;
-
-    ch->moved += UMIN(dist, totaldist);
-
-    CHAR_DATA *cobj;
-    for (CharList::iterator it = ch->in_room->people->begin();
-    it != ch->in_room->people->end(); ++it) {
-      cobj = *it;
-
-      if (cobj == NULL)
-      continue;
-
-      if (cobj->in_room == NULL)
-      continue;
-      if (!IS_NPC(cobj))
-      continue;
-
-      if (!IS_FLAG(cobj->act, ACT_COMBATOBJ))
-      continue;
-
-      if (cobj->pIndexData->vnum == COBJ_CALTROPS && get_dist(ch->x, ch->y, cobj->x, cobj->y) <= 10) {
-        cobj->attack_timer =
-        UMAX(1, cobj->attack_timer - (2 * FIGHT_WAIT * fight_speed(ch)));
-        apply_caff(ch, CAFF_SLOW, 2);
-        act("You step on some caltrops.", ch, NULL, NULL, TO_CHAR);
-      }
-      if (cobj->pIndexData->vnum == COBJ_QUICKSAND && get_dist(ch->x, ch->y, cobj->x, cobj->y) <= 10) {
-        apply_caff(ch, CAFF_SLOW, 1);
-        act("You step in some quicksand.", ch, NULL, NULL, TO_CHAR);
-      }
-      if (cobj->pIndexData->vnum == COBJ_LANDMINE && get_dist(ch->x, ch->y, cobj->x, cobj->y) <= 5) {
-        cobj->attack_timer = 0;
-        combat_damage(ch, ch, max_hp(ch) / 2, DIS_FIRE);
-        act("You step on a landmine!", ch, NULL, NULL, TO_CHAR);
-        act("$n steps on a landmine!", ch, NULL, NULL, TO_ROOM);
-      }
-      if (cobj->pIndexData->vnum == COBJ_TEAR && get_dist(ch->x, ch->y, cobj->x, cobj->y) <= 15) {
-        if (!has_gasmask(ch) && !is_undead(ch)) {
-          apply_caff(ch, CAFF_TEAR, 1);
-          act("You breathe in a lungful of teargas.", ch, NULL, NULL, TO_CHAR);
-        }
-      }
-    }
-
-    if (has_caff(ch, CAFF_CALTROPING)) {
-      remove_caff(ch, CAFF_CALTROPING);
-      summon_cobj(origroom, COBJ_CALTROPS, 20, origx, origy, ch);
-    }
-    if (has_caff(ch, CAFF_LANDMINING) && dist > 6) {
-      remove_caff(ch, CAFF_LANDMINING);
-      summon_cobj(origroom, COBJ_LANDMINE, 20, origx, origy, ch);
-    }
-
-    if (voluntary == TRUE)
-    ch->move_timer = FIGHT_WAIT * fight_speed(ch);
+    // Preserve the existing retreat direction, but apply movement effects once.
+    move_combat_vector(ch, -50LL * (tox == 0 ? 1 : tox), -50LL * (toy == 0 ? 1 : toy), dist, z, voluntary);
   }
 
   int get_speed(CHAR_DATA *ch) {
@@ -3802,24 +3710,8 @@ REMOVE_FLAG(victim->act, PLR_SHROUD);
   }
 
   int get_dist(int xone, int yone, int xtwo, int ytwo) {
-    int totalx, totaly;
-
-    if (xone > xtwo)
-    totalx = xone - xtwo;
-    else
-    totalx = xtwo - xone;
-
-    if (yone > ytwo)
-    totaly = yone - ytwo;
-    else
-    totaly = ytwo - yone;
-
-    int total = totalx * totalx + totaly * totaly;
-    if (total == 0)
-    return 1;
-
-    total = (int)sqrt((double)total);
-    return UMAX(total, 1);
+    const double distance = hypot((double)xone - xtwo, (double)yone - ytwo);
+    return distance >= INT_MAX ? INT_MAX : UMAX((int)distance, 1);
   }
 
   void move_message(CHAR_DATA *ch, int type, int originalx, int originaly, ROOM_INDEX_DATA *origroom) {
@@ -4060,8 +3952,8 @@ REMOVE_FLAG(victim->act, PLR_SHROUD);
   int closest_exit_x(CHAR_DATA *ch, ROOM_INDEX_DATA *room) {
     int mindist = 1000;
     int i, dist, direction = DIR_UP;
-    for (i = 0; i < 9; i++) {
-      if (has_exit(ch->in_room, i)) {
+    for (i = 0; i < MAX_DIR; i++) {
+      if (has_exit(room, i)) {
         dist = get_dist(ch->x, ch->y, get_exit_x(i, room), get_exit_y(i, room));
         if (dist < mindist) {
           mindist = dist;
@@ -4075,8 +3967,8 @@ REMOVE_FLAG(victim->act, PLR_SHROUD);
   int closest_exit_y(CHAR_DATA *ch, ROOM_INDEX_DATA *room) {
     int mindist = 1000;
     int i, dist, direction = DIR_UP;
-    for (i = 0; i < 9; i++) {
-      if (has_exit(ch->in_room, i)) {
+    for (i = 0; i < MAX_DIR; i++) {
+      if (has_exit(room, i)) {
         dist = get_dist(ch->x, ch->y, get_exit_x(i, room), get_exit_y(i, room));
         if (dist < mindist) {
           mindist = dist;
@@ -4099,7 +3991,7 @@ REMOVE_FLAG(victim->act, PLR_SHROUD);
 
   bool on_roomexit(CHAR_DATA *ch) {
     int i;
-    for (i = 0; i < 9; i++) {
+    for (i = 0; i < MAX_DIR; i++) {
       if (ch->x == get_exit_x(i, ch->in_room) && ch->y == get_exit_y(i, ch->in_room) && has_exit(ch->in_room, i))
       return TRUE;
     }
@@ -4108,11 +4000,32 @@ REMOVE_FLAG(victim->act, PLR_SHROUD);
 
   int get_flee_direction(CHAR_DATA *ch) {
     int i;
-    for (i = 0; i < 9; i++) {
+    for (i = 0; i < MAX_DIR; i++) {
       if (ch->x == get_exit_x(i, ch->in_room) && ch->y == get_exit_y(i, ch->in_room) && has_exit(ch->in_room, i))
       return i;
     }
     return -1;
+  }
+
+  // Accept a complete signed integer without atoi's overflow and prefix coercion.
+  static bool parse_combat_number(const char *text, int *result) {
+    bool negative = *text == '-';
+    if (*text == '+' || *text == '-')
+      ++text;
+    if (*text == '\0')
+      return false;
+    const unsigned int limit = negative ? (unsigned int)INT_MAX + 1U : INT_MAX;
+    unsigned int value = 0;
+    for (; *text != '\0'; ++text) {
+      if (*text < '0' || *text > '9')
+        return false;
+      unsigned int digit = *text - '0';
+      if (value > (limit - digit) / 10)
+        return false;
+      value = value * 10 + digit;
+    }
+    *result = negative ? (value == (unsigned int)INT_MAX + 1U ? INT_MIN : -(int)value) : (int)value;
+    return true;
   }
 
   _DOFUN(do_gmmove) {
@@ -4156,18 +4069,19 @@ REMOVE_FLAG(victim->act, PLR_SHROUD);
       return;
     }
 
+    int coordinate_x, coordinate_y, distance;
     if ((victim = get_char_fight(ch, arg1)) == NULL) {
-      if (!is_number(arg1) && !is_number(arg2)) {
+      if (!parse_combat_number(arg1, &coordinate_x) || !parse_combat_number(arg2, &coordinate_y)) {
         send_to_char("Syntax move (person) (distance)/away/charge\n\r", ch);
         return;
       }
       else {
-        move_towards(mon, atoi(arg1), atoi(arg2), get_speed(mon), 0, TRUE);
+        move_towards(mon, coordinate_x, coordinate_y, get_speed(mon), 0, TRUE);
         move_message(mon, MOVE_MOVE, origx, origy, origroom);
       }
     }
-    else if (is_number(arg2)) {
-      move_towards(mon, relative_x(mon, victim->in_room, victim->x), relative_y(mon, victim->in_room, victim->y), UMIN(atoi(arg2), get_speed(mon)), victim->in_room->z - mon->in_room->z, TRUE);
+    else if (parse_combat_number(arg2, &distance) && distance > 0) {
+      move_towards(mon, relative_x(mon, victim->in_room, victim->x), relative_y(mon, victim->in_room, victim->y), UMIN(distance, get_speed(mon)), victim->in_room->z - mon->in_room->z, TRUE);
       move_message(mon, MOVE_MOVE, origx, origy, origroom);
     }
     else if (!str_cmp(arg2, "jump")) {
@@ -4258,7 +4172,8 @@ REMOVE_FLAG(victim->act, PLR_SHROUD);
   }
 
   int combat_move_speed(CHAR_DATA *ch, int type) {
-    int speed = get_speed(ch);
+    const int base_speed = get_speed(ch);
+    int speed = base_speed;
     int bonus = 0;
 
     if (ch->in_room->sector_type == SECT_AIR && ch->bagcarrier == 0) {
@@ -4268,13 +4183,13 @@ REMOVE_FLAG(victim->act, PLR_SHROUD);
     }
     if (type == MOVE_FLEE) {
       if (guestmonster(ch))
-      return get_speed(ch);
+      return base_speed;
 
       int count = large_weapon_count(ch);
       if (get_skill(ch, SKILL_COMMANDO) > 1)
       count--;
 
-      bonus = get_speed(ch);
+      bonus = base_speed;
       bonus += UMIN(10, get_skill(ch, SKILL_STRENGTH) + get_skill(ch, SKILL_DEXTERITY) + get_skill(ch, SKILL_ACROBATICS) + get_skill(ch, SKILL_STAMINA));
       if (ch->wounds == 0)
       bonus += 16;
@@ -4292,7 +4207,7 @@ REMOVE_FLAG(victim->act, PLR_SHROUD);
       if (get_skill(ch, SKILL_FLEETFOOT) > 0)
       count--;
 
-      bonus = get_speed(ch);
+      bonus = base_speed;
       bonus = bonus * (15 - count) / 15;
       if (!wearing_armor(ch) && !has_shield(ch))
       bonus = bonus * 12 / 10;
@@ -4309,7 +4224,7 @@ REMOVE_FLAG(victim->act, PLR_SHROUD);
       if (get_skill(ch, SKILL_FLEETFOOT) > 0)
       count--;
 
-      bonus = get_speed(ch) * 2;
+      bonus = base_speed * 2;
       bonus = bonus * (5 - count) / 5;
       if (!wearing_armor(ch) && !has_shield(ch))
       bonus = bonus * 12 / 10;
@@ -4322,7 +4237,7 @@ REMOVE_FLAG(victim->act, PLR_SHROUD);
       return speed;
     }
     if (type == MOVE_PROTECT) {
-      bonus = get_speed(ch) * 3 / 2;
+      bonus = base_speed * 3 / 2;
       speed += bonus;
       return speed;
     }
@@ -4343,6 +4258,36 @@ REMOVE_FLAG(victim->act, PLR_SHROUD);
     return -100;
     return 0;
   }
+
+  // Preserve the pre-movement cost for speed/hazard calculations, but roll it
+  // back when command validation rejects the move.
+  struct CombatMoveCost {
+    CHAR_DATA *ch;
+    int fatigue;
+    CHAR_DATA *protecting;
+    bool committed;
+
+    explicit CombatMoveCost(CHAR_DATA *character)
+        : ch(character), fatigue(0), protecting(NULL), committed(IS_NPC(character)) {
+      if (!committed) {
+        fatigue = ch->pcdata->fatigue;
+        protecting = ch->pcdata->protecting;
+        ch->pcdata->fatigue += MOVE_FATIGUE;
+        ch->pcdata->protecting = NULL;
+      }
+    }
+
+    void cancel() {
+      if (!committed) {
+        ch->pcdata->fatigue = fatigue;
+        ch->pcdata->protecting = protecting;
+        committed = true;
+      }
+    }
+
+    ~CombatMoveCost() { cancel(); }
+  };
+
   _DOFUN(do_move) {
     char arg1[MSL];
     char arg2[MSL];
@@ -4388,9 +4333,10 @@ REMOVE_FLAG(victim->act, PLR_SHROUD);
     int origx = ch->x;
     int origy = ch->y;
     ROOM_INDEX_DATA *origroom = ch->in_room;
+    int coordinate_x, coordinate_y, distance;
     if (in_fight(ch) == FALSE) {
-      if (is_number(arg1) && is_number(arg2)) {
-        move_towards(ch, atoi(arg1), atoi(arg2), get_speed(ch) * 2, 0, TRUE);
+      if (parse_combat_number(arg1, &coordinate_x) && parse_combat_number(arg2, &coordinate_y)) {
+        move_towards(ch, coordinate_x, coordinate_y, get_speed(ch) * 2, 0, TRUE);
         send_to_char("You reposition.\n\r", ch);
         WAIT_STATE(ch, PULSE_PER_SECOND * 5);
         ch->facing = orig;
@@ -4419,11 +4365,7 @@ REMOVE_FLAG(victim->act, PLR_SHROUD);
       return;
     }
 
-    if (!IS_NPC(ch))
-    ch->pcdata->fatigue += MOVE_FATIGUE;
-
-    if (!IS_NPC(ch))
-    ch->pcdata->protecting = NULL;
+    CombatMoveCost move_cost(ch);
 
     if (!str_cmp(arg1, "flee") || !str_cmp(arg1, "sprint")) {
       if (ch->facing == DIR_DOWN || ch->facing == DIR_UP) {
@@ -4521,18 +4463,18 @@ REMOVE_FLAG(victim->act, PLR_SHROUD);
       move_message(ch, MOVE_MOVE, origx, origy, origroom);
     }
     else if ((victim = get_char_fight(ch, arg1)) == NULL) {
-      if (!is_number(arg1) && !is_number(arg2)) {
+      if (!parse_combat_number(arg1, &coordinate_x) || !parse_combat_number(arg2, &coordinate_y)) {
         send_to_char("Syntax move (person) (distance)/away/charge/protect\n\r", ch);
         return;
       }
       else {
-        move_towards(ch, atoi(arg1), atoi(arg2), combat_move_speed(ch, MOVE_MOVE), 0, TRUE);
+        move_towards(ch, coordinate_x, coordinate_y, combat_move_speed(ch, MOVE_MOVE), 0, TRUE);
         ch->facing = orig;
         move_message(ch, MOVE_MOVE, origx, origy, origroom);
       }
     }
-    else if (is_number(arg2) && atoi(arg2) > 0) {
-      move_towards(ch, relative_x(ch, victim->in_room, victim->x), relative_y(ch, victim->in_room, victim->x), UMIN(atoi(arg2), combat_move_speed(ch, MOVE_MOVE)), victim->in_room->z - ch->in_room->z, TRUE);
+    else if (parse_combat_number(arg2, &distance) && distance > 0) {
+      move_towards(ch, relative_x(ch, victim->in_room, victim->x), relative_y(ch, victim->in_room, victim->y), UMIN(distance, combat_move_speed(ch, MOVE_MOVE)), victim->in_room->z - ch->in_room->z, TRUE);
       move_message(ch, MOVE_MOVE, origx, origy, origroom);
     }
     else if (!str_cmp(arg2, "jump")) {
@@ -4566,6 +4508,7 @@ REMOVE_FLAG(victim->act, PLR_SHROUD);
       }
       else {
         std::string command = std::string(arg1) + " charge";
+        move_cost.cancel();
         do_function(ch, &do_move, command.data());
         return;
       }
@@ -4628,13 +4571,18 @@ REMOVE_FLAG(victim->act, PLR_SHROUD);
       ch->facing = orig;
     }
     else if (!str_cmp(arg2, "away") || !str_cmp(arg2, "Retreat")) {
+      int retreat_distance = 0;
+      if (argument[0] != '\0' && (!parse_combat_number(argument, &retreat_distance) || retreat_distance <= 0)) {
+        send_to_char("Retreat distance must be a positive whole number.\n\r", ch);
+        return;
+      }
       if (battleground(ch->in_room)) {
         sprintf(logm, "%s retreats from %s.", ch->name, victim->name);
         op_report(str_dup(logm), ch);
       }
 
-      if (atoi(argument) > 0 && atoi(argument) < combat_move_speed(ch, MOVE_RETREAT) && atoi(argument) > 0)
-      move_away(ch, relative_x(ch, victim->in_room, victim->x), relative_y(ch, victim->in_room, victim->y), atoi(argument), 0, TRUE);
+      if (retreat_distance > 0 && retreat_distance < combat_move_speed(ch, MOVE_RETREAT))
+      move_away(ch, relative_x(ch, victim->in_room, victim->x), relative_y(ch, victim->in_room, victim->y), retreat_distance, 0, TRUE);
       else
       move_away(ch, relative_x(ch, victim->in_room, victim->x), relative_y(ch, victim->in_room, victim->y), combat_move_speed(ch, MOVE_RETREAT), 0, TRUE);
       if (!str_cmp(arg2, "retreat"))
@@ -4646,6 +4594,8 @@ REMOVE_FLAG(victim->act, PLR_SHROUD);
       send_to_char("Syntax move (person) (distance)/away/charge/flee/protect\n\r", ch);
       return;
     }
+
+    move_cost.committed = true;
 
     if (ch->fight_fast == TRUE) {
       if (will_fight_show(ch, FALSE)) {
@@ -6798,6 +6748,8 @@ return;
   }
 
   CHAR_DATA *get_npc_target(CHAR_DATA *ch) {
+    if (sin_cortex_guard(ch)) return sin_cortex_guard_prey(ch);
+    if (sin_vigilante(ch)) return sin_vigilante_prey(ch);
     if (full_moon_pack(ch)) return full_moon_pack_prey(ch);
     // The dissenting mob holds its ground; players provide its defense.
     if (dissent_crowd(ch)) return NULL;
@@ -6993,7 +6945,9 @@ return;
     if (full_moon_pack(ch) && !full_moon_pack_target(ch, victim)) return;
     if (cortex_public_enforcer(ch) && (IS_NPC(victim) || str_cmp(ch->aggression, victim->name)))
     return;
+    if (sin_vigilante(ch) && !sin_vigilante_target(ch, victim)) return;
 
+    if (sin_cortex_guard(ch) && !sin_cortex_guard_target(ch, victim)) return;
     if (IS_FLAG(ch->act, PLR_SHROUD) && !IS_FLAG(victim->act, PLR_SHROUD))
     return;
 
@@ -7045,6 +6999,10 @@ return;
     int shield = shield_type(victim);
 
     dam = damage_calculate(ch, victim, point, shield);
+
+    // Ordinary, untrained people: even a determined hit is only chip damage.
+    // Keep it possible to lose through inaction without scaling them to the PC.
+    if (sin_vigilante(ch)) dam = URANGE(1, dam, 3);
 
     if (dam <= 0) {
       if (forest_monster(ch)) {
@@ -7105,6 +7063,10 @@ return;
     ch->attack_timer = FIGHT_WAIT * fight_speed(ch);
     ch->fight_attacks++;
 
+    if (sin_vigilante(ch) && victim->hit <= 0) {
+      sin_vigilante_defeat(ch, victim);
+      return;
+    }
     if (IS_NPC(ch) && !IS_NPC(victim) && (ch->pIndexData->vnum == CORTEX_SOLDIER || ch->pIndexData->vnum == ALLY_TEMPLATE || ch->pIndexData->vnum == MINION_TEMPLATE) && victim->hit <= 0 && !battleground(ch->in_room) && !guestmonster(victim)) {
       act("$n knocks $N out.\n\r", ch, NULL, victim, TO_NOTVICT);
       act("$n knocks you out.\n\r", ch, NULL, victim, TO_VICT);
@@ -10628,17 +10590,15 @@ displace(rch, to, size);
   }
   _DOFUN(do_knockout) {
     if (in_fight(ch)) {
-      static char buf[200];
-      sprintf(buf, "%s knockout", argument);
-      do_function(ch, &do_attack, buf);
+      std::string command = std::string(argument) + " knockout";
+      do_function(ch, &do_attack, command.data());
     }
     else
     do_function(ch, &do_knock, argument);
   }
   _DOFUN(do_charge) {
-    static char buf[200];
-    sprintf(buf, "%s charge", argument);
-    do_function(ch, &do_move, buf);
+    std::string command = std::string(argument) + " charge";
+    do_function(ch, &do_move, command.data());
   }
   _DOFUN(do_flee) {
     /*
@@ -10683,19 +10643,16 @@ return;
       return;
     }
 
-    static char buf[200];
-    sprintf(buf, "%s retreat", argument);
-    do_function(ch, &do_move, buf);
+    std::string command = std::string(argument) + " retreat";
+    do_function(ch, &do_move, command.data());
   }
   _DOFUN(do_protect) {
-    static char buf[200];
-    sprintf(buf, "%s protect", argument);
-    do_function(ch, &do_move, buf);
+    std::string command = std::string(argument) + " protect";
+    do_function(ch, &do_move, command.data());
   }
   _DOFUN(do_jump) {
-    static char buf[200];
-    sprintf(buf, "%s jump", argument);
-    do_function(ch, &do_move, buf);
+    std::string command = std::string(argument) + " jump";
+    do_function(ch, &do_move, command.data());
   }
 
   int GET_NPC_SPECIAL(int dis) {
@@ -12030,32 +11987,33 @@ return;
   }
 
   int move_caff_mod(CHAR_DATA *ch, int dist) {
+    long long distance = dist;
     if (has_caff(ch, CAFF_SLOW)) {
-      dist /= 2;
+      distance /= 2;
       lower_caff(ch, CAFF_SLOW);
     }
     if (has_caff(ch, CAFF_SWEAT)) {
       if (temperature(ch->in_room) > 85)
-      dist /= 2;
+      distance /= 2;
       else
-      dist = dist * 3 / 4;
+      distance = distance * 3 / 4;
     }
     if (has_caff(ch, CAFF_CHILL)) {
       if (temperature(ch->in_room) < 60)
-      dist /= 2;
+      distance /= 2;
       else
-      dist = dist * 3 / 4;
+      distance = distance * 3 / 4;
     }
 
     if (has_caff(ch, CAFF_SPRINTING)) {
-      dist = dist * 15 / 10;
+      distance = distance * 15 / 10;
       lower_caff(ch, CAFF_SPRINTING);
     }
     if (has_caff(ch, CAFF_AMESSENGER)) {
       if (ch->pcdata->divine_focus == CAFF_AMESSENGER)
-      dist = dist * 2;
+      distance = distance * 2;
       else
-      dist = dist * 15 / 10;
+      distance = distance * 15 / 10;
       lower_caff(ch, CAFF_AMESSENGER);
     }
     if (has_caff(ch, CAFF_HEARTSLOW)) {
@@ -12063,15 +12021,15 @@ return;
       noattack(ch);
     }
     if (has_caff(ch, CAFF_GRAVITY)) {
-      dist /= 2;
+      distance /= 2;
     }
     if (has_caff(ch, CAFF_PROWL)) {
-      dist = dist * 2 / 3;
+      distance = distance * 2 / 3;
     }
     if (ch->in_room->sector_type == SECT_AIR)
-    dist = UMIN(dist, 100);
+    distance = UMIN(distance, 100);
 
-    return dist;
+    return (int)URANGE((long long)INT_MIN, distance, (long long)INT_MAX);
   }
 
   void nomove(CHAR_DATA *ch) {
@@ -13438,6 +13396,8 @@ SPECIAL_DELAY2) dam = dam*11/10;
   }
 
   void start_fight(CHAR_DATA *ch, CHAR_DATA *target) {
+    if (sin_cortex_guard(ch) && !sin_cortex_guard_target(ch, target)) return;
+    if (sin_vigilante(ch) && !sin_vigilante_target(ch, target)) return;
     if (full_moon_pack(ch) && !full_moon_pack_target(ch, target)) return;
     if (public_target_excluded(ch, target)) {
       send_to_char("This area's public-room protection prevents you from targeting them.\n\r", ch);
@@ -14234,8 +14194,8 @@ printf_to_char(victim, "Enemy Check: %s, %s, ch->vic aggro: %d, vic->ch aggro
   }
 
   void move_relative(CHAR_DATA *ch, int x, int y, int z) {
-    ch->x += x;
-    ch->y += y;
+    ch->x = (int)URANGE((long long)INT_MIN, (long long)ch->x + x, (long long)INT_MAX);
+    ch->y = (int)URANGE((long long)INT_MIN, (long long)ch->y + y, (long long)INT_MAX);
     bool breakout = FALSE;
     ROOM_INDEX_DATA *oldroom = ch->in_room;
     for (; ch->x > ch->in_room->size && ch->y > ch->in_room->size && breakout == FALSE;) {

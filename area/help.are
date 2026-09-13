@@ -1,4 +1,31 @@
 #HELPS
+Keyword Second Class Citizen~
+SeeAlso Stats, Train, Negtrain, Sanctuary~
+Level 0
+Online 0
+Type 0
+Text Second Class Citizen is a social stat with values 0, -1 and -2.
+
+At -1 you have permanent limited sanctuary, shown as an orange aura. It has
+the benefits of full sanctuary except protection against the rape command
+and permanent (forever) imprints. Death and maim recovery cost the usual fee.
+
+At -2 you have a black aura. Sanctuary only covers death and maim recovery,
+and those recoveries cost 20% of their usual fee. This includes personal
+revival fees, society fees, tier scaling and containment surcharges.
+
+Both levels supply ongoing coverage without requiring a society. Normal
+sanctuary restrictions still apply, including location, revoked sanctuary,
+starvation, debt and population overload. Forest-monster incidents remain
+uncovered. Covered recoveries happen at the usual next 06:00; sanctuary does
+not prevent the original killing or maiming.
+
+Set the stat during creation, or use negtrain Second Class Citizen to lower
+it one level. Use train Second Class Citizen to buy back one level toward 0.
+Each negative level is worth one social stat point.
+~
+End
+
 Keyword Affect~
 SeeAlso Affects, Score, Feeding, Societies~
 Level 0
@@ -3540,9 +3567,15 @@ Cortex Academy of Civic Integration at no charge.
 From the covered campus walkway, go west to the Student Dormitory
 Entrance, then up to the Student Dormitory Nexus. House Queenson is
 north, Kingson northwest, Bishop south, and Rook southwest of the nexus.
-Use rent in a house common room to see available rooms, or rent 1 through
-rent 5 to claim one. Use open followed by the direction to open your door.
+Use rent in a house common room or upstairs landing to see available rooms,
+or rent 1 through rent 5 to claim one. Use open and a direction for your door.
 Each house has rooms upstairs; Rook rooms 2 through 5 are all upstairs.
+The entrance rosters show current residents, roommates, and vacancies.
+Use look roster to read one. Rentals and rosters update and save immediately.
+Each student may hold one dorm assignment. Inactive characters lose their
+rentals during college updates, using the college inactivity limit or more
+than seven full days idle. An active roommate keeps the room if its resident
+leaves; otherwise the room becomes vacant.
 
 `cSyntax`g:`W roomie `g(`Wroom number `g/`W stop`g)`w
 
@@ -3655,9 +3688,15 @@ Cortex Academy of Civic Integration at no charge.
 From the covered campus walkway, go west to the Student Dormitory
 Entrance, then up to the Student Dormitory Nexus. House Queenson is
 north, Kingson northwest, Bishop south, and Rook southwest of the nexus.
-Use rent in a house common room to see available rooms, or rent 1 through
-rent 5 to claim one. Use open followed by the direction to open your door.
+Use rent in a house common room or upstairs landing to see available rooms,
+or rent 1 through rent 5 to claim one. Use open and a direction for your door.
 Each house has rooms upstairs; Rook rooms 2 through 5 are all upstairs.
+The entrance rosters show current residents, roommates, and vacancies.
+Use look roster to read one. Rentals and rosters update and save immediately.
+Each student may hold one dorm assignment. Inactive characters lose their
+rentals during college updates, using the college inactivity limit or more
+than seven full days idle. An active roommate keeps the room if its resident
+leaves; otherwise the room becomes vacant.
 
 `cSyntax`g:`W roomie `g(`Wroom number `g/`W stop`g)`w
 
@@ -11320,6 +11359,11 @@ innocent people to obtain it.  RP Prompts for effective Tier 3s and higher
 will often ask about who they have hurt, betrayed or sacrificed for their
 power.  
 
+This harm need not be murder. Use `Whabit sin murderer/scammer/corrupt`x to
+choose how your character has hurt people. Murderer retains the established
+portrayal. Scammers ruin people financially; corrupt characters sell out or
+silence people who depend on them. See `Whelp sinhabit`x for their consequences.
+
 Supernatural society is inherently parasitic, with more powerful entities
 preying on and feeding off lower power ones.  One of the clearest examples
 of this is psychic feeding.  All supernaturals naturally feed from the
@@ -18903,6 +18947,9 @@ Level 0
 Online 0
 Type 0
 Text `WSyntax:`x habit/ habit (category) (amount/frequency)
+
+`Whabit sin murderer/scammer/corrupt`x sets the harm behind a T3 or higher
+character's power. See `Whelp sinhabit`x. You may select it before reaching T3.
 
 The Habit command is used to set your characters offline habits, this serves
 several purposes.  Firstly it's visible to trusted SRs when they look you
@@ -32833,6 +32880,40 @@ black loafers complete the range. Students may choose any color combination.
 
 Use wear followed by an item keyword, such as wear blazer, to put it on.
 The fitting bench beside the shop mirror offers a place to sit.
+~
+End
+
+Keyword Sinhabit Sin-habits~
+SeeAlso habit Monstrosity~
+Level 0
+Online 0
+Type 0
+Text `WSyntax:`x habit sin murderer/scammer/corrupt
+
+Power at tier three and above comes from hurting people. Your sin habit
+describes that harm; it does not have to mean murder.
+
+`WMurderer`x: The established portrayal, unchanged. This is the default until
+you choose another habit.
+
+`WScammer`x: You have financially ruined people who trusted you. About once
+every two weeks, a victim may text from an unknown number. Some are furious;
+others are still asking for enough of their own money to get through the day.
+These messages arrive in your phone's inbox when it can receive them.
+
+`WCorrupt`x: You have abused power or sold people out. Rarely, about once a
+month or longer, someone stands up to you for the people you hurt. These are
+virtuous people seeking justice for the innocent people you harmed. They are
+ordinary, weak vigilantes, not your equals in combat. These encounters only
+happen on public streets. Cortex enforcers help you against the virtuous
+vigilante, protecting your interests over those of the people you hurt.
+If you somehow lose, the vigilante leaves you knocked out where you fell.
+
+There is a full waiting period before your first event. Missed events never
+pile up while you are away, and changing habits does not reset the cooldown.
+Vigilantes wait for you to be healthy and on a public street. Your sin also
+shapes tier RP prompts. Independent feeding and lunacy habits still apply.
+This habit is separate from the cardinal-sin choices made with `Wsin set`x.
 ~
 End
 

@@ -821,6 +821,8 @@ b#define DECLARE_SPEC_FUN( fun )		bool fun( )
 #define ACT_DISSENT_CROWD       44
 #define ACT_CORTEX_PUBLIC       45
 #define ACT_FULL_MOON_PACK       46
+#define ACT_SIN_VIGILANTE        47
+#define ACT_CORTEX_SIN_GUARD     48
 
 
 /*
@@ -2745,7 +2747,8 @@ typedef enum
 #define SKILL_COLDSPEC			232
 #define SKILL_HOTSPEC			233
 #define SKILL_PSYCHIC                    234
-#define SKILL_USED                      234
+#define SKILL_SECONDCLASS               235
+#define SKILL_USED                      235
 
 #define SKILL_MAX                       300
 
@@ -3127,6 +3130,11 @@ typedef enum
 #define HABIT_PROTECTION    22
 #define HABIT_HORMONES	    23
 #define HABIT_SCHOOL	    24
+#define HABIT_SIN           25
+
+#define SIN_MURDERER        0
+#define SIN_SCAMMER         1
+#define SIN_CORRUPT         2
 #define MAX_HABITS          24
 #define MAX_NEWHABITS       30
 
@@ -3841,7 +3849,7 @@ typedef enum
 
 #define PSYCHIC_FEAR		1
 #define PSYCHIC_ANGER		2
-#define PSYCHIC_SEX		3
+#define PSYCHIC_SEX		5
 #define PSYCHIC_LUST		3
 #define PSYCHIC_AMBIANT		4
 

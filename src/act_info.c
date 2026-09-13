@@ -2722,21 +2722,22 @@ extern "C" {
     return 9;
   }
 
-  int max_where(CHAR_DATA *victim) {
+  static int max_where_equipped(CHAR_DATA *victim, const haven::EquipmentSnapshot &equipment, bool visible[MAX_WEAR]) {
     int max = 0;
     int iWear;
     OBJ_DATA *obj;
     for (iWear = 0; iWear < MAX_WEAR; iWear++)
     // for ( iWear = MAX_WEAR-1; iWear >= 0; iWear-- )
     {
-      if ((obj = get_eq_char(victim, iWear)) != NULL && (can_see_wear(victim, iWear))) {
+      visible[iWear] = (obj = equipment.get(iWear)) != NULL && can_see_wear_equipped(victim, iWear, equipment);
+      if (visible[iWear]) {
         if (obj->wear_temp != NULL && obj->wear_temp[0] != '\0') {
-          if (where_length(obj->wear_temp) > max)
-          max = where_length(obj->wear_temp);
+          const int length = where_length(obj->wear_temp);
+          max = UMAX(max, length);
         }
         else if (obj->wear_string != NULL && obj->wear_string[0] != '\0') {
-          if (where_length(obj->wear_string) > max)
-          max = where_length(obj->wear_string);
+          const int length = where_length(obj->wear_string);
+          max = UMAX(max, length);
         }
         /*
         else
@@ -2748,6 +2749,12 @@ extern "C" {
       }
     }
     return max;
+  }
+
+  int max_where(CHAR_DATA *victim) {
+    const haven::EquipmentSnapshot equipment(victim);
+    bool visible[MAX_WEAR];
+    return max_where_equipped(victim, equipment, visible);
   }
 
   char *where_pad(char *string, int limit) {
@@ -2792,10 +2799,14 @@ extern "C" {
     strcpy(buf, "");
     OBJ_DATA *obj;
     bool found = FALSE;
-    int pad = max_where(victim);
+    // Formatting below does not change equipment or invoke gameplay callbacks.
+    const haven::EquipmentSnapshot equipment(victim);
+    bool visible[MAX_WEAR];
+    int pad = max_where_equipped(victim, equipment, visible);
 
     // equipment and clothing
-    if ((obj = get_eqr_char(victim, WEAR_HOLD)) != NULL && can_see_obj(ch, obj) && (can_see_wear(victim, WEAR_HOLD) || (has_xray(ch) && victim != ch && (!IS_IMMORTAL(ch) || !is_spyshield(victim))))) {
+    // get_eqr_char's primary-hand lookup must not use the secondary-hand fallback.
+    if ((obj = equipment.get(WEAR_HOLD)) != NULL && obj->wear_loc == WEAR_HOLD && can_see_obj(ch, obj) && (visible[WEAR_HOLD] || (has_xray(ch) && victim != ch && (!IS_IMMORTAL(ch) || !is_spyshield(victim))))) {
       if (!found) {
         strcat(string, "\n\r");
         sprintf(buf, "%s is using:\n\r\n\r", (victim->sex == SEX_MALE) ? "He" : "She");
@@ -2822,7 +2833,7 @@ extern "C" {
 
       strcat(string, "\n\r");
     }
-    if ((obj = get_eq_char(victim, WEAR_HOLD_2)) != NULL && can_see_obj(ch, obj) && (can_see_wear(victim, WEAR_HOLD_2) || (has_xray(ch) && victim != ch && (!IS_IMMORTAL(ch) || !is_spyshield(victim))))) {
+    if ((obj = equipment.get(WEAR_HOLD_2)) != NULL && can_see_obj(ch, obj) && (visible[WEAR_HOLD_2] || (has_xray(ch) && victim != ch && (!IS_IMMORTAL(ch) || !is_spyshield(victim))))) {
       if (!found) {
         strcat(string, "\n\r");
         sprintf(buf, "%s is using:\n\r\n\r", (victim->sex == SEX_MALE) ? "He" : "She");
@@ -2858,7 +2869,7 @@ extern "C" {
       if (iWear == WEAR_HOLD_2)
       continue;
 
-      if ((obj = get_eq_char(victim, iWear)) != NULL && (obj->item_type != ITEM_JEWELRY && obj->item_type != ITEM_CONTAINER) && can_see_obj(ch, obj) && (can_see_wear(victim, iWear) || (has_xray(ch) && victim != ch && (!IS_IMMORTAL(ch) || !is_spyshield(victim))))) {
+      if ((obj = equipment.get(iWear)) != NULL && (obj->item_type != ITEM_JEWELRY && obj->item_type != ITEM_CONTAINER) && can_see_obj(ch, obj) && (visible[iWear] || (has_xray(ch) && victim != ch && (!IS_IMMORTAL(ch) || !is_spyshield(victim))))) {
         if (!found) {
           strcat(string, "\n\r");
           sprintf(buf, "%s is using:\n\r\n\r", (victim->sex == SEX_MALE) ? "He" : "She");
@@ -2904,7 +2915,7 @@ extern "C" {
       if (iWear == WEAR_HOLD_2)
       continue;
 
-      if ((obj = get_eq_char(victim, iWear)) != NULL && (obj->item_type == ITEM_JEWELRY || obj->item_type == ITEM_CONTAINER) && can_see_obj(ch, obj) && (can_see_wear(victim, iWear) || (has_xray(ch) && victim != ch && (!IS_IMMORTAL(ch) || !is_spyshield(victim))))) {
+      if ((obj = equipment.get(iWear)) != NULL && (obj->item_type == ITEM_JEWELRY || obj->item_type == ITEM_CONTAINER) && can_see_obj(ch, obj) && (visible[iWear] || (has_xray(ch) && victim != ch && (!IS_IMMORTAL(ch) || !is_spyshield(victim))))) {
         if (!found) {
           strcat(string, "\n\r");
           sprintf(buf, "%s is using:\n\r\n\r", (victim->sex == SEX_MALE) ? "He" : "She");
@@ -3247,7 +3258,11 @@ extern "C" {
           }
         }
 
-        if (in_haven(ch->in_room) && photo == FALSE && can_shroud(ch) && event_cleanse != 1 && !seems_under_understanding(victim, ch) && !seems_under_limited(victim, ch) && !guestmonster(victim) && !higher_power(victim)) {
+        if (in_haven(ch->in_room) && photo == FALSE && can_shroud(ch) && event_cleanse != 1 && seems_under_black(victim, ch) && !guestmonster(victim) && !higher_power(victim)) {
+          buf = haven::format_text("%s aura has a faint `Dblack`x glow.\n\r", (victim->sex == SEX_MALE) ? "His" : "Her");
+          string += buf.data();
+        }
+        else if (in_haven(ch->in_room) && photo == FALSE && can_shroud(ch) && event_cleanse != 1 && !seems_under_understanding(victim, ch) && !seems_under_limited(victim, ch) && !guestmonster(victim) && !higher_power(victim)) {
           buf = haven::format_text("%s aura has a faint `rred`x ", (victim->sex == SEX_MALE) ? "His" : "Her");
           string += buf.data();
 
@@ -3818,7 +3833,7 @@ extern "C" {
               string += buf.data();
             }
             else if (get_skill(ch, SKILL_TOUCHED) > 0 && !is_super(ch) && seems_super(victim) && !IS_AFFECTED(victim, AFF_SEENSUPER) && number_percent() % 13 == 0) {
-              if (number_percent() % 2 == 0 || (under_understanding(victim, ch) && number_percent() % 7 != 1))
+              if (number_percent() % 2 == 0 || (under_sanctuary(victim, ch) && number_percent() % 7 != 1))
               buf = haven::format_text("%s ", shroud_desc(victim));
               else
               buf = haven::format_text("%s ", shroud_desc(random_person()));
@@ -4008,7 +4023,11 @@ extern "C" {
       sprintf(buf, "%s skin seems unnaturally smooth and pale.`x\n\r", (victim->sex == SEX_MALE) ? "His" : "Her");
       strcat(string, buf);
     }
-    if (in_haven(ch->in_room) && can_shroud(ch) && event_cleanse != 1 && !seems_under_understanding(victim, ch) && !seems_under_limited(victim, ch) && !guestmonster(victim)) {
+    if (in_haven(ch->in_room) && can_shroud(ch) && event_cleanse != 1 && seems_under_black(victim, ch) && !guestmonster(victim)) {
+      sprintf(buf, "%s aura has a faint `Dblack`x glow.\n\r", (victim->sex == SEX_MALE) ? "His" : "Her");
+      strcat(string, buf);
+    }
+    else if (in_haven(ch->in_room) && can_shroud(ch) && event_cleanse != 1 && !seems_under_understanding(victim, ch) && !seems_under_limited(victim, ch) && !guestmonster(victim)) {
       sprintf(buf, "%s aura has a faint `rred`x ", (victim->sex == SEX_MALE) ? "His" : "Her");
       strcat(string, buf);
 
@@ -5767,6 +5786,10 @@ extern "C" {
     number = number_argument(arg1, arg3);
     count = 0;
 
+    if ((!str_cmp(arg1, "roster") || !str_cmp(arg1, "board")
+         || !str_cmp(arg1, "noticeboard")) && student_dorm_roster(ch, current_room))
+      return;
+
     if (!str_cmp(arg1, "wardrobe") && current_room->area->vnum == 3 && current_room->vnum % 5 == 3) {
       do_function(ch, &do_stash, "");
       return;
@@ -6240,6 +6263,9 @@ extern "C" {
 
       if(!IS_NPC(ch) && (current_room->vnum == 1356 || current_room->vnum == 1494 || current_room->vnum == 3335 || current_room->vnum == 9597))
       college_roster(ch, current_room);
+
+      if (!IS_NPC(ch))
+        student_dorm_roster(ch, current_room);
 
       if (!IS_NPC(ch)) {
         send_to_char("\n\r", ch);
@@ -7088,7 +7114,10 @@ extern "C" {
     spacing = 6;
     printf_to_char(ch, "%*s", spacing, spacer);
     printf_to_char(ch, "%sSubdue %s[%s%s%s]", fields, border, data, (IS_FLAG(target->comm, COMM_SUBDUE)) ? "X" : " ", border);
-    if (under_limited(target, target)) {
+    if (under_black(target, target)) {
+      printf_to_char(ch, "%s[`DB%s] %sSanctuary", border, border, fields);
+    }
+    else if (under_limited(target, target)) {
       printf_to_char(ch, "%s[%s%s%s] %sSanctuary", border, data, "/", border, fields);
     }
     else {
@@ -9806,12 +9835,14 @@ extern "C" {
     printf_to_char(ch, "\n\n`gEstimated Pay`x: `G$`x%d.00\n\r", estimated_pay(ch));
     printf_to_char(ch, "`gEstimated Lifestyle Expenses`x: `G$`x%d.00\n\r", estimated_expenses(ch));
     printf_to_char(ch, "`gEstimated Vehicular Expenses`x: `G$`x%d.00\n\r", garage_charge(ch));
+    if (ch->skills[SKILL_SECONDCLASS] <= -2)
+      send_to_char("`DBlack Sanctuary`x: death and maim recovery only, at 20% of the usual recovery fee.\n\r", ch);
     if (personal_sanctuary(ch)) {
       FACTION_TYPE *patron = ch->vassal > 0 ? clan_lookup(ch->vassal) : NULL;
       if (patron && patron->valid)
         send_to_char("`gSanctuary`x: your vassal society pays for death recovery.\n\r", ch);
       else
-        printf_to_char(ch, "`gPersonal Sanctuary`x: $%ld per death recovery; suspended at $%ld debt.\n\r", PERSONAL_SANCTUARY_DEATH_COST / 100, PERSONAL_SANCTUARY_DEBT_LIMIT / 100);
+        printf_to_char(ch, "`gPersonal Sanctuary`x: $%ld per death recovery; suspended at $%ld debt.\n\r", (ch->skills[SKILL_SECONDCLASS] <= -2 ? PERSONAL_SANCTUARY_DEATH_COST / 5 : PERSONAL_SANCTUARY_DEATH_COST) / 100, PERSONAL_SANCTUARY_DEBT_LIMIT / 100);
       if (debt_blocks_sanctuary(ch))
         send_to_char("`RYour debt has suspended sanctuary protection.`x\n\r", ch);
       if (indentured_servant(ch))
@@ -10555,6 +10586,8 @@ extern "C" {
     if (has_xray(ch))
     xray = TRUE;
 
+    // No equipment changes while assembling this description.
+    const haven::EquipmentSnapshot equipment(victim);
     for (j = 0; j < 20; j++) {
       if (victim->pcdata->focused_order[COVERS_ALL] < min && victim->pcdata->focused_order[COVERS_ALL] > lastmin)
       min = victim->pcdata->focused_order[COVERS_ALL];
@@ -10578,8 +10611,11 @@ extern "C" {
         if (i < MAX_COVERS && (cover_table[i] == COVERS_ARSE || cover_table[i] == COVERS_GROIN || cover_table[i] == COVERS_THIGHS || cover_table[i] == COVERS_LOWER_LEGS || cover_table[i] == COVERS_FEET) && victim->shape == SHAPE_MERMAID)
         continue;
 
+        if (victim->pcdata->focused_order[i] != min)
+        continue;
+
         if (i == COVERS_SMELL && (safe_strlen(victim->pcdata->focused_descs[i]) > 2 && ch->in_room == victim->in_room && (get_skill(ch, SKILL_ACUTESMELL) > 0 || ch == victim))) {
-          if (victim->pcdata->focused_order[i] == min && str_cmp(victim->pcdata->focused_descs[i], "")) {
+          if (str_cmp(victim->pcdata->focused_descs[i], "")) {
             sprintf(buf, "%s", victim->pcdata->focused_descs[i]);
             len = safe_strlen(buf);
             if (len >= 2 && buf[len - 2] == '\n')
@@ -10588,18 +10624,19 @@ extern "C" {
           }
         }
         else if (i < MAX_COVERS) {
-          if (victim->pcdata->focused_order[i] == min && str_cmp(victim->pcdata->focused_descs[i], "") && (!is_covered(victim, cover_table[i]) || xray == TRUE)) {
+          const bool covered = is_covered_equipped(victim, cover_table[i], equipment);
+          if (str_cmp(victim->pcdata->focused_descs[i], "") && (!covered || xray == TRUE)) {
             sprintf(buf, "%s", victim->pcdata->focused_descs[i]);
             len = safe_strlen(buf);
             if (len >= 2 && buf[len - 2] == '\n')
             buf[len - 2] = 0;
             strcat(string, buf);
           }
-          if (victim->pcdata->focused_order[i] == min && !is_covered(victim, cover_table[i]) && victim->pcdata->brandlocation == i && victim->pcdata->branddate > 0) {
+          if (!covered && victim->pcdata->brandlocation == i && victim->pcdata->branddate > 0) {
             sprintf(buf, "%s has a symbol of %s on %s %s. ", (victim->sex == SEX_MALE) ? "He" : "She", victim->pcdata->brandstring, (victim->sex == SEX_MALE) ? "his" : "her", name_by_location(i));
             strcat(string, buf);
           }
-          if (victim->pcdata->focused_order[i] == min && !is_covered(victim, cover_table[i]) && str_cmp(victim->pcdata->scars[i], "")) {
+          if (!covered && str_cmp(victim->pcdata->scars[i], "")) {
             sprintf(buf, "%s ", victim->pcdata->scars[i]);
             strcat(string, buf);
           }
@@ -13233,13 +13270,14 @@ extern "C" {
     if (victim->shape != SHAPE_HUMAN && victim->shape != SHAPE_MERMAID)
     return;
 
+    const haven::EquipmentSnapshot equipment(victim);
     for (iWear = MAX_WEAR - 1; iWear >= 0; iWear--) {
       if (iWear == WEAR_HOLD)
       continue;
       if (iWear == WEAR_HOLD_2)
       continue;
 
-      if (location >= 0 && location < MAX_COVERS && (obj = get_eq_char(victim, iWear)) != NULL && does_undercover(obj, cover_table[location]) && can_see_obj(ch, obj) && (can_see_wear(victim, iWear) || (has_xray(ch) && victim != ch && (!IS_IMMORTAL(ch) || !is_spyshield(victim))))) {
+      if (location >= 0 && location < MAX_COVERS && (obj = equipment.get(iWear)) != NULL && does_undercover(obj, cover_table[location]) && can_see_obj(ch, obj) && (can_see_wear_equipped(victim, iWear, equipment) || (has_xray(ch) && victim != ch && (!IS_IMMORTAL(ch) || !is_spyshield(victim))))) {
         if (obj->wear_temp != NULL && obj->wear_temp[0] != '\0')
         strcat(string, obj->wear_temp);
 
@@ -13271,7 +13309,7 @@ extern "C" {
       if (i == MAX_COVERS && (safe_strlen(victim->pcdata->focused_descs[i]) > 2 && ch->in_room == victim->in_room && (get_skill(ch, SKILL_ACUTESMELL) > 0 || ch == victim))) {
         sprintf(buf, "%s", victim->pcdata->focused_descs[i]);
       }
-      else if (i < MAX_COVERS && (!is_covered(victim, cover_table[i]) || has_xray(ch))) {
+      else if (i < MAX_COVERS && (!is_covered_equipped(victim, cover_table[i], equipment) || has_xray(ch))) {
         sprintf(buf, "%s", victim->pcdata->focused_descs[i]);
       }
       else
@@ -13283,19 +13321,20 @@ extern "C" {
         buf[len - 2] = 0;
         strcat(string, buf);
       }
+      // Body locations reach here only after the visibility check above.
       for (int j = 0; j < 300; j++) {
-        if (victim->pcdata->stat_log_method[j] == TRAINED_TATTOO + location && victim->pcdata->stat_log_to[j] > 0 && (location >= 0 && location < MAX_COVERS && (!is_covered(victim, cover_table[location]) || has_xray(ch)))) {
+        if (victim->pcdata->stat_log_method[j] == TRAINED_TATTOO + location && victim->pcdata->stat_log_to[j] > 0 && location >= 0 && location < MAX_COVERS) {
           sprintf(buf, "%s has a tattoo of %s.\n\r", (victim->sex == SEX_MALE) ? "He" : "She", victim->pcdata->stat_log_string[j]);
           strcat(string, buf);
           j = 300;
         }
       }
 
-      if (victim->pcdata->branddate > 0 && victim->pcdata->brandlocation == location && (location >= 0 && location < MAX_COVERS && (!is_covered(victim, cover_table[location]) || has_xray(ch)))) {
+      if (victim->pcdata->branddate > 0 && victim->pcdata->brandlocation == location && location >= 0 && location < MAX_COVERS) {
         sprintf(buf, "%s has a symbol of %s on %s %s. ", (victim->sex == SEX_MALE) ? "He" : "She", victim->pcdata->brandstring, (victim->sex == SEX_MALE) ? "his" : "her", name_by_location(location));
         strcat(string, buf);
       }
-      if (safe_strlen(victim->pcdata->scars[location]) > 3 && (location >= 0 && location < MAX_COVERS && (!is_covered(victim, cover_table[location]) || has_xray(ch)))) {
+      if (safe_strlen(victim->pcdata->scars[location]) > 3 && location >= 0 && location < MAX_COVERS) {
         sprintf(buf, "%s ", victim->pcdata->scars[location]);
         strcat(string, buf);
       }
@@ -13315,7 +13354,7 @@ extern "C" {
       sprintf(buf, " %s", victim->pcdata->detail_over[location]);
       strcat(string, buf);
     }
-    if (safe_strlen(victim->pcdata->detail_under[location]) > 3 && (location >= 0 && location < MAX_COVERS && (!is_covered(victim, cover_table[location]) || has_xray(ch)))) {
+    if (safe_strlen(victim->pcdata->detail_under[location]) > 3 && (location >= 0 && location < MAX_COVERS && (!is_covered_equipped(victim, cover_table[location], equipment) || has_xray(ch)))) {
       sprintf(buf, " %s", victim->pcdata->detail_under[location]);
       strcat(string, buf);
     }
@@ -13595,13 +13634,14 @@ extern "C" {
     int iWear;
     OBJ_DATA *obj;
 
+    const haven::EquipmentSnapshot equipment(victim);
     for (iWear = MAX_WEAR - 1; iWear >= 0; iWear--) {
       if (iWear == WEAR_HOLD)
       continue;
       if (iWear == WEAR_HOLD_2)
       continue;
 
-      if ((obj = get_eq_char(victim, iWear)) != NULL && does_multicover(obj, location) && can_see_obj(ch, obj) && (can_see_wear(victim, iWear) || (has_xray(ch) && victim != ch && (!IS_IMMORTAL(ch) || !is_spyshield(victim))))) {
+      if ((obj = equipment.get(iWear)) != NULL && does_multicover(obj, location) && can_see_obj(ch, obj) && (can_see_wear_equipped(victim, iWear, equipment) || (has_xray(ch) && victim != ch && (!IS_IMMORTAL(ch) || !is_spyshield(victim))))) {
         if (obj->wear_temp != NULL && obj->wear_temp[0] != '\0')
         strcat(string, obj->wear_temp);
 
@@ -13644,14 +13684,15 @@ extern "C" {
         buf[len - 2] = 0;
       }
 
-      if (str_cmp(victim->pcdata->focused_descs[i], "") && safe_strlen(victim->pcdata->focused_descs[i]) > 6 && (i == COVERS_SMELL || (i < MAX_COVERS && (!is_covered(victim, cover_table[i]) || has_xray(ch))))) {
+      const bool visible = i < MAX_COVERS && (!is_covered_equipped(victim, cover_table[i], equipment) || has_xray(ch));
+      if (str_cmp(victim->pcdata->focused_descs[i], "") && safe_strlen(victim->pcdata->focused_descs[i]) > 6 && (i == COVERS_SMELL || visible)) {
         strcat(string, buf);
       }
       if (safe_strlen(victim->pcdata->detail_over[i]) > 3) {
         sprintf(buf, " %s", victim->pcdata->detail_over[i]);
         strcat(string, buf);
       }
-      if (safe_strlen(victim->pcdata->detail_under[i]) > 3 && (i < MAX_COVERS && (!is_covered(victim, cover_table[i]) || has_xray(ch)))) {
+      if (safe_strlen(victim->pcdata->detail_under[i]) > 3 && visible) {
         sprintf(buf, " %s", victim->pcdata->detail_under[i]);
         strcat(string, buf);
       }
@@ -13659,7 +13700,7 @@ extern "C" {
         sprintf(buf, "%s has a symbol of %s on %s %s. ", (victim->sex == SEX_MALE) ? "He" : "She", victim->pcdata->brandstring, (victim->sex == SEX_MALE) ? "his" : "her", name_by_location(i));
         strcat(string, buf);
       }
-      if (safe_strlen(victim->pcdata->scars[i]) > 3 && (i < MAX_COVERS && (!is_covered(victim, cover_table[i]) || has_xray(ch)))) {
+      if (safe_strlen(victim->pcdata->scars[i]) > 3 && visible) {
         sprintf(buf, "%s ", victim->pcdata->scars[i]);
         strcat(string, buf);
       }
@@ -16056,6 +16097,24 @@ extern "C" {
 
   void tier_prompt(CHAR_DATA *ch) {
     if (get_tier(ch) >= 3) {
+      if (sin_habit(ch) == SIN_SCAMMER) {
+        const char *prompts[] = {
+          "RP Prompt: What did someone tell you they were saving for before you took their money?\n\r",
+          "RP Prompt: Which promise made your last victim trust you? What did losing that money cost them?\n\r",
+          "RP Prompt: What ordinary comfort can a family no longer afford because of your scam?\n\r"
+        };
+        send_to_char(prompts[number_range(0, 2)], ch);
+        return;
+      }
+      if (sin_habit(ch) == SIN_CORRUPT) {
+        const char *prompts[] = {
+          "RP Prompt: Whose plea did you bury to protect someone powerful? Who is still waiting for an answer?\n\r",
+          "RP Prompt: What did you gain by looking away, and who has to live with that decision?\n\r",
+          "RP Prompt: Who tried to report the harm you enabled? What happened to their life afterward?\n\r"
+        };
+        send_to_char(prompts[number_range(0, 2)], ch);
+        return;
+      }
       if (number_percent() % 6 == 0)
       send_to_char("RP Prompt: Who has your character stepped on to get to where they are now?\n\r", ch);
       else if (number_percent() % 5 == 0)
@@ -16125,6 +16184,7 @@ extern "C" {
       return victim->description;
     }
 
+    const haven::EquipmentSnapshot equipment(victim);
     // Default dream appearance includes only visible body locations, not smell.
     for (j = 0; j < 20; j++) {
       if (victim->pcdata->focused_order[COVERS_ALL] < min && victim->pcdata->focused_order[COVERS_ALL] > lastmin)
@@ -16148,7 +16208,7 @@ extern "C" {
         if (cover_table[i] != COVERS_EYES && cover_table[i] != COVERS_HAIR && cover_table[i] != COVERS_LOWER_FACE && cover_table[i] != COVERS_NECK && cover_table[i] != COVERS_FOREHEAD && cover_table[i] != COVERS_HANDS)
         continue;
 
-        if (victim->pcdata->focused_order[i] == min && str_cmp(victim->pcdata->focused_descs[i], "") && (!is_covered(victim, cover_table[i]))) {
+        if (victim->pcdata->focused_order[i] == min && str_cmp(victim->pcdata->focused_descs[i], "") && (!is_covered_equipped(victim, cover_table[i], equipment))) {
           sprintf(buf, "%s", victim->pcdata->focused_descs[i]);
           len = safe_strlen(buf);
           if (len >= 2 && buf[len - 2] == '\n')

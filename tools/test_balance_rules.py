@@ -39,6 +39,7 @@ bool seems_super(CHAR_DATA *) { return true; }
 bool is_undead(CHAR_DATA *) { return false; }
 bool is_gm(CHAR_DATA *) { return false; }
 bool is_ghost(CHAR_DATA *) { return false; }
+bool college_student(CHAR_DATA *, bool) { return false; }
 bool is_helpless(CHAR_DATA *ch) { return ch->wounds > 3; }
 bool in_fight(CHAR_DATA *ch) { return ch->in_fight; }
 bool battleground(ROOM_INDEX_DATA *) { return false; }
@@ -67,6 +68,9 @@ source += section('skills.c', '  bool can_train_disc(', '  int train_disc_cost('
 source += 'bool legendary_allowed(CHAR_DATA *ch) { int skill = 1; bool show = false;\n'
 source += section('skills.c', '    if (skilltype(skill) == STYPE_ABOMINATION &&', '    if (skilltype(skill) == STYPE_SABILITIES)')
 source += 'return true; }\n'
+lookup = (ROOT / 'src/lookup.c').read_text()
+helper_start = lookup.index('  bool full_sanctuary_protection(')
+source += lookup[helper_start:lookup.index('  int fight_speed(', helper_start)]
 source += section('skills.c', '  static bool sanctuary_blocks_imprint_lock(', '  _DOFUN(do_imprint)')
 source += section('lookup.c', '  bool pact_holder(', '  bool in_wilds(')
 source += section('clans.c', '  bool cortex_loyalty_brainwashed(', '  int cortex_lifeforce_bonus(')
@@ -85,6 +89,7 @@ source += r'''
 int main() {
   CHAR_DATA ch = {}, author = {};
   PC_DATA pc = {}; ch.pcdata = &pc;
+  pc.understanding = (char *)"";
   for (tier = 1; tier <= 5; ++tier) {
     for (legends = 0; legends <= 4; ++legends)
       assert(legendary_allowed(&ch) == (tier >= 3 && legends < tier-2));
@@ -117,11 +122,20 @@ int main() {
   assert(!sanctuary_blocks_imprint_lock(&ch,&author));
   full_sanctuary = true; assert(sanctuary_blocks_imprint_lock(&ch,&author));
   full_sanctuary = false; limited_sanctuary = true;
-  assert(sanctuary_blocks_imprint_lock(&ch,&author));
-  assert(sanctuary_blocks_imprint_lock(&ch,nullptr));
+  assert(!sanctuary_blocks_imprint_lock(&ch,&author));
+  assert(!sanctuary_blocks_imprint_lock(&ch,nullptr));
   limited_sanctuary = false;
   SET_FLAG(ch.affected_by,AFF_UNDERSTANDING);
   assert(sanctuary_blocks_imprint_lock(&ch,&author));
+  for (int level : {-1, -2}) {
+    ch.skills[SKILL_SECONDCLASS] = level;
+    assert(!sanctuary_blocks_imprint_lock(&ch,&author));
+    assert(!sanctuary_blocks_imprint_lock(&ch,nullptr));
+  }
+  ch.skills[SKILL_SECONDCLASS] = 0;
+  limited_sanctuary = true;
+  assert(!sanctuary_blocks_imprint_lock(&ch,&author));
+  limited_sanctuary = false;
   REMOVE_FLAG(ch.affected_by,AFF_UNDERSTANDING);
   ch.race = RACE_CIVIL_SERVANT; ch.fcore = FACTION_SCUM;
   ch.name = str_dup("Clerk");

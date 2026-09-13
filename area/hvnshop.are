@@ -102,6 +102,32 @@ normal~
 ~
 0 0 unknown
 
+#45019
+cortex uniform seller quartermaster outfitter shopkeeper~
+the `wCortex quartermaster`x~
+A `wCortex quartermaster`x with `Rred respirator lenses`x stands behind the uniform counter.
+~
+The quartermaster wears a flared `wcharcoal-black helmet`x above two round,
+`Rglowing red lenses`x. A sculpted `wgunmetal respirator`x hides the lower face,
+its ribbed `ggray-green hose`x curling down to a canister on the chest harness.
+Broad, overlapping `wslate-gray pauldrons`x give the shoulders a heavy silhouette
+above a fitted cuirass and a high-collared `wcharcoal field coat`x. Pale scuffs
+pick out the armor's edges, while `ydull brass braid`x loops around one upper
+arm. Articulated gauntlets rest on the counter beside neatly stacked uniforms;
+a small `Wsilver CORTEX badge`x catches the light at the throat.
+~
+normal~
+~
+3x0x0x0x
+0x0x0x0x
+-1
+0
+0
+0
+0 0 stand stand either 0
+~
+0 0 unknown
+
 #0
 
 
@@ -115,14 +141,16 @@ wool~
 ~
 clothing 0 AB
 -1
-98800 112 0 0 0 0
+98801 112 0 0 0 0
 100 5 15 3500 100 0
 E
-royal blue gold academy school uniform blazer~
-This royal blue wool blazer has gold piping along its lapels and cuffs. A
-Cortex Academy badge is embroidered above the breast pocket, and the smooth
-lining allows it to sit neatly over a school shirt. Strong buttons and deep
-inner pockets suit everyday campus use.`x
+all royal blue gold academy school uniform blazer~
+This `Broyal blue`x wool blazer has long sleeves ending at the wrists and a
+tailored body reaching the waist. `YGold`x piping follows the low lapels,
+cuffs, and hem. The lapels leave the neck visible above a buttoned front,
+which can be opened over the chest. A Cortex Academy badge sits on the
+breast pocket. Smooth lining covers the back and arms, allowing the blazer
+to fit over a school shirt and sweater without hiding a tie at the throat.`x
 ~
 #45021
 royal blue gold academy school uniform trousers pants~
@@ -135,10 +163,13 @@ clothing 0 AB
 11776 1024 0 0 0 0
 100 3 10 2000 100 0
 E
-royal blue gold academy school uniform trousers pants~
-Tailored from royal blue wool, these straight-cut trousers have a narrow gold
-stripe down each outer seam. Belt loops and practical pockets keep the finish
-simple, while a small Cortex Academy label is stitched inside the waistband.`x
+all royal blue gold academy school uniform trousers pants~
+Tailored from `Broyal blue`x wool, these straight-cut trousers sit at the
+waist and fall to the ankles. A narrow `Ygold`x stripe runs down each outer
+seam. The seat and thighs have room for movement, and belt loops and
+practical hip pockets keep the finish simple. A buttoned waistband and
+zipped front fly secure the trousers; the hems leave the feet free for socks
+and shoes. A small Cortex Academy label is stitched inside.`x
 ~
 #45022
 royal blue gold academy school uniform pleated skirt~
@@ -148,14 +179,16 @@ wool~
 ~
 clothing 0 AB
 -1
-3584 512 0 0 0 0
+3584 0 0 0 0 0
 100 3 10 2000 100 0
 E
-royal blue gold academy school uniform pleated skirt~
-Even pleats give this knee-length royal blue skirt room to move. A fine band
-of gold thread follows the hem, matching the academy blazer, and a concealed
-side fastening keeps the waistband tidy. A small Cortex Academy label sits
-inside the waist.`x
+all royal blue gold academy school uniform pleated skirt~
+Even pleats carry this `Broyal blue`x skirt from a fitted waistband to a
+knee-length hem, with a fine band of `Ygold`x thread along the edge. The
+fabric hangs evenly around the hips, seat, and thighs, leaving the lower
+legs clear. A concealed side fastening opens just enough to slip the skirt
+on or off; the overlapping pleats stay in place around it. A small Cortex
+Academy label sits inside the waist.`x
 ~
 #45023
 royal blue gold academy school uniform striped tie~
@@ -166,12 +199,14 @@ silk~
 clothing 0 AB
 -1
 8 0 0 0 0 0
-100 4 2 600 100 0
+100 3 2 600 100 0
 E
-royal blue gold academy school uniform striped tie~
-Diagonal gold stripes cross this royal blue tie in a bright, regular pattern.
-The woven fabric holds a neat knot above a tiny embroidered academy crest. It
-can be worn with either the matching uniform pieces or a plain school shirt.`x
+all royal blue gold academy school uniform striped tie~
+Diagonal `Ygold`x stripes cross this `Broyal blue`x silk tie in a bright,
+regular pattern. A narrow band sits around the neck beneath a shirt collar
+and gathers into a neat knot at the throat. The tapered blade hangs down the
+shirtfront to a tiny embroidered academy crest. Its knot remains visible
+above the sweater neckline and blazer lapels.`x
 ~
 #45024
 emerald green gold academy school uniform blazer~
@@ -181,14 +216,16 @@ wool~
 ~
 clothing 0 AB
 -1
-98800 112 0 0 0 0
+98801 112 0 0 0 0
 100 5 15 3500 100 0
 E
-emerald green gold academy school uniform blazer~
-This emerald green wool blazer has gold piping along its lapels and cuffs. A
-Cortex Academy badge is embroidered above the breast pocket, and the smooth
-lining allows it to sit neatly over a school shirt. Strong buttons and deep
-inner pockets suit everyday campus use.`x
+all emerald green gold academy school uniform blazer~
+This `Gemerald green`x wool blazer has long sleeves ending at the wrists and
+a tailored body reaching the waist. `YGold`x piping follows the low lapels,
+cuffs, and hem. The lapels leave the neck visible above a buttoned front,
+which can be opened over the chest. A Cortex Academy badge sits on the
+breast pocket. Smooth lining covers the back and arms, allowing the blazer
+to fit over a school shirt and sweater without hiding a tie at the throat.`x
 ~
 #45025
 emerald green gold academy school uniform trousers pants~
@@ -201,11 +238,13 @@ clothing 0 AB
 11776 1024 0 0 0 0
 100 3 10 2000 100 0
 E
-emerald green gold academy school uniform trousers pants~
-Tailored from emerald green wool, these straight-cut trousers have a narrow
-gold stripe down each outer seam. Belt loops and practical pockets keep the
-finish simple, while a small Cortex Academy label is stitched inside the
-waistband.`x
+all emerald green gold academy school uniform trousers pants~
+Tailored from `Gemerald green`x wool, these straight-cut trousers sit at the
+waist and fall to the ankles. A narrow `Ygold`x stripe runs down each outer
+seam. The seat and thighs have room for movement, and belt loops and
+practical hip pockets keep the finish simple. A buttoned waistband and
+zipped front fly secure the trousers; the hems leave the feet free for socks
+and shoes. A small Cortex Academy label is stitched inside.`x
 ~
 #45026
 emerald green gold academy school uniform pleated skirt~
@@ -215,14 +254,16 @@ wool~
 ~
 clothing 0 AB
 -1
-3584 512 0 0 0 0
+3584 0 0 0 0 0
 100 3 10 2000 100 0
 E
-emerald green gold academy school uniform pleated skirt~
-Even pleats give this knee-length emerald green skirt room to move. A fine
-band of gold thread follows the hem, matching the academy blazer, and a
-concealed side fastening keeps the waistband tidy. A small Cortex Academy
-label sits inside the waist.`x
+all emerald green gold academy school uniform pleated skirt~
+Even pleats carry this `Gemerald green`x skirt from a fitted waistband to a
+knee-length hem, with a fine band of `Ygold`x thread along the edge. The
+fabric hangs evenly around the hips, seat, and thighs, leaving the lower
+legs clear. A concealed side fastening opens just enough to slip the skirt
+on or off; the overlapping pleats stay in place around it. A small Cortex
+Academy label sits inside the waist.`x
 ~
 #45027
 emerald green gold academy school uniform striped tie~
@@ -233,13 +274,14 @@ silk~
 clothing 0 AB
 -1
 8 0 0 0 0 0
-100 4 2 600 100 0
+100 3 2 600 100 0
 E
-emerald green gold academy school uniform striped tie~
-Diagonal gold stripes cross this emerald green tie in a bright, regular
-pattern. The woven fabric holds a neat knot above a tiny embroidered academy
-crest. It can be worn with either the matching uniform pieces or a plain
-school shirt.`x
+all emerald green gold academy school uniform striped tie~
+Diagonal `Ygold`x stripes cross this `Gemerald green`x silk tie in a bright,
+regular pattern. A narrow band sits around the neck beneath a shirt collar
+and gathers into a neat knot at the throat. The tapered blade hangs down the
+shirtfront to a tiny embroidered academy crest. Its knot remains visible
+above the sweater neckline and blazer lapels.`x
 ~
 #45028
 plum purple silver academy school uniform blazer~
@@ -249,14 +291,16 @@ wool~
 ~
 clothing 0 AB
 -1
-98800 112 0 0 0 0
+98801 112 0 0 0 0
 100 5 15 3500 100 0
 E
-plum purple silver academy school uniform blazer~
-This plum purple wool blazer has silver piping along its lapels and cuffs. A
-Cortex Academy badge is embroidered above the breast pocket, and the smooth
-lining allows it to sit neatly over a school shirt. Strong buttons and deep
-inner pockets suit everyday campus use.`x
+all plum purple silver academy school uniform blazer~
+This `Mplum purple`x wool blazer has long sleeves ending at the wrists and a
+tailored body reaching the waist. `WSilver`x piping follows the low lapels,
+cuffs, and hem. The lapels leave the neck visible above a buttoned front,
+which can be opened over the chest. A Cortex Academy badge sits on the
+breast pocket. Smooth lining covers the back and arms, allowing the blazer
+to fit over a school shirt and sweater without hiding a tie at the throat.`x
 ~
 #45029
 plum purple silver academy school uniform trousers pants~
@@ -269,11 +313,13 @@ clothing 0 AB
 11776 1024 0 0 0 0
 100 3 10 2000 100 0
 E
-plum purple silver academy school uniform trousers pants~
-Tailored from plum purple wool, these straight-cut trousers have a narrow
-silver stripe down each outer seam. Belt loops and practical pockets keep the
-finish simple, while a small Cortex Academy label is stitched inside the
-waistband.`x
+all plum purple silver academy school uniform trousers pants~
+Tailored from `Mplum purple`x wool, these straight-cut trousers sit at the
+waist and fall to the ankles. A narrow `Wsilver`x stripe runs down each
+outer seam. The seat and thighs have room for movement, and belt loops and
+practical hip pockets keep the finish simple. A buttoned waistband and
+zipped front fly secure the trousers; the hems leave the feet free for socks
+and shoes. A small Cortex Academy label is stitched inside.`x
 ~
 #45030
 plum purple silver academy school uniform pleated skirt~
@@ -283,14 +329,16 @@ wool~
 ~
 clothing 0 AB
 -1
-3584 512 0 0 0 0
+3584 0 0 0 0 0
 100 3 10 2000 100 0
 E
-plum purple silver academy school uniform pleated skirt~
-Even pleats give this knee-length plum purple skirt room to move. A fine band
-of silver thread follows the hem, matching the academy blazer, and a concealed
-side fastening keeps the waistband tidy. A small Cortex Academy label sits
-inside the waist.`x
+all plum purple silver academy school uniform pleated skirt~
+Even pleats carry this `Mplum purple`x skirt from a fitted waistband to a
+knee-length hem, with a fine band of `Wsilver`x thread along the edge. The
+fabric hangs evenly around the hips, seat, and thighs, leaving the lower
+legs clear. A concealed side fastening opens just enough to slip the skirt
+on or off; the overlapping pleats stay in place around it. A small Cortex
+Academy label sits inside the waist.`x
 ~
 #45031
 plum purple silver academy school uniform striped tie~
@@ -301,13 +349,14 @@ silk~
 clothing 0 AB
 -1
 8 0 0 0 0 0
-100 4 2 600 100 0
+100 3 2 600 100 0
 E
-plum purple silver academy school uniform striped tie~
-Diagonal silver stripes cross this plum purple tie in a bright, regular
-pattern. The woven fabric holds a neat knot above a tiny embroidered academy
-crest. It can be worn with either the matching uniform pieces or a plain
-school shirt.`x
+all plum purple silver academy school uniform striped tie~
+Diagonal `Wsilver`x stripes cross this `Mplum purple`x silk tie in a bright,
+regular pattern. A narrow band sits around the neck beneath a shirt collar
+and gathers into a neat knot at the throat. The tapered blade hangs down the
+shirtfront to a tiny embroidered academy crest. Its knot remains visible
+above the sweater neckline and blazer lapels.`x
 ~
 #45032
 burgundy red gold academy school uniform blazer~
@@ -317,14 +366,16 @@ wool~
 ~
 clothing 0 AB
 -1
-98800 112 0 0 0 0
+98801 112 0 0 0 0
 100 5 15 3500 100 0
 E
-burgundy red gold academy school uniform blazer~
-This burgundy red wool blazer has gold piping along its lapels and cuffs. A
-Cortex Academy badge is embroidered above the breast pocket, and the smooth
-lining allows it to sit neatly over a school shirt. Strong buttons and deep
-inner pockets suit everyday campus use.`x
+all burgundy red gold academy school uniform blazer~
+This `Rburgundy red`x wool blazer has long sleeves ending at the wrists and
+a tailored body reaching the waist. `YGold`x piping follows the low lapels,
+cuffs, and hem. The lapels leave the neck visible above a buttoned front,
+which can be opened over the chest. A Cortex Academy badge sits on the
+breast pocket. Smooth lining covers the back and arms, allowing the blazer
+to fit over a school shirt and sweater without hiding a tie at the throat.`x
 ~
 #45033
 burgundy red gold academy school uniform trousers pants~
@@ -337,11 +388,13 @@ clothing 0 AB
 11776 1024 0 0 0 0
 100 3 10 2000 100 0
 E
-burgundy red gold academy school uniform trousers pants~
-Tailored from burgundy red wool, these straight-cut trousers have a narrow
-gold stripe down each outer seam. Belt loops and practical pockets keep the
-finish simple, while a small Cortex Academy label is stitched inside the
-waistband.`x
+all burgundy red gold academy school uniform trousers pants~
+Tailored from `Rburgundy red`x wool, these straight-cut trousers sit at the
+waist and fall to the ankles. A narrow `Ygold`x stripe runs down each outer
+seam. The seat and thighs have room for movement, and belt loops and
+practical hip pockets keep the finish simple. A buttoned waistband and
+zipped front fly secure the trousers; the hems leave the feet free for socks
+and shoes. A small Cortex Academy label is stitched inside.`x
 ~
 #45034
 burgundy red gold academy school uniform pleated skirt~
@@ -351,14 +404,16 @@ wool~
 ~
 clothing 0 AB
 -1
-3584 512 0 0 0 0
+3584 0 0 0 0 0
 100 3 10 2000 100 0
 E
-burgundy red gold academy school uniform pleated skirt~
-Even pleats give this knee-length burgundy red skirt room to move. A fine band
-of gold thread follows the hem, matching the academy blazer, and a concealed
-side fastening keeps the waistband tidy. A small Cortex Academy label sits
-inside the waist.`x
+all burgundy red gold academy school uniform pleated skirt~
+Even pleats carry this `Rburgundy red`x skirt from a fitted waistband to a
+knee-length hem, with a fine band of `Ygold`x thread along the edge. The
+fabric hangs evenly around the hips, seat, and thighs, leaving the lower
+legs clear. A concealed side fastening opens just enough to slip the skirt
+on or off; the overlapping pleats stay in place around it. A small Cortex
+Academy label sits inside the waist.`x
 ~
 #45035
 burgundy red gold academy school uniform striped tie~
@@ -369,13 +424,14 @@ silk~
 clothing 0 AB
 -1
 8 0 0 0 0 0
-100 4 2 600 100 0
+100 3 2 600 100 0
 E
-burgundy red gold academy school uniform striped tie~
-Diagonal gold stripes cross this burgundy red tie in a bright, regular
-pattern. The woven fabric holds a neat knot above a tiny embroidered academy
-crest. It can be worn with either the matching uniform pieces or a plain
-school shirt.`x
+all burgundy red gold academy school uniform striped tie~
+Diagonal `Ygold`x stripes cross this `Rburgundy red`x silk tie in a bright,
+regular pattern. A narrow band sits around the neck beneath a shirt collar
+and gathers into a neat knot at the throat. The tapered blade hangs down the
+shirtfront to a tiny embroidered academy crest. Its knot remains visible
+above the sweater neckline and blazer lapels.`x
 ~
 #45036
 ivory gold academy school uniform shirt~
@@ -385,14 +441,16 @@ cotton~
 ~
 clothing 0 AB
 -1
-98800 112 0 0 0 0
+98809 120 0 0 0 0
 100 2 10 1200 100 0
 E
-ivory gold academy school uniform shirt~
-Crisp ivory cotton forms a collared school shirt, with gold stitching around
-the cuffs and a small academy crest on the breast pocket. The plain body sits
-comfortably beneath any of the colorful blazers, and sturdy buttons run down
-the front.`x
+all ivory gold academy school uniform shirt~
+Crisp `Wivory cotton`x forms a collared school shirt with long sleeves
+buttoned at the wrists. `YGold stitching`x outlines the cuffs and a small
+academy crest on the breast pocket. The body covers the chest and back to
+the waist, with a close collar around the neck. Buttons run from the throat
+down the front, allowing the collar and chest to be opened together. The
+smooth fabric fits beneath a sweater or blazer.`x
 ~
 #45037
 teal turquoise gold academy school uniform sweater jumper~
@@ -402,13 +460,16 @@ wool~
 ~
 clothing 0 AB
 -1
-98800 0 0 0 0 0
+98801 0 0 0 0 0
 100 4 12 2200 100 0
 E
-teal turquoise gold academy school uniform sweater jumper~
-Soft teal wool gives this V-neck sweater a bright finish. Gold edging follows
-the neckline and cuffs, with a small academy badge knitted into the chest. Its
-relaxed cut fits over a school shirt without concealing the knot of a tie.`x
+all teal turquoise gold academy school uniform sweater jumper~
+Soft `Cteal wool`x forms a long-sleeved academy sweater with a V-shaped
+neckline and a ribbed waistband. `YGold edging`x follows the neckline and
+wrist cuffs, with a small academy badge knitted into the chest. The dense
+knit covers the torso, back, and arms to the wrists while leaving the neck
+and tie knot visible. Its relaxed cut fits over a school shirt and beneath a
+blazer; it pulls on over the head without fastenings.`x
 ~
 #45038
 white gold academy school uniform socks~
@@ -421,15 +482,17 @@ clothing 0 AB
 24576 0 0 0 0 0
 100 1 3 400 100 0
 E
-white gold academy school uniform socks~
-White cotton socks reach to just below the knee, where two narrow gold bands
-add a flash of color. Reinforced heels and toes give them a practical finish
-for long days moving between classrooms.`x
+all white gold academy school uniform socks~
+`WWhite cotton socks`x cover the feet and calves to just below the knees,
+where two narrow `Ygold bands`x circle the ribbed cuffs. Reinforced heels
+and toes give the feet a snug, comfortable fit. The smooth knit sits beneath
+trousers or shows below a skirt, while the low fronts of school loafers
+leave the socks visible above the shoes.`x
 ~
 #45039
 black gold academy school uniform loafers shoes~
-`Dblack`x school loafers with `Ygold`x buckles~
-a pair of `Dblack`x school loafers with `Ygold`x buckles~
+`wblack`x school loafers with `Ygold`x buckles~
+a pair of `wblack`x school loafers with `Ygold`x buckles~
 leather~
 ~
 clothing 0 AB
@@ -437,10 +500,160 @@ clothing 0 AB
 16384 0 0 0 0 0
 100 2 10 1800 100 0
 E
-black gold academy school uniform loafers shoes~
-Polished black leather loafers have rounded toes and low, steady heels. Small
-gold buckles brighten the straps across the insteps. Flexible soles and soft
+all black gold academy school uniform loafers shoes~
+Polished `wblack leather loafers`x enclose the feet in rounded toes and low,
+steady heels. The openings sit below the ankles, leaving socks and calves
+visible. Small `Ygold buckles`x brighten the straps across the insteps, and
+pale `wgray highlights`x trace the stitched edges. Flexible soles and soft
 lining make them suitable for walking around the campus.`x
+~
+#45040
+cortex uniform charcoal black flared helmet~
+`wcharcoal-black`x Cortex helmet with a `Wsteel-edged`x brim~
+a `wcharcoal-black`x Cortex helmet with a `Wsteel-edged`x brim~
+steel~
+~
+clothing 0 AB
+-1
+4098 0 0 0 0 0
+100 4 12 6500 100 0
+E
+all cortex uniform charcoal black flared helmet~
+A domed `wcharcoal-black shell`x sweeps into a low brow and a flared skirt
+around the ears and nape. Subtle `ggray-green panels`x break up the crown,
+while worn `Wsteel-gray edges`x trace its severe outline. An adjustable padded
+liner and chin strap hold the helmet above a respirator's eyepieces. A small
+`Wsilver CORTEX stamp`x marks the rear rim.`x
+~
+#45041
+cortex uniform gunmetal red lens respirator mask hose~
+`wgunmetal`x Cortex respirator with `Rred lenses`x~
+a `wgunmetal`x Cortex respirator with `Rred lenses`x~
+rubber~
+~
+clothing 0 AB
+-1
+5 0 0 0 0 0
+100 3 8 5500 100 0
+E
+all cortex uniform gunmetal red lens respirator mask hose~
+Two circular `Rred lenses`x glow in a molded `wgunmetal faceplate`x, giving
+the mask a watchful, mechanical stare. Angular cheek housings frame a ridged
+mouth grille. A corrugated `ggray-green breathing hose`x runs from the grille
+to a compact canister clipped to its chest strap, with `Wpewter fittings`x at
+each end. Broad rubber straps secure the mask beneath a helmet.`x
+~
+#45042
+cortex uniform charcoal black field coat jacket brass braid~
+`wcharcoal`x Cortex field coat with `ybrass braid`x~
+a `wcharcoal`x Cortex field coat with `ybrass braid`x~
+cotton~
+~
+clothing 0 AB
+-1
+102393 1144 0 0 0 0
+100 3 18 7500 100 0
+E
+all cortex uniform charcoal black field coat jacket brass braid~
+Heavy `wcharcoal-black cloth`x forms a high-collared field coat, tailored close
+through the ribs before falling into split skirts over the thighs. `gFaded
+olive seams`x outline reinforced elbows and deep utility pockets. A loop of
+`ydull brass shoulder braid`x rests around the upper arm, and a `Wsilver CORTEX
+tab`x sits at the throat. The flat front and shoulder loops fit neatly beneath
+a cuirass and its broad pauldrons. A concealed front zip opens the collar,
+chest, and lap while the sleeves, back, and side skirts stay in place.`x
+~
+#45043
+cortex uniform slate gray cuirass armor armour pauldrons shoulder harness~
+`wslate-gray`x Cortex cuirass with broad `ggray-green pauldrons`x~
+a `wslate-gray`x Cortex cuirass with broad `ggray-green pauldrons`x~
+composite~
+~
+clothing 0 AB
+-1
+33265 0 0 0 0 0
+100 4 25 12500 100 0
+E
+all cortex uniform slate gray cuirass armor armour pauldrons shoulder harness~
+Overlapping `wslate-gray plates`x form a sculpted cuirass, their raised ribs
+and pale, scuffed edges catching the light. Bulky `ggray-green pauldrons`x fan
+over both shoulders in stepped sections, creating a broad, imposing outline.
+`wCharcoal webbing`x and `Wpewter buckles`x secure the chest and back panels.
+A canister cradle and hose clips sit below a small `Wsilver CORTEX insignia`x.
+The pauldrons cover the upper arms, leaving the elbows and forearms free.`x
+~
+#45044
+cortex uniform charcoal black reinforced trousers pants~
+`wcharcoal-black`x Cortex trousers with `golive knee panels`x~
+a pair of `wcharcoal-black`x Cortex trousers with `golive knee panels`x~
+cotton~
+~
+clothing 0 AB
+-1
+11776 1024 0 0 0 0
+100 2 12 4000 100 0
+E
+all cortex uniform charcoal black reinforced trousers pants~
+Straight-cut `wcharcoal-black trousers`x have a high waist, roomy cargo pockets,
+and reinforced `gmuted olive knee panels`x. Pale `wgray stitching`x follows
+the outer seams and heavy belt loops. A buttoned waistband and front zip
+secure the trousers. Adjustable ankle tabs draw the cuffs close enough to
+tuck into tall boots, while a discreet `Wsilver CORTEX label`x is sewn above
+the rear pocket.`x
+~
+#45045
+cortex uniform gunmetal plated gauntlets gloves~
+`wgunmetal-plated`x Cortex gauntlets with `Wsteel knuckles`x~
+a pair of `wgunmetal-plated`x Cortex gauntlets with `Wsteel knuckles`x~
+leather~
+~
+clothing 0 AB
+-1
+196608 0 0 0 0 0
+100 4 8 4500 100 0
+E
+all cortex uniform gunmetal plated gauntlets gloves~
+Articulated `wgunmetal plates`x run from long forearm cuffs to ridged
+`Wsteel-gray knuckles`x. Beneath them, flexible `wcharcoal leather`x bends at
+the finger joints and grips across the palms. `gOlive webbing straps`x cinch
+the cuffs over coat sleeves. Fine scratches brighten each plate's rim, and
+small `Wsilver CORTEX stamps`x mark the wrists.`x
+~
+#45046
+cortex uniform charcoal black jackboots boots~
+`wcharcoal-black`x Cortex jackboots with `Wpewter buckles`x~
+a pair of `wcharcoal-black`x Cortex jackboots with `Wpewter buckles`x~
+leather~
+~
+clothing 0 AB
+-1
+24576 0 0 0 0 0
+100 3 14 5000 100 0
+E
+all cortex uniform charcoal black jackboots boots~
+Tall `wcharcoal-black leather jackboots`x rise to just below the knees.
+`WSteel-gray toe caps`x and raised shin panels carry pale scuffs along their
+edges, while two `Wpewter buckles`x secure each outer calf. Deeply treaded soles
+and reinforced heels give the boots a heavy, purposeful profile. A narrow
+`golive pull tab`x at each cuff bears the Cortex issue mark.`x
+~
+#45047
+cortex uniform charcoal black utility belt pouches~
+`wcharcoal`x Cortex utility belt with `golive pouches`x~
+a `wcharcoal`x Cortex utility belt with `golive pouches`x~
+canvas~
+~
+clothing 0 AB
+-1
+320 0 0 0 0 0
+100 5 6 2500 100 0
+E
+all cortex uniform charcoal black utility belt pouches~
+Wide `wcharcoal webbing`x supports a row of flat `gmuted olive pouches`x around
+the waist. A square `Wbrushed pewter buckle`x carries a deeply stamped CORTEX
+wordmark. `yDull brass snaps`x fasten the flaps, and reinforced attachment
+loops line the hips. The adjustable belt can be cinched over a field coat
+around the lower edge of a cuirass, with the pouches and buckle facing out.`x
 ~
 #0
 
@@ -482,6 +695,7 @@ S
 45016 34 32 8 12 6 100 100 0 23 0 0
 45017 8 9 6 21 23 100 100 0 23 0 0
 45018 6 0 0 0 0 100 100 0 23 0 0
+45019 6 0 0 0 0 100 100 0 23 0 0
 0
 
 

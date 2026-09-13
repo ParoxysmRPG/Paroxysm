@@ -47,7 +47,7 @@ int get_tier(CHAR_DATA *) { return tier; }
 char *dream_detail(CHAR_DATA *, char *, int) { return (char *)"dream"; }
 int weather_bonus(CHAR_DATA *) { return weather; }
 bool is_super(CHAR_DATA *) { return false; }
-bool under_understanding(CHAR_DATA *, CHAR_DATA *) { return true; }
+bool under_sanctuary(CHAR_DATA *, CHAR_DATA *) { return true; }
 bool under_limited(CHAR_DATA *, CHAR_DATA *) { return true; }
 bool in_haven(ROOM_INDEX_DATA *) { return false; }
 bool clinic_staff(CHAR_DATA *, bool) { return false; }

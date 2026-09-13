@@ -102,6 +102,31 @@ int main() {
     ch->desc = new_descriptor();
     ch->desc->character = ch;
 
+    // Arbitrary input bytes must never form a negative command-hash index.
+    for (int byte = 128; byte <= 255; ++byte) {
+        char input[] = {static_cast<char>(byte), '\0'};
+        assert(!find_command(input));
+        run(ch, input);
+    }
+    std::string oversized(MAX_INPUT_LENGTH, 'x');
+    interpret(ch, oversized.data());
+    assert(strstr(ch->desc->outbuf, "Command too long"));
+
+    // NPCs have no PC_DATA; numeric input must not enter survey/walk handling.
+    CHAR_DATA *npc = new_char();
+    SET_FLAG(npc->act, ACT_IS_NPC);
+    npc->name = str_dup("CommandAuditNpc");
+    npc->in_room = ch->in_room;
+    npc->position = POS_STANDING;
+    npc->pcdata = nullptr;
+    char numeric[] = "123";
+    interpret(npc, numeric);
+
+    ch->trust = ch->level = 1;
+    run(ch, "alias jemhack86");
+    assert(ch->trust == 1 && ch->level == 1);
+    ch->trust = ch->level = MAX_LEVEL;
+
     auto *south = named("s");
     auto *society = named("society");
     DO_FUN *real_south = south->do_fun;

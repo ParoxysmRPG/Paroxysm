@@ -499309,14 +499309,29 @@ Y ~
 S
 #9475
 the second floor landing~
-A worn strip of floor carries passage through the building's interior. Old
-scuffs cluster along the lower walls, with repairs showing as slightly
-different shades in the finish. Voices and footsteps travel readily through
-the plain space, reaching farther than a casual glance. Substantial woodwork
-holds the library's dry paper smell, with fine dust sheltered in the deeper
-decorative seams.`x
+A `WCORTEX UNIFORM SUPPLY`x sign hangs over a `wgunmetal counter`x on the
+landing. Racks of `wcharcoal field coats`x stand beside broad-shouldered
+`wslate-gray armor`x, flared helmets, and respirators with round `Rred lenses`x.
+`gOlive webbing`x and `ybrass shoulder braid`x add muted color to the display.
+Bright lamps pick out pale edges on the dark equipment, and a tall `wfitting
+mirror`x stands beside the counter. The library's dry paper smell mingles with
+canvas and leather. Stairs lead down to the Academy Uniform Shop; the landing
+continues west. Use list to browse the quartermaster's stock and buy followed
+by an item number to purchase.`x
 ~
-0 8 9
+0 40 5
+P
+counter~
+A `wgunmetal counter`x holds neatly folded uniforms, a measuring tape, and a
+`Wsilver Cortex issue ledger`x. A sample respirator shows off its `Rred lenses`x
+and ribbed `ggray-green hose`x beside a rack of flared helmets.`x
+~
+P
+fitting mirror~
+A full-length mirror in a `Wbrushed steel frame`x reflects the uniform racks.
+Bright lamps along its sides make the edges of `wcharcoal cloth`x and
+`wslate-gray plates`x easy to distinguish while trying on a complete outfit.`x
+~
 B 1
 G 0 0 50 0 0
 C 19 60 2
@@ -499345,7 +499360,7 @@ D5
 ~
 ~
 0 0 18074
-0 3 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
 D6
 ~
 ~
@@ -650252,9 +650267,10 @@ Royal blue, emerald green, plum purple, and burgundy uniforms fill neatly
 spaced racks around the mezzanine. Gold piping and silver braid catch the
 light on academy badges, while shirts and knitwear are folded beside a
 `wfitting bench`x and a tall mirror. The outfitter works behind a polished
-`wcounter`x. Stairs descend directly to reception; the student union mezzanine
-is west and the cafeteria south. Use list to browse and buy followed by an
-item number to purchase.`x
+`wcounter`x. Stairs descend directly to reception and rise to a `WCortex uniform
+seller`x on the second floor landing; the student union mezzanine is west and
+the cafeteria south. Use list to browse and buy followed by an item number
+to purchase.`x
 ~
 0 40 5
 P
@@ -650293,7 +650309,7 @@ D4
 ~
 ~
 0 0 9475
-0 3 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
 D5
 ~
 ~
@@ -783974,6 +783990,15 @@ G 0 45023 0
 G 0 45022 0
 G 0 45021 0
 G 0 45020 0
+M 0 45019 1 9475 1
+G 0 45047 0
+G 0 45046 0
+G 0 45045 0
+G 0 45044 0
+G 0 45043 0
+G 0 45042 0
+G 0 45041 0
+G 0 45040 0
 D 0 1490 3 1
 D 0 1494 0 1
 D 0 1494 2 1

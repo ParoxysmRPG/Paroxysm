@@ -25,7 +25,7 @@ ROOM_INDEX_DATA cell = {}, institute = {}, exercise = {}, street = {};
 std::vector<EVENT_TYPE *> EventVect;
 DescList descriptor_list;
 bool in_haven(ROOM_INDEX_DATA *) { return haven; }
-bool under_understanding(CHAR_DATA *, CHAR_DATA *) { return sanctuary; }
+bool under_sanctuary(CHAR_DATA *, CHAR_DATA *) { return sanctuary; }
 bool trapped_room(ROOM_INDEX_DATA *, CHAR_DATA *) { return trapped; }
 bool institute_room(ROOM_INDEX_DATA *r) { return r == &institute; }
 bool clinic_patient(CHAR_DATA *) { return patient; }

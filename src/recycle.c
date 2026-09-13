@@ -4172,6 +4172,8 @@ int last_msg;
     pcdata->lifeforcecooldown = 0;
     pcdata->last_feeding = 0;
     pcdata->feeding_reminder = 0;
+    pcdata->next_sin_event = 0;
+    pcdata->last_sin_story = -1;
 
     pcdata->currentmonster = 0;
     pcdata->stories_run = 0;
