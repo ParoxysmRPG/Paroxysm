@@ -3545,9 +3545,6 @@ extern "C" {
     if (IS_AFFECTED(ch, AFF_COMMUTE))
     return FALSE;
 
-    // The social drawback supplies continuing coverage without a faction.
-    if (limited && ch->skills[SKILL_SECONDCLASS] < 0) return TRUE;
-
     if (ch->race == RACE_FACULTY) {
       if (college_staff(ch, FALSE) || clinic_staff(ch, FALSE)) {
         return TRUE;
@@ -3675,9 +3672,6 @@ extern "C" {
       else
       return FALSE;
     }
-    // The social drawback supplies continuing coverage without a faction.
-    if (limited && ch->skills[SKILL_SECONDCLASS] < 0) return TRUE;
-
     if (ch->race == RACE_FACULTY) {
       if (college_staff(ch, FALSE) || clinic_staff(ch, FALSE))
       return TRUE;

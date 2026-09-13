@@ -9835,7 +9835,7 @@ extern "C" {
     printf_to_char(ch, "\n\n`gEstimated Pay`x: `G$`x%d.00\n\r", estimated_pay(ch));
     printf_to_char(ch, "`gEstimated Lifestyle Expenses`x: `G$`x%d.00\n\r", estimated_expenses(ch));
     printf_to_char(ch, "`gEstimated Vehicular Expenses`x: `G$`x%d.00\n\r", garage_charge(ch));
-    if (ch->skills[SKILL_SECONDCLASS] <= -2)
+    if (under_black(ch, ch))
       send_to_char("`DBlack Sanctuary`x: death and maim recovery only, at 20% of the usual recovery fee.\n\r", ch);
     if (personal_sanctuary(ch)) {
       FACTION_TYPE *patron = ch->vassal > 0 ? clan_lookup(ch->vassal) : NULL;

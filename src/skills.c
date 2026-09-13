@@ -1320,14 +1320,7 @@ extern "C" {
         }
 
         if (skill_table[i].vnum == SKILL_SECONDCLASS) {
-          if (target->skills[SKILL_SECONDCLASS] <= -2) {
-            send_to_char("Your Second Class Citizen stat is already as low as it can go.\n\r", ch);
-            return;
-          }
-          --target->skills[SKILL_SECONDCLASS];
-          if (!IS_IMMORTAL(ch)) refund_rpexp(target, BASE_STAT_COST, TRUE);
-          send_to_char("You lower your Second Class Citizen stat.\n\r", ch);
-          limunderglow(target);
+          send_to_char("Second Class Citizen cannot be negtrained.\n\r", ch);
           return;
         }
 

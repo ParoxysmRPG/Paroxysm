@@ -2,8 +2,8 @@
 
 The social stat uses saved skill 235. Its allowed values are 0, -1 and -2.
 Creation accepts both negative levels, each worth one negative stat point.
-`negtrain Second Class Citizen` steps from 0 to -1 to -2; `train Second Class
-Citizen` buys back one level at the normal single-point base RPXP price.
+Second Class Citizen cannot be negtrained. `train Second Class Citizen` buys
+back one level at the normal single-point base RPXP price.
 Temporary skill bonuses and augmentation cannot alter this social status.
 
 | Aura | Ordinary sanctuary benefits | Rape command / forever imprint protection | Death / maim recovery fee |
@@ -12,8 +12,10 @@ Temporary skill bonuses and augmentation cannot alter this social status.
 | Orange (-1 or existing limited sanctuary) | Yes | No | 100% |
 | Black (-2) | No | No | 20% |
 
-Negative levels supply ongoing coverage without requiring a faction. Existing
-sanctuary eligibility restrictions still apply. Ritual sanctuary cannot upgrade
+Negative levels only modify sanctuary the character otherwise qualifies for;
+they never grant coverage or an aura by themselves. Losing the underlying
+sanctuary also removes the reduced coverage and aura. Existing sanctuary
+eligibility restrictions still apply. Ritual sanctuary cannot upgrade
 the protection of a reduced aura. Its existing free recovery remains free.
 Black aura appears in both character-description paths and as `B` on the score
 sanctuary indicator; balance displays the discount and the $20 personal fee.

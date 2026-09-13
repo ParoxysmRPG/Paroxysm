@@ -4,25 +4,35 @@ SeeAlso Stats, Train, Negtrain, Sanctuary~
 Level 0
 Online 0
 Type 0
-Text Second Class Citizen is a social stat with values 0, -1 and -2.
+Text `cLevels`g: `W-2`g, `W-1`g, `W0`x
 
-At -1 you have permanent limited sanctuary, shown as an orange aura. It has
-the benefits of full sanctuary except protection against the rape command
-and permanent (forever) imprints. Death and maim recovery cost the usual fee.
+This social stat reduces the benefits of your existing sanctuary. It does
+not grant sanctuary on its own. Without an existing source of sanctuary,
+you have no sanctuary coverage or aura.
 
-At -2 you have a black aura. Sanctuary only covers death and maim recovery,
-and those recoveries cost 20% of their usual fee. This includes personal
-revival fees, society fees, tier scaling and containment surcharges.
+`cSecond Class Citizen `W-2`x
+  Your existing sanctuary has a black aura and only covers death and maim
+  recovery, at 20% of the usual fee. This includes personal revival fees,
+  society fees, tier scaling and containment surcharges.
 
-Both levels supply ongoing coverage without requiring a society. Normal
-sanctuary restrictions still apply, including location, revoked sanctuary,
+`cSecond Class Citizen `W-1`x
+  Your existing sanctuary is limited, shown as an orange aura. It has the
+  benefits of full sanctuary except protection against the rape command
+  and permanent (forever) imprints. Death and maim recovery cost the usual fee.
+
+`cSecond Class Citizen `W0`x
+  Your existing sanctuary benefits are unchanged.
+
+Normal sanctuary restrictions apply, including location, revoked sanctuary,
 starvation, debt and population overload. Forest-monster incidents remain
 uncovered. Covered recoveries happen at the usual next 06:00; sanctuary does
 not prevent the original killing or maiming.
 
-Set the stat during creation, or use negtrain Second Class Citizen to lower
-it one level. Use train Second Class Citizen to buy back one level toward 0.
+Set the stat during creation. Use `Wtrain Second Class Citizen`x to buy back
+one level toward 0.
 Each negative level is worth one social stat point.
+
+`cThis stat cannot be negtrained.`x
 ~
 End
 

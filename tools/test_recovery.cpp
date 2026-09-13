@@ -94,12 +94,15 @@ static void second_class_recovery(FACTION_TYPE *fac, CHAR_DATA *forest, CHAR_DAT
   assert(skillpoint(-2) == -2 && skillpoint(-1) == -1);
   assert(has_requirements(ch, SKILL_SECONDCLASS, -2, false)); // Creation.
   assert(!can_raise(SKILL_SECONDCLASS, ch));
-  do_negtrain(ch, (char *)"Second Class Citizen");
-  assert(ch->skills[SKILL_SECONDCLASS] == -1);
-  do_negtrain(ch, (char *)"Second Class Citizen");
-  assert(ch->skills[SKILL_SECONDCLASS] == -2);
-  do_negtrain(ch, (char *)"Second Class Citizen");
-  assert(ch->skills[SKILL_SECONDCLASS] == -2);
+  for (int level : {0, -1, -2}) {
+    ch->skills[SKILL_SECONDCLASS] = level;
+    const int before = available_rpexp(ch);
+    ch->desc->outtop = 0; ch->desc->outbuf[0] = '\0';
+    do_negtrain(ch, (char *)"Second Class Citizen");
+    assert(ch->skills[SKILL_SECONDCLASS] == level);
+    assert(available_rpexp(ch) == before);
+    assert(strstr(ch->desc->outbuf, "Second Class Citizen cannot be negtrained."));
+  }
   for (int expected : {-1, 0}) {
     assert(can_raise(SKILL_SECONDCLASS, ch));
     assert(train_skill_cost(ch, SKILL_SECONDCLASS, TRAINED_NATURAL) == BASE_STAT_COST);
@@ -112,6 +115,35 @@ static void second_class_recovery(FACTION_TYPE *fac, CHAR_DATA *forest, CHAR_DAT
   assert(ch->skills[SKILL_SECONDCLASS] == 0);
   auto *observer = player("Auraviewer");
   SET_FLAG(observer->act, PLR_GM);
+  // An established supernatural needs an independent sanctuary source.
+  auto *uncovered = player("Secondclasseligibility");
+  uncovered->race = RACE_NEWVAMPIRE;
+  uncovered->played = 126 * 3600;
+  assert(is_super(uncovered) && seems_super(uncovered));
+  for (int level : {0, -1, -2}) {
+    uncovered->skills[SKILL_SECONDCLASS] = level;
+    for (int source : {RECOVERY_NONE, RECOVERY_SANCTUARY, RECOVERY_NONE,
+                       RECOVERY_RITUAL, RECOVERY_NONE}) {
+      coverage(uncovered, RECOVERY_NONE); // Remove previous ritual coverage.
+      assign(uncovered->pcdata->understanding, "All");
+      uncovered->fsociety = source == RECOVERY_SANCTUARY ? fac->vnum : 0;
+      if (source == RECOVERY_RITUAL) coverage(uncovered, RECOVERY_RITUAL);
+      const bool covered = source != RECOVERY_NONE;
+      assert(under_understanding(uncovered, uncovered) == (covered && level == 0));
+      assert(under_limited(uncovered, uncovered) == (covered && level == -1));
+      assert(under_black(uncovered, uncovered) == (covered && level == -2));
+      assert(under_sanctuary(uncovered, uncovered) == (covered && level != -2));
+      assert(full_sanctuary_protection(uncovered, uncovered) == (covered && level == 0));
+      assert(seems_under_understanding(uncovered, observer) == (covered && level == 0));
+      assert(seems_under_limited(uncovered, observer) == (covered && level == -1));
+      assert(seems_under_black(uncovered, observer) == (covered && level == -2));
+      record_death_recovery(uncovered, civilian, false, false);
+      assert(uncovered->pcdata->recovery->death.source == source);
+      record_critical_injury(uncovered, civilian, false);
+      assert(uncovered->pcdata->recovery->critical.source == source);
+    }
+  }
+  puts("PASS: second-class coverage and aura require an existing sanctuary source and disappear when it is lost.");
   for (int level : {0, -1, -2}) {
     ch->skills[SKILL_SECONDCLASS] = level;
     assert(get_skill(ch, SKILL_SECONDCLASS) == level);
