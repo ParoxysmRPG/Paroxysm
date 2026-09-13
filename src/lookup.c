@@ -1091,16 +1091,6 @@ extern "C" {
     return FALSE;
   }
   
-  bool real_armor(OBJ_DATA *obj)
-  {
-    if(strcasestr(from_color(obj->short_descr), "leather bodysuit") != NULL)
-    return FALSE;
-    if(strcasestr(from_color(obj->short_descr), "catsuit") != NULL)
-    return FALSE;
-  
-    return TRUE;
-  }
-
   bool holding_lweapon(CHAR_DATA *ch) {
     OBJ_DATA *obj;
     if ((obj = get_eqr_char(ch, WEAR_HOLD)) != NULL && obj->item_type == ITEM_WEAPON && obj->size >= 25 && real_weapon(obj))
@@ -1209,7 +1199,7 @@ extern "C" {
     OBJ_DATA *obj;
     int iWear;
     for (iWear = 0; iWear < MAX_WEAR; iWear++) {
-      if ((obj = get_eq_char(ch, iWear)) != NULL && IS_SET(obj->extra_flags, ITEM_ARMORED) && real_armor(obj))
+      if ((obj = get_eq_char(ch, iWear)) != NULL && IS_SET(obj->extra_flags, ITEM_ARMORED))
       return TRUE;
     }
     return FALSE;

@@ -2621,7 +2621,6 @@ std::string readAndDeleteLineFromFile args ( (const std::string& fileName) );
 /* lookup.c */
 bool    can_manual_task			args( (CHAR_DATA *ch) );
 bool 	real_weapon			args( (OBJ_DATA *obj) );
-bool 	real_armor			args( (OBJ_DATA *obj) );
 bool 	is_metashifter			args( (CHAR_DATA *ch) );
 int    	alt_count			        args( (CHAR_DATA *ch) );
 #include "guest_progression.h"
