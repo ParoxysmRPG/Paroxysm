@@ -1,0 +1,5177 @@
+{
+  "rooms_loaded": 96424,
+  "institute_rooms_excluded": 1399,
+  "confirmed_check_findings": 0,
+  "egress": {
+    "reachable_from_town": 71951,
+    "without_return": [
+      2044
+    ]
+  },
+  "candidate_counts": {
+    "hazard_egress_review": 1,
+    "market_connection_review": 2,
+    "one_way_structural_boundary": 31,
+    "sealed_interior": 320,
+    "one_sided_door": 202,
+    "roof_terrain_or_flags": 2
+  },
+  "candidate_rooms": 543,
+  "area_counts": {
+    "hvntown.are": 22,
+    "limbo.are": 9,
+    "brown.are": 1,
+    "boston.are": 41,
+    "america.are": 17,
+    "canada.are": 18,
+    "samerica.are": 10,
+    "europe.are": 16,
+    "asia.are": 10,
+    "austr.are": 2,
+    "mists.are": 59,
+    "nforest.are": 34,
+    "sforest.are": 9,
+    "wforest.are": 13,
+    "onforest.are": 50,
+    "osforest.are": 37,
+    "owforest.are": 11,
+    "otherfor.are": 21,
+    "wildfor.are": 19,
+    "godfor.are": 7,
+    "hellfor.are": 9,
+    "dream.are": 141,
+    "goblin.are": 2
+  },
+  "findings": [
+    {
+      "kind": "hazard_egress_review",
+      "vnum": 2044,
+      "area": "hvntown.are",
+      "name": "the well"
+    },
+    {
+      "kind": "market_connection_review",
+      "vnum": 14808,
+      "area": "hvntown.are",
+      "name": "the cafe of Oh, For Heaven's Cake!",
+      "direction": 0,
+      "to": 405002,
+      "note": "Runtime-managed market slot; do not repair as a local doorway."
+    },
+    {
+      "kind": "market_connection_review",
+      "vnum": 14817,
+      "area": "hvntown.are",
+      "name": "The Gravesend History Museum - The auditorium",
+      "direction": 2,
+      "to": 405002,
+      "note": "Runtime-managed market slot; do not repair as a local doorway."
+    },
+    {
+      "kind": "one_way_structural_boundary",
+      "vnum": 1,
+      "area": "limbo.are",
+      "name": "The void",
+      "sector": 23,
+      "direction": 5,
+      "to": 2617,
+      "to_name": "Main Street, Hart Avenue, and Hanging Hill"
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 2,
+      "area": "limbo.are",
+      "name": "a room full of clocks",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "one_way_structural_boundary",
+      "vnum": 3,
+      "area": "limbo.are",
+      "name": "Creation",
+      "sector": 9,
+      "direction": 5,
+      "to": 50,
+      "to_name": "Movement and Helpfiles"
+    },
+    {
+      "kind": "one_way_structural_boundary",
+      "vnum": 4,
+      "area": "limbo.are",
+      "name": "a corridor",
+      "sector": 0,
+      "direction": 3,
+      "to": 1,
+      "to_name": "The void"
+    },
+    {
+      "kind": "one_way_structural_boundary",
+      "vnum": 10,
+      "area": "limbo.are",
+      "name": "a corridor",
+      "sector": 0,
+      "direction": 1,
+      "to": 1,
+      "to_name": "The void"
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 12,
+      "area": "limbo.are",
+      "name": "the Void",
+      "sector": 2,
+      "exit_count": 1
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 21,
+      "area": "limbo.are",
+      "name": "Bank",
+      "sector": 9,
+      "exit_count": 0
+    },
+    {
+      "kind": "one_way_structural_boundary",
+      "vnum": 69,
+      "area": "limbo.are",
+      "name": "The Abyss",
+      "sector": 2,
+      "direction": 5,
+      "to": 10,
+      "to_name": "a corridor"
+    },
+    {
+      "kind": "one_way_structural_boundary",
+      "vnum": 164,
+      "area": "limbo.are",
+      "name": "The Void",
+      "sector": 2,
+      "direction": 0,
+      "to": 1,
+      "to_name": "The void"
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 31006,
+      "area": "brown.are",
+      "name": "A Lived-In Office",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 32004,
+      "area": "boston.are",
+      "name": "Mandarin Oriental Hotel, Boston - Residential Suite",
+      "sector": 8,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 32010,
+      "area": "boston.are",
+      "name": "the Main Bar area of a Shady Dive",
+      "sector": 12,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 32011,
+      "area": "boston.are",
+      "name": "a Backstage Area of a Dive behind Dark Curtains",
+      "sector": 14,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 32012,
+      "area": "boston.are",
+      "name": "a Dim-Lit Corridor leading to the Bathrooms",
+      "sector": 12,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 32013,
+      "area": "boston.are",
+      "name": "a service entrance of the Cosmopolitan Hotel in Downtown Boston",
+      "sector": 9,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 32015,
+      "area": "boston.are",
+      "name": "Thirsty Mind Coffee and Wine Bar",
+      "sector": 12,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 32027,
+      "area": "boston.are",
+      "name": "a Hall of Cells",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 32028,
+      "area": "boston.are",
+      "name": "a Room Designed for Courses and Lectures",
+      "sector": 15,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 32047,
+      "area": "boston.are",
+      "name": "the small unisex bathroom at the end of the hall",
+      "sector": 5,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 32051,
+      "area": "boston.are",
+      "name": "Inside a Smoky Bar in Boston",
+      "sector": 3,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 32053,
+      "area": "boston.are",
+      "name": "Test room 1",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 32054,
+      "area": "boston.are",
+      "name": "Test Room2",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 32055,
+      "area": "boston.are",
+      "name": "a Sufficient, Shared Bathroom in a Cabin in the Wildery",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 32056,
+      "area": "boston.are",
+      "name": "a Sufficient, Shared Bathroom in a Cabin in the Wildery",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 32057,
+      "area": "boston.are",
+      "name": "The Zen Spa",
+      "sector": 9,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 32059,
+      "area": "boston.are",
+      "name": "",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 32060,
+      "area": "boston.are",
+      "name": "A Room",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 32061,
+      "area": "boston.are",
+      "name": "",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 32063,
+      "area": "boston.are",
+      "name": "The Underground - The Antechamber",
+      "sector": 3,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 32074,
+      "area": "boston.are",
+      "name": "Pet Smart",
+      "sector": 5,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 32082,
+      "area": "boston.are",
+      "name": "The SalteBox Cafe",
+      "sector": 4,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 32112,
+      "area": "boston.are",
+      "name": "an area under construction",
+      "sector": 5,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 32113,
+      "area": "boston.are",
+      "name": "an area under construction",
+      "sector": 5,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 32117,
+      "area": "boston.are",
+      "name": "area under development",
+      "sector": 5,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 32118,
+      "area": "boston.are",
+      "name": "area under development",
+      "sector": 5,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 32119,
+      "area": "boston.are",
+      "name": "area under development",
+      "sector": 5,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 32120,
+      "area": "boston.are",
+      "name": "area under development",
+      "sector": 5,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 32121,
+      "area": "boston.are",
+      "name": "area under development",
+      "sector": 5,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 32122,
+      "area": "boston.are",
+      "name": "area under development",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 32123,
+      "area": "boston.are",
+      "name": "area under development",
+      "sector": 5,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 32124,
+      "area": "boston.are",
+      "name": "area under development",
+      "sector": 5,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 32125,
+      "area": "boston.are",
+      "name": "area under development",
+      "sector": 5,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 32126,
+      "area": "boston.are",
+      "name": "area under development",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 32127,
+      "area": "boston.are",
+      "name": "area under development",
+      "sector": 5,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 32128,
+      "area": "boston.are",
+      "name": "area under development",
+      "sector": 5,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 32129,
+      "area": "boston.are",
+      "name": "area under development",
+      "sector": 5,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 32130,
+      "area": "boston.are",
+      "name": "area under development",
+      "sector": 5,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 32131,
+      "area": "boston.are",
+      "name": "area under development",
+      "sector": 5,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 32132,
+      "area": "boston.are",
+      "name": "area under development",
+      "sector": 5,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 32133,
+      "area": "boston.are",
+      "name": "area under development",
+      "sector": 5,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 32134,
+      "area": "boston.are",
+      "name": "area under development",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 33000,
+      "area": "america.are",
+      "name": "A spacious but noisy loft on Bourbon Street, New Orleans - Louisiana",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 33006,
+      "area": "america.are",
+      "name": "A Sensual Club in New Orleans",
+      "sector": 3,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 33007,
+      "area": "america.are",
+      "name": "A Private Room",
+      "sector": 14,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 33008,
+      "area": "america.are",
+      "name": "A Private Room",
+      "sector": 14,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 33011,
+      "area": "america.are",
+      "name": "a supernatural little corner in Santa Barbara",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 33013,
+      "area": "america.are",
+      "name": "a pristine and clean workshop",
+      "sector": 15,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 33014,
+      "area": "america.are",
+      "name": "A family-sized New York apartment",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 33021,
+      "area": "america.are",
+      "name": "Fresno Yosemite International Airport",
+      "sector": 9,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 33022,
+      "area": "america.are",
+      "name": "San Francisco Bay, Financial District",
+      "sector": 9,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 33032,
+      "area": "america.are",
+      "name": "a Hallway at the Ka'anapali Beach Hotel",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 33033,
+      "area": "america.are",
+      "name": "a Hallway at the Ka'anapali Beach Hotel",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 33034,
+      "area": "america.are",
+      "name": "a Hallway at the Ka'anapali Beach Hotel",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 33035,
+      "area": "america.are",
+      "name": "an Ocean View Suite at the Ka'anapali Beach Hotel",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 33036,
+      "area": "america.are",
+      "name": "a quiet apartment in LA",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 33041,
+      "area": "america.are",
+      "name": "Sichuanese Cuisine",
+      "sector": 4,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 33045,
+      "area": "america.are",
+      "name": "Top Pot Doughnuts",
+      "sector": 12,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 33046,
+      "area": "america.are",
+      "name": "a dilapidated pier beside a warehouse",
+      "sector": 8,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 35000,
+      "area": "canada.are",
+      "name": "a street not too far from an isolated warehouse",
+      "sector": 9,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 35001,
+      "area": "canada.are",
+      "name": "an abandoned warehouse filled with occult items",
+      "sector": 9,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 35002,
+      "area": "canada.are",
+      "name": "A bedroom in a Casino suite",
+      "sector": 9,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 35003,
+      "area": "canada.are",
+      "name": "A Casino suite in Hull",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 35004,
+      "area": "canada.are",
+      "name": "A Smoky Casino Suite in Hull",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 35005,
+      "area": "canada.are",
+      "name": "A Long, Dark Tunnel",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 35006,
+      "area": "canada.are",
+      "name": "An Expansive Marketplace",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 35007,
+      "area": "canada.are",
+      "name": "A Black Passage",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 35008,
+      "area": "canada.are",
+      "name": "The Dark Workshop of the Artisan",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 35009,
+      "area": "canada.are",
+      "name": "A Narrow Passage to Many Black Cells",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 35010,
+      "area": "canada.are",
+      "name": "The Blood Baths",
+      "sector": 3,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 35011,
+      "area": "canada.are",
+      "name": "ViTech Corp- Entrance",
+      "sector": 9,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 35013,
+      "area": "canada.are",
+      "name": "ViTech Corp- Lobby",
+      "sector": 8,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 35014,
+      "area": "canada.are",
+      "name": "ViTech Corp- Second Floor",
+      "sector": 8,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 35015,
+      "area": "canada.are",
+      "name": "Vitech Corp- Basement Lab",
+      "sector": 14,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 35016,
+      "area": "canada.are",
+      "name": "ViTech Corp- Hallway",
+      "sector": 9,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 35017,
+      "area": "canada.are",
+      "name": "ViTech Corp- Conference Room: A",
+      "sector": 9,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 35018,
+      "area": "canada.are",
+      "name": "ViTech Corp- Conference Room: A",
+      "sector": 9,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 36002,
+      "area": "samerica.are",
+      "name": "the grand, ice-cold entrance hall",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 36007,
+      "area": "samerica.are",
+      "name": "Teatro Colon - Buenos Aires",
+      "sector": 9,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 36010,
+      "area": "samerica.are",
+      "name": "Guadeloupe, Caribbean - Pathing Point",
+      "sector": 8,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 36015,
+      "area": "samerica.are",
+      "name": "Guadeloupe, Caribbean - La Jolie Villa Felicienne, Lobby",
+      "sector": 9,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 36016,
+      "area": "samerica.are",
+      "name": "Guadeloupe, Caribbean - La Jolie Villa Felicienne, Landing",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 36017,
+      "area": "samerica.are",
+      "name": "Guadeloupe, Caribbean - La Jolie Villa Felicienne, Room One",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 36018,
+      "area": "samerica.are",
+      "name": "Guadeloupe, Caribbean - La Jolie Villa Felicienne, Room Two",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 36019,
+      "area": "samerica.are",
+      "name": "Guadeloupe, Caribbean - La Jolie Villa Felicienne, Room Three",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 36029,
+      "area": "samerica.are",
+      "name": "A Bar in Barbados",
+      "sector": 12,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 36035,
+      "area": "samerica.are",
+      "name": "Inside a Small Bamboo Hut",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 37017,
+      "area": "europe.are",
+      "name": "Hospital Room",
+      "sector": 15,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 37020,
+      "area": "europe.are",
+      "name": "inside a small pub off of Covent Garden",
+      "sector": 12,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 37021,
+      "area": "europe.are",
+      "name": "A restaurant near the hotel",
+      "sector": 5,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 37022,
+      "area": "europe.are",
+      "name": "First floor of the resort hotel",
+      "sector": 5,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 37023,
+      "area": "europe.are",
+      "name": "Second floor of the resort hotel",
+      "sector": 5,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 37024,
+      "area": "europe.are",
+      "name": "A quaint room in the resort hotel",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 37025,
+      "area": "europe.are",
+      "name": "a bathroom",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 37046,
+      "area": "europe.are",
+      "name": "A Modest Hotel Room",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 37048,
+      "area": "europe.are",
+      "name": "Tiffany's at Paris",
+      "sector": 5,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 37050,
+      "area": "europe.are",
+      "name": "Moscow, Russia - Arena Mytishchi",
+      "sector": 9,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 37123,
+      "area": "europe.are",
+      "name": "the depths of Arcadia",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 37124,
+      "area": "europe.are",
+      "name": "the depths of Arcadia",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 37127,
+      "area": "europe.are",
+      "name": "Salerno Cathedral",
+      "sector": 9,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 37138,
+      "area": "europe.are",
+      "name": "A Wide Veranda Before A Bluestone Manor",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 37139,
+      "area": "europe.are",
+      "name": "The Foyer Of A Bluestone Manor",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 37140,
+      "area": "europe.are",
+      "name": "A Sloping Lawn Alongside a Winding River",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 39016,
+      "area": "asia.are",
+      "name": "Kudafolhudhoo, Maldives - Island Reception Area",
+      "sector": 9,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 39021,
+      "area": "asia.are",
+      "name": "Kudafolhudhoo, Maldives - Cabana One",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 39022,
+      "area": "asia.are",
+      "name": "Kudafolhudhoo, Maldives - Cabana Two",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 39023,
+      "area": "asia.are",
+      "name": "Kudafolhudhoo, Maldives - Cabana Three",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 39041,
+      "area": "asia.are",
+      "name": "Kudafolhudhoo, Maldives - Restaurant Naaspathee",
+      "sector": 4,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 39043,
+      "area": "asia.are",
+      "name": "Kudafolhudhoo, Maldives - Island Health Club",
+      "sector": 5,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 39044,
+      "area": "asia.are",
+      "name": "Kudafolhudhoo, Maldives - Island Beauty Spa",
+      "sector": 5,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 39046,
+      "area": "asia.are",
+      "name": "Kudafolhudhoo, Maldives - A Private Steam Room Full Of Mist",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 39047,
+      "area": "asia.are",
+      "name": "Kudafolhudhoo, Maldives - Health Spa",
+      "sector": 9,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 39049,
+      "area": "asia.are",
+      "name": "Kudafolhudhoo, Maldives - Island Gym",
+      "sector": 9,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 40009,
+      "area": "austr.are",
+      "name": "a sleeping alcove",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 40010,
+      "area": "austr.are",
+      "name": "Novamilia Estate",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 41003,
+      "area": "mists.are",
+      "name": "A Cozy Painting Studio",
+      "sector": 9,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 41010,
+      "area": "mists.are",
+      "name": "Club Catacombs",
+      "sector": 3,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 41015,
+      "area": "mists.are",
+      "name": "the vice and revelry of La Tasse Cassee",
+      "sector": 5,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 41016,
+      "area": "mists.are",
+      "name": "A Windowless, Doorless Chamber",
+      "sector": 14,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 41025,
+      "area": "mists.are",
+      "name": "A Cozy Painting Studio",
+      "sector": 9,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 41032,
+      "area": "mists.are",
+      "name": "chunk light tuna",
+      "sector": 12,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 41035,
+      "area": "mists.are",
+      "name": "The Pit",
+      "sector": 14,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 41036,
+      "area": "mists.are",
+      "name": "Bestia of Los Angeles",
+      "sector": 4,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 41037,
+      "area": "mists.are",
+      "name": "Small apartment",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 41045,
+      "area": "mists.are",
+      "name": "Mama's Pancakes Diner",
+      "sector": 12,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 41046,
+      "area": "mists.are",
+      "name": "Mama's Pancakes Diner",
+      "sector": 12,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 41048,
+      "area": "mists.are",
+      "name": "A Cozy Painting Studio",
+      "sector": 9,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 41049,
+      "area": "mists.are",
+      "name": "The Crucible Club in Salem, Massachusetts",
+      "sector": 3,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 41052,
+      "area": "mists.are",
+      "name": "Small apartment",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 41062,
+      "area": "mists.are",
+      "name": "Boston Athenaeum",
+      "sector": 9,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 41070,
+      "area": "mists.are",
+      "name": "the entrance",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 41079,
+      "area": "mists.are",
+      "name": "picnic basket nice wicker",
+      "sector": 15,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 41086,
+      "area": "mists.are",
+      "name": "nowhere",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 41093,
+      "area": "mists.are",
+      "name": "old yellowed wooden Ouija board",
+      "sector": 14,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 41095,
+      "area": "mists.are",
+      "name": "The Mall in Boston - Again",
+      "sector": 12,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 41103,
+      "area": "mists.are",
+      "name": "An expansive library archive of the Watchers",
+      "sector": 9,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 41104,
+      "area": "mists.are",
+      "name": "La Femme en Rouge bordello in Port-au-Prince",
+      "sector": 3,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 41108,
+      "area": "mists.are",
+      "name": "Outside a discreet, stone building in Edinburgh, Scotland",
+      "sector": 15,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 41109,
+      "area": "mists.are",
+      "name": "the small, charming town of Charming, West Virginia",
+      "sector": 4,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 41110,
+      "area": "mists.are",
+      "name": "a Loud, Poorly Lit Strip Club",
+      "sector": 3,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 41112,
+      "area": "mists.are",
+      "name": "The Institute",
+      "sector": 8,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 41115,
+      "area": "mists.are",
+      "name": "Bed, Bath, and Beyond in Canton, Massachusetts",
+      "sector": 5,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 41119,
+      "area": "mists.are",
+      "name": "vegan lemon blueberry scone",
+      "sector": 12,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 41122,
+      "area": "mists.are",
+      "name": "In a Candlelit Royal Bedchamber",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 41125,
+      "area": "mists.are",
+      "name": "a tidy little flat in London",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 41129,
+      "area": "mists.are",
+      "name": "a VIP Smoking Lounge within the Wynn Casino",
+      "sector": 4,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 41130,
+      "area": "mists.are",
+      "name": "a Museum Warehouse in Baghdad",
+      "sector": 8,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 41131,
+      "area": "mists.are",
+      "name": "On the Set of Revenge: Best Served Cold!",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 41132,
+      "area": "mists.are",
+      "name": "a dream-like Divine Sanctum",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 41141,
+      "area": "mists.are",
+      "name": "Yirazi Estate",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 41144,
+      "area": "mists.are",
+      "name": "the Tumulus of Arsinoe",
+      "sector": 14,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 41146,
+      "area": "mists.are",
+      "name": "A Lavish Home in Larchmont, New York",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "one_way_structural_boundary",
+      "vnum": 41168,
+      "area": "mists.are",
+      "name": "A Large, Well Appointed Bedroom",
+      "sector": 2,
+      "direction": 5,
+      "to": 15177,
+      "to_name": "Franklin Street and Temple Lane"
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 41176,
+      "area": "mists.are",
+      "name": "a macabre surgery room",
+      "sector": 15,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 41177,
+      "area": "mists.are",
+      "name": "a long hallway lined with individual holding cells",
+      "sector": 15,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 41178,
+      "area": "mists.are",
+      "name": "a dockside receiving area",
+      "sector": 15,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 41179,
+      "area": "mists.are",
+      "name": "A luxurious suite, in three rooms",
+      "sector": 3,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 41194,
+      "area": "mists.are",
+      "name": "Psych Ward",
+      "sector": 15,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 41206,
+      "area": "mists.are",
+      "name": "a cramped shop of esoteric items",
+      "sector": 5,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 41212,
+      "area": "mists.are",
+      "name": "Austin Prepatory",
+      "sector": 9,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 41213,
+      "area": "mists.are",
+      "name": "godberry chocolate",
+      "sector": 12,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 41214,
+      "area": "mists.are",
+      "name": "A Smoke-Filled Underground Discotheque",
+      "sector": 3,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 41215,
+      "area": "mists.are",
+      "name": "A circular room, surrounded by balconies and pillars",
+      "sector": 3,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 41218,
+      "area": "mists.are",
+      "name": "pot broth udon",
+      "sector": 12,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 41220,
+      "area": "mists.are",
+      "name": "a Dilapidated, Oddly Designed Warehouse",
+      "sector": 8,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 41226,
+      "area": "mists.are",
+      "name": "the Brown University Center for Animal Resources and Education",
+      "sector": 15,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 41241,
+      "area": "mists.are",
+      "name": "A Camp",
+      "sector": 8,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 41242,
+      "area": "mists.are",
+      "name": "A Battered Parking Garage",
+      "sector": 8,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 41243,
+      "area": "mists.are",
+      "name": "A Workshop Area",
+      "sector": 8,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 41244,
+      "area": "mists.are",
+      "name": "A Private Sleeping Room",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 41245,
+      "area": "mists.are",
+      "name": "A Sleeping Tent",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 41253,
+      "area": "mists.are",
+      "name": "A Hollowed Knothole",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "one_way_structural_boundary",
+      "vnum": 41254,
+      "area": "mists.are",
+      "name": "the barista counter of Deja Brew",
+      "sector": 9,
+      "direction": 5,
+      "to": 15117,
+      "to_name": "You Wish Beauty"
+    },
+    {
+      "kind": "one_way_structural_boundary",
+      "vnum": 41255,
+      "area": "mists.are",
+      "name": "a messy bedroom and work area",
+      "sector": 2,
+      "direction": 5,
+      "to": 5854,
+      "to_name": "Prospect Street, Ocean Avenue, and Lover's Lane"
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 4216,
+      "area": "hvntown.are",
+      "name": "Skies",
+      "sector": 18,
+      "direction": 5,
+      "to": 2934,
+      "to_name": "Before the Gravesend Historical Museum",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 16558,
+      "area": "hvntown.are",
+      "name": "An Unfinished Commercial Room",
+      "sector": 9,
+      "exit_count": 9
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 16559,
+      "area": "hvntown.are",
+      "name": "An Unfinished Commercial Room",
+      "sector": 9,
+      "exit_count": 9
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 6355,
+      "area": "hvntown.are",
+      "name": "simple prison cell",
+      "sector": 9,
+      "exit_count": 2
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 16655,
+      "area": "hvntown.are",
+      "name": "an alley",
+      "sector": 7,
+      "direction": 1,
+      "to": 16648,
+      "to_name": "a patchy lawn",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 16681,
+      "area": "hvntown.are",
+      "name": "A back patio of Apt 103",
+      "sector": 10,
+      "direction": 0,
+      "to": 90056,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 2452,
+      "area": "hvntown.are",
+      "name": "the beacon",
+      "sector": 9,
+      "exit_count": 10
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 16827,
+      "area": "hvntown.are",
+      "name": "a Well-Tended Lawn",
+      "sector": 10,
+      "direction": 4,
+      "to": 1525,
+      "to_name": "Skies",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 2664,
+      "area": "hvntown.are",
+      "name": "a landing leading out onto the downtown rooftops",
+      "sector": 2
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 15121,
+      "area": "hvntown.are",
+      "name": "You Wish Beauty - Outside Garden",
+      "sector": 10,
+      "direction": 1,
+      "to": 15122,
+      "to_name": "You Wish Beauty - Outside Garden",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 2847,
+      "area": "hvntown.are",
+      "name": "a Rooftop Fire Escape",
+      "sector": 13,
+      "direction": 1,
+      "to": 2997,
+      "to_name": "a Rooftop",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 15258,
+      "area": "hvntown.are",
+      "name": "Elm Street",
+      "sector": 1,
+      "direction": 1,
+      "to": 16493,
+      "to_name": "the entryway outside Pigment and Paper Studio",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 2983,
+      "area": "hvntown.are",
+      "name": "the entrance of Little Nishiki",
+      "sector": 10,
+      "direction": 0,
+      "to": 2982,
+      "to_name": "the lush lawn outside of Little Nishiki",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 2999,
+      "area": "hvntown.are",
+      "name": "a rooftop studio apartment",
+      "sector": 2
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 11217,
+      "area": "hvntown.are",
+      "name": "the tall grass",
+      "sector": 10,
+      "direction": 1,
+      "to": 14255,
+      "to_name": "a small greenhouse",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 9174,
+      "area": "hvntown.are",
+      "name": "An Unfinished Room",
+      "sector": 2,
+      "direction": 0,
+      "to": 9172,
+      "to_name": "An Unfinished Room",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 5213,
+      "area": "hvntown.are",
+      "name": "the clock face",
+      "sector": 9,
+      "exit_count": 10
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 1284,
+      "area": "hvntown.are",
+      "name": "Devilwood Drive",
+      "sector": 1,
+      "direction": 0,
+      "to": 16071,
+      "to_name": "a Filthy Sidewalk along Devilwood Drive",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 7747,
+      "area": "hvntown.are",
+      "name": "An Exposed Rooftop",
+      "sector": 13,
+      "direction": 3,
+      "to": 7748,
+      "to_name": "An Exposed Rooftop",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 92186,
+      "area": "nforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 0,
+      "to": 92330,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 92232,
+      "area": "nforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 1,
+      "to": 92234,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 92236,
+      "area": "nforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 2,
+      "to": 92092,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 92364,
+      "area": "nforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 1,
+      "to": 92366,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 92368,
+      "area": "nforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 3,
+      "to": 92366,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 92378,
+      "area": "nforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 2,
+      "to": 92234,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 92500,
+      "area": "nforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 0,
+      "to": 92644,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 92618,
+      "area": "nforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 2,
+      "to": 92474,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 90614,
+      "area": "nforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 3,
+      "to": 90612,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 90700,
+      "area": "nforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 0,
+      "to": 90844,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 90722,
+      "area": "nforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 1,
+      "to": 90724,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 92788,
+      "area": "nforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 2,
+      "to": 92644,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 90758,
+      "area": "nforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 0,
+      "to": 90902,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 90774,
+      "area": "nforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 1,
+      "to": 90776,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 92876,
+      "area": "nforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 0,
+      "to": 93020,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 92922,
+      "area": "nforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 0,
+      "to": 93066,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 93018,
+      "area": "nforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 1,
+      "to": 93020,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 93074,
+      "area": "nforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 1,
+      "to": 93076,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 93078,
+      "area": "nforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 4,
+      "to": 93079,
+      "to_name": "The Skies",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 91056,
+      "area": "nforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 3,
+      "to": 91054,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 93116,
+      "area": "nforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 3,
+      "to": 93114,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 93220,
+      "area": "nforest.are",
+      "name": "an indulgent backyard pool",
+      "sector": 20,
+      "direction": 2,
+      "to": 93076,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 91198,
+      "area": "nforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 0,
+      "to": 91342,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 93260,
+      "area": "nforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 3,
+      "to": 93258,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 91486,
+      "area": "nforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 3,
+      "to": 91484,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 93644,
+      "area": "nforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 0,
+      "to": 93788,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 91622,
+      "area": "nforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 0,
+      "to": 91766,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 91626,
+      "area": "nforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 2,
+      "to": 91482,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 91652,
+      "area": "nforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 0,
+      "to": 91796,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 91680,
+      "area": "nforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 1,
+      "to": 91682,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 91924,
+      "area": "nforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 2,
+      "to": 91780,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 92004,
+      "area": "nforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 2,
+      "to": 91860,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 92006,
+      "area": "nforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 3,
+      "to": 92004,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 92112,
+      "area": "nforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 1,
+      "to": 92114,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 110710,
+      "area": "sforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 3,
+      "to": 110708,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 112804,
+      "area": "sforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 3,
+      "to": 112802,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 112936,
+      "area": "sforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 1,
+      "to": 112938,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 112992,
+      "area": "sforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 1,
+      "to": 112994,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 111782,
+      "area": "sforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 3,
+      "to": 111780,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 112148,
+      "area": "sforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 3,
+      "to": 112146,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 112210,
+      "area": "sforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 1,
+      "to": 112212,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 110440,
+      "area": "sforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 1,
+      "to": 110442,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 110514,
+      "area": "sforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 0,
+      "to": 110658,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 133345,
+      "area": "wforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 1,
+      "to": 133347,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 135692,
+      "area": "wforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 0,
+      "to": 135748,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 135694,
+      "area": "wforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 0,
+      "to": 135750,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 133687,
+      "area": "wforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 3,
+      "to": 133685,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 135754,
+      "area": "wforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 2,
+      "to": 135698,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 135810,
+      "area": "wforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 2,
+      "to": 135754,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 133797,
+      "area": "wforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 3,
+      "to": 133795,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 133821,
+      "area": "wforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 0,
+      "to": 133877,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 133877,
+      "area": "wforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 1,
+      "to": 133879,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 133991,
+      "area": "wforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 1,
+      "to": 133993,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 134017,
+      "area": "wforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 1,
+      "to": 134019,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 134103,
+      "area": "wforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 2,
+      "to": 134047,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 136774,
+      "area": "wforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 3,
+      "to": 136772,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 153637,
+      "area": "onforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 2,
+      "to": 153377,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 151597,
+      "area": "onforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 0,
+      "to": 151857,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 151601,
+      "area": "onforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 3,
+      "to": 151599,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 153801,
+      "area": "onforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 3,
+      "to": 153799,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 151863,
+      "area": "onforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 2,
+      "to": 151603,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 155972,
+      "area": "onforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 2,
+      "to": 155712,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 155972,
+      "area": "onforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 3,
+      "to": 155970,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 155976,
+      "area": "onforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 2,
+      "to": 155716,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 151919,
+      "area": "onforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 2,
+      "to": 151659,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 152001,
+      "area": "onforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 0,
+      "to": 152261,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 152119,
+      "area": "onforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 0,
+      "to": 152379,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 152129,
+      "area": "onforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 3,
+      "to": 152127,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 156232,
+      "area": "onforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 1,
+      "to": 156234,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 150119,
+      "area": "onforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 0,
+      "to": 150379,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 150119,
+      "area": "onforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 3,
+      "to": 150117,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 154353,
+      "area": "onforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 1,
+      "to": 154355,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 154355,
+      "area": "onforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 1,
+      "to": 154357,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 154355,
+      "area": "onforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 2,
+      "to": 154095,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 154357,
+      "area": "onforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 0,
+      "to": 154618,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 152379,
+      "area": "onforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 1,
+      "to": 152381,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 156492,
+      "area": "onforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 0,
+      "to": 156752,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 156492,
+      "area": "onforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 3,
+      "to": 156490,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 156494,
+      "area": "onforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 2,
+      "to": 156234,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 156496,
+      "area": "onforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 0,
+      "to": 156756,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 150369,
+      "area": "onforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 2,
+      "to": 150109,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 152421,
+      "area": "onforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 0,
+      "to": 152681,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 150475,
+      "area": "onforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 2,
+      "to": 150215,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 156664,
+      "area": "onforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 0,
+      "to": 156924,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 152637,
+      "area": "onforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 2,
+      "to": 152377,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 156750,
+      "area": "onforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 2,
+      "to": 156490,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 156754,
+      "area": "onforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 2,
+      "to": 156494,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 152699,
+      "area": "onforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 0,
+      "to": 152959,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 152699,
+      "area": "onforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 2,
+      "to": 152439,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 150657,
+      "area": "onforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 6,
+      "to": 150919,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_way_structural_boundary",
+      "vnum": 150659,
+      "area": "onforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 3,
+      "to": 150657,
+      "to_name": "The Forest"
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 150673,
+      "area": "onforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 0,
+      "to": 150933,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 154796,
+      "area": "onforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 0,
+      "to": 155056,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 150769,
+      "area": "onforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 0,
+      "to": 151029,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 152903,
+      "area": "onforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 2,
+      "to": 152643,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 153019,
+      "area": "onforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 0,
+      "to": 153279,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 151001,
+      "area": "onforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 1,
+      "to": 151003,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 151037,
+      "area": "onforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 0,
+      "to": 151297,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 153113,
+      "area": "onforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 3,
+      "to": 153111,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 153247,
+      "area": "onforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 2,
+      "to": 152987,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 153275,
+      "area": "onforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 3,
+      "to": 153273,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 155360,
+      "area": "onforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 0,
+      "to": 155620,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 153375,
+      "area": "onforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 1,
+      "to": 153377,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 155442,
+      "area": "onforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 3,
+      "to": 155440,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 153493,
+      "area": "onforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 2,
+      "to": 153233,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 155622,
+      "area": "onforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 3,
+      "to": 155620,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 192512,
+      "area": "osforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 2,
+      "to": 192252,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 196620,
+      "area": "osforest.are",
+      "name": "The Forest",
+      "sector": 10,
+      "direction": 2,
+      "to": 196360,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 196620,
+      "area": "osforest.are",
+      "name": "The Forest",
+      "sector": 10,
+      "direction": 3,
+      "to": 196618,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 196632,
+      "area": "osforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 0,
+      "to": 196892,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 196634,
+      "area": "osforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 0,
+      "to": 196894,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 196678,
+      "area": "osforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 3,
+      "to": 196676,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 194650,
+      "area": "osforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 3,
+      "to": 194648,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 196748,
+      "area": "osforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 4,
+      "to": 196749,
+      "to_name": "The Skies",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 196752,
+      "area": "osforest.are",
+      "name": "The Forest",
+      "sector": 10,
+      "direction": 3,
+      "to": 196750,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 196884,
+      "area": "osforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 1,
+      "to": 196886,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 196892,
+      "area": "osforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 1,
+      "to": 196894,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 196934,
+      "area": "osforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 1,
+      "to": 196936,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 196938,
+      "area": "osforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 3,
+      "to": 196936,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 196970,
+      "area": "osforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 0,
+      "to": 197230,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 193090,
+      "area": "osforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 3,
+      "to": 193088,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 197194,
+      "area": "osforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 1,
+      "to": 197196,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 197198,
+      "area": "osforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 4,
+      "to": 197199,
+      "to_name": "The Skies",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 197238,
+      "area": "osforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 1,
+      "to": 197240,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 195192,
+      "area": "osforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 1,
+      "to": 195194,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 197250,
+      "area": "osforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 7,
+      "to": 197508,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 197254,
+      "area": "osforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 3,
+      "to": 197252,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 197272,
+      "area": "osforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 1,
+      "to": 197274,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 195324,
+      "area": "osforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 8,
+      "to": 195066,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 197394,
+      "area": "osforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 2,
+      "to": 197134,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 197396,
+      "area": "osforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 0,
+      "to": 197628,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 197458,
+      "area": "osforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 2,
+      "to": 197198,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 193370,
+      "area": "osforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 1,
+      "to": 193372,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 197498,
+      "area": "osforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 2,
+      "to": 197238,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_way_structural_boundary",
+      "vnum": 197632,
+      "area": "osforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 4,
+      "to": 110008,
+      "to_name": "The Skies"
+    },
+    {
+      "kind": "one_way_structural_boundary",
+      "vnum": 197633,
+      "area": "osforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 4,
+      "to": 110010,
+      "to_name": "The Skies"
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 195850,
+      "area": "osforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 2,
+      "to": 195590,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 195938,
+      "area": "osforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 3,
+      "to": 195936,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 196098,
+      "area": "osforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 3,
+      "to": 196096,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 194074,
+      "area": "osforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 1,
+      "to": 194076,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 194108,
+      "area": "osforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 2,
+      "to": 193848,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 196368,
+      "area": "osforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 0,
+      "to": 196628,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 194386,
+      "area": "osforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 6,
+      "to": 194648,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 233816,
+      "area": "owforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 2,
+      "to": 233756,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 234124,
+      "area": "owforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 1,
+      "to": 234126,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 234176,
+      "area": "owforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 2,
+      "to": 234116,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 234300,
+      "area": "owforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 3,
+      "to": 234298,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 234304,
+      "area": "owforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 1,
+      "to": 234306,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 234356,
+      "area": "owforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 2,
+      "to": 234296,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 234558,
+      "area": "owforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 0,
+      "to": 234618,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 234734,
+      "area": "owforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 1,
+      "to": 234736,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 234798,
+      "area": "owforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 2,
+      "to": 234738,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 235090,
+      "area": "owforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 0,
+      "to": 235150,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 235152,
+      "area": "owforest.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 3,
+      "to": 235150,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 303206,
+      "area": "otherfor.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 1,
+      "to": 303208,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_way_structural_boundary",
+      "vnum": 303218,
+      "area": "otherfor.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 1,
+      "to": 303220,
+      "to_name": "The Forest"
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 301554,
+      "area": "otherfor.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 8,
+      "to": 301454,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 302280,
+      "area": "otherfor.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 0,
+      "to": 302382,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 302378,
+      "area": "otherfor.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 2,
+      "to": 302276,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 302382,
+      "area": "otherfor.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 1,
+      "to": 302384,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 302392,
+      "area": "otherfor.are",
+      "name": "The Forest",
+      "sector": 10,
+      "direction": 3,
+      "to": 302390,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 302486,
+      "area": "otherfor.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 2,
+      "to": 302384,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 302492,
+      "area": "otherfor.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 2,
+      "to": 302390,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 300556,
+      "area": "otherfor.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 8,
+      "to": 300456,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 302722,
+      "area": "otherfor.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 0,
+      "to": 302824,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_way_structural_boundary",
+      "vnum": 304794,
+      "area": "otherfor.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 3,
+      "to": 304702,
+      "to_name": "The Forest"
+    },
+    {
+      "kind": "one_way_structural_boundary",
+      "vnum": 304794,
+      "area": "otherfor.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 7,
+      "to": 304804,
+      "to_name": "The Forest"
+    },
+    {
+      "kind": "one_way_structural_boundary",
+      "vnum": 304794,
+      "area": "otherfor.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 9,
+      "to": 304600,
+      "to_name": "The Forest"
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 302814,
+      "area": "otherfor.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 3,
+      "to": 302812,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_way_structural_boundary",
+      "vnum": 304896,
+      "area": "otherfor.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 3,
+      "to": 304804,
+      "to_name": "The Forest"
+    },
+    {
+      "kind": "one_way_structural_boundary",
+      "vnum": 304896,
+      "area": "otherfor.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 7,
+      "to": 304906,
+      "to_name": "The Forest"
+    },
+    {
+      "kind": "one_way_structural_boundary",
+      "vnum": 304896,
+      "area": "otherfor.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 9,
+      "to": 304702,
+      "to_name": "The Forest"
+    },
+    {
+      "kind": "one_way_structural_boundary",
+      "vnum": 304998,
+      "area": "otherfor.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 3,
+      "to": 304906,
+      "to_name": "The Forest"
+    },
+    {
+      "kind": "one_way_structural_boundary",
+      "vnum": 304998,
+      "area": "otherfor.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 7,
+      "to": 305008,
+      "to_name": "The Forest"
+    },
+    {
+      "kind": "one_way_structural_boundary",
+      "vnum": 304998,
+      "area": "otherfor.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 9,
+      "to": 304804,
+      "to_name": "The Forest"
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 322190,
+      "area": "wildfor.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 3,
+      "to": 322188,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 320156,
+      "area": "wildfor.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 4,
+      "to": 320157,
+      "to_name": "The Skies",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 322502,
+      "area": "wildfor.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 2,
+      "to": 322400,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 322508,
+      "area": "wildfor.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 2,
+      "to": 322406,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 320512,
+      "area": "wildfor.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 0,
+      "to": 320614,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 320616,
+      "area": "wildfor.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 1,
+      "to": 320618,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 322690,
+      "area": "wildfor.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 0,
+      "to": 322792,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 322710,
+      "area": "wildfor.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 0,
+      "to": 322812,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 322716,
+      "area": "wildfor.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 0,
+      "to": 322818,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 322756,
+      "area": "wildfor.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 2,
+      "to": 322654,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 322794,
+      "area": "wildfor.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 0,
+      "to": 322896,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_way_structural_boundary",
+      "vnum": 322992,
+      "area": "wildfor.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 0,
+      "to": 323094,
+      "to_name": "The Forest"
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 323006,
+      "area": "wildfor.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 3,
+      "to": 323004,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_way_structural_boundary",
+      "vnum": 320964,
+      "area": "wildfor.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 0,
+      "to": 321066,
+      "to_name": "The Forest"
+    },
+    {
+      "kind": "one_way_structural_boundary",
+      "vnum": 325148,
+      "area": "wildfor.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 0,
+      "to": 324636,
+      "to_name": "The Forest"
+    },
+    {
+      "kind": "one_way_structural_boundary",
+      "vnum": 325148,
+      "area": "wildfor.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 6,
+      "to": 324638,
+      "to_name": "The Forest"
+    },
+    {
+      "kind": "one_way_structural_boundary",
+      "vnum": 325148,
+      "area": "wildfor.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 7,
+      "to": 324638,
+      "to_name": "The Forest"
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 323200,
+      "area": "wildfor.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 0,
+      "to": 323302,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 323210,
+      "area": "wildfor.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 3,
+      "to": 323208,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 342510,
+      "area": "godfor.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 2,
+      "to": 342408,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 342706,
+      "area": "godfor.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 2,
+      "to": 342604,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 342708,
+      "area": "godfor.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 0,
+      "to": 342810,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 342800,
+      "area": "godfor.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 2,
+      "to": 342698,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 342912,
+      "area": "godfor.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 2,
+      "to": 342810,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 341474,
+      "area": "godfor.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 2,
+      "to": 341372,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 343822,
+      "area": "godfor.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 3,
+      "to": 343820,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 362776,
+      "area": "hellfor.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 0,
+      "to": 362878,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 362814,
+      "area": "hellfor.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 0,
+      "to": 362916,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 362814,
+      "area": "hellfor.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 2,
+      "to": 362712,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 363506,
+      "area": "hellfor.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 3,
+      "to": 363504,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 361458,
+      "area": "hellfor.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 3,
+      "to": 361456,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 361800,
+      "area": "hellfor.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 3,
+      "to": 361798,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "one_way_structural_boundary",
+      "vnum": 362102,
+      "area": "hellfor.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 3,
+      "to": 362100,
+      "to_name": "The Forest"
+    },
+    {
+      "kind": "one_way_structural_boundary",
+      "vnum": 362202,
+      "area": "hellfor.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 2,
+      "to": 362100,
+      "to_name": "The Forest"
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 362488,
+      "area": "hellfor.are",
+      "name": "The Forest",
+      "sector": 23,
+      "direction": 0,
+      "to": 362590,
+      "to_name": "The Forest",
+      "note": "Unclassified: may be a market door; symmetry alone is not evidence of a bug."
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390000,
+      "area": "dream.are",
+      "name": "the lobby of the Phantasos Hotel",
+      "sector": 9,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390001,
+      "area": "dream.are",
+      "name": "(The Canteen) Aboard",
+      "sector": 4,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390002,
+      "area": "dream.are",
+      "name": "a (Viewing Deck) Aboard",
+      "sector": 9,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390003,
+      "area": "dream.are",
+      "name": "a Massive Cryopod-Filled (Laboratory) Aboard",
+      "sector": 9,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390004,
+      "area": "dream.are",
+      "name": "a Twisting Labyrinth of (Corridors) Aboard",
+      "sector": 9,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390005,
+      "area": "dream.are",
+      "name": "The Dreamheart",
+      "sector": 9,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390016,
+      "area": "dream.are",
+      "name": "dazzled by a crystalline fountain",
+      "sector": 9,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390017,
+      "area": "dream.are",
+      "name": "a gleaming glass and iron-wrought entryway",
+      "sector": 9,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390031,
+      "area": "dream.are",
+      "name": "Featureless Bunks in the (Living Quarters) Aboard",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390049,
+      "area": "dream.are",
+      "name": "The Royal Palace",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390063,
+      "area": "dream.are",
+      "name": "the Main Floor of the Stepford Sanitarium",
+      "sector": 15,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390064,
+      "area": "dream.are",
+      "name": "the Basement of the Stepford Sanitarium",
+      "sector": 15,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390066,
+      "area": "dream.are",
+      "name": "the Basement of a Perfect Single-Family Home",
+      "sector": 14,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390067,
+      "area": "dream.are",
+      "name": "a Perfect Single-Family Home in an Idyllic Neighborhood",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390089,
+      "area": "dream.are",
+      "name": "a Chamber of Horrifying Experiments",
+      "sector": 15,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390092,
+      "area": "dream.are",
+      "name": "Hotel Parker - 1st Floor Landing",
+      "sector": 9,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390095,
+      "area": "dream.are",
+      "name": "Hotel Parker - Room 1",
+      "sector": 9,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390096,
+      "area": "dream.are",
+      "name": "Hotel Parker - Room 2",
+      "sector": 9,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390114,
+      "area": "dream.are",
+      "name": "Morty's Room",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390115,
+      "area": "dream.are",
+      "name": "The Smith Residence",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390122,
+      "area": "dream.are",
+      "name": "Within the throne room of Skyspire's tower",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390123,
+      "area": "dream.are",
+      "name": "The noble's sleeping quarters",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390126,
+      "area": "dream.are",
+      "name": "{ * Diamonds' Tavern * }",
+      "sector": 4,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390129,
+      "area": "dream.are",
+      "name": "A sequestered little shop",
+      "sector": 5,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390146,
+      "area": "dream.are",
+      "name": "Summer's Room",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390173,
+      "area": "dream.are",
+      "name": "Backstage",
+      "sector": 8,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390174,
+      "area": "dream.are",
+      "name": "The Changing Rooms",
+      "sector": 8,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390175,
+      "area": "dream.are",
+      "name": "Waiting in the Wings",
+      "sector": 8,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390176,
+      "area": "dream.are",
+      "name": "Catwalks Above The Stage",
+      "sector": 8,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390177,
+      "area": "dream.are",
+      "name": "The Projection Booth",
+      "sector": 8,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390182,
+      "area": "dream.are",
+      "name": "Hall of Mirrors",
+      "sector": 8,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390183,
+      "area": "dream.are",
+      "name": "Closely Guarded Memories",
+      "sector": 8,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390184,
+      "area": "dream.are",
+      "name": "Compromised Memories",
+      "sector": 3,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390185,
+      "area": "dream.are",
+      "name": "Black & White Movie Theatre",
+      "sector": 8,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390186,
+      "area": "dream.are",
+      "name": "Concession Stands",
+      "sector": 8,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390187,
+      "area": "dream.are",
+      "name": "A Surrealist Stage Play",
+      "sector": 8,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390196,
+      "area": "dream.are",
+      "name": "The Master Bedroom",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390197,
+      "area": "dream.are",
+      "name": "Rick's Room",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390198,
+      "area": "dream.are",
+      "name": "The Smith Dining Room",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390227,
+      "area": "dream.are",
+      "name": "P3: A Medical Laboratory",
+      "sector": 8,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390259,
+      "area": "dream.are",
+      "name": "In The Antlers Motel",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390260,
+      "area": "dream.are",
+      "name": "In Antlers Bedroom 1",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390261,
+      "area": "dream.are",
+      "name": "In Antlers Bedroom 2",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390262,
+      "area": "dream.are",
+      "name": "Cortex Academy of Civic Integration Reception Lobby",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390271,
+      "area": "dream.are",
+      "name": "The Imagi Amphitheater",
+      "sector": 3,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390272,
+      "area": "dream.are",
+      "name": "a well-appointed recording studio",
+      "sector": 3,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390273,
+      "area": "dream.are",
+      "name": "the Mosh Pit and Stage",
+      "sector": 8,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390274,
+      "area": "dream.are",
+      "name": "the Concert Hall",
+      "sector": 3,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390275,
+      "area": "dream.are",
+      "name": "the Prancing Pony Inn",
+      "sector": 3,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390276,
+      "area": "dream.are",
+      "name": "the Colour Palette",
+      "sector": 3,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390277,
+      "area": "dream.are",
+      "name": "the Printing Press",
+      "sector": 3,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390278,
+      "area": "dream.are",
+      "name": "the Dance Hall",
+      "sector": 3,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390284,
+      "area": "dream.are",
+      "name": "the Crimson Fox Tavern",
+      "sector": 4,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390297,
+      "area": "dream.are",
+      "name": "a chandelier above the common-room of the House of Masks",
+      "sector": 3,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390298,
+      "area": "dream.are",
+      "name": "the parlor of a brothel in Chinatown",
+      "sector": 8,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390299,
+      "area": "dream.are",
+      "name": "the upstairs hallway of a brothel in Chinatown",
+      "sector": 8,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390300,
+      "area": "dream.are",
+      "name": "rooms above a brothel in Chinatown",
+      "sector": 8,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390302,
+      "area": "dream.are",
+      "name": "the long back hallway of the House of Masks",
+      "sector": 3,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390311,
+      "area": "dream.are",
+      "name": "The Smith Living Room",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390318,
+      "area": "dream.are",
+      "name": "Main Street: The Lodge",
+      "sector": 4,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390319,
+      "area": "dream.are",
+      "name": "Main Street: Rosie's Diner",
+      "sector": 4,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390326,
+      "area": "dream.are",
+      "name": "Oldtown: Gravesend High",
+      "sector": 12,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390328,
+      "area": "dream.are",
+      "name": "Oldtown: Arkwright Asylum",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390332,
+      "area": "dream.are",
+      "name": "Pony Express Bunkhouse",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390333,
+      "area": "dream.are",
+      "name": "Pony Express Station",
+      "sector": 5,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390334,
+      "area": "dream.are",
+      "name": "Bordello",
+      "sector": 5,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390335,
+      "area": "dream.are",
+      "name": "General Store",
+      "sector": 5,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390336,
+      "area": "dream.are",
+      "name": "Gold Mine",
+      "sector": 5,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390338,
+      "area": "dream.are",
+      "name": "Bank",
+      "sector": 5,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390348,
+      "area": "dream.are",
+      "name": "Wharfside - Inside Mickey's Pub",
+      "sector": 3,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390352,
+      "area": "dream.are",
+      "name": "Reception Lobby",
+      "sector": 5,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390353,
+      "area": "dream.are",
+      "name": "The Porch of Four Doors",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390372,
+      "area": "dream.are",
+      "name": "Long Hallway",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390373,
+      "area": "dream.are",
+      "name": "South Bedroom",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390374,
+      "area": "dream.are",
+      "name": "North Bedroom",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390375,
+      "area": "dream.are",
+      "name": "Hotel Bar",
+      "sector": 5,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390376,
+      "area": "dream.are",
+      "name": "Hotel Dining Room",
+      "sector": 5,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390377,
+      "area": "dream.are",
+      "name": "Hotel Lounge",
+      "sector": 5,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390380,
+      "area": "dream.are",
+      "name": "The Goblin Market's Library",
+      "sector": 14,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390407,
+      "area": "dream.are",
+      "name": "Inside the Beacon of Lost Souls",
+      "sector": 14,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390414,
+      "area": "dream.are",
+      "name": "The Throne Room of Castle Hearts",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390427,
+      "area": "dream.are",
+      "name": "Welcome to Hatter House",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390431,
+      "area": "dream.are",
+      "name": "The Pepper-Filled Kitchen of the Duchess' Manor",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390435,
+      "area": "dream.are",
+      "name": "The Burnt Out Remains of a Building",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390452,
+      "area": "dream.are",
+      "name": "The Hall of Mirrors",
+      "sector": 14,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390472,
+      "area": "dream.are",
+      "name": "A Lean-To Gardener's Shack",
+      "sector": 8,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390498,
+      "area": "dream.are",
+      "name": "the Bar in the ^Lodge^",
+      "sector": 12,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390539,
+      "area": "dream.are",
+      "name": "The Cortex Academy of Civic Integration",
+      "sector": 15,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390587,
+      "area": "dream.are",
+      "name": "The Forsaken Plaza",
+      "sector": 8,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390588,
+      "area": "dream.are",
+      "name": "The Market",
+      "sector": 5,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390591,
+      "area": "dream.are",
+      "name": "The Yellow Spire",
+      "sector": 8,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390593,
+      "area": "dream.are",
+      "name": "Library of Kings",
+      "sector": 8,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390594,
+      "area": "dream.are",
+      "name": "The Blue Spire",
+      "sector": 8,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390595,
+      "area": "dream.are",
+      "name": "The Inside of March Manor & Hatter House",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390612,
+      "area": "dream.are",
+      "name": "Coffee Shop",
+      "sector": 12,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390619,
+      "area": "dream.are",
+      "name": "Hotel Antlers - Room 101",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390621,
+      "area": "dream.are",
+      "name": "St. Ignatius",
+      "sector": 8,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390657,
+      "area": "dream.are",
+      "name": "In the Foyer of Gravesend Public Library",
+      "sector": 5,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390658,
+      "area": "dream.are",
+      "name": "In the Front Lobby at Town Hall",
+      "sector": 5,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390660,
+      "area": "dream.are",
+      "name": "Passing through the Breach",
+      "sector": 12,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390661,
+      "area": "dream.are",
+      "name": "Guild Square (Malifaux)",
+      "sector": 12,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390662,
+      "area": "dream.are",
+      "name": "Quarantine Zone (Malifaux)",
+      "sector": 12,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390663,
+      "area": "dream.are",
+      "name": "Ancient Sewers (Malifaux)",
+      "sector": 12,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390664,
+      "area": "dream.are",
+      "name": "The Hanging Tree (Malifaux)",
+      "sector": 12,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390665,
+      "area": "dream.are",
+      "name": "Slums (Malifaux)",
+      "sector": 12,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390666,
+      "area": "dream.are",
+      "name": "The Last Light Tavern (Malifaux)",
+      "sector": 12,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390667,
+      "area": "dream.are",
+      "name": "Aboard the Train (Train)",
+      "sector": 12,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390668,
+      "area": "dream.are",
+      "name": "Town Square (Mining Town 42)",
+      "sector": 12,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390669,
+      "area": "dream.are",
+      "name": "Soulstone Mine (Mining Town 42)",
+      "sector": 12,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390670,
+      "area": "dream.are",
+      "name": "Swampy bog (Bayou)",
+      "sector": 12,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390671,
+      "area": "dream.are",
+      "name": "An old growth forest (Forest)",
+      "sector": 12,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390674,
+      "area": "dream.are",
+      "name": "Hotel Antlers - Room 102",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390675,
+      "area": "dream.are",
+      "name": "Hotel Antlers - Room 103",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390679,
+      "area": "dream.are",
+      "name": "The Restrooms",
+      "sector": 8,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390680,
+      "area": "dream.are",
+      "name": "The Toolshed",
+      "sector": 8,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390687,
+      "area": "dream.are",
+      "name": "an apartments complex",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390692,
+      "area": "dream.are",
+      "name": "A Victorian-era Room",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390693,
+      "area": "dream.are",
+      "name": "A Victorian-era Room",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390694,
+      "area": "dream.are",
+      "name": "A Victorian-era Room",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390695,
+      "area": "dream.are",
+      "name": "A Victorian-era Room",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390696,
+      "area": "dream.are",
+      "name": "Forgotten Graveyard",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390717,
+      "area": "dream.are",
+      "name": "Inside a half-burnt Bakery",
+      "sector": 5,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390718,
+      "area": "dream.are",
+      "name": "A fortified base within a Bakery",
+      "sector": 5,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390720,
+      "area": "dream.are",
+      "name": "The Halls of the Forgotten Dead",
+      "sector": 14,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390722,
+      "area": "dream.are",
+      "name": "Scimitar: Captain's Cabin",
+      "sector": 2,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390788,
+      "area": "dream.are",
+      "name": "the entrance to Gravesend High",
+      "sector": 9,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390789,
+      "area": "dream.are",
+      "name": "In the Hallway outside the Main Office",
+      "sector": 9,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390790,
+      "area": "dream.are",
+      "name": "In the Main Office of Gravesend High",
+      "sector": 9,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390791,
+      "area": "dream.are",
+      "name": "In the Entrance Hallway of Gravesend High",
+      "sector": 9,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390792,
+      "area": "dream.are",
+      "name": "In Between Wings",
+      "sector": 9,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390793,
+      "area": "dream.are",
+      "name": "In the History Wing",
+      "sector": 9,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390794,
+      "area": "dream.are",
+      "name": "In the Science Wing",
+      "sector": 9,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390795,
+      "area": "dream.are",
+      "name": "At the Stairs",
+      "sector": 9,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390796,
+      "area": "dream.are",
+      "name": "On the Second Floor",
+      "sector": 9,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390797,
+      "area": "dream.are",
+      "name": "In the Math Wing",
+      "sector": 9,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390798,
+      "area": "dream.are",
+      "name": "In the Electoral Wing",
+      "sector": 9,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390799,
+      "area": "dream.are",
+      "name": "In the South Wing",
+      "sector": 9,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390800,
+      "area": "dream.are",
+      "name": "Before the Locker Rooms",
+      "sector": 9,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390801,
+      "area": "dream.are",
+      "name": "In the Girl's Locker Room",
+      "sector": 9,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390809,
+      "area": "dream.are",
+      "name": "The Union Building of the Blackfield Technological Institute",
+      "sector": 15,
+      "exit_count": 0
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 390811,
+      "area": "dream.are",
+      "name": "Inside The Finch Tavern on Paine Avenue",
+      "sector": 4,
+      "exit_count": 0
+    },
+    {
+      "kind": "one_way_structural_boundary",
+      "vnum": 405086,
+      "area": "goblin.are",
+      "name": "the Mobious path",
+      "sector": 24,
+      "direction": 2,
+      "to": 405500,
+      "to_name": "the Mobious path"
+    },
+    {
+      "kind": "one_way_structural_boundary",
+      "vnum": 405095,
+      "area": "goblin.are",
+      "name": "the Mobious path",
+      "sector": 24,
+      "direction": 2,
+      "to": 405500,
+      "to_name": "the Mobious path"
+    }
+  ]
+}

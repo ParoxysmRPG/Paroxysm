@@ -281,6 +281,12 @@ extern "C" {
       }
     }
 
+    // Dorm residents and roommates have their own rental keys. The same
+    // exemption lets them open the door back into the shared hallway.
+    if (student_dormitory(to_room) && !bblocked(to_room, ch)) {
+      return FALSE;
+    }
+
     // institute locks
     if (institute_room(to_room) && college_house_room(to_room) == 0) {
       if (institute_staff(ch) && !institute_suspension(ch)) {

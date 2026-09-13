@@ -32876,7 +32876,51 @@ extern "C" {
     }
   }
 
+  bool is_campus_imprint(CHAR_DATA *ch, int i) {
+    return ch->pcdata->imprint_type[i] == IMPRINT_INFLUENCE
+      && !str_cmp(ch->pcdata->imprint_trigger[i], "campus_cortex_conditioning");
+  }
+
+  void sync_campus_imprint(CHAR_DATA *ch) {
+    if (ch == NULL || IS_NPC(ch) || ch->pcdata == NULL)
+    return;
+    bool active = !is_gm(ch) && event_cleanse != 1
+      && institute_room(ch->in_room) && college_student(ch, TRUE);
+    int slot = -1;
+    bool found = FALSE;
+    for (int i = 0; i < 25; ++i) {
+      if (is_campus_imprint(ch, i)) {
+        if (active && !found) {
+          ch->pcdata->imprint_pending[i] = 0;
+          found = TRUE;
+        }
+        else {
+          ch->pcdata->imprint_type[i] = 0;
+          ch->pcdata->imprint_pending[i] = 0;
+          free_string(ch->pcdata->imprint[i]);
+          ch->pcdata->imprint[i] = str_dup("");
+          free_string(ch->pcdata->imprint_trigger[i]);
+          ch->pcdata->imprint_trigger[i] = str_dup("");
+        }
+      }
+      if (slot < 0 && ch->pcdata->imprint_type[i] == 0)
+      slot = i;
+    }
+    if (!active || found || slot < 0)
+    return;
+    free_string(ch->pcdata->imprint[slot]);
+    ch->pcdata->imprint[slot] = str_dup("serve Cortex");
+    free_string(ch->pcdata->imprint_trigger[slot]);
+    ch->pcdata->imprint_trigger[slot] = str_dup("campus_cortex_conditioning");
+    ch->pcdata->imprint_type[slot] = IMPRINT_INFLUENCE;
+    ch->pcdata->imprint_pending[slot] = 0;
+    ch->pcdata->imprint_pressure_one[slot] = 0;
+    ch->pcdata->imprint_pressure_two[slot] = 0;
+    ch->pcdata->imprint_pressure_three[slot] = 0;
+  }
+
   void show_imprints(CHAR_DATA *ch) {
+    sync_campus_imprint(ch);
 
 
     if (is_ill(ch))
@@ -32943,14 +32987,17 @@ extern "C" {
 
     for (int i = 0; i < 25; i++) {
       for (int j = 0; j < 25; j++) {
-        if (!str_cmp(ch->pcdata->imprint[i], ch->pcdata->imprint[j]) && i != j) {
+        if (!str_cmp(ch->pcdata->imprint[i], ch->pcdata->imprint[j]) && i != j
+            && !is_campus_imprint(ch, i) && !is_campus_imprint(ch, j)) {
           ch->pcdata->imprint_type[j] = 0;
         }
       }
       if (ch->pcdata->imprint_type[i] != 0 && ch->pcdata->imprint_pending[i] >= 0) {
         if (ch->pcdata->imprint_type[i] == IMPRINT_DRUGS)
         printf_to_char(ch, "You feel %s.\n\r", ch->pcdata->imprint[i]);
-        if (ch->pcdata->imprint_type[i] == IMPRINT_INFLUENCE)
+        if (is_campus_imprint(ch, i))
+        send_to_char("You mildly want to serve Cortex.\n\r", ch);
+        else if (ch->pcdata->imprint_type[i] == IMPRINT_INFLUENCE)
         printf_to_char(ch, "You want to %s.\n\r", ch->pcdata->imprint[i]);
         if (ch->pcdata->imprint_type[i] == IMPRINT_BODYINSTRUCTION)
         printf_to_char(ch, "Your body %s.\n\r", ch->pcdata->imprint[i]);
@@ -33774,6 +33821,15 @@ extern "C" {
   }
 
   _DOFUN(do_satiate) {
+    sync_campus_imprint(ch);
+    for (int i = 0; i < 25; ++i) {
+      if (is_campus_imprint(ch, i)
+          && (!str_cmp(argument, ch->pcdata->imprint[i])
+              || (safe_strlen(argument) > 10 && strcasestr(ch->pcdata->imprint[i], argument) != NULL))) {
+        send_to_char("You cannot satiate the desire to serve Cortex while on campus.\n\r", ch);
+        return;
+      }
+    }
     for (int i = 0; i < 25; i++) {
       if (ch->pcdata->imprint_type[i] == IMPRINT_INSTRUCTION && (!str_cmp(argument, ch->pcdata->imprint[i]) || (safe_strlen(argument) > 10 && strcasestr(ch->pcdata->imprint[i], argument) != NULL))) {
         send_to_char("You satiate that desire and it fades from your mind.\n\r", ch);

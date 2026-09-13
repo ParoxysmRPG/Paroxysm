@@ -16996,51 +16996,6 @@ M 0 H 0
 W (null)~
 Y ~
 S
-#137281
-The Forest~
-`gTree trunks`x rise through a deep litter of leaves, their bark rough with
-lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
-The woodland smells of leaf mold and old rain; beyond the nearest tangle,
-overlapping growth breaks the view into narrow, uncertain glimpses.`x
-~
-0 4194304 23
-G 0 0 50 0 0
-C 0 -1 0
-T 3000
-D0
-~
-~
-0 0 18506
-0 0 0 0 0 0 0 0 0
-D1
-~
-~
-0 0 114033
-0 0 0 0 0 0 0 0 0
-D3
-~
-~
-0 0 131621
-0 0 0 0 0 0 0 0 0
-D7
-~
-~
-0 0 131677
-0 0 0 0 0 0 0 0 0
-D8
-~
-~
-0 0 113890
-0 0 0 0 0 0 0 0 0
-D9
-~
-~
-0 0 131565
-0 0 0 0 0 0 0 0 0
-M 0 H 0
-W (null)~
-Y ~
-S
 #135234
 The Forest~
 `gTree trunks`x rise through a deep litter of leaves, their bark rough with
@@ -17461,56 +17416,6 @@ M 0 H 0
 W (null)~
 Y ~
 S
-#137283
-The Forest~
-`gTree trunks`x rise through a deep litter of leaves, their bark rough with
-lichen. Roots knuckle out of the soil and disappear beneath fallen branches.
-The woodland smells of leaf mold and old rain; beyond the nearest tangle,
-overlapping growth breaks the view into narrow, uncertain glimpses.`x
-~
-0 12582912 23
-G 0 0 50 0 0
-C 0 -1 0
-T 3000
-D0
-~
-~
-0 0 18506
-0 0 0 0 0 0 0 0 0
-D1
-~
-~
-0 0 114033
-0 0 0 0 0 0 0 0 0
-D2
-~
-~
-0 0 16
-0 0 0 0 0 0 0 0 0
-D3
-~
-~
-0 0 131621
-0 0 0 0 0 0 0 0 0
-D7
-~
-~
-0 0 131677
-0 0 0 0 0 0 0 0 0
-D8
-~
-~
-0 0 113890
-0 0 0 0 0 0 0 0 0
-D9
-~
-~
-0 0 131565
-0 0 0 0 0 0 0 0 0
-M 0 H 0
-W (null)~
-Y ~
-S
 #135236
 The Forest~
 `gTree trunks`x rise through a deep litter of leaves, their bark rough with
@@ -17686,86 +17591,6 @@ D9
 ~
 ~
 0 0 131082
-0 0 2 0 0 0 0 0 0
-M 0 H 0
-W (null)~
-Y ~
-S
-#137284
-The Skies~
-Open `cair`x falls away in every direction. Without a wall or a patch of
-ground close at hand, distances become difficult to judge; even a small
-movement makes the surrounding emptiness apparent. It's an exposed place, with
-nothing nearby to break the immense sweep of the sky.`x
-~
-0 4194304 18
-G 0 0 50 0 0
-C 0 60 1
-T 3000
-D3
-~
-~
-0 0 135039
-0 0 2 0 0 0 0 0 0
-D5
-~
-~
-0 0 15298
-0 0 2 0 0 0 0 0 0
-D7
-~
-~
-0 0 135095
-0 0 2 0 0 0 0 0 0
-D9
-~
-~
-0 0 134983
-0 0 2 0 0 0 0 0 0
-M 0 H 0
-W (null)~
-Y ~
-S
-#137285
-The Skies~
-Open `cair`x falls away in every direction. Without a wall or a patch of
-ground close at hand, distances become difficult to judge; even a small
-movement makes the surrounding emptiness apparent. It's an exposed place, with
-nothing nearby to break the immense sweep of the sky.`x
-~
-0 4194304 18
-G 0 0 50 0 0
-C 0 63 1
-T 3000
-D0
-~
-~
-0 0 1569
-0 0 2 0 0 0 0 0 0
-D1
-~
-~
-0 0 1636
-0 0 2 0 0 0 0 0 0
-D3
-~
-~
-0 0 135207
-0 0 2 0 0 0 0 0 0
-D5
-~
-~
-0 0 15301
-0 0 2 0 0 0 0 0 0
-D7
-~
-~
-0 0 135263
-0 0 2 0 0 0 0 0 0
-D9
-~
-~
-0 0 135151
 0 0 2 0 0 0 0 0 0
 M 0 H 0
 W (null)~
@@ -18131,46 +17956,6 @@ M 0 H 0
 W (null)~
 Y ~
 S
-#137286
-The Skies~
-Open `cair`x falls away in every direction. Without a wall or a patch of
-ground close at hand, distances become difficult to judge; even a small
-movement makes the surrounding emptiness apparent. It's an exposed place, with
-nothing nearby to break the immense sweep of the sky.`x
-~
-0 4194304 18
-G 0 0 50 0 0
-C 0 62 1
-T 3000
-D0
-~
-~
-0 0 1567
-0 0 2 0 0 0 0 0 0
-D3
-~
-~
-0 0 135151
-0 0 2 0 0 0 0 0 0
-D5
-~
-~
-0 0 15300
-0 0 2 0 0 0 0 0 0
-D7
-~
-~
-0 0 135207
-0 0 2 0 0 0 0 0 0
-D9
-~
-~
-0 0 135095
-0 0 2 0 0 0 0 0 0
-M 0 H 0
-W (null)~
-Y ~
-S
 #135239
 The Skies~
 Open `cair`x falls away in every direction. Without a wall or a patch of
@@ -18351,41 +18136,6 @@ M 0 H 0
 W (null)~
 Y ~
 S
-#137287
-The Skies~
-Open `cair`x falls away in every direction. Without a wall or a patch of
-ground close at hand, distances become difficult to judge; even a small
-movement makes the surrounding emptiness apparent. It's an exposed place, with
-nothing nearby to break the immense sweep of the sky.`x
-~
-0 4194304 18
-G 0 0 50 0 0
-C 0 63 1
-T 3000
-D3
-~
-~
-0 0 135207
-0 0 2 0 0 0 0 0 0
-D5
-~
-~
-0 0 15301
-0 0 2 0 0 0 0 0 0
-D7
-~
-~
-0 0 135263
-0 0 2 0 0 0 0 0 0
-D9
-~
-~
-0 0 135151
-0 0 2 0 0 0 0 0 0
-M 0 H 0
-W (null)~
-Y ~
-S
 #135240
 The Forest~
 `gTree trunks`x rise through a deep litter of leaves, their bark rough with
@@ -18561,31 +18311,6 @@ D9
 ~
 ~
 0 0 131086
-0 0 2 0 0 0 0 0 0
-M 0 H 0
-W (null)~
-Y ~
-S
-#137288
-The Skies~
-Open `cair`x falls away in every direction. Without a wall or a patch of
-ground close at hand, distances become difficult to judge; even a small
-movement makes the surrounding emptiness apparent. It's an exposed place, with
-nothing nearby to break the immense sweep of the sky.`x
-~
-0 4194304 18
-G 0 0 50 0 0
-C 1 63 1
-T 3000
-D5
-~
-~
-0 0 15479
-0 0 2 0 0 0 0 0 0
-D7
-~
-~
-0 0 1569
 0 0 2 0 0 0 0 0 0
 M 0 H 0
 W (null)~
@@ -18771,96 +18496,6 @@ M 0 H 0
 W (null)~
 Y ~
 S
-#137289
-The Skies~
-Open `cair`x falls away in every direction. Without a wall or a patch of
-ground close at hand, distances become difficult to judge; even a small
-movement makes the surrounding emptiness apparent. It's an exposed place, with
-nothing nearby to break the immense sweep of the sky.`x
-~
-0 4194304 18
-G 0 0 50 0 0
-C 0 62 1
-T 3000
-D0
-~
-~
-0 0 1567
-0 0 2 0 0 0 0 0 0
-D3
-~
-~
-0 0 135151
-0 0 2 0 0 0 0 0 0
-D5
-~
-~
-0 0 15300
-0 0 2 0 0 0 0 0 0
-D6
-~
-~
-0 0 1636
-0 0 2 0 0 0 0 0 0
-D7
-~
-~
-0 0 135207
-0 0 2 0 0 0 0 0 0
-D9
-~
-~
-0 0 135095
-0 0 2 0 0 0 0 0 0
-M 0 H 0
-W (null)~
-Y ~
-S
-#137290
-The Skies~
-Open `cair`x falls away in every direction. Without a wall or a patch of
-ground close at hand, distances become difficult to judge; even a small
-movement makes the surrounding emptiness apparent. It's an exposed place, with
-nothing nearby to break the immense sweep of the sky.`x
-~
-0 4194304 18
-G 0 0 50 0 0
-C 0 64 1
-T 3000
-D0
-~
-~
-0 0 3965
-0 0 2 0 0 0 0 0 0
-D3
-~
-~
-0 0 135263
-0 0 2 0 0 0 0 0 0
-D5
-~
-~
-0 0 15302
-0 0 2 0 0 0 0 0 0
-D7
-~
-~
-0 0 135319
-0 0 2 0 0 0 0 0 0
-D8
-~
-~
-0 0 1636
-0 0 2 0 0 0 0 0 0
-D9
-~
-~
-0 0 135207
-0 0 2 0 0 0 0 0 0
-M 0 H 0
-W (null)~
-Y ~
-S
 #135242
 The Forest~
 `gTree trunks`x rise through a deep litter of leaves, their bark rough with
@@ -19036,36 +18671,6 @@ D9
 ~
 ~
 0 0 131088
-0 0 2 0 0 0 0 0 0
-M 0 H 0
-W (null)~
-Y ~
-S
-#137291
-The Skies~
-Open `cair`x falls away in every direction. Without a wall or a patch of
-ground close at hand, distances become difficult to judge; even a small
-movement makes the surrounding emptiness apparent. It's an exposed place, with
-nothing nearby to break the immense sweep of the sky.`x
-~
-0 4194304 18
-G 0 0 50 0 0
-C 1 64 1
-T 3000
-D3
-~
-~
-0 0 1569
-0 0 2 0 0 0 0 0 0
-D5
-~
-~
-0 0 15480
-0 0 2 0 0 0 0 0 0
-D7
-~
-~
-0 0 3965
 0 0 2 0 0 0 0 0 0
 M 0 H 0
 W (null)~
@@ -19247,61 +18852,6 @@ D9
 ~
 0 0 131089
 0 0 0 0 0 0 0 0 0
-M 0 H 0
-W (null)~
-Y ~
-S
-#137292
-The Skies~
-Open `cair`x falls away in every direction. Without a wall or a patch of
-ground close at hand, distances become difficult to judge; even a small
-movement makes the surrounding emptiness apparent. It's an exposed place, with
-nothing nearby to break the immense sweep of the sky.`x
-~
-0 4194304 18
-G 0 0 50 0 0
-C 0 64 1
-T 3000
-D1
-~
-~
-0 0 1634
-0 0 2 0 0 0 0 0 0
-D2
-~
-~
-0 0 1567
-0 0 2 0 0 0 0 0 0
-D3
-~
-~
-0 0 135263
-0 0 2 0 0 0 0 0 0
-D5
-~
-~
-0 0 15302
-0 0 2 0 0 0 0 0 0
-D6
-~
-~
-0 0 5054
-0 0 2 0 0 0 0 0 0
-D7
-~
-~
-0 0 135319
-0 0 2 0 0 0 0 0 0
-D8
-~
-~
-0 0 1636
-0 0 2 0 0 0 0 0 0
-D9
-~
-~
-0 0 135207
-0 0 2 0 0 0 0 0 0
 M 0 H 0
 W (null)~
 Y ~
@@ -19666,106 +19216,6 @@ M 0 H 0
 W (null)~
 Y ~
 S
-#137293
-The Skies~
-Open `cair`x falls away in every direction. Without a wall or a patch of
-ground close at hand, distances become difficult to judge; even a small
-movement makes the surrounding emptiness apparent. It's an exposed place, with
-nothing nearby to break the immense sweep of the sky.`x
-~
-0 4194304 18
-G 0 0 50 0 0
-C 0 64 1
-T 3000
-D0
-~
-~
-0 0 3965
-0 0 2 0 0 0 0 0 0
-D1
-~
-~
-0 0 1634
-0 0 2 0 0 0 0 0 0
-D2
-~
-~
-0 0 1567
-0 0 2 0 0 0 0 0 0
-D3
-~
-~
-0 0 135263
-0 0 2 0 0 0 0 0 0
-D5
-~
-~
-0 0 15302
-0 0 2 0 0 0 0 0 0
-D6
-~
-~
-0 0 5054
-0 0 2 0 0 0 0 0 0
-D7
-~
-~
-0 0 135319
-0 0 2 0 0 0 0 0 0
-D8
-~
-~
-0 0 1636
-0 0 2 0 0 0 0 0 0
-D9
-~
-~
-0 0 135207
-0 0 2 0 0 0 0 0 0
-M 0 H 0
-W (null)~
-Y ~
-S
-#137294
-The Skies~
-Open `cair`x falls away in every direction. Without a wall or a patch of
-ground close at hand, distances become difficult to judge; even a small
-movement makes the surrounding emptiness apparent. It's an exposed place, with
-nothing nearby to break the immense sweep of the sky.`x
-~
-0 4194304 18
-G 0 0 50 0 0
-C 0 65 1
-T 3000
-D3
-~
-~
-0 0 135319
-0 0 2 0 0 0 0 0 0
-D5
-~
-~
-0 0 15303
-0 0 2 0 0 0 0 0 0
-D7
-~
-~
-0 0 135375
-0 0 2 0 0 0 0 0 0
-D8
-~
-~
-0 0 1634
-0 0 2 0 0 0 0 0 0
-D9
-~
-~
-0 0 135263
-0 0 2 0 0 0 0 0 0
-M 0 H 0
-W (null)~
-Y ~
-S
 #135246
 The Forest~
 `gTree trunks`x rise through a deep litter of leaves, their bark rough with
@@ -19941,66 +19391,6 @@ D9
 ~
 ~
 0 0 131092
-0 0 2 0 0 0 0 0 0
-M 0 H 0
-W (null)~
-Y ~
-S
-#137295
-The Skies~
-Open `cair`x falls away in every direction. Without a wall or a patch of
-ground close at hand, distances become difficult to judge; even a small
-movement makes the surrounding emptiness apparent. It's an exposed place, with
-nothing nearby to break the immense sweep of the sky.`x
-~
-0 4194304 18
-G 0 0 50 0 0
-C 0 64 1
-T 3000
-D0
-~
-~
-0 0 3965
-0 0 2 0 0 0 0 0 0
-D1
-~
-~
-0 0 1634
-0 0 2 0 0 0 0 0 0
-D2
-~
-~
-0 0 1567
-0 0 2 0 0 0 0 0 0
-D3
-~
-~
-0 0 135263
-0 0 2 0 0 0 0 0 0
-D5
-~
-~
-0 0 15302
-0 0 2 0 0 0 0 0 0
-D6
-~
-~
-0 0 5054
-0 0 2 0 0 0 0 0 0
-D7
-~
-~
-0 0 135319
-0 0 2 0 0 0 0 0 0
-D8
-~
-~
-0 0 1636
-0 0 2 0 0 0 0 0 0
-D9
-~
-~
-0 0 135207
 0 0 2 0 0 0 0 0 0
 M 0 H 0
 W (null)~
@@ -104920,7 +104310,7 @@ D3
 D4
 ~
 ~
-0 0 9538
+0 0 9775
 0 0 2 0 0 0 0 0 0
 D5
 ~
@@ -125080,7 +124470,7 @@ D3
 D4
 ~
 ~
-0 0 9362
+0 0 9601
 0 0 2 0 0 0 0 0 0
 D5
 ~

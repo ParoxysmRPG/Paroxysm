@@ -414,6 +414,9 @@
       
       /** This descriptors connected state (see CON_* in const.h) */
       sh_int    connected;
+
+      /** Failed account password attempts on this connection. */
+      int       account_password_attempts;
       
       
       /** Indicateswhether or not a command is wiating to be executed */

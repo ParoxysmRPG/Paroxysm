@@ -81,11 +81,367 @@ normal~
 ~
 0 0 unknown
 
+#45018
+academy uniform outfitter shopkeeper attendant~
+the academy outfitter~
+An academy outfitter in an `Gemerald`x jacket arranges the colorful uniforms.
+~
+A tape measure hangs around the outfitter's neck, and a small academy badge
+gleams against a neatly pressed jacket. Folded shirts and labeled uniform
+racks are kept within easy reach of the counter.
+~
+normal~
+~
+3x0x0x0x
+0x0x0x0x
+-1
+0
+0
+0
+0 0 stand stand either 0
+~
+0 0 unknown
+
 #0
 
 
 
 #OBJECTS
+#45020
+royal blue gold academy school uniform blazer~
+`Broyal blue`x academy blazer with `Ygold`x piping~
+a `Broyal blue`x academy blazer with `Ygold`x piping~
+wool~
+~
+clothing 0 AB
+-1
+98800 112 0 0 0 0
+100 5 15 3500 100 0
+E
+royal blue gold academy school uniform blazer~
+This royal blue wool blazer has gold piping along its lapels and cuffs. A
+Cortex Academy badge is embroidered above the breast pocket, and the smooth
+lining allows it to sit neatly over a school shirt. Strong buttons and deep
+inner pockets suit everyday campus use.`x
+~
+#45021
+royal blue gold academy school uniform trousers pants~
+`Broyal blue`x uniform trousers with a `Ygold`x stripe~
+a pair of `Broyal blue`x uniform trousers with a `Ygold`x stripe~
+wool~
+~
+clothing 0 AB
+-1
+11776 1024 0 0 0 0
+100 3 10 2000 100 0
+E
+royal blue gold academy school uniform trousers pants~
+Tailored from royal blue wool, these straight-cut trousers have a narrow gold
+stripe down each outer seam. Belt loops and practical pockets keep the finish
+simple, while a small Cortex Academy label is stitched inside the waistband.`x
+~
+#45022
+royal blue gold academy school uniform pleated skirt~
+`Broyal blue`x pleated uniform skirt with `Ygold`x trim~
+a `Broyal blue`x pleated uniform skirt with `Ygold`x trim~
+wool~
+~
+clothing 0 AB
+-1
+3584 512 0 0 0 0
+100 3 10 2000 100 0
+E
+royal blue gold academy school uniform pleated skirt~
+Even pleats give this knee-length royal blue skirt room to move. A fine band
+of gold thread follows the hem, matching the academy blazer, and a concealed
+side fastening keeps the waistband tidy. A small Cortex Academy label sits
+inside the waist.`x
+~
+#45023
+royal blue gold academy school uniform striped tie~
+`Broyal blue`x and `Ygold`x striped academy tie~
+a `Broyal blue`x and `Ygold`x striped academy tie~
+silk~
+~
+clothing 0 AB
+-1
+8 0 0 0 0 0
+100 4 2 600 100 0
+E
+royal blue gold academy school uniform striped tie~
+Diagonal gold stripes cross this royal blue tie in a bright, regular pattern.
+The woven fabric holds a neat knot above a tiny embroidered academy crest. It
+can be worn with either the matching uniform pieces or a plain school shirt.`x
+~
+#45024
+emerald green gold academy school uniform blazer~
+`Gemerald green`x academy blazer with `Ygold`x piping~
+a `Gemerald green`x academy blazer with `Ygold`x piping~
+wool~
+~
+clothing 0 AB
+-1
+98800 112 0 0 0 0
+100 5 15 3500 100 0
+E
+emerald green gold academy school uniform blazer~
+This emerald green wool blazer has gold piping along its lapels and cuffs. A
+Cortex Academy badge is embroidered above the breast pocket, and the smooth
+lining allows it to sit neatly over a school shirt. Strong buttons and deep
+inner pockets suit everyday campus use.`x
+~
+#45025
+emerald green gold academy school uniform trousers pants~
+`Gemerald green`x uniform trousers with a `Ygold`x stripe~
+a pair of `Gemerald green`x uniform trousers with a `Ygold`x stripe~
+wool~
+~
+clothing 0 AB
+-1
+11776 1024 0 0 0 0
+100 3 10 2000 100 0
+E
+emerald green gold academy school uniform trousers pants~
+Tailored from emerald green wool, these straight-cut trousers have a narrow
+gold stripe down each outer seam. Belt loops and practical pockets keep the
+finish simple, while a small Cortex Academy label is stitched inside the
+waistband.`x
+~
+#45026
+emerald green gold academy school uniform pleated skirt~
+`Gemerald green`x pleated uniform skirt with `Ygold`x trim~
+a `Gemerald green`x pleated uniform skirt with `Ygold`x trim~
+wool~
+~
+clothing 0 AB
+-1
+3584 512 0 0 0 0
+100 3 10 2000 100 0
+E
+emerald green gold academy school uniform pleated skirt~
+Even pleats give this knee-length emerald green skirt room to move. A fine
+band of gold thread follows the hem, matching the academy blazer, and a
+concealed side fastening keeps the waistband tidy. A small Cortex Academy
+label sits inside the waist.`x
+~
+#45027
+emerald green gold academy school uniform striped tie~
+`Gemerald green`x and `Ygold`x striped academy tie~
+a `Gemerald green`x and `Ygold`x striped academy tie~
+silk~
+~
+clothing 0 AB
+-1
+8 0 0 0 0 0
+100 4 2 600 100 0
+E
+emerald green gold academy school uniform striped tie~
+Diagonal gold stripes cross this emerald green tie in a bright, regular
+pattern. The woven fabric holds a neat knot above a tiny embroidered academy
+crest. It can be worn with either the matching uniform pieces or a plain
+school shirt.`x
+~
+#45028
+plum purple silver academy school uniform blazer~
+`Mplum purple`x academy blazer with `Wsilver`x piping~
+a `Mplum purple`x academy blazer with `Wsilver`x piping~
+wool~
+~
+clothing 0 AB
+-1
+98800 112 0 0 0 0
+100 5 15 3500 100 0
+E
+plum purple silver academy school uniform blazer~
+This plum purple wool blazer has silver piping along its lapels and cuffs. A
+Cortex Academy badge is embroidered above the breast pocket, and the smooth
+lining allows it to sit neatly over a school shirt. Strong buttons and deep
+inner pockets suit everyday campus use.`x
+~
+#45029
+plum purple silver academy school uniform trousers pants~
+`Mplum purple`x uniform trousers with a `Wsilver`x stripe~
+a pair of `Mplum purple`x uniform trousers with a `Wsilver`x stripe~
+wool~
+~
+clothing 0 AB
+-1
+11776 1024 0 0 0 0
+100 3 10 2000 100 0
+E
+plum purple silver academy school uniform trousers pants~
+Tailored from plum purple wool, these straight-cut trousers have a narrow
+silver stripe down each outer seam. Belt loops and practical pockets keep the
+finish simple, while a small Cortex Academy label is stitched inside the
+waistband.`x
+~
+#45030
+plum purple silver academy school uniform pleated skirt~
+`Mplum purple`x pleated uniform skirt with `Wsilver`x trim~
+a `Mplum purple`x pleated uniform skirt with `Wsilver`x trim~
+wool~
+~
+clothing 0 AB
+-1
+3584 512 0 0 0 0
+100 3 10 2000 100 0
+E
+plum purple silver academy school uniform pleated skirt~
+Even pleats give this knee-length plum purple skirt room to move. A fine band
+of silver thread follows the hem, matching the academy blazer, and a concealed
+side fastening keeps the waistband tidy. A small Cortex Academy label sits
+inside the waist.`x
+~
+#45031
+plum purple silver academy school uniform striped tie~
+`Mplum purple`x and `Wsilver`x striped academy tie~
+a `Mplum purple`x and `Wsilver`x striped academy tie~
+silk~
+~
+clothing 0 AB
+-1
+8 0 0 0 0 0
+100 4 2 600 100 0
+E
+plum purple silver academy school uniform striped tie~
+Diagonal silver stripes cross this plum purple tie in a bright, regular
+pattern. The woven fabric holds a neat knot above a tiny embroidered academy
+crest. It can be worn with either the matching uniform pieces or a plain
+school shirt.`x
+~
+#45032
+burgundy red gold academy school uniform blazer~
+`Rburgundy red`x academy blazer with `Ygold`x piping~
+a `Rburgundy red`x academy blazer with `Ygold`x piping~
+wool~
+~
+clothing 0 AB
+-1
+98800 112 0 0 0 0
+100 5 15 3500 100 0
+E
+burgundy red gold academy school uniform blazer~
+This burgundy red wool blazer has gold piping along its lapels and cuffs. A
+Cortex Academy badge is embroidered above the breast pocket, and the smooth
+lining allows it to sit neatly over a school shirt. Strong buttons and deep
+inner pockets suit everyday campus use.`x
+~
+#45033
+burgundy red gold academy school uniform trousers pants~
+`Rburgundy red`x uniform trousers with a `Ygold`x stripe~
+a pair of `Rburgundy red`x uniform trousers with a `Ygold`x stripe~
+wool~
+~
+clothing 0 AB
+-1
+11776 1024 0 0 0 0
+100 3 10 2000 100 0
+E
+burgundy red gold academy school uniform trousers pants~
+Tailored from burgundy red wool, these straight-cut trousers have a narrow
+gold stripe down each outer seam. Belt loops and practical pockets keep the
+finish simple, while a small Cortex Academy label is stitched inside the
+waistband.`x
+~
+#45034
+burgundy red gold academy school uniform pleated skirt~
+`Rburgundy red`x pleated uniform skirt with `Ygold`x trim~
+a `Rburgundy red`x pleated uniform skirt with `Ygold`x trim~
+wool~
+~
+clothing 0 AB
+-1
+3584 512 0 0 0 0
+100 3 10 2000 100 0
+E
+burgundy red gold academy school uniform pleated skirt~
+Even pleats give this knee-length burgundy red skirt room to move. A fine band
+of gold thread follows the hem, matching the academy blazer, and a concealed
+side fastening keeps the waistband tidy. A small Cortex Academy label sits
+inside the waist.`x
+~
+#45035
+burgundy red gold academy school uniform striped tie~
+`Rburgundy red`x and `Ygold`x striped academy tie~
+a `Rburgundy red`x and `Ygold`x striped academy tie~
+silk~
+~
+clothing 0 AB
+-1
+8 0 0 0 0 0
+100 4 2 600 100 0
+E
+burgundy red gold academy school uniform striped tie~
+Diagonal gold stripes cross this burgundy red tie in a bright, regular
+pattern. The woven fabric holds a neat knot above a tiny embroidered academy
+crest. It can be worn with either the matching uniform pieces or a plain
+school shirt.`x
+~
+#45036
+ivory gold academy school uniform shirt~
+`Wivory`x school shirt with `Ygold`x cuff stitching~
+an `Wivory`x school shirt with `Ygold`x cuff stitching~
+cotton~
+~
+clothing 0 AB
+-1
+98800 112 0 0 0 0
+100 2 10 1200 100 0
+E
+ivory gold academy school uniform shirt~
+Crisp ivory cotton forms a collared school shirt, with gold stitching around
+the cuffs and a small academy crest on the breast pocket. The plain body sits
+comfortably beneath any of the colorful blazers, and sturdy buttons run down
+the front.`x
+~
+#45037
+teal turquoise gold academy school uniform sweater jumper~
+`Cteal`x academy sweater with `Ygold`x edging~
+a `Cteal`x academy sweater with `Ygold`x edging~
+wool~
+~
+clothing 0 AB
+-1
+98800 0 0 0 0 0
+100 4 12 2200 100 0
+E
+teal turquoise gold academy school uniform sweater jumper~
+Soft teal wool gives this V-neck sweater a bright finish. Gold edging follows
+the neckline and cuffs, with a small academy badge knitted into the chest. Its
+relaxed cut fits over a school shirt without concealing the knot of a tie.`x
+~
+#45038
+white gold academy school uniform socks~
+`Wwhite`x knee socks with `Ygold`x bands~
+a pair of `Wwhite`x knee socks with `Ygold`x bands~
+cotton~
+~
+clothing 0 AB
+-1
+24576 0 0 0 0 0
+100 1 3 400 100 0
+E
+white gold academy school uniform socks~
+White cotton socks reach to just below the knee, where two narrow gold bands
+add a flash of color. Reinforced heels and toes give them a practical finish
+for long days moving between classrooms.`x
+~
+#45039
+black gold academy school uniform loafers shoes~
+`Dblack`x school loafers with `Ygold`x buckles~
+a pair of `Dblack`x school loafers with `Ygold`x buckles~
+leather~
+~
+clothing 0 AB
+-1
+16384 0 0 0 0 0
+100 2 10 1800 100 0
+E
+black gold academy school uniform loafers shoes~
+Polished black leather loafers have rounded toes and low, steady heels. Small
+gold buckles brighten the straps across the insteps. Flexible soles and soft
+lining make them suitable for walking around the campus.`x
+~
 #0
 
 
@@ -125,6 +481,7 @@ S
 45015 0 0 0 0 0 100 100 0 23 0 0
 45016 34 32 8 12 6 100 100 0 23 0 0
 45017 8 9 6 21 23 100 100 0 23 0 0
+45018 6 0 0 0 0 100 100 0 23 0 0
 0
 
 

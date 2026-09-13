@@ -62477,13 +62477,14 @@ W (null)~
 Y ~
 S
 #90619
-The Skies~
-The `wroof`x spreads in a patchwork of weathered seams and older repairs. Grit
-gathers against raised edges, and little blisters roughen the exposed surface.
-Up here the building offers few sheltered corners; noises from below arrive
-thinned by the open air.`x
+`wAn Exposed Rooftop`x~
+A broad stretch of roofing carries the wear of sun, rain, and older repairs.
+The firm surface changes texture around its seams, and loose grit collects
+where the finish meets a raised edge. There is no ceiling overhead, only the
+open sky above the building.`x
 ~
 0 4194304 13
+B 1
 G 0 0 50 0 0
 C 21 76 1
 T 3000
@@ -62726,13 +62727,14 @@ W (null)~
 Y ~
 S
 #90621
-The Skies~
-The `wroof`x spreads in a patchwork of weathered seams and older repairs. Grit
-gathers against raised edges, and little blisters roughen the exposed surface.
-Up here the building offers few sheltered corners; noises from below arrive
-thinned by the open air.`x
+`wAn Exposed Rooftop`x~
+The exposed roof forms a solid surface beneath the open sky. Weathered seams
+and patches divide the roofing into uneven sections, with grit gathered along
+the raised edges. The building lies beneath this level; beyond its outline,
+the surrounding air opens away from the roof.`x
 ~
 0 4194304 13
+B 1
 G 0 0 50 0 0
 C 22 76 1
 T 3000
@@ -65133,13 +65135,14 @@ W (null)~
 Y ~
 S
 #90641
-The Skies~
-The `wroof`x spreads in a patchwork of weathered seams and older repairs. Grit
-gathers against raised edges, and little blisters roughen the exposed surface.
-Up here the building offers few sheltered corners; noises from below arrive
-thinned by the open air.`x
+`wAn Exposed Rooftop`x~
+The top of the building spreads into a weathered roof surface. Faint channels
+and overlapping repairs interrupt the otherwise plain expanse, with rougher
+patches near the edges. Solid roofing supports this level while the open air
+beyond the building makes the height apparent.`x
 ~
 0 4194304 13
+B 1
 G 0 0 50 0 0
 C 32 76 1
 T 3000
@@ -78608,13 +78611,14 @@ W (null)~
 Y ~
 S
 #90753
-The Skies~
-The `wroof`x spreads in a patchwork of weathered seams and older repairs. Grit
-gathers against raised edges, and little blisters roughen the exposed surface.
-Up here the building offers few sheltered corners; noises from below arrive
-thinned by the open air.`x
+`wAn Exposed Rooftop`x~
+The exposed roof forms a solid surface beneath the open sky. Weathered seams
+and patches divide the roofing into uneven sections, with grit gathered along
+the raised edges. The building lies beneath this level; beyond its outline,
+the surrounding air opens away from the roof.`x
 ~
 0 4194304 13
+B 1
 G 0 0 50 0 0
 C 16 77 1
 T 3000
@@ -79579,13 +79583,14 @@ W (null)~
 Y ~
 S
 #90761
-The Skies~
-The `wroof`x spreads in a patchwork of weathered seams and older repairs. Grit
-gathers against raised edges, and little blisters roughen the exposed surface.
-Up here the building offers few sheltered corners; noises from below arrive
-thinned by the open air.`x
+`wAn Exposed Rooftop`x~
+The top of the building spreads into a weathered roof surface. Faint channels
+and overlapping repairs interrupt the otherwise plain expanse, with rougher
+patches near the edges. Solid roofing supports this level while the open air
+beyond the building makes the height apparent.`x
 ~
 0 4194304 13
+B 1
 G 1 -1 50 0 0
 C 20 77 1
 T 3000
@@ -79822,13 +79827,14 @@ W (null)~
 Y ~
 S
 #90763
-The Skies~
-The `wroof`x spreads in a patchwork of weathered seams and older repairs. Grit
-gathers against raised edges, and little blisters roughen the exposed surface.
-Up here the building offers few sheltered corners; noises from below arrive
-thinned by the open air.`x
+`wAn Exposed Rooftop`x~
+A broad stretch of roofing carries the wear of sun, rain, and older repairs.
+The firm surface changes texture around its seams, and loose grit collects
+where the finish meets a raised edge. There is no ceiling overhead, only the
+open sky above the building.`x
 ~
 0 4194304 13
+B 1
 G 0 0 50 0 0
 C 21 77 1
 T 3000
@@ -80066,11 +80072,11 @@ W (null)~
 Y ~
 S
 #90765
-The Skies~
-Toward the far, the nearest shapes below form a broken outline around a pale
-patch of dark basalt. An isolated vertical form below interrupts the broader
-pattern, drawing attention before becoming small again. It's a place of depth
-rather than enclosure, with the nearest solid forms kept distinctly below.`x
+`wThe Upper Floor`x~
+A solid upper floor occupies this part of the building. Its surface runs
+between the structural edges, with small changes in texture around the joins.
+The space has a plain, unfinished character, its proportions defined by the
+floor and surrounding construction rather than any particular furnishings.`x
 ~
 0 524297 2
 B 1
@@ -82478,13 +82484,14 @@ W (null)~
 Y ~
 S
 #90785
-The Skies~
-The `wroof`x spreads in a patchwork of weathered seams and older repairs. Grit
-gathers against raised edges, and little blisters roughen the exposed surface.
-Up here the building offers few sheltered corners; noises from below arrive
-thinned by the open air.`x
+`wAn Exposed Rooftop`x~
+The top of the building spreads into a weathered roof surface. Faint channels
+and overlapping repairs interrupt the otherwise plain expanse, with rougher
+patches near the edges. Solid roofing supports this level while the open air
+beyond the building makes the height apparent.`x
 ~
 0 4194304 13
+B 1
 G 0 0 50 0 0
 C 32 77 1
 T 3000
@@ -82720,12 +82727,11 @@ W (null)~
 Y ~
 S
 #90787
-The Skies~
-Toward the left-hand, the nearest shapes below form a broken outline around a
-pale patch of pale limestone. Nearby outlines remain sharper than the forms
-beyond them, making the depth apparent without giving it an easy measure.
-There is no floor here, only the exposed scale of open air and the distant
-arrangement beneath it.`x
+`wThe Upper Floor`x~
+A solid upper floor occupies this part of the building. Its surface runs
+between the structural edges, with small changes in texture around the joins.
+The space has a plain, unfinished character, its proportions defined by the
+floor and surrounding construction rather than any particular furnishings.`x
 ~
 0 69206025 9
 B 1
@@ -87071,13 +87077,14 @@ W (null)~
 Y ~
 S
 #90823
-The Skies~
-The `wroof`x spreads in a patchwork of weathered seams and older repairs. Grit
-gathers against raised edges, and little blisters roughen the exposed surface.
-Up here the building offers few sheltered corners; noises from below arrive
-thinned by the open air.`x
+`wAn Exposed Rooftop`x~
+A broad stretch of roofing carries the wear of sun, rain, and older repairs.
+The firm surface changes texture around its seams, and loose grit collects
+where the finish meets a raised edge. There is no ceiling overhead, only the
+open sky above the building.`x
 ~
 0 4194304 13
+B 1
 G 0 0 50 0 0
 C 51 77 1
 T 3000
@@ -99832,13 +99839,14 @@ W (null)~
 Y ~
 S
 #90929
-The Skies~
-The `wroof`x spreads in a patchwork of weathered seams and older repairs. Grit
-gathers against raised edges, and little blisters roughen the exposed surface.
-Up here the building offers few sheltered corners; noises from below arrive
-thinned by the open air.`x
+`wAn Exposed Rooftop`x~
+The top of the building spreads into a weathered roof surface. Faint channels
+and overlapping repairs interrupt the otherwise plain expanse, with rougher
+patches near the edges. Solid roofing supports this level while the open air
+beyond the building makes the height apparent.`x
 ~
 0 4194304 13
+B 1
 G 0 0 50 0 0
 C 32 78 1
 T 3000
@@ -104417,13 +104425,14 @@ W (null)~
 Y ~
 S
 #90967
-The Skies~
-The `wroof`x spreads in a patchwork of weathered seams and older repairs. Grit
-gathers against raised edges, and little blisters roughen the exposed surface.
-Up here the building offers few sheltered corners; noises from below arrive
-thinned by the open air.`x
+`wAn Exposed Rooftop`x~
+A broad stretch of roofing carries the wear of sun, rain, and older repairs.
+The firm surface changes texture around its seams, and loose grit collects
+where the finish meets a raised edge. There is no ceiling overhead, only the
+open sky above the building.`x
 ~
 0 4194304 13
+B 1
 G 0 0 50 0 0
 C 51 78 1
 T 3000
@@ -243142,7 +243151,7 @@ D8
 ~
 ~
 1 0 16679
-0 0 0 0 0 0 0 0 0
+0 0 0 4 0 0 0 0 0
 D9
 ~
 ~
@@ -243482,7 +243491,7 @@ D2
 ~
 ~
 5 0 16679
-0 0 0 0 0 0 0 0 0
+0 0 0 4 0 0 0 0 0
 D3
 ~
 ~
@@ -243507,7 +243516,7 @@ D8
 ~
 ~
 10 0 16680
-0 0 0 0 0 0 0 0 0
+0 0 0 4 0 0 0 0 0
 D9
 ~
 ~
@@ -243847,7 +243856,7 @@ D2
 ~
 ~
 11 0 16680
-0 0 0 0 0 0 0 0 0
+0 0 0 1 0 0 0 0 0
 D3
 ~
 ~
@@ -243877,7 +243886,7 @@ D9
 ~
 ~
 0 0 16679
-0 0 0 0 0 0 0 0 0
+0 0 0 4 0 0 0 0 0
 M 0 H 0
 W (null)~
 Y ~
@@ -244237,12 +244246,12 @@ D8
 ~
 ~
 10 0 2461
-0 0 0 0 0 0 0 0 0
+0 0 0 4 0 0 0 0 0
 D9
 ~
 ~
 0 0 16680
-0 0 0 0 0 0 0 0 0
+0 0 0 4 0 0 0 0 0
 M 0 H 0
 W (null)~
 Y ~
@@ -244577,7 +244586,7 @@ D2
 ~
 ~
 10 0 2461
-0 0 0 0 0 0 0 0 0
+0 0 0 1 0 0 0 0 0
 D3
 ~
 ~
@@ -244602,7 +244611,7 @@ D8
 ~
 ~
 10 0 16682
-0 0 0 0 0 0 0 0 0
+0 0 0 4 0 0 0 0 0
 D9
 ~
 ~
@@ -244942,7 +244951,7 @@ D2
 ~
 ~
 0 0 16682
-0 0 0 0 0 0 0 0 0
+0 0 0 4 0 0 0 0 0
 D3
 ~
 ~
@@ -244967,12 +244976,12 @@ D8
 ~
 ~
 0 0 16683
-0 0 0 0 0 0 0 0 0
+0 0 0 4 0 0 0 0 0
 D9
 ~
 ~
 0 0 2461
-0 0 0 0 0 0 0 0 0
+0 0 0 4 0 0 0 0 0
 M 0 H 0
 W (null)~
 Y ~
@@ -245307,7 +245316,7 @@ D2
 ~
 ~
 10 0 16683
-0 0 0 0 0 0 0 0 0
+0 0 0 1 0 0 0 0 0
 D3
 ~
 ~
@@ -245332,12 +245341,12 @@ D8
 ~
 ~
 0 0 16684
-0 0 0 0 0 0 0 0 0
+0 0 0 4 0 0 0 0 0
 D9
 ~
 ~
 5 0 16682
-0 0 0 0 0 0 0 0 0
+0 0 0 1 0 0 0 0 0
 M 0 H 0
 W (null)~
 Y ~
@@ -245672,7 +245681,7 @@ D2
 ~
 ~
 0 0 16684
-0 0 0 0 0 0 0 0 0
+0 0 0 1 0 0 0 0 0
 D3
 ~
 ~
@@ -245697,12 +245706,12 @@ D8
 ~
 ~
 0 0 16685
-0 0 0 0 0 0 0 0 0
+0 0 0 4 0 0 0 0 0
 D9
 ~
 ~
 0 0 16683
-0 0 0 0 0 0 0 0 0
+0 0 0 4 0 0 0 0 0
 M 0 H 0
 W (null)~
 Y ~
@@ -246037,7 +246046,7 @@ D2
 ~
 ~
 5 0 16685
-0 0 0 0 0 0 0 0 0
+0 0 0 1 0 0 0 0 0
 D3
 ~
 ~
@@ -246067,7 +246076,7 @@ D9
 ~
 ~
 0 0 16684
-0 0 0 0 0 0 0 0 0
+0 0 0 4 0 0 0 0 0
 M 0 H 0
 W (null)~
 Y ~
@@ -246432,7 +246441,7 @@ D9
 ~
 ~
 0 0 16685
-0 0 0 0 0 0 0 0 0
+0 0 0 4 0 0 0 0 0
 M 0 H 0
 W (null)~
 Y ~
@@ -246792,7 +246801,7 @@ D8
 ~
 ~
 0 0 16645
-0 0 0 0 0 0 0 0 0
+0 0 0 4 0 0 0 0 0
 D9
 ~
 ~
@@ -247132,7 +247141,7 @@ D2
 ~
 ~
 0 0 16645
-0 0 0 0 0 0 0 0 0
+0 0 0 4 0 0 0 0 0
 D3
 ~
 ~
@@ -247157,7 +247166,7 @@ D8
 ~
 ~
 0 0 2451
-0 0 0 0 0 0 0 0 0
+0 0 0 4 0 0 0 0 0
 D9
 ~
 ~
@@ -247492,7 +247501,7 @@ D2
 ~
 ~
 0 0 2451
-0 0 0 0 0 0 0 0 0
+0 0 0 4 0 0 0 0 0
 D3
 ~
 ~
@@ -247522,7 +247531,7 @@ D9
 ~
 ~
 0 0 16645
-0 0 0 0 0 0 0 0 0
+0 0 0 4 0 0 0 0 0
 M 0 H 0
 W (null)~
 Y ~
@@ -247882,7 +247891,7 @@ D9
 ~
 ~
 0 0 2451
-0 0 0 0 0 0 0 0 0
+0 0 0 4 0 0 0 0 0
 M 0 H 0
 W (null)~
 Y ~
@@ -248657,7 +248666,7 @@ D8
 ~
 ~
 0 0 16718
-0 0 0 0 0 0 0 0 0
+0 0 0 4 0 0 0 0 0
 D9
 ~
 ~
@@ -248932,7 +248941,7 @@ D2
 ~
 ~
 0 0 16718
-0 0 0 0 0 0 0 0 0
+0 0 0 4 0 0 0 0 0
 D3
 ~
 ~
@@ -249202,7 +249211,7 @@ D9
 ~
 ~
 0 0 16718
-0 0 0 0 0 0 0 0 0
+0 0 0 4 0 0 0 0 0
 M 0 H 0
 W (null)~
 Y ~
@@ -249677,7 +249686,7 @@ D8
 ~
 ~
 0 0 16740
-0 0 0 0 0 0 0 0 0
+0 0 0 4 0 0 0 0 0
 D9
 ~
 ~
@@ -249892,7 +249901,7 @@ D2
 ~
 ~
 5 0 16740
-0 0 0 0 0 0 0 0 0
+0 0 0 1 0 0 0 0 0
 D3
 ~
 ~
@@ -250162,7 +250171,7 @@ D9
 ~
 ~
 0 0 16740
-0 0 0 0 0 0 0 0 0
+0 0 0 4 0 0 0 0 0
 M 0 H 0
 W (null)~
 Y ~

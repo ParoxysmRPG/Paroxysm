@@ -3534,8 +3534,15 @@ Online 0
 Type 0
 Text `cSyntax`g:`W rent `g(`Wroom number `g/`W stop`g)`w
 
-This can be used from the each of the college dormitories in the
-Cortex Academy of Civic Integration at no charge. 
+This can be used from each of the college dormitories in the
+Cortex Academy of Civic Integration at no charge.
+
+From the covered campus walkway, go west to the Student Dormitory
+Entrance, then up to the Student Dormitory Nexus. House Queenson is
+north, Kingson northwest, Bishop south, and Rook southwest of the nexus.
+Use rent in a house common room to see available rooms, or rent 1 through
+rent 5 to claim one. Use open followed by the direction to open your door.
+Each house has rooms upstairs; Rook rooms 2 through 5 are all upstairs.
 
 `cSyntax`g:`W roomie `g(`Wroom number `g/`W stop`g)`w
 
@@ -3642,8 +3649,15 @@ Online 0
 Type 0
 Text `cSyntax`g:`W rent `g(`Wroom number `g/`W stop`g)`w
 
-This can be used from the each of the college dormitories in the
-Cortex Academy of Civic Integration at no charge. 
+This can be used from each of the college dormitories in the
+Cortex Academy of Civic Integration at no charge.
+
+From the covered campus walkway, go west to the Student Dormitory
+Entrance, then up to the Student Dormitory Nexus. House Queenson is
+north, Kingson northwest, Bishop south, and Rook southwest of the nexus.
+Use rent in a house common room to see available rooms, or rent 1 through
+rent 5 to claim one. Use open followed by the direction to open your door.
+Each house has rooms upstairs; Rook rooms 2 through 5 are all upstairs.
 
 `cSyntax`g:`W roomie `g(`Wroom number `g/`W stop`g)`w
 
@@ -32778,6 +32792,47 @@ new operations. Hours 7 and 17 are reserved. Times use the game's clock. Use
 startup it also fills today where future time slots remain. Server downtime,
 the Cleanse and an overlapping active battle can prevent an operation from
 launching.`x
+~
+End
+
+Keyword Campus Map~
+SeeAlso Uniforms, Dorms, The College~
+Level 0
+Online 0
+Type 0
+Text Cortex Academy Reception is west of the front walk on Warden's Way.
+From Warden's Way, go west twice, opening the reception door if needed.
+
+From reception:
+  Up    - Academy Uniform Shop, with the bookstore and cafeteria nearby.
+  West  - Union plaza, continuing west to the Academy Courtyard and dorms.
+  North - Recovery wing.
+  South - Administrative hallway.
+
+From the Academy Courtyard, continue west to the signed Student Dormitory
+Entrance, then go up to the four houses. For the arts building, go five
+south from the courtyard and then east. The clinic and biodome are north
+of the courtyard.
+
+Read the campus directories in reception and the courtyard for directions.
+~
+End
+
+Keyword Uniforms~
+SeeAlso Campus Map, Dorms, Customize~
+Level 0
+Online 0
+Type 0
+Text The Academy Uniform Shop is directly upstairs from Cortex Academy Reception.
+Use list to browse and buy followed by an item number to purchase.
+
+Choose royal blue with gold trim, emerald green with gold, plum purple with
+silver, or burgundy red with gold. Each color has a blazer, trousers, pleated
+skirt, and striped tie. Ivory shirts, teal sweaters, white knee socks, and
+black loafers complete the range. Students may choose any color combination.
+
+Use wear followed by an item keyword, such as wear blazer, to put it on.
+The fitting bench beside the shop mirror offers a place to sit.
 ~
 End
 

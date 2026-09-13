@@ -1,0 +1,236 @@
+[
+  {
+    "vnum": 14334,
+    "before_name": "",
+    "name": "An Open Plot",
+    "exit_change": false
+  },
+  {
+    "vnum": 18377,
+    "before_name": "",
+    "name": "An Unfinished Room",
+    "exit_change": false
+  },
+  {
+    "vnum": 3994,
+    "before_name": "",
+    "name": "An Exposed Rooftop",
+    "exit_change": false
+  },
+  {
+    "vnum": 3879,
+    "before_name": "Skies",
+    "name": "Skies",
+    "exit_change": true
+  },
+  {
+    "vnum": 1759,
+    "before_name": "",
+    "name": "An Exposed Rooftop",
+    "exit_change": false
+  },
+  {
+    "vnum": 1751,
+    "before_name": "",
+    "name": "An Exposed Rooftop",
+    "exit_change": false
+  },
+  {
+    "vnum": 1735,
+    "before_name": "",
+    "name": "An Exposed Rooftop",
+    "exit_change": false
+  },
+  {
+    "vnum": 3773,
+    "before_name": "",
+    "name": "An Unfinished Commercial Room",
+    "exit_change": false
+  },
+  {
+    "vnum": 1691,
+    "before_name": "",
+    "name": "An Exposed Rooftop",
+    "exit_change": false
+  },
+  {
+    "vnum": 7650,
+    "before_name": "",
+    "name": "An Exposed Rooftop",
+    "exit_change": false
+  },
+  {
+    "vnum": 3398,
+    "before_name": "",
+    "name": "An Exposed Rooftop",
+    "exit_change": false
+  },
+  {
+    "vnum": 3395,
+    "before_name": "",
+    "name": "An Exposed Rooftop",
+    "exit_change": false
+  },
+  {
+    "vnum": 3389,
+    "before_name": "",
+    "name": "An Exposed Rooftop",
+    "exit_change": false
+  },
+  {
+    "vnum": 3387,
+    "before_name": "",
+    "name": "An Exposed Rooftop",
+    "exit_change": false
+  },
+  {
+    "vnum": 3384,
+    "before_name": "",
+    "name": "An Exposed Rooftop",
+    "exit_change": false
+  },
+  {
+    "vnum": 9313,
+    "before_name": "Skies",
+    "name": "Skies",
+    "exit_change": true
+  },
+  {
+    "vnum": 5210,
+    "before_name": "An Exposed Rooftop",
+    "name": "An Exposed Rooftop",
+    "exit_change": true
+  },
+  {
+    "vnum": 7145,
+    "before_name": "",
+    "name": "An Exposed Rooftop",
+    "exit_change": false
+  },
+  {
+    "vnum": 9180,
+    "before_name": "",
+    "name": "An Unfinished Room",
+    "exit_change": false
+  },
+  {
+    "vnum": 9178,
+    "before_name": "",
+    "name": "An Unfinished Room",
+    "exit_change": false
+  },
+  {
+    "vnum": 9174,
+    "before_name": "",
+    "name": "An Unfinished Room",
+    "exit_change": false
+  },
+  {
+    "vnum": 9172,
+    "before_name": "",
+    "name": "An Unfinished Room",
+    "exit_change": false
+  },
+  {
+    "vnum": 3027,
+    "before_name": "",
+    "name": "An Exposed Rooftop",
+    "exit_change": false
+  },
+  {
+    "vnum": 9165,
+    "before_name": "",
+    "name": "An Unfinished Room",
+    "exit_change": false
+  },
+  {
+    "vnum": 9161,
+    "before_name": "",
+    "name": "An Unfinished Room",
+    "exit_change": false
+  },
+  {
+    "vnum": 9159,
+    "before_name": "",
+    "name": "An Unfinished Room",
+    "exit_change": false
+  },
+  {
+    "vnum": 4558,
+    "before_name": "",
+    "name": "An Exposed Rooftop",
+    "exit_change": false
+  },
+  {
+    "vnum": 16559,
+    "before_name": "",
+    "name": "An Unfinished Commercial Room",
+    "exit_change": false
+  },
+  {
+    "vnum": 4270,
+    "before_name": "",
+    "name": "An Exposed Rooftop",
+    "exit_change": false
+  },
+  {
+    "vnum": 16558,
+    "before_name": "",
+    "name": "An Unfinished Commercial Room",
+    "exit_change": false
+  },
+  {
+    "vnum": 2207,
+    "before_name": "",
+    "name": "An Exposed Rooftop",
+    "exit_change": false
+  },
+  {
+    "vnum": 16540,
+    "before_name": "",
+    "name": "An Open Plot",
+    "exit_change": false
+  },
+  {
+    "vnum": 3386,
+    "before_name": "Skies",
+    "name": "Skies",
+    "exit_change": true
+  },
+  {
+    "vnum": 3382,
+    "before_name": "Skies",
+    "name": "Skies",
+    "exit_change": true
+  },
+  {
+    "vnum": 3311,
+    "before_name": "Skies",
+    "name": "Skies",
+    "exit_change": true
+  },
+  {
+    "vnum": 3304,
+    "before_name": "Skies",
+    "name": "Skies",
+    "exit_change": true
+  },
+  {
+    "vnum": 3179,
+    "before_name": "Skies",
+    "name": "Skies",
+    "exit_change": true
+  },
+  {
+    "vnum": 3021,
+    "before_name": "Skies",
+    "name": "Skies",
+    "exit_change": true
+  },
+  {
+    "vnum": 6868,
+    "before_name": "An Exposed Rooftop",
+    "name": "An Exposed Rooftop",
+    "exit_change": true
+  }
+]

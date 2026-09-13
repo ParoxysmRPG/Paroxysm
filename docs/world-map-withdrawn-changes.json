@@ -1,0 +1,9050 @@
+{
+  "reason": "Market-managed and unclassified doors must not be normalized from symmetry alone.",
+  "changes": [
+    {
+      "room": 14808,
+      "direction": 0,
+      "reason": "Restore configured goblin market return",
+      "before": {
+        "kind": 1,
+        "key": 0,
+        "to": 14809,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 0,
+        "key": 0,
+        "to": 405002,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 14817,
+      "direction": 2,
+      "reason": "Restore configured goblin market return",
+      "before": {
+        "kind": 1,
+        "key": 0,
+        "to": 14818,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 0,
+        "key": 0,
+        "to": 405002,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 405002,
+      "direction": 3,
+      "reason": "Match public market passage",
+      "before": {
+        "kind": 1,
+        "key": 0,
+        "to": 14817,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 0,
+        "key": 0,
+        "to": 14817,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 150657,
+      "direction": 1,
+      "reason": "Restore missing return on adjacent forest grid rooms",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 0,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 0,
+        "key": 0,
+        "to": 150659,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 303220,
+      "direction": 3,
+      "reason": "Restore missing return on adjacent forest grid rooms",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 0,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 0,
+        "key": 0,
+        "to": 303218,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 323094,
+      "direction": 2,
+      "reason": "Restore missing return on adjacent forest grid rooms",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 0,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 0,
+        "key": 0,
+        "to": 322992,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 321066,
+      "direction": 2,
+      "reason": "Restore missing return on adjacent forest grid rooms",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 0,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 0,
+        "key": 0,
+        "to": 320964,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 362100,
+      "direction": 1,
+      "reason": "Restore missing return on adjacent forest grid rooms",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 0,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 0,
+        "key": 0,
+        "to": 362102,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 362100,
+      "direction": 0,
+      "reason": "Restore missing return on adjacent forest grid rooms",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 0,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 362202,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 4216,
+      "direction": 5,
+      "reason": "Remove physical door into open air",
+      "before": {
+        "kind": 1,
+        "key": 0,
+        "to": 2934,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 0,
+        "key": 0,
+        "to": 2934,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 16648,
+      "direction": 3,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 16655,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 16655,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 90056,
+      "direction": 2,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 16681,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 16681,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 16827,
+      "direction": 4,
+      "reason": "Remove physical door into open air",
+      "before": {
+        "kind": 1,
+        "key": 0,
+        "to": 1525,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 0,
+        "key": 0,
+        "to": 1525,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 15122,
+      "direction": 3,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 15121,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 15121,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 2997,
+      "direction": 3,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 2847,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 2847,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 16493,
+      "direction": 3,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 15258,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 15258,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 2982,
+      "direction": 2,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 2983,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 2983,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 14255,
+      "direction": 3,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 11217,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 11217,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 9172,
+      "direction": 2,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 9174,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 9174,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 16071,
+      "direction": 2,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 1284,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 1284,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 7748,
+      "direction": 1,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 7747,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 7747,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 92330,
+      "direction": 2,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 92186,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 92186,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 92234,
+      "direction": 3,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 92232,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 92232,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 92092,
+      "direction": 0,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 92236,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 92236,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 92366,
+      "direction": 3,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 92364,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 92364,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 92366,
+      "direction": 1,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 92368,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 92368,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 92234,
+      "direction": 0,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 92378,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 92378,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 92644,
+      "direction": 2,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 10,
+        "key": 0,
+        "to": 92500,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 2,
+        "key": 0,
+        "to": 92500,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 92474,
+      "direction": 0,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 92618,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 92618,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 90612,
+      "direction": 1,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 90614,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 90614,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 90844,
+      "direction": 2,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 90700,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 90700,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 90724,
+      "direction": 3,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 90722,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 90722,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 92644,
+      "direction": 0,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 92788,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 92788,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 90902,
+      "direction": 2,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 90758,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 90758,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 90776,
+      "direction": 3,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 90774,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 90774,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 93020,
+      "direction": 2,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 92876,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 92876,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 93066,
+      "direction": 2,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 92922,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 92922,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 93020,
+      "direction": 3,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 93018,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 93018,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 93076,
+      "direction": 3,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 93074,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 93074,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 93078,
+      "direction": 4,
+      "reason": "Remove physical door into open air",
+      "before": {
+        "kind": 1,
+        "key": 0,
+        "to": 93079,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 0,
+        "key": 0,
+        "to": 93079,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 91054,
+      "direction": 1,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 91056,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 91056,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 93114,
+      "direction": 1,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 93116,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 93116,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 93076,
+      "direction": 0,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 93220,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 93220,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 91342,
+      "direction": 2,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 91198,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 91198,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 93258,
+      "direction": 1,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 93260,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 93260,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 91484,
+      "direction": 1,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 91486,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 91486,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 93788,
+      "direction": 2,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 93644,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 93644,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 91766,
+      "direction": 2,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 91622,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 91622,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 91482,
+      "direction": 0,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 91626,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 91626,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 91796,
+      "direction": 2,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 91652,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 91652,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 91682,
+      "direction": 3,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 91680,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 91680,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 91780,
+      "direction": 0,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 91924,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 91924,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 91860,
+      "direction": 0,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 92004,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 92004,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 92004,
+      "direction": 1,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 92006,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 92006,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 92114,
+      "direction": 3,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 92112,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 92112,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 110708,
+      "direction": 1,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 110710,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 110710,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 112802,
+      "direction": 1,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 112804,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 112804,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 112938,
+      "direction": 3,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 112936,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 112936,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 112994,
+      "direction": 3,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 10,
+        "key": 0,
+        "to": 112992,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 2,
+        "key": 0,
+        "to": 112992,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 111780,
+      "direction": 1,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 111782,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 111782,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 112146,
+      "direction": 1,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 112148,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 112148,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 112212,
+      "direction": 3,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 112210,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 112210,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 110442,
+      "direction": 3,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 110440,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 110440,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 110658,
+      "direction": 2,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 10,
+        "key": 0,
+        "to": 110514,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 2,
+        "key": 0,
+        "to": 110514,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 133347,
+      "direction": 3,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 133345,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 133345,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 135748,
+      "direction": 2,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 135692,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 135692,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 135750,
+      "direction": 2,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 135694,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 135694,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 133685,
+      "direction": 1,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 133687,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 133687,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 135698,
+      "direction": 0,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 135754,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 135754,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 135754,
+      "direction": 0,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 135810,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 135810,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 133795,
+      "direction": 1,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 133797,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 133797,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 133877,
+      "direction": 2,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 133821,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 133821,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 133879,
+      "direction": 3,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 133877,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 133877,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 133993,
+      "direction": 3,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 133991,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 133991,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 134019,
+      "direction": 3,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 134017,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 134017,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 134047,
+      "direction": 0,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 134103,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 134103,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 136772,
+      "direction": 1,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 136774,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 136774,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 153377,
+      "direction": 0,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 153637,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 153637,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 151857,
+      "direction": 2,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 151597,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 151597,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 151599,
+      "direction": 1,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 151601,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 151601,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 153799,
+      "direction": 1,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 153801,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 153801,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 151603,
+      "direction": 0,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 151863,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 151863,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 155712,
+      "direction": 0,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 155972,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 155972,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 155970,
+      "direction": 1,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 155972,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 155972,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 155716,
+      "direction": 0,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 155976,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 155976,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 151659,
+      "direction": 0,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 151919,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 151919,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 152261,
+      "direction": 2,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 152001,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 152001,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 152379,
+      "direction": 2,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 152119,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 152119,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 152127,
+      "direction": 1,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 152129,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 152129,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 156234,
+      "direction": 3,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 156232,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 156232,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 150379,
+      "direction": 2,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 150119,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 150119,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 150117,
+      "direction": 1,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 150119,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 150119,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 154355,
+      "direction": 3,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 10,
+        "key": 0,
+        "to": 154353,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 2,
+        "key": 0,
+        "to": 154353,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 154357,
+      "direction": 3,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 154355,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 154355,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 154095,
+      "direction": 0,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 154355,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 154355,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 154618,
+      "direction": 2,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 154357,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 154357,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 152381,
+      "direction": 3,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 152379,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 152379,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 156752,
+      "direction": 2,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 156492,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 156492,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 156490,
+      "direction": 1,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 156492,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 156492,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 156234,
+      "direction": 0,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 156494,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 156494,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 156756,
+      "direction": 2,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 156496,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 156496,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 150109,
+      "direction": 0,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 150369,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 150369,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 152681,
+      "direction": 2,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 152421,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 152421,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 150215,
+      "direction": 0,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 150475,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 150475,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 156924,
+      "direction": 2,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 156664,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 156664,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 152377,
+      "direction": 0,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 152637,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 152637,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 156490,
+      "direction": 0,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 156750,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 156750,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 156494,
+      "direction": 0,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 156754,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 156754,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 152959,
+      "direction": 2,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 152699,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 152699,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 152439,
+      "direction": 0,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 152699,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 152699,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 150919,
+      "direction": 9,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 150657,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 150657,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 150933,
+      "direction": 2,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 150673,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 150673,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 155056,
+      "direction": 2,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 154796,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 154796,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 151029,
+      "direction": 2,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 150769,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 150769,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 152643,
+      "direction": 0,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 152903,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 152903,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 153279,
+      "direction": 2,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 153019,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 153019,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 151003,
+      "direction": 3,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 151001,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 151001,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 151297,
+      "direction": 2,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 151037,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 151037,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 153111,
+      "direction": 1,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 153113,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 153113,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 152987,
+      "direction": 0,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 153247,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 153247,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 153273,
+      "direction": 1,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 153275,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 153275,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 155620,
+      "direction": 2,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 155360,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 155360,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 153377,
+      "direction": 3,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 153375,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 153375,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 155440,
+      "direction": 1,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 155442,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 155442,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 153233,
+      "direction": 0,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 153493,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 153493,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 155620,
+      "direction": 1,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 155622,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 155622,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 192252,
+      "direction": 0,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 192512,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 192512,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 196360,
+      "direction": 0,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 196620,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 196620,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 196618,
+      "direction": 1,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 10,
+        "key": 0,
+        "to": 196620,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 2,
+        "key": 0,
+        "to": 196620,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 196892,
+      "direction": 2,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 196632,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 196632,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 196894,
+      "direction": 2,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 196634,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 196634,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 196676,
+      "direction": 1,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 196678,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 196678,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 194648,
+      "direction": 1,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 10,
+        "key": 0,
+        "to": 194650,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 2,
+        "key": 0,
+        "to": 194650,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 196748,
+      "direction": 4,
+      "reason": "Remove physical door into open air",
+      "before": {
+        "kind": 1,
+        "key": 0,
+        "to": 196749,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 0,
+        "key": 0,
+        "to": 196749,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 196750,
+      "direction": 1,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 196752,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 196752,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 196886,
+      "direction": 3,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 196884,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 196884,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 196894,
+      "direction": 3,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 196892,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 196892,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 196936,
+      "direction": 3,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 196934,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 196934,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 196936,
+      "direction": 1,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 196938,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 196938,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 197230,
+      "direction": 2,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 196970,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 196970,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 193088,
+      "direction": 1,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 193090,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 193090,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 197196,
+      "direction": 3,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 197194,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 197194,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 197198,
+      "direction": 4,
+      "reason": "Remove physical door into open air",
+      "before": {
+        "kind": 1,
+        "key": 0,
+        "to": 197199,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 0,
+        "key": 0,
+        "to": 197199,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 197240,
+      "direction": 3,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 197238,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 197238,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 195194,
+      "direction": 3,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 195192,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 195192,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 197508,
+      "direction": 8,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 197250,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 197250,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 197252,
+      "direction": 1,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 197254,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 197254,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 197274,
+      "direction": 3,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 197272,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 197272,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 195066,
+      "direction": 7,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 195324,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 195324,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 197134,
+      "direction": 0,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 197394,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 197394,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 197628,
+      "direction": 2,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 197396,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 197396,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 197198,
+      "direction": 0,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 197458,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 197458,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 193372,
+      "direction": 3,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 193370,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 193370,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 197238,
+      "direction": 0,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 197498,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 197498,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 195590,
+      "direction": 0,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 195850,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 195850,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 195936,
+      "direction": 1,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 195938,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 195938,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 196096,
+      "direction": 1,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 196098,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 196098,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 194076,
+      "direction": 3,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 194074,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 194074,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 193848,
+      "direction": 0,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 194108,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 194108,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 196628,
+      "direction": 2,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 196368,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 196368,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 194648,
+      "direction": 9,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 194386,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 194386,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 233756,
+      "direction": 0,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 233816,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 233816,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 234126,
+      "direction": 3,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 234124,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 234124,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 234116,
+      "direction": 0,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 234176,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 234176,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 234298,
+      "direction": 1,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 234300,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 234300,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 234306,
+      "direction": 3,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 234304,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 234304,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 234296,
+      "direction": 0,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 234356,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 234356,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 234618,
+      "direction": 2,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 234558,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 234558,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 234736,
+      "direction": 3,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 10,
+        "key": 0,
+        "to": 234734,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 2,
+        "key": 0,
+        "to": 234734,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 234738,
+      "direction": 0,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 234798,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 234798,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 235150,
+      "direction": 2,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 235090,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 235090,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 235150,
+      "direction": 1,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 235152,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 235152,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 303208,
+      "direction": 3,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 303206,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 303206,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 301454,
+      "direction": 7,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 301554,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 301554,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 302382,
+      "direction": 2,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 302280,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 302280,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 302276,
+      "direction": 0,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 302378,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 302378,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 302384,
+      "direction": 3,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 302382,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 302382,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 302390,
+      "direction": 1,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 302392,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 302392,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 302384,
+      "direction": 0,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 302486,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 302486,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 302390,
+      "direction": 0,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 302492,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 302492,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 300456,
+      "direction": 7,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 300556,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 300556,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 302824,
+      "direction": 2,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 302722,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 302722,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 302812,
+      "direction": 1,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 302814,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 302814,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 322188,
+      "direction": 1,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 322190,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 322190,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 320156,
+      "direction": 4,
+      "reason": "Remove physical door into open air",
+      "before": {
+        "kind": 1,
+        "key": 0,
+        "to": 320157,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 0,
+        "key": 0,
+        "to": 320157,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 322400,
+      "direction": 0,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 322502,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 322502,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 322406,
+      "direction": 0,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 322508,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 322508,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 320614,
+      "direction": 2,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 320512,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 320512,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 320618,
+      "direction": 3,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 320616,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 320616,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 322792,
+      "direction": 2,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 322690,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 322690,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 322812,
+      "direction": 2,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 322710,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 322710,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 322818,
+      "direction": 2,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 322716,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 322716,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 322654,
+      "direction": 0,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 322756,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 322756,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 322896,
+      "direction": 2,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 322794,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 322794,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 323004,
+      "direction": 1,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 323006,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 323006,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 323302,
+      "direction": 2,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 323200,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 323200,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 323208,
+      "direction": 1,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 323210,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 323210,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 342408,
+      "direction": 0,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 342510,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 342510,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 342604,
+      "direction": 0,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 342706,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 342706,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 342810,
+      "direction": 2,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 342708,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 342708,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 342698,
+      "direction": 0,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 342800,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 342800,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 342810,
+      "direction": 0,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 342912,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 342912,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 341372,
+      "direction": 0,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 341474,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 341474,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 343820,
+      "direction": 1,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 343822,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 343822,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 362878,
+      "direction": 2,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 362776,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 362776,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 362916,
+      "direction": 2,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 362814,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 362814,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 362712,
+      "direction": 0,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 362814,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 362814,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 363504,
+      "direction": 1,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 363506,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 363506,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 361456,
+      "direction": 1,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 361458,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 361458,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 361798,
+      "direction": 1,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 361800,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 361800,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 362590,
+      "direction": 2,
+      "reason": "Match existing door on its return side",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 362488,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 362488,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    }
+  ],
+  "door_resets": [
+    {
+      "room": 2982,
+      "direction": 2,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 2997,
+      "direction": 3,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 4216,
+      "direction": 5,
+      "before": 2,
+      "after": null
+    },
+    {
+      "room": 7748,
+      "direction": 1,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 9172,
+      "direction": 2,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 14255,
+      "direction": 3,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 14808,
+      "direction": 0,
+      "before": 2,
+      "after": null
+    },
+    {
+      "room": 14817,
+      "direction": 2,
+      "before": 2,
+      "after": null
+    },
+    {
+      "room": 15122,
+      "direction": 3,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 16071,
+      "direction": 2,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 16493,
+      "direction": 3,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 16648,
+      "direction": 3,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 16827,
+      "direction": 4,
+      "before": 2,
+      "after": null
+    },
+    {
+      "room": 90056,
+      "direction": 2,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 90612,
+      "direction": 1,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 90724,
+      "direction": 3,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 90776,
+      "direction": 3,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 90844,
+      "direction": 2,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 90902,
+      "direction": 2,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 91054,
+      "direction": 1,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 91342,
+      "direction": 2,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 91482,
+      "direction": 0,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 91484,
+      "direction": 1,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 91682,
+      "direction": 3,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 91766,
+      "direction": 2,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 91780,
+      "direction": 0,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 91796,
+      "direction": 2,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 91860,
+      "direction": 0,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 92004,
+      "direction": 1,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 92092,
+      "direction": 0,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 92114,
+      "direction": 3,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 92234,
+      "direction": 0,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 92234,
+      "direction": 3,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 92330,
+      "direction": 2,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 92366,
+      "direction": 1,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 92366,
+      "direction": 3,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 92474,
+      "direction": 0,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 92644,
+      "direction": 0,
+      "before": null,
+      "after": 1
+    },
+    {
+      "room": 92644,
+      "direction": 2,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 93020,
+      "direction": 2,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 93020,
+      "direction": 3,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 93066,
+      "direction": 2,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 93076,
+      "direction": 0,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 93076,
+      "direction": 3,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 93078,
+      "direction": 4,
+      "before": 2,
+      "after": null
+    },
+    {
+      "room": 93114,
+      "direction": 1,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 93258,
+      "direction": 1,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 93788,
+      "direction": 2,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 110442,
+      "direction": 3,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 110658,
+      "direction": 2,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 110708,
+      "direction": 1,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 111780,
+      "direction": 1,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 112146,
+      "direction": 1,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 112212,
+      "direction": 3,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 112802,
+      "direction": 1,
+      "before": null,
+      "after": 1
+    },
+    {
+      "room": 112938,
+      "direction": 3,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 112994,
+      "direction": 3,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 133347,
+      "direction": 3,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 133685,
+      "direction": 1,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 133795,
+      "direction": 1,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 133877,
+      "direction": 2,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 133879,
+      "direction": 3,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 133993,
+      "direction": 3,
+      "before": null,
+      "after": 1
+    },
+    {
+      "room": 134019,
+      "direction": 3,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 134047,
+      "direction": 0,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 135698,
+      "direction": 0,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 135748,
+      "direction": 2,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 135750,
+      "direction": 2,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 135754,
+      "direction": 0,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 136772,
+      "direction": 1,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 150109,
+      "direction": 0,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 150117,
+      "direction": 1,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 150215,
+      "direction": 0,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 150379,
+      "direction": 2,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 150919,
+      "direction": 9,
+      "before": null,
+      "after": 1
+    },
+    {
+      "room": 150933,
+      "direction": 2,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 151003,
+      "direction": 3,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 151029,
+      "direction": 2,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 151297,
+      "direction": 2,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 151599,
+      "direction": 1,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 151603,
+      "direction": 0,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 151659,
+      "direction": 0,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 151857,
+      "direction": 2,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 152127,
+      "direction": 1,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 152261,
+      "direction": 2,
+      "before": null,
+      "after": 1
+    },
+    {
+      "room": 152377,
+      "direction": 0,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 152379,
+      "direction": 2,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 152381,
+      "direction": 3,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 152439,
+      "direction": 0,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 152643,
+      "direction": 0,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 152681,
+      "direction": 2,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 152959,
+      "direction": 2,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 152987,
+      "direction": 0,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 153111,
+      "direction": 1,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 153233,
+      "direction": 0,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 153273,
+      "direction": 1,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 153279,
+      "direction": 2,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 153377,
+      "direction": 0,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 153377,
+      "direction": 3,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 153799,
+      "direction": 1,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 154095,
+      "direction": 0,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 154355,
+      "direction": 3,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 154357,
+      "direction": 3,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 154618,
+      "direction": 2,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 155056,
+      "direction": 2,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 155440,
+      "direction": 1,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 155620,
+      "direction": 1,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 155620,
+      "direction": 2,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 155712,
+      "direction": 0,
+      "before": null,
+      "after": 1
+    },
+    {
+      "room": 155716,
+      "direction": 0,
+      "before": null,
+      "after": 1
+    },
+    {
+      "room": 155970,
+      "direction": 1,
+      "before": null,
+      "after": 1
+    },
+    {
+      "room": 156234,
+      "direction": 0,
+      "before": null,
+      "after": 1
+    },
+    {
+      "room": 156234,
+      "direction": 3,
+      "before": null,
+      "after": 1
+    },
+    {
+      "room": 156490,
+      "direction": 0,
+      "before": null,
+      "after": 1
+    },
+    {
+      "room": 156490,
+      "direction": 1,
+      "before": null,
+      "after": 1
+    },
+    {
+      "room": 156494,
+      "direction": 0,
+      "before": null,
+      "after": 1
+    },
+    {
+      "room": 156752,
+      "direction": 2,
+      "before": null,
+      "after": 1
+    },
+    {
+      "room": 156756,
+      "direction": 2,
+      "before": null,
+      "after": 1
+    },
+    {
+      "room": 156924,
+      "direction": 2,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 192252,
+      "direction": 0,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 193088,
+      "direction": 1,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 193372,
+      "direction": 3,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 193848,
+      "direction": 0,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 194076,
+      "direction": 3,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 194648,
+      "direction": 1,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 194648,
+      "direction": 9,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 195066,
+      "direction": 7,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 195194,
+      "direction": 3,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 195590,
+      "direction": 0,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 195936,
+      "direction": 1,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 196096,
+      "direction": 1,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 196360,
+      "direction": 0,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 196618,
+      "direction": 1,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 196628,
+      "direction": 2,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 196676,
+      "direction": 1,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 196748,
+      "direction": 4,
+      "before": 2,
+      "after": null
+    },
+    {
+      "room": 196750,
+      "direction": 1,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 196886,
+      "direction": 3,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 196892,
+      "direction": 2,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 196894,
+      "direction": 2,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 196894,
+      "direction": 3,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 196936,
+      "direction": 1,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 196936,
+      "direction": 3,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 197134,
+      "direction": 0,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 197196,
+      "direction": 3,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 197198,
+      "direction": 0,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 197198,
+      "direction": 4,
+      "before": 2,
+      "after": null
+    },
+    {
+      "room": 197230,
+      "direction": 2,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 197238,
+      "direction": 0,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 197240,
+      "direction": 3,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 197252,
+      "direction": 1,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 197274,
+      "direction": 3,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 197508,
+      "direction": 8,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 197628,
+      "direction": 2,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 233756,
+      "direction": 0,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 234116,
+      "direction": 0,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 234126,
+      "direction": 3,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 234296,
+      "direction": 0,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 234298,
+      "direction": 1,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 234306,
+      "direction": 3,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 234618,
+      "direction": 2,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 234736,
+      "direction": 3,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 234738,
+      "direction": 0,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 235150,
+      "direction": 1,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 235150,
+      "direction": 2,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 300456,
+      "direction": 7,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 301454,
+      "direction": 7,
+      "before": null,
+      "after": 1
+    },
+    {
+      "room": 302276,
+      "direction": 0,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 302382,
+      "direction": 2,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 302384,
+      "direction": 0,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 302384,
+      "direction": 3,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 302390,
+      "direction": 0,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 302390,
+      "direction": 1,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 302812,
+      "direction": 1,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 302824,
+      "direction": 2,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 303208,
+      "direction": 3,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 320156,
+      "direction": 4,
+      "before": 2,
+      "after": null
+    },
+    {
+      "room": 320614,
+      "direction": 2,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 320618,
+      "direction": 3,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 322188,
+      "direction": 1,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 322400,
+      "direction": 0,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 322406,
+      "direction": 0,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 322654,
+      "direction": 0,
+      "before": null,
+      "after": 1
+    },
+    {
+      "room": 322792,
+      "direction": 2,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 322812,
+      "direction": 2,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 322818,
+      "direction": 2,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 322896,
+      "direction": 2,
+      "before": null,
+      "after": 1
+    },
+    {
+      "room": 323004,
+      "direction": 1,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 323208,
+      "direction": 1,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 323302,
+      "direction": 2,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 341372,
+      "direction": 0,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 342408,
+      "direction": 0,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 342604,
+      "direction": 0,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 342698,
+      "direction": 0,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 342810,
+      "direction": 0,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 342810,
+      "direction": 2,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 343820,
+      "direction": 1,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 361456,
+      "direction": 1,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 361798,
+      "direction": 1,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 362100,
+      "direction": 0,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 362590,
+      "direction": 2,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 362712,
+      "direction": 0,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 362878,
+      "direction": 2,
+      "before": null,
+      "after": 1
+    },
+    {
+      "room": 362916,
+      "direction": 2,
+      "before": null,
+      "after": 2
+    },
+    {
+      "room": 363504,
+      "direction": 1,
+      "before": null,
+      "after": 1
+    },
+    {
+      "room": 405002,
+      "direction": 3,
+      "before": 1,
+      "after": null
+    }
+  ]
+}

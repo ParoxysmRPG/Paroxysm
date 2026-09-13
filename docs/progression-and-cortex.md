@@ -69,4 +69,8 @@ daily treasure payout is removed to avoid awarding it a second reward.
 
 Brown Student is no longer available for character creation or archetype changes.
 Only Cortex members can acquire College Contracts.
+Students on campus receive a stored influence imprint, "serve Cortex", displayed
+as "You mildly want to serve Cortex." It cannot be satiated on campus and is
+removed immediately when they leave. It uses the normal imprint slots and save
+format; if all 25 slots are occupied, it waits until a slot becomes available.
 New accounts begin with zero karma, personal karma, and banked karma.

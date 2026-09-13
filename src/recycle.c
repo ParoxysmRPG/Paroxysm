@@ -79,6 +79,7 @@ extern "C" {
     d->hostip = str_dup("");
 
     d->connected = CON_GET_NAME;
+    d->account_password_attempts = 0;
     d->showstr_head = NULL;
     d->showstr_point = NULL;
     d->mxp = FALSE;

@@ -4710,7 +4710,7 @@ prop->auction_month = 0;
     {
       if(!IS_SET(ch->in_room->room_flags, ROOM_BEDROOM))
       return TRUE;
-      if(ch->in_room->vnum == room_in_school(ch->in_room->vnum))
+      if(ch->in_room->vnum == dorm_room(ch))
       return TRUE;
     }
 
@@ -13189,10 +13189,46 @@ like to purchase a %s plot to the %s?`x\n\r", arg1, arg2);
     }
   }
 
+  // Keep rental slot order stable: dorms.txt stores residents by slot.
+  static int student_dorm_slot(ROOM_INDEX_DATA *room) {
+    static const int bedrooms[MAX_DORMROOMS] = {
+      3341, 9017, 9016, 9003, 9004, // Bishop
+      8997, 9005, 9001, 9006, 9014, // Rook (2 and 3 restored upstairs)
+      9049, 9050, 5951, 9037, 9038, // Queenson
+      9035, 9034, 9033, 9036, 9042  // Kingson
+    };
+    if (room == NULL) return -1;
+    for (int i = 0; i < MAX_DORMROOMS; ++i)
+      if (room->vnum == bedrooms[i]) return i;
+    return -1;
+  }
+
+  bool student_dormitory(ROOM_INDEX_DATA *room) {
+    if (room == NULL) return FALSE;
+    if (student_dorm_slot(room) >= 0) return TRUE;
+    switch (room->vnum) {
+      case 16156: case 3347: case 3477: case 3883: case 2454:
+      case 3881: case 8996: case 3894: case 9032:
+      case 9023: case 9431: case 3963: case 9465:
+      case 9026: case 9000: case 9053: case 9047:
+        return TRUE;
+      default: return FALSE;
+    }
+  }
+
   bool bblocked(ROOM_INDEX_DATA *to_room, CHAR_DATA *ch) {
 
+    // Some dorm bedrooms overlap the old fraternity coordinate rectangles.
+    // Their rental keys take precedence over fraternity bedroom restrictions.
+    int slot = student_dorm_slot(to_room);
+    if (slot >= 0) {
+      return !IS_IMMORTAL(ch)
+        && str_cmp(enclave_room[slot], ch->name)
+        && str_cmp(enclave_room[slot + MAX_DORMROOMS], ch->name);
+    }
 
-    if(to_room->vnum == room_in_school(ch->in_room->vnum) && !clinic_patient(ch)) {return FALSE;}
+
+    if(college_student(ch, FALSE) && to_room->vnum == dorm_room(ch)) {return FALSE;}
 
     if(to_room->vnum == 5102 || to_room->vnum == 9360) {
       if(is_ffamily(ch) && get_tier(ch) > 1) {return FALSE;}
@@ -13241,53 +13277,6 @@ like to purchase a %s plot to the %s?`x\n\r", arg1, arg2);
     if ((to_room->vnum == 16327 || to_room->vnum == 16337) && str_cmp(cont_ten,    ch->name)) {return TRUE;}
     if ((to_room->vnum == 16330 || to_room->vnum == 16334) && str_cmp(cont_eleven, ch->name)) {return TRUE;}
     if ((to_room->vnum == 16331 || to_room->vnum == 16332) && str_cmp(cont_twelve, ch->name)) {return TRUE;}
-
-    if (!IS_IMMORTAL(ch)) {
-      // House Bishop
-      if      (to_room->vnum == 3341 && (str_cmp(enclave_room[0],  ch->name)
-      && str_cmp(enclave_room[0 + MAX_DORMROOMS], ch->name))) {return TRUE;}
-      else if (to_room->vnum == 9017 && (str_cmp(enclave_room[1],  ch->name)
-            && str_cmp(enclave_room[1 + MAX_DORMROOMS], ch->name))) {return TRUE;}
-      else if (to_room->vnum == 9016 && (str_cmp(enclave_room[2],  ch->name)
-            && str_cmp(enclave_room[2 + MAX_DORMROOMS], ch->name))) {return TRUE;}
-      else if (to_room->vnum == 9003 && (str_cmp(enclave_room[3],  ch->name)
-            && str_cmp(enclave_room[3 + MAX_DORMROOMS], ch->name))) {return TRUE;}
-      else if (to_room->vnum == 9004 && (str_cmp(enclave_room[4],  ch->name)
-            && str_cmp(enclave_room[4 + MAX_DORMROOMS], ch->name))) {return TRUE;}
-      // House Rook
-      else if (to_room->vnum == 8997 && (str_cmp(enclave_room[5],  ch->name)
-            && str_cmp(enclave_room[5 + MAX_DORMROOMS], ch->name))) {return TRUE;}
-      else if (to_room->vnum == 8998 && (str_cmp(enclave_room[6],  ch->name)
-            && str_cmp(enclave_room[6 + MAX_DORMROOMS], ch->name))) {return TRUE;}
-      else if (to_room->vnum == 8999 && (str_cmp(enclave_room[7],  ch->name)
-            && str_cmp(enclave_room[7 + MAX_DORMROOMS], ch->name))) {return TRUE;}
-      else if (to_room->vnum == 9006 && (str_cmp(enclave_room[8],  ch->name)
-            && str_cmp(enclave_room[8 + MAX_DORMROOMS], ch->name))) {return TRUE;}
-      else if (to_room->vnum == 9014 && (str_cmp(enclave_room[9],  ch->name)
-            && str_cmp(enclave_room[9 + MAX_DORMROOMS], ch->name))) {return TRUE;}
-      // House Queenson
-      else if (to_room->vnum == 9049 && (str_cmp(enclave_room[10], ch->name)
-            && str_cmp(enclave_room[10 + MAX_DORMROOMS], ch->name))){return TRUE;}
-      else if (to_room->vnum == 9050 && (str_cmp(enclave_room[11], ch->name)
-            && str_cmp(enclave_room[11 + MAX_DORMROOMS], ch->name))){return TRUE;}
-      else if (to_room->vnum == 5951 && (str_cmp(enclave_room[12], ch->name)
-            && str_cmp(enclave_room[12 + MAX_DORMROOMS], ch->name))){return TRUE;}
-      else if (to_room->vnum == 9037 && (str_cmp(enclave_room[13], ch->name)
-            && str_cmp(enclave_room[13 + MAX_DORMROOMS], ch->name))){return TRUE;}
-      else if (to_room->vnum == 9038 && (str_cmp(enclave_room[14], ch->name)
-            && str_cmp(enclave_room[14 + MAX_DORMROOMS], ch->name))){return TRUE;}
-      // House Kingson
-      else if (to_room->vnum == 9035 && (str_cmp(enclave_room[15], ch->name)
-            && str_cmp(enclave_room[15 + MAX_DORMROOMS], ch->name))){return TRUE;}
-      else if (to_room->vnum == 9034 && (str_cmp(enclave_room[16], ch->name)
-            && str_cmp(enclave_room[16 + MAX_DORMROOMS], ch->name))){return TRUE;}
-      else if (to_room->vnum == 9033 && (str_cmp(enclave_room[17], ch->name)
-            && str_cmp(enclave_room[17 + MAX_DORMROOMS], ch->name))){return TRUE;}
-      else if (to_room->vnum == 9036 && (str_cmp(enclave_room[18], ch->name)
-            && str_cmp(enclave_room[18 + MAX_DORMROOMS], ch->name))){return TRUE;}
-      else if (to_room->vnum == 9042 && (str_cmp(enclave_room[19], ch->name)
-            && str_cmp(enclave_room[19 + MAX_DORMROOMS], ch->name))){return TRUE;}
-    }
 
     return FALSE;
   }

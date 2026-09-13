@@ -1,0 +1,4611 @@
+[
+  {
+    "vnum": 6144,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      19,
+      65,
+      1
+    ],
+    "before_flags_sector": "0 4194304 13",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 6146,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      19,
+      64,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 6149,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      19,
+      63,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 6151,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      20,
+      63,
+      1
+    ],
+    "before_flags_sector": "0 4194304 23",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 6152,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      20,
+      64,
+      1
+    ],
+    "before_flags_sector": "0 4194304 23",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 6153,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      20,
+      65,
+      1
+    ],
+    "before_flags_sector": "0 4194304 13",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 6154,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      20,
+      66,
+      1
+    ],
+    "before_flags_sector": "0 4194304 13",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 6156,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      20,
+      67,
+      1
+    ],
+    "before_flags_sector": "0 4194304 13",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 6157,
+    "before_name": "the Spender Center rooftop",
+    "name": "the Spender Center rooftop",
+    "coords": [
+      20,
+      55,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 6159,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      20,
+      68,
+      1
+    ],
+    "before_flags_sector": "0 4194304 13",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 6163,
+    "before_name": "the Spender Center rooftop",
+    "name": "the Spender Center rooftop",
+    "coords": [
+      20,
+      54,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 6168,
+    "before_name": "the Spender Center rooftop",
+    "name": "the Spender Center rooftop",
+    "coords": [
+      20,
+      53,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 6175,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      18,
+      64,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 6176,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      18,
+      63,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 6177,
+    "before_name": "the Spender Center rooftop",
+    "name": "the Spender Center rooftop",
+    "coords": [
+      14,
+      52,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 6179,
+    "before_name": "the Spender Center rooftop",
+    "name": "the Spender Center rooftop",
+    "coords": [
+      14,
+      53,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 6181,
+    "before_name": "the Spender Center rooftop",
+    "name": "the Spender Center rooftop",
+    "coords": [
+      14,
+      54,
+      1
+    ],
+    "before_flags_sector": "0 4194304 23",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 8252,
+    "before_name": "the union rooftop",
+    "name": "the union rooftop",
+    "coords": [
+      16,
+      58,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 8268,
+    "before_name": "the union rooftop",
+    "name": "the union rooftop",
+    "coords": [
+      16,
+      57,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 8284,
+    "before_name": "the Spender Center rooftop",
+    "name": "the Spender Center rooftop",
+    "coords": [
+      16,
+      56,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 8310,
+    "before_name": "the Spender Center rooftop",
+    "name": "the Spender Center rooftop",
+    "coords": [
+      16,
+      55,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 8328,
+    "before_name": "the Spender Center rooftop",
+    "name": "the Spender Center rooftop",
+    "coords": [
+      16,
+      54,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 8344,
+    "before_name": "the Spender Center rooftop",
+    "name": "the Spender Center rooftop",
+    "coords": [
+      16,
+      53,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 8370,
+    "before_name": "the Spender Center rooftop",
+    "name": "the Spender Center rooftop",
+    "coords": [
+      16,
+      52,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 4281,
+    "before_name": "a grassy field",
+    "name": "a grassy field",
+    "coords": [
+      4,
+      51,
+      0
+    ],
+    "before_flags_sector": "0 4194304 10",
+    "flags_sector": "0 4194304 10",
+    "changes": [
+      "door or structural boundary"
+    ]
+  },
+  {
+    "vnum": 8382,
+    "before_name": "the Spender Center rooftop",
+    "name": "the Spender Center rooftop",
+    "coords": [
+      16,
+      51,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "door or structural boundary",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 8404,
+    "before_name": "the Spender Center rooftop",
+    "name": "the Spender Center rooftop",
+    "coords": [
+      17,
+      51,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "door or structural boundary",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 4310,
+    "before_name": "Room Six",
+    "name": "Repentance 6",
+    "coords": [
+      10,
+      53,
+      1
+    ],
+    "before_flags_sector": "0 532488 2",
+    "flags_sector": "0 532488 2",
+    "changes": [
+      "assigned bedroom identity"
+    ]
+  },
+  {
+    "vnum": 8408,
+    "before_name": "the Spender Center rooftop",
+    "name": "the Spender Center rooftop",
+    "coords": [
+      17,
+      52,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 8412,
+    "before_name": "the Spender Center rooftop",
+    "name": "the Spender Center rooftop",
+    "coords": [
+      17,
+      53,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 8416,
+    "before_name": "the Spender Center rooftop",
+    "name": "the Spender Center rooftop",
+    "coords": [
+      17,
+      54,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 8420,
+    "before_name": "the Spender Center rooftop",
+    "name": "the Spender Center rooftop",
+    "coords": [
+      17,
+      55,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 8424,
+    "before_name": "the Spender Center rooftop",
+    "name": "the Spender Center rooftop",
+    "coords": [
+      17,
+      56,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 8438,
+    "before_name": "the Spender Center rooftop",
+    "name": "the Spender Center rooftop",
+    "coords": [
+      18,
+      56,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 8442,
+    "before_name": "the Spender Center rooftop",
+    "name": "the Spender Center rooftop",
+    "coords": [
+      18,
+      55,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 8446,
+    "before_name": "the Spender Center rooftop",
+    "name": "the Spender Center rooftop",
+    "coords": [
+      18,
+      54,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 8456,
+    "before_name": "the Spender Center rooftop",
+    "name": "the Spender Center rooftop",
+    "coords": [
+      18,
+      52,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 8468,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      15,
+      65,
+      1
+    ],
+    "before_flags_sector": "0 4194304 13",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 8472,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      15,
+      66,
+      1
+    ],
+    "before_flags_sector": "0 4194304 13",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 8476,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      15,
+      67,
+      1
+    ],
+    "before_flags_sector": "0 4194304 13",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 4383,
+    "before_name": "the sky",
+    "name": "Xeno-pharmacology Office Rooftop",
+    "coords": [
+      9,
+      56,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "door or structural boundary",
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 8480,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      15,
+      68,
+      1
+    ],
+    "before_flags_sector": "0 4194304 13",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 4385,
+    "before_name": "Room One",
+    "name": "Forbearance 1",
+    "coords": [
+      2,
+      58,
+      1
+    ],
+    "before_flags_sector": "0 532488 2",
+    "flags_sector": "0 532488 2",
+    "changes": [
+      "assigned bedroom identity",
+      "door or structural boundary"
+    ]
+  },
+  {
+    "vnum": 4386,
+    "before_name": "Room Two",
+    "name": "Forbearance 2",
+    "coords": [
+      2,
+      56,
+      1
+    ],
+    "before_flags_sector": "0 532488 2",
+    "flags_sector": "0 532488 2",
+    "changes": [
+      "assigned bedroom identity"
+    ]
+  },
+  {
+    "vnum": 8484,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      16,
+      68,
+      1
+    ],
+    "before_flags_sector": "0 4194304 13",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 8488,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      17,
+      68,
+      1
+    ],
+    "before_flags_sector": "0 4194304 13",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 4393,
+    "before_name": "Room Three",
+    "name": "Forbearance 3",
+    "coords": [
+      3,
+      58,
+      1
+    ],
+    "before_flags_sector": "0 532488 2",
+    "flags_sector": "0 532488 2",
+    "changes": [
+      "assigned bedroom identity"
+    ]
+  },
+  {
+    "vnum": 4396,
+    "before_name": "Room Four",
+    "name": "Forbearance 4",
+    "coords": [
+      3,
+      56,
+      1
+    ],
+    "before_flags_sector": "0 532488 2",
+    "flags_sector": "0 532488 2",
+    "changes": [
+      "assigned bedroom identity"
+    ]
+  },
+  {
+    "vnum": 8492,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      18,
+      68,
+      1
+    ],
+    "before_flags_sector": "0 4194304 13",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 8496,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      18,
+      67,
+      1
+    ],
+    "before_flags_sector": "0 4194304 13",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 8510,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      17,
+      67,
+      1
+    ],
+    "before_flags_sector": "0 4194304 13",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 8513,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      16,
+      67,
+      1
+    ],
+    "before_flags_sector": "0 4194304 13",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 8517,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      16,
+      66,
+      1
+    ],
+    "before_flags_sector": "0 4194304 13",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 8520,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      17,
+      66,
+      1
+    ],
+    "before_flags_sector": "0 4194304 13",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 8523,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      18,
+      66,
+      1
+    ],
+    "before_flags_sector": "0 4194304 13",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 8526,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      18,
+      65,
+      1
+    ],
+    "before_flags_sector": "0 4194304 13",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 2385,
+    "before_name": "a covered walkway",
+    "name": "a covered walkway",
+    "coords": [
+      6,
+      54,
+      0
+    ],
+    "before_flags_sector": "0 40 29",
+    "flags_sector": "0 40 29",
+    "changes": [
+      "door or structural boundary"
+    ]
+  },
+  {
+    "vnum": 8530,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      16,
+      65,
+      1
+    ],
+    "before_flags_sector": "0 4194304 13",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 2387,
+    "before_name": "inside repentance house",
+    "name": "Repentance Study",
+    "coords": [
+      8,
+      55,
+      0
+    ],
+    "before_flags_sector": "0 524296 2",
+    "flags_sector": "0 524296 2",
+    "changes": [
+      "door or structural boundary",
+      "room identity and description"
+    ]
+  },
+  {
+    "vnum": 8533,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      16,
+      64,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 8537,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      16,
+      63,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 8540,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      16,
+      62,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 2399,
+    "before_name": "The Kitchen",
+    "name": "The Kitchen",
+    "coords": [
+      3,
+      58,
+      0
+    ],
+    "before_flags_sector": "0 17301514 2",
+    "flags_sector": "0 17301514 2",
+    "changes": [
+      "door or structural boundary"
+    ]
+  },
+  {
+    "vnum": 8544,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      16,
+      61,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 8547,
+    "before_name": "the union rooftop",
+    "name": "the union rooftop",
+    "coords": [
+      16,
+      60,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 8550,
+    "before_name": "the union rooftop",
+    "name": "the union rooftop",
+    "coords": [
+      16,
+      59,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 2407,
+    "before_name": "a covered walkway",
+    "name": "a covered walkway",
+    "coords": [
+      6,
+      52,
+      0
+    ],
+    "before_flags_sector": "0 40 29",
+    "flags_sector": "0 40 29",
+    "changes": [
+      "door or structural boundary"
+    ]
+  },
+  {
+    "vnum": 6509,
+    "before_name": "the Spender Center rooftop",
+    "name": "the Spender Center rooftop",
+    "coords": [
+      20,
+      52,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 8557,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      14,
+      68,
+      1
+    ],
+    "before_flags_sector": "0 4194304 13",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 8562,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      14,
+      65,
+      1
+    ],
+    "before_flags_sector": "0 4194304 13",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 8565,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      14,
+      64,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 8569,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      14,
+      63,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 6522,
+    "before_name": "the Spender Center rooftop",
+    "name": "the Spender Center rooftop",
+    "coords": [
+      15,
+      51,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "door or structural boundary",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 8572,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      14,
+      62,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 6525,
+    "before_name": "the Spender Center rooftop",
+    "name": "the Spender Center rooftop",
+    "coords": [
+      15,
+      52,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 8576,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      14,
+      61,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 2433,
+    "before_name": "a covered walkway",
+    "name": "a covered walkway",
+    "coords": [
+      13,
+      51,
+      0
+    ],
+    "before_flags_sector": "0 0 29",
+    "flags_sector": "0 0 29",
+    "changes": [
+      "door or structural boundary"
+    ]
+  },
+  {
+    "vnum": 8579,
+    "before_name": "the union rooftop",
+    "name": "the union rooftop",
+    "coords": [
+      14,
+      60,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 8582,
+    "before_name": "the union rooftop",
+    "name": "the union rooftop",
+    "coords": [
+      14,
+      59,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 4489,
+    "before_name": "the Spender Center rooftop",
+    "name": "the Spender Center rooftop",
+    "coords": [
+      19,
+      53,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 8585,
+    "before_name": "the union rooftop",
+    "name": "the union rooftop",
+    "coords": [
+      14,
+      58,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 8588,
+    "before_name": "the union rooftop",
+    "name": "the union rooftop",
+    "coords": [
+      14,
+      57,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 6543,
+    "before_name": "the Spender Center rooftop",
+    "name": "the Spender Center rooftop",
+    "coords": [
+      15,
+      53,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 8591,
+    "before_name": "the Spender Center rooftop",
+    "name": "the Spender Center rooftop",
+    "coords": [
+      14,
+      56,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 6546,
+    "before_name": "the Spender Center rooftop",
+    "name": "the Spender Center rooftop",
+    "coords": [
+      15,
+      54,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 8594,
+    "before_name": "the Spender Center rooftop",
+    "name": "the Spender Center rooftop",
+    "coords": [
+      14,
+      55,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 8596,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      13,
+      68,
+      1
+    ],
+    "before_flags_sector": "0 4194304 13",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 6549,
+    "before_name": "the Spender Center rooftop",
+    "name": "the Spender Center rooftop",
+    "coords": [
+      15,
+      55,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 8599,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      13,
+      65,
+      1
+    ],
+    "before_flags_sector": "0 4194304 13",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 6553,
+    "before_name": "the Spender Center rooftop",
+    "name": "the Spender Center rooftop",
+    "coords": [
+      15,
+      56,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 8602,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      13,
+      64,
+      1
+    ],
+    "before_flags_sector": "0 4194304 13",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 8605,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      13,
+      63,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 6559,
+    "before_name": "the union rooftop",
+    "name": "the union rooftop",
+    "coords": [
+      15,
+      57,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 8614,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      13,
+      62,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 6568,
+    "before_name": "the union rooftop",
+    "name": "the union rooftop",
+    "coords": [
+      15,
+      58,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 8619,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      13,
+      61,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 8623,
+    "before_name": "the union rooftop",
+    "name": "the union rooftop",
+    "coords": [
+      13,
+      60,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 8625,
+    "before_name": "the union rooftop",
+    "name": "the union rooftop",
+    "coords": [
+      13,
+      59,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 8627,
+    "before_name": "the Spender Center rooftop",
+    "name": "the Spender Center rooftop",
+    "coords": [
+      13,
+      55,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 8628,
+    "before_name": "the Spender Center rooftop",
+    "name": "the Spender Center rooftop",
+    "coords": [
+      13,
+      54,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 8630,
+    "before_name": "the Spender Center rooftop",
+    "name": "the Spender Center rooftop",
+    "coords": [
+      13,
+      53,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 8631,
+    "before_name": "the Spender Center rooftop",
+    "name": "the Spender Center rooftop",
+    "coords": [
+      13,
+      52,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 8633,
+    "before_name": "atop a covered walkway",
+    "name": "atop a covered walkway",
+    "coords": [
+      13,
+      51,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 8636,
+    "before_name": "atop a covered walkway",
+    "name": "atop a covered walkway",
+    "coords": [
+      12,
+      52,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 8638,
+    "before_name": "atop a covered walkway",
+    "name": "atop a covered walkway",
+    "coords": [
+      12,
+      53,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 8639,
+    "before_name": "atop a covered walkway",
+    "name": "atop a covered walkway",
+    "coords": [
+      12,
+      54,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 8643,
+    "before_name": "atop a covered walkway",
+    "name": "atop a covered walkway",
+    "coords": [
+      12,
+      55,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 8647,
+    "before_name": "atop a covered walkway",
+    "name": "atop a covered walkway",
+    "coords": [
+      12,
+      56,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 8652,
+    "before_name": "atop a covered walkway",
+    "name": "atop a covered walkway",
+    "coords": [
+      12,
+      57,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 8656,
+    "before_name": "atop a covered walkway",
+    "name": "atop a covered walkway",
+    "coords": [
+      12,
+      61,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 8659,
+    "before_name": "atop a covered walkway",
+    "name": "atop a covered walkway",
+    "coords": [
+      12,
+      62,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 8661,
+    "before_name": "atop a covered walkway",
+    "name": "atop a covered walkway",
+    "coords": [
+      12,
+      63,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 8662,
+    "before_name": "atop a covered walkway",
+    "name": "atop a covered walkway",
+    "coords": [
+      12,
+      64,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 8664,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      12,
+      65,
+      1
+    ],
+    "before_flags_sector": "0 4194304 13",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 8665,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      12,
+      66,
+      1
+    ],
+    "before_flags_sector": "0 4194304 13",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 8667,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      12,
+      67,
+      1
+    ],
+    "before_flags_sector": "0 4194304 13",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 8669,
+    "before_name": "atop a covered walkway",
+    "name": "atop a covered walkway",
+    "coords": [
+      11,
+      63,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 8673,
+    "before_name": "Skies",
+    "name": "Skies",
+    "coords": [
+      11,
+      60,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 18",
+    "changes": [
+      "door or structural boundary"
+    ]
+  },
+  {
+    "vnum": 8688,
+    "before_name": "atop a covered walkway",
+    "name": "atop a covered walkway",
+    "coords": [
+      10,
+      63,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 8691,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      10,
+      65,
+      1
+    ],
+    "before_flags_sector": "0 4194304 13",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 8706,
+    "before_name": "atop a covered walkway",
+    "name": "atop a covered walkway",
+    "coords": [
+      9,
+      63,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 8709,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      9,
+      65,
+      1
+    ],
+    "before_flags_sector": "0 4194304 13",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 8711,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      9,
+      66,
+      1
+    ],
+    "before_flags_sector": "0 4194304 13",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 8712,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      9,
+      67,
+      1
+    ],
+    "before_flags_sector": "0 4194304 13",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 8714,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      9,
+      68,
+      1
+    ],
+    "before_flags_sector": "0 4194304 13",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 8723,
+    "before_name": "atop a covered walkway",
+    "name": "atop a covered walkway",
+    "coords": [
+      8,
+      64,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "door or structural boundary",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 8725,
+    "before_name": "atop a covered walkway",
+    "name": "atop a covered walkway",
+    "coords": [
+      8,
+      63,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 4716,
+    "before_name": "Room Five",
+    "name": "Forbearance 5",
+    "coords": [
+      4,
+      58,
+      1
+    ],
+    "before_flags_sector": "0 532488 2",
+    "flags_sector": "0 532488 2",
+    "changes": [
+      "assigned bedroom identity"
+    ]
+  },
+  {
+    "vnum": 4719,
+    "before_name": "Room Six",
+    "name": "Forbearance 6",
+    "coords": [
+      4,
+      56,
+      1
+    ],
+    "before_flags_sector": "0 532488 2",
+    "flags_sector": "0 532488 2",
+    "changes": [
+      "assigned bedroom identity"
+    ]
+  },
+  {
+    "vnum": 4779,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      9,
+      70,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 4789,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      10,
+      70,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 4790,
+    "before_name": "Room One",
+    "name": "Charity 1",
+    "coords": [
+      8,
+      59,
+      1
+    ],
+    "before_flags_sector": "0 532488 2",
+    "flags_sector": "0 532488 2",
+    "changes": [
+      "assigned bedroom identity"
+    ]
+  },
+  {
+    "vnum": 4795,
+    "before_name": "Room Two",
+    "name": "Charity 2",
+    "coords": [
+      8,
+      57,
+      1
+    ],
+    "before_flags_sector": "0 532488 2",
+    "flags_sector": "0 532488 2",
+    "changes": [
+      "assigned bedroom identity"
+    ]
+  },
+  {
+    "vnum": 4798,
+    "before_name": "Room Three",
+    "name": "Charity 3",
+    "coords": [
+      9,
+      59,
+      1
+    ],
+    "before_flags_sector": "0 532488 2",
+    "flags_sector": "0 532488 2",
+    "changes": [
+      "assigned bedroom identity"
+    ]
+  },
+  {
+    "vnum": 4804,
+    "before_name": "Room Four",
+    "name": "Charity 4",
+    "coords": [
+      9,
+      57,
+      1
+    ],
+    "before_flags_sector": "0 532488 2",
+    "flags_sector": "0 532488 2",
+    "changes": [
+      "assigned bedroom identity"
+    ]
+  },
+  {
+    "vnum": 4823,
+    "before_name": "Room Five",
+    "name": "Charity 5",
+    "coords": [
+      10,
+      59,
+      1
+    ],
+    "before_flags_sector": "0 532488 2",
+    "flags_sector": "0 532488 2",
+    "changes": [
+      "assigned bedroom identity"
+    ]
+  },
+  {
+    "vnum": 4831,
+    "before_name": "Room Six",
+    "name": "Charity 6",
+    "coords": [
+      10,
+      57,
+      1
+    ],
+    "before_flags_sector": "0 532488 2",
+    "flags_sector": "0 532488 2",
+    "changes": [
+      "assigned bedroom identity"
+    ]
+  },
+  {
+    "vnum": 4838,
+    "before_name": "atop a covered walkway",
+    "name": "atop a covered walkway",
+    "coords": [
+      11,
+      53,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "door or structural boundary",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 4842,
+    "before_name": "atop a covered walkway",
+    "name": "atop a covered walkway",
+    "coords": [
+      11,
+      51,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "door or structural boundary",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 6909,
+    "before_name": "the union rooftop",
+    "name": "the union rooftop",
+    "coords": [
+      15,
+      59,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 6912,
+    "before_name": "the union rooftop",
+    "name": "the union rooftop",
+    "coords": [
+      15,
+      60,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 6915,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      15,
+      61,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 6918,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      15,
+      62,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 6921,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      15,
+      63,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 6924,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      15,
+      64,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 6946,
+    "before_name": "the union rooftop",
+    "name": "the union rooftop",
+    "coords": [
+      20,
+      60,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 9010,
+    "before_name": "the rooftop of House Bishop",
+    "name": "the rooftop of House Bishop",
+    "coords": [
+      5,
+      58,
+      3
+    ],
+    "before_flags_sector": "0 4202496 13",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 9018,
+    "before_name": "Skies",
+    "name": "Skies",
+    "coords": [
+      7,
+      58,
+      1
+    ],
+    "before_flags_sector": "0 37748736 18",
+    "flags_sector": "0 37748736 18",
+    "changes": [
+      "door or structural boundary"
+    ]
+  },
+  {
+    "vnum": 9019,
+    "before_name": "the sky",
+    "name": "the sky",
+    "coords": [
+      7,
+      59,
+      1
+    ],
+    "before_flags_sector": "0 20979712 18",
+    "flags_sector": "0 20971520 18",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 9029,
+    "before_name": "the rooftop of House Bishop",
+    "name": "the rooftop of House Bishop",
+    "coords": [
+      5,
+      59,
+      3
+    ],
+    "before_flags_sector": "0 4202496 13",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 9031,
+    "before_name": "a covered walkway",
+    "name": "a covered walkway",
+    "coords": [
+      6,
+      56,
+      0
+    ],
+    "before_flags_sector": "0 40 29",
+    "flags_sector": "0 40 29",
+    "changes": [
+      "door or structural boundary"
+    ]
+  },
+  {
+    "vnum": 6992,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      17,
+      65,
+      1
+    ],
+    "before_flags_sector": "0 4194304 13",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "door or structural boundary",
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 9052,
+    "before_name": "the sky",
+    "name": "the sky",
+    "coords": [
+      7,
+      61,
+      1
+    ],
+    "before_flags_sector": "0 20979712 18",
+    "flags_sector": "0 20971520 18",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 9061,
+    "before_name": "the rooftop of House Kingson",
+    "name": "the rooftop of House Kingson",
+    "coords": [
+      4,
+      61,
+      3
+    ],
+    "before_flags_sector": "0 4194304 2",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "door or structural boundary",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 1005,
+    "before_name": "the Spender Center rooftop",
+    "name": "the Spender Center rooftop",
+    "coords": [
+      14,
+      51,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 1023,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      17,
+      62,
+      1
+    ],
+    "before_flags_sector": "0 4194304 13",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 7190,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      19,
+      62,
+      1
+    ],
+    "before_flags_sector": "0 4194304 13",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 1051,
+    "before_name": "the Spender Center rooftop",
+    "name": "the Spender Center rooftop",
+    "coords": [
+      19,
+      52,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 5181,
+    "before_name": "atop a covered walkway",
+    "name": "atop a covered walkway",
+    "coords": [
+      12,
+      58,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 5183,
+    "before_name": "atop a covered walkway",
+    "name": "atop a covered walkway",
+    "coords": [
+      12,
+      59,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 5185,
+    "before_name": "atop a covered walkway",
+    "name": "atop a covered walkway",
+    "coords": [
+      12,
+      60,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 5209,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      12,
+      68,
+      1
+    ],
+    "before_flags_sector": "0 4194304 13",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 5212,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      13,
+      69,
+      1
+    ],
+    "before_flags_sector": "0 4194304 13",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 5226,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      14,
+      69,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 5228,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      13,
+      67,
+      1
+    ],
+    "before_flags_sector": "0 4194304 13",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 5230,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      13,
+      66,
+      1
+    ],
+    "before_flags_sector": "0 4194304 13",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 5253,
+    "before_name": "the union rooftop",
+    "name": "the union rooftop",
+    "coords": [
+      13,
+      58,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 5256,
+    "before_name": "the union rooftop",
+    "name": "the union rooftop",
+    "coords": [
+      13,
+      57,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 9355,
+    "before_name": "a grassy field",
+    "name": "Dormitory Lawn",
+    "coords": [
+      4,
+      59,
+      0
+    ],
+    "before_flags_sector": "0 37748736 28",
+    "flags_sector": "0 37748736 10",
+    "changes": [
+      "door or structural boundary",
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 5259,
+    "before_name": "the Spender Center rooftop",
+    "name": "the Spender Center rooftop",
+    "coords": [
+      13,
+      56,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 9356,
+    "before_name": "a covered walkway",
+    "name": "a covered walkway",
+    "coords": [
+      6,
+      62,
+      0
+    ],
+    "before_flags_sector": "0 40 29",
+    "flags_sector": "0 40 29",
+    "changes": [
+      "door or structural boundary"
+    ]
+  },
+  {
+    "vnum": 3230,
+    "before_name": "Room One",
+    "name": "Purity 1",
+    "coords": [
+      2,
+      54,
+      1
+    ],
+    "before_flags_sector": "0 532488 2",
+    "flags_sector": "0 532488 2",
+    "changes": [
+      "assigned bedroom identity",
+      "door or structural boundary"
+    ]
+  },
+  {
+    "vnum": 9378,
+    "before_name": "the rooftop of House Rook",
+    "name": "the rooftop of House Rook",
+    "coords": [
+      4,
+      59,
+      3
+    ],
+    "before_flags_sector": "0 4194304 13",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "door or structural boundary",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 9384,
+    "before_name": "inside repentance house",
+    "name": "Repentance Sitting Room",
+    "coords": [
+      8,
+      53,
+      0
+    ],
+    "before_flags_sector": "0 524296 2",
+    "flags_sector": "0 524296 2",
+    "changes": [
+      "door or structural boundary",
+      "room identity and description"
+    ]
+  },
+  {
+    "vnum": 3244,
+    "before_name": "Skies",
+    "name": "Skies",
+    "coords": [
+      2,
+      54,
+      2
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 18",
+    "changes": [
+      "door or structural boundary"
+    ]
+  },
+  {
+    "vnum": 9389,
+    "before_name": "Cortex Academy of Civic Integration Gardens",
+    "name": "Cortex Academy of Civic Integration Gardens",
+    "coords": [
+      11,
+      52,
+      0
+    ],
+    "before_flags_sector": "0 4194304 10",
+    "flags_sector": "0 4194304 10",
+    "changes": [
+      "door or structural boundary"
+    ]
+  },
+  {
+    "vnum": 9391,
+    "before_name": "inside charity house",
+    "name": "Charity Study",
+    "coords": [
+      8,
+      57,
+      0
+    ],
+    "before_flags_sector": "0 524296 2",
+    "flags_sector": "0 524296 2",
+    "changes": [
+      "door or structural boundary",
+      "room identity and description"
+    ]
+  },
+  {
+    "vnum": 7347,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      20,
+      62,
+      1
+    ],
+    "before_flags_sector": "0 4194304 13",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 9395,
+    "before_name": "a covered walkway",
+    "name": "a covered walkway",
+    "coords": [
+      11,
+      53,
+      0
+    ],
+    "before_flags_sector": "0 4194336 10",
+    "flags_sector": "0 4194336 10",
+    "changes": [
+      "door or structural boundary"
+    ]
+  },
+  {
+    "vnum": 9396,
+    "before_name": "Athletic Field",
+    "name": "Athletic Field",
+    "coords": [
+      14,
+      51,
+      0
+    ],
+    "before_flags_sector": "0 4194304 10",
+    "flags_sector": "0 4194304 10",
+    "changes": [
+      "door or structural boundary"
+    ]
+  },
+  {
+    "vnum": 9401,
+    "before_name": "grassy field",
+    "name": "grassy field",
+    "coords": [
+      8,
+      64,
+      0
+    ],
+    "before_flags_sector": "0 4194336 10",
+    "flags_sector": "0 4194336 10",
+    "changes": [
+      "door or structural boundary"
+    ]
+  },
+  {
+    "vnum": 9403,
+    "before_name": "grassy park",
+    "name": "grassy park",
+    "coords": [
+      7,
+      64,
+      0
+    ],
+    "before_flags_sector": "0 4194336 10",
+    "flags_sector": "0 4194336 10",
+    "changes": [
+      "door or structural boundary"
+    ]
+  },
+  {
+    "vnum": 15557,
+    "before_name": "Larder",
+    "name": "Larder",
+    "coords": [
+      2,
+      58,
+      0
+    ],
+    "before_flags_sector": "0 4718601 2",
+    "flags_sector": "0 4718601 2",
+    "changes": [
+      "door or structural boundary"
+    ]
+  },
+  {
+    "vnum": 9431,
+    "before_name": "House Rook's second floor landing",
+    "name": "House Rook's second floor landing",
+    "coords": [
+      4,
+      59,
+      2
+    ],
+    "before_flags_sector": "0 8 2",
+    "flags_sector": "0 8 2",
+    "changes": [
+      "door or structural boundary"
+    ]
+  },
+  {
+    "vnum": 15582,
+    "before_name": "a grassy field",
+    "name": "a grassy field",
+    "coords": [
+      3,
+      60,
+      0
+    ],
+    "before_flags_sector": "0 20971520 10",
+    "flags_sector": "0 20971520 10",
+    "changes": [
+      "door or structural boundary"
+    ]
+  },
+  {
+    "vnum": 9440,
+    "before_name": "a covered walkway",
+    "name": "a covered walkway",
+    "coords": [
+      6,
+      50,
+      0
+    ],
+    "before_flags_sector": "0 40 29",
+    "flags_sector": "0 40 29",
+    "changes": [
+      "door or structural boundary"
+    ]
+  },
+  {
+    "vnum": 5344,
+    "before_name": "the union rooftop",
+    "name": "the union rooftop",
+    "coords": [
+      20,
+      57,
+      1
+    ],
+    "before_flags_sector": "0 4194304 23",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 9441,
+    "before_name": "a covered walkway",
+    "name": "a covered walkway",
+    "coords": [
+      6,
+      51,
+      0
+    ],
+    "before_flags_sector": "0 40 29",
+    "flags_sector": "0 40 29",
+    "changes": [
+      "door or structural boundary"
+    ]
+  },
+  {
+    "vnum": 5354,
+    "before_name": "the union rooftop",
+    "name": "the union rooftop",
+    "coords": [
+      19,
+      57,
+      1
+    ],
+    "before_flags_sector": "0 4227072 23",
+    "flags_sector": "0 4227072 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 15600,
+    "before_name": "a grassy field",
+    "name": "Dormitory Lawn",
+    "coords": [
+      4,
+      60,
+      0
+    ],
+    "before_flags_sector": "0 37748736 28",
+    "flags_sector": "0 37748736 10",
+    "changes": [
+      "door or structural boundary",
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 9457,
+    "before_name": "the rooftop of House Kingson",
+    "name": "the rooftop of House Kingson",
+    "coords": [
+      4,
+      62,
+      3
+    ],
+    "before_flags_sector": "0 4194304 2",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 5364,
+    "before_name": "the union rooftop",
+    "name": "the union rooftop",
+    "coords": [
+      18,
+      57,
+      1
+    ],
+    "before_flags_sector": "0 4194304 23",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 9460,
+    "before_name": "the rooftop of House Kingson",
+    "name": "the rooftop of House Kingson",
+    "coords": [
+      3,
+      62,
+      3
+    ],
+    "before_flags_sector": "0 4194304 2",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 9464,
+    "before_name": "the rooftop of House Kingson",
+    "name": "the rooftop of House Kingson",
+    "coords": [
+      3,
+      61,
+      3
+    ],
+    "before_flags_sector": "0 4194304 2",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 5371,
+    "before_name": "the union rooftop",
+    "name": "the union rooftop",
+    "coords": [
+      17,
+      57,
+      1
+    ],
+    "before_flags_sector": "0 4194304 23",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 9469,
+    "before_name": "the recreation yard",
+    "name": "the recreation yard",
+    "coords": [
+      21,
+      52,
+      0
+    ],
+    "before_flags_sector": "0 4194304 23",
+    "flags_sector": "0 4194304 23",
+    "changes": [
+      "door or structural boundary"
+    ]
+  },
+  {
+    "vnum": 15624,
+    "before_name": "Dormitory Lawn",
+    "name": "Dormitory Lawn",
+    "coords": [
+      5,
+      61,
+      0
+    ],
+    "before_flags_sector": "0 4194304 10",
+    "flags_sector": "0 4194304 10",
+    "changes": [
+      "door or structural boundary"
+    ]
+  },
+  {
+    "vnum": 7482,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      18,
+      62,
+      1
+    ],
+    "before_flags_sector": "0 4194304 13",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 1348,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      17,
+      63,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 9542,
+    "before_name": "Wardne's Wood",
+    "name": "Warden's Wood",
+    "coords": [
+      20,
+      48,
+      0
+    ],
+    "before_flags_sector": "0 4194304 10",
+    "flags_sector": "0 4194304 10",
+    "changes": [
+      "name correction"
+    ]
+  },
+  {
+    "vnum": 5451,
+    "before_name": "atop a covered walkway",
+    "name": "atop a covered walkway",
+    "coords": [
+      12,
+      50,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 9589,
+    "before_name": "Kitchen",
+    "name": "Kitchen",
+    "coords": [
+      9,
+      57,
+      0
+    ],
+    "before_flags_sector": "0 524298 2",
+    "flags_sector": "0 524298 2",
+    "changes": [
+      "door or structural boundary"
+    ]
+  },
+  {
+    "vnum": 9592,
+    "before_name": "inside forbearance house",
+    "name": "Forbearance Study",
+    "coords": [
+      2,
+      56,
+      0
+    ],
+    "before_flags_sector": "0 524296 2",
+    "flags_sector": "0 524296 2",
+    "changes": [
+      "door or structural boundary",
+      "room identity and description"
+    ]
+  },
+  {
+    "vnum": 9597,
+    "before_name": "Entrance Hall for the Delta Delta Delta Sorority",
+    "name": "Entrance Hall for the Delta Delta Delta Sorority",
+    "coords": [
+      8,
+      58,
+      0
+    ],
+    "before_flags_sector": "0 524296 2",
+    "flags_sector": "0 524296 2",
+    "changes": [
+      "door or structural boundary"
+    ]
+  },
+  {
+    "vnum": 9609,
+    "before_name": "inside purity house",
+    "name": "Purity Pantry",
+    "coords": [
+      2,
+      54,
+      0
+    ],
+    "before_flags_sector": "0 524296 2",
+    "flags_sector": "0 524296 2",
+    "changes": [
+      "door or structural boundary",
+      "room identity and description"
+    ]
+  },
+  {
+    "vnum": 9610,
+    "before_name": "The Kitchen",
+    "name": "The Kitchen",
+    "coords": [
+      3,
+      54,
+      0
+    ],
+    "before_flags_sector": "0 524296 2",
+    "flags_sector": "0 524296 2",
+    "changes": [
+      "door or structural boundary"
+    ]
+  },
+  {
+    "vnum": 9611,
+    "before_name": "inside purity house",
+    "name": "Purity Study",
+    "coords": [
+      2,
+      52,
+      0
+    ],
+    "before_flags_sector": "0 524296 2",
+    "flags_sector": "0 524296 2",
+    "changes": [
+      "door or structural boundary",
+      "room identity and description"
+    ]
+  },
+  {
+    "vnum": 9612,
+    "before_name": "Living Room",
+    "name": "Living Room",
+    "coords": [
+      3,
+      52,
+      0
+    ],
+    "before_flags_sector": "0 524296 2",
+    "flags_sector": "0 524296 2",
+    "changes": [
+      "door or structural boundary"
+    ]
+  },
+  {
+    "vnum": 3472,
+    "before_name": "Skies",
+    "name": "Skies",
+    "coords": [
+      4,
+      61,
+      4
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 18",
+    "changes": [
+      "door or structural boundary"
+    ]
+  },
+  {
+    "vnum": 3486,
+    "before_name": "Western Bathroom",
+    "name": "Western Bathroom",
+    "coords": [
+      2,
+      57,
+      1
+    ],
+    "before_flags_sector": "0 17301512 2",
+    "flags_sector": "0 17301512 2",
+    "changes": [
+      "door or structural boundary"
+    ]
+  },
+  {
+    "vnum": 9664,
+    "before_name": "the airlock of the Cortex Academy of Civic Integration biodome",
+    "name": "the airlock of the Cortex Academy of Civic Integration biodome",
+    "coords": [
+      6,
+      65,
+      0
+    ],
+    "before_flags_sector": "0 8 9",
+    "flags_sector": "0 8 9",
+    "changes": [
+      "door or structural boundary"
+    ]
+  },
+  {
+    "vnum": 1490,
+    "before_name": "the xeno-pharmacology office",
+    "name": "Xeno-pharmacology Office",
+    "coords": [
+      9,
+      56,
+      0
+    ],
+    "before_flags_sector": "0 4194304 10",
+    "flags_sector": "0 8 9",
+    "changes": [
+      "door or structural boundary",
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 1494,
+    "before_name": "entrance hallway",
+    "name": "entrance hallway",
+    "coords": [
+      8,
+      54,
+      0
+    ],
+    "before_flags_sector": "0 524296 2",
+    "flags_sector": "0 524296 2",
+    "changes": [
+      "door or structural boundary"
+    ]
+  },
+  {
+    "vnum": 15847,
+    "before_name": "a grassy field",
+    "name": "a grassy field",
+    "coords": [
+      14,
+      49,
+      0
+    ],
+    "before_flags_sector": "0 4194304 10",
+    "flags_sector": "0 4194304 10",
+    "changes": [
+      "door or structural boundary"
+    ]
+  },
+  {
+    "vnum": 9728,
+    "before_name": "the intersection of the main corridor and clinician's offices",
+    "name": "the intersection of the main corridor and clinician's offices",
+    "coords": [
+      17,
+      68,
+      0
+    ],
+    "before_flags_sector": "0 0 29",
+    "flags_sector": "0 8 29",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 5658,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      14,
+      66,
+      1
+    ],
+    "before_flags_sector": "0 4194304 13",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 9757,
+    "before_name": "the sheriff's department",
+    "name": "the sheriff's department",
+    "coords": [
+      15,
+      58,
+      0
+    ],
+    "before_flags_sector": "0 8 29",
+    "flags_sector": "0 8 29",
+    "changes": [
+      "door or structural boundary"
+    ]
+  },
+  {
+    "vnum": 5661,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      14,
+      67,
+      1
+    ],
+    "before_flags_sector": "0 4194304 13",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 5663,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      15,
+      69,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 9782,
+    "before_name": "the top of the tube slides",
+    "name": "Tube Slide Platform",
+    "coords": [
+      16,
+      50,
+      1
+    ],
+    "before_flags_sector": "0 8 18",
+    "flags_sector": "0 0 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 1597,
+    "before_name": "a covered walkway",
+    "name": "a covered walkway",
+    "coords": [
+      6,
+      64,
+      0
+    ],
+    "before_flags_sector": "0 40 29",
+    "flags_sector": "0 40 29",
+    "changes": [
+      "door or structural boundary"
+    ]
+  },
+  {
+    "vnum": 9796,
+    "before_name": "the basement stairs",
+    "name": "Sheriff's Supply Room",
+    "coords": [
+      15,
+      57,
+      0
+    ],
+    "before_flags_sector": "0 8 9",
+    "flags_sector": "0 8 9",
+    "changes": [
+      "door or structural boundary",
+      "room identity and description"
+    ]
+  },
+  {
+    "vnum": 9799,
+    "before_name": "the Master of the Clinic's Office of the White Oak Institute",
+    "name": "Master of the Clinic's Office",
+    "coords": [
+      20,
+      58,
+      0
+    ],
+    "before_flags_sector": "0 8 9",
+    "flags_sector": "0 8 9",
+    "changes": [
+      "name correction"
+    ]
+  },
+  {
+    "vnum": 9800,
+    "before_name": "a covered walkway",
+    "name": "a covered walkway",
+    "coords": [
+      8,
+      60,
+      0
+    ],
+    "before_flags_sector": "0 8 29",
+    "flags_sector": "0 8 29",
+    "changes": [
+      "door or structural boundary"
+    ]
+  },
+  {
+    "vnum": 9830,
+    "before_name": "the top of the biodome airlock",
+    "name": "the top of the biodome airlock",
+    "coords": [
+      5,
+      65,
+      1
+    ],
+    "before_flags_sector": "0 8 23",
+    "flags_sector": "0 0 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 1645,
+    "before_name": "a grassy field",
+    "name": "a grassy field",
+    "coords": [
+      10,
+      56,
+      0
+    ],
+    "before_flags_sector": "0 4194304 10",
+    "flags_sector": "0 4194304 10",
+    "changes": [
+      "door or structural boundary"
+    ]
+  },
+  {
+    "vnum": 5750,
+    "before_name": "atop a covered walkway",
+    "name": "atop a covered walkway",
+    "coords": [
+      8,
+      62,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 18096,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      17,
+      64,
+      1
+    ],
+    "before_flags_sector": "0 32 15",
+    "flags_sector": "0 32 13",
+    "changes": [
+      "door or structural boundary",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 9912,
+    "before_name": "Dormitory Lawn",
+    "name": "Dormitory Lawn",
+    "coords": [
+      5,
+      62,
+      0
+    ],
+    "before_flags_sector": "0 4194304 10",
+    "flags_sector": "0 4194304 10",
+    "changes": [
+      "door or structural boundary"
+    ]
+  },
+  {
+    "vnum": 9913,
+    "before_name": "a grassy field",
+    "name": "a grassy field",
+    "coords": [
+      4,
+      62,
+      0
+    ],
+    "before_flags_sector": "0 4194304 10",
+    "flags_sector": "0 4194304 10",
+    "changes": [
+      "door or structural boundary"
+    ]
+  },
+  {
+    "vnum": 9914,
+    "before_name": "a grassy field",
+    "name": "a grassy field",
+    "coords": [
+      3,
+      62,
+      0
+    ],
+    "before_flags_sector": "0 4194304 10",
+    "flags_sector": "0 4194304 10",
+    "changes": [
+      "door or structural boundary"
+    ]
+  },
+  {
+    "vnum": 9915,
+    "before_name": "a grassy field",
+    "name": "a grassy field",
+    "coords": [
+      3,
+      61,
+      0
+    ],
+    "before_flags_sector": "0 4194304 10",
+    "flags_sector": "0 4194304 10",
+    "changes": [
+      "door or structural boundary"
+    ]
+  },
+  {
+    "vnum": 3798,
+    "before_name": "Room Three",
+    "name": "Purity 3",
+    "coords": [
+      3,
+      54,
+      1
+    ],
+    "before_flags_sector": "0 532488 2",
+    "flags_sector": "0 532488 2",
+    "changes": [
+      "assigned bedroom identity"
+    ]
+  },
+  {
+    "vnum": 3800,
+    "before_name": "Room Five",
+    "name": "Purity 5",
+    "coords": [
+      4,
+      54,
+      1
+    ],
+    "before_flags_sector": "0 532488 2",
+    "flags_sector": "0 532488 2",
+    "changes": [
+      "assigned bedroom identity"
+    ]
+  },
+  {
+    "vnum": 3804,
+    "before_name": "Room Two",
+    "name": "Purity 2",
+    "coords": [
+      2,
+      52,
+      1
+    ],
+    "before_flags_sector": "0 532488 2",
+    "flags_sector": "0 532488 2",
+    "changes": [
+      "assigned bedroom identity"
+    ]
+  },
+  {
+    "vnum": 3809,
+    "before_name": "Room Four",
+    "name": "Purity 4",
+    "coords": [
+      3,
+      52,
+      1
+    ],
+    "before_flags_sector": "0 524296 2",
+    "flags_sector": "0 532488 2",
+    "changes": [
+      "assigned bedroom identity"
+    ]
+  },
+  {
+    "vnum": 3818,
+    "before_name": "The upstairs hallway",
+    "name": "Purity 6",
+    "coords": [
+      4,
+      52,
+      1
+    ],
+    "before_flags_sector": "0 532488 2",
+    "flags_sector": "0 532488 2",
+    "changes": [
+      "assigned bedroom identity",
+      "room identity and description"
+    ]
+  },
+  {
+    "vnum": 3864,
+    "before_name": "Room One",
+    "name": "Repentance 1",
+    "coords": [
+      8,
+      55,
+      1
+    ],
+    "before_flags_sector": "0 34086920 2",
+    "flags_sector": "0 34086920 2",
+    "changes": [
+      "assigned bedroom identity"
+    ]
+  },
+  {
+    "vnum": 3865,
+    "before_name": "Room Two",
+    "name": "Repentance 2",
+    "coords": [
+      8,
+      53,
+      1
+    ],
+    "before_flags_sector": "0 532488 2",
+    "flags_sector": "0 532488 2",
+    "changes": [
+      "assigned bedroom identity"
+    ]
+  },
+  {
+    "vnum": 16154,
+    "before_name": "garden of forbearance house",
+    "name": "garden of forbearance house",
+    "coords": [
+      5,
+      58,
+      0
+    ],
+    "before_flags_sector": "0 4202496 10",
+    "flags_sector": "0 4194304 10",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 16155,
+    "before_name": "Dormitory Lawn",
+    "name": "Dormitory Lawn",
+    "coords": [
+      5,
+      59,
+      0
+    ],
+    "before_flags_sector": "0 4194304 10",
+    "flags_sector": "0 4194304 10",
+    "changes": [
+      "door or structural boundary"
+    ]
+  },
+  {
+    "vnum": 16156,
+    "before_name": "Student Dormitory Entrance",
+    "name": "Student Dormitory Entrance",
+    "coords": [
+      5,
+      60,
+      0
+    ],
+    "before_flags_sector": "0 8 2",
+    "flags_sector": "0 8 2",
+    "changes": [
+      "door or structural boundary"
+    ]
+  },
+  {
+    "vnum": 16157,
+    "before_name": "a grassy field",
+    "name": "Dormitory Lawn",
+    "coords": [
+      4,
+      61,
+      0
+    ],
+    "before_flags_sector": "0 4194304 28",
+    "flags_sector": "0 4194304 10",
+    "changes": [
+      "door or structural boundary",
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 3870,
+    "before_name": "Room Three",
+    "name": "Repentance 3",
+    "coords": [
+      9,
+      55,
+      1
+    ],
+    "before_flags_sector": "0 532488 2",
+    "flags_sector": "0 532488 2",
+    "changes": [
+      "assigned bedroom identity"
+    ]
+  },
+  {
+    "vnum": 3871,
+    "before_name": "Living Room",
+    "name": "Living Room",
+    "coords": [
+      3,
+      56,
+      0
+    ],
+    "before_flags_sector": "0 33554441 2",
+    "flags_sector": "0 33554441 2",
+    "changes": [
+      "door or structural boundary"
+    ]
+  },
+  {
+    "vnum": 16160,
+    "before_name": "a covered walkway",
+    "name": "a covered walkway",
+    "coords": [
+      6,
+      61,
+      0
+    ],
+    "before_flags_sector": "0 40 29",
+    "flags_sector": "0 40 29",
+    "changes": [
+      "door or structural boundary"
+    ]
+  },
+  {
+    "vnum": 5922,
+    "before_name": "atop a covered walkway",
+    "name": "atop a covered walkway",
+    "coords": [
+      8,
+      61,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 5923,
+    "before_name": "atop a covered walkway",
+    "name": "atop a covered walkway",
+    "coords": [
+      8,
+      60,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "door or structural boundary",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 16164,
+    "before_name": "inside forbearance house",
+    "name": "Forbearance Pantry",
+    "coords": [
+      4,
+      58,
+      0
+    ],
+    "before_flags_sector": "0 34078728 2",
+    "flags_sector": "0 34078728 2",
+    "changes": [
+      "door or structural boundary",
+      "room identity and description"
+    ]
+  },
+  {
+    "vnum": 16166,
+    "before_name": "a covered walkway",
+    "name": "a covered walkway",
+    "coords": [
+      6,
+      59,
+      0
+    ],
+    "before_flags_sector": "0 40 29",
+    "flags_sector": "0 40 29",
+    "changes": [
+      "door or structural boundary"
+    ]
+  },
+  {
+    "vnum": 3882,
+    "before_name": "Bedroom Four",
+    "name": "Repentance 4",
+    "coords": [
+      9,
+      53,
+      1
+    ],
+    "before_flags_sector": "0 532488 2",
+    "flags_sector": "0 532488 2",
+    "changes": [
+      "assigned bedroom identity"
+    ]
+  },
+  {
+    "vnum": 3892,
+    "before_name": "Bedroom Five",
+    "name": "Repentance 5",
+    "coords": [
+      10,
+      55,
+      1
+    ],
+    "before_flags_sector": "0 532488 2",
+    "flags_sector": "0 532488 2",
+    "changes": [
+      "assigned bedroom identity"
+    ]
+  },
+  {
+    "vnum": 3900,
+    "before_name": "grassy field",
+    "name": "grassy field",
+    "coords": [
+      8,
+      56,
+      0
+    ],
+    "before_flags_sector": "0 4194304 10",
+    "flags_sector": "0 4194304 10",
+    "changes": [
+      "door or structural boundary"
+    ]
+  },
+  {
+    "vnum": 5957,
+    "before_name": "the top of the biodome airlock",
+    "name": "the top of the biodome airlock",
+    "coords": [
+      6,
+      65,
+      1
+    ],
+    "before_flags_sector": "0 8 23",
+    "flags_sector": "0 0 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 5960,
+    "before_name": "the top of the biodome airlock",
+    "name": "the top of the biodome airlock",
+    "coords": [
+      7,
+      65,
+      1
+    ],
+    "before_flags_sector": "0 8 23",
+    "flags_sector": "0 0 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 16206,
+    "before_name": "Athletic Field",
+    "name": "Athletic Field",
+    "coords": [
+      15,
+      51,
+      0
+    ],
+    "before_flags_sector": "0 4194304 10",
+    "flags_sector": "0 4194304 10",
+    "changes": [
+      "door or structural boundary"
+    ]
+  },
+  {
+    "vnum": 16207,
+    "before_name": "Athletic Field",
+    "name": "Athletic Field",
+    "coords": [
+      16,
+      51,
+      0
+    ],
+    "before_flags_sector": "0 4194304 10",
+    "flags_sector": "0 4194304 10",
+    "changes": [
+      "door or structural boundary"
+    ]
+  },
+  {
+    "vnum": 16216,
+    "before_name": "Athletic field",
+    "name": "Athletic field",
+    "coords": [
+      17,
+      51,
+      0
+    ],
+    "before_flags_sector": "0 4194304 10",
+    "flags_sector": "0 4194304 10",
+    "changes": [
+      "door or structural boundary"
+    ]
+  },
+  {
+    "vnum": 3952,
+    "before_name": "a covered walkway",
+    "name": "a covered walkway",
+    "coords": [
+      11,
+      51,
+      0
+    ],
+    "before_flags_sector": "0 4194304 10",
+    "flags_sector": "0 4194304 10",
+    "changes": [
+      "door or structural boundary"
+    ]
+  },
+  {
+    "vnum": 3956,
+    "before_name": "the Spender Center rooftop",
+    "name": "the Spender Center rooftop",
+    "coords": [
+      18,
+      53,
+      1
+    ],
+    "before_flags_sector": "0 4194312 13",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 6017,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      20,
+      70,
+      1
+    ],
+    "before_flags_sector": "0 4194304 13",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 6020,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      19,
+      70,
+      1
+    ],
+    "before_flags_sector": "0 4194304 13",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 6023,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      18,
+      70,
+      1
+    ],
+    "before_flags_sector": "0 4194304 13",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 6026,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      17,
+      70,
+      1
+    ],
+    "before_flags_sector": "0 4194304 13",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 6028,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      16,
+      70,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 6030,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      15,
+      70,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 6031,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      14,
+      70,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 6032,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      13,
+      70,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 6033,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      12,
+      70,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 6034,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      11,
+      70,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 6036,
+    "before_name": "the top of the biodome airlock",
+    "name": "the top of the biodome airlock",
+    "coords": [
+      7,
+      66,
+      1
+    ],
+    "before_flags_sector": "0 8 23",
+    "flags_sector": "0 0 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 6037,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      9,
+      69,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 6038,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      10,
+      69,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 6039,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      11,
+      69,
+      1
+    ],
+    "before_flags_sector": "0 4194304 13",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 6040,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      12,
+      69,
+      1
+    ],
+    "before_flags_sector": "0 4194304 13",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 6041,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      16,
+      69,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 6043,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      17,
+      69,
+      1
+    ],
+    "before_flags_sector": "0 4194304 13",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 6045,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      18,
+      69,
+      1
+    ],
+    "before_flags_sector": "0 4194304 13",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 6048,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      19,
+      69,
+      1
+    ],
+    "before_flags_sector": "0 4194304 13",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 6051,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      20,
+      69,
+      1
+    ],
+    "before_flags_sector": "0 4194304 13",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 16295,
+    "before_name": "a covered walkway",
+    "name": "a covered walkway",
+    "coords": [
+      11,
+      60,
+      0
+    ],
+    "before_flags_sector": "0 40 29",
+    "flags_sector": "0 40 29",
+    "changes": [
+      "door or structural boundary"
+    ]
+  },
+  {
+    "vnum": 16298,
+    "before_name": "inside charity house",
+    "name": "Charity Sitting Room",
+    "coords": [
+      10,
+      59,
+      0
+    ],
+    "before_flags_sector": "0 524296 2",
+    "flags_sector": "0 524296 2",
+    "changes": [
+      "door or structural boundary",
+      "room identity and description"
+    ]
+  },
+  {
+    "vnum": 16299,
+    "before_name": "Living Room",
+    "name": "Living Room",
+    "coords": [
+      9,
+      59,
+      0
+    ],
+    "before_flags_sector": "0 524296 2",
+    "flags_sector": "0 524296 2",
+    "changes": [
+      "door or structural boundary"
+    ]
+  },
+  {
+    "vnum": 6063,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      10,
+      68,
+      1
+    ],
+    "before_flags_sector": "0 4194304 13",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 6065,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      10,
+      67,
+      1
+    ],
+    "before_flags_sector": "0 4194304 13",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 6066,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      10,
+      66,
+      1
+    ],
+    "before_flags_sector": "0 4194304 13",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 6068,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      11,
+      65,
+      1
+    ],
+    "before_flags_sector": "0 4194304 13",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 6069,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      11,
+      66,
+      1
+    ],
+    "before_flags_sector": "0 4194304 13",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 6071,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      11,
+      67,
+      1
+    ],
+    "before_flags_sector": "0 4194304 13",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 6072,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      11,
+      68,
+      1
+    ],
+    "before_flags_sector": "0 4194304 13",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 1998,
+    "before_name": "the top chamber of the jungle gym",
+    "name": "Jungle Gym Platform",
+    "coords": [
+      17,
+      50,
+      1
+    ],
+    "before_flags_sector": "0 8 18",
+    "flags_sector": "0 0 13",
+    "changes": [
+      "door or structural boundary",
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 6124,
+    "before_name": "the Spender Center rooftop",
+    "name": "the Spender Center rooftop",
+    "coords": [
+      19,
+      54,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 6127,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      19,
+      68,
+      1
+    ],
+    "before_flags_sector": "0 4194304 13",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 6128,
+    "before_name": "the Spender Center rooftop",
+    "name": "the Spender Center rooftop",
+    "coords": [
+      19,
+      55,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 6131,
+    "before_name": "the Spender Center rooftop",
+    "name": "the Spender Center rooftop",
+    "coords": [
+      19,
+      56,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 6132,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      19,
+      67,
+      1
+    ],
+    "before_flags_sector": "0 4194304 13",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 6138,
+    "before_name": "the clinic rooftop",
+    "name": "the clinic rooftop",
+    "coords": [
+      19,
+      66,
+      1
+    ],
+    "before_flags_sector": "0 4194304 13",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "room identity and description",
+      "terrain and flags"
+    ]
+  },
+  {
+    "vnum": 6142,
+    "before_name": "the Spender Center rooftop",
+    "name": "the Spender Center rooftop",
+    "coords": [
+      20,
+      56,
+      1
+    ],
+    "before_flags_sector": "0 4194304 18",
+    "flags_sector": "0 4194304 13",
+    "changes": [
+      "terrain and flags"
+    ]
+  }
+]

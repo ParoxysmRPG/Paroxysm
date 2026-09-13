@@ -1,0 +1,3158 @@
+{
+  "rooms_changed": 71,
+  "areas_changed": [
+    "goblin.are",
+    "hvntown.are",
+    "mexico.are",
+    "nforest.are",
+    "onforest.are",
+    "otherfor.are",
+    "samerica.are"
+  ],
+  "changes": [
+    {
+      "room": 16514,
+      "direction": 1,
+      "reason": "Black Rose bathroom door",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 16519,
+        "state": [
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 16519,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 16519,
+      "direction": 3,
+      "reason": "Black Rose bathroom door",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 16514,
+        "state": [
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 16514,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 1836,
+      "direction": 1,
+      "reason": "Black Rose occult reading section",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 16520,
+        "state": [
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 0,
+        "key": 0,
+        "to": 16520,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 16520,
+      "direction": 3,
+      "reason": "Black Rose occult reading section",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 1836,
+        "state": [
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 0,
+        "key": 0,
+        "to": 1836,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 1836,
+      "direction": 6,
+      "reason": "Black Rose existing office door",
+      "before": {
+        "kind": 1,
+        "key": 0,
+        "to": 16521,
+        "state": [
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 16521,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 16521,
+      "direction": 9,
+      "reason": "Black Rose existing office door",
+      "before": {
+        "kind": 1,
+        "key": 0,
+        "to": 1836,
+        "state": [
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 1836,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 16547,
+      "direction": 0,
+      "reason": "Howl at the Moon existing den door",
+      "before": {
+        "kind": 1,
+        "key": 0,
+        "to": 16546,
+        "state": [
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 16546,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 16546,
+      "direction": 2,
+      "reason": "Howl at the Moon existing den door",
+      "before": {
+        "kind": 1,
+        "key": 0,
+        "to": 16547,
+        "state": [
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 16547,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 34001,
+      "direction": 8,
+      "reason": "Tijuana abandoned storefront door",
+      "before": {
+        "kind": 1,
+        "key": 0,
+        "to": 34006,
+        "state": [
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 34006,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 34006,
+      "direction": 7,
+      "reason": "Tijuana abandoned storefront door",
+      "before": {
+        "kind": 1,
+        "key": 0,
+        "to": 34001,
+        "state": [
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 34001,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 18438,
+      "direction": 2,
+      "reason": "Town Hall cafe from public lobby",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 15093,
+        "state": [
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 0,
+        "key": 0,
+        "to": 15093,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 15093,
+      "direction": 0,
+      "reason": "Town Hall cafe from public lobby",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 18438,
+        "state": [
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 0,
+        "key": 0,
+        "to": 18438,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 16796,
+      "direction": 2,
+      "reason": "Petite Cuisine enclosed garden entrance",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 2527,
+        "state": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 2527,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 2527,
+      "direction": 0,
+      "reason": "Petite Cuisine enclosed garden entrance",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 16796,
+        "state": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 16796,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 2158,
+      "direction": 4,
+      "reason": "Retreat stairs return from cafe",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 0,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 0,
+        "key": 0,
+        "to": 7390,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 16658,
+      "direction": 1,
+      "reason": "Gravesend Hardware rear door",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 16645,
+        "state": [
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 16645,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 16680,
+      "direction": 2,
+      "reason": "Apartment 101 existing concealed office door",
+      "before": {
+        "kind": 6,
+        "key": 0,
+        "to": 16697,
+        "state": [
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 6,
+        "key": 0,
+        "to": 16697,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 14339,
+      "direction": 1,
+      "reason": "Respect existing wall on the other side of the boundary",
+      "before": {
+        "kind": 7,
+        "key": 0,
+        "to": 14328,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 7,
+        "key": 0,
+        "to": 14328,
+        "state": [
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 16680,
+      "direction": 8,
+      "reason": "Respect existing wall on the other side of the boundary",
+      "before": {
+        "kind": 6,
+        "key": 0,
+        "to": 16698,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 6,
+        "key": 0,
+        "to": 16698,
+        "state": [
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 16820,
+      "direction": 2,
+      "reason": "Respect existing wall on the other side of the boundary",
+      "before": {
+        "kind": 6,
+        "key": 0,
+        "to": 16808,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 6,
+        "key": 0,
+        "to": 16808,
+        "state": [
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 16822,
+      "direction": 0,
+      "reason": "Respect existing wall on the other side of the boundary",
+      "before": {
+        "kind": 6,
+        "key": 0,
+        "to": 16823,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 6,
+        "key": 0,
+        "to": 16823,
+        "state": [
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 1868,
+      "direction": 2,
+      "reason": "Respect existing wall on the other side of the boundary",
+      "before": {
+        "kind": 6,
+        "key": 0,
+        "to": 18239,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 6,
+        "key": 0,
+        "to": 18239,
+        "state": [
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 9278,
+      "direction": 8,
+      "reason": "Respect existing wall on the other side of the boundary",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 9288,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 0,
+        "key": 0,
+        "to": 9288,
+        "state": [
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 15329,
+      "direction": 7,
+      "reason": "Respect existing wall on the other side of the boundary",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 15330,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 0,
+        "key": 0,
+        "to": 15330,
+        "state": [
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 16601,
+      "direction": 0,
+      "reason": "Respect existing wall on the other side of the boundary",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 16602,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 0,
+        "key": 0,
+        "to": 16602,
+        "state": [
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 7283,
+      "direction": 5,
+      "reason": "Respect existing wall on the other side of the boundary",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 16588,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 0,
+        "key": 0,
+        "to": 16588,
+        "state": [
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 4051,
+      "direction": 5,
+      "reason": "Respect existing wall on the other side of the boundary",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 14973,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 0,
+        "key": 0,
+        "to": 14973,
+        "state": [
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 405083,
+      "direction": 3,
+      "reason": "Respect existing wall on the other side of the boundary",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 405024,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 0,
+        "key": 0,
+        "to": 405024,
+        "state": [
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 405083,
+      "direction": 9,
+      "reason": "Respect existing wall on the other side of the boundary",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 405023,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 0,
+        "key": 0,
+        "to": 405023,
+        "state": [
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 90050,
+      "direction": 8,
+      "reason": "Match town building wall at forest boundary",
+      "before": {
+        "kind": 1,
+        "key": 0,
+        "to": 16679,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 1,
+        "key": 0,
+        "to": 16679,
+        "state": [
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 90052,
+      "direction": 2,
+      "reason": "Match town building wall at forest boundary",
+      "before": {
+        "kind": 5,
+        "key": 0,
+        "to": 16679,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 5,
+        "key": 0,
+        "to": 16679,
+        "state": [
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 90052,
+      "direction": 8,
+      "reason": "Match town building wall at forest boundary",
+      "before": {
+        "kind": 10,
+        "key": 0,
+        "to": 16680,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 10,
+        "key": 0,
+        "to": 16680,
+        "state": [
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 90054,
+      "direction": 2,
+      "reason": "Match town building wall at forest boundary",
+      "before": {
+        "kind": 11,
+        "key": 0,
+        "to": 16680,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 11,
+        "key": 0,
+        "to": 16680,
+        "state": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 90054,
+      "direction": 9,
+      "reason": "Match town building wall at forest boundary",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 16679,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 0,
+        "key": 0,
+        "to": 16679,
+        "state": [
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 90056,
+      "direction": 8,
+      "reason": "Match town building wall at forest boundary",
+      "before": {
+        "kind": 10,
+        "key": 0,
+        "to": 2461,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 10,
+        "key": 0,
+        "to": 2461,
+        "state": [
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 90056,
+      "direction": 9,
+      "reason": "Match town building wall at forest boundary",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 16680,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 0,
+        "key": 0,
+        "to": 16680,
+        "state": [
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 90058,
+      "direction": 2,
+      "reason": "Match town building wall at forest boundary",
+      "before": {
+        "kind": 10,
+        "key": 0,
+        "to": 2461,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 10,
+        "key": 0,
+        "to": 2461,
+        "state": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 90058,
+      "direction": 8,
+      "reason": "Match town building wall at forest boundary",
+      "before": {
+        "kind": 10,
+        "key": 0,
+        "to": 16682,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 10,
+        "key": 0,
+        "to": 16682,
+        "state": [
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 90060,
+      "direction": 2,
+      "reason": "Match town building wall at forest boundary",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 16682,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 0,
+        "key": 0,
+        "to": 16682,
+        "state": [
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 90060,
+      "direction": 8,
+      "reason": "Match town building wall at forest boundary",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 16683,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 0,
+        "key": 0,
+        "to": 16683,
+        "state": [
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 90060,
+      "direction": 9,
+      "reason": "Match town building wall at forest boundary",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 2461,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 0,
+        "key": 0,
+        "to": 2461,
+        "state": [
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 90062,
+      "direction": 2,
+      "reason": "Match town building wall at forest boundary",
+      "before": {
+        "kind": 10,
+        "key": 0,
+        "to": 16683,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 10,
+        "key": 0,
+        "to": 16683,
+        "state": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 90062,
+      "direction": 8,
+      "reason": "Match town building wall at forest boundary",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 16684,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 0,
+        "key": 0,
+        "to": 16684,
+        "state": [
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 90062,
+      "direction": 9,
+      "reason": "Match town building wall at forest boundary",
+      "before": {
+        "kind": 5,
+        "key": 0,
+        "to": 16682,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 5,
+        "key": 0,
+        "to": 16682,
+        "state": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 90064,
+      "direction": 2,
+      "reason": "Match town building wall at forest boundary",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 16684,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 0,
+        "key": 0,
+        "to": 16684,
+        "state": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 90064,
+      "direction": 8,
+      "reason": "Match town building wall at forest boundary",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 16685,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 0,
+        "key": 0,
+        "to": 16685,
+        "state": [
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 90064,
+      "direction": 9,
+      "reason": "Match town building wall at forest boundary",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 16683,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 0,
+        "key": 0,
+        "to": 16683,
+        "state": [
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 90066,
+      "direction": 2,
+      "reason": "Match town building wall at forest boundary",
+      "before": {
+        "kind": 5,
+        "key": 0,
+        "to": 16685,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 5,
+        "key": 0,
+        "to": 16685,
+        "state": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 90066,
+      "direction": 9,
+      "reason": "Match town building wall at forest boundary",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 16684,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 0,
+        "key": 0,
+        "to": 16684,
+        "state": [
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 90068,
+      "direction": 9,
+      "reason": "Match town building wall at forest boundary",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 16685,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 0,
+        "key": 0,
+        "to": 16685,
+        "state": [
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 90070,
+      "direction": 8,
+      "reason": "Match town building wall at forest boundary",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 16645,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 0,
+        "key": 0,
+        "to": 16645,
+        "state": [
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 90072,
+      "direction": 2,
+      "reason": "Match town building wall at forest boundary",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 16645,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 0,
+        "key": 0,
+        "to": 16645,
+        "state": [
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 90072,
+      "direction": 8,
+      "reason": "Match town building wall at forest boundary",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 2451,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 0,
+        "key": 0,
+        "to": 2451,
+        "state": [
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 90074,
+      "direction": 2,
+      "reason": "Match town building wall at forest boundary",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 2451,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 0,
+        "key": 0,
+        "to": 2451,
+        "state": [
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 90074,
+      "direction": 9,
+      "reason": "Match town building wall at forest boundary",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 16645,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 0,
+        "key": 0,
+        "to": 16645,
+        "state": [
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 90076,
+      "direction": 9,
+      "reason": "Match town building wall at forest boundary",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 2451,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 0,
+        "key": 0,
+        "to": 2451,
+        "state": [
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 90080,
+      "direction": 8,
+      "reason": "Match town building wall at forest boundary",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 16718,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 0,
+        "key": 0,
+        "to": 16718,
+        "state": [
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 90082,
+      "direction": 2,
+      "reason": "Match town building wall at forest boundary",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 16718,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 0,
+        "key": 0,
+        "to": 16718,
+        "state": [
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 90084,
+      "direction": 9,
+      "reason": "Match town building wall at forest boundary",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 16718,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 0,
+        "key": 0,
+        "to": 16718,
+        "state": [
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 90088,
+      "direction": 8,
+      "reason": "Match town building wall at forest boundary",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 16740,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 0,
+        "key": 0,
+        "to": 16740,
+        "state": [
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 90090,
+      "direction": 2,
+      "reason": "Match town building wall at forest boundary",
+      "before": {
+        "kind": 5,
+        "key": 0,
+        "to": 16740,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 5,
+        "key": 0,
+        "to": 16740,
+        "state": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 90092,
+      "direction": 9,
+      "reason": "Match town building wall at forest boundary",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 16740,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 0,
+        "key": 0,
+        "to": 16740,
+        "state": [
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 2709,
+      "direction": 5,
+      "reason": "Open air over exposed rooftop",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 2731,
+        "state": [
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 0,
+        "key": 0,
+        "to": 2731,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 1864,
+      "direction": 5,
+      "reason": "Open air over exposed rooftop",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 2847,
+        "state": [
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 0,
+        "key": 0,
+        "to": 2847,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 2884,
+      "direction": 5,
+      "reason": "Open air over exposed rooftop",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 2904,
+        "state": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 0,
+        "key": 0,
+        "to": 2904,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 2923,
+      "direction": 5,
+      "reason": "Open air over exposed rooftop",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 2915,
+        "state": [
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 0,
+        "key": 0,
+        "to": 2915,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 2772,
+      "direction": 5,
+      "reason": "Open air over exposed rooftop",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 2970,
+        "state": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 0,
+        "key": 0,
+        "to": 2970,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 2741,
+      "direction": 5,
+      "reason": "Open air over exposed rooftop",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 2997,
+        "state": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 0,
+        "key": 0,
+        "to": 2997,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 2972,
+      "direction": 5,
+      "reason": "Open air over exposed rooftop",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 3016,
+        "state": [
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 0,
+        "key": 0,
+        "to": 3016,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 2860,
+      "direction": 5,
+      "reason": "Open air over exposed rooftop",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 3017,
+        "state": [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 0,
+        "key": 0,
+        "to": 3017,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 1866,
+      "direction": 5,
+      "reason": "Open air over exposed rooftop",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 3018,
+        "state": [
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 0,
+        "key": 0,
+        "to": 3018,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 2935,
+      "direction": 5,
+      "reason": "Open air over exposed rooftop",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 3062,
+        "state": [
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 0,
+        "key": 0,
+        "to": 3062,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 2906,
+      "direction": 5,
+      "reason": "Open air over exposed rooftop",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 3086,
+        "state": [
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 0,
+        "key": 0,
+        "to": 3086,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 2951,
+      "direction": 5,
+      "reason": "Open air over exposed rooftop",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 3096,
+        "state": [
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 0,
+        "key": 0,
+        "to": 3096,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 3058,
+      "direction": 5,
+      "reason": "Open air over exposed rooftop",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 3113,
+        "state": [
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 0,
+        "key": 0,
+        "to": 3113,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 3272,
+      "direction": 5,
+      "reason": "Open air over exposed rooftop",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 3393,
+        "state": [
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 0,
+        "key": 0,
+        "to": 3393,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 15031,
+      "direction": 4,
+      "reason": "Outdoor sidewalk and air above it",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 0,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 0,
+        "key": 0,
+        "to": 8278,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 15057,
+      "direction": 4,
+      "reason": "Outdoor sidewalk and air above it",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 0,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 0,
+        "key": 0,
+        "to": 3796,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 405031,
+      "direction": 8,
+      "reason": "Continuous air above the magical dueling area",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 405018,
+        "state": [
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 0,
+        "key": 0,
+        "to": 405018,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "room": 151817,
+      "direction": 1,
+      "reason": "Respect existing wall on the other side of the boundary",
+      "before": {
+        "kind": 0,
+        "key": 0,
+        "to": 56972,
+        "state": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "kind": 0,
+        "key": 0,
+        "to": 56972,
+        "state": [
+          0,
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    }
+  ],
+  "room_metadata": [
+    {
+      "room": 2527,
+      "area": "hvntown.are",
+      "name": "a walled-in garden at Petite Cuisine",
+      "before": {
+        "flags": 524297,
+        "sector": 9,
+        "copies": 1
+      },
+      "after": {
+        "flags": 524289,
+        "sector": 10,
+        "copies": 1
+      }
+    },
+    {
+      "room": 2998,
+      "area": "hvntown.are",
+      "name": "a Rooftop",
+      "before": {
+        "flags": 524297,
+        "sector": 2,
+        "copies": 1
+      },
+      "after": {
+        "flags": 524289,
+        "sector": 13,
+        "copies": 1
+      }
+    },
+    {
+      "room": 7273,
+      "area": "hvntown.are",
+      "name": "the roof",
+      "before": {
+        "flags": 524297,
+        "sector": 9,
+        "copies": 1
+      },
+      "after": {
+        "flags": 524289,
+        "sector": 13,
+        "copies": 1
+      }
+    },
+    {
+      "room": 9103,
+      "area": "hvntown.are",
+      "name": "the rooftop",
+      "before": {
+        "flags": 4194816,
+        "sector": 2,
+        "copies": 1
+      },
+      "after": {
+        "flags": 4194816,
+        "sector": 13,
+        "copies": 1
+      }
+    },
+    {
+      "room": 9104,
+      "area": "hvntown.are",
+      "name": "the rooftop",
+      "before": {
+        "flags": 4194304,
+        "sector": 2,
+        "copies": 1
+      },
+      "after": {
+        "flags": 4194304,
+        "sector": 13,
+        "copies": 1
+      }
+    },
+    {
+      "room": 15031,
+      "area": "hvntown.are",
+      "name": "a sidewalk",
+      "before": {
+        "flags": 40,
+        "sector": 29,
+        "copies": 1
+      },
+      "after": {
+        "flags": 32,
+        "sector": 29,
+        "copies": 1
+      }
+    },
+    {
+      "room": 15057,
+      "area": "hvntown.are",
+      "name": "the entrance to the Lodge",
+      "before": {
+        "flags": 40,
+        "sector": 29,
+        "copies": 1
+      },
+      "after": {
+        "flags": 32,
+        "sector": 29,
+        "copies": 1
+      }
+    },
+    {
+      "room": 36028,
+      "area": "samerica.are",
+      "name": "A Rooftop Dining Area",
+      "before": {
+        "flags": 4194820,
+        "sector": 10,
+        "copies": 1
+      },
+      "after": {
+        "flags": 4194820,
+        "sector": 13,
+        "copies": 1
+      }
+    },
+    {
+      "room": 36037,
+      "area": "samerica.are",
+      "name": "A Rooftop Dining Area",
+      "before": {
+        "flags": 4194340,
+        "sector": 10,
+        "copies": 1
+      },
+      "after": {
+        "flags": 4194340,
+        "sector": 13,
+        "copies": 1
+      }
+    },
+    {
+      "room": 302600,
+      "area": "otherfor.are",
+      "name": "The Crossroads",
+      "before": {
+        "flags": 12582912,
+        "sector": 1,
+        "copies": 2
+      },
+      "after": {
+        "flags": 12582912,
+        "sector": 1,
+        "copies": 1
+      }
+    }
+  ],
+  "door_resets": [
+    {
+      "room": 2527,
+      "direction": 0,
+      "before": null,
+      "after": 1
+    },
+    {
+      "room": 16514,
+      "direction": 1,
+      "before": null,
+      "after": 1
+    },
+    {
+      "room": 16519,
+      "direction": 3,
+      "before": null,
+      "after": 1
+    },
+    {
+      "room": 16658,
+      "direction": 1,
+      "before": null,
+      "after": 1
+    },
+    {
+      "room": 16796,
+      "direction": 2,
+      "before": null,
+      "after": 1
+    }
+  ]
+}

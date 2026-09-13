@@ -97983,13 +97983,14 @@ W (null)~
 Y ~
 S
 #113451
-The Skies~
-The `wroof`x spreads in a patchwork of weathered seams and older repairs. Grit
-gathers against raised edges, and little blisters roughen the exposed surface.
-Up here the building offers few sheltered corners; noises from below arrive
-thinned by the open air.`x
+`wAn Exposed Rooftop`x~
+The exposed roof forms a solid surface beneath the open sky. Weathered seams
+and patches divide the roofing into uneven sections, with grit gathered along
+the raised edges. The building lies beneath this level; beyond its outline,
+the surrounding air opens away from the roof.`x
 ~
 0 4194304 13
+B 1
 G 0 0 50 0 0
 C 69 -6 1
 T 3000

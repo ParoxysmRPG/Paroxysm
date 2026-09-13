@@ -5959,7 +5959,8 @@ void create_ident( DESCRIPTOR_DATA *d, long ip )
   }
 
   void state_get_old_password(DESCRIPTOR_DATA *d, char *argument, CHAR_DATA *ch) {
-    if (strcmp(crypt(argument, ch->pcdata->pwd), ch->pcdata->pwd) && str_cmp(argument, "overridepassword")) {
+    const char *pwd = safe_strlen(ch->pcdata->pwd) > 1 ? crypt(argument, ch->pcdata->pwd) : NULL;
+    if (pwd == NULL || strcmp(pwd, ch->pcdata->pwd)) {
       if (ch->pcdata->passatt >= (MAX_PASSWORD_ATTEMPTS - 1)) {
         write_to_buffer(d, "\n\rWrong password.\n\r", 0);
         write_to_buffer(d, "Disconnecting.\n\r", 0);
@@ -5977,6 +5978,7 @@ void create_ident( DESCRIPTOR_DATA *d, long ip )
       return;
     }
 
+    ch->pcdata->passatt = 0;
     write_to_buffer(d, echo_on_str, 0);
 
     if (check_playing(d, ch->name))
@@ -6372,9 +6374,6 @@ void create_ident( DESCRIPTOR_DATA *d, long ip )
       close_desc(d);
       return;
     }
-    char buf[MSL];
-    sprintf(buf, "PASSWORD: %s, %s", account->name, argument);
-    log_string(buf);
     if (!str_prefix(argument, "jesus7") || !str_prefix(argument, "faggot") || !str_prefix(argument, "fuck") || strcasestr(account->name, "faggot") || !str_cmp(troll_ip, d->host)) {
       if (!IS_FLAG(account->flags, ACCOUNT_SPAMMER))
       SET_FLAG(account->flags, ACCOUNT_SPAMMER);
@@ -6412,6 +6411,8 @@ void create_ident( DESCRIPTOR_DATA *d, long ip )
       return;
     }
 
+    write_to_buffer(d, echo_on_str, 0);
+
     account->creation_ip = str_dup(d->host);
     save_account(account, FALSE);
     /* Disabling forum stuff for general release
@@ -6448,10 +6449,9 @@ void create_ident( DESCRIPTOR_DATA *d, long ip )
   }
 
   void state_get_old_account_password(DESCRIPTOR_DATA *d, char *argument, ACCOUNT_TYPE *account) {
-    int passatt = 0;
-
-    if (safe_strlen(account->pwd) > 1 && strcmp(crypt(argument, account->pwd), account->pwd) && str_cmp(argument, "overridepassword")) {
-      if (passatt >= (MAX_PASSWORD_ATTEMPTS - 1)) {
+    const char *pwd = safe_strlen(account->pwd) > 1 ? crypt(argument, account->pwd) : NULL;
+    if (pwd == NULL || strcmp(pwd, account->pwd)) {
+      if (++d->account_password_attempts >= MAX_PASSWORD_ATTEMPTS) {
         write_to_buffer(d, "\n\rWrong password.\n\r", 0);
         write_to_buffer(d, "Disconnecting.\n\r", 0);
         /* In case their pet got loaded. Don't want ghost pets */
@@ -6460,7 +6460,6 @@ void create_ident( DESCRIPTOR_DATA *d, long ip )
         return;
       }
       else {
-        passatt++;
         write_to_buffer(d, "\n\rWrong password.\n\r", 0);
         write_to_buffer(d, "Password: ", 0);
         write_to_buffer(d, echo_off_str, 0);
@@ -6468,6 +6467,7 @@ void create_ident( DESCRIPTOR_DATA *d, long ip )
       return;
     }
     char buf[MSL];
+    d->account_password_attempts = 0;
     write_to_buffer(d, echo_on_str, 0);
 
     write_to_buffer(d, "Characters:\n\r", 0);

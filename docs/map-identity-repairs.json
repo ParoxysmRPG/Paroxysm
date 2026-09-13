@@ -1,0 +1,5156 @@
+[
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10240,
+    "area": "hvntown.are",
+    "name": "An alleyway next to the gym",
+    "surface": 1716
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10241,
+    "area": "hvntown.are",
+    "name": "a Sidewalk flanking Badwater Quay",
+    "surface": 16379
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10242,
+    "area": "hvntown.are",
+    "name": "a sidewalk leading up to The Brawling Brothers Pub",
+    "surface": 16380
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 2050,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10243,
+    "area": "hvntown.are",
+    "name": "a Sidewalk flanking Badwater Quay",
+    "surface": 16381
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10244,
+    "area": "hvntown.are",
+    "name": "The Southern Parking Lot of Badwater Fitness",
+    "surface": 16389
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10245,
+    "area": "hvntown.are",
+    "name": "outside of The Brawling Brothers Pub",
+    "surface": 16388
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10246,
+    "area": "hvntown.are",
+    "name": "The Northern Parking Lot of Badwater Fitness",
+    "surface": 16387
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10249,
+    "area": "hvntown.are",
+    "name": "A Grassy Area",
+    "surface": 16391
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10252,
+    "area": "hvntown.are",
+    "name": "A Grassy Area",
+    "surface": 16396
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10253,
+    "area": "hvntown.are",
+    "name": "An alleyway next to the gym",
+    "surface": 16402
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10254,
+    "area": "hvntown.are",
+    "name": "An alleyway next to the gym",
+    "surface": 16401
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10255,
+    "area": "hvntown.are",
+    "name": "An alleyway next to the gym",
+    "surface": 1716
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10256,
+    "area": "hvntown.are",
+    "name": "an abandoned lot beside the Nymph's Rest",
+    "surface": 1576
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10257,
+    "area": "hvntown.are",
+    "name": "an abandoned lot beside the Nymph's Rest",
+    "surface": 1545
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10258,
+    "area": "hvntown.are",
+    "name": "an abandoned lot beside the Nymph's Rest",
+    "surface": 18155
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10259,
+    "area": "hvntown.are",
+    "name": "an abandoned lot beside the Nymph's Rest",
+    "surface": 18148
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10260,
+    "area": "hvntown.are",
+    "name": "the back entrance to the Nymph's Rest",
+    "surface": 18154
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10261,
+    "area": "hvntown.are",
+    "name": "an abandoned lot beside The Nymph's Rest",
+    "surface": 18147
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10262,
+    "area": "hvntown.are",
+    "name": "an abandoned lot beside the Nymph's Rest",
+    "surface": 16371
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10263,
+    "area": "hvntown.are",
+    "name": "a sidewalk",
+    "surface": 1360
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10264,
+    "area": "hvntown.are",
+    "name": "The Nymph's Rest Gentleman's Club Parking Lot",
+    "surface": 18112
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10265,
+    "area": "hvntown.are",
+    "name": "sidewalk",
+    "surface": 1686
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10266,
+    "area": "hvntown.are",
+    "name": "an abandoned lot beside the Nymph's Rest",
+    "surface": 1576
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10267,
+    "area": "hvntown.are",
+    "name": "an abandoned lot beside the Nymph's Rest",
+    "surface": 1545
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10268,
+    "area": "hvntown.are",
+    "name": "an abandoned lot beside the Nymph's Rest",
+    "surface": 18155
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10269,
+    "area": "hvntown.are",
+    "name": "an abandoned lot beside the Nymph's Rest",
+    "surface": 18148
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10271,
+    "area": "hvntown.are",
+    "name": "the back entrance to the Nymph's Rest",
+    "surface": 18154
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10272,
+    "area": "hvntown.are",
+    "name": "an abandoned lot beside The Nymph's Rest",
+    "surface": 18147
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10275,
+    "area": "hvntown.are",
+    "name": "an abandoned lot beside the Nymph's Rest",
+    "surface": 16371
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 6180,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10278,
+    "area": "hvntown.are",
+    "name": "a sidewalk",
+    "surface": 1360
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10279,
+    "area": "hvntown.are",
+    "name": "The Nymph's Rest Gentleman's Club Parking Lot",
+    "surface": 18112
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10280,
+    "area": "hvntown.are",
+    "name": "sidewalk",
+    "surface": 1686
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10281,
+    "area": "hvntown.are",
+    "name": "a parkside path alongside The Strip",
+    "surface": 16093
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10282,
+    "area": "hvntown.are",
+    "name": "a Pathway towards The Strip",
+    "surface": 2303
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10283,
+    "area": "hvntown.are",
+    "name": "a Pathway through The Strip",
+    "surface": 16097
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10284,
+    "area": "hvntown.are",
+    "name": "a Pathway through The Strip",
+    "surface": 16096
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10285,
+    "area": "hvntown.are",
+    "name": "a front lawn",
+    "surface": 16098
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10288,
+    "area": "hvntown.are",
+    "name": "a parkside path alongside The Strip",
+    "surface": 16093
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10291,
+    "area": "hvntown.are",
+    "name": "a Pathway towards The Strip",
+    "surface": 2303
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10292,
+    "area": "hvntown.are",
+    "name": "a Pathway through The Strip",
+    "surface": 16097
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10293,
+    "area": "hvntown.are",
+    "name": "a Pathway through The Strip",
+    "surface": 16096
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10294,
+    "area": "hvntown.are",
+    "name": "a front lawn",
+    "surface": 16098
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10297,
+    "area": "hvntown.are",
+    "name": "a small garden near Nate's Nugs",
+    "surface": 16089
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 6201,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10298,
+    "area": "hvntown.are",
+    "name": "a small garden near Nate's Nugs",
+    "surface": 16088
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10299,
+    "area": "hvntown.are",
+    "name": "a small garden near Nate's Nugs",
+    "surface": 16087
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10300,
+    "area": "hvntown.are",
+    "name": "the entrance of Nate's Nugs",
+    "surface": 16090
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10302,
+    "area": "hvntown.are",
+    "name": "behind a brick store",
+    "surface": 16092
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10303,
+    "area": "hvntown.are",
+    "name": "a parking lot next to Nate's Nugs",
+    "surface": 2301
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10306,
+    "area": "hvntown.are",
+    "name": "a small garden near Nate's Nugs",
+    "surface": 16089
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10307,
+    "area": "hvntown.are",
+    "name": "a small garden near Nate's Nugs",
+    "surface": 16088
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10308,
+    "area": "hvntown.are",
+    "name": "a small garden near Nate's Nugs",
+    "surface": 16087
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10309,
+    "area": "hvntown.are",
+    "name": "the entrance of Nate's Nugs",
+    "surface": 16090
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10311,
+    "area": "hvntown.are",
+    "name": "behind a brick store",
+    "surface": 16092
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10312,
+    "area": "hvntown.are",
+    "name": "a parking lot next to Nate's Nugs",
+    "surface": 2301
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 6216,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10315,
+    "area": "hvntown.are",
+    "name": "some patchy grass between buildings",
+    "surface": 16080
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10316,
+    "area": "hvntown.are",
+    "name": "some patchy grass between buildings",
+    "surface": 16081
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10318,
+    "area": "hvntown.are",
+    "name": "the Patio Walkway of The Succubus Club",
+    "surface": 16084
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10319,
+    "area": "hvntown.are",
+    "name": "outside a windowless structure",
+    "surface": 2261
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10321,
+    "area": "hvntown.are",
+    "name": "some patchy grass between buildings",
+    "surface": 16080
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10322,
+    "area": "hvntown.are",
+    "name": "some patchy grass between buildings",
+    "surface": 16081
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10324,
+    "area": "hvntown.are",
+    "name": "the Patio Walkway of The Succubus Club",
+    "surface": 16084
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 6228,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10327,
+    "area": "hvntown.are",
+    "name": "outside a windowless structure",
+    "surface": 2261
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10330,
+    "area": "hvntown.are",
+    "name": "a Filthy Sidewalk along Devilwood Drive",
+    "surface": 16071
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10334,
+    "area": "hvntown.are",
+    "name": "a Run-Down Parking Area outside The Alley",
+    "surface": 16077
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10336,
+    "area": "hvntown.are",
+    "name": "an Outdoor Patio behind The Alley",
+    "surface": 16074
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10337,
+    "area": "hvntown.are",
+    "name": "a Filthy Sidewalk along Devilwood Drive",
+    "surface": 16079
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 6241,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10340,
+    "area": "hvntown.are",
+    "name": "a Filthy Sidewalk along Devilwood Drive",
+    "surface": 16071
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10343,
+    "area": "hvntown.are",
+    "name": "a Run-Down Parking Area outside The Alley",
+    "surface": 16077
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10345,
+    "area": "hvntown.are",
+    "name": "an Outdoor Patio behind The Alley",
+    "surface": 16074
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10346,
+    "area": "hvntown.are",
+    "name": "a Filthy Sidewalk along Devilwood Drive",
+    "surface": 16079
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10349,
+    "area": "hvntown.are",
+    "name": "the graffiti-drowned front of Beelzebubbles Laundromat",
+    "surface": 16065
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10351,
+    "area": "hvntown.are",
+    "name": "a grungy alley behind the laundromat",
+    "surface": 16063
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10352,
+    "area": "hvntown.are",
+    "name": "Before an eerie tableau caged behind glass",
+    "surface": 2258
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 4209,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10355,
+    "area": "hvntown.are",
+    "name": "the poster-plastered front of Unveiled Costumes",
+    "surface": 16070
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10358,
+    "area": "hvntown.are",
+    "name": "the graffiti-drowned front of Beelzebubbles Laundromat",
+    "surface": 16065
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10360,
+    "area": "hvntown.are",
+    "name": "a grungy alley behind the laundromat",
+    "surface": 16063
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10361,
+    "area": "hvntown.are",
+    "name": "Before an eerie tableau caged behind glass",
+    "surface": 2258
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10364,
+    "area": "hvntown.are",
+    "name": "the poster-plastered front of Unveiled Costumes",
+    "surface": 16070
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10367,
+    "area": "hvntown.are",
+    "name": "the front lawn of The Pleasure Chest: Adult Toys, Gifts, and Lingerie",
+    "surface": 15393
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10369,
+    "area": "hvntown.are",
+    "name": "the front lawn of The Pleasure Chest: Adult Toys, Gifts, and Lingerie",
+    "surface": 16062
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10373,
+    "area": "hvntown.are",
+    "name": "the Exterior of a Sex Shop",
+    "surface": 2210
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10375,
+    "area": "hvntown.are",
+    "name": "the Exterior of a Sex Shop",
+    "surface": 2252
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10376,
+    "area": "hvntown.are",
+    "name": "the front lawn of The Pleasure Chest: Adult Toys, Gifts, and Lingerie",
+    "surface": 15393
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10378,
+    "area": "hvntown.are",
+    "name": "the front lawn of The Pleasure Chest: Adult Toys, Gifts, and Lingerie",
+    "surface": 16062
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10382,
+    "area": "hvntown.are",
+    "name": "the Exterior of a Sex Shop",
+    "surface": 2210
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10384,
+    "area": "hvntown.are",
+    "name": "the Exterior of a Sex Shop",
+    "surface": 2252
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10385,
+    "area": "hvntown.are",
+    "name": "Before a red-washed alley off Fleet Street",
+    "surface": 15385
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10386,
+    "area": "hvntown.are",
+    "name": "the Corner of Fleet Street and Devilwood Drive",
+    "surface": 15387
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10387,
+    "area": "hvntown.are",
+    "name": "a trash-strewn alley lit carnal red",
+    "surface": 2130
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10389,
+    "area": "hvntown.are",
+    "name": "Before a red-washed alley off Fleet Street",
+    "surface": 15385
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10391,
+    "area": "hvntown.are",
+    "name": "the Corner of Fleet Street and Devilwood Drive",
+    "surface": 15387
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 2201,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10395,
+    "area": "hvntown.are",
+    "name": "a trash-strewn alley lit carnal red",
+    "surface": 2130
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10398,
+    "area": "hvntown.are",
+    "name": "the House Red - Main Entrance",
+    "surface": 15377
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10399,
+    "area": "hvntown.are",
+    "name": "the House Red - Overlook Trail",
+    "surface": 2128
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10401,
+    "area": "hvntown.are",
+    "name": "the House Red - Main Entrance",
+    "surface": 15377
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10404,
+    "area": "hvntown.are",
+    "name": "the House Red - Overlook Trail",
+    "surface": 2128
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10410,
+    "area": "hvntown.are",
+    "name": "the patio outside Pigment and Paper Studio",
+    "surface": 1985
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10411,
+    "area": "hvntown.are",
+    "name": "the entryway outside Pigment and Paper Studio",
+    "surface": 16493
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10412,
+    "area": "hvntown.are",
+    "name": "the garden outside Pigment and Paper Studio",
+    "surface": 1806
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10418,
+    "area": "hvntown.are",
+    "name": "the patio outside Pigment and Paper Studio",
+    "surface": 1985
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10419,
+    "area": "hvntown.are",
+    "name": "the entryway outside Pigment and Paper Studio",
+    "surface": 16493
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10420,
+    "area": "hvntown.are",
+    "name": "the garden outside Pigment and Paper Studio",
+    "surface": 1806
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10441,
+    "area": "hvntown.are",
+    "name": "El Mercado del Mundo, Cafe Patio",
+    "surface": 1422
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10442,
+    "area": "hvntown.are",
+    "name": "El Mercado del Mundo, Courtyard",
+    "surface": 18133
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10449,
+    "area": "hvntown.are",
+    "name": "El Mercado del Mundo, Cafe Patio",
+    "surface": 1422
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10450,
+    "area": "hvntown.are",
+    "name": "El Mercado del Mundo, Courtyard",
+    "surface": 18133
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10458,
+    "area": "hvntown.are",
+    "name": "a sidewalk running along Elm Street",
+    "surface": 18135
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10459,
+    "area": "hvntown.are",
+    "name": "Collateral Damage - Gun and Pawn",
+    "surface": 16503
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10460,
+    "area": "hvntown.are",
+    "name": "the southeast corner of Elm and Paine",
+    "surface": 16504
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10467,
+    "area": "hvntown.are",
+    "name": "a sidewalk running along Elm Street",
+    "surface": 18135
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10468,
+    "area": "hvntown.are",
+    "name": "Collateral Damage - Gun and Pawn",
+    "surface": 16503
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10469,
+    "area": "hvntown.are",
+    "name": "the southeast corner of Elm and Paine",
+    "surface": 16504
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 8429,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10478,
+    "area": "hvntown.are",
+    "name": "the window front of Pulse Fitness Center",
+    "surface": 16529
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 8430,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10481,
+    "area": "hvntown.are",
+    "name": "Before the two-storey Paine Performance Complex building",
+    "surface": 16530
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 8433,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 8434,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10484,
+    "area": "hvntown.are",
+    "name": "the window front of Starbucks Coffee",
+    "surface": 1876
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10487,
+    "area": "hvntown.are",
+    "name": "the window front of Pulse Fitness Center",
+    "surface": 16529
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10490,
+    "area": "hvntown.are",
+    "name": "Before the two-storey Paine Performance Complex building",
+    "surface": 16530
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10493,
+    "area": "hvntown.are",
+    "name": "the window front of Starbucks Coffee",
+    "surface": 1876
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10494,
+    "area": "hvntown.are",
+    "name": "",
+    "surface": 16540
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10496,
+    "area": "hvntown.are",
+    "name": "the museum area (Freemont Collectibles)",
+    "surface": 16542
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10500,
+    "area": "hvntown.are",
+    "name": "the store's right display (Fremont Collectibles)",
+    "surface": 16533
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10502,
+    "area": "hvntown.are",
+    "name": "an Outdoor, Private Garden Patio",
+    "surface": 16532
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10503,
+    "area": "hvntown.are",
+    "name": "",
+    "surface": 16540
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10505,
+    "area": "hvntown.are",
+    "name": "the museum area (Freemont Collectibles)",
+    "surface": 16542
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10509,
+    "area": "hvntown.are",
+    "name": "the store's right display (Fremont Collectibles)",
+    "surface": 16533
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10511,
+    "area": "hvntown.are",
+    "name": "an Outdoor, Private Garden Patio",
+    "surface": 16532
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10512,
+    "area": "hvntown.are",
+    "name": "An Herbal and Flower Garden",
+    "surface": 16562
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10513,
+    "area": "hvntown.are",
+    "name": "the front entrance of the Retreat",
+    "surface": 16561
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10514,
+    "area": "hvntown.are",
+    "name": "The Front Deck to a Small Studio",
+    "surface": 16560
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10521,
+    "area": "hvntown.are",
+    "name": "An Herbal and Flower Garden",
+    "surface": 16562
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10522,
+    "area": "hvntown.are",
+    "name": "the front entrance of the Retreat",
+    "surface": 16561
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10523,
+    "area": "hvntown.are",
+    "name": "The Front Deck to a Small Studio",
+    "surface": 16560
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10538,
+    "area": "hvntown.are",
+    "name": "the peaceful pharmacy gardens",
+    "surface": 16535
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10539,
+    "area": "hvntown.are",
+    "name": "Before the Moore for Less Pharmacy",
+    "surface": 1886
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10540,
+    "area": "hvntown.are",
+    "name": "the peaceful pharmacy gardens",
+    "surface": 16534
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10547,
+    "area": "hvntown.are",
+    "name": "the peaceful pharmacy gardens",
+    "surface": 16535
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10548,
+    "area": "hvntown.are",
+    "name": "Before the Moore for Less Pharmacy",
+    "surface": 1886
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10549,
+    "area": "hvntown.are",
+    "name": "the peaceful pharmacy gardens",
+    "surface": 16534
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10550,
+    "area": "hvntown.are",
+    "name": "the Front of an Aged Stone Building",
+    "surface": 16565
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10551,
+    "area": "hvntown.are",
+    "name": "the Entrance of an Aged Stone Building",
+    "surface": 16564
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10552,
+    "area": "hvntown.are",
+    "name": "the Front of an Aged Stone Building",
+    "surface": 16563
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10553,
+    "area": "hvntown.are",
+    "name": "outdoor seating looking onto Deadwood",
+    "surface": 16566
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 8505,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 8506,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10559,
+    "area": "hvntown.are",
+    "name": "the Front of an Aged Stone Building",
+    "surface": 16565
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10560,
+    "area": "hvntown.are",
+    "name": "the Entrance of an Aged Stone Building",
+    "surface": 16564
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10561,
+    "area": "hvntown.are",
+    "name": "the Front of an Aged Stone Building",
+    "surface": 16563
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 4417,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10562,
+    "area": "hvntown.are",
+    "name": "outdoor seating looking onto Deadwood",
+    "surface": 16566
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10568,
+    "area": "hvntown.are",
+    "name": "the manicured lawns surrounding Studio Luisant",
+    "surface": 16589
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10570,
+    "area": "hvntown.are",
+    "name": "the Manicured Lawns surrounding Studio Splendente",
+    "surface": 16587
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 6475,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10573,
+    "area": "hvntown.are",
+    "name": "the Awning Covered Entryway before Studio Splendente",
+    "surface": 16603
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10574,
+    "area": "hvntown.are",
+    "name": "the manicured lawns surrounding Studio Luisant",
+    "surface": 16606
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 6478,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10576,
+    "area": "hvntown.are",
+    "name": "the Manicured Lawns surrounding Studio Splendente",
+    "surface": 16604
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10577,
+    "area": "hvntown.are",
+    "name": "the manicured lawns surrounding Studio Luisant",
+    "surface": 16589
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10579,
+    "area": "hvntown.are",
+    "name": "the Manicured Lawns surrounding Studio Splendente",
+    "surface": 16587
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10582,
+    "area": "hvntown.are",
+    "name": "the Awning Covered Entryway before Studio Splendente",
+    "surface": 16603
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10583,
+    "area": "hvntown.are",
+    "name": "the manicured lawns surrounding Studio Luisant",
+    "surface": 16606
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10585,
+    "area": "hvntown.are",
+    "name": "the Manicured Lawns surrounding Studio Splendente",
+    "surface": 16604
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10586,
+    "area": "hvntown.are",
+    "name": "a Parking Lot between Office Buildings",
+    "surface": 16649
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10587,
+    "area": "hvntown.are",
+    "name": "a patchy lawn",
+    "surface": 16648
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10589,
+    "area": "hvntown.are",
+    "name": "a walkway leading to an unmarked building",
+    "surface": 16641
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10592,
+    "area": "hvntown.are",
+    "name": "a Plaza along Paine Avenue and Beech Street",
+    "surface": 16637
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10595,
+    "area": "hvntown.are",
+    "name": "a Parking Lot between Office Buildings",
+    "surface": 16649
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10596,
+    "area": "hvntown.are",
+    "name": "a patchy lawn",
+    "surface": 16648
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10598,
+    "area": "hvntown.are",
+    "name": "a walkway leading to an unmarked building",
+    "surface": 16641
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10601,
+    "area": "hvntown.are",
+    "name": "a Plaza along Paine Avenue and Beech Street",
+    "surface": 16637
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10609,
+    "area": "hvntown.are",
+    "name": "the fenced off Parking Lot of Gravesend Hardware",
+    "surface": 2445
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10610,
+    "area": "hvntown.are",
+    "name": "the Entrance to Gravesend Hardware",
+    "surface": 2447
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10611,
+    "area": "hvntown.are",
+    "name": "a segment of sidewalk, skirting a boarded-up hardware store",
+    "surface": 16639
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 4470,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10618,
+    "area": "hvntown.are",
+    "name": "the fenced off Parking Lot of Gravesend Hardware",
+    "surface": 2445
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10619,
+    "area": "hvntown.are",
+    "name": "the Entrance to Gravesend Hardware",
+    "surface": 2447
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10620,
+    "area": "hvntown.are",
+    "name": "a segment of sidewalk, skirting a boarded-up hardware store",
+    "surface": 16639
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10621,
+    "area": "hvntown.are",
+    "name": "72 Beech ST Front Courtyard",
+    "surface": 16716
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10622,
+    "area": "hvntown.are",
+    "name": "72 Beech St. Streetfront Courtyard",
+    "surface": 16717
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10623,
+    "area": "hvntown.are",
+    "name": "72 Beech st. Employee entrance",
+    "surface": 16720
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10628,
+    "area": "hvntown.are",
+    "name": "72 Beech St. Allyfront Courtyard",
+    "surface": 16725
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10630,
+    "area": "hvntown.are",
+    "name": "72 Beech ST Front Courtyard",
+    "surface": 16716
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10631,
+    "area": "hvntown.are",
+    "name": "72 Beech St. Streetfront Courtyard",
+    "surface": 16717
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10632,
+    "area": "hvntown.are",
+    "name": "72 Beech st. Employee entrance",
+    "surface": 16720
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10637,
+    "area": "hvntown.are",
+    "name": "72 Beech St. Allyfront Courtyard",
+    "surface": 16725
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10638,
+    "area": "hvntown.are",
+    "name": "an extension of the alley near a shop",
+    "surface": 16592
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10639,
+    "area": "hvntown.are",
+    "name": "the dumpster behind a brick building",
+    "surface": 16591
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10640,
+    "area": "hvntown.are",
+    "name": "an extension of the alley near a shop",
+    "surface": 16590
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10641,
+    "area": "hvntown.are",
+    "name": "a city-maintained lawn by a shop",
+    "surface": 16599
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10643,
+    "area": "hvntown.are",
+    "name": "a city-maintained lawn by a shop",
+    "surface": 16601
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10644,
+    "area": "hvntown.are",
+    "name": "a city-maintained lawn by a shop",
+    "surface": 16609
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10645,
+    "area": "hvntown.are",
+    "name": "the walkway of The Fragrant Tree shaded by trees",
+    "surface": 16608
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10646,
+    "area": "hvntown.are",
+    "name": "a city-maintained lawn by a shop",
+    "surface": 16607
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10647,
+    "area": "hvntown.are",
+    "name": "an extension of the alley near a shop",
+    "surface": 16592
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10648,
+    "area": "hvntown.are",
+    "name": "the dumpster behind a brick building",
+    "surface": 16591
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 2456,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10649,
+    "area": "hvntown.are",
+    "name": "an extension of the alley near a shop",
+    "surface": 16590
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10650,
+    "area": "hvntown.are",
+    "name": "a city-maintained lawn by a shop",
+    "surface": 16599
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10652,
+    "area": "hvntown.are",
+    "name": "a city-maintained lawn by a shop",
+    "surface": 16601
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10653,
+    "area": "hvntown.are",
+    "name": "a city-maintained lawn by a shop",
+    "surface": 16609
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10654,
+    "area": "hvntown.are",
+    "name": "the walkway of The Fragrant Tree shaded by trees",
+    "surface": 16608
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 2462,
+    "area": "hvntown.are",
+    "name": "a simple yard",
+    "surface": 15156
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10655,
+    "area": "hvntown.are",
+    "name": "a city-maintained lawn by a shop",
+    "surface": 16607
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10657,
+    "area": "hvntown.are",
+    "name": "the sidewalk in front of Starlight Lounge",
+    "surface": 16785
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10658,
+    "area": "hvntown.are",
+    "name": "the sidewalk in front of Starlight Lounge",
+    "surface": 16786
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 8611,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 8612,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10662,
+    "area": "hvntown.are",
+    "name": "the sidewalk in front of Starlight Lounge",
+    "surface": 16785
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10663,
+    "area": "hvntown.are",
+    "name": "the sidewalk in front of Starlight Lounge",
+    "surface": 16786
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10671,
+    "area": "hvntown.are",
+    "name": "Outside of the Corner Store",
+    "surface": 16594
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10672,
+    "area": "hvntown.are",
+    "name": "Outside of the Corner Store",
+    "surface": 16593
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10676,
+    "area": "hvntown.are",
+    "name": "DaveDash Convenience: Side Alley",
+    "surface": 16612
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10677,
+    "area": "hvntown.are",
+    "name": "DaveDash Convenience: Entrance",
+    "surface": 16611
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10680,
+    "area": "hvntown.are",
+    "name": "Outside of the Corner Store",
+    "surface": 16594
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10681,
+    "area": "hvntown.are",
+    "name": "Outside of the Corner Store",
+    "surface": 16593
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10685,
+    "area": "hvntown.are",
+    "name": "DaveDash Convenience: Side Alley",
+    "surface": 16612
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10686,
+    "area": "hvntown.are",
+    "name": "DaveDash Convenience: Entrance",
+    "surface": 16611
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10688,
+    "area": "hvntown.are",
+    "name": "the manicured lawn surrounding Petite Cuisine",
+    "surface": 16781
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10689,
+    "area": "hvntown.are",
+    "name": "the entrance to Petite Cuisine",
+    "surface": 16782
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10690,
+    "area": "hvntown.are",
+    "name": "the manicured lawn surrounding Petite Cuisine",
+    "surface": 16783
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 8644,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10693,
+    "area": "hvntown.are",
+    "name": "the manicured lawn surrounding Petite Cuisine",
+    "surface": 16801
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 8645,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 8646,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10696,
+    "area": "hvntown.are",
+    "name": "the manicured lawn surrounding Petite Cuisine",
+    "surface": 16781
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10697,
+    "area": "hvntown.are",
+    "name": "the entrance to Petite Cuisine",
+    "surface": 16782
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10698,
+    "area": "hvntown.are",
+    "name": "the manicured lawn surrounding Petite Cuisine",
+    "surface": 16783
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 8650,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 6603,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 8651,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10701,
+    "area": "hvntown.are",
+    "name": "the manicured lawn surrounding Petite Cuisine",
+    "surface": 16801
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 8653,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 6606,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10705,
+    "area": "hvntown.are",
+    "name": "the front lawn of Stellar Style",
+    "surface": 16712
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10708,
+    "area": "hvntown.are",
+    "name": "the entryway of Stellar Style - Men",
+    "surface": 2475
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10711,
+    "area": "hvntown.are",
+    "name": "the front lawn of Stellar Style",
+    "surface": 2477
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10714,
+    "area": "hvntown.are",
+    "name": "the front lawn of Stellar Style",
+    "surface": 16712
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 4571,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10717,
+    "area": "hvntown.are",
+    "name": "the entryway of Stellar Style - Men",
+    "surface": 2475
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10720,
+    "area": "hvntown.are",
+    "name": "the front lawn of Stellar Style",
+    "surface": 2477
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10725,
+    "area": "hvntown.are",
+    "name": "the front lawn of Stellar Fashions",
+    "surface": 16788
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10728,
+    "area": "hvntown.are",
+    "name": "the entryway of Stellar Fashions - Women",
+    "surface": 16789
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 8682,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10731,
+    "area": "hvntown.are",
+    "name": "the front lawn of Stellar Fashions",
+    "surface": 16790
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10734,
+    "area": "hvntown.are",
+    "name": "the front lawn of Stellar Fashions",
+    "surface": 16788
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10737,
+    "area": "hvntown.are",
+    "name": "the entryway of Stellar Fashions - Women",
+    "surface": 16789
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 4594,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10740,
+    "area": "hvntown.are",
+    "name": "the front lawn of Stellar Fashions",
+    "surface": 16790
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10741,
+    "area": "hvntown.are",
+    "name": "an empty patch of grass",
+    "surface": 16734
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10747,
+    "area": "hvntown.are",
+    "name": "a cultivated meadow",
+    "surface": 16743
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10748,
+    "area": "hvntown.are",
+    "name": "the Entrance to a Jewelry Store",
+    "surface": 16742
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 4604,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10749,
+    "area": "hvntown.are",
+    "name": "a cultivated meadow",
+    "surface": 16741
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10750,
+    "area": "hvntown.are",
+    "name": "an empty patch of grass",
+    "surface": 16734
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 8705,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10756,
+    "area": "hvntown.are",
+    "name": "a cultivated meadow",
+    "surface": 16743
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 8708,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10757,
+    "area": "hvntown.are",
+    "name": "the Entrance to a Jewelry Store",
+    "surface": 16742
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10758,
+    "area": "hvntown.are",
+    "name": "a cultivated meadow",
+    "surface": 16741
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10760,
+    "area": "hvntown.are",
+    "name": "a lot under construction",
+    "surface": 16736
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 4616,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10761,
+    "area": "hvntown.are",
+    "name": "a lot under construction",
+    "surface": 16735
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 8713,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10763,
+    "area": "hvntown.are",
+    "name": "a lush park with a brick crossroads",
+    "surface": 16738
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10764,
+    "area": "hvntown.are",
+    "name": "a construction project in process",
+    "surface": 2489
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 8716,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10765,
+    "area": "hvntown.are",
+    "name": "a lot filled with construction materials",
+    "surface": 2495
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10766,
+    "area": "hvntown.are",
+    "name": "a walkway flanked by a bench on each side",
+    "surface": 2493
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10767,
+    "area": "hvntown.are",
+    "name": "an abandoned store",
+    "surface": 16744
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10769,
+    "area": "hvntown.are",
+    "name": "a lot under construction",
+    "surface": 16736
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10770,
+    "area": "hvntown.are",
+    "name": "a lot under construction",
+    "surface": 16735
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10772,
+    "area": "hvntown.are",
+    "name": "a lush park with a brick crossroads",
+    "surface": 16738
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10773,
+    "area": "hvntown.are",
+    "name": "a construction project in process",
+    "surface": 2489
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10774,
+    "area": "hvntown.are",
+    "name": "a lot filled with construction materials",
+    "surface": 2495
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10775,
+    "area": "hvntown.are",
+    "name": "a walkway flanked by a bench on each side",
+    "surface": 2493
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10776,
+    "area": "hvntown.are",
+    "name": "an abandoned store",
+    "surface": 16744
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10777,
+    "area": "hvntown.are",
+    "name": "the Dumpster behind Hook, Line & Sinker",
+    "surface": 16751
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10778,
+    "area": "hvntown.are",
+    "name": "the Back Door of Hook, Line & Sinker",
+    "surface": 2499
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10779,
+    "area": "hvntown.are",
+    "name": "the Parking Lot behind Hook, Line & Sinker",
+    "surface": 2497
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10783,
+    "area": "hvntown.are",
+    "name": "the Sidewalk between Ash Street and Hook, Line & Sinker",
+    "surface": 16749
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10784,
+    "area": "hvntown.are",
+    "name": "a Walkway from Ash Street to Hook, Line & Sinker",
+    "surface": 16748
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10785,
+    "area": "hvntown.are",
+    "name": "the Sidewalk between Ash Street and Hook, Line & Sinker",
+    "surface": 16745
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10786,
+    "area": "hvntown.are",
+    "name": "the Dumpster behind Hook, Line & Sinker",
+    "surface": 16751
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10787,
+    "area": "hvntown.are",
+    "name": "the Back Door of Hook, Line & Sinker",
+    "surface": 2499
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10788,
+    "area": "hvntown.are",
+    "name": "the Parking Lot behind Hook, Line & Sinker",
+    "surface": 2497
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 8740,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 8741,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 8742,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10792,
+    "area": "hvntown.are",
+    "name": "the Sidewalk between Ash Street and Hook, Line & Sinker",
+    "surface": 16749
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10793,
+    "area": "hvntown.are",
+    "name": "a Walkway from Ash Street to Hook, Line & Sinker",
+    "surface": 16748
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10794,
+    "area": "hvntown.are",
+    "name": "the Sidewalk between Ash Street and Hook, Line & Sinker",
+    "surface": 16745
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10795,
+    "area": "hvntown.are",
+    "name": "a vacant lot",
+    "surface": 16753
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 4651,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10797,
+    "area": "hvntown.are",
+    "name": "a vacant lot",
+    "surface": 2501
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10800,
+    "area": "hvntown.are",
+    "name": "a vacant lot",
+    "surface": 16760
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 4657,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10802,
+    "area": "hvntown.are",
+    "name": "a vacant lot",
+    "surface": 16753
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10804,
+    "area": "hvntown.are",
+    "name": "a vacant lot",
+    "surface": 2501
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 4663,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10808,
+    "area": "hvntown.are",
+    "name": "a vacant lot",
+    "surface": 16760
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10811,
+    "area": "hvntown.are",
+    "name": "Giovanni's Italian Restaurant  - Back Entrance",
+    "surface": 16755
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10813,
+    "area": "hvntown.are",
+    "name": "Giovanni's Italian Restaurant  - Parking Lot",
+    "surface": 2503
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10816,
+    "area": "hvntown.are",
+    "name": "Giovanni's Italian Restaurant  - Outside Dining",
+    "surface": 16764
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10818,
+    "area": "hvntown.are",
+    "name": "Giovanni's Italian Restaurant  - Entrance",
+    "surface": 16758
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10820,
+    "area": "hvntown.are",
+    "name": "Giovanni's Italian Restaurant  - Back Entrance",
+    "surface": 16755
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10822,
+    "area": "hvntown.are",
+    "name": "Giovanni's Italian Restaurant  - Parking Lot",
+    "surface": 2503
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10825,
+    "area": "hvntown.are",
+    "name": "Giovanni's Italian Restaurant  - Outside Dining",
+    "surface": 16764
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10827,
+    "area": "hvntown.are",
+    "name": "Giovanni's Italian Restaurant  - Entrance",
+    "surface": 16758
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10829,
+    "area": "hvntown.are",
+    "name": "a parking lot outside The Loving Kitchen",
+    "surface": 16844
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10830,
+    "area": "hvntown.are",
+    "name": "a parking lot outside The Loving Kitchen",
+    "surface": 2147
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10831,
+    "area": "hvntown.are",
+    "name": "a parking lot outside The Loving Kitchen",
+    "surface": 2151
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10832,
+    "area": "hvntown.are",
+    "name": "a parking lot outside The Loving Kitchen",
+    "surface": 16850
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 4689,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10835,
+    "area": "hvntown.are",
+    "name": "a quiet parking lot near Sidney Beach",
+    "surface": 16855
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10838,
+    "area": "hvntown.are",
+    "name": "a quiet parking lot near Sidney Beach",
+    "surface": 16861
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 2648,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10841,
+    "area": "hvntown.are",
+    "name": "the Sidney Saltwater Retreat - Beachfront Walkway",
+    "surface": 16867
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10842,
+    "area": "hvntown.are",
+    "name": "the Sidney Saltwater Retreat - Outdoor Showers",
+    "surface": 2561
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10844,
+    "area": "hvntown.are",
+    "name": "the Sidney Saltwater Retreat - Surf Shack & Tiki Bar",
+    "surface": 2111
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 4700,
+    "area": "hvntown.are",
+    "name": "the Skies"
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10845,
+    "area": "hvntown.are",
+    "name": "the Sidney Saltwater Retreat - Leisure Hub",
+    "surface": 2123
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10847,
+    "area": "hvntown.are",
+    "name": "the Manicured Sands of Sidney Beach",
+    "surface": 16880
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10848,
+    "area": "hvntown.are",
+    "name": "the Bonfire on Sidney Beach",
+    "surface": 2567
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10849,
+    "area": "hvntown.are",
+    "name": "the Manicured Sands of Sidney Beach",
+    "surface": 16881
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10850,
+    "area": "hvntown.are",
+    "name": "a parking lot outside The Loving Kitchen",
+    "surface": 16844
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10851,
+    "area": "hvntown.are",
+    "name": "a parking lot outside The Loving Kitchen",
+    "surface": 2147
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10852,
+    "area": "hvntown.are",
+    "name": "a parking lot outside The Loving Kitchen",
+    "surface": 2151
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10853,
+    "area": "hvntown.are",
+    "name": "a parking lot outside The Loving Kitchen",
+    "surface": 16850
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10856,
+    "area": "hvntown.are",
+    "name": "a quiet parking lot near Sidney Beach",
+    "surface": 16855
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 4713,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10859,
+    "area": "hvntown.are",
+    "name": "a quiet parking lot near Sidney Beach",
+    "surface": 16861
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10862,
+    "area": "hvntown.are",
+    "name": "the Sidney Saltwater Retreat - Beachfront Walkway",
+    "surface": 16867
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10863,
+    "area": "hvntown.are",
+    "name": "the Sidney Saltwater Retreat - Outdoor Showers",
+    "surface": 2561
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10865,
+    "area": "hvntown.are",
+    "name": "the Sidney Saltwater Retreat - Surf Shack & Tiki Bar",
+    "surface": 2111
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10866,
+    "area": "hvntown.are",
+    "name": "the Sidney Saltwater Retreat - Leisure Hub",
+    "surface": 2123
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10868,
+    "area": "hvntown.are",
+    "name": "the Manicured Sands of Sidney Beach",
+    "surface": 16880
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10869,
+    "area": "hvntown.are",
+    "name": "the Bonfire on Sidney Beach",
+    "surface": 2567
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10870,
+    "area": "hvntown.are",
+    "name": "the Manicured Sands of Sidney Beach",
+    "surface": 16881
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10871,
+    "area": "hvntown.are",
+    "name": "the grassy lawn outside of Old World Jewelers",
+    "surface": 16841
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10872,
+    "area": "hvntown.are",
+    "name": "the grassy lawn outside of Old World Jewelers",
+    "surface": 16842
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10873,
+    "area": "hvntown.are",
+    "name": "the entrance to an Art Studio",
+    "surface": 16843
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10874,
+    "area": "hvntown.are",
+    "name": "the entry way of Old World Jewelry",
+    "surface": 16852
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10877,
+    "area": "hvntown.are",
+    "name": "the grassy lawn outside of Old World Jewelers",
+    "surface": 2556
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10880,
+    "area": "hvntown.are",
+    "name": "the grassy lawn outside of Old World Jewelers",
+    "surface": 16841
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10881,
+    "area": "hvntown.are",
+    "name": "the grassy lawn outside of Old World Jewelers",
+    "surface": 16842
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10883,
+    "area": "hvntown.are",
+    "name": "the entrance to an Art Studio",
+    "surface": 16843
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10884,
+    "area": "hvntown.are",
+    "name": "the entry way of Old World Jewelry",
+    "surface": 16852
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10887,
+    "area": "hvntown.are",
+    "name": "the grassy lawn outside of Old World Jewelers",
+    "surface": 2556
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10890,
+    "area": "hvntown.are",
+    "name": "a vacant property",
+    "surface": 16863
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10891,
+    "area": "hvntown.are",
+    "name": "a vacant property",
+    "surface": 2559
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10893,
+    "area": "hvntown.are",
+    "name": "the front entrance to The Hometown Diner",
+    "surface": 16864
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10895,
+    "area": "hvntown.are",
+    "name": "a Grassy Slope leading to the Manicured Sands of Sidney Beach",
+    "surface": 16876
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10896,
+    "area": "hvntown.are",
+    "name": "the Diner Firepit Overlooking Sidney Beach",
+    "surface": 16875
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10897,
+    "area": "hvntown.are",
+    "name": "a Grassy Slope leading to the Manicured Sands of Sidney Beach",
+    "surface": 16874
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10898,
+    "area": "hvntown.are",
+    "name": "a vacant property",
+    "surface": 16863
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10899,
+    "area": "hvntown.are",
+    "name": "a vacant property",
+    "surface": 2559
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10901,
+    "area": "hvntown.are",
+    "name": "the front entrance to The Hometown Diner",
+    "surface": 16864
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10904,
+    "area": "hvntown.are",
+    "name": "a Grassy Slope leading to the Manicured Sands of Sidney Beach",
+    "surface": 16876
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10905,
+    "area": "hvntown.are",
+    "name": "the Diner Firepit Overlooking Sidney Beach",
+    "surface": 16875
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10906,
+    "area": "hvntown.are",
+    "name": "a Grassy Slope leading to the Manicured Sands of Sidney Beach",
+    "surface": 16874
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 6819,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 6868,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 6871,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 6886,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 6892,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 6898,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 4860,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 6937,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 6948,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 6961,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 6962,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 6984,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 6994,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7033,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7038,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7042,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7047,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7048,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7050,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7051,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7052,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7053,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7054,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7055,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7059,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7063,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7064,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7065,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7069,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7078,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7085,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7088,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7118,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7120,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7121,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7122,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7127,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7128,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7132,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7133,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7134,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7139,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7140,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7146,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 3054,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7152,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7154,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7157,
+    "area": "hvntown.are",
+    "name": "the Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7158,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7167,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7169,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7176,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7178,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7182,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7219,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 9270,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7227,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7229,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7235,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7240,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 3146,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7245,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7246,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7247,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7249,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7251,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7257,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 5210,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7259,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7261,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7263,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7265,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 1122,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7267,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7269,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7271,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7283,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 3189,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 9345,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7298,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 9351,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 9359,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 3217,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 1185,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 1191,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7349,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 3258,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 3268,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7369,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 3274,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7370,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7371,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7373,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7376,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7378,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7379,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 3284,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7380,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7385,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 3290,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7387,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7388,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7392,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7393,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7394,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 3303,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 1263,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 3313,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 1277,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7435,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7438,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7439,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 1303,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 1326,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7480,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7487,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 1343,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7497,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7498,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7499,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 1365,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7536,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7538,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7542,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7543,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7544,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7545,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7547,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7548,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7549,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7552,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7556,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7557,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7558,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7559,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7562,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7565,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7568,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7570,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7571,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7573,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7654,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 1513,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 1520,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 9778,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 9779,
+    "area": "hvntown.are",
+    "name": "the front yard of 31 Magnolia Row",
+    "surface": 14299
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7747,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7748,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7780,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7781,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7789,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7791,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 1656,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 1668,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7820,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 9880,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 9883,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 1703,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 1711,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 9924,
+    "area": "hvntown.are",
+    "name": "the front entrance to 31 Magnolia Row",
+    "surface": 14298
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 9928,
+    "area": "hvntown.are",
+    "name": "a simple yard",
+    "surface": 14297
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 9929,
+    "area": "hvntown.are",
+    "name": "a simple yard",
+    "surface": 15156
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 9931,
+    "area": "hvntown.are",
+    "name": "the front yard of 31 Magnolia Row",
+    "surface": 14299
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 9934,
+    "area": "hvntown.are",
+    "name": "the front entrance to 31 Magnolia Row",
+    "surface": 14298
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 1745,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 9938,
+    "area": "hvntown.are",
+    "name": "a simple yard",
+    "surface": 14297
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 9940,
+    "area": "hvntown.are",
+    "name": "An Overgrown Yard Surrounding a Rundown Trailer",
+    "surface": 15162
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 9941,
+    "area": "hvntown.are",
+    "name": "a neatly tended vegetable garden",
+    "surface": 14331
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 9944,
+    "area": "hvntown.are",
+    "name": "The Tall Grass in Front of A Rundown Trailer",
+    "surface": 15161
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 9946,
+    "area": "hvntown.are",
+    "name": "A Gravel Walkway Leading to a Rundown Trailer",
+    "surface": 14332
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 9949,
+    "area": "hvntown.are",
+    "name": "An Overgrown Yard Surrounding a Rundown Trailer",
+    "surface": 14333
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 9951,
+    "area": "hvntown.are",
+    "name": "An Overgrown Yard Surrounding a Rundown Trailer",
+    "surface": 15162
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 9952,
+    "area": "hvntown.are",
+    "name": "a neatly tended vegetable garden",
+    "surface": 14331
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 9954,
+    "area": "hvntown.are",
+    "name": "The Tall Grass in Front of A Rundown Trailer",
+    "surface": 15161
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 9955,
+    "area": "hvntown.are",
+    "name": "A Gravel Walkway Leading to a Rundown Trailer",
+    "surface": 14332
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 9958,
+    "area": "hvntown.are",
+    "name": "An Overgrown Yard Surrounding a Rundown Trailer",
+    "surface": 14333
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 9959,
+    "area": "hvntown.are",
+    "name": "a strip of grass beside a trailer",
+    "surface": 14347
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 9964,
+    "area": "hvntown.are",
+    "name": "",
+    "surface": 14334
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 9967,
+    "area": "hvntown.are",
+    "name": "Before a fenced-in garden",
+    "surface": 14320
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 9968,
+    "area": "hvntown.are",
+    "name": "the porch of a double-wide trailer",
+    "surface": 14321
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 9969,
+    "area": "hvntown.are",
+    "name": "the tall grass",
+    "surface": 14322
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 9970,
+    "area": "hvntown.are",
+    "name": "a strip of grass beside a trailer",
+    "surface": 14347
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 7924,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 9973,
+    "area": "hvntown.are",
+    "name": "",
+    "surface": 14334
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 9976,
+    "area": "hvntown.are",
+    "name": "Before a fenced-in garden",
+    "surface": 14320
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 9977,
+    "area": "hvntown.are",
+    "name": "the porch of a double-wide trailer",
+    "surface": 14321
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 9978,
+    "area": "hvntown.are",
+    "name": "the tall grass",
+    "surface": 14322
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 9980,
+    "area": "hvntown.are",
+    "name": "the Back Yard of a Trailer",
+    "surface": 14341
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 1791,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 9984,
+    "area": "hvntown.are",
+    "name": "the Yard of a Double-Wide",
+    "surface": 14337
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 9987,
+    "area": "hvntown.are",
+    "name": "the Front Yard of a Trailer",
+    "surface": 14326
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 9988,
+    "area": "hvntown.are",
+    "name": "the Front Porch of a Newly-Renovated Double-Wide",
+    "surface": 14327
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 9989,
+    "area": "hvntown.are",
+    "name": "the Front Yard of a Trailer",
+    "surface": 14328
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 9990,
+    "area": "hvntown.are",
+    "name": "the Back Yard of a Trailer",
+    "surface": 14341
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 9993,
+    "area": "hvntown.are",
+    "name": "the Yard of a Double-Wide",
+    "surface": 14337
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 9996,
+    "area": "hvntown.are",
+    "name": "the Front Yard of a Trailer",
+    "surface": 14326
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10000,
+    "area": "hvntown.are",
+    "name": "the Front Porch of a Newly-Renovated Double-Wide",
+    "surface": 14327
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10001,
+    "area": "hvntown.are",
+    "name": "the Front Yard of a Trailer",
+    "surface": 14328
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 1809,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 3857,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10004,
+    "area": "hvntown.are",
+    "name": "a small greenhouse",
+    "surface": 14255
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10007,
+    "area": "hvntown.are",
+    "name": "a wildflower meadow around a small trailer",
+    "surface": 14254
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10008,
+    "area": "hvntown.are",
+    "name": "A Verdant Lawn Beside A Small Mobile Home",
+    "surface": 1272
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10009,
+    "area": "hvntown.are",
+    "name": "A plot of tilled ground outside a trailer",
+    "surface": 14348
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10010,
+    "area": "hvntown.are",
+    "name": "a wildflower meadow around a small trailer",
+    "surface": 14253
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10013,
+    "area": "hvntown.are",
+    "name": "a small greenhouse",
+    "surface": 14255
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10016,
+    "area": "hvntown.are",
+    "name": "a wildflower meadow around a small trailer",
+    "surface": 14254
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10017,
+    "area": "hvntown.are",
+    "name": "A Verdant Lawn Beside A Small Mobile Home",
+    "surface": 1272
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10018,
+    "area": "hvntown.are",
+    "name": "A plot of tilled ground outside a trailer",
+    "surface": 14348
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10019,
+    "area": "hvntown.are",
+    "name": "a wildflower meadow around a small trailer",
+    "surface": 14253
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10020,
+    "area": "hvntown.are",
+    "name": "a Well-Tended Lawn",
+    "surface": 2089
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10021,
+    "area": "hvntown.are",
+    "name": "a fenced front yard of a Tudor-style cabin",
+    "surface": 2095
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10022,
+    "area": "hvntown.are",
+    "name": "a Well-Tended Lawn",
+    "surface": 16812
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10025,
+    "area": "hvntown.are",
+    "name": "a Well-Tended Lawn",
+    "surface": 2545
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10029,
+    "area": "hvntown.are",
+    "name": "a Well-Tended Lawn",
+    "surface": 16829
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10031,
+    "area": "hvntown.are",
+    "name": "a Well-Tended Lawn",
+    "surface": 16827
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 1839,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10032,
+    "area": "hvntown.are",
+    "name": "a Well-Tended Lawn",
+    "surface": 16830
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10033,
+    "area": "hvntown.are",
+    "name": "a back deck overlooking the ocean",
+    "surface": 2551
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10034,
+    "area": "hvntown.are",
+    "name": "a Well-Tended Lawn",
+    "surface": 16831
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10035,
+    "area": "hvntown.are",
+    "name": "Sidney Beach",
+    "surface": 2074
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10036,
+    "area": "hvntown.are",
+    "name": "Sidney Beach",
+    "surface": 2133
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10037,
+    "area": "hvntown.are",
+    "name": "Sidney Beach",
+    "surface": 2129
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10038,
+    "area": "hvntown.are",
+    "name": "a Well-Tended Lawn",
+    "surface": 2089
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10039,
+    "area": "hvntown.are",
+    "name": "a fenced front yard of a Tudor-style cabin",
+    "surface": 2095
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10040,
+    "area": "hvntown.are",
+    "name": "a Well-Tended Lawn",
+    "surface": 16812
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10043,
+    "area": "hvntown.are",
+    "name": "a Well-Tended Lawn",
+    "surface": 2545
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 1851,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10047,
+    "area": "hvntown.are",
+    "name": "a Well-Tended Lawn",
+    "surface": 16829
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10049,
+    "area": "hvntown.are",
+    "name": "a Well-Tended Lawn",
+    "surface": 16827
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10050,
+    "area": "hvntown.are",
+    "name": "a Well-Tended Lawn",
+    "surface": 16830
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10051,
+    "area": "hvntown.are",
+    "name": "a back deck overlooking the ocean",
+    "surface": 2551
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 1859,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10052,
+    "area": "hvntown.are",
+    "name": "a Well-Tended Lawn",
+    "surface": 16831
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10053,
+    "area": "hvntown.are",
+    "name": "Sidney Beach",
+    "surface": 2074
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 1861,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10054,
+    "area": "hvntown.are",
+    "name": "Sidney Beach",
+    "surface": 2133
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10055,
+    "area": "hvntown.are",
+    "name": "Sidney Beach",
+    "surface": 2129
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10059,
+    "area": "hvntown.are",
+    "name": "the front porch of 53 Sidney Way",
+    "surface": 16815
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 1873,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10068,
+    "area": "hvntown.are",
+    "name": "the front porch of 53 Sidney Way",
+    "surface": 16815
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10072,
+    "area": "hvntown.are",
+    "name": "the cabin of a Beached Ketch next to a Seaside Cottage",
+    "surface": 16826
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10073,
+    "area": "hvntown.are",
+    "name": "a Garden adjacent to a Seaside Cottage",
+    "surface": 16825
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10074,
+    "area": "hvntown.are",
+    "name": "the Concrete Driveway of a Seaside Cottage",
+    "surface": 16824
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10077,
+    "area": "hvntown.are",
+    "name": "the Front Lawn of a Seaside Cottage",
+    "surface": 16834
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10081,
+    "area": "hvntown.are",
+    "name": "the cabin of a Beached Ketch next to a Seaside Cottage",
+    "surface": 16826
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10082,
+    "area": "hvntown.are",
+    "name": "a Garden adjacent to a Seaside Cottage",
+    "surface": 16825
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10083,
+    "area": "hvntown.are",
+    "name": "the Concrete Driveway of a Seaside Cottage",
+    "surface": 16824
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10086,
+    "area": "hvntown.are",
+    "name": "the Front Lawn of a Seaside Cottage",
+    "surface": 16834
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10090,
+    "area": "hvntown.are",
+    "name": "Before the Gravesend Historical Museum",
+    "surface": 8956
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10091,
+    "area": "hvntown.are",
+    "name": "the steps to The Gravesend History Museum",
+    "surface": 14811
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10092,
+    "area": "hvntown.are",
+    "name": "Before the Gravesend Historical Museum",
+    "surface": 2934
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 1906,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10099,
+    "area": "hvntown.are",
+    "name": "Before the Gravesend Historical Museum",
+    "surface": 8956
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10100,
+    "area": "hvntown.are",
+    "name": "the steps to The Gravesend History Museum",
+    "surface": 14811
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10101,
+    "area": "hvntown.are",
+    "name": "Before the Gravesend Historical Museum",
+    "surface": 2934
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10108,
+    "area": "hvntown.are",
+    "name": "a neatly trimmed lawn around the store",
+    "surface": 2931
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10109,
+    "area": "hvntown.are",
+    "name": "the walkway leading to Oh, For Heaven's Cake!",
+    "surface": 14807
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10110,
+    "area": "hvntown.are",
+    "name": "a neatly trimmed lawn around the store",
+    "surface": 14810
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10111,
+    "area": "hvntown.are",
+    "name": "the flower garden beside Oh, For Heaven's Cake!",
+    "surface": 14806
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10113,
+    "area": "hvntown.are",
+    "name": "a neatly trimmed lawn around the store",
+    "surface": 14809
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10114,
+    "area": "hvntown.are",
+    "name": "a neatly trimmed lawn around the store",
+    "surface": 14803
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10116,
+    "area": "hvntown.are",
+    "name": "a neatly trimmed lawn around the store",
+    "surface": 2933
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10117,
+    "area": "hvntown.are",
+    "name": "a neatly trimmed lawn around the store",
+    "surface": 2931
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10118,
+    "area": "hvntown.are",
+    "name": "the walkway leading to Oh, For Heaven's Cake!",
+    "surface": 14807
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10119,
+    "area": "hvntown.are",
+    "name": "a neatly trimmed lawn around the store",
+    "surface": 14810
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10120,
+    "area": "hvntown.are",
+    "name": "the flower garden beside Oh, For Heaven's Cake!",
+    "surface": 14806
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10122,
+    "area": "hvntown.are",
+    "name": "a neatly trimmed lawn around the store",
+    "surface": 14809
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10123,
+    "area": "hvntown.are",
+    "name": "a neatly trimmed lawn around the store",
+    "surface": 14803
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 1931,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10125,
+    "area": "hvntown.are",
+    "name": "a neatly trimmed lawn around the store",
+    "surface": 2933
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10126,
+    "area": "hvntown.are",
+    "name": "the city maintained lawn beside Rosie's Diner",
+    "surface": 18121
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10127,
+    "area": "hvntown.are",
+    "name": "the city maintained lawn beside Rosie's Diner",
+    "surface": 18114
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 1936,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10129,
+    "area": "hvntown.are",
+    "name": "the city maintained lawn beside Rosie's Diner",
+    "surface": 14929
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10131,
+    "area": "hvntown.are",
+    "name": "the city maintained lawn beside Rosie's Diner",
+    "surface": 3012
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10133,
+    "area": "hvntown.are",
+    "name": "the city maintained lawn beside Rosie's Diner",
+    "surface": 18121
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10134,
+    "area": "hvntown.are",
+    "name": "the city maintained lawn beside Rosie's Diner",
+    "surface": 18114
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10137,
+    "area": "hvntown.are",
+    "name": "the city maintained lawn beside Rosie's Diner",
+    "surface": 14929
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10140,
+    "area": "hvntown.are",
+    "name": "the city maintained lawn beside Rosie's Diner",
+    "surface": 3012
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 1948,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10141,
+    "area": "hvntown.are",
+    "name": "a garden beside Fertile Valley Florists",
+    "surface": 18118
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10142,
+    "area": "hvntown.are",
+    "name": "a garden beside Fertile Valley Florists",
+    "surface": 18117
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 1950,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 4003,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10148,
+    "area": "hvntown.are",
+    "name": "a garden beside Fertile Valley Florists",
+    "surface": 18118
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10149,
+    "area": "hvntown.are",
+    "name": "a garden beside Fertile Valley Florists",
+    "surface": 18117
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 4008,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 6059,
+    "area": "hvntown.are",
+    "name": "the well",
+    "surface": 15024
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 4027,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 6079,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10184,
+    "area": "hvntown.are",
+    "name": "an empty room",
+    "surface": 18162
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10185,
+    "area": "hvntown.are",
+    "name": "an empty room",
+    "surface": 18161
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10186,
+    "area": "hvntown.are",
+    "name": "The VIP section of The White Napkin",
+    "surface": 18160
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 4045,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10193,
+    "area": "hvntown.are",
+    "name": "an empty room",
+    "surface": 18162
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10194,
+    "area": "hvntown.are",
+    "name": "an empty room",
+    "surface": 18161
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10195,
+    "area": "hvntown.are",
+    "name": "The VIP section of The White Napkin",
+    "surface": 18160
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 4051,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10196,
+    "area": "hvntown.are",
+    "name": "a Sidewalk flanking Badwater Quay",
+    "surface": 16382
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 6100,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10197,
+    "area": "hvntown.are",
+    "name": "the Sidewalk leading up to Dionysus Liquor",
+    "surface": 16383
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10198,
+    "area": "hvntown.are",
+    "name": "the Sidewalk in front of Dionysus Liquor",
+    "surface": 16384
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10199,
+    "area": "hvntown.are",
+    "name": "a grassy field",
+    "surface": 16386
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10200,
+    "area": "hvntown.are",
+    "name": "the mostly empty lot in front of Dionysus Liquor",
+    "surface": 16385
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10202,
+    "area": "hvntown.are",
+    "name": "a grassy field",
+    "surface": 16392
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 6106,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10205,
+    "area": "hvntown.are",
+    "name": "a grassy field",
+    "surface": 16395
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10206,
+    "area": "hvntown.are",
+    "name": "a grassy field",
+    "surface": 16394
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10207,
+    "area": "hvntown.are",
+    "name": "a grassy field",
+    "surface": 16393
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10208,
+    "area": "hvntown.are",
+    "name": "a grassy area",
+    "surface": 16400
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10209,
+    "area": "hvntown.are",
+    "name": "a grassy area",
+    "surface": 16399
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10210,
+    "area": "hvntown.are",
+    "name": "a grassy area",
+    "surface": 1712
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10211,
+    "area": "hvntown.are",
+    "name": "a Sidewalk flanking Badwater Quay",
+    "surface": 16382
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10212,
+    "area": "hvntown.are",
+    "name": "the Sidewalk leading up to Dionysus Liquor",
+    "surface": 16383
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10213,
+    "area": "hvntown.are",
+    "name": "the Sidewalk in front of Dionysus Liquor",
+    "surface": 16384
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10214,
+    "area": "hvntown.are",
+    "name": "a grassy field",
+    "surface": 16386
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10215,
+    "area": "hvntown.are",
+    "name": "the mostly empty lot in front of Dionysus Liquor",
+    "surface": 16385
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10217,
+    "area": "hvntown.are",
+    "name": "a grassy field",
+    "surface": 16392
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10220,
+    "area": "hvntown.are",
+    "name": "a grassy field",
+    "surface": 16395
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 4076,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10221,
+    "area": "hvntown.are",
+    "name": "a grassy field",
+    "surface": 16394
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10222,
+    "area": "hvntown.are",
+    "name": "a grassy field",
+    "surface": 16393
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10223,
+    "area": "hvntown.are",
+    "name": "a grassy area",
+    "surface": 16400
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10224,
+    "area": "hvntown.are",
+    "name": "a grassy area",
+    "surface": 16399
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10225,
+    "area": "hvntown.are",
+    "name": "a grassy area",
+    "surface": 1712
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10226,
+    "area": "hvntown.are",
+    "name": "a Sidewalk flanking Badwater Quay",
+    "surface": 16379
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10227,
+    "area": "hvntown.are",
+    "name": "a sidewalk leading up to The Brawling Brothers Pub",
+    "surface": 16380
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10228,
+    "area": "hvntown.are",
+    "name": "a Sidewalk flanking Badwater Quay",
+    "surface": 16381
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10229,
+    "area": "hvntown.are",
+    "name": "The Southern Parking Lot of Badwater Fitness",
+    "surface": 16389
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10230,
+    "area": "hvntown.are",
+    "name": "outside of The Brawling Brothers Pub",
+    "surface": 16388
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10231,
+    "area": "hvntown.are",
+    "name": "The Northern Parking Lot of Badwater Fitness",
+    "surface": 16387
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10234,
+    "area": "hvntown.are",
+    "name": "A Grassy Area",
+    "surface": 16391
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10237,
+    "area": "hvntown.are",
+    "name": "A Grassy Area",
+    "surface": 16396
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10238,
+    "area": "hvntown.are",
+    "name": "An alleyway next to the gym",
+    "surface": 16402
+  },
+  {
+    "kind": "cave_named_after_surface",
+    "vnum": 10239,
+    "area": "hvntown.are",
+    "name": "An alleyway next to the gym",
+    "surface": 16401
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 90619,
+    "area": "nforest.are",
+    "name": "The Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 90621,
+    "area": "nforest.are",
+    "name": "The Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 90641,
+    "area": "nforest.are",
+    "name": "The Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 90753,
+    "area": "nforest.are",
+    "name": "The Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 90761,
+    "area": "nforest.are",
+    "name": "The Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 90763,
+    "area": "nforest.are",
+    "name": "The Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 90785,
+    "area": "nforest.are",
+    "name": "The Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 90823,
+    "area": "nforest.are",
+    "name": "The Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 90929,
+    "area": "nforest.are",
+    "name": "The Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 90967,
+    "area": "nforest.are",
+    "name": "The Skies"
+  },
+  {
+    "kind": "roof_named_sky",
+    "vnum": 113451,
+    "area": "sforest.are",
+    "name": "The Skies"
+  },
+  {
+    "kind": "wrong_adjacent_destination",
+    "vnum": 131622,
+    "area": "wforest.are",
+    "name": "The Skies",
+    "direction": 4,
+    "to": 9538,
+    "expected": 9775
+  },
+  {
+    "kind": "wrong_adjacent_destination",
+    "vnum": 131734,
+    "area": "wforest.are",
+    "name": "The Skies",
+    "direction": 4,
+    "to": 9362,
+    "expected": 9601
+  },
+  {
+    "kind": "wrong_adjacent_destination",
+    "vnum": 197697,
+    "area": "osforest.are",
+    "name": "The Forest",
+    "direction": 4,
+    "to": 110139,
+    "expected": 114108
+  },
+  {
+    "kind": "wrong_adjacent_destination",
+    "vnum": 197699,
+    "area": "osforest.are",
+    "name": "The Forest",
+    "direction": 4,
+    "to": 110143,
+    "expected": 114106
+  },
+  {
+    "kind": "remove_unreferenced_duplicate",
+    "vnum": 137281,
+    "area": "wforest.are",
+    "name": "The Forest",
+    "coords": [
+      0,
+      -1,
+      0
+    ]
+  },
+  {
+    "kind": "remove_unreferenced_duplicate",
+    "vnum": 137283,
+    "area": "wforest.are",
+    "name": "The Forest",
+    "coords": [
+      0,
+      -1,
+      0
+    ]
+  },
+  {
+    "kind": "remove_unreferenced_duplicate",
+    "vnum": 137285,
+    "area": "wforest.are",
+    "name": "The Skies",
+    "coords": [
+      0,
+      63,
+      1
+    ]
+  },
+  {
+    "kind": "remove_unreferenced_duplicate",
+    "vnum": 137286,
+    "area": "wforest.are",
+    "name": "The Skies",
+    "coords": [
+      0,
+      62,
+      1
+    ]
+  },
+  {
+    "kind": "remove_unreferenced_duplicate",
+    "vnum": 137287,
+    "area": "wforest.are",
+    "name": "The Skies",
+    "coords": [
+      0,
+      63,
+      1
+    ]
+  },
+  {
+    "kind": "remove_unreferenced_duplicate",
+    "vnum": 137289,
+    "area": "wforest.are",
+    "name": "The Skies",
+    "coords": [
+      0,
+      62,
+      1
+    ]
+  },
+  {
+    "kind": "remove_unreferenced_duplicate",
+    "vnum": 137290,
+    "area": "wforest.are",
+    "name": "The Skies",
+    "coords": [
+      0,
+      64,
+      1
+    ]
+  },
+  {
+    "kind": "remove_unreferenced_duplicate",
+    "vnum": 137292,
+    "area": "wforest.are",
+    "name": "The Skies",
+    "coords": [
+      0,
+      64,
+      1
+    ]
+  },
+  {
+    "kind": "remove_unreferenced_duplicate",
+    "vnum": 137293,
+    "area": "wforest.are",
+    "name": "The Skies",
+    "coords": [
+      0,
+      64,
+      1
+    ]
+  },
+  {
+    "kind": "remove_unreferenced_duplicate",
+    "vnum": 137295,
+    "area": "wforest.are",
+    "name": "The Skies",
+    "coords": [
+      0,
+      64,
+      1
+    ]
+  },
+  {
+    "kind": "remove_unreferenced_duplicate",
+    "vnum": 1842,
+    "area": "hvntown.are",
+    "name": "the intersection of Ash and Paine",
+    "coords": [
+      47,
+      65,
+      0
+    ]
+  },
+  {
+    "kind": "solid_floor_named_sky",
+    "vnum": 8679,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "solid_floor_named_sky",
+    "vnum": 7252,
+    "area": "hvntown.are",
+    "name": "the sky"
+  },
+  {
+    "kind": "solid_floor_named_sky",
+    "vnum": 7673,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "solid_floor_named_sky",
+    "vnum": 1895,
+    "area": "hvntown.are",
+    "name": "Skies"
+  },
+  {
+    "kind": "solid_floor_named_sky",
+    "vnum": 90765,
+    "area": "nforest.are",
+    "name": "The Skies"
+  },
+  {
+    "kind": "solid_floor_named_sky",
+    "vnum": 90787,
+    "area": "nforest.are",
+    "name": "The Skies"
+  },
+  {
+    "kind": "remove_unreferenced_duplicate",
+    "vnum": 137284,
+    "area": "wforest.are",
+    "name": "The Skies",
+    "coords": [
+      0,
+      60,
+      1
+    ]
+  },
+  {
+    "kind": "remove_unreferenced_duplicate",
+    "vnum": 137288,
+    "area": "wforest.are",
+    "name": "The Skies",
+    "coords": [
+      1,
+      63,
+      1
+    ]
+  },
+  {
+    "kind": "remove_unreferenced_duplicate",
+    "vnum": 73930,
+    "area": "hvnocean.are",
+    "name": "The Ocean",
+    "coords": [
+      70,
+      42,
+      0
+    ]
+  },
+  {
+    "kind": "remove_unreferenced_duplicate",
+    "vnum": 137291,
+    "area": "wforest.are",
+    "name": "The Skies",
+    "coords": [
+      1,
+      64,
+      1
+    ]
+  },
+  {
+    "kind": "remove_unreferenced_duplicate",
+    "vnum": 73931,
+    "area": "hvnocean.are",
+    "name": "The Ocean",
+    "coords": [
+      70,
+      42,
+      0
+    ]
+  },
+  {
+    "kind": "remove_unreferenced_duplicate",
+    "vnum": 73932,
+    "area": "hvnocean.are",
+    "name": "The Ocean",
+    "coords": [
+      70,
+      42,
+      0
+    ]
+  },
+  {
+    "kind": "remove_unreferenced_duplicate",
+    "vnum": 137294,
+    "area": "wforest.are",
+    "name": "The Skies",
+    "coords": [
+      0,
+      65,
+      1
+    ]
+  },
+  {
+    "kind": "remove_unreferenced_duplicate",
+    "vnum": 73933,
+    "area": "hvnocean.are",
+    "name": "The Ocean",
+    "coords": [
+      70,
+      42,
+      0
+    ]
+  },
+  {
+    "kind": "remove_unreferenced_duplicate",
+    "vnum": 73934,
+    "area": "hvnocean.are",
+    "name": "The Ocean",
+    "coords": [
+      70,
+      42,
+      0
+    ]
+  },
+  {
+    "kind": "remove_unreferenced_duplicate",
+    "vnum": 73935,
+    "area": "hvnocean.are",
+    "name": "The Ocean",
+    "coords": [
+      70,
+      42,
+      0
+    ]
+  },
+  {
+    "kind": "remove_unreferenced_duplicate",
+    "vnum": 73936,
+    "area": "hvnocean.are",
+    "name": "The Ocean",
+    "coords": [
+      70,
+      42,
+      0
+    ]
+  },
+  {
+    "kind": "remove_unreferenced_duplicate",
+    "vnum": 73937,
+    "area": "hvnocean.are",
+    "name": "The Ocean",
+    "coords": [
+      70,
+      42,
+      0
+    ]
+  },
+  {
+    "kind": "remove_unreferenced_duplicate",
+    "vnum": 73938,
+    "area": "hvnocean.are",
+    "name": "The Ocean",
+    "coords": [
+      70,
+      42,
+      0
+    ]
+  },
+  {
+    "kind": "remove_unreferenced_duplicate",
+    "vnum": 73939,
+    "area": "hvnocean.are",
+    "name": "The Ocean",
+    "coords": [
+      70,
+      42,
+      0
+    ]
+  },
+  {
+    "kind": "remove_unreferenced_duplicate",
+    "vnum": 73940,
+    "area": "hvnocean.are",
+    "name": "The Ocean",
+    "coords": [
+      70,
+      42,
+      0
+    ]
+  },
+  {
+    "kind": "remove_unreferenced_duplicate",
+    "vnum": 73941,
+    "area": "hvnocean.are",
+    "name": "The Ocean",
+    "coords": [
+      70,
+      42,
+      0
+    ]
+  }
+]

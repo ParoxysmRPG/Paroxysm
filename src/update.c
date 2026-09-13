@@ -3777,6 +3777,7 @@ end_battle();
           send_to_char("The imprint takes hold.\n\r", ch);
         }
       }
+      sync_campus_imprint(ch);
       if (time_info.minute % 25 == 0)
       show_imprints(ch);
 
@@ -9807,6 +9808,9 @@ world: %d, room area: %d, desti area: %d\n\r", room->vnum, desti->vnum, vehicle_
     }
     for (vector<OPERATION_TYPE *>::iterator it = OpVect.begin();
     it != OpVect.end(); ++it) {
+      // Hour zero marks a completed/cancelled operation, not a midnight launch.
+      if (!(*it)->valid || (*it)->hour <= 0)
+      continue;
       if ((*it)->hour > 23)
       (*it)->hour -= 23;
 
@@ -9816,14 +9820,22 @@ world: %d, room area: %d, desti area: %d\n\r", room->vnum, desti->vnum, vehicle_
         else
         launch_operation(*it);
       }
-      else if ((*it)->hour == (hour + 1) % 24 && (*it)->day == 0 && event_cleanse == 0) {
-        send_message_temp(
-        (*it)->faction, "Your comms announce the team for your operation will be leaving in an hour. Use operation signup (number) to take part");
+      // Catch-up must still process launches/day counts, but must not replay
+      // signup reminders for an hour that has already passed.
+      else if (hour == get_hour(NULL) && (*it)->hour == (hour + 1) % 24 && (*it)->day == 0 && event_cleanse == 0) {
+        FACTION_TYPE *host = clan_lookup((*it)->faction);
+        LOCATION_TYPE *location = territory_by_number((*it)->territoryvnum);
+        char message[MSL];
+        // An absolute time also stays accurate when this tick arrives late.
+        snprintf(message, sizeof(message),
+          "%s's operation in %s departs at %02d:00 Haven time. Use operation list, then operation signup (number) to take part.",
+          host && host->name ? host->name : "A faction",
+          location && location->name ? location->name : "an unknown location", (*it)->hour);
+        send_message_temp((*it)->faction, message);
         for (vector<FACTION_TYPE *>::iterator ik = FacVect.begin();
         ik != FacVect.end(); ++ik) {
           if ((*ik)->vnum != (*it)->faction && (*it)->competition != COMPETE_CLOSED) {
-            send_message_temp(
-            (*ik)->vnum, "Your comms announce that an operation will be occuring in one hour. Use operation signup (number) to take part");
+            send_message_temp((*ik)->vnum, message);
           }
         }
       }

@@ -1,0 +1,1015 @@
+{
+  "rooms_checked": 1399,
+  "finding_counts": {
+    "roof_terrain_or_flags": 136,
+    "one_way_structural_boundary": 42,
+    "sealed_interior": 9,
+    "one_sided_door": 1,
+    "air_with_indoor_or_bedroom_flags": 4,
+    "flooded_field": 3,
+    "office_terrain": 1,
+    "outdoor_indoor_corridor": 1,
+    "garden_bedroom_flag": 1,
+    "assigned_bedroom_identity": 24
+  },
+  "findings": [
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 6146
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 6149
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 6151
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 6152
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 6157
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 6163
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 6168
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 6175
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 6176
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 6177
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 6179
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 6181
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 8252
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 8268
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 8284
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 8310
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 8328
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 8344
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 8370
+    },
+    {
+      "kind": "one_way_structural_boundary",
+      "vnum": 4281,
+      "direction": 7,
+      "to": 9612
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 8382
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 8404
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 8408
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 8412
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 8416
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 8420
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 8424
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 8438
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 8442
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 8446
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 8456
+    },
+    {
+      "kind": "one_way_structural_boundary",
+      "vnum": 2385,
+      "direction": 4,
+      "to": 2490
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 2387
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 8533
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 8537
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 8540
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 8544
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 8547
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 8550
+    },
+    {
+      "kind": "one_way_structural_boundary",
+      "vnum": 2407,
+      "direction": 4,
+      "to": 3494
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 6509
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 8565
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 8569
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 6522
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 8572
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 6525
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 8576
+    },
+    {
+      "kind": "one_way_structural_boundary",
+      "vnum": 2433,
+      "direction": 2,
+      "to": 1674
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 8579
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 8582
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 4489
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 8585
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 8588
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 6543
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 8591
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 6546
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 8594
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 6549
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 6553
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 8605
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 6559
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 8614
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 6568
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 8619
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 8623
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 8625
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 8627
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 8628
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 8630
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 8631
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 8633
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 8636
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 8638
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 8639
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 8643
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 8647
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 8652
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 8656
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 8659
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 8661
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 8662
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 8669
+    },
+    {
+      "kind": "one_way_structural_boundary",
+      "vnum": 8673,
+      "direction": 5,
+      "to": 16295
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 8688
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 8706
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 8723
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 8725
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 4779
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 4789
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 4838
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 4842
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 6909
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 6912
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 6915
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 6918
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 6921
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 6924
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 6946
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 9010
+    },
+    {
+      "kind": "one_sided_door",
+      "vnum": 9018,
+      "direction": 5,
+      "to": 9616
+    },
+    {
+      "kind": "air_with_indoor_or_bedroom_flags",
+      "vnum": 9019
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 9029
+    },
+    {
+      "kind": "one_way_structural_boundary",
+      "vnum": 9031,
+      "direction": 4,
+      "to": 3391
+    },
+    {
+      "kind": "one_way_structural_boundary",
+      "vnum": 6992,
+      "direction": 2,
+      "to": 18096
+    },
+    {
+      "kind": "air_with_indoor_or_bedroom_flags",
+      "vnum": 9052
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 9061
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 1005
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 1051
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 5181
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 5183
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 5185
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 5226
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 5253
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 5256
+    },
+    {
+      "kind": "flooded_field",
+      "vnum": 9355
+    },
+    {
+      "kind": "one_way_structural_boundary",
+      "vnum": 9355,
+      "direction": 4,
+      "to": 8996
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 5259
+    },
+    {
+      "kind": "one_way_structural_boundary",
+      "vnum": 9356,
+      "direction": 4,
+      "to": 9050
+    },
+    {
+      "kind": "one_way_structural_boundary",
+      "vnum": 9378,
+      "direction": 5,
+      "to": 9431
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 9384
+    },
+    {
+      "kind": "one_way_structural_boundary",
+      "vnum": 3244,
+      "direction": 5,
+      "to": 3230
+    },
+    {
+      "kind": "one_way_structural_boundary",
+      "vnum": 9389,
+      "direction": 1,
+      "to": 9606
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 9391
+    },
+    {
+      "kind": "one_way_structural_boundary",
+      "vnum": 9395,
+      "direction": 4,
+      "to": 4838
+    },
+    {
+      "kind": "one_way_structural_boundary",
+      "vnum": 9395,
+      "direction": 8,
+      "to": 9606
+    },
+    {
+      "kind": "one_way_structural_boundary",
+      "vnum": 9396,
+      "direction": 9,
+      "to": 1674
+    },
+    {
+      "kind": "one_way_structural_boundary",
+      "vnum": 9401,
+      "direction": 4,
+      "to": 8723
+    },
+    {
+      "kind": "one_way_structural_boundary",
+      "vnum": 9401,
+      "direction": 7,
+      "to": 9672
+    },
+    {
+      "kind": "one_way_structural_boundary",
+      "vnum": 9403,
+      "direction": 7,
+      "to": 9664
+    },
+    {
+      "kind": "one_way_structural_boundary",
+      "vnum": 15557,
+      "direction": 4,
+      "to": 4385
+    },
+    {
+      "kind": "one_way_structural_boundary",
+      "vnum": 15582,
+      "direction": 4,
+      "to": 2454
+    },
+    {
+      "kind": "one_way_structural_boundary",
+      "vnum": 9440,
+      "direction": 4,
+      "to": 5479
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 5344
+    },
+    {
+      "kind": "one_way_structural_boundary",
+      "vnum": 9441,
+      "direction": 4,
+      "to": 3978
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 5354
+    },
+    {
+      "kind": "flooded_field",
+      "vnum": 15600
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 9457
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 5364
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 9460
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 9464
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 5371
+    },
+    {
+      "kind": "one_way_structural_boundary",
+      "vnum": 9469,
+      "direction": 9,
+      "to": 2162
+    },
+    {
+      "kind": "one_way_structural_boundary",
+      "vnum": 15624,
+      "direction": 4,
+      "to": 3894
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 1348
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 5451
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 9592
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 9609
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 9611
+    },
+    {
+      "kind": "one_way_structural_boundary",
+      "vnum": 3472,
+      "direction": 5,
+      "to": 9061
+    },
+    {
+      "kind": "one_way_structural_boundary",
+      "vnum": 3486,
+      "direction": 0,
+      "to": 4385
+    },
+    {
+      "kind": "office_terrain",
+      "vnum": 1490
+    },
+    {
+      "kind": "one_way_structural_boundary",
+      "vnum": 15847,
+      "direction": 7,
+      "to": 1674
+    },
+    {
+      "kind": "outdoor_indoor_corridor",
+      "vnum": 9728
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 5663
+    },
+    {
+      "kind": "one_way_structural_boundary",
+      "vnum": 9769,
+      "direction": 4,
+      "to": 1998
+    },
+    {
+      "kind": "air_with_indoor_or_bedroom_flags",
+      "vnum": 9782
+    },
+    {
+      "kind": "one_way_structural_boundary",
+      "vnum": 1597,
+      "direction": 0,
+      "to": 9664
+    },
+    {
+      "kind": "one_way_structural_boundary",
+      "vnum": 1597,
+      "direction": 6,
+      "to": 9672
+    },
+    {
+      "kind": "one_way_structural_boundary",
+      "vnum": 1597,
+      "direction": 7,
+      "to": 9659
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 9796
+    },
+    {
+      "kind": "one_way_structural_boundary",
+      "vnum": 9800,
+      "direction": 4,
+      "to": 5923
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 9830
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 5750
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 18096
+    },
+    {
+      "kind": "one_way_structural_boundary",
+      "vnum": 9912,
+      "direction": 4,
+      "to": 5951
+    },
+    {
+      "kind": "one_way_structural_boundary",
+      "vnum": 9913,
+      "direction": 4,
+      "to": 9035
+    },
+    {
+      "kind": "one_way_structural_boundary",
+      "vnum": 9914,
+      "direction": 4,
+      "to": 9034
+    },
+    {
+      "kind": "one_way_structural_boundary",
+      "vnum": 9915,
+      "direction": 4,
+      "to": 9033
+    },
+    {
+      "kind": "garden_bedroom_flag",
+      "vnum": 16154
+    },
+    {
+      "kind": "flooded_field",
+      "vnum": 16157
+    },
+    {
+      "kind": "one_way_structural_boundary",
+      "vnum": 16157,
+      "direction": 4,
+      "to": 9032
+    },
+    {
+      "kind": "one_way_structural_boundary",
+      "vnum": 16160,
+      "direction": 4,
+      "to": 9049
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 5922
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 5923
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 16164
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 5957
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 5960
+    },
+    {
+      "kind": "one_way_structural_boundary",
+      "vnum": 16206,
+      "direction": 4,
+      "to": 6522
+    },
+    {
+      "kind": "one_way_structural_boundary",
+      "vnum": 16207,
+      "direction": 4,
+      "to": 8382
+    },
+    {
+      "kind": "one_way_structural_boundary",
+      "vnum": 16216,
+      "direction": 4,
+      "to": 8404
+    },
+    {
+      "kind": "one_way_structural_boundary",
+      "vnum": 3952,
+      "direction": 4,
+      "to": 4842
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 3956
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 6028
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 6030
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 6031
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 6032
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 6033
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 6034
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 6036
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 6037
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 6038
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 6041
+    },
+    {
+      "kind": "sealed_interior",
+      "vnum": 16298
+    },
+    {
+      "kind": "air_with_indoor_or_bedroom_flags",
+      "vnum": 1998
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 6124
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 6128
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 6131
+    },
+    {
+      "kind": "roof_terrain_or_flags",
+      "vnum": 6142
+    },
+    {
+      "kind": "assigned_bedroom_identity",
+      "vnum": 3864,
+      "expected": "Repentance 1"
+    },
+    {
+      "kind": "assigned_bedroom_identity",
+      "vnum": 3865,
+      "expected": "Repentance 2"
+    },
+    {
+      "kind": "assigned_bedroom_identity",
+      "vnum": 3870,
+      "expected": "Repentance 3"
+    },
+    {
+      "kind": "assigned_bedroom_identity",
+      "vnum": 3882,
+      "expected": "Repentance 4"
+    },
+    {
+      "kind": "assigned_bedroom_identity",
+      "vnum": 3892,
+      "expected": "Repentance 5"
+    },
+    {
+      "kind": "assigned_bedroom_identity",
+      "vnum": 4310,
+      "expected": "Repentance 6"
+    },
+    {
+      "kind": "assigned_bedroom_identity",
+      "vnum": 3230,
+      "expected": "Purity 1"
+    },
+    {
+      "kind": "assigned_bedroom_identity",
+      "vnum": 3804,
+      "expected": "Purity 2"
+    },
+    {
+      "kind": "assigned_bedroom_identity",
+      "vnum": 3798,
+      "expected": "Purity 3"
+    },
+    {
+      "kind": "assigned_bedroom_identity",
+      "vnum": 3809,
+      "expected": "Purity 4"
+    },
+    {
+      "kind": "assigned_bedroom_identity",
+      "vnum": 3800,
+      "expected": "Purity 5"
+    },
+    {
+      "kind": "assigned_bedroom_identity",
+      "vnum": 3818,
+      "expected": "Purity 6"
+    },
+    {
+      "kind": "assigned_bedroom_identity",
+      "vnum": 4385,
+      "expected": "Forbearance 1"
+    },
+    {
+      "kind": "assigned_bedroom_identity",
+      "vnum": 4386,
+      "expected": "Forbearance 2"
+    },
+    {
+      "kind": "assigned_bedroom_identity",
+      "vnum": 4393,
+      "expected": "Forbearance 3"
+    },
+    {
+      "kind": "assigned_bedroom_identity",
+      "vnum": 4396,
+      "expected": "Forbearance 4"
+    },
+    {
+      "kind": "assigned_bedroom_identity",
+      "vnum": 4716,
+      "expected": "Forbearance 5"
+    },
+    {
+      "kind": "assigned_bedroom_identity",
+      "vnum": 4719,
+      "expected": "Forbearance 6"
+    },
+    {
+      "kind": "assigned_bedroom_identity",
+      "vnum": 4790,
+      "expected": "Charity 1"
+    },
+    {
+      "kind": "assigned_bedroom_identity",
+      "vnum": 4795,
+      "expected": "Charity 2"
+    },
+    {
+      "kind": "assigned_bedroom_identity",
+      "vnum": 4798,
+      "expected": "Charity 3"
+    },
+    {
+      "kind": "assigned_bedroom_identity",
+      "vnum": 4804,
+      "expected": "Charity 4"
+    },
+    {
+      "kind": "assigned_bedroom_identity",
+      "vnum": 4823,
+      "expected": "Charity 5"
+    },
+    {
+      "kind": "assigned_bedroom_identity",
+      "vnum": 4831,
+      "expected": "Charity 6"
+    }
+  ]
+}

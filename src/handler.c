@@ -1569,6 +1569,7 @@ void char_from_room(CHAR_DATA *ch) {
 
   ch->in_room->people->remove(ch);
   ch->in_room = NULL;
+  sync_campus_imprint(ch);
   //    ch->on 	     = NULL;  /* sanity check! */
   return;
 }
@@ -1605,6 +1606,7 @@ void char_to_room(CHAR_DATA *ch, ROOM_INDEX_DATA *pRoomIndex) {
 
   ensure_room_description(pRoomIndex);
   ch->in_room = pRoomIndex;
+  sync_campus_imprint(ch);
   pRoomIndex->people->push_front(ch);
 
   if (!IS_NPC(ch)) {
