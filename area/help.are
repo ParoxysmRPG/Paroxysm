@@ -1,4 +1,175 @@
 #HELPS
+Keyword Combat Map~
+SeeAlso Map, Combat, Scan~
+Level 0
+Online 0
+Type 0
+Text `cCOMBAT MAP`x
+
+During a fight, `Wmap`x or `Wmap combat`x shows the tactical map and a list
+of visible characters. `Wmap local`x shows the surrounding rooms instead.
+`Wmap key`x and `Wmap legend`x open this guide while you are fighting.
+
+North stays at the top. Your facing is shown in the border; the view is
+cropped towards that direction and terrain outside your sight cone is blank.
+The scale expands with distance, so cells farther from you cover more ground.
+The map narrows to fit your configured screen width.
+
+`cCHARACTERS`x
+  `WMe`x  Your position
+  `MAb`x  Your current visible opponent (the letters vary)
+  `RAb`x  A character with aggression towards you, or you towards them
+  `GAb`x  Other visible characters, including bystanders
+
+Each character gets a two-character marker that matches the list below.
+Initial letters are used when available. Characters with matching initials
+receive distinct short IDs, such as `W00`x and `W01`x. These are display labels;
+use normal character names with combat commands. IDs can change as the set
+of visible characters changes. Green does not guarantee someone is an ally.
+
+When several characters share a cell, you take priority, then your visible
+opponent, then another visible occupant. The list reports how many others
+share the displayed marker, and still lists those characters individually.
+Invisible or concealed characters do not contribute to that count.
+
+`cCOVER AND TURRETS`x
+  `C[]`x  Cover, such as a tree, rocks, crates or a barricade
+  `C{}`x  Turret (its list entry says whether it also provides cover)
+
+Underlined character markers are in visible cover. They keep their usual
+white, magenta, red or green colour. The list below the map identifies
+the cover beside `CIn cover`x. This uses the normal positional rule: cover
+must be in the same room and within one unit on each axis.
+
+Characters remain visible when cover shares their map cell. The list marks
+`CCover in cell`x when cover is in that cell but the character is not shown
+using it; distant cells can represent more than one unit of ground.
+Cover objects remain listed by name and coordinates even when another
+marker occupies their cell. Hidden cover is not revealed by these labels.
+Cover and turret symbols turn magenta for your selected opponent or red
+for aggression. Normal combat rules determine how cover affects attacks.
+
+`cOBJECTIVES`x
+  `YCC`x  Capture point           `YEE`x  Extraction point
+If you or your opponent covers an objective marker, that objective is noted
+beside the character in the list below. Objective markers are never assigned
+as character IDs.
+
+`cTERRAIN`x
+  `C/`x  Building interior       `Y$`x  Shop, bank or commercial interior
+  `RM`x  Medical interior        `MC`x  Cafe, bar, club or restaurant
+  `W=`x  Road or sidewalk        `y=`x  Dirt road
+  `w:`x  Alley                   `wP`x  Parking
+  `GT`x  Forest                  `G+`x  Park or open ground
+  `wt`x  Cemetery                `Y.`x  Beach or dirt
+  `B}`x  Water                   `C}`x  Shallow water
+  `C_`x  Rooftop                 `yO`x  Cave, tunnel or basement
+  `yA`x  Rocks                   `g;`x  Swamp
+  `Ca`x  Air                     `w#`x  Unavailable or unmapped ground
+
+Terrain is repeated across each cell; darker colours indicate dim terrain.
+Where the current floor is unavailable, `C^`x, `cv`x or `M*`x can indicate an
+ordinary accessible route up, down or both. Jumping, climbing, falling,
+flight, water and outdoor forest-canopy routes do not get these markers.
+The local room map gives a more detailed view of doors and stairs.
+
+Smoke, concealment, visibility and combat movement rules still apply.
+Viewing the combat map retains its usual three-second command delay.
+`x
+~
+End
+
+Keyword Map~
+SeeAlso Minimap, Combat Map, Movement~
+Level 0
+Online 0
+Type 0
+Text `cLOCAL MAPS`x
+
+`Wlook`x shows a compact map to the right of the room title. Room information
+and description text flow beside it, then continue below at full width.
+The map stays within the description's right edge. `Wmap`x shows a larger
+map of your surroundings. North is always at the top, regardless of your
+facing. The floor number on the larger map is the room's elevation;
+negative numbers are below ground.
+Map borders use the same green as the written direction brackets.
+
+`Wmap off`x hides the minimap in look and after movement. `Wmap on`x restores
+it; `Wmap toggle`x switches between the two. This preference is saved with
+your character. It does not change the larger map or the combat map.
+Maps fit your configured screen width. The minimap is also limited by the
+description's width, and is omitted below 30 columns to keep text readable.
+
+During combat, `Wmap`x keeps showing the tactical combat map. Use
+`Wmap local`x for the surrounding rooms, or `Wmap combat`x for the tactical
+view. `Wmap key`x and `Wmap legend`x open this helpfile outside combat, and
+`Whelp combat map`x during combat.
+
+`cROOMS AND TERRAIN`x
+  `W@`x  You                         `CH`x  Building, house or vehicle
+  `Y$`x  Shop, bank or commerce      `MC`x  Cafe, bar, club or restaurant
+  `RM`x  Medical facility            `C_`x  Rooftop
+  `W#`x  Road                        `w.`x  Sidewalk
+  `w:`x  Alley                       `y%`x  Dirt or dirt road
+  `wP`x  Parking                     `gT`x  Forest
+  `G"`x  Park or grass               `wt`x  Cemetery
+  `Y,`x  Beach                       `yA`x  Rocks
+  `g;`x  Swamp                       `yO`x  Cave
+  `cU`x  Tunnel or basement          `Ba`x  Air
+  `w?`x  Other terrain               `M!`x  Gate (when on a room tile)
+  Blue wave marks (tildes) represent water.
+
+`cCONNECTIONS BETWEEN ROOMS`x
+  `w- | / \`x  Ordinary connections; `wx`x marks crossing diagonals.
+  `Go`x        Open door
+  `Y+`x        Closed door
+  `RX`x        Locked, closed door
+  `C=`x        Entrance or exit between indoors and outdoors
+  `CW`x        Window or glass boundary; not an ordinary walking route
+  `Yj`x        Jump required
+  `Yc`x        Climb required
+  `Yf`x        Drop or falling route
+  `M!`x        Connection to another floor or to a location that cannot
+             be placed accurately on this grid
+  On the larger map, edge connections continue beyond the displayed area.
+  The minimap shows only connections within its smaller grid.
+
+`cSTAIRS AND VERTICAL ROUTES`x
+  `C^`x  Up       `cv`x  Down       `M*`x  Both up and down
+  These marks sit beside the room and indicate ordinary vertical routes.
+  Yellow or red stair markers indicate a closed or locked door.
+  Jumping, climbing, falling, aerial and water routes never receive stair
+  markers, even if your character can fly or jump through that exit.
+  Outdoor forest-to-canopy routes also have no stair markers.
+
+This is a local schematic of connected rooms, not a surveyed floor plan.
+Symbols show the route's kind; they do not promise your character can use it.
+Doors update immediately. A closed opaque door hides the rooms beyond it.
+Secret exits, invisible rooms and routes into other worlds are omitted.
+Blank space is unmapped space, not proof that no room exists there.
+
+Local maps are unavailable while you cannot see your surroundings, in the
+deep Nightmare, or in dreams. The normal written exits remain available.
+`x
+~
+End
+
+Keyword Minimap~
+SeeAlso Map~
+Level 0
+Online 0
+Type 0
+Text The minimap appears beside the room title in `Wlook`x and after ordinary
+movement. Room text flows beside it and then below it; the map stays within
+the description's right edge. It shows nearby connected rooms with
+north at the top and `W@`x at your position, inside a small green border.
+`Wmap off`x hides it, `Wmap on`x restores it, and `Wmap toggle`x switches it.
+Your choice is saved with your character and only affects the look map.
+Use `Wmap`x for the larger view and `Whelp map`x for the colour and symbol key.
+`x
+~
+End
+
 Keyword Second Class Citizen~
 SeeAlso Stats, Train, Negtrain, Sanctuary~
 Level 0
@@ -7687,38 +7858,17 @@ the reckless patrol habit additionally earn more influence.  Type habit
 End
 
 Keyword map key~
-SeeAlso ~
+SeeAlso Map, Minimap, Combat Map~
 Level 0
 Online 0
 Type 0
-Text Accessible rooms
-Dark Indoors `D/`x
-Public Indoors `W/`x
-Other  Indoors `x/`x
-Underwater `D}`x
-Surface Water `B}`x
-Shallow water `c}`x
-Dark Natural area `D+`x
-Dark Street `D=`x
-Park/Forest `g+`x
-Beach `y+`x
-Dirt roat `y=`x
-Street `c=`x
-Alley `D=`x
-sidewalk `x=`x
+Text Use `Whelp map`x for the minimap and local-map colour and symbol key.
+Use `Whelp combat map`x for tactical terrain, characters, cover and objectives.
 
-Can access room underneath
-Dark `Dv`x
-Public `Wv`x
-Other `yv`x
-
-Room above
-Dark `D^`x
-Accessible `y^`x
-Other `C^`x
-
-Otherwise
-`D#`x
+The command `Wmap key`x (also `Wmap legend`x or `Wmap help`x) opens the local
+guide outside combat and the combat guide during a fight.
+See `Whelp minimap`x for the saved `Wmap on`x, `Wmap off`x and `Wmap toggle`x options.
+`x
 ~
 End
 
@@ -32308,21 +32458,6 @@ disservice, inferno is a whole world, living and breathing.  Enemies are not
 always external and clearly distinguishable as good or bad, terrestrial and
 morally complex threats also exist, and it's by dealing with all of those
 that players get to live in this world.
-~
-End
-
-Keyword map~
-SeeAlso ~
-Level 0
-Online 0
-Type 0
-Text `WSyntax:`6 map
-
-Typing map out of combat will bring up links to several graphical maps of
-Gravesend and the surrounding wilderness.
-
-Typing map in combat will bring up an ASCII map of the room you're in and
-those surrounding it, useful to work out who is where at a glance.  
 ~
 End
 
