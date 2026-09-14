@@ -28,7 +28,7 @@ O_FILES = abominations.o act_comm.o act_info.o act_move.o act_obj.o act_wiz.o \
 	  patrols.o syndicate.o dissent.o public_combat.o full_moon.o recycle.o save.o sex.o  skills.o\
 	  social-edit.o social.o stories.o shifters.o string.o sys.o system.o tables.o travel.o\
 	  update.o world.o room_descriptions.o recovery.o guest_progression.o feeding.o sins.o\
-	  Note.o MudIo.o Util.o performance.o ai_protocol.o runtime_io.o runtime_indexes.o process_actions.o game_update.o\
+	  Note.o MudIo.o Util.o performance.o ai_protocol.o runtime_io.o runtime_indexes.o process_actions.o game_update.o local_map.o combat_map.o\
 
 # Never reuse the legacy object files committed under .build/ or src/.
 # Their checkout timestamps do not establish which source produced them.

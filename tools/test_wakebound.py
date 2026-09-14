@@ -15,7 +15,8 @@ enum { AFF_WAKEBOUND=124, PLR_SHROUD=1, RITUAL_WAKEBOUND=56,
        SKILL_RITUALPROOF, TO_AFFECTS, APPLY_NONE, TO_CHAR, TO_ROOM, SHAPE_HUMAN };
 const bool TRUE=true, FALSE=false;
 struct PC { int process_subtype=RITUAL_WAKEBOUND, nightmare_shifted=0, prep_action=0; };
-struct CHAR_DATA { PC *pcdata; bool ward=false, npc=false, proof=false, manip=true; int act=0, shape=SHAPE_HUMAN; CHAR_DATA *your_car=nullptr; };
+struct ROOM_INDEX_DATA { bool cell=false; };
+struct CHAR_DATA { PC *pcdata; bool ward=false, npc=false, proof=false, manip=true; int act=0, shape=SHAPE_HUMAN; CHAR_DATA *your_car=nullptr; ROOM_INDEX_DATA *in_room=nullptr; };
 struct AFFECT_DATA { int where,type,level,duration,location,modifier,bitvector; void *caster; bool weave; };
 #define IS_AFFECTED(ch, f) ((ch)->ward)
 #define IS_FLAG(a, f) ((a)&(f))
@@ -30,6 +31,7 @@ void save_char_obj(CHAR_DATA *, bool, bool) { ++saves; }
 void free_char(CHAR_DATA *) { ++frees; }
 bool has_shroudmanip(CHAR_DATA *ch) { return ch->manip; }
 bool is_gm(CHAR_DATA *) { return false; }
+bool syndicate_cell(ROOM_INDEX_DATA *room) { return room && room->cell; }
 bool str_cmp(const char *a,const char *b) { return strcmp(a,b)!=0; }
 '''
 source += section('src/lookup.c', '  bool can_shroud(', '  bool can_blood(')
@@ -53,6 +55,10 @@ int main() {
  pull(&caster,&car); assert(!allowed);
  target.ward=false; target.act=0; entry(&target, ""); assert(allowed);
  pull(&caster,&target); assert(allowed); pull(&caster,&car); assert(allowed);
+ ROOM_INDEX_DATA street, cell{true}; target.in_room=&cell; car.in_room=&street;
+ pull(&caster,&target); assert(!allowed); pull(&caster,&car); assert(!allowed);
+ target.in_room=&street; car.in_room=&cell; pull(&caster,&car); assert(!allowed);
+ car.in_room=&street; pull(&caster,&target); assert(allowed); pull(&caster,&car); assert(allowed);
  target.proof=true; complete(&caster,&target,true); assert(!target.ward);
  target.proof=false; power_value=150; complete(&caster,&target,false);
  assert(target.ward && duration==6480 && frees==1);

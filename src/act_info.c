@@ -22,6 +22,8 @@
 #include <unordered_map>
 #include <string>
 #include "merc.h"
+#include "game_time.h"
+#include "local_map.h"
 #include "equipment_snapshot.h"
 #include "reward_colors.h"
 #include "text_format.h"
@@ -5046,8 +5048,15 @@ extern "C" {
     return -1;
   }
 
-  // Cleaned up subroutine that respects width preference - Discordance
-  void show_room_to_char(CHAR_DATA *ch, ROOM_INDEX_DATA *room) {
+  struct RoomLookText {
+    std::string prelude;
+    std::string page;
+    size_t description_end;
+  };
+
+  // Build the room prose once so look can flow it beside the minimap.
+  static void show_room_to_char_impl(CHAR_DATA *ch, ROOM_INDEX_DATA *room,
+                                     RoomLookText *collected) {
     std::string buf;
     std::string page;
     char nocol[MSL];
@@ -5127,6 +5136,9 @@ extern "C" {
       }
     }
 
+    if (collected != NULL)
+      collected->description_end = page.size();
+
     /*
     for (vector<DOMAIN_TYPE *>::iterator it = DomainVect.begin();it != DomainVect.end(); ++it) {
       for (int i = 0; i < 50; i++) {
@@ -5145,12 +5157,20 @@ extern "C" {
       }
     }
     */
-    if(IS_IMMORTAL(ch))
-    printf_to_char(ch, "Light level: %d\n\r", light_level(ch->in_room));
+    if(IS_IMMORTAL(ch)) {
+      if (collected != NULL)
+        collected->prelude += haven::format_text("Light level: %d\n\r`x", light_level(ch->in_room));
+      else
+        printf_to_char(ch, "Light level: %d\n\r", light_level(ch->in_room));
+    }
 
     if(in_lodge(ch->in_room) && crisis_prologue == 1)
     {
-      send_to_char("`243The tv screens show nothing but static, there is no cell signal or internet.\nOutside the window it is entirely black save for\nodd flashes of red and purple light.\nA nearby discarded newspaper shows the date as '5th September, 2037'.\nYou have a hard time remembering how you got here or who anyone else is.`x\n\n\r", ch);
+      const char *prologue = "`243The tv screens show nothing but static, there is no cell signal or internet.\nOutside the window it is entirely black save for\nodd flashes of red and purple light.\nA nearby discarded newspaper shows the date as '5th September, 2037'.\nYou have a hard time remembering how you got here or who anyone else is.`x\n\n\r";
+      if (collected != NULL)
+        collected->prelude += std::string(prologue) + "`x";
+      else
+        send_to_char(prologue, ch);
     }
 
     CHAR_DATA *hp;
@@ -5343,9 +5363,17 @@ extern "C" {
     }
     buf = haven::format_text("\n\r");
     page += buf.data();
-    page_to_char(wrap_string(page.data(), get_wordwrap(ch)), ch);
+    if (collected != NULL)
+      collected->page.swap(page);
+    else
+      page_to_char(wrap_string(page.data(), get_wordwrap(ch)), ch);
 
     return;
+  }
+
+  // Keep the ordinary room display's wrapping and paging behavior unchanged.
+  void show_room_to_char(CHAR_DATA *ch, ROOM_INDEX_DATA *room) {
+    show_room_to_char_impl(ch, room, NULL);
   }
 
   static int collect_look_places(ROOM_INDEX_DATA *room, char **places, int capacity) {
@@ -5682,6 +5710,192 @@ extern "C" {
 
 
 
+  // Count title cells without running the output/color pipeline for each token.
+  // Keep basic, xterm, RGB and formatting tokens intact when wrapping a title.
+  static size_t look_header_token(const std::string &text, size_t at, int &cells) {
+    cells = 0;
+    const size_t left = text.size() - at;
+    if (text[at] == '`' && left >= 2) {
+      if (text[at + 1] == '#' && left >= 8)
+        return 8;
+      if (left >= 4 && isdigit((unsigned char)text[at + 1]) &&
+          isdigit((unsigned char)text[at + 2]) && isdigit((unsigned char)text[at + 3]))
+        return 4;
+      if (!strchr("qxXbcgmrywdBCGMRYWDoeEaAfhijklnpQstTuUvVzZ*", text[at + 1]))
+        cells = 1;
+      return 2;
+    }
+    if (text[at] == '<') {
+      if (left >= 3 && strchr("bBiIuU", text[at + 1]) && text[at + 2] == '>')
+        return 3;
+      if (left >= 4 && text[at + 1] == '/' &&
+          strchr("bBiIuU", text[at + 2]) && text[at + 3] == '>')
+        return 4;
+    }
+    cells = 1;
+    return 1;
+  }
+
+  static size_t look_header_break(const std::string &text, size_t at) {
+    if (at == text.size()) return 0;
+    if (text[at] == '`' && at + 1 < text.size() && text[at + 1] == '/') return 2;
+    if (text[at] != '\n' && text[at] != '\r') return 0;
+    return at + 1 < text.size() && (text[at + 1] == '\n' || text[at + 1] == '\r') &&
+        text[at] != text[at + 1] ? 2 : 1;
+  }
+
+  static bool look_minimap_enabled(CHAR_DATA *ch, ROOM_INDEX_DATA *room, bool dark) {
+    return !IS_NPC(ch) && ch->pcdata != NULL && !IS_FLAG(ch->comm, COMM_NOMINIMAP) &&
+        get_wordwrap(ch) >= 30 && !is_dreaming(ch) && !IS_FLAG(ch->act, PLR_DEEPSHROUD) &&
+        room->vnum != ROOM_INDEX_GENESIS && (!dark || can_see_dark(ch));
+  }
+
+  // Authored rooms often have shorter lines than the player's width setting.
+  // Measure the same main description the ordinary look path would display.
+  static int look_description_width(CHAR_DATA *ch, std::string description) {
+    const std::string wrapped = wrap_string(description.data(), get_wordwrap(ch));
+    int widest = 0, cells = 0, ink = 0;
+    for (size_t at = 0; at < wrapped.size();) {
+      const size_t newline = look_header_break(wrapped, at);
+      if (newline) {
+        widest = UMAX(widest, ink);
+        cells = ink = 0;
+        at += newline;
+      } else {
+        int visible;
+        const size_t bytes = look_header_token(wrapped, at, visible);
+        cells += visible;
+        if (visible && !isspace((unsigned char)wrapped[at])) ink = cells;
+        at += bytes;
+      }
+    }
+    return UMIN(get_wordwrap(ch), UMAX(widest, ink));
+  }
+
+  // Reflow authored line wrapping, keeping paragraph breaks. Room status
+  // messages retain their explicit newlines and never enter this helper.
+  static std::string look_reflow_description(const std::string &description) {
+    std::string result;
+    result.reserve(description.size());
+    for (size_t at = 0; at < description.size();) {
+      size_t newline = look_header_break(description, at);
+      if (!newline) {
+        int visible;
+        const size_t bytes = look_header_token(description, at, visible);
+        result.append(description, at, bytes);
+        at += bytes;
+        continue;
+      }
+      int breaks = 0;
+      do {
+        at += newline;
+        ++breaks;
+        size_t next = at;
+        while (next < description.size() && (description[next] == ' ' || description[next] == '\t'))
+          ++next;
+        newline = look_header_break(description, next);
+        if (newline || next == description.size()) at = next;
+      } while (newline);
+      if (breaks > 1 || at == description.size()) {
+        for (int line = 0; line < breaks; ++line) result += "\n\r";
+      } else {
+        if (!result.empty() && result.back() != ' ') result += ' ';
+        while (at < description.size() && description[at] == ' ') ++at;
+      }
+    }
+    return result;
+  }
+
+  static std::string format_look_with_map(CHAR_DATA *ch, ROOM_INDEX_DATA *room,
+                                          const std::string &header, int width) {
+    const std::string map = haven::render_local_map(ch, room, true);
+    std::vector<std::string> rows;
+    for (size_t at = 0; at < map.size();) {
+      size_t end = map.find('\n', at);
+      if (end == std::string::npos) end = map.size();
+      rows.push_back(map.substr(at, end - at));
+      at = end < map.size() ? end + 1 : end;
+      if (at < map.size() && map[at] == '\r') ++at;
+    }
+    const int map_width = rows.empty() ? 0 : safe_strlen_color(rows[0].c_str());
+    std::string output, color = "`x";
+    bool bold = false, italic = false, underline = false;
+    output.reserve(header.size() + map.size() + rows.size() * width);
+    size_t at = 0, row = 0;
+    while (at < header.size() || row < rows.size()) {
+      const int limit = row < rows.size() ? width - map_width - 2 : width;
+      size_t end = at, space = std::string::npos;
+      int cells = 0, space_cells = 0;
+      while (end < header.size() && !look_header_break(header, end)) {
+        int visible;
+        const size_t bytes = look_header_token(header, end, visible);
+        if (cells + visible > limit) break;
+        if (header[end] == ' ') { space = end; space_cells = cells; }
+        cells += visible;
+        end += bytes;
+      }
+      const bool wrapped = end < header.size() && !look_header_break(header, end);
+      if (wrapped && space != std::string::npos) {
+        end = space;
+        cells = space_cells;
+      }
+      if (end > at) {
+        output += color;
+        if (bold) output += "<b>";
+        if (italic) output += "<i>";
+        if (underline) output += "<u>";
+        output.append(header, at, end - at);
+      }
+      // Restore the text's color and styles after each independent map row.
+      for (size_t token = at; token < end;) {
+        int visible;
+        const size_t bytes = look_header_token(header, token, visible);
+        if (header[token] == '`' && visible == 0 && header[token + 1] != '*')
+          color = header.substr(token, bytes);
+        else if (header[token] == '<' && visible == 0) {
+          const bool opening = header[token + 1] != '/';
+          switch (tolower((unsigned char)header[token + (opening ? 1 : 2)])) {
+            case 'b': bold = opening; break;
+            case 'i': italic = opening; break;
+            case 'u': underline = opening; break;
+          }
+        }
+        token += bytes;
+      }
+      if (bold) output += "</b>";
+      if (italic) output += "</i>";
+      if (underline) output += "</u>";
+      output += "`x";
+      if (row < rows.size()) {
+        output.append(width - map_width - cells, ' ');
+        output += rows[row];
+      }
+      output += "\n\r";
+      at = end;
+      if (wrapped) {
+        while (at < header.size() && header[at] == ' ') ++at;
+      }
+      else
+        at += look_header_break(header, at);
+      ++row;
+    }
+    return output;
+  }
+
+  static void send_look_with_map(CHAR_DATA *ch, ROOM_INDEX_DATA *room,
+                                  const std::string &text, int width) {
+    const std::string output = format_look_with_map(ch, room, text, width);
+    // Keep the small map together; retain paging for the text below it.
+    size_t after_map = 0;
+    for (int row = 0; row < 7 && after_map < output.size(); ++row) {
+      const size_t end = output.find('\n', after_map);
+      after_map = end == std::string::npos ? output.size() : end + 1;
+      if (after_map < output.size() && output[after_map] == '\r') ++after_map;
+    }
+    send_to_char(output.substr(0, after_map).c_str(), ch);
+    if (after_map < output.size()) page_to_char(output.c_str() + after_map, ch);
+  }
+
   static void look_room_signals(ROOM_INDEX_DATA *room, CHAR_DATA *viewer,
                                 bool &desire, bool &suffering, bool &fate, bool &mindreading) {
     desire = suffering = fate = mindreading = FALSE;
@@ -5858,94 +6072,92 @@ extern "C" {
       else {
         sprintf(buf, "%s", roomtitle(current_room, TRUE));
       }
-      send_to_char(buf, ch);
+      std::string header = buf;
 
       if ((IS_IMMORTAL(ch) && (IS_NPC(ch) || IS_FLAG(ch->act, PLR_HOLYLIGHT)))) {
         sprintf(buf, " `r[`RRoom %d: %d, %d, %d`r]", current_room->vnum, current_room->x, current_room->y, current_room->z);
-        send_to_char(buf, ch);
+        header += buf;
       }
       if (current_room->encroachment > 0 && IS_IMMORTAL(ch)) {
         sprintf(buf, "[`g%d`x]", current_room->encroachment);
-        send_to_char(buf, ch);
+        header += buf;
       }
       if (IS_IMMORTAL(ch)) {
         int level = room_level(current_room);
         if (level > 0) {
           sprintf(buf, "[`R%d`x]", level);
-          send_to_char(buf, ch);
+          header += buf;
         }
       }
       if (is_air(current_room) && IS_IMMORTAL(ch)) {
         sprintf(buf, "(`CAir`x)");
-        send_to_char(buf, ch);
+        header += buf;
       }
 
       if (IS_FLAG(ch->act, PLR_SHROUD)) {
         sprintf(buf, " `x[`DNightmare`x]");
-        send_to_char(buf, ch);
+        header += buf;
       }
       if (!IS_NPC(ch) && ch->pcdata->institute_action == INSTITUTE_EXPERIMENT) {
-        send_to_char(" (`YExperimenting`x)", ch);
+        header += " (`YExperimenting`x)";
       }
       if (!IS_NPC(ch) && ch->pcdata->institute_action == INSTITUTE_TREAT) {
-        send_to_char(" (`YTreating`x)", ch);
+        header += " (`YTreating`x)";
       }
       if (!IS_NPC(ch) && ch->pcdata->institute_action == INSTITUTE_TRAUMA) {
-        send_to_char(" (`YTraumatizing`x)", ch);
+        header += " (`YTraumatizing`x)";
       }
       if (!IS_NPC(ch) && ch->pcdata->institute_action == INSTITUTE_TEACH) {
-        send_to_char(" (`YTeaching`x)", ch);
+        header += " (`YTeaching`x)";
       }
       if (IS_FLAG(ch->comm, COMM_PRIVATE)) {
-        send_to_char(" [`rPrivate`x]", ch);
+        header += " [`rPrivate`x]";
       }
       if (!IS_NPC(ch) && ch->pcdata->rp_logging == 1) {
-        send_to_char(" [`gLogging`x]", ch);
+        header += " [`gLogging`x]";
       }
 
       if (is_animal(ch)) {
         sprintf(buf, " `x[`y%s`x]", get_animal_species(ch, ANIMAL_ACTIVE));
-        send_to_char(buf, ch);
+        header += buf;
       }
       if (is_manifesting(ch)) {
         sprintf(buf, " `x[`WManifesting`x]");
-        send_to_char(buf, ch);
+        header += buf;
       }
       if (is_visible(ch)) {
         sprintf(buf, " `x[`WVisible`x]");
-        send_to_char(buf, ch);
+        header += buf;
       }
       if (event_cleanse == 0 && ch->pcdata->litup == 1) {
         sprintf(buf, " `x[`WLight up`x]");
-        send_to_char(buf, ch);
+        header += buf;
       }
 
       if (in_fantasy(ch) != NULL && part_of_fantasy(ch, in_fantasy(ch))) {
         sprintf(buf, " `c{`x%s`c}`x", in_fantasy(ch)->name);
-        send_to_char(buf, ch);
+        header += buf;
       }
       else if (room_fantasy(current_room) != NULL) {
         sprintf(buf, " `r{`x%s`r}`x", room_fantasy(current_room)->name);
-        send_to_char(buf, ch);
+        header += buf;
       }
 
       if (!IS_NPC(ch) && ch->pcdata->patrol_status == PATROL_SENSING_ARTIFACT && ch->pcdata->patrol_target != NULL && ch->pcdata->patrol_timer > 0) {
         if (ch->in_room == ch->pcdata->patrol_target->in_room) {
-          printf_to_char(ch, "You sense an awakening cursed object on %s.\n\r", PERS(ch->pcdata->patrol_target, ch));
+          header += haven::format_text("You sense an awakening cursed object on %s.\n\r", PERS(ch->pcdata->patrol_target, ch));
         }
         else {
-          printf_to_char(
-          ch, "You sense the awakening of a cursed object to the %s.\n\r", relspacial[get_reldirection(
+          header += haven::format_text("You sense the awakening of a cursed object to the %s.\n\r", relspacial[get_reldirection(
           roomdirection(get_roomx(ch->in_room), get_roomy(ch->in_room), get_roomx(ch->pcdata->patrol_target->in_room), get_roomy(ch->pcdata->patrol_target->in_room)), ch->facing)]);
         }
       }
       if (!IS_NPC(ch) && ch->pcdata->patrol_timer > 0 && (ch->pcdata->patrol_status == PATROL_SENSING_GHOST || ch->pcdata->patrol_status == PATROL_GHOST_FOCUS)) {
         if (ch->in_room == ch->pcdata->patrol_room) {
-          send_to_char("\nYou sense a rising malevolent spirit in this area.\n\r", ch);
+          header += "\nYou sense a rising malevolent spirit in this area.\n\r";
         }
         else {
-          printf_to_char(
-          ch, "\nYou sense a rising malevolent to the %s.\n\r", relspacial[get_reldirection(
+          header += haven::format_text("\nYou sense a rising malevolent to the %s.\n\r", relspacial[get_reldirection(
           roomdirection(get_roomx(ch->in_room), get_roomy(ch->in_room), get_roomx(ch->pcdata->patrol_room), get_roomy(ch->pcdata->patrol_room)), ch->facing)]);
         }
       }
@@ -5957,92 +6169,103 @@ extern "C" {
         else
         sprintf(buf, " `x[`BShallow Water`x]");
 
-        send_to_char(buf, ch);
+        header += buf;
       }
       if (crowded_room(current_room)) {
         sprintf(buf, " `x[`CCrowded`x]");
-        send_to_char(buf, ch);
+        header += buf;
       }
       bool desire, suffering, fate, mindreading;
       look_room_signals(current_room, ch, desire, suffering, fate, mindreading);
       if (mindreading)
-        send_to_char(" `x[`CMindreading`x]", ch);
+        header += " `x[`CMindreading`x]";
       if(desire) {
         sprintf(buf, " `x[`WDesires`x]");
-        send_to_char(buf, ch);
+        header += buf;
       }
       if(suffering) {
         sprintf(buf, " `x[`rSuffers`x]");
-        send_to_char(buf, ch);
+        header += buf;
       }
       if(fate) {
         sprintf(buf, " `x[`034Fate`x]");
-        send_to_char(buf, ch);
+        header += buf;
       }
 
       if (IS_FLAG(ch->act, PLR_HIDE)) {
         sprintf(buf, " `x[`DHidden`x]");
-        send_to_char(buf, ch);
+        header += buf;
       }
 
 
 
-      send_to_char("`x\n\r", ch);
+      const bool room_is_dark = is_dark(current_room);
+      const bool minimap = look_minimap_enabled(ch, current_room, room_is_dark);
+      std::string look_text = header + "`x\n\r";
+      if (!minimap) {
+        send_to_char(look_text.c_str(), ch);
+        look_text.clear();
+      }
+      auto look_send = [&](const char *text) {
+        // Each ordinary send resets color at its boundary; preserve that here.
+        if (minimap) { look_text += text; look_text += "`x"; }
+        else send_to_char(text, ch);
+      };
       int llevel = light_level(current_room);
       if (llevel >= 90)
-      send_to_char("`231The area is very bright.`x\n\r", ch);
+      look_send("`231The area is very bright.`x\n\r");
       else if (llevel >= 75)
-      send_to_char("`226The area is bright.`x\n\r", ch);
+      look_send("`226The area is bright.`x\n\r");
       else if (llevel >= 50)
-      send_to_char("`178The area is dim.`x\n\r", ch);
+      look_send("`178The area is dim.`x\n\r");
       else if (llevel >= 20)
-      send_to_char("`038The area is quite dark.`x\n\r", ch);
+      look_send("`038The area is quite dark.`x\n\r");
       else if (llevel >= 0)
-      send_to_char("`243The area is dark.`x\n\r", ch);
+      look_send("`243The area is dark.`x\n\r");
       else
-      send_to_char("`236The area is pitch black.`x\n\r", ch);
+      look_send("`236The area is pitch black.`x\n\r");
 
       if (!IS_SET(current_room->room_flags, ROOM_UNLIT) && !IS_SET(current_room->room_flags, ROOM_DARK) && current_room->sector_type ==
           SECT_STREET) // Street Lights - Disco 10/30/2017
       {
         if (is_dark_outside()) {
-          send_to_char("The `Yglow`x of old street lights spills onto the pavement.`x\n\r", ch);
+          look_send("The `Yglow`x of old street lights spills onto the pavement.`x\n\r");
         }
         else {
-          send_to_char("The street lights are cold and dead.`x\n\r", ch);
+          look_send("The street lights are cold and dead.`x\n\r");
         }
       }
-      else if (is_dark(current_room)) {
-        send_to_char("It is `Ddark`x.\n\r", ch);
+      else if (room_is_dark) {
+        look_send("It is `Ddark`x.\n\r");
       }
 
       if(sandbox_room(current_room) && (is_gm(ch) || get_gm(current_room, FALSE) == NULL))
-      send_to_char("This is a sandbox room, you can redesign it with the 'decorate' command.\n\r", ch);
+      look_send("This is a sandbox room, you can redesign it with the 'decorate' command.\n\r");
 
       if (str_cmp(crisis_atmosphere, ""))
-      printf_to_char(ch, "%s\n\r", crisis_atmosphere);
+      look_send(haven::format_text("%s\n\r", crisis_atmosphere).c_str());
       if (battleground(ch->in_room) && activeoperation != NULL && safe_strlen(activeoperation->atmosphere) > 2)
-      printf_to_char(ch, "%s\n\r", activeoperation->atmosphere);
+      look_send(haven::format_text("%s\n\r", activeoperation->atmosphere).c_str());
 
       if (get_skill(ch, SKILL_HACKING) + get_skill(ch, SKILL_ENGINEERING) > 4 && bugged_room(current_room))
-      send_to_char("`cYou pick up wireless signals consistent with spy cameras.`x\n\r", ch);
+      look_send("`cYou pick up wireless signals consistent with spy cameras.`x\n\r");
 
       if (IS_SET(ch->in_room->room_flags, ROOM_LANDLINE) && has_place(ch->in_room, "payphone")) {
-        send_to_char("`WThere is a payphone nearby.`x\n\r", ch);
+        look_send("`WThere is a payphone nearby.`x\n\r");
       }
       else if (IS_SET(ch->in_room->room_flags, ROOM_LANDLINE)) {
-        send_to_char("`WThere is a landline phone nearby.`x\n\r", ch);
+        look_send("`WThere is a landline phone nearby.`x\n\r");
       }
 
       if (in_medical_facility(ch)) {
-        send_to_char("`WThis is a medical facility.`x\n\r", ch);
+        look_send("`WThis is a medical facility.`x\n\r");
       }
 
       if (IS_SET(ch->in_room->room_flags, ROOM_SIGNALBOOST)) {
-        send_to_char("`WThere is especially good cell reception here.`x\n\r", ch);
+        look_send("`WThere is especially good cell reception here.`x\n\r");
       }
       if (private_school_room(ch->in_room)) {
-        send_to_char("`WThis room seems private.`x\n\r", ch);
+        look_send("`WThis room seems private.`x\n\r");
       }
 
       if (current_room->vnum == ROOM_INDEX_GENESIS) {
@@ -6051,82 +6274,106 @@ extern "C" {
       }
       if (in_haven(current_room) && time_info.bloodstorm == 1) {
         if (in_lodge(current_room) || (institute_room(current_room) && current_room->z < 0))
-        send_to_char("`rA mystical storm rages outside.\n\r", ch);
+        look_send("`rA mystical storm rages outside.\n\r");
         else
-        send_to_char("`RA mystical storm rages painfully around you.\n\r", ch);
+        look_send("`RA mystical storm rages painfully around you.\n\r");
       }
       if (IS_FLAG(ch->act, PLR_DEEPSHROUD)) {
         if (mirror_room(current_room))
-        send_to_char("A black void continues in all directions, split only by a shining white rectangle hanging in mid-air.\n\r", ch);
+        look_send("A black void continues in all directions, split only by a shining white rectangle hanging in mid-air.\n\r");
         else
-        send_to_char("A black void continues in all directions, even the ground beneath you seems to lack solidity.\n\r", ch);
+        look_send("A black void continues in all directions, even the ground beneath you seems to lack solidity.\n\r");
       }
-      else if (!is_dark(current_room) || can_see_dark(ch)) {
+      else if (!room_is_dark || can_see_dark(ch)) {
         if (public_room(current_room) && !is_dreaming(ch)) {
-          send_to_char("`WThis area seems well populated`x.\n\r", ch);
+          look_send("`WThis area seems well populated`x.\n\r");
         }
         if (IS_SET(current_room->room_flags, ROOM_CAMPSITE))
-        send_to_char("`gThere's a campsite here.`x\n\r", ch);
+        look_send("`gThere's a campsite here.`x\n\r");
         if (IS_SET(current_room->room_flags, ROOM_ANIMALHOME))
-        send_to_char("`yAn animal has made its home here.`x\n\r", ch);
+        look_send("`yAn animal has made its home here.`x\n\r");
         if (IS_SET(current_room->room_flags, ROOM_LIGHTON) &&  crisis_blackout == 0)
-        send_to_char("`YThe lights are on.`x\n\r", ch);
+        look_send("`YThe lights are on.`x\n\r");
         if (IS_SET(current_room->room_flags, ROOM_DIRTROAD) && current_room->sector_type == SECT_STREET)
-        send_to_char("`yIt's a dirt road.`x\n\r", ch);
+        look_send("`yIt's a dirt road.`x\n\r");
         if (in_prop(ch) != NULL && !is_dreaming(ch)) {
           if (current_room->encroachment >= 850)
-          send_to_char("`gThe area is almost entirely overgrown.`x\n\r", ch);
+          look_send("`gThe area is almost entirely overgrown.`x\n\r");
           else if (current_room->encroachment >= 700)
-          send_to_char("`gThe area is heavily overgrown.`x\n\r", ch);
+          look_send("`gThe area is heavily overgrown.`x\n\r");
           else if (current_room->encroachment >= 500)
-          send_to_char("`gInvading roots and vines have started to damage the structure.`x\n\r", ch);
+          look_send("`gInvading roots and vines have started to damage the structure.`x\n\r");
           int decor = get_decor(current_room);
           if (decor == 0)
-          send_to_char("It has cheap decor.\n\r", ch);
+          look_send("It has cheap decor.\n\r");
           else if (decor == 1)
-          send_to_char("It has average decor.\n\r", ch);
+          look_send("It has average decor.\n\r");
           else if (decor == 2)
-          send_to_char("`cIt has expensive decor.`x\n\r", ch);
+          look_send("`cIt has expensive decor.`x\n\r");
           else
-          send_to_char("`WIt has extravagant decor.`x\n\r", ch);
+          look_send("`WIt has extravagant decor.`x\n\r");
           if (IS_SET(current_room->room_flags, ROOM_BEDROOM))
-          send_to_char("It is a bedroom. ", ch);
+          look_send("It is a bedroom. ");
           if (IS_SET(current_room->room_flags, ROOM_BATHROOM))
-          send_to_char("It is a bathroom. ", ch);
+          look_send("It is a bathroom. ");
           if (IS_SET(current_room->room_flags, ROOM_KITCHEN))
-          send_to_char("It is a kitchen. ", ch);
-          send_to_char("\n\r", ch);
+          look_send("It is a kitchen. ");
+          look_send("\n\r");
         }
         else {
           if (current_room->sector_type == SECT_STREET && !IS_SET(current_room->room_flags, ROOM_DIRTROAD)) {
             if (current_room->encroachment >= 850)
-            send_to_char("`gThe road is a webwork of pot holes and cracks where vines break through the asphalt.`x\n\r", ch);
+            look_send("`gThe road is a webwork of pot holes and cracks where vines break through the asphalt.`x\n\r");
             else if (current_room->encroachment >= 700)
-            send_to_char("`gThe road is littered with cracks where vines break through the asphalt.`x\n\r", ch);
+            look_send("`gThe road is littered with cracks where vines break through the asphalt.`x\n\r");
             else if (current_room->encroachment >= 500)
-            send_to_char("`gThere's a few cracks in the road, greenery visible beneath.`x\n\r", ch);
+            look_send("`gThere's a few cracks in the road, greenery visible beneath.`x\n\r");
           }
           else if (current_room->sector_type == SECT_STREET) {
             if (current_room->encroachment >= 850)
-            send_to_char("`gThe road is a webwork of pot holes and tree roots.`x\n\r", ch);
+            look_send("`gThe road is a webwork of pot holes and tree roots.`x\n\r");
             else if (current_room->encroachment >= 700)
-            send_to_char("`gThe road is heavily marred by pot holes and tree roots.`x\n\r", ch);
+            look_send("`gThe road is heavily marred by pot holes and tree roots.`x\n\r");
             else if (current_room->encroachment >= 500)
-            send_to_char("`gThere's a few tree roots pushing up through the surface of the road.`x\n\r", ch);
+            look_send("`gThere's a few tree roots pushing up through the surface of the road.`x\n\r");
           }
           else {
             if (current_room->encroachment >= 850)
-            send_to_char("`gThe area is extremely overgrown.`x\n\r", ch);
+            look_send("`gThe area is extremely overgrown.`x\n\r");
             else if (current_room->encroachment >= 700)
-            send_to_char("`gThe area is heavily overgrown.`x\n\r", ch);
+            look_send("`gThe area is heavily overgrown.`x\n\r");
             else if (current_room->encroachment >= 500)
-            send_to_char("`gThe area is starting to become overgrown.`x\n\r", ch);
+            look_send("`gThe area is starting to become overgrown.`x\n\r");
           }
         }
 
         if (arg1[0] == '\0' || (!IS_NPC(ch) && !IS_FLAG(ch->comm, COMM_BRIEF))) {
-          send_to_char("  ", ch);
-          show_room_to_char(ch, current_room);
+          if (minimap) {
+            RoomLookText prose{};
+            show_room_to_char_impl(ch, current_room, &prose);
+            const std::string description = prose.page.substr(0, prose.description_end);
+            const int width = look_description_width(ch, description);
+            if (width >= 30) {
+              look_text += "  " + prose.prelude + look_reflow_description(description);
+              look_text += prose.page.substr(prose.description_end);
+              send_look_with_map(ch, current_room, look_text, width);
+            } else {
+              // A very short description leaves no readable column beside a map.
+              send_to_char((look_text + "  " + prose.prelude).c_str(), ch);
+              page_to_char(wrap_string(prose.page.data(), get_wordwrap(ch)), ch);
+            }
+          } else {
+            send_to_char("  ", ch);
+            show_room_to_char(ch, current_room);
+          }
+        } else if (minimap) {
+          // Brief looks still show nearby rooms without building omitted prose.
+          const int width = look_description_width(ch, current_room->description == NULL
+              ? std::string() : std::string(current_room->description));
+          if (width >= 30)
+            send_look_with_map(ch, current_room, look_text, width);
+          else
+            send_to_char(look_text.c_str(), ch);
         }
 
         if (current_room->extra_descr != NULL && get_extra_descr("!sleepers", current_room->extra_descr) != NULL) {
@@ -7503,46 +7750,19 @@ extern "C" {
   }
 
   _DOFUN(do_time) {
-    //    extern char str_boot_time[];
-    char buf[MAX_STRING_LENGTH];
-    //    char *suf;
-    //    int day;
-    char *mod_time;
-    time_t com_time;
-    tm *ptm;
-    time_t east_time;
-    char *local_time;
-
-    east_time = current_time;
-    ptm = gmtime(&east_time);
-    com_time = east_time + (ch->pcdata->jetlag * 3600);
-    mod_time = str_dup(ctime(&com_time));
-
-    //    day     = time_info.day;
-
-    /*
-    if ( day > 4 && day <  20 ) suf = "th";
-    else if ( day % 10 ==  1       ) suf = "st";
-    else if ( day % 10 ==  2       ) suf = "nd";
-    else if ( day % 10 ==  3       ) suf = "rd";
-    else                             suf = "th";
-    */
-    sprintf(buf, "The time is %sYour time is %s", (char *)ctime(&east_time), mod_time);
-
-    send_to_char(buf, ch);
+    printf_to_char(ch, "The time is %sYour time is %s",
+      haven::format_game_time(current_time).c_str(),
+      haven::format_game_time(current_time, ch->pcdata->jetlag).c_str());
 
     if (ch->in_room != NULL && !in_haven(ch->in_room) && ch->in_room->timezone != 0) {
-      east_time = current_time;
-      ptm = gmtime(&east_time);
-      com_time = east_time + (ch->in_room->timezone * 3600);
-      local_time = str_dup(ctime(&com_time));
-
-      sprintf(buf, "Local time is %s", local_time);
-      send_to_char(buf, ch);
+      printf_to_char(ch, "Local time is %s",
+        haven::format_game_time(current_time, ch->in_room->timezone).c_str());
     }
 
+    // Moon calculations elsewhere use the UTC date.
+    const tm moon_time = *gmtime(&current_time);
     printf_to_char(
-    ch, "\nThere is a %s moon.\n\r", moon_real[moon_pointer(ptm->tm_mday, ptm->tm_mon, ptm->tm_year, NULL)]);
+    ch, "\nThere is a %s moon.\n\r", moon_real[moon_pointer(moon_time.tm_mday, moon_time.tm_mon, moon_time.tm_year, NULL)]);
 
     if (IS_IMMORTAL(ch))
     printf_to_char(ch, "Code hour %d, %d\n\r", get_hour(ch->in_room), get_last_hour(ch->in_room));
@@ -12070,21 +12290,8 @@ extern "C" {
     return ptm->tm_min;
   }
 
-  // Commented out what appears to be subtracting an hour, presumably for daylight
-  // savings - Discordance
   int get_hour(ROOM_INDEX_DATA *room) {
-    int hour;
-
-    tm *ptm;
-    time_t east_time;
-
-    //    east_time = current_time + 7200;
-    east_time = current_time - 14400;
-    east_time -= 3600;
-    // Uncomment above for daylight savings
-    ptm = gmtime(&east_time);
-
-    hour = ptm->tm_hour;
+    int hour = haven::game_time_fields(current_time).tm_hour;
     if (room != NULL && !in_haven(room) && room->timezone != 0)
     hour += room->timezone;
 

@@ -9,7 +9,12 @@
 #include <time.h>
 #include <vector>
 #include <map>
+#include <array>
+#include <tuple>
+#include <unordered_map>
 #include "merc.h"
+#include "local_map.h"
+#include "combat_map.h"
 #include "text_format.h"
 #include "olc.h"
 #include "gsn.h"
@@ -21,6 +26,8 @@ extern "C" {
 #endif
 
   bool has_exit args((ROOM_INDEX_DATA * room, int dir));
+  bool check_blind args((CHAR_DATA * ch));
+  static bool can_get_to_for_map(CHAR_DATA *ch, ROOM_INDEX_DATA *destination);
 
   int get_flee_direction args((CHAR_DATA * ch));
   int GET_NPC_SPECIAL args((int dis));
@@ -10006,23 +10013,18 @@ displace(ch, to, size);
 
   int default_mapsize(CHAR_DATA *looker) {
     int maxdist = 0;
-    if (!in_fight(looker))
+    if (looker == NULL || looker->in_room == NULL || !in_fight(looker))
     return 11;
 
-    for (CharList::iterator it = char_list.begin(); it != char_list.end(); ++it) {
-      CHAR_DATA *rch = *it;
-
-      if (!in_fight(rch))
-      continue;
-      if (rch == NULL || is_gm(rch))
+    unsigned long long cursor = 0;
+    for (CHAR_DATA *rch = next_combat_character(&cursor); rch != NULL;
+         rch = next_combat_character(&cursor)) {
+      if (rch->in_room == NULL || !in_fight(rch) || is_gm(rch))
       continue;
       if (!same_fight(rch, looker))
       continue;
 
-      if (combat_distance(looker, rch, FALSE) > maxdist) {
-        maxdist = combat_distance(looker, rch, FALSE);
-        // printf_to_char(looker, "Found: %s, %d\n\r", rch->name, // combat_distance(looker, rch, FALSE));
-      }
+      maxdist = std::max(maxdist, combat_distance(looker, rch, FALSE));
     }
     int size = map_contract(maxdist);
     // printf_to_char(looker, "Base size: %d, dist %d\n\r", size, maxdist);
@@ -10036,216 +10038,6 @@ displace(ch, to, size);
     if (size < 11)
     size = 11;
     return size;
-  }
-
-  struct CombatMapCell {
-    CHAR_DATA *character = NULL;
-    int count = 0;
-  };
-
-  static int combat_map_axis(int coordinate, const std::vector<int> &edges) {
-    // Use the same half-open intervals as get_mapch, including negative edges.
-    for (size_t i = 0; i + 1 < edges.size(); ++i) {
-      if (coordinate >= edges[i] && coordinate < edges[i + 1])
-      return static_cast<int>(i);
-    }
-    return -1;
-  }
-
-  static std::vector<CombatMapCell> combat_map_cells(CHAR_DATA *ch, int size) {
-    if (size <= 0)
-    return std::vector<CombatMapCell>();
-    std::vector<CombatMapCell> cells(size * size);
-    std::vector<int> edges(size + 1);
-    const int offset = (size - 1) / 2;
-    for (int i = 0; i <= size; ++i)
-    edges[i] = map_expand(i - offset);
-
-    // Visibility may itself scan rooms and descriptors. Evaluate it once per
-    // character per draw, then reuse both the first occupant and the population.
-    for (CharList::iterator it = char_list.begin(); it != char_list.end(); ++it) {
-      CHAR_DATA *victim = *it;
-      if (victim == NULL || is_gm(victim))
-      continue;
-      if (!can_see_char_distance(ch, victim, DISTANCE_MEDIUM) || !can_map_see(ch, victim))
-      continue;
-      const int x = combat_map_axis(relative_x(ch, victim->in_room, victim->x), edges);
-      const int y = combat_map_axis(relative_y(ch, victim->in_room, victim->y), edges);
-      if (x < 0 || y < 0)
-      continue;
-      CombatMapCell &cell = cells[y * size + x];
-      if (cell.character == NULL)
-      cell.character = victim;
-      ++cell.count;
-    }
-    return cells;
-  }
-
-  CHAR_DATA *get_mapch(CHAR_DATA *ch, int size, int mapy, int mapx) {
-    int newx = mapx / 2;
-    int newy = mapy;
-    int offset = size - 1;
-    offset /= 2;
-    newx -= offset;
-    newy -= offset;
-
-    int xmax = map_expand(newx + 1);
-    int xmin = map_expand(newx);
-    int ymax = map_expand(newy + 1);
-    int ymin = map_expand(newy);
-
-    CHAR_DATA *newvict;
-    for (CharList::iterator it = char_list.begin(); it != char_list.end(); ++it) {
-      newvict = *it;
-
-      if (newvict == NULL || is_gm(newvict))
-      continue;
-
-      if (!can_see_char_distance(ch, newvict, DISTANCE_MEDIUM))
-      continue;
-
-      if (!can_map_see(ch, newvict))
-      continue;
-
-      int relx = relative_x(ch, newvict->in_room, newvict->x);
-      int rely = relative_y(ch, newvict->in_room, newvict->y);
-
-      if (relx < xmax && relx >= xmin && rely < ymax && rely >= ymin) {
-        //	printf_to_char(ch, "Found: Name: %s,  mapy: %d, mapx: %d, relx:
-        //%d, rely: %d, newx: %d, newy: %d, xmin: %d, ymin: %d, xmax: %d, ymax:
-        //%d\n\r", newvict->name, mapy, mapx, relx, rely, newx, newy,xmin, ymin, //xmax, ymax);
-        return newvict;
-      }
-    }
-    return NULL;
-  }
-  int mapch_count(CHAR_DATA *ch, int size, int mapy, int mapx) {
-    int newx = mapx / 2;
-    int newy = mapy;
-    int count = 0;
-    int offset = size - 1;
-    offset /= 2;
-    newx -= offset;
-    newy -= offset;
-
-    int xmax = map_expand(newx + 1);
-    int xmin = map_expand(newx);
-    int ymax = map_expand(newy + 1);
-    int ymin = map_expand(newy);
-
-    CHAR_DATA *newvict;
-    for (CharList::iterator it = char_list.begin(); it != char_list.end(); ++it) {
-      newvict = *it;
-
-      if (newvict == NULL || is_gm(newvict))
-      continue;
-
-      if (!can_see_char_distance(ch, newvict, DISTANCE_MEDIUM))
-      continue;
-
-      if (!can_map_see(ch, newvict))
-      continue;
-
-      int relx = relative_x(ch, newvict->in_room, newvict->x);
-      int rely = relative_y(ch, newvict->in_room, newvict->y);
-      if (relx < xmax && relx >= xmin && rely < ymax && rely >= ymin) {
-        count++;
-      }
-    }
-    return count;
-  }
-
-  int name_count(CHAR_DATA *ch, CHAR_DATA *looker) {
-    int count = 1;
-    char first;
-    char pfirst;
-    char colbuf[MSL];
-
-    remove_color(colbuf, PERS_2(ch, looker));
-    if ((colbuf[0] == 'a' && colbuf[1] == ' ') || (colbuf[0] == 'A' && colbuf[1] == ' ')) {
-      pfirst = colbuf[2];
-    }
-    else if ((colbuf[0] == 'a' && colbuf[1] == 'n' && colbuf[2] == ' ') || (colbuf[0] == 'A' && colbuf[1] == 'n' && colbuf[2] == ' ')) {
-      pfirst = colbuf[3];
-    }
-    else {
-      pfirst = colbuf[0];
-    }
-
-    for (CharList::iterator it = char_list.begin(); it != char_list.end(); ++it) {
-      CHAR_DATA *rch = *it;
-
-      if (rch == NULL || is_gm(rch))
-      continue;
-      if (!can_see_char_distance(looker, rch, DISTANCE_MEDIUM))
-      continue;
-
-      if (!can_map_see(looker, rch))
-      continue;
-
-      remove_color(colbuf, PERS(rch, looker));
-      if ((colbuf[0] == 'a' && colbuf[1] == ' ') || (colbuf[0] == 'A' && colbuf[1] == ' ')) {
-        first = colbuf[2];
-      }
-      else if ((colbuf[0] == 'a' && colbuf[1] == 'n' && colbuf[2] == ' ') || (colbuf[0] == 'A' && colbuf[1] == 'n' && colbuf[2] == ' ')) {
-        first = colbuf[3];
-      }
-      else {
-        first = colbuf[0];
-      }
-
-      if (rch == looker)
-      continue;
-
-      if (rch == ch)
-      return count;
-
-      if (first == pfirst)
-      count++;
-    }
-    return count;
-  }
-  char *mapname(CHAR_DATA *rch, CHAR_DATA *ch) {
-    // Callers consume the label immediately; avoid allocating on every cell.
-    static char buf[MSL];
-    char colbuf[MSL];
-    if (ch == rch)
-    return "`WMe`x";
-    char first;
-    char second;
-
-    remove_color(colbuf, PERS(rch, ch));
-
-    if ((colbuf[0] == 'a' && colbuf[1] == ' ') || (colbuf[0] == 'A' && colbuf[1] == ' ')) {
-      first = colbuf[2];
-      second = colbuf[3];
-    }
-    else if ((colbuf[0] == 'a' && colbuf[1] == 'n' && colbuf[2] == ' ') || (colbuf[0] == 'A' && colbuf[1] == 'n' && colbuf[2] == ' ')) {
-      first = colbuf[3];
-      second = colbuf[4];
-    }
-    else {
-      first = colbuf[0];
-      second = colbuf[1];
-    }
-
-    int count = name_count(rch, ch);
-    if (count == 1) {
-      if (get_agg(ch, rch) > 0 || get_agg(rch, ch) > 0) {
-        sprintf(buf, "`R%c%c`x", first, second);
-      }
-      else
-      sprintf(buf, "`G%c%c`x", first, second);
-    }
-    else {
-      if (get_agg(ch, rch) > 0 || get_agg(rch, ch) > 0) {
-        sprintf(buf, "`R%c%d`x", first, count);
-      }
-      else
-      sprintf(buf, "`G%c%d`x", first, count);
-    }
-
-    return buf;
   }
 
   bool can_map_see(CHAR_DATA *ch, CHAR_DATA *victim) {
@@ -10367,151 +10159,209 @@ return FALSE;
     }
     return ch->in_room->y + ymove;
   }
-  char *mapfill(CHAR_DATA *ch, ROOM_INDEX_DATA *room) {
-    if (can_get_to(ch, room)) {
+  // Per-draw room state. Repeated screen cells reuse reachability, light and
+  // final terrain; no cached decision survives movement, smoke or door changes.
+  class CombatMapTerrain {
+    struct RoomState {
+      int visible = -1;
+      int reachable = -1;
+      int dark = -1;
+      const char *glyph = NULL;
+    };
+    CHAR_DATA *viewer_;
+    std::unordered_map<ROOM_INDEX_DATA *, RoomState> rooms_;
+    // Source is part of the key: coordinate traversal can depend on the route
+    // and world of the preceding room. Cache failed resolutions as well.
+    typedef std::tuple<ROOM_INDEX_DATA *, int, int, int> CoordinateKey;
+    std::map<CoordinateKey, ROOM_INDEX_DATA *> coordinates_;
+
+    bool visible(ROOM_INDEX_DATA *room) {
+      RoomState &state = rooms_[room];
+      if (state.visible < 0)
+        state.visible = room->area != NULL &&
+            room->area->world == viewer_->in_room->area->world &&
+            (room == viewer_->in_room ||
+             ((IS_ADMIN(viewer_) || !IS_SET(room->room_flags, ROOM_INVISIBLE)) &&
+              can_see_room(viewer_, room)));
+      return state.visible != 0;
+    }
+    bool reachable(ROOM_INDEX_DATA *room) {
+      RoomState &state = rooms_[room];
+      if (state.reachable < 0)
+        state.reachable = can_get_to_for_map(viewer_, room);
+      return state.reachable != 0;
+    }
+    bool dark(ROOM_INDEX_DATA *room) {
+      RoomState &state = rooms_[room];
+      if (state.dark < 0)
+        state.dark = is_dark(room);
+      return state.dark != 0;
+    }
+    bool stairs(ROOM_INDEX_DATA *room, int direction) {
+      EXIT_DATA *exit = room->exit[direction];
+      if (!haven::ordinary_map_vertical_route(room, exit) ||
+          IS_SET(exit->exit_info, EX_CLOSED) ||
+          (!IS_ADMIN(viewer_) && (IS_SET(exit->exit_info, EX_HIDDEN) ||
+                                  IS_AFFECTED(exit, AFF_XHIDE))))
+        return false;
+      return visible(exit->u1.to_room) && reachable(exit->u1.to_room);
+    }
+    const char *terrain(ROOM_INDEX_DATA *room) {
+      const bool dim = dark(room);
       if (IS_SET(room->room_flags, ROOM_INDOORS)) {
-        if (is_dark(room))
-        return "`D/";
-        else if (public_room(room))
-        return "`W/";
-        else
-        return "`x/";
+        if (dim) return "`w/";
+        switch (room->sector_type) {
+          case SECT_SHOP: case SECT_BANK: case SECT_COMMERCIAL: return "`Y$";
+          case SECT_HOSPITAL: return "`RM";
+          case SECT_CLUB: case SECT_RESTERAUNT: case SECT_TAVERN: case SECT_CAFE: return "`MC";
+          default: return "`C/";
+        }
       }
-      if (room->sector_type == SECT_UNDERWATER)
-      return "`D}";
-      if (room->sector_type == SECT_WATER)
-      return "`B}";
-      if (room->sector_type == SECT_SHALLOW)
-      return "`c}";
-      if (is_dark(room)) {
-        if (room->sector_type == SECT_PARK || room->sector_type == SECT_FOREST || room->sector_type == SECT_BEACH || room->sector_type == SECT_CEMETARY || room->sector_type == SECT_DIRT)
-        return "`D+";
-        if (room->sector_type == SECT_STREET || room->sector_type == SECT_PARKING || room->sector_type == SECT_ALLEY || room->sector_type == SECT_SIDEWALK)
-        return "`D=";
+      switch (room->sector_type) {
+        case SECT_WATER: case SECT_UNDERWATER: return dim ? "`b}" : "`B}";
+        case SECT_SHALLOW: return dim ? "`c}" : "`C}";
+        case SECT_FOREST: return dim ? "`gT" : "`GT";
+        case SECT_PARK: return dim ? "`g+" : "`G+";
+        case SECT_CEMETARY: return "`wt";
+        case SECT_BEACH: case SECT_DIRT: return dim ? "`y." : "`Y.";
+        case SECT_STREET:
+          if (IS_SET(room->room_flags, ROOM_DIRTROAD)) return "`y=";
+          return dim ? "`w=" : "`W=";
+        case SECT_ALLEY: return "`w:";
+        case SECT_PARKING: return "`wP";
+        case SECT_SIDEWALK: return "`w=";
+        case SECT_ROOFTOP: return "`C_";
+        case SECT_CAVE: case SECT_TUNNELS: case SECT_BASEMENT: return "`yO";
+        case SECT_ROCKY: return "`yA";
+        case SECT_SWAMP: return "`g;";
+        case SECT_AIR: case SECT_ATMOSPHERE: return "`Ca";
+        default: return "`w+";
       }
-      else {
-        if (room->sector_type == SECT_PARK || room->sector_type == SECT_CEMETARY)
-        return "`g+";
-        if (room->sector_type == SECT_FOREST)
-        return "`g+";
-        if (room->sector_type == SECT_BEACH || room->sector_type == SECT_DIRT)
-        return "`y+";
-        if (room->sector_type == SECT_STREET && IS_SET(room->room_flags, ROOM_DIRTROAD))
-        return "`y=";
-        else if (room->sector_type == SECT_STREET)
-        return "`c=";
-        else if (room->sector_type == SECT_ALLEY)
-        return "`D=";
-        else if (room->sector_type == SECT_PARKING)
-        return "`c+";
-        else if (room->sector_type == SECT_SIDEWALK)
-        return "`x=";
-      }
-      return "`x+";
     }
-    if (room->exit[DIR_DOWN] != NULL && room->exit[DIR_DOWN]->u1.to_room != NULL && can_get_to(ch, room->exit[DIR_DOWN]->u1.to_room)) {
-      if (is_dark(room->exit[DIR_DOWN]->u1.to_room))
-      return "`Dv";
-      else if (public_room(room->exit[DIR_DOWN]->u1.to_room))
-      return "`Wv";
-      else
-      return "`yv";
+  public:
+    explicit CombatMapTerrain(CHAR_DATA *viewer) : viewer_(viewer) { rooms_.reserve(32); }
+    ROOM_INDEX_DATA *resolve(ROOM_INDEX_DATA *source, int x, int y, int z) {
+      if (source->x == x && source->y == y && source->z == z)
+        return source;
+      const CoordinateKey key(source, x, y, z);
+      const auto found = coordinates_.find(key);
+      if (found != coordinates_.end())
+        return found->second;
+      ROOM_INDEX_DATA *room = sourced_room_by_coordinates(source, x, y, z, FALSE);
+      coordinates_.emplace(key, room);
+      return room;
     }
-    if (room->exit[DIR_UP] != NULL && room->exit[DIR_UP]->u1.to_room != NULL) {
-      if (is_dark(room->exit[DIR_UP]->u1.to_room))
-      return "`D^";
-      else if (can_get_to(ch, room->exit[DIR_UP]->u1.to_room))
-      return "`y^";
-      else
-      return "`C^";
+    const char *fill(ROOM_INDEX_DATA *room) {
+      if (room == NULL) return "`w#";
+      RoomState &state = rooms_[room];
+      if (state.glyph != NULL) return state.glyph;
+      if (!visible(room)) return state.glyph = "`w#";
+      if (reachable(room)) return state.glyph = terrain(room);
+      // These are grounded, visible vertical connections, not jump/fly hints.
+      const bool up = stairs(room, DIR_UP);
+      const bool down = stairs(room, DIR_DOWN);
+      if (up && down) return state.glyph = "`M*";
+      if (up) return state.glyph = "`C^";
+      if (down) return state.glyph = "`cv";
+      return state.glyph = "`w#";
     }
-    return "`D#";
+  };
+
+  static void combat_map_border(std::string &output, int width, const char *caption) {
+    std::string title(caption);
+    if (title.size() > static_cast<size_t>(width)) title.resize(width);
+    const int left = (width - static_cast<int>(title.size())) / 2;
+    output += "`g+";
+    output.append(left, '-');
+    output += " `C";
+    output += title;
+    output += "`g ";
+    output.append(width - left - static_cast<int>(title.size()), '-');
+    output += "+`x\n\r";
   }
 
   void draw_map(CHAR_DATA *ch, int size) {
-    std::string buf;
-    buf.reserve(size * size * 8);
-    CHAR_DATA *rch;
-    int i, j;
-    send_to_char("`D ", ch);
-
-    int maxi = size - 1;
-    int mini = 0;
-    int maxj = size * 2;
-    int minj = 0;
-
-    if (ch->facing == DIR_NORTH || ch->facing == DIR_NORTHEAST || ch->facing == DIR_NORTHWEST) {
+    if (ch == NULL || ch->in_room == NULL || ch->in_room->area == NULL || ch->desc == NULL)
+      return;
+    const int linewidth = ch->linewidth >= 10 && ch->linewidth <= 1000 ? ch->linewidth : 80;
+    size = URANGE(3, size, 31);
+    size = std::min(size, (linewidth - 4) / 2);
+    if (size % 2 == 0) --size;
+    int maxi = size - 1, mini = 0, mincol = 0, maxcol = size;
+    if (ch->facing == DIR_NORTH || ch->facing == DIR_NORTHEAST || ch->facing == DIR_NORTHWEST)
       mini = maxi / 4;
-    }
-    if (ch->facing == DIR_SOUTH || ch->facing == DIR_SOUTHEAST || ch->facing == DIR_SOUTHWEST) {
+    if (ch->facing == DIR_SOUTH || ch->facing == DIR_SOUTHEAST || ch->facing == DIR_SOUTHWEST)
       maxi = maxi * 3 / 4;
-    }
-    if (ch->facing == DIR_EAST || ch->facing == DIR_NORTHEAST || ch->facing == DIR_SOUTHEAST) {
-      minj = maxj / 4;
-    }
-    if (ch->facing == DIR_WEST || ch->facing == DIR_NORTHWEST || ch->facing == DIR_SOUTHWEST) {
-      maxj = maxj * 3 / 4;
-    }
+    // Crop in whole two-character cells so headings never split an actor label.
+    if (ch->facing == DIR_EAST || ch->facing == DIR_NORTHEAST || ch->facing == DIR_SOUTHEAST)
+      mincol = size / 4;
+    if (ch->facing == DIR_WEST || ch->facing == DIR_NORTHWEST || ch->facing == DIR_SOUTHWEST)
+      maxcol = size - size / 4;
 
-    for (i = 0; i < (maxj - minj); i++)
-    send_to_char("_", ch);
-    send_to_char("`x\n\r", ch);
+    std::array<int, 31> xpositions, ypositions, roomx, roomy;
+    for (int index = 0; index < size; ++index) {
+      xpositions[index] = maptox(size, index * 2);
+      ypositions[index] = maptoy(size, index);
+      roomx[index] = maproomx(ch, size, index * 2);
+      roomy[index] = maproomy(ch, size, index);
+    }
+    haven::CombatMapSnapshot snapshot = haven::combat_map_snapshot(ch);
+    const std::vector<haven::CombatMapCell> cells = haven::combat_map_cells(ch, snapshot, size);
+    CombatMapTerrain terrain(ch);
     ROOM_INDEX_DATA *mroom = ch->in_room;
     OperationPoiPosition poi_positions[10];
     const int poi_count = operation_poi_positions(ch, poi_positions);
-    const std::vector<CombatMapCell> map_cells = combat_map_cells(ch, size);
-    for (i = maxi; i >= mini; i--) {
-      buf.append("`D|");
-      for (j = minj; j < maxj; j++) {
-        int ppoint = operation_poi_type(poi_positions, poi_count, size, i, j);
-        if (ppoint == POI_EXTRACT)
-        buf.append("`YE");
-        else if (ppoint == POI_CAPTURE)
-        buf.append("`YC");
-        else {
-          const CombatMapCell &cell = map_cells[i * size + j / 2];
-          rch = cell.character;
-          if (rch == NULL) {
-            if (i == -1)
-            buf.append("`D_`x");
-            else {
-              if (!invisioncone_coordinates(ch, maptox(size, j), maptoy(size, i))) {
-                if (i == mini)
-                buf.append("`D_");
-                else
-                buf.append(" ");
-              }
-              else {
-                int xdiff = maproomx(ch, size, j);
-                int ydiff = maproomy(ch, size, i);
-                if (mroom->x == xdiff && mroom->y == ydiff)
-                buf.append(mapfill(ch, mroom));
-                else {
-                  mroom = sourced_room_by_coordinates(mroom, xdiff, ydiff, mroom->z, FALSE);
-                  if (mroom == NULL) {
-                    buf.append("`D#");
-                    mroom = ch->in_room;
-                  }
-                  else
-                  buf.append(mapfill(ch, mroom));
-                }
-              }
-            }
+    const int width = (maxcol - mincol) * 2;
+    std::string output;
+    output.reserve((width * 3 + 12) * (maxi - mini + 3));
+    const int facing = ch->facing >= 0 && ch->facing < MAX_DIR ? ch->facing : DIR_NORTH;
+    const std::string title = haven::format_text("Combat | N | facing %s", dir_name[facing][1]);
+    combat_map_border(output, width, title.c_str());
+    CHAR_DATA *selected = ch->cfighting != NULL ? ch->cfighting : ch->chattacking;
+    for (int row = maxi; row >= mini; --row) {
+      output += "`g| `x";
+      char color = 'x';
+      for (int column = mincol; column < maxcol; ++column) {
+        const haven::CombatMapCell &cell = cells[row * size + column];
+        haven::CombatMapEntry *entry = cell.entry < 0 ? NULL : &snapshot.entries[cell.entry];
+        const int poi = operation_poi_type(poi_positions, poi_count, size, row, column * 2);
+        // Keep yourself/your visible target legible over other occupants and
+        // objectives. Report any covered objective beside its occupant below.
+        if (entry != NULL && (entry->character == ch || entry->character == selected ||
+                              (poi != POI_EXTRACT && poi != POI_CAPTURE))) {
+          output += entry->label;
+          color = 'x';
+          entry->overlap_count = cell.count;
+          entry->map_objective = poi;
+          entry->cell_cover_count = cell.cover_count;
+        } else if (poi == POI_EXTRACT) {
+          output += "`YEE`x";
+          color = 'x';
+        } else if (poi == POI_CAPTURE) {
+          output += "`YCC`x";
+          color = 'x';
+        } else if (!invisioncone_coordinates(ch, xpositions[column], ypositions[row])) {
+          output += "  ";
+        } else {
+          mroom = terrain.resolve(mroom, roomx[column], roomy[row], mroom->z);
+          const char *glyph = terrain.fill(mroom);
+          // Runs of identical terrain need only one colour transition, not
+          // one ANSI sequence for every cell in the room.
+          if (color != glyph[1]) {
+            output += '`';
+            output += glyph[1];
+            color = glyph[1];
           }
-          else {
-            buf.append(mapname(rch, ch));
-            rch->mapcount = cell.count;
-            j++;
-          }
+          output.append(2, glyph[2]);
+          if (mroom == NULL) mroom = ch->in_room;
         }
       }
-      buf.append("`D|`x\n");
+      output += "`g |`x\n\r";
     }
-    send_to_char(buf.c_str(), ch);
-    send_to_char("`x\n\r", ch);
-    scan_fight(ch, TRUE);
+    combat_map_border(output, width, width >= 15 ? "help combat map" : "combat map");
+    send_to_char(output.c_str(), ch);
+    haven::show_combat_map_roster(ch, snapshot);
   }
-
   void init_map(ROOM_INDEX_DATA *room, int size) {
     return;
     /*
@@ -10573,12 +10423,63 @@ displace(rch, to, size);
   }
 
   _DOFUN(do_map) {
-    if (!in_fight(ch)) {
-      send_to_char("`yTown`g:`x `chttp://paroxysm.net/town.php`x\n\r", ch);
-      send_to_char("`gNorth Forest`y:`x `chttp://paroxysm.net/northforest.php`x\n\r", ch);
-      send_to_char("`gSouth Forest`y:`x `chttp://paroxysm.net/southforest.php`x\n\r", ch);
-      send_to_char("`gWest Forest`y:`x `chttp://paroxysm.net/westforest.php`x\n\r", ch);
-
+    if (ch->desc == NULL || ch->in_room == NULL)
+      return;
+    char option[MAX_INPUT_LENGTH];
+    argument = one_argument(argument, option);
+    if (!str_cmp(option, "help") || !str_cmp(option, "key") || !str_cmp(option, "legend")) {
+      char topic[] = "combat map";
+      if (!in_fight(ch)) strcpy(topic, "map");
+      do_function(ch, &do_help, topic);
+      return;
+    }
+    const bool local = !str_cmp(option, "local");
+    const bool combat = !str_cmp(option, "combat");
+    const bool on = !str_cmp(option, "on");
+    const bool off = !str_cmp(option, "off");
+    const bool toggle = !str_cmp(option, "toggle");
+    if (argument[0] != '\0' || (option[0] != '\0' && !local && !combat && !on && !off && !toggle)) {
+      send_to_char("`cSyntax: `Wmap`c, `Wmap local`c, `Wmap combat`c, `Wmap on|off|toggle`c, `Whelp map`x\n\r", ch);
+      return;
+    }
+    if (on || off || toggle) {
+      if (IS_NPC(ch) || ch->pcdata == NULL)
+        return;
+      // The existing saved Comm flags retain this preference across logins.
+      const bool disable = off || (toggle && !IS_FLAG(ch->comm, COMM_NOMINIMAP));
+      if (disable)
+        SET_FLAG(ch->comm, COMM_NOMINIMAP);
+      else
+        REMOVE_FLAG(ch->comm, COMM_NOMINIMAP);
+      send_to_char(disable ? "Minimap in look is now `Woff`x. Use `Wmap on`x to restore it.\n\r"
+                           : "Minimap in look is now `Won`x. Use `Wmap off`x to hide it.\n\r", ch);
+      return;
+    }
+    const bool fighting = in_fight(ch);
+    if (combat && !fighting) {
+      send_to_char("There is no combat map outside a fight. Use `Wmap`x for your surroundings.\n\r", ch);
+      return;
+    }
+    if (local || !fighting) {
+      if (IS_NPC(ch) || ch->pcdata == NULL)
+        return;
+      if (is_dreaming(ch)) {
+        send_to_char("There is no local map of this dream.\n\r", ch);
+        return;
+      }
+      if (is_asleep(ch) && !IS_FLAG(ch->act, PLR_SHROUD)) {
+        send_to_char("You can't see anything, you're sleeping!\n\r", ch);
+        return;
+      }
+      if (!IS_FLAG(ch->act, PLR_SHROUD) && !check_blind(ch))
+        return;
+      if (IS_FLAG(ch->act, PLR_DEEPSHROUD) ||
+          (is_dark(ch->in_room) && !can_see_dark(ch))) {
+        send_to_char("You cannot make out your surroundings well enough to map them.\n\r", ch);
+        return;
+      }
+      const std::string map = haven::render_local_map(ch, ch->in_room, false);
+      send_to_char(map.c_str(), ch);
       return;
     }
 
@@ -12090,63 +11991,14 @@ return;
     scan_fight(ch, FALSE);
     WAIT_STATE(ch, PULSE_PER_SECOND * 3);
   }
-  void scan_fight(CHAR_DATA *ch, bool mapcount) {
-    int mindist[100] = {1000};
-    CHAR_DATA *minchar[100] = {NULL};
-    int t;
-
-    for (t = 0; t < 100; t++) {
-      mindist[t] = 1000;
-      minchar[t] = NULL;
-    }
-
-    displaypois(ch);
-
-    int last = 0;
-    for (CharList::iterator it = char_list.begin(); it != char_list.end(); ++it) {
-      CHAR_DATA *to = *it;
-
-      if (to == NULL || is_gm(to))
-      continue;
-      if (!can_see_char_distance(ch, to, DISTANCE_MEDIUM))
-      continue;
-      if (!can_map_see(ch, to))
-      continue;
-
-      mindist[last] = combat_distance(ch, to, FALSE);
-      minchar[last] = to;
-      last++;
-    }
-    for (int i = 0; i <= last; ++i) {
-      for (int j = i + 1; j <= last; ++j) {
-        if (mindist[i] > mindist[j]) {
-          int dist = mindist[i];
-          CHAR_DATA *point = minchar[i];
-          mindist[i] = mindist[j];
-          minchar[i] = minchar[j];
-          mindist[j] = dist;
-          minchar[j] = point;
-        }
-      }
-    }
-    for (t = 0; t <= last; t++) {
-      if (mindist[t] < 1000 && minchar[t] != NULL) {
-        if (mapcount == TRUE && minchar[t]->mapcount > 1) {
-          if (relative_z(ch, minchar[t]->in_room) == 0)
-          printf_to_char(ch, "(%s) %s%s and %d others (X:%d Y:%d D:%d)\n\r", mapname(minchar[t], ch), PERS_3(minchar[t], ch), battleflags(minchar[t], ch), minchar[t]->mapcount - 1, relative_x(ch, minchar[t]->in_room, minchar[t]->x), relative_y(ch, minchar[t]->in_room, minchar[t]->y), combat_distance(ch, minchar[t], FALSE));
-          else
-          printf_to_char(ch, "(%s) %s%s and %d others (X:%d Y:%d D:%d(%d))\n\r", mapname(minchar[t], ch), PERS_3(minchar[t], ch), battleflags(minchar[t], ch), minchar[t]->mapcount - 1, relative_x(ch, minchar[t]->in_room, minchar[t]->x), relative_y(ch, minchar[t]->in_room, minchar[t]->y), combat_distance(ch, minchar[t], FALSE), relative_z(ch, minchar[t]->in_room));
-        }
-        else {
-          if (relative_z(ch, minchar[t]->in_room) == 0)
-          printf_to_char(ch, "(%s) %s%s (X:%d Y:%d D:%d)\n\r", mapname(minchar[t], ch), PERS_3(minchar[t], ch), battleflags(minchar[t], ch), relative_x(ch, minchar[t]->in_room, minchar[t]->x), relative_y(ch, minchar[t]->in_room, minchar[t]->y), combat_distance(ch, minchar[t], FALSE));
-          else
-          printf_to_char(ch, "(%s) %s%s (X:%d Y:%d D:%d(%d))\n\r", mapname(minchar[t], ch), PERS_3(minchar[t], ch), battleflags(minchar[t], ch), relative_x(ch, minchar[t]->in_room, minchar[t]->x), relative_y(ch, minchar[t]->in_room, minchar[t]->y), combat_distance(ch, minchar[t], FALSE), relative_z(ch, minchar[t]->in_room));
-        }
-      }
-    }
+  void scan_fight(CHAR_DATA *ch, bool /* mapcount */) {
+    // Standalone scans have no map cell grouping. Never reuse another viewer's
+    // or an earlier draw's character-global mapcount values.
+    if (ch == NULL || ch->in_room == NULL || ch->desc == NULL)
+      return;
+    const haven::CombatMapSnapshot snapshot = haven::combat_map_snapshot(ch);
+    haven::show_combat_map_roster(ch, snapshot);
   }
-
   int dam_type_mod(int offense, int defense) {
     int disc = offense;
 
@@ -12789,12 +12641,14 @@ SPECIAL_DELAY2) dam = dam*11/10;
     return "(`YCarrier`x)";
 
     if (ch->cfighting != NULL && same_fight(ch, ch->cfighting)) {
-      char buf[MSL];
+      // Every caller consumes the flags immediately. Reuse bounded storage
+      // instead of allocating an unowned string for every row of every scan.
+      static char buf[MSL];
       if (get_dist(ch->x, ch->y, ch->cfighting->x, ch->cfighting->y) <= 5)
-      sprintf(buf, " fighting %s", PERS(ch->cfighting, pers));
+      snprintf(buf, sizeof(buf), " fighting %s", PERS(ch->cfighting, pers));
       else
-      sprintf(buf, " shooting at %s", PERS(ch->cfighting, pers));
-      return str_dup(buf);
+      snprintf(buf, sizeof(buf), " shooting at %s", PERS(ch->cfighting, pers));
+      return buf;
     }
 
     return "";
@@ -14413,7 +14267,7 @@ printf_to_char(victim, "Enemy Check: %s, %s, ch->vic aggro: %d, vic->ch aggro
     return FALSE;
   }
 
-  bool get_to_path(CHAR_DATA *ch, ROOM_INDEX_DATA *desti) {
+  static bool get_to_path_impl(CHAR_DATA *ch, ROOM_INDEX_DATA *desti, bool report) {
     if (ch->in_room == desti)
     return TRUE;
     ROOM_INDEX_DATA *orig = ch->in_room;
@@ -14430,7 +14284,8 @@ printf_to_char(victim, "Enemy Check: %s, %s, ch->vic aggro: %d, vic->ch aggro
     return FALSE;
 
     if (desti->sector_type == SECT_AIR && ch->debuff >= 75) {
-      send_to_char("You are too disoriented to fly.\n\r", ch);
+      if (report)
+        send_to_char("You are too disoriented to fly.\n\r", ch);
       return FALSE;
     }
 
@@ -14467,19 +14322,33 @@ printf_to_char(victim, "Enemy Check: %s, %s, ch->vic aggro: %d, vic->ch aggro
     return FALSE;
   }
 
-  bool can_get_to(CHAR_DATA *ch, ROOM_INDEX_DATA *desti) {
+  bool get_to_path(CHAR_DATA *ch, ROOM_INDEX_DATA *desti) {
+    return get_to_path_impl(ch, desti, true);
+  }
+
+  static bool can_get_to_impl(CHAR_DATA *ch, ROOM_INDEX_DATA *desti, bool report) {
     if (desti == NULL)
     return FALSE;
 
     if (IS_FLAG(ch->act, PLR_SHROUD)) {
       if (in_lodge(desti))
       return FALSE;
-      if (prop_from_room(desti) != NULL && prop_from_room(desti)->shroudshield >= 50)
+      PROP_TYPE *property = prop_from_room(desti);
+      if (property != NULL && property->shroudshield >= 50)
       return FALSE;
       if (IS_FLAG(ch->act, PLR_DEEPSHROUD) && no_deep_access(ch->in_room, desti))
       return FALSE;
     }
-    return get_to_path(ch, desti);
+    return get_to_path_impl(ch, desti, report);
+  }
+
+  bool can_get_to(CHAR_DATA *ch, ROOM_INDEX_DATA *desti) {
+    return can_get_to_impl(ch, desti, true);
+  }
+
+  static bool can_get_to_for_map(CHAR_DATA *ch, ROOM_INDEX_DATA *desti) {
+    // Drawing a map must not emit one movement warning for each screen cell.
+    return can_get_to_impl(ch, desti, false);
   }
 
   void fall_character(CHAR_DATA *ch) {

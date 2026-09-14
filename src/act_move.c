@@ -1232,7 +1232,7 @@ extern "C" {
       return;
     }
 
-    if (ch->pcdata->patrol_status >= PATROL_WARMOVINGATTACK && ch->pcdata->patrol_status <= PATROL_WAGINGWAR) {
+    if (victim->pcdata->patrol_status >= PATROL_WARMOVINGATTACK && victim->pcdata->patrol_status <= PATROL_WAGINGWAR) {
       act("You can't wake $M!", ch, NULL, victim, TO_CHAR);
       return;
     }

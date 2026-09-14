@@ -1857,6 +1857,7 @@ typedef enum
 #define COMM_MANDRAKE		    58
 #define COMM_DREAMSNARED	    59
 #define COMM_NOMESSAGE          60
+#define COMM_NOMINIMAP          61
 
 
 /*
@@ -1864,7 +1865,7 @@ typedef enum
  *  define accordingly. Also add to comm_table in tables.c
  *      - Scaelorn
  */
-#define COMM_NONE                61
+#define COMM_NONE                62
 
 
 /* WIZnet flags */

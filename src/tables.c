@@ -446,7 +446,8 @@ const struct flag_type comm_flags[] = {
 {"shadowcloak", COMM_SHADOWCLOAK, FALSE},
 {"mandrake", COMM_MANDRAKE, FALSE},
 {"dreamsnared", COMM_DREAMSNARED, FALSE},
-{NULL, COMM_DREAMSNARED + 1, FALSE}};
+{"nominimap", COMM_NOMINIMAP, TRUE},
+{NULL, COMM_NONE, FALSE}};
 
 const struct flag_type mprog_flags[] = {{"act", TRIG_ACT, TRUE},
 {"bribe", TRIG_BRIBE, TRUE},

@@ -3236,7 +3236,12 @@ void create_ident( DESCRIPTOR_DATA *d, long ip )
       // log_string(code.data());
     }
     else if (mode == 10 || mode == 11) {
-      code = haven::format_text("<%s", type);
+      const char emphasis = type[mode == 11 ? 1 : 0];
+      if ((emphasis == 'u' || emphasis == 'U') &&
+          (ch == NULL || ch->desc == NULL || ch->desc->mxp != TRUE))
+        code = mode == 10 ? "\x1B[4m" : "\x1B[24m";
+      else
+        code = haven::format_text("<%s", type);
     }
     else { // shouldn't occur
       code = haven::format_text("%s", type);
@@ -3623,6 +3628,7 @@ void create_ident( DESCRIPTOR_DATA *d, long ip )
             outtxt += d && d->mxp ? escape_mxp(tmpout.c_str()) : tmpout;
             tmpout.clear();
           }
+          colormode = 0;
           if (intxt[inp + 1] != '\0' && intxt[inp + 2] != '\0' && intxt[inp + 2] == '>') {
             if (intxt[inp + 1] == 'b' || intxt[inp + 1] == 'B' || intxt[inp + 1] == 'i' || intxt[inp + 1] == 'I' || intxt[inp + 1] == 'u' || intxt[inp + 1] == 'U') {
               colormode = 10;
@@ -3729,7 +3735,10 @@ void create_ident( DESCRIPTOR_DATA *d, long ip )
             }
           }
           else if (ctype == COLOR_COLOR) {
-            if (d && (colormode == 0 || colormode == 1 || d->mxp == TRUE)) {
+            const bool underline =
+                (colormode == 10 && (code[0] == 'u' || code[0] == 'U')) ||
+                (colormode == 11 && (code[1] == 'u' || code[1] == 'U'));
+            if (d && (colormode == 0 || colormode == 1 || underline || d->mxp == TRUE)) {
               if ((!d->character && d->ansi) || (d->character && IS_FLAG(d->character->act, PLR_COLOR))) {
                 for (i = 0; (size_t)i < colorlen; i++) {
                   outtxt += colortag[i];
@@ -3742,7 +3751,7 @@ void create_ident( DESCRIPTOR_DATA *d, long ip )
           }
 
           if (inp < (size_t)txtlen) { // only if intxt has more to give tho
-            if (intxt[inp] == '`') {
+            if (intxt[inp] == '`' || intxt[inp] == '<') {
               inp--; // back this up if we have double codes or a bad code
             }
             else {

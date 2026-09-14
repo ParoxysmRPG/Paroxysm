@@ -37,6 +37,7 @@ extern "C" {
   void prey_escape	args( (CHAR_DATA *pred, CHAR_DATA *prey) );
   void prey_capture	args( (CHAR_DATA *pred, CHAR_DATA *prey) );
   void influencer_process args( (void) );
+  void add_aggro args((CHAR_DATA *victim, CHAR_DATA *ch, int amount));
 
 
   bool start_syndicate_auction(CHAR_DATA *victim, CHAR_DATA *seller) {
@@ -523,6 +524,10 @@ extern "C" {
   }
 
   bool patrol_attackable(CHAR_DATA *ch) {
+    if (ch == NULL || IS_NPC(ch) || ch->pcdata == NULL || ch->in_room == NULL)
+    return FALSE;
+    if (ch->pcdata->patrol_status > PATROL_PATROL || ch->pcdata->spectre > 0)
+    return FALSE;
     if (IS_AFFECTED(ch, AFF_WAKEBOUND))
     return FALSE;
 
@@ -666,6 +671,10 @@ extern "C" {
   }
 
   bool arcane_attackable(CHAR_DATA *ch) {
+    if (ch == NULL || IS_NPC(ch) || ch->pcdata == NULL || ch->in_room == NULL)
+    return FALSE;
+    if (ch->pcdata->patrol_status > PATROL_PATROL || ch->pcdata->spectre > 0)
+    return FALSE;
     if (IS_FLAG(ch->act, PLR_STASIS) || higher_power(ch))
     return FALSE;
 
@@ -692,27 +701,115 @@ extern "C" {
   }
 
   ROOM_INDEX_DATA *patrol_attack_room(CHAR_DATA *victim) {
-    if (IS_SET(victim->in_room->room_flags, ROOM_INDOORS))
-    return victim->in_room;
-    else {
-      ROOM_INDEX_DATA *orig = victim->in_room;
-      ROOM_INDEX_DATA *room;
-      for (int d = 3; d > 0; d--) {
-        for (int i = 0; i < 10; i++) {
-          room = orig;
-          bool nogood = FALSE;
-          for (int j = 0; j < d; j++) {
-            if (open_sound(room, i))
-            room = room->exit[i]->u1.to_room;
-            else
-            nogood = TRUE;
-          }
-          if (nogood == FALSE)
-          return room;
-        }
+    // Patrol states already hide the opposing sides during preparation.
+    // Sound-connected rooms may be outside combat range or unreachable.
+    return victim == NULL ? NULL : victim->in_room;
+  }
+
+  static bool warfare_status(int status) {
+    return status >= PATROL_WARMOVINGATTACK && status <= PATROL_WAGINGWAR;
+  }
+
+  static bool warfare_spectre(CHAR_DATA *ch) {
+    return ch != NULL && !IS_NPC(ch) && ch->pcdata != NULL
+        && ch->in_room != NULL && ch->pcdata->spectre == 1
+        && IS_FLAG(ch->act, PLR_SHROUD) && IS_FLAG(ch->act, PLR_DEEPSHROUD);
+  }
+
+  static void clear_warfare_patrol(CHAR_DATA *ch) {
+    ch->pcdata->patrol_status = 0;
+    ch->pcdata->patrol_timer = 0;
+    ch->pcdata->patrol_target = NULL;
+    ch->pcdata->patrol_room = NULL;
+  }
+
+  static bool warfare_target_active(CHAR_DATA *ch) {
+    CHAR_DATA *target = ch->pcdata->patrol_target;
+    if (target == ch || !warfare_spectre(target)) return FALSE;
+    CHAR_DATA *other = target->pcdata->patrol_target;
+    if (other == target || !warfare_spectre(other)
+        || other->pcdata->patrol_target != target) return FALSE;
+    int status = target->pcdata->patrol_status;
+    int other_status = other->pcdata->patrol_status;
+    int own_status = ch->pcdata->patrol_status;
+    if ((own_status == PATROL_ATTACKSEARCHING || own_status == PATROL_ATTACKWAITING
+            || own_status == PATROL_DEFENDHIDING) && other != ch) return FALSE;
+    return (status == PATROL_DEFENDHIDING
+            && (other_status == PATROL_ATTACKSEARCHING || other_status == PATROL_ATTACKWAITING))
+        || (other_status == PATROL_DEFENDHIDING
+            && (status == PATROL_ATTACKSEARCHING || status == PATROL_ATTACKWAITING))
+        || (status == PATROL_WAGINGWAR && other_status == PATROL_WAGINGWAR
+            && in_fight(target) && in_fight(other));
+  }
+
+  static void position_warfare_participant(CHAR_DATA *ch, CHAR_DATA *anchor) {
+    if (ch->in_room != anchor->in_room) {
+      char_from_room(ch);
+      char_to_room(ch, anchor->in_room);
+    }
+    // char_to_room preserves coordinates from the previous room, which can
+    // put a teleported participant hundreds of units outside the fight.
+    int size = UMAX(0, anchor->in_room->size);
+    ch->x = URANGE(0, anchor->x, size);
+    ch->y = URANGE(0, anchor->y, size);
+    ch->walking = 0;
+    ch->pcdata->patrol_room = anchor->in_room;
+  }
+
+  static void join_warfare_fight(CHAR_DATA *ch, CHAR_DATA *opponent) {
+    ch->fight_fast = opponent->fight_fast;
+    ch->fight_speed = opponent->fight_speed;
+    if (!in_fight(ch)) join_to_fight(ch);
+    add_aggro(ch, opponent, 20);
+    ch->fight_current = opponent->fight_current;
+    ch->pcdata->autoskip = 0;
+    ch->pcdata->patrol_status = PATROL_WAGINGWAR;
+    ch->pcdata->patrol_timer = 0;
+  }
+
+  static bool start_warfare_fight(CHAR_DATA *attacker) {
+    if (!warfare_target_active(attacker)) {
+      send_to_char("The warfare patrol can no longer continue; your opponent has left.\n\r", attacker);
+      clear_warfare_patrol(attacker);
+      return FALSE;
+    }
+    if (fight_problem > 0) return FALSE;
+    CHAR_DATA *defender = attacker->pcdata->patrol_target;
+    int attack_status = attacker->pcdata->patrol_status;
+    position_warfare_participant(defender, defender);
+    position_warfare_participant(attacker, defender);
+    for (CHAR_DATA *fch : char_list) {
+      if (!warfare_spectre(fch)) continue;
+      if ((fch->pcdata->patrol_status == PATROL_ATTACKASSISTING
+              && fch->pcdata->patrol_target == defender)
+          || (fch->pcdata->patrol_status == PATROL_DEFENDASSISTING
+              && fch->pcdata->patrol_target == attacker))
+        position_warfare_participant(fch, defender);
+    }
+    // start_fight rejects characters still in the preparation states.
+    attacker->pcdata->patrol_status = PATROL_WAGINGWAR;
+    defender->pcdata->patrol_status = PATROL_WAGINGWAR;
+    start_fight(attacker, defender);
+    if (!in_fight(attacker) || !in_fight(defender)) {
+      attacker->pcdata->patrol_status = attack_status;
+      defender->pcdata->patrol_status = PATROL_DEFENDHIDING;
+      attacker->pcdata->patrol_timer = UMAX(1, attacker->pcdata->patrol_timer);
+      defender->pcdata->patrol_timer = attacker->pcdata->patrol_timer;
+      send_to_char("The conflict could not begin yet; preparation continues.\n\r", attacker);
+      send_to_char("The conflict could not begin yet; preparation continues.\n\r", defender);
+      return FALSE;
+    }
+    attacker->pcdata->patrol_timer = defender->pcdata->patrol_timer = 0;
+    for (CHAR_DATA *fch : char_list) {
+      if (!warfare_spectre(fch)) continue;
+      if ((fch->pcdata->patrol_status == PATROL_ATTACKASSISTING
+              && fch->pcdata->patrol_target == defender)
+          || (fch->pcdata->patrol_status == PATROL_DEFENDASSISTING
+              && fch->pcdata->patrol_target == attacker)) {
+        join_warfare_fight(fch, fch->pcdata->patrol_target);
       }
     }
-    return victim->in_room;
+    return TRUE;
   }
 
   bool same_faction(CHAR_DATA *ch, CHAR_DATA *victim) {
@@ -1249,6 +1346,8 @@ extern "C" {
 
   void launch_patrolevent(CHAR_DATA *ch, int type) {
     char buf[MSL];
+    if (ch == NULL || IS_NPC(ch) || ch->pcdata == NULL || ch->in_room == NULL)
+    return;
     if (event_cleanse == 1)
     return;
 
@@ -1261,6 +1360,8 @@ extern "C" {
     }
 
     if (type == PATROL_WAR) {
+      if (ch->pcdata->patrol_status > PATROL_PATROL || ch->pcdata->spectre > 0)
+      return;
       if (ch != NULL && IS_AFFECTED(ch, AFF_WAKEBOUND))
       return;
 
@@ -1277,6 +1378,8 @@ extern "C" {
         if (d->character == NULL || d->connected != CON_PLAYING)
         continue;
         to = d->character;
+        if (IS_NPC(to) || to->pcdata == NULL || to->in_room == NULL)
+        continue;
         if (!free_to_act(to))
         continue;
         if (!patrol_attackable(to))
@@ -1321,9 +1424,11 @@ extern "C" {
         if (prop_from_room(vic->in_room) != NULL && prop_from_room(vic->in_room)->shroudshield >= 50) {
           ROOM_INDEX_DATA *desti =
           get_room_index(prop_from_room(vic->in_room)->roadroom);
-          char_from_room(vic);
-          char_to_room(vic, desti);
-          vic->walking = 0;
+          if (desti != NULL) {
+            char_from_room(vic);
+            char_to_room(vic, desti);
+            vic->walking = 0;
+          }
         }
         if (!IS_FLAG(vic->act, PLR_SHROUD))
         SET_FLAG(vic->act, PLR_SHROUD);
@@ -1349,17 +1454,18 @@ extern "C" {
           ++it;
           if (fch == NULL || IS_NPC(fch))
           continue;
-          if (fch->master == ch && fch->position > POS_SITTING && !in_fight(fch) && !is_helpless(fch) && !IS_AFFECTED(fch, AFF_WAKEBOUND) && can_shroud(fch)) {
+          if (fch != ch && fch->pcdata->patrol_status <= PATROL_PATROL && fch->master == ch && fch->position > POS_SITTING && !in_fight(fch) && !is_helpless(fch) && !IS_AFFECTED(fch, AFF_WAKEBOUND) && can_shroud(fch)) {
             act("You fall asleep.", fch, NULL, ch, TO_CHAR);
             to_spectre(fch, TRUE);
             char_from_room(fch);
             char_to_room(fch, atroom);
-            fch->walking = 0;
+            position_warfare_participant(fch, vic);
             if (!IS_FLAG(fch->act, PLR_SHROUD))
             SET_FLAG(fch->act, PLR_SHROUD);
             if (!IS_FLAG(fch->act, PLR_DEEPSHROUD))
             SET_FLAG(fch->act, PLR_DEEPSHROUD);
             fch->pcdata->patrol_status = PATROL_ATTACKASSISTING;
+            fch->pcdata->patrol_timer = 0;
             fch->pcdata->patrol_target = vic;
             fch->pcdata->patrol_room = atroom;
             fch->pcdata->week_tracker[TRACK_PATROL_WARFARE]++;
@@ -1370,7 +1476,7 @@ extern "C" {
         to_spectre(ch, TRUE);
         char_from_room(ch);
         char_to_room(ch, atroom);
-        ch->walking = 0;
+        position_warfare_participant(ch, vic);
         if (!IS_FLAG(ch->act, PLR_DEEPSHROUD))
         SET_FLAG(ch->act, PLR_DEEPSHROUD);
         ch->pcdata->patrol_status = PATROL_ATTACKSEARCHING;
@@ -1406,12 +1512,14 @@ extern "C" {
               to->pcdata->patrol_status = PATROL_WARMOVINGATTACK;
               to->pcdata->patrol_timer = 3;
               to->pcdata->patrol_room = atroom;
+              to->pcdata->patrol_target = vic;
             }
             else if (same_faction(to, vic) && !same_faction(to, ch)) {
               printf_to_char(to, "You receive a report about an attack going on at %s. Use `gpatrol engage`x to join the fight.\n\r", roomtitle(vic->in_room, FALSE));
               to->pcdata->patrol_status = PATROL_WARMOVINGDEFEND;
               to->pcdata->patrol_timer = 3;
               to->pcdata->patrol_room = vic->in_room;
+              to->pcdata->patrol_target = ch;
             }
           }
         }
@@ -2340,6 +2448,28 @@ extern "C" {
 
 
   void patrol_update(CHAR_DATA *ch) {
+    if (ch == NULL || IS_NPC(ch) || ch->pcdata == NULL) return;
+
+    if (warfare_status(ch->pcdata->patrol_status)) {
+      // A temporarily suspended combat engine must not expire a live patrol.
+      if (fight_problem > 0) return;
+      if (in_fight(ch) && ch->pcdata->patrol_status >= PATROL_ATTACKSEARCHING) {
+        ch->pcdata->patrol_status = PATROL_WAGINGWAR;
+        ch->pcdata->patrol_timer = 0;
+        return;
+      }
+      if (ch->pcdata->patrol_status == PATROL_WAGINGWAR) {
+        clear_warfare_patrol(ch);
+        return;
+      }
+      if (!warfare_target_active(ch)) {
+        send_to_char("The warfare patrol can no longer continue; your opponent has left.\n\r", ch);
+        clear_warfare_patrol(ch);
+        return;
+      }
+      if (ch->pcdata->patrol_status == PATROL_DEFENDHIDING)
+        ch->pcdata->patrol_timer = ch->pcdata->patrol_target->pcdata->patrol_timer;
+    }
 
     syndicate_captivity_update(ch);
     if (ch->pcdata->patrol_status == PATROL_KIDNAPPED) return;
@@ -2347,7 +2477,7 @@ extern "C" {
         && ch->pcdata->syndicate_prisoner && ch->pcdata->syndicate_prisoner[0])
       ch->pcdata->patrol_target = get_char_world_pc(ch->pcdata->syndicate_prisoner);
 
-    if(ch->pcdata->patrol_timer <= 0 && ch->pcdata->patrol_status > 1 && !in_fight(ch) && ch->pcdata->patrol_status != PATROL_DEFENDASSISTING && ch->pcdata->patrol_status != PATROL_ATTACKASSISTING)
+    if(ch->pcdata->patrol_timer <= 0 && ch->pcdata->patrol_status > 1 && !in_fight(ch) && !warfare_status(ch->pcdata->patrol_status))
     ch->pcdata->patrol_status = 0;
     if (ch->pcdata->patrol_status == PATROL_HUNTING && in_fight(ch))
     ch->pcdata->patrol_status = PATROL_HUNTFIGHTING;
@@ -2889,28 +3019,19 @@ extern "C" {
       ch->pcdata->patrol_status = 0;
     }
 
-    if (in_fight(ch) && (ch->pcdata->patrol_status == PATROL_ATTACKASSISTING || ch->pcdata->patrol_status == PATROL_DEFENDASSISTING || ch->pcdata->patrol_status == PATROL_ATTACKSEARCHING || ch->pcdata->patrol_status == PATROL_ATTACKWAITING))
-    ch->pcdata->patrol_status = PATROL_WAGINGWAR;
-    if (!in_fight(ch) && ch->pcdata->patrol_status == PATROL_WAGINGWAR)
-    ch->pcdata->patrol_status = 0;
     if (ch->pcdata->patrol_status == PATROL_WARMOVINGATTACK || ch->pcdata->patrol_status == PATROL_WARMOVINGDEFEND) {
       ch->pcdata->patrol_timer--;
       if (ch->pcdata->patrol_timer == 1)
       send_to_char("You have 1 minute left to get to the conflict.\n\r", ch);
       if (ch->pcdata->patrol_timer <= 0) {
-        ch->pcdata->patrol_status = 0;
-        ch->pcdata->patrol_timer = 0;
+        clear_warfare_patrol(ch);
       }
     }
     if (ch->pcdata->patrol_status == PATROL_ATTACKSEARCHING && !in_fight(ch)) {
-      ch->pcdata->patrol_timer--;
+      ch->pcdata->patrol_timer = UMAX(0, ch->pcdata->patrol_timer - 1);
+      ch->pcdata->patrol_target->pcdata->patrol_timer = ch->pcdata->patrol_timer;
       if (ch->pcdata->patrol_timer <= 0) {
-        if (ch->pcdata->patrol_target != NULL) {
-          ch->pcdata->patrol_status = PATROL_WAGINGWAR;
-          ch->pcdata->patrol_target->pcdata->patrol_status = PATROL_WAGINGWAR;
-          start_fight(ch, ch->pcdata->patrol_target);
-        }
-        ch->pcdata->patrol_timer = 0;
+        start_warfare_fight(ch);
       }
     }
     if (ch->pcdata->patrol_status == PATROL_HUNTMOVING) {
@@ -3022,7 +3143,7 @@ extern "C" {
 
     if (!str_cmp(arg1, "patrol") || !str_cmp(arg1, "")) {
       WAIT_STATE(ch, PULSE_PER_SECOND * 10);
-      if (ch->pcdata->patrol_timer > 0) {
+      if (ch->pcdata->patrol_timer > 0 || warfare_status(ch->pcdata->patrol_status)) {
         send_to_char("You're in the middle of something.\n\r", ch);
         return;
       }
@@ -3417,13 +3538,25 @@ return;
     }
     if (!str_cmp(arg1, "attack")) {
       if (ch->pcdata->patrol_status == PATROL_DEFENDHIDING) {
-        send_to_char("You emerge from hiding to begin the conflict.\n\r", ch);
-        ch->pcdata->patrol_status = PATROL_WAGINGWAR;
-        ch->pcdata->patrol_target->pcdata->patrol_status = PATROL_WAGINGWAR;
-        start_fight(ch->pcdata->patrol_target, ch);
+        if (!warfare_target_active(ch)) {
+          send_to_char("The warfare patrol can no longer continue; your opponent has left.\n\r", ch);
+          clear_warfare_patrol(ch);
+          return;
+        }
+        if (start_warfare_fight(ch->pcdata->patrol_target))
+          send_to_char("You emerge from hiding to begin the conflict.\n\r", ch);
       }
     }
     if (!str_cmp(arg1, "engage")) {
+      if (ch->pcdata->patrol_status == PATROL_WARMOVINGATTACK
+          || ch->pcdata->patrol_status == PATROL_WARMOVINGDEFEND) {
+        if (ch->pcdata->patrol_timer <= 0 || !warfare_target_active(ch)) {
+          send_to_char("That warfare conflict is no longer available.\n\r", ch);
+          clear_warfare_patrol(ch);
+          return;
+        }
+        ch->pcdata->patrol_room = ch->pcdata->patrol_target->in_room;
+      }
       if (ch->pcdata->patrol_status == PATROL_WARMOVINGATTACK && ch->pcdata->patrol_timer > 0) {
         if (!free_to_act(ch)) {
           send_to_char("Not now.\n\r", ch);
@@ -3447,7 +3580,10 @@ return;
           continue;
           if (fch == ch)
           continue;
-          if (fch->master == ch && fch->position > POS_SITTING && !in_fight(fch) && !is_helpless(fch) && !IS_AFFECTED(fch, AFF_WAKEBOUND) && can_shroud(fch)) {
+          if ((fch->pcdata->patrol_status <= PATROL_PATROL
+                  || (fch->pcdata->patrol_status == PATROL_WARMOVINGATTACK
+                      && fch->pcdata->patrol_target == ch->pcdata->patrol_target))
+              && fch->master == ch && fch->position > POS_SITTING && !in_fight(fch) && !is_helpless(fch) && !IS_AFFECTED(fch, AFF_WAKEBOUND) && can_shroud(fch)) {
             act("You fall asleep.", fch, NULL, ch, TO_CHAR);
             to_spectre(fch, TRUE);
             char_from_room(fch);
@@ -3459,10 +3595,14 @@ return;
             SET_FLAG(fch->act, PLR_DEEPSHROUD);
             fch->pcdata->patrol_status = PATROL_ATTACKASSISTING;
             fch->pcdata->patrol_room = ch->pcdata->patrol_room;
+            fch->pcdata->patrol_target = ch->pcdata->patrol_target;
+            position_warfare_participant(fch, ch->pcdata->patrol_target);
             fch->pcdata->patrol_timer = 0;
             fch->pcdata->week_tracker[TRACK_PATROL_WARFARE]++;
             fch->pcdata->life_tracker[TRACK_PATROL_WARFARE]++;
             villain_mod(fch, 5, "Assisting defense");
+            if (in_fight(fch->pcdata->patrol_target))
+              join_warfare_fight(fch, fch->pcdata->patrol_target);
           }
         }
         to_spectre(ch, TRUE);
@@ -3471,11 +3611,14 @@ return;
         ch->walking = 0;
         act("$n arrives.", ch, NULL, NULL, TO_CHAR);
         ch->pcdata->patrol_status = PATROL_ATTACKASSISTING;
+        position_warfare_participant(ch, ch->pcdata->patrol_target);
         ch->pcdata->patrol_timer = 0;
         if (!IS_FLAG(ch->act, PLR_SHROUD))
         SET_FLAG(ch->act, PLR_SHROUD);
         if (!IS_FLAG(ch->act, PLR_DEEPSHROUD))
         SET_FLAG(ch->act, PLR_DEEPSHROUD);
+        if (in_fight(ch->pcdata->patrol_target))
+          join_warfare_fight(ch, ch->pcdata->patrol_target);
       }
       if (ch->pcdata->patrol_status == PATROL_WARMOVINGDEFEND && ch->pcdata->patrol_timer > 0) {
         if (!free_to_act(ch)) {
@@ -3498,7 +3641,10 @@ return;
           ++it;
           if (fch == NULL || IS_NPC(fch))
           continue;
-          if (fch->master == ch && fch->position > POS_SITTING && !in_fight(fch) && !is_helpless(fch) && !IS_AFFECTED(fch, AFF_WAKEBOUND) && can_shroud(fch)) {
+          if (fch != ch && (fch->pcdata->patrol_status <= PATROL_PATROL
+                  || (fch->pcdata->patrol_status == PATROL_WARMOVINGDEFEND
+                      && fch->pcdata->patrol_target == ch->pcdata->patrol_target))
+              && fch->master == ch && fch->position > POS_SITTING && !in_fight(fch) && !is_helpless(fch) && !IS_AFFECTED(fch, AFF_WAKEBOUND) && can_shroud(fch)) {
             act("You fall asleep.", fch, NULL, ch, TO_CHAR);
             to_spectre(fch, TRUE);
             char_from_room(fch);
@@ -3511,10 +3657,14 @@ return;
             SET_FLAG(fch->act, PLR_DEEPSHROUD);
             fch->pcdata->patrol_status = PATROL_DEFENDASSISTING;
             fch->pcdata->patrol_room = ch->pcdata->patrol_room;
+            fch->pcdata->patrol_target = ch->pcdata->patrol_target;
+            position_warfare_participant(fch, ch->pcdata->patrol_target);
             fch->pcdata->patrol_timer = 0;
             fch->pcdata->week_tracker[TRACK_PATROL_WARFARE]++;
             fch->pcdata->life_tracker[TRACK_PATROL_WARFARE]++;
             villain_mod(fch, 3, "Following defender");
+            if (in_fight(fch->pcdata->patrol_target))
+              join_warfare_fight(fch, fch->pcdata->patrol_target);
           }
         }
         to_spectre(ch, TRUE);
@@ -3523,11 +3673,14 @@ return;
         ch->walking = 0;
         act("$n arrives.", ch, NULL, NULL, TO_CHAR);
         ch->pcdata->patrol_status = PATROL_DEFENDASSISTING;
+        position_warfare_participant(ch, ch->pcdata->patrol_target);
         ch->pcdata->patrol_timer = 0;
         if (!IS_FLAG(ch->act, PLR_SHROUD))
         SET_FLAG(ch->act, PLR_SHROUD);
         if (!IS_FLAG(ch->act, PLR_DEEPSHROUD))
         SET_FLAG(ch->act, PLR_DEEPSHROUD);
+        if (in_fight(ch->pcdata->patrol_target))
+          join_warfare_fight(ch, ch->pcdata->patrol_target);
       }
     }
     if (!str_cmp(arg1, "approach")) {

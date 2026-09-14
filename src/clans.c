@@ -18,6 +18,7 @@
 #include <map>
 #include <set>
 #include "merc.h"
+#include "game_time.h"
 #include "text_format.h"
 #include "report_text.h"
 #include <sstream>
@@ -13182,11 +13183,7 @@ give_resources(lfac, reward);
     if (!ch || !ch->pcdata || !op) return;
     FACTION_TYPE *faction = clan_lookup(op->faction);
     const char *faction_name = faction ? faction->name : "Unknown faction";
-    time_t storytime;
-    storytime = current_time - get_minute() * 60 - get_hour(NULL) * 3600 +
-    op->hour * 3600 + op->day * 3600 * 24 + ch->pcdata->jetlag * 3600;
-    if (get_hour(NULL) >= op->hour)
-    storytime = storytime + 24 * 3600;
+    const time_t storytime = haven::operation_departure_time(current_time, op->hour, op->day);
 
     bool signup = FALSE;
 
@@ -13205,6 +13202,7 @@ give_resources(lfac, reward);
       printf_to_char(ch, "Task: Psychic\n\r");
       printf_to_char(ch, "Target: %s\n\r", op->target);
       printf_to_char(ch, "Leaving at %d hundred hours in %d days.\n\r", op->hour, op->day);
+      printf_to_char(ch, "Your time: %s", haven::format_game_time(storytime, ch->pcdata->jetlag).c_str());
       printf_to_char(ch, "Maximum Deployable Supernaturals: %d \t\t Maximum Troop Support: %d\n\r", op->max_pcs, op->max_pcs * 2);
       printf_to_char(ch, "Competition: %s \t\tChallenge: %d\n\r", comp_types[op->competition], op->challenge);
       printf_to_char(ch, "Battlefield Size: %d \t\t Battle Speed: %d\n\r", op->size, op->speed);
@@ -13225,7 +13223,7 @@ give_resources(lfac, reward);
     printf_to_char(ch, "Goal: %s\n\r", visible_goal(op->goal));
     if (power_operation_goal(op->goal)) printf_to_char(ch, "Higher power: %s\n\r", op->target);
     printf_to_char(ch, "Leaving at %d hundred hours in %d days.\n\r", op->hour, op->day);
-    printf_to_char(ch, "Your time: %s", ctime(&storytime));
+    printf_to_char(ch, "Your time: %s", haven::format_game_time(storytime, ch->pcdata->jetlag).c_str());
     printf_to_char(
     ch, "Maximum Deployable Supernaturals: %d \t\t Maximum Troop Support: %d\n\r", op->max_pcs, op->max_pcs * 2);
     printf_to_char(ch, "Competition: %s \t\tChallenge: %d\n\r", comp_types[op->competition], op->challenge);
@@ -13242,9 +13240,7 @@ give_resources(lfac, reward);
 
     LOCATION_TYPE *location = territory_by_number(op->territoryvnum);
     if (location) {
-      int displayhour = op->hour + location->timezone;
-      if (displayhour >= 24)
-      displayhour -= 24;
+      const int displayhour = haven::game_time_fields(storytime, location->timezone).tm_hour;
       printf_to_char(
       ch, "\nLocal time will be %d hundred hours.\n%s\n\r", displayhour, weather_forecast(location, op->hour));
     }
