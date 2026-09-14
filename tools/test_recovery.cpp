@@ -338,6 +338,115 @@ static void deaths(FACTION_TYPE *fac, CHAR_DATA *monster, CHAR_DATA *civilian) {
   }
   puts("PASS: death coverage matrix, normal NPC versus forest source, original worn/held/nested inventory, relog, payer capture, and stale-save billing.");
 }
+static void maim_provenance(FACTION_TYPE *fac) {
+  const char *names[] = {"Maimordinary", "Maimlimited", "Maimblack", "Maimritual"};
+  const char *same = "left arm and hand injury";
+  for (int i = 0; i < 4; ++i) {
+    auto *ch = player(names[i]); ch->fsociety = fac->vnum;
+    coverage(ch, RECOVERY_NONE); record_maim(ch, same, ch, false);
+    const int source = i == 3 ? RECOVERY_RITUAL : RECOVERY_SANCTUARY;
+    coverage(ch, source);
+    ch->skills[SKILL_SECONDCLASS] = i == 1 ? -1 : i == 2 ? -2 : 0;
+    record_maim(ch, same, ch, false); // Identical text is a separate injury.
+    assert(ch->pcdata->recovery->maims.back().source == source);
+    coverage(ch, RECOVERY_NONE);
+    record_maim(ch, "injury during interruption", ch, false);
+    const int drawback = ch->skills[SKILL_SECONDCLASS];
+    ch->skills[SKILL_SECONDCLASS] = 0; coverage(ch, source);
+    ch->skills[SKILL_SECONDCLASS] = drawback;
+    save_char_obj(ch, false, false); ch = reload(ch);
+    const int balance = fac->resource;
+    next_day(); assert(process_character_recovery(ch));
+    assert(!strcmp(ch->pcdata->maim, "left arm and hand injury and injury during interruption"));
+    assert(ch->pcdata->recovery->maims.size() == 2);
+    for (const auto &maim : ch->pcdata->recovery->maims)
+      assert(maim.source == RECOVERY_NONE && maim.due == 0);
+    const int cost = i == 3 ? 0 : i == 2 ? SANCTUARY_MAIM_COST / 5 : SANCTUARY_MAIM_COST;
+    assert(fac->resource == balance - cost);
+    ch = reload(ch); next_day(); assert(!process_character_recovery(ch));
+    assert(!strcmp(ch->pcdata->maim, "left arm and hand injury and injury during interruption"));
+  }
+  // Legacy text has no provenance; neither a new maim nor protected death insures it.
+  auto *legacy = player("Legacymaimcovered");
+  assign(legacy->pcdata->maim, "old arm and leg injury");
+  assert(legacy->pcdata->recovery->maims.empty());
+  coverage(legacy, RECOVERY_RITUAL);
+  record_maim(legacy, "new injury", legacy, false);
+  real_kill(legacy, legacy);
+  save_char_obj(legacy, false, false); legacy = reload(legacy);
+  next_day(); assert(process_character_recovery(legacy));
+  assert(!IS_FLAG(legacy->act, PLR_DEAD));
+  assert(!strcmp(legacy->pcdata->maim, "old arm and leg injury"));
+
+  // Explicit administrative replacement cannot reuse matching covered metadata.
+  auto *edited = player("Maimedited"); coverage(edited, RECOVERY_RITUAL);
+  auto *admin = player("Maimeditor"); admin->level = MAX_LEVEL;
+  for (bool clear_first : {false, true}) {
+    assign(edited->pcdata->maim, ""); edited->pcdata->recovery->maims.clear();
+    record_maim(edited, "matching injury", edited, false);
+    if (clear_first) {
+      char command[] = "char Maimedited maim clear";
+      do_string(admin, command); assert(!*edited->pcdata->maim);
+    }
+    char command[] = "char Maimedited maim matching injury";
+    do_string(admin, command);
+    assert(!strcmp(edited->pcdata->maim, "matching injury"));
+    assert(edited->pcdata->recovery->maims.empty());
+    save_char_obj(edited, false, false); edited = reload(edited);
+    next_day(); assert(!process_character_recovery(edited));
+    assert(!strcmp(edited->pcdata->maim, "matching injury"));
+  }
+  puts("PASS: full, limited, black and ritual recovery preserve old, duplicate and interrupted-coverage maims across reload; protected death and admin replacement cannot insure old injuries.");
+}
+static void suspended_ritual_recovery() {
+  auto *ch = player("Ritualsuspended");
+  auto *event = new_event(); event->type = EVENT_UNDERSTANDINGMINUS;
+  event->valid = false; assign(event->author, "Someoneelse"); EventVect.push_back(event);
+  for (int level : {0, -1, -2}) {
+    ch->skills[SKILL_SECONDCLASS] = level;
+    for (int reason = 0; reason < 6; ++reason) {
+      coverage(ch, RECOVERY_RITUAL);
+      record_maim(ch, "covered before suspension", ch, false);
+      assert(ch->pcdata->recovery->maims.back().source == RECOVERY_RITUAL);
+      AFFECT_DATA *revoked = nullptr;
+      if (reason == 0) {
+        AFFECT_DATA af = {}; af.where = TO_AFFECTS; af.duration = 36000;
+        af.bitvector = AFF_NOUNDERSTANDING; affect_to_char(ch, &af);
+        revoked = ch->affected;
+      } else if (reason == 1) assign(ch->pcdata->understanding, "None");
+      else if (reason == 2) ch->pcdata->total_money = -PERSONAL_SANCTUARY_DEBT_LIMIT;
+      else if (reason == 3) {
+        ch->pcdata->tier_raised = 3 - get_tier(ch);
+        ch->pcdata->last_feeding = current_time - feeding_interval(ch) - 21 * 86400;
+        assert(feeding_blocks_sanctuary(ch));
+      } else if (reason == 4) restore_sanctuary_population(true);
+      else {
+        event->valid = true; event->active_time = current_time - 1;
+        event->deactive_time = current_time + 2 * 86400;
+      }
+      assert(IS_AFFECTED(ch, AFF_UNDERSTANDING));
+      assert(!under_sanctuary(ch, ch) && !under_black(ch, ch));
+      record_maim(ch, "injury while suspended", ch, false);
+      record_critical_injury(ch, ch, false);
+      assert(ch->pcdata->recovery->critical.source == RECOVERY_NONE);
+      record_death_recovery(ch, ch, false, false);
+      assert(ch->pcdata->recovery->death.source == RECOVERY_NONE);
+      assert(ch->pcdata->recovery->death.due == 0);
+      assert(ch->pcdata->recovery->maims.back().source == RECOVERY_NONE);
+      assert(ch->pcdata->recovery->maims.back().due == 0);
+      next_day(); assert(process_character_recovery(ch));
+      assert(!strcmp(ch->pcdata->maim, "injury while suspended"));
+      if (revoked) affect_remove(ch, revoked);
+      ch->pcdata->total_money = 0; ch->pcdata->tier_raised = 0;
+      ch->pcdata->last_feeding = 0; event->valid = false;
+      restore_sanctuary_population(false); coverage(ch, RECOVERY_RITUAL);
+      next_day(); assert(!process_character_recovery(ch));
+      assert(!strcmp(ch->pcdata->maim, "injury while suspended"));
+      assign(ch->pcdata->maim, ""); ch->pcdata->recovery->maims.clear();
+    }
+  }
+  puts("PASS: ritual full/limited/black coverage honors revocation, opt-out, debt, starvation, population and event suspension while preserving earlier covered maims.");
+}
 static void injuries(FACTION_TYPE *fac, CHAR_DATA *monster) {
   auto *ch = player("Mixedmaims"); ch->fsociety = fac->vnum;
   coverage(ch, RECOVERY_NONE); maim_char(ch, (char *)"Maim A", ch);
@@ -690,21 +799,26 @@ int main(int argc, char **) {
   puts("PASS: next 06:00 uses server time at 05:59, 06:00 and 06:01.");
   second_class_recovery(fac, monster, civilian);
   personal_recovery(fac);
+  maim_provenance(fac);
+  suspended_ritual_recovery();
   deaths(fac, monster, civilian); injuries(fac, monster); regeneration_and_operations(fac);
   clinic_recovery(fac);
   tiered_recovery_costs(fac);
   society_service_costs();
   containment_recovery_costs();
   auto *offline = player("Offlineinsured"); offline->fsociety = fac->vnum;
-  coverage(offline, RECOVERY_SANCTUARY); real_kill(offline, offline);
+  coverage(offline, RECOVERY_NONE); record_maim(offline, "old offline injury", offline, false);
+  coverage(offline, RECOVERY_SANCTUARY); record_maim(offline, "covered offline injury", offline, false);
+  real_kill(offline, offline);
   char_list.remove(offline); char_from_room(offline); free_char(offline);
   int balance = fac->resource;
   current_time += 3 * 86400; process_daily_recoveries();
   auto *d = new_descriptor(); assert(load_char_obj(d, (char *)"Offlineinsured"));
   assert(!IS_FLAG(d->character->act, PLR_DEAD)); assert(at_trolly_stop(d->character));
-  assert(fac->resource == balance - SANCTUARY_DEATH_COST);
-  process_daily_recoveries(); assert(fac->resource == balance - SANCTUARY_DEATH_COST);
-  puts("PASS: offline overdue scan recovers once without requiring login.");
+  assert(!strcmp(d->character->pcdata->maim, "old offline injury"));
+  assert(fac->resource == balance - SANCTUARY_DEATH_COST - SANCTUARY_MAIM_COST);
+  process_daily_recoveries(); assert(fac->resource == balance - SANCTUARY_DEATH_COST - SANCTUARY_MAIM_COST);
+  puts("PASS: offline overdue scan recovers once without requiring login and preserves preexisting maims.");
   // Replay a prepared transaction after the player half was replaced.
   const std::string path = std::string(PLAYER_DIR) + "Journalplayer";
   const std::string journal = std::string(PLAYER_DIR) + ".death-recovery-journal";

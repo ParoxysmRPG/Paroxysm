@@ -462,7 +462,7 @@ extern "C" {
     if (in_haven(victim->in_room) && has_praestes(victim, ch))
     return TRUE;
 
-    if (in_haven(victim->in_room) && victim->vassal != 0)
+    if (in_haven(ch->in_room) && ch->vassal != 0)
     return TRUE;
 
     if (!str_cmp(ch->pcdata->understanding, "Limited")) {
@@ -535,7 +535,7 @@ extern "C" {
     if (in_haven(victim->in_room) && has_praestes(victim, ch))
     return TRUE;
 
-    if (in_haven(victim->in_room) && victim->vassal != 0)
+    if (in_haven(ch->in_room) && ch->vassal != 0)
     return TRUE;
 
     if (!str_cmp(ch->pcdata->understanding, "Limited")) {

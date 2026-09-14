@@ -95,12 +95,14 @@ static RecoveryIncident incident(CHAR_DATA *ch, CHAR_DATA *actor, bool monster) 
                  + std::to_string(current_time) + ":" + std::to_string(record.serial);
   record.forest = monster || (actor && forest_monster(actor));
   if (record.forest) return record;
-  // Ritual protection is recovery coverage, never combat immunity.
+  // Capture active coverage at the incident, including for ritual protection.
+  // An affect can remain present while Sanctuary is revoked or suspended.
   if (sanctuary_population_blocked()) return record;
   const bool black = under_black(ch, actor ? actor : ch);
+  if (!black && !under_sanctuary(ch, actor ? actor : ch)) return record;
   if (black) record.cost_percent = 20;
   if (IS_AFFECTED(ch, AFF_UNDERSTANDING)) record.source = RECOVERY_RITUAL;
-  else if (under_sanctuary(ch, actor ? actor : ch) || black) {
+  else {
     record.source = RECOVERY_SANCTUARY;
     record.payer = recovery_payer(ch);
   }

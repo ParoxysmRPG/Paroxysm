@@ -9316,7 +9316,11 @@ If it is the first time they've been maimed it will appear as He/She
 If it is the second ore more it will appear as He/She (message one) and
 (message two).  
  
-Sanctuary protects people from this command.
+Sanctuary does not prevent this command. It heals each covered maim at the
+next 06:00 server time. Only maims received while Sanctuary was active are
+covered; gaining or restoring Sanctuary does not heal preexisting maims.
+Forest-monster injuries are not covered. A covered maim still heals if
+Sanctuary expires or is lost before its recovery time.
 ~
 End
 
@@ -11206,12 +11210,13 @@ Gravesend and is where the town derives its name.  The Sanctuary spell is
 designed to keep all the inhabitants of Gravesend safe from serious harm,
 although it doesn't protect all equally.  
 
-Anyone attempting to do something to a protected person that is against the
-rules of the spell will find their body simply unable to follow the commands
-to do so.  Someone who attempts to stab a person will find their hand
-holding the knife simply hanging casually by their side instead.  It can be
-a fairly disconcerting experience for the unaware.  It even extends to those
-who try to arrange situations in which a violation is likely to occur.  
+Sanctuary allows ordinary attacks, killing and maiming. Covered deaths and
+maims recover at the next 06:00 server time. Coverage is determined when
+the injury occurs: gaining or restoring Sanctuary never heals preexisting
+maims, including injuries received while protection was suspended. Covered
+maims still heal if protection later expires or is lost. Recovering from a
+covered death does not remove uncovered maims. Forest-monster incidents
+are not covered.
 
 Sanctuary also counteracts several types of mind control, any attempt to use
 supernatural mind control to cause someone to perform an act that would

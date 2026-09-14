@@ -23,6 +23,25 @@ inherits this record, including its payer and forest override, and schedules
 recovery relative to the death. Later gains or losses of Sanctuary do not change
 existing injuries. Old saves without incident metadata remain uninsured.
 
+Sanctuary only heals maims received while its protection was active for that
+incident. Gaining or restoring Sanctuary does not cover preexisting maims,
+including injuries received during a suspension. A covered death recovery also
+leaves uncovered maims intact. Each covered maim still heals at its recorded
+deadline if Sanctuary later expires or is lost.
+
+Explicit admin maim replacements are uninsured, even if they reuse the text
+of an earlier covered injury. Clearing and restoring that text cannot reuse
+the earlier injury's coverage or recovery bill.
+
+Ritual coverage uses the same active-eligibility check before recording an
+incident. A lingering ritual affect cannot bypass revoked protection, debt,
+starvation, or Sanctuary-loss events. These checks apply when the injury occurs,
+not when its already-recorded recovery becomes due.
+
+Vassal-based limited Sanctuary uses the injured character's affiliation and
+location, rather than the attacker's or observer's. The displayed aura follows
+the same ownership rule.
+
 `SANCTUARY_DEATH_COST` and `SANCTUARY_MAIM_COST` in `src/recovery.h` are 5,000
 and 1,250 resource units ($50,000 and $12,500) at T1. Both charges multiply by
 the recovered character's current tier, capped at T5:
@@ -77,6 +96,12 @@ offline overdue processing, payer changes, stale saves, fresh boot, transaction
 replay, Hyper Regeneration, operation wake/return, treasury persistence and
 focused-description edge cases. Run it normally and with `--sanitize` after
 building the corresponding configuration.
+
+Maim regressions cover preexisting and duplicate descriptions, interrupted
+coverage, explicit admin replacements, all four aura/ritual coverage modes,
+ritual suspension, and old injuries surviving both death and offline recovery.
+`tools/test_sanctuary_vassals.py` checks asymmetric attacker/observer affiliations
+and locations against the production limited-Sanctuary functions under ASan/UBSan.
 
 The matrix uses the actual `pc_update` bleed-out path and exercises all 72 scene
 field editors with combined output larger than the old fixed buffer. Socket

@@ -5201,6 +5201,9 @@ extern "C" {
           return;
         }
 
+        // Explicit replacements are uninsured, even if their text matches an
+        // old covered injury or a maim cleared earlier in this update.
+        victim->pcdata->recovery->maims.clear();
         free_string(victim->pcdata->maim);
         if (!strcmp(arg3, "clear")) {
           victim->pcdata->maim = str_dup("");
