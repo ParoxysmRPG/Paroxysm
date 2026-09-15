@@ -421,6 +421,7 @@ bool is_spyshield(CHAR_DATA *) { return spyshield; }
 int get_trust(CHAR_DATA *ch) { return ch->level; }
 int get_skill(CHAR_DATA *ch, int skill) { ++skill_count; return ch->skills[skill]; }
 bool in_bath(CHAR_DATA *) { return bath; }
+bool pedestrian(CHAR_DATA *) { return false; }
 bool deep_water(CHAR_DATA *) { return water; }
 bool in_stream(CHAR_DATA *) { return stream; }
 char *name_by_location(int i) {

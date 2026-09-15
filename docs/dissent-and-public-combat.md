@@ -30,6 +30,13 @@ increasing their wounds, then withdraw. The attacker remains unconscious in the
 same location at the defender's mercy. This response does not heal the attacker
 or trigger a public-alarm auction.
 
+Successfully starting a public fight also has a 25% chance to create a Town
+Gossip rumor naming the attacker's current intro, the victim's current intro,
+and the victim's location. Masks, cloaks, and transformed appearances use the
+same intro rules as normal character displays; NPC victims use their short
+descriptions. The chance is rolled once when the fight starts, with no rumors
+for blocked attacks, private fights, sparring, or nightmare combat.
+
 Squad size is rolled from one to min(6, tier + 2). Combat disciplines scale by
 the target's tier (60/80/100/120/140% of the template at tiers 1-5), the existing
 random difficulty 1-10 multiplier (41-249%), and an independent 75-125% roll for
@@ -54,7 +61,8 @@ nightmare, disappears, or is already subdued. Neither dissent participation nor
 the new public response applies in the nightmare or deep nightmare.
 
 Validation: `python3 tools/test_dissent_public.py` exercises production functions
-with address/undefined-behavior sanitizers. Build with `make -C src -j4`.
+with address/undefined-behavior sanitizers. `python3 tools/test_public_attack_rumor.py`
+checks public attack rumors and masked appearances. Build with `make -C src -j4`.
 
 Player societies no longer need a minimum operating balance or reserve above
 the actual spending amount. This covers supplies, crafting, medical payments,

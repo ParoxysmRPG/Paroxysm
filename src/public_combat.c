@@ -5,10 +5,11 @@ extern "C" {
 
 bool public_target_excluded(CHAR_DATA *ch, CHAR_DATA *victim) {
   // Preserve the existing ROOM_PUBLIC target exclusion and breach/enforcer
-  // handling, with exceptions for dissenting crowds, full-moon packs and
-  // the two participants in a sin encounter.
+  // handling, with exceptions for dissenting crowds, full-moon packs,
+  // pedestrians, and the two participants in a sin encounter.
   if (state_of_emergency() || !ch || !victim || cortex_breach_monster(ch) || cortex_breach_monster(victim)
       || dissent_crowd(ch) || dissent_crowd(victim)
+      || pedestrian(ch) || pedestrian(victim)
       || full_moon_pack(ch) || full_moon_pack(victim)) return FALSE;
   if (sin_vigilante_target(ch, victim) || sin_vigilante_target(victim, ch)) return FALSE;
   return (victim->in_room && IS_SET(victim->in_room->room_flags, ROOM_PUBLIC)
@@ -68,20 +69,18 @@ void cortex_public_response(CHAR_DATA *attacker, CHAR_DATA *defender) {
 }
 
 void cortex_public_update(void) {
-  for (CHAR_DATA *mob : char_list) {
-    if (!cortex_public_enforcer(mob) || mob->ttl <= 0) continue;
+  // This runs outside combat callbacks. Remove whole retired squads here,
+  // including alarm enforcers, instead of leaving them as nearby combatants.
+  for (CharList::iterator it = char_list.begin(); it != char_list.end();) {
+    CHAR_DATA *mob = *it++;
+    if (!cortex_enforcer(mob)) continue;
     CHAR_DATA *attacker = get_char_world_pc(mob->aggression);
-    if (!state_of_emergency() && attacker && attacker->in_room && !is_helpless(attacker)
-        && attacker->wounds < 3 && !IS_FLAG(attacker->act, PLR_SHROUD)
-        && !IS_FLAG(attacker->act, PLR_DEEPSHROUD)
-        && !dissent_in_room(attacker->in_room) && !dissent_in_room(mob->in_room)) continue;
-    // The attacker is already subdued, has left, or is in the nightmare.
-    // Do not let the squad switch to the defender or unrelated bystanders.
-    act("The Cortex enforcer withdraws.", mob, NULL, NULL, TO_ROOM);
-    free_string(mob->aggression);
-    mob->aggression = str_dup("");
-    mob->ttl = 0;
-    set_combat_state(mob, FALSE);
+    if (cortex_enforcer_target(mob, attacker) && in_fight(mob)
+        && in_fight(attacker) && is_enemy(mob, attacker)) continue;
+    // A missing, escaped, auctioned or critically injured target ends the
+    // encounter; enforcers must never retarget unrelated characters.
+    if (mob->in_room) act("The Cortex enforcer withdraws.", mob, NULL, NULL, TO_ROOM);
+    extract_char(mob, TRUE);
   }
 }
 

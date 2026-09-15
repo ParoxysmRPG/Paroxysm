@@ -278,6 +278,7 @@ extern "C" {
   int bg_number args((ROOM_INDEX_DATA * room));
   int poidistance args((CHAR_DATA * ch, int poix, int poiy));
   bool join_to_operation args((int facvnum, OPERATION_TYPE *op));
+  bool can_deploy(CHAR_DATA *, OPERATION_TYPE *, int);
   void battle_faction args((CHAR_DATA * ch, int vnum));
   void faction_daily args((FACTION_TYPE * fac));
   void lose_operation args((void));
@@ -1250,13 +1251,9 @@ extern "C" {
   }
 
   int operation_order(const OPERATION_TYPE *op) {
-    int strength = 0;
-    strength += op->day * 24;
-    strength += op->hour;
-    strength -= get_hour(NULL);
-
-    strength *= -1;
-    return strength;
+    if (!op || !op->valid || op->hour == 0) return INT_MIN;
+    return -static_cast<int>((haven::operation_departure_time(current_time,
+        op->hour, op->day) - current_time) / 3600);
   }
 
   struct operation_greater {
@@ -3876,24 +3873,10 @@ taken by anyone who obtains high\nenough standing, it cannot fall below
       printf_to_char(ch, ".\n\r");
       printf_to_char(ch, "There are %d upcoming operations.\n\r", op_count(fac));
       OPERATION_TYPE *nextop = NULL;
-      int minday = 100;
-      for (vector<OPERATION_TYPE *>::iterator it = OpVect.begin();
-      it != OpVect.end(); ++it) {
-        if ((*it)->competition == COMPETE_CLOSED && (*it)->faction != fac->vnum)
-        continue;
-
-        if ((*it)->day < minday)
-        minday = (*it)->day;
-      }
-      int minhour = 30;
-      for (vector<OPERATION_TYPE *>::iterator it = OpVect.begin();
-      it != OpVect.end(); ++it) {
-        if ((*it)->day == minday && (*it)->hour < minhour && (minday != 0 || (*it)->hour > get_hour(NULL))) {
-          if ((*it)->competition == COMPETE_CLOSED && (*it)->faction != fac->vnum)
-          continue;
-          minhour = (*it)->hour;
-          nextop = (*it);
-        }
+      for (OPERATION_TYPE *op : OpVect) {
+        if (!op || !op->valid || op->hour == 0 || !clan_lookup(op->faction)) continue;
+        if (op->competition == COMPETE_CLOSED && op->faction != fac->vnum) continue;
+        if (!nextop || operation_greater()(op, nextop)) nextop = op;
       }
       if (nextop != NULL) {
         printf_to_char(
@@ -9087,40 +9070,61 @@ mob->protecting = str_dup("The Order");
     std::set<int> members;
   };
 
+  static int operation_deployment_faction(CHAR_DATA *ch, int type) {
+    if (!ch || IS_NPC(ch) || !ch->pcdata) return 0;
+    if (type == FACTION_CORE)
+      return ch->deploy_core > 0 && clan_lookup(ch->fcore) ? ch->fcore : 0;
+    if (type != FACTION_SOCIETY) return 0;
+    // Respect the selected society when both memberships permit deployment.
+    const int selected = ch->faction == ch->fsociety || ch->faction == ch->legacy_society
+        ? ch->faction : ch->fsociety;
+    for (int faction : {selected, ch->fsociety, ch->legacy_society}) {
+      if (faction > 0 && clan_lookup(faction) && society_deployment(ch, faction) > 0)
+        return faction;
+    }
+    return 0;
+  }
+
+  int operation_member_faction(OPERATION_TYPE *op, CHAR_DATA *ch) {
+    if (!op || !ch || IS_NPC(ch) || !ch->pcdata) return 0;
+    for (int i = 0; i < 100; ++i)
+      if (!str_cmp(ch->name, op->sign_up[i])) return op->deployed_faction[i];
+    return 0;
+  }
+
+  static void record_operation_deployment(OPERATION_TYPE *op, CHAR_DATA *ch,
+                                           int faction, int team) {
+    for (int i = 0; i < 100; ++i) {
+      if (!str_cmp(ch->name, op->sign_up[i])) {
+        op->deployed_faction[i] = faction;
+        op->deployed_team[i] = team;
+      }
+    }
+  }
+
   static OperationSignupFactions operation_signup_factions(OPERATION_TYPE *op) {
     OperationSignupFactions result;
+    if (!op) return result;
     for (int i = 0; i < 100; ++i) {
-      if (safe_strlen(op->sign_up[i]) <= 2)
+      if (safe_strlen(op->sign_up[i]) == 0)
       continue;
       CHAR_DATA *ch = get_char_world_pc(op->sign_up[i]);
-      if (ch == NULL)
+      if (!ch || !ch->desc || ch->desc->connected != CON_PLAYING || !can_deploy(ch, op, 0))
       continue;
-      const int factions[] = {ch->fcore, ch->legacy_society, ch->fsociety};
-      const int deployment[] = {ch->deploy_core, ch->deploy_legacy_society, ch->deploy_society};
-      for (int j = 0; j < 3; ++j) {
-        if (deployment[j] > 0)
-        result.deployed.insert(factions[j]);
-        // nomembers uses exactly 1; fac_signed_up accepts any positive value.
-        if (deployment[j] == 1)
-        result.members.insert(factions[j]);
+      for (int type : {FACTION_CORE, FACTION_SOCIETY}) {
+        const int faction = operation_deployment_faction(ch, type);
+        FACTION_TYPE *member = clan_lookup(faction);
+        if (member && !member->stasis && !member->outcast && !member->antagonist) {
+          result.deployed.insert(faction);
+          result.members.insert(faction);
+        }
       }
     }
     return result;
   }
 
   bool fac_signed_up(int fvnum, OPERATION_TYPE *op) {
-    for (int i = 0; i < 100; i++) {
-      if (safe_strlen(op->sign_up[i]) > 2 && get_char_world_pc(op->sign_up[i]) != NULL) {
-        CHAR_DATA *victim = get_char_world_pc(op->sign_up[i]);
-        if (victim->fcore == fvnum && victim->deploy_core > 0)
-        return TRUE;
-        if (victim->legacy_society == fvnum && victim->deploy_legacy_society > 0)
-        return TRUE;
-        if (victim->fsociety == fvnum && victim->deploy_society > 0)
-        return TRUE;
-      }
-    }
-    return FALSE;
+    return operation_signup_factions(op).deployed.count(fvnum) != 0;
   }
 
   bool defender(CHAR_DATA *ch, OPERATION_TYPE *op) {
@@ -9132,16 +9136,7 @@ mob->protecting = str_dup("The Order");
   }
 
   bool nomembers(int vnum, OPERATION_TYPE *op) {
-    for (int i = 0; i < 100; i++) {
-      if (safe_strlen(op->sign_up[i]) > 2) {
-        CHAR_DATA *ch = get_char_world_pc(op->sign_up[i]);
-        if (ch != NULL && ((ch->fcore == vnum && ch->deploy_core == 1)
-              || (ch->legacy_society == vnum && ch->deploy_legacy_society == 1)
-              || (ch->fsociety == vnum && ch->deploy_society == 1)))
-        return FALSE;
-      }
-    }
-    return TRUE;
+    return operation_signup_factions(op).members.count(vnum) == 0;
   }
 
   void operation_assign_one(FACTION_TYPE *fac, OPERATION_TYPE *op, int antagcore, bool has_members) {
@@ -9263,6 +9258,10 @@ mob->protecting = str_dup("The Order");
   }
 
   void operation_assign_three(FACTION_TYPE *fac, OPERATION_TYPE *op, int antagcore) {
+    if (fac->type != antagcore) return;
+    for (int team : battle_factions) {
+      if (team == fac->vnum || same_alliance(fac, clan_lookup(team))) return;
+    }
     char lbuf[MSL];
     sprintf(lbuf, "Op assign one: %s", fac->name);
     log_string(lbuf);
@@ -9320,13 +9319,33 @@ mob->protecting = str_dup("The Order");
     // starting the next: joining a faction changes the operation's enrolment.
     std::vector<FACTION_TYPE *> candidates;
     for (vector<FACTION_TYPE *>::iterator it = FacVect.begin(); it != FacVect.end(); ++it) {
-      if (signups.deployed.count((*it)->vnum))
+      (*it)->deployed_pcs = (*it)->defeated_pcs = (*it)->deployed_power = 0;
+      (*it)->deployed_super = (*it)->deployed_nosuper = 0;
+      (*it)->last_defeated = 0;
+      if ((*it)->type == antagcore && signups.deployed.count((*it)->vnum))
       candidates.push_back(*it);
     }
+    // Randomize only this launch's candidates, never the global society index.
+    std::mt19937 generator(std::random_device{}());
+    std::shuffle(candidates.begin(), candidates.end(), generator);
     for (size_t i = 0; i < candidates.size(); ++i)
     operation_assign_one(candidates[i], op, antagcore, signups.members.count(candidates[i]->vnum) != 0);
-    for (size_t i = 0; i < candidates.size(); ++i)
-    operation_assign_two(candidates[i], op, antagcore);
+    // Allies can deploy for a host or a base owner that has no signups itself.
+    // Prefer the host, then fixed enrollment/base representatives.
+    std::vector<FACTION_TYPE *> representatives;
+    FACTION_TYPE *host = clan_lookup(op->faction);
+    if (host) representatives.push_back(host);
+    for (FACTION_TYPE *fac : FacVect)
+      if (fac != host) representatives.push_back(fac);
+    for (FACTION_TYPE *fac : representatives) {
+      if (fac->type != antagcore) continue;
+      for (FACTION_TYPE *candidate : candidates) {
+        if (candidate == fac || same_alliance(candidate, fac)) {
+          operation_assign_two(fac, op, antagcore);
+          break;
+        }
+      }
+    }
     for (size_t i = 0; i < candidates.size(); ++i)
     operation_assign_three(candidates[i], op, antagcore);
   }
@@ -9368,9 +9387,9 @@ mob->protecting = str_dup("The Order");
 
   bool can_deploy(CHAR_DATA *victim, OPERATION_TYPE *op, int antagcore)
   {
-    if (victim == NULL)
+    if (victim == NULL || op == NULL)
     return FALSE;
-    if (IS_NPC(victim))
+    if (IS_NPC(victim) || !victim->pcdata)
     return FALSE;
     if (victim->in_room == NULL)
     return FALSE;
@@ -9384,9 +9403,7 @@ mob->protecting = str_dup("The Order");
     return FALSE;
     if (higher_power(victim) && !targeted_operation_power(victim, op))
     return FALSE;
-    if (clan_lookup(victim->faction) == NULL && !targeted_operation_power(victim, op))
-    return FALSE;
-    if (victim->wounds > 1 && !IS_FLAG(victim->act, PLR_DEAD))
+    if (victim->wounds > 1)
     return FALSE;
     if (!signed_up(victim, op, 0, 0))
     return FALSE;
@@ -9397,6 +9414,7 @@ mob->protecting = str_dup("The Order");
 
   bool try_deploy(CHAR_DATA *victim, OPERATION_TYPE *op, int vnum, STORYLINE_TYPE *storyline, int dtype, int homepower, int battle_total, int battlesize, int battleground_number, int mcorepower)
   {
+    if (!can_deploy(victim, op, antagcore)) return FALSE;
     char lbuf[MSL];
     sprintf(lbuf, "Trying to deploy %s for faction %d, dtype %d, homepower %d, battle_total %d, battlesize %d", victim->name, vnum, dtype, homepower, battle_total, battlesize);
     log_string(lbuf);
@@ -9409,10 +9427,13 @@ mob->protecting = str_dup("The Order");
     char lstr[MSL];
 
     FACTION_TYPE *infac = clan_lookup(vnum);
+    if (!infac) return FALSE;
     FACTION_TYPE *depo = NULL;
     for (int i = 0; i < 6; i++) {
-      if (clan_lookup(battle_factions[i]) != NULL && same_alliance(clan_lookup(battle_factions[i]), infac) && clan_lookup(battle_factions[i])->type == infac->type)
-      depo = clan_lookup(battle_factions[i]);
+      FACTION_TYPE *team = clan_lookup(battle_factions[i]);
+      if (team == infac) { depo = team; break; }
+      if (!depo && team && team->type == infac->type && same_alliance(team, infac))
+        depo = team;
     }
     if (depo == NULL)
     {
@@ -9420,15 +9441,13 @@ mob->protecting = str_dup("The Order");
       return FALSE;
     }
 
-    if(depo->type == FACTION_CORE && victim->deploy_core < 1)
+    if(depo->type == FACTION_CORE && (victim->fcore != vnum || victim->deploy_core < 1))
     return FALSE;
     if(depo->type == FACTION_SOCIETY && society_deployment(victim, vnum) < 1)
     return FALSE;
 
     log_string("Deployment setting cleared");
 
-    if(op->competition != COMPETE_CLOSED)
-    infac->last_deploy = current_time;
 
 
     for (int i = 0; i < 6; i++) {
@@ -9458,21 +9477,22 @@ mob->protecting = str_dup("The Order");
         if ((!is_super(victim) && get_tier(victim) <= 2 && depo->deployed_nosuper < maxhum) || depo->deployed_super < op->max_pcs) {
           sprintf(lstr, "%s deploying-%d for %s, deployed %d, max %d.", victim->name, dtype, depo->name, depo->deployed_pcs, op->max_pcs);
           log_string(lstr);
+          const int tox = startx(i + 1, battle_total, battlesize) + number_range(-8, 8);
+          const int toy = starty(i + 1, battle_total, battlesize) + number_range(-8, 8);
+          ROOM_INDEX_DATA *desti = battleroom_bycoord(battleground_number, tox, toy);
+          if (!desti) return FALSE;
+          record_operation_deployment(op, victim, vnum, depo->vnum);
           operation_recovery_wake(victim);
-        to_spectre(victim, TRUE);
-          if (victim->faction != depo->vnum)
+          to_spectre(victim, TRUE);
           battle_faction(victim, depo->vnum);
+          if (op->competition != COMPETE_CLOSED) infac->last_deploy = current_time;
+          ++depo->deployed_pcs;
+          depo->deployed_power += sqrt(get_lvl(victim)) * 10;
 
           if (IS_FLAG(victim->act, PLR_HIDE))
           do_function(victim, &do_unhide, "");
           victim->pcdata->deploy_from = victim->in_room->vnum;
           char_from_room(victim);
-          int tox =
-          startx(i + 1, battle_total, battlesize) + number_range(-8, 8);
-          int toy =
-          starty(i + 1, battle_total, battlesize) + number_range(-8, 8);
-          ROOM_INDEX_DATA *desti =
-          battleroom_bycoord(battleground_number, tox, toy);
           char_to_room(victim, desti);
           pop++;
           victim->x = tox % 50;
@@ -9524,6 +9544,7 @@ mob->protecting = str_dup("The Order");
     to_spectre(victim, TRUE);
     victim->factiontrue = victim->faction;
     victim->faction = op->goal == GOAL_WORSHIP ? op->faction : 200000;
+    record_operation_deployment(op, victim, 0, victim->faction);
     if (IS_FLAG(victim->act, PLR_HIDE)) do_function(victim, &do_unhide, "");
     victim->pcdata->deploy_from = victim->in_room->vnum;
     char_from_room(victim);
@@ -9542,6 +9563,8 @@ mob->protecting = str_dup("The Order");
   }
 
   void launch_operation(OPERATION_TYPE *op) {
+    if (!op || !op->valid || op->hour == 0 || !clan_lookup(op->faction) ||
+        (isactiveoperation && activeoperation == op)) return;
     if (power_operation_goal(op->goal) && (op->power_resolved || op->competition != COMPETE_OPEN
         || power_operation_error(op->faction, op->territoryvnum, op->goal, op->target))) {
       FACTION_TYPE *host = clan_lookup(op->faction);
@@ -9556,14 +9579,6 @@ mob->protecting = str_dup("The Order");
       return;
     }
     log_string("Launching Operation.");
-
-    std::random_device rd;
-    // Create a random number generator
-    std::mt19937 g(rd());
-
-    // Shuffle the vector
-    std::shuffle(FacVect.begin(), FacVect.end(), g);
-
 
     if (isactiveoperation == TRUE) {
       if (activeoperation->initdays > op->initdays) {
@@ -9587,6 +9602,10 @@ mob->protecting = str_dup("The Order");
     if (event_cleanse == 1) {
       op->valid = FALSE;
       return;
+    }
+    for (int i = 0; i < 100; ++i) {
+      op->deployed_faction[i] = 0;
+      op->deployed_team[i] = 0;
     }
     //    LOCATION_TYPE *oploc;
     //    oploc = territory_by_number(op->territoryvnum);
@@ -9628,37 +9647,6 @@ mob->protecting = str_dup("The Order");
 
     CHAR_DATA *victim;
 
-    for (DescList::iterator it = descriptor_list.begin();
-    it != descriptor_list.end(); ++it) {
-      DESCRIPTOR_DATA *d = *it;
-      if (d->connected != CON_PLAYING)
-      continue;
-      victim = CH(d);
-      if (victim == NULL)
-      continue;
-      if (IS_NPC(victim))
-      continue;
-      if (victim->in_room == NULL)
-      continue;
-      if (battleground(victim->in_room))
-      continue;
-      if (is_helpless(victim) && !IS_FLAG(victim->act, PLR_DEAD))
-      continue;
-      if (is_ghost(victim) && !IS_FLAG(victim->act, PLR_DEAD))
-      continue;
-
-      if (!higher_power(victim) && signed_up(victim, op, antagcore, host->type)) {
-        const int category = host->antagonist ? antagcore : host->type;
-        if (category == FACTION_CORE) victim->faction = victim->fcore;
-        else if (category == FACTION_SOCIETY) {
-          const int selected = selected_society(victim);
-          if (society_deployment(victim, selected) > 0) victim->faction = selected;
-          else if (victim->deploy_society > 0) victim->faction = victim->fsociety;
-          else if (victim->deploy_legacy_society > 0) victim->faction = victim->legacy_society;
-        }
-      }
-    }
-
     assign_operation_factions(op, antagcore, signups);
     for (int i = 0; i < 6; i++) {
       for (int j = 0; j < 6; j++) {
@@ -9672,7 +9660,7 @@ mob->protecting = str_dup("The Order");
         clan_lookup((op)->enrolled[i])->manpower += (op)->soldiers[i];
       }
     }
-    if (battle_factions[0] == 0) {
+    if (battle_factions[0] == 0 && op->goal != GOAL_PSYCHIC) {
       if (clan_lookup(op->faction) != NULL && clan_lookup(op->faction)->antagonist != 0) {
         activeoperation = op;
         win_operation(op->faction, NULL);
@@ -9708,10 +9696,7 @@ mob->protecting = str_dup("The Order");
 
     if (clan_lookup(op->faction)->antagonist == 1)
     {
-      if(soloop == TRUE)
-      op->challenge = clan_lookup(op->faction)->antag_solo_wins;
-      else
-      op->challenge = clan_lookup(op->faction)->antag_group_wins;
+      op->challenge = 1;
     }
 
 
@@ -9752,7 +9737,6 @@ mob->protecting = str_dup("The Order");
     bool offworld = FALSE;
     int battlesize = 250;
     op->size = battlesize;
-    char lstr[MSL];
     LOCATION_TYPE *loc = NULL;
 
     if (battle_territory >= 0) {
@@ -9808,7 +9792,7 @@ mob->protecting = str_dup("The Order");
         continue;
         if (!is_name(victim->name, op->preferred) && safe_strlen(op->preferred) > 2)
         continue;
-        if (victim->wounds > 1 && !IS_FLAG(victim->act, PLR_DEAD))
+        if (victim->wounds > 1)
         continue;
         if (!signed_up(victim, op, 0, 0))
         continue;
@@ -9833,6 +9817,7 @@ mob->protecting = str_dup("The Order");
           toy = starty(2, 2, battlesize) + number_range(-8, 8);
         }
 
+        record_operation_deployment(op, victim, 0, victim->faction);
         if (IS_FLAG(victim->act, PLR_HIDE))
         do_function(victim, &do_unhide, "");
         victim->pcdata->deploy_from = victim->in_room->vnum;
@@ -9871,114 +9856,25 @@ mob->protecting = str_dup("The Order");
       }
     }
 
-    //Deploying host and allies who are preferred.
-    for (DescList::iterator it = descriptor_list.begin();
-    it != descriptor_list.end(); ++it) {
-      DESCRIPTOR_DATA *d = *it;
-      if (d->connected != CON_PLAYING)
-      continue;
-      victim = CH(d);
-      if(!can_deploy(victim, op, antagcore))
-      continue;
-      if (!is_name(victim->name, op->preferred) && safe_strlen(op->preferred) > 2)
-      continue;
-      bool has_deployed = FALSE;
-      if(antagcore == FACTION_CORE && victim->fcore > 0 && clan_lookup(victim->fcore) != NULL && same_alliance(clan_lookup(victim->fcore), host))
-      {
-        victim->faction = victim->fcore;
-        has_deployed = try_deploy(victim, op, victim->fcore, storyline, 1, 0, battle_total, battlesize, battleground_number, mcorepower);
-      }
-      if(has_deployed == FALSE && antagcore == FACTION_SOCIETY && victim->fsociety > 0 && clan_lookup(victim->fsociety) != NULL && same_alliance(clan_lookup(victim->fsociety), host))
-      {
-        victim->faction = victim->fsociety;
-        has_deployed = try_deploy(victim, op, victim->fsociety, storyline, 1, 0, battle_total, battlesize, battleground_number, mcorepower);
-      }
-      if(has_deployed == FALSE && antagcore == FACTION_SOCIETY && victim->legacy_society > 0 && clan_lookup(victim->legacy_society) != NULL && same_alliance(clan_lookup(victim->legacy_society), host))
-      {
-        victim->faction = victim->legacy_society;
-        has_deployed = try_deploy(victim, op, victim->legacy_society, storyline, 1, 0, battle_total, battlesize, battleground_number, mcorepower);
+    // Attempts remain read-only until a slot is accepted. Use the same
+    // society selection as the signup index in every deployment pass.
+    int homepower = 0;
+    for (int pass = 1; pass <= 3; ++pass) {
+      if (pass == 3) homepower = team_power(op->faction, battleground_number);
+      for (DESCRIPTOR_DATA *d : descriptor_list) {
+        if (d->connected != CON_PLAYING) continue;
+        victim = CH(d);
+        if (!can_deploy(victim, op, antagcore)) continue;
+        const int faction = operation_deployment_faction(victim, antagcore);
+        FACTION_TYPE *member = clan_lookup(faction);
+        if (!member) continue;
+        if (pass < 3 && !same_alliance(member, host) && member != host) continue;
+        if (pass == 1 && safe_strlen(op->preferred) > 2 &&
+            !is_name(victim->name, op->preferred)) continue;
+        try_deploy(victim, op, faction, storyline, pass, homepower,
+                   battle_total, battlesize, battleground_number, mcorepower);
       }
     }
-
-    //Deploying host and allies, non-preferred
-    for (DescList::iterator it = descriptor_list.begin();
-    it != descriptor_list.end(); ++it) {
-      DESCRIPTOR_DATA *d = *it;
-      if (d->connected != CON_PLAYING)
-      continue;
-      victim = CH(d);
-      if(!can_deploy(victim, op, antagcore))
-      continue;
-
-      bool has_deployed = FALSE;
-      if(antagcore == FACTION_CORE && victim->fcore > 0 && clan_lookup(victim->fcore) != NULL && same_alliance(clan_lookup(victim->fcore), host))
-      {
-        victim->faction = victim->fcore;
-        has_deployed = try_deploy(victim, op, victim->fcore, storyline, 2, 0, battle_total, battlesize, battleground_number, mcorepower);
-      }
-      if(has_deployed == FALSE && antagcore == FACTION_SOCIETY && victim->fsociety > 0 && clan_lookup(victim->fsociety) != NULL && same_alliance(clan_lookup(victim->fsociety), host))
-      {
-        victim->faction = victim->fsociety;
-        has_deployed = try_deploy(victim, op, victim->fsociety, storyline, 2, 0, battle_total, battlesize, battleground_number, mcorepower);
-      }
-      if(has_deployed == FALSE && antagcore == FACTION_SOCIETY && victim->legacy_society > 0 && clan_lookup(victim->legacy_society) != NULL && same_alliance(clan_lookup(victim->legacy_society), host))
-      {
-        victim->faction = victim->legacy_society;
-        has_deployed = try_deploy(victim, op, victim->legacy_society, storyline, 2, 0, battle_total, battlesize, battleground_number, mcorepower);
-      }
-    }
-
-
-    int homepower = team_power(op->faction, battleground_number);
-    sprintf(lstr, "deployed homepower %d", homepower);
-    log_string(lstr);
-
-    //Others
-    for (DescList::iterator it = descriptor_list.begin();
-    it != descriptor_list.end(); ++it) {
-      DESCRIPTOR_DATA *d = *it;
-      if (d->connected != CON_PLAYING)
-      continue;
-      victim = CH(d);
-      if(!can_deploy(victim, op, antagcore))
-      continue;
-
-      bool has_deployed = FALSE;
-      if(antagcore == FACTION_CORE && victim->fcore > 0 && clan_lookup(victim->fcore) != NULL)
-      {
-        victim->faction = victim->fcore;
-        has_deployed = try_deploy(victim, op, victim->fcore, storyline, 3, homepower, battle_total, battlesize, battleground_number, mcorepower);
-      }
-      if(has_deployed == FALSE && antagcore == FACTION_SOCIETY && victim->fsociety > 0 && clan_lookup(victim->fsociety) != NULL)
-      {
-        victim->faction = victim->fsociety;
-        has_deployed = try_deploy(victim, op, victim->fsociety, storyline, 3 ,homepower, battle_total, battlesize, battleground_number, mcorepower);
-      }
-      if(has_deployed == FALSE && antagcore == FACTION_SOCIETY && victim->legacy_society > 0 && clan_lookup(victim->legacy_society) != NULL)
-      {
-        victim->faction = victim->legacy_society;
-        has_deployed = try_deploy(victim, op, victim->legacy_society, storyline, 3, homepower, battle_total, battlesize, battleground_number, mcorepower);
-      }
-
-
-      if(has_deployed == FALSE && victim->fcore > 0 && clan_lookup(victim->fcore) != NULL)
-      {
-        victim->faction = victim->fcore;
-        has_deployed = try_deploy(victim, op, victim->fcore, storyline, 3, homepower, battle_total, battlesize, battleground_number, mcorepower);
-      }
-      if(has_deployed == FALSE && victim->fsociety > 0 && clan_lookup(victim->fsociety) != NULL)
-      {
-        victim->faction = victim->fsociety;
-        has_deployed = try_deploy(victim, op, victim->fsociety, storyline, 3,homepower, battle_total, battlesize, battleground_number, mcorepower);
-      }
-      if(has_deployed == FALSE && victim->legacy_society > 0 && clan_lookup(victim->legacy_society) != NULL)
-      {
-        victim->faction = victim->legacy_society;
-        has_deployed = try_deploy(victim, op, victim->legacy_society, storyline, 3, homepower, battle_total, battlesize, battleground_number, mcorepower);
-      }
-    }
-
-
 
     int fac_power = 0;
     int max_power = 0;
@@ -9994,7 +9890,7 @@ mob->protecting = str_dup("The Order");
     for (int i = 0; i < 100; i++) {
       if (safe_strlen(op->sign_up[i]) > 1) {
         CHAR_DATA *point = get_char_world_pc(op->sign_up[i]);
-        if (point == NULL || !battleground(point->in_room)) {
+        if (op->deployed_team[i] == 0 && (point == NULL || !battleground(point->in_room) || bg_number(point->in_room) != battleground_number)) {
           free_string(op->sign_up[i]);
           op->sign_up[i] = str_dup("");
         }
@@ -10291,57 +10187,39 @@ mob->protecting = str_dup("The Order");
     end_battle();
   }
 
+  void clear_operation_combat(CHAR_DATA *ch) {
+    if (!ch) return;
+    set_combat_state(ch, FALSE);
+    ch->fighting = FALSE;
+    ch->attacking = ch->attack_timer = ch->move_timer = 0;
+    ch->cfighting = ch->chattacking = NULL;
+    ch->target = ch->target_2 = ch->target_3 = NULL;
+    ch->last_hit_by = NULL;
+    ch->target_dam = ch->target_dam_2 = ch->target_dam_3 = ch->last_hit_damage = 0;
+    for (CHAR_DATA *other : char_list) {
+      if (!other) continue;
+      if (other->cfighting == ch) other->cfighting = NULL;
+      if (other->chattacking == ch) other->chattacking = NULL;
+      if (other->target == ch) { other->target = NULL; other->target_dam = 0; }
+      if (other->target_2 == ch) { other->target_2 = NULL; other->target_dam_2 = 0; }
+      if (other->target_3 == ch) { other->target_3 = NULL; other->target_dam_3 = 0; }
+      if (other->last_hit_by == ch) { other->last_hit_by = NULL; other->last_hit_damage = 0; }
+    }
+  }
+
   void end_battle() {
-
-    CHAR_DATA *ch;
-    int vnum;
-    ROOM_INDEX_DATA *to_room;
-
     for (CharList::iterator it = char_list.begin(); it != char_list.end();) {
-
-      if ((*it)->race <= 0 || (*it)->race > 200 || (*it)->sex < 0 || (*it)->sex > 10) {
-        ++it;
-        continue;
-      }
-
-      ch = *it;
-      ++it;
-
-      if (ch == NULL || !ch)
-      continue;
-
-      if (ch->race < 0 || ch->race > 200 || ch->sex < 0 || ch->sex > 10)
-      continue;
-
-      if (ch->in_room == NULL)
-      continue;
-
-      if (!battleground(ch->in_room))
-      continue;
-
-      if (!IS_NPC(ch)) {
-        reclaim_items(ch);
-      }
-
+      CHAR_DATA *ch = *it++;
+      if (!ch || !battleground(ch->in_room)) continue;
+      clear_operation_combat(ch);
+      ch->bagcarrier = 0;
       if (IS_NPC(ch)) {
         char_from_room(ch);
         char_to_room(ch, get_room_index(2));
         ch->wounds = 4;
         ch->ttl = 1;
-      }
-      else {
-        char_from_room(ch);
-
-        vnum = ch->pcdata->deploy_from;
-        if (vnum == 0) {
-          vnum = 1;
-        }
-        to_room = get_room_index(vnum);
-        char_to_room(ch, to_room);
-        if (ch->factiontrue > -1) {
-          ch->faction = ch->factiontrue;
-          ch->factiontrue = -1;
-        }
+      } else if (ch->pcdata) {
+        reclaim_items(ch);
         wake_char(ch);
       }
     }
@@ -10674,6 +10552,7 @@ mob->protecting = str_dup("The Order");
 
   void win_operation(int faction, OPERATION_TYPE *op) {
     OPERATION_TYPE *resolved = op ? op : activeoperation;
+    if (!resolved || !resolved->valid || resolved->hour == 0) return;
     if (resolved && resolved->goal == GOAL_ATTACK_POWER && faction == 200000) {
       lose_operation();
       end_battle();
@@ -10747,6 +10626,7 @@ mob->protecting = str_dup("The Order");
         }
       }
     }
+    if (!fac || !clan_lookup(op->faction)) return;
     if(fac->antagonist == 1)
     {
       fac->antag_solo_wins -= 1;
@@ -10764,11 +10644,11 @@ mob->protecting = str_dup("The Order");
     char buf[MSL];
     if (is_alliance(fac->alliance)) {
       sprintf(buf, "The %s Alliance has proved victorious.", alliance_names(time_info.society_alliance_issue, fac->alliance));
-      op_report(buf, NULL);
+      if (active) op_report(buf, NULL);
     }
     else {
       sprintf(buf, "%s has proved victorious.", fac->name);
-      op_report(buf, NULL);
+      if (active) op_report(buf, NULL);
     }
 
     if (active == TRUE)
@@ -10784,7 +10664,7 @@ mob->protecting = str_dup("The Order");
 
     int count = 0;
     for (int i = 0; i < 6; i++) {
-      if (battle_factions[i] != 0 && battle_factions[i] != faction && battle_factions[i] > 3)
+      if (active && battle_factions[i] != 0 && battle_factions[i] != faction && battle_factions[i] > 3)
       count++;
     }
     int reward = 300 + (300 * count);
@@ -10816,14 +10696,14 @@ mob->protecting = str_dup("The Order");
     sprintf(buf, "OPERATION reward bonuses: %d", reward);
     log_string(buf);
 
-    int second = second_place(op, faction);
-    if (second == 0)
+    int second = active ? second_place(op, faction) : 0;
+    if (active && second == 0)
     second = fac->last_defeated;
     if (second != 0 && clan_lookup(second) != NULL) {
       sprintf(buf, "OPERATION WINNER: %s, Second Place: %s", fac->name, clan_lookup(second)->name);
       log_string(buf);
 
-      for (int x = 0; x < 4; x++)
+      for (int x = 3; x >= 0; --x)
       fac->op_second_place[x + 1] = fac->op_second_place[x];
       fac->op_second_place[0] = second;
     }
@@ -10900,10 +10780,9 @@ mob->protecting = str_dup("The Order");
       int membercount = 0, totalcount = 0;
       for (int i = 0; i < 100; i++) {
         if (safe_strlen(op->sign_up[i]) > 1 && get_char_world_pc(op->sign_up[i]) != NULL) {
-          if (clan_lookup(get_char_world_pc(op->sign_up[i])->faction)->vnum ==
-              fac->vnum)
+          if (op->deployed_faction[i] == fac->vnum)
           membercount++;
-          else if (same_alliance(clan_lookup(get_char_world_pc(op->sign_up[i])->faction), fac))
+          else if (same_alliance(clan_lookup(op->deployed_faction[i]), fac))
           totalcount++;
         }
       }
@@ -10932,11 +10811,8 @@ mob->protecting = str_dup("The Order");
         for (int i = 0; i < 100; i++) {
           if (safe_strlen(op->sign_up[i]) > 1 && get_char_world_pc(op->sign_up[i]) != NULL) {
             CHAR_DATA *member = get_char_world_pc(op->sign_up[i]);
-            if (member->factiontrue > -1) {
-              member->faction = member->factiontrue;
-              member->factiontrue = -1;
-            }
-            if (clan_lookup(member->faction)->vnum == (*it)->vnum) {
+            if (op->deployed_faction[i] == (*it)->vnum) {
+              ++membercount;
               int mreward = freward;
               if (member->pcdata->op_emotes < 1)
               mreward /= 2;
@@ -10952,7 +10828,7 @@ mob->protecting = str_dup("The Order");
             }
           }
         }
-        if (freward > 10)
+        if (membercount > 0 && freward > 10)
         (*it)->battlewins++;
       }
       for (vector<FACTION_TYPE *>::iterator it = FacVect.begin();
@@ -10964,16 +10840,11 @@ mob->protecting = str_dup("The Order");
         for (int i = 0; i < 100; i++) {
           if (safe_strlen(op->sign_up[i]) > 1 && get_char_world_pc(op->sign_up[i]) != NULL) {
             CHAR_DATA *member = get_char_world_pc(op->sign_up[i]);
-            if (member->factiontrue > -1) {
-              member->faction = member->factiontrue;
-              member->factiontrue = -1;
-            }
-            if (clan_lookup(member->faction)->vnum == (*it)->vnum) {
-              if (count > 0) {
-                give_clan_power(member, 50);
+            if (op->deployed_faction[i] == (*it)->vnum) {
+              for (int slot = 0; slot < 100; ++slot) {
+                if (!str_cmp(member->name, (*it)->member_names[slot]))
+                  (*it)->member_power[slot] += count > 0 ? 50 : 10;
               }
-              else
-              give_clan_power(member, 10);
             }
           }
         }
@@ -10983,7 +10854,7 @@ mob->protecting = str_dup("The Order");
     if (power_operation_goal(op->goal)) {
       resolve_power_operation(faction, op);
       op->hour = 0;
-      isactiveoperation = FALSE;
+      if (op == activeoperation) isactiveoperation = FALSE;
       save_operations(FALSE);
       return;
     }
@@ -11288,14 +11159,8 @@ mob->protecting = str_dup("The Order");
         reward = 0;
         reward += 25 * (*it)->defeated_pcs;
         bool found = FALSE;
-        for (int i = 0; i < 100; i++) {
-          for (int j = 0; j < 100; j++) {
-            if (safe_strlen(op->sign_up[i]) > 1 && safe_strlen((*it)->member_names[j]) > 1 && !str_cmp(op->sign_up[i], (*it)->member_names[j]) && get_char_world_pc(op->sign_up[i]) != NULL) {
-              sprintf(buf, "OPERATION SIGNUP %s: %d", op->sign_up[i], (*it)->vnum);
-              log_string(buf);
-              found = TRUE;
-            }
-          }
+        for (int i = 0; i < 100; ++i) {
+          if (op->deployed_faction[i] == (*it)->vnum) found = TRUE;
         }
         if (found == TRUE) {
           if (op->faction == (*it)->vnum && (*it)->college == 0 && op->speed >= 4) {
@@ -11347,6 +11212,7 @@ mob->protecting = str_dup("The Order");
   }
 
   void lose_operation() {
+    if (!activeoperation || activeoperation->hour == 0) return;
     CHAR_DATA *victim;
 
     if (activeoperation->goal == GOAL_PSYCHIC) {
@@ -12495,9 +12361,7 @@ give_resources(lfac, reward);
     op->room_name = str_dup(bufname);
 
     op->faction = fac->vnum;
-    op->challenge = 2;
-    if (floc->base_faction_core == fac->vnum)
-    op->challenge = 5;
+    op->challenge = 1;
     op->competition = COMPETE_OPEN;
     OpVect.push_back(op);
     return TRUE;
@@ -13265,6 +13129,10 @@ give_resources(lfac, reward);
   }
 
   _DOFUN(do_operation) {
+    if (!ch || IS_NPC(ch) || !ch->pcdata) return;
+    // Rebuild the same numbering for every command, including newly added or
+    // rescheduled operations. day counts occurrences of an hour, not midnights.
+    std::stable_sort(OpVect.begin(), OpVect.end(), operation_greater());
     char arg[MSL];
     argument = one_argument_nouncap(argument, arg);
     bool signup = FALSE;
@@ -14975,11 +14843,12 @@ return " ";
   }
 
   void battle_faction(CHAR_DATA *ch, int vnum) {
-    if (vnum < 10000)
+    if (!ch || IS_NPC(ch) || !ch->pcdata) return;
+    if (vnum < 10000 && clan_lookup(ch->faction))
     clan_lookup(ch->faction)->last_deploy = current_time;
     if (ch->faction == vnum)
     return;
-    ch->factiontrue = ch->faction;
+    if (ch->factiontrue < 0) ch->factiontrue = ch->faction;
     ch->faction = vnum;
     return;
   }
@@ -15609,20 +15478,12 @@ return " ";
   }
 
   void battlecheck(CHAR_DATA *ch) {
+    if (!ch || IS_NPC(ch) || !ch->pcdata) return;
     if (IS_IMMORTAL(ch))
     return;
     if (ch->in_room != NULL && ch->in_room->area->vnum == 29 && isactiveoperation == FALSE) {
-      char_from_room(ch);
-      int vnum = ch->pcdata->deploy_from;
-      if (vnum == 0) {
-        vnum = 1;
-      }
-      ROOM_INDEX_DATA *to_room = get_room_index(vnum);
-      char_to_room(ch, to_room);
-      if (ch->factiontrue > -1) {
-        ch->faction = ch->factiontrue;
-        ch->factiontrue = -1;
-      }
+      reclaim_items(ch);
+      wake_char(ch);
     }
   }
 
@@ -16607,9 +16468,9 @@ return " ";
             }
           }
         }
-        if(ch->fcore > 0)
+        if(ch->legacy_society > 0)
         {
-          FACTION_TYPE *society = clan_lookup(ch->fcore);
+          FACTION_TYPE *society = clan_lookup(ch->legacy_society);
           if(society != NULL)
           {
             gain_resources(amount*4/10, society->vnum, ch, "");
@@ -17237,12 +17098,8 @@ return " ";
   }
 
   void prep_process(CHAR_DATA *ch, CHAR_DATA *victim) {
-    if (ch->pcdata->prep_action == 3) {
-      ch->pcdata->prep_action = 0;
-      send_to_char("Dream snares are disabled.\n\r", ch);
-      return;
-    }
-    if (!battleground(ch->in_room))
+    if (!ch || !victim || IS_NPC(victim) || !victim->pcdata ||
+        !activeoperation || !battleground(ch->in_room))
     return;
 
     if (activeoperation->goal == GOAL_PSYCHIC)
@@ -17258,8 +17115,13 @@ return " ";
       else
       return;
     }
-    if (IS_NPC(ch))
+    if (IS_NPC(ch) || !ch->pcdata)
     return;
+    if (ch->pcdata->prep_action == 3) {
+      ch->pcdata->prep_action = 0;
+      send_to_char("Dream snares are disabled.\n\r", ch);
+      return;
+    }
     if (!battleground(ch->in_room))
     return;
 
@@ -17624,7 +17486,7 @@ return " ";
   }
 
   void defeat_op_pc(CHAR_DATA *ch) {
-    if (IS_NPC(ch))
+    if (!ch || IS_NPC(ch) || !ch->pcdata)
     return;
 
     if (activeoperation == NULL)
@@ -17633,7 +17495,8 @@ return " ";
     if (activeoperation->goal == GOAL_PSYCHIC)
     return;
 
-    FACTION_TYPE *fac = clan_lookup(ch->faction);
+    const int credit = operation_member_faction(activeoperation, ch);
+    FACTION_TYPE *fac = clan_lookup(credit);
 
     if (fac == NULL)
     return;
@@ -17642,19 +17505,20 @@ return " ";
     if (activeoperation != NULL && clan_lookup(ch->faction) != NULL && activeoperation->speed > 1 && activeoperation->competition != COMPETE_CLOSED) {
       if (pc_op_alliance_count(ch->faction) == 1) {
         sprintf(buf, "%s's participation in an unsuccessful operation.", ch->name);
-        gain_resources(300, ch->faction, ch, buf);
+        gain_resources(300, credit, ch, buf);
       }
     }
-    if (!str_cmp(ch->name, fac->battle_leader)) {
-      free_string(fac->battle_leader);
-      fac->battle_leader = str_dup("");
+    FACTION_TYPE *team = clan_lookup(ch->faction);
+    if (team && !str_cmp(ch->name, team->battle_leader)) {
+      free_string(team->battle_leader);
+      team->battle_leader = str_dup("");
     }
     if (pc_op_count() > 1)
     return;
 
     if (activeoperation != NULL && clan_lookup(ch->faction) != NULL && activeoperation->speed > 1 && activeoperation->competition != COMPETE_CLOSED) {
       int base = activeoperation->speed * 2;
-      base += clan_lookup(ch->faction)->defeated_pcs;
+      base += fac->defeated_pcs;
       if (activeoperation->faction == ch->faction && activeoperation->speed > 4)
       base *= 3 / 2;
       base = UMIN(base, 20);

@@ -47,10 +47,10 @@ struct CHAR_DATA {
             *controled_by=nullptr, *cfighting=nullptr, *fight_current=nullptr,
             *cover=nullptr;
   bool npc=true, immortal=false, gm=false, ghost=false, helpless=false,
-       ranged=true, reachable=true, in_fight=true, enemy=false;
+       ranged=true, reachable=true, in_fight=true, enemy=false, pedestrian=false;
   int wounds=0, act=0, faction=1, factiontwo=0, target_dam=0,
       target_dam_2=0, target_dam_3=0, race=5, order=0, bagcarrier=0,
-      ttl=10, x=0, y=0, attack_timer=0, move_timer=0, attacking=1;
+      ttl=10, x=0, y=0, attack_timer=0, move_timer=0, attacking=1, fight_speed=1;
   const char *protecting="", *aggression="all", *ordertarget="", *name="unit";
 };
 struct FACTION_TYPE { const char *name="faction", *battle_target=""; int battle_order=0; };
@@ -59,12 +59,16 @@ Discipline discipline_table[]={{1},{2}};
 int discipline_table_count=2;
 using CharList=std::list<CHAR_DATA*>;
 CharList char_list;
-int preferences=0, paths=0, rounds=0, enemy_checks=0, fight_problem=0;
+int preferences=0, paths=0, rounds=0, enemy_checks=0, fight_problem=0, index_visits=0;
+int public_responses=0;
+bool public_location=false;
 int str_cmp(const char *a,const char *b) { return strcmp(a,b); }
 int safe_strlen(const char *s) { return strlen(s); }
 bool is_gm(CHAR_DATA *c) { return c->gm; }
 bool is_ghost(CHAR_DATA *c) { return c->ghost; }
 bool is_helpless(CHAR_DATA *c) { return c->helpless; }
+bool pedestrian(CHAR_DATA *c) { return c && c->npc && c->pedestrian; }
+bool pedestrian_helpless(CHAR_DATA *c) { return c->helpless; }
 bool in_fight(CHAR_DATA *c) { return !fight_problem && c->in_fight; }
 bool battleground(ROOM_INDEX_DATA *r) { return r && r->battle; }
 bool can_get_to(CHAR_DATA *, ROOM_INDEX_DATA *) { ++paths; return true; }
@@ -89,8 +93,15 @@ CHAR_DATA *sin_vigilante_prey(CHAR_DATA *) { return nullptr; }
 CHAR_DATA *full_moon_pack_prey(CHAR_DATA *) { return nullptr; }
 bool dissent_crowd(CHAR_DATA *) { return false; }
 bool cortex_public_enforcer(CHAR_DATA *) { return false; }
+bool cortex_enforcer(CHAR_DATA *) { return false; }
+bool cortex_enforcer_target(CHAR_DATA *, CHAR_DATA *) { return false; }
 bool cortex_breach_monster(CHAR_DATA *) { return false; }
-bool in_public(CHAR_DATA *,CHAR_DATA *) { return false; }
+bool in_public(CHAR_DATA *,CHAR_DATA *victim) { return public_location && !victim->in_fight; }
+void join_to_fight(CHAR_DATA *c) { c->in_fight=true; c->attacking=1; }
+void add_aggro(CHAR_DATA *victim, CHAR_DATA *attacker, int amount) {
+  attacker->target=victim; attacker->target_dam=amount;
+}
+void cortex_public_response(CHAR_DATA *, CHAR_DATA *) { ++public_responses; }
 bool forest_monster(CHAR_DATA *) { return false; }
 bool is_invader(CHAR_DATA *) { return false; }
 int mist_level(ROOM_INDEX_DATA *) { return 3; }
@@ -99,6 +110,7 @@ bool same_fight(CHAR_DATA *a,CHAR_DATA *b) { return in_fight(a) && in_fight(b); 
 bool is_cover(CHAR_DATA *c) { return IS_FLAG(c->act,ACT_COVER); }
 std::vector<CHAR_DATA*> combatants;
 CHAR_DATA *next_combat_character(unsigned long long *cursor) {
+  ++index_visits;
   return *cursor<combatants.size() ? combatants[(*cursor)++] : nullptr;
 }
 void round_process(CHAR_DATA *) { ++rounds; }
@@ -115,6 +127,8 @@ production += section('  CHAR_DATA *get_close_cover(', '  void npc_combat_move('
 production += section('  void npc_combat_attack(', '    CHAR_DATA *original = victim;') + '}\n'
 move = section('  void npc_combat_move(', '    if (IS_NPC(ch) && (ch->pIndexData->vnum == ALLY_TEMPLATE')
 production += move + '}\n'
+production += section('  static bool pedestrian_has_enemy(', '  bool has_enemy(')
+production += section('  static void pedestrian_assault(', '  void damage(')
 production += section('  bool check_fight(', '  static CHAR_DATA *find_next_fight_member(')
 production += section('  bool has_enemy(', '  bool same_fight(').replace('bool has_enemy(', 'bool actual_has_enemy(', 1)
 production += section('  static CHAR_DATA *find_next_fight_member(', '  bool room_fight(')
@@ -232,6 +246,41 @@ int main() {
   combatants = {&first, &last};
   assert(next_fight_member(&first) == &last && fight_problem == 0);
   puts("PASS: 3000 idle characters do not disable combat or hide enemies; indexed turns preserve wrap and autoskip.");
+
+  CHAR_DATA commuter = hunter;
+  commuter.npc = commuter.pedestrian = true;
+  commuter.race = RACE_HUMAN; commuter.pIndexData = &mob;
+  commuter.in_fight = false; commuter.target = &enemy; commuter.target_dam = 20;
+  index_visits = enemy_checks = preferences = paths = 0;
+  int previous_rounds = rounds;
+  assert(!check_fight(&commuter) && !actual_has_enemy(&commuter));
+  assert(!get_npc_target(&commuter) && get_agg(&commuter, &enemy) == 0);
+  npc_combat_move(&commuter); npc_combat_attack(&commuter);
+  assert(index_visits == 0 && enemy_checks == 0 && preferences == 0 && paths == 0);
+  assert(rounds == previous_rounds);
+  // The same human NPC target is attackable only when marked as a pedestrian.
+  assert(get_agg(&enemy, &commuter) > 0);
+  commuter.pedestrian = false; assert(get_agg(&enemy, &commuter) == 0);
+  commuter.pedestrian = true; commuter.in_fight = true;
+  combatants = {&commuter, &enemy}; index_visits = 0;
+  assert(check_fight(&commuter) && index_visits == 2 && enemy_checks == 0);
+  commuter.helpless = true; index_visits = 0;
+  assert(!check_fight(&commuter) && get_agg(&enemy, &commuter) == 0 && index_visits == 0);
+  puts("PASS: pedestrians do no idle searches or combat actions; assaults use only active combatants and stop when subdued.");
+
+  commuter.helpless = commuter.in_fight = false; commuter.target = nullptr;
+  enemy.npc = false; enemy.in_fight = true; enemy.fight_fast = true;
+  public_location = true; public_responses = 0;
+  pedestrian_assault(&enemy, &commuter);
+  assert(commuter.in_fight && commuter.fight_fast && commuter.target == &enemy);
+  assert(get_agg(&enemy, &commuter) > 0 && public_responses == 1);
+  pedestrian_assault(&enemy, &commuter); assert(public_responses == 1);
+  commuter.in_fight = false; public_location = false;
+  pedestrian_assault(&enemy, &commuter);
+  assert(commuter.in_fight && public_responses == 1);
+  commuter.in_fight = false; commuter.helpless = true;
+  pedestrian_assault(&enemy, &commuter); assert(!commuter.in_fight);
+  puts("PASS: switching an existing fight to a pedestrian joins only that victim and calls Cortex once in public.");
 
 }
 '''

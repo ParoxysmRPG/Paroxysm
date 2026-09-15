@@ -31,6 +31,16 @@ bool is_angelborn(CHAR_DATA *) { return false; }
 bool is_demonborn(CHAR_DATA *) { return false; }
 bool is_demigod(CHAR_DATA *) { return false; }
 bool is_vampire(CHAR_DATA *) { return false; }
+// These tests exercise the unchanged player response flow. Pedestrian commands
+// and their null-PC eligibility branches are covered in test_pedestrian_commands.
+bool pedestrian(CHAR_DATA *) { return false; }
+bool pedestrian_helpless(CHAR_DATA *) { return false; }
+bool pedestrian_drain(CHAR_DATA *, CHAR_DATA *) { assert(false); return false; }
+bool is_ghost(CHAR_DATA *) { return false; }
+bool in_fight(CHAR_DATA *) { return false; }
+bool is_safe(CHAR_DATA *, CHAR_DATA *) { return false; }
+bool room_hostile(ROOM_INDEX_DATA *) { return false; }
+void start_hostilefight(CHAR_DATA *) {}
 bool is_werewolf(CHAR_DATA *) { return false; }
 bool generic_faction_vnum(int) { return false; }
 int blood_level(CHAR_DATA *, CHAR_DATA *) { return 1; }

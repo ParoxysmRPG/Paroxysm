@@ -16,6 +16,7 @@ join = clans[start:clans.index('  void battle_faction(', start)]
 
 source = r'''
 #include "merc.h"
+#include "game_time.h"
 #include <cassert>
 #include <climits>
 #include <cstdarg>
@@ -34,6 +35,7 @@ std::string output;
 vector<char *> allocations;
 bool trusted = true;
 int charges = 0, lookup_calls = 0, actor_trust = 1;
+time_t current_time = 1789488000;
 char *str_dup(const char *s) { char *p = strdup(s ? s : ""); allocations.push_back(p); return p; }
 void free_string(char *) {} // Release the arena after all scenarios.
 bool str_cmp(const char *a, const char *b) { return strcasecmp(a ? a : "", b ? b : "") != 0; }
@@ -75,7 +77,7 @@ void use_resources(int, int, CHAR_DATA *, char *) { ++charges; }
 int border_count(FACTION_TYPE *) { return 0; }
 bool join_to_operation(int, OPERATION_TYPE *);
 '''
-source += join + command
+source += clans[clans.index('  int operation_order('):clans.index('  void load_operations()')] + join + command
 source += r'''
 void run(const char *input) {
   char buf[MSL]; strcpy(buf, input); output.clear(); do_operation(&actor, buf);
@@ -157,6 +159,23 @@ int main() {
   run("reinforce 1 4"); assert(first.home_soldiers == 4 && host.manpower == 96);
   run("reinforce 1 7"); assert(first.home_soldiers == 4 && host.manpower == 96);
   puts("PASS: rejected reinforcement requests cannot reserve faction slots; valid transfers respect capacity and authority.");
+
+  // A newly appended operation can depart sooner, including across midnight.
+  auto morning = operation("Morning"), tonight = operation("Tonight");
+  morning.hour = 8; morning.day = 0;
+  tonight.hour = 22; tonight.day = 0;
+  current_time = 1789488000; // 2026-09-15 16:00 UTC, game hour 11.
+  OpVect = {&morning, &tonight};
+  run("list");
+  assert(output.find("Tonight") < output.find("Morning"));
+  run("info 1"); assert(shown == &tonight);
+  auto sooner = operation("Sooner"); sooner.hour = 12; sooner.day = 0;
+  OpVect.push_back(&sooner);
+  run("info 1"); assert(shown == &sooner);
+  run("signup 1"); assert(!str_cmp(sooner.sign_up[0], actor.name));
+  assert(morning.sign_up[0] == nullptr && tonight.sign_up[0] == nullptr);
+  puts("PASS: appended operations sort by actual departure; info/signup share list numbering across midnight.");
+  OpVect = {&first};
 
   // Launched troops already exist on the battlefield. Refunding, replacing or
   // adding their accounting entries must not be possible through planning commands.

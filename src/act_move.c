@@ -1597,6 +1597,10 @@ extern "C" {
   }
 
   void move_char(CHAR_DATA *ch, int door, bool follow, bool isFlee) {
+    if (pedestrian(ch)) {
+      pedestrian_move(ch, door, follow);
+      return;
+    }
     ROOM_INDEX_DATA *in_room;
     ROOM_INDEX_DATA *to_room;
     EXIT_DATA *pexit;

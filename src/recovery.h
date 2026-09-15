@@ -27,6 +27,11 @@ struct RecoveryState {
   std::vector<RecoveryIncident> maims;
   bool operation_dead = false;
   bool operation_ghost = false;
+  bool operation_wound = false;
+  bool operation_active = false;
+  int operation_saved_wounds = 0;
+  int operation_saved_heal_timer = 0;
+  bool operation_saved_treatment = false;
 };
 
 #endif

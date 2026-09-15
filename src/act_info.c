@@ -560,7 +560,7 @@ extern "C" {
           else
           strcat(buf, "lies dead here.");
         }
-        else if (!IS_NPC(victim))
+        else if (!IS_NPC(victim) || pedestrian(victim))
         strcat(buf, " is standing here.");
         break;
       case POS_FIGHTING:
@@ -3084,6 +3084,16 @@ extern "C" {
       string += buf.data();
       string += victim->description;
       string += "\n\r";
+      if (pedestrian(victim)) {
+        bool first = true;
+        for (OBJ_DATA *clothing = victim->carrying; clothing; clothing = clothing->next_content) {
+          if (clothing->wear_loc == WEAR_NONE) continue;
+          string += first ? "Wearing: " : ", ";
+          string += clothing->short_descr;
+          first = false;
+        }
+        if (!first) string += ".\n\r";
+      }
       if(victim->faction != 0)
       {
         FACTION_TYPE *mfac = clan_lookup(victim->faction);
@@ -10620,7 +10630,7 @@ extern "C" {
     }
 
     for (int i = 0; i < MAX_COVERS; i++) {
-      if (cover_table[i] == sel && ch->pcdata->exposed[i] == 111)
+      if (!pedestrian(ch) && cover_table[i] == sel && ch->pcdata->exposed[i] == 111)
       return FALSE;
     }
 

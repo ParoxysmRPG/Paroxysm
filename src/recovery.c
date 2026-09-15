@@ -53,8 +53,10 @@ int containment_priority_count(FACTION_TYPE *fac, CHAR_DATA *recovering) {
 }
 
 void invalidate_wound_treatment(CHAR_DATA *ch) {
-  if (ch && !IS_NPC(ch) && ch->pcdata && ch->pcdata->recovery)
+  if (ch && !IS_NPC(ch) && ch->pcdata && ch->pcdata->recovery) {
     ch->pcdata->recovery->wounds_treated = false;
+    ch->pcdata->recovery->operation_wound = false;
+  }
 }
 
 bool treat_wounds(CHAR_DATA *healer, CHAR_DATA *victim) {
@@ -204,8 +206,15 @@ static bool charge_recovery(CHAR_DATA *ch, const RecoveryIncident &record, int c
 }
 
 void operation_recovery_wake(CHAR_DATA *ch) {
-  if (!ch || IS_NPC(ch) || !IS_FLAG(ch->act, PLR_DEAD)) return;
+  if (!ch || IS_NPC(ch) || !ch->pcdata || !ch->pcdata->recovery) return;
   RecoveryState &state = *ch->pcdata->recovery;
+  if (state.operation_active) return;
+  state.operation_active = true;
+  state.operation_wound = false;
+  state.operation_saved_wounds = ch->wounds;
+  state.operation_saved_heal_timer = ch->heal_timer;
+  state.operation_saved_treatment = state.wounds_treated;
+  if (!IS_FLAG(ch->act, PLR_DEAD)) return;
   state.operation_dead = true;
   state.operation_ghost = IS_FLAG(ch->act, PLR_GHOST);
   REMOVE_FLAG(ch->act, PLR_DEAD);
@@ -214,17 +223,56 @@ void operation_recovery_wake(CHAR_DATA *ch) {
 }
 
 void operation_recovery_return(CHAR_DATA *ch) {
-  if (!ch || IS_NPC(ch) || !ch->pcdata->recovery->operation_dead) return;
+  if (!ch || IS_NPC(ch) || !ch->pcdata || !ch->pcdata->recovery) return;
+  if (ch->factiontrue > -1) {
+    ch->faction = ch->factiontrue;
+    ch->factiontrue = -1;
+  }
   RecoveryState &state = *ch->pcdata->recovery;
+  const bool had_snapshot = state.operation_active;
+  if (state.operation_active) {
+    state.operation_active = false;
+    if (!state.operation_wound || ch->wounds <= state.operation_saved_wounds) {
+      ch->wounds = state.operation_saved_wounds;
+      ch->heal_timer = state.operation_saved_heal_timer;
+      state.wounds_treated = state.operation_saved_treatment;
+      state.operation_wound = false;
+    }
+  }
+  if (!state.operation_dead) return;
+  // Old player saves may contain operation_dead without a wound snapshot.
+  // Preserve their wounds instead of treating zero-initialized fields as one.
+  if (had_snapshot) {
+    ch->wounds = state.operation_saved_wounds;
+    ch->heal_timer = state.operation_saved_heal_timer;
+    state.wounds_treated = state.operation_saved_treatment;
+  }
+  state.operation_wound = false;
   state.operation_dead = false;
   SET_FLAG(ch->act, PLR_DEAD);
   if (state.operation_ghost) SET_FLAG(ch->act, PLR_GHOST);
   state.operation_ghost = false;
 }
 
+int operation_heal_timer(CHAR_DATA *ch, int timer) {
+  if (!ch || IS_NPC(ch) || !ch->pcdata || !ch->pcdata->recovery) return timer;
+  RecoveryState &state = *ch->pcdata->recovery;
+  if (!state.operation_wound) return timer;
+  if (ch->wounds <= state.operation_saved_wounds) {
+    // The nightmare injury is gone. Resume the preexisting wound unchanged.
+    state.operation_wound = false;
+    state.wounds_treated = state.operation_saved_treatment;
+    return state.operation_saved_heal_timer;
+  }
+  return UMAX(1, timer / 50);
+}
+
 bool process_character_recovery(CHAR_DATA *ch) {
   if (!ch || IS_NPC(ch) || !ch->pcdata || !ch->in_room) return false;
   RecoveryState &state = *ch->pcdata->recovery;
+  if (ch->wounds == 0) state.operation_wound = false;
+  if (state.operation_active && !battleground(ch->in_room))
+    operation_recovery_return(ch);
   if (state.operation_dead) {
     if (battleground(ch->in_room)) return false;
     operation_recovery_return(ch);
@@ -319,6 +367,8 @@ void write_recovery(FILE *fp, CHAR_DATA *ch) {
   const RecoveryState &state = *ch->pcdata->recovery;
   fprintf(fp, "WoundsTreated %d\n", ch->wounds >= 2 && state.wounds_treated);
   fprintf(fp, "RecoveryState %lu %d %d\n", state.serial, state.operation_dead, state.operation_ghost);
+  fprintf(fp, "OperationRecovery %d %d %d %d %d\n", state.operation_active, state.operation_wound,
+      state.operation_saved_wounds, state.operation_saved_heal_timer, state.operation_saved_treatment);
   auto write = [fp](int kind, const RecoveryIncident &record) {
     fprintf(fp, "RecoveryIncidentV3 %d %d %d %d %ld %lu %d %s~ %s~\n", kind, record.source,
             record.payer, record.forest, record.due, record.serial, record.cost_percent,
@@ -331,6 +381,14 @@ void write_recovery(FILE *fp, CHAR_DATA *ch) {
 
 bool read_recovery(FILE *fp, CHAR_DATA *ch, const char *word) {
   RecoveryState &state = *ch->pcdata->recovery;
+  if (!str_cmp(word, "OperationRecovery")) {
+    state.operation_active = fread_number(fp) != 0;
+    state.operation_wound = fread_number(fp) != 0;
+    state.operation_saved_wounds = fread_number(fp);
+    state.operation_saved_heal_timer = fread_number(fp);
+    state.operation_saved_treatment = fread_number(fp) != 0;
+    return true;
+  }
   if (!str_cmp(word, "WoundsTreated")) {
     state.wounds_treated = fread_number(fp) != 0;
     return true;

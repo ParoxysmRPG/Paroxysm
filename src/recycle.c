@@ -301,6 +301,7 @@ extern "C" {
   }
 
   void free_char(CHAR_DATA *ch) {
+    pedestrian_forget(ch);
     unregister_live_character(ch);
     OBJ_DATA *obj;
     OBJ_DATA *obj_next;

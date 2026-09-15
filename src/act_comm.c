@@ -13579,7 +13579,7 @@ extern "C" {
   }
 
   void char_rplog(CHAR_DATA *ch, char *argument) {
-    if (ch == NULL)
+    if (ch == NULL || IS_NPC(ch) || !ch->pcdata)
     return;
     if (!argument || safe_strlen(argument) < 3)
     return;
@@ -13648,7 +13648,7 @@ extern "C" {
   }
 
   void prp_rplog(CHAR_DATA *ch, char *argument) {
-    if (ch == NULL)
+    if (ch == NULL || IS_NPC(ch) || !ch->pcdata || !argument)
     return;
     if (!is_gm(ch) && !IS_FLAG(ch->act, PLR_GUEST) && ch->in_room != NULL && ch->in_room->vnum > 200) {
       int newpoint;

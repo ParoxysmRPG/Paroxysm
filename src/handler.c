@@ -1838,6 +1838,10 @@ OBJ_DATA *get_worn(CHAR_DATA *ch, int item_type) {
  * Equip a char with an obj.
  */
 void equip_char(CHAR_DATA *ch, OBJ_DATA *obj, int iWear) {
+  if (pedestrian(ch)) {
+    equip_char_silent(ch, obj, iWear);
+    return;
+  }
   std::string buf;
   OBJ_DATA *obj2;
   int i, intWear;
@@ -1929,6 +1933,10 @@ void equip_char_silent(CHAR_DATA *ch, OBJ_DATA *obj, int iWear) {
  * Unequip a char with an obj.
  */
 void unequip_char(CHAR_DATA *ch, OBJ_DATA *obj) {
+  if (pedestrian(ch)) {
+    unequip_char_silent(ch, obj);
+    return;
+  }
   OBJ_DATA *obj2;
   std::string buf;
   char arg1[MSL];
@@ -1993,6 +2001,13 @@ void unequip_char(CHAR_DATA *ch, OBJ_DATA *obj) {
 }
 
 void unequip_char_silent(CHAR_DATA *ch, OBJ_DATA *obj) {
+  if (pedestrian(ch)) {
+    obj->layer = obj->exposed = 0;
+    free_string(obj->wear_temp);
+    obj->wear_temp = str_dup("");
+    obj->wear_loc = WEAR_NONE;
+    return;
+  }
   OBJ_DATA *obj2;
   int i, intWear;
   if (obj->wear_loc == WEAR_NONE) {
@@ -2411,11 +2426,6 @@ void extract_char(CHAR_DATA *ch, bool fPull) {
 
   char_to_room(ch, get_room_index(ROOM_VNUM_LIMBO));
 
-  if ((*(char_list.end())) == ch) {
-    ch->ttl = 0;
-    return;
-  }
-
   if (ch->in_room != NULL)
     char_from_room(ch);
 
@@ -2484,7 +2494,8 @@ CHAR_DATA *get_char_room(CHAR_DATA *ch, ROOM_INDEX_DATA *room, char *argument) {
     remove_color(temp, PERS(rch, ch));
 
     if (ch &&
-        ((!can_see(ch, rch) && in_fight(ch) == FALSE) || (!is_name(arg, temp))))
+        ((!can_see(ch, rch) && in_fight(ch) == FALSE)
+         || (!is_name(arg, temp) && !(pedestrian(rch) && is_name(arg, rch->name)))))
       continue;
     if (++count == number)
       return rch;
@@ -4948,7 +4959,7 @@ void logon_char(CHAR_DATA *ch) {
     } else
       ch->heal_timer = UMAX(1, ch->heal_timer - minoffline * 24);
   }
-  if (ch->wounds == 2 && can_heal(ch) && (in_hospital(ch) || get_skill(ch, SKILL_REGEN) >= 1)) {
+  if (ch->wounds == 2 && can_heal(ch) && (in_hospital(ch) || get_skill(ch, SKILL_REGEN) >= 1 || ch->pcdata->recovery->operation_wound)) {
     if (get_skill(ch, SKILL_REGEN) >= 3) {
       ch->heal_timer = UMAX(1, ch->heal_timer - minoffline * 12 * 37);
     }

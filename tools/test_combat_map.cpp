@@ -296,7 +296,7 @@ static void check_cover_proximity_and_roles() {
     }
     assert(entry_for(snapshot, f.viewer.get()).label == "`W<u>Me</u>`x");
     assert(entry_for(snapshot, cover).is_cover && !entry_for(snapshot, cover).is_turret);
-    assert(entry_for(snapshot, cover).label == "`C[]`x");
+    assert(entry_for(snapshot, cover).label == "`Cba`x");
     assert(!entry_for(snapshot, false_cover).is_cover);
     assert(entry_for(snapshot, turret).label == "`C{}`x");
     assert(!entry_for(snapshot, turret).is_cover && entry_for(snapshot, turret).is_turret);
@@ -378,11 +378,11 @@ static void check_cover_priority_cells_and_colors() {
     snapshot = haven::combat_map_snapshot(f.viewer.get());
     cells = haven::combat_map_cells(f.viewer.get(), snapshot, 11);
     assert(cells[5 * 11 + 5].entry == entry_index(snapshot, cover));
-    assert(entry_for(snapshot, cover).label == "`M[]`x");
+    assert(entry_for(snapshot, cover).label == "`Mlo`x");
     f.viewer->cfighting = nullptr;
     aggression.insert(std::make_pair(cover, f.viewer.get()));
     snapshot = haven::combat_map_snapshot(f.viewer.get());
-    assert(entry_for(snapshot, cover).label == "`R[]`x");
+    assert(entry_for(snapshot, cover).label == "`Rlo`x");
     aggression.clear();
     actor->x = 1;
     f.viewer->cfighting = actor;

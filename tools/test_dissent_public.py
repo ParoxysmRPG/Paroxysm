@@ -28,6 +28,7 @@ ROOM_INDEX_DATA *room_index_hash[MAX_KEY_HASH] = {};
 time_t current_time = 2000000000;
 int event_cleanse = 0, fight_problem = 0;
 bool full_moon_pack(CHAR_DATA *) { return false; }
+bool pedestrian(CHAR_DATA *) { return false; }
 bool sin_vigilante(CHAR_DATA *) { return false; }
 bool sin_cortex_guard(CHAR_DATA *) { return false; }
 CHAR_DATA *sin_cortex_guard_prey(CHAR_DATA *) { return nullptr; }
@@ -104,6 +105,13 @@ CHAR_DATA *create_mobile(MOB_INDEX_DATA *index) {
 }
 void char_to_room(CHAR_DATA *ch, ROOM_INDEX_DATA *room) { ch->in_room = room; }
 void char_from_room(CHAR_DATA *ch) { ch->in_room = nullptr; }
+void extract_char(CHAR_DATA *ch, bool) {
+  assert(IS_NPC(ch));
+  char_list.remove(ch);
+  free_string(ch->name); free_string(ch->short_descr); free_string(ch->long_descr);
+  free_string(ch->description); free_string(ch->protecting); free_string(ch->aggression);
+  delete ch;
+}
 char *roomtitle(ROOM_INDEX_DATA *room, bool) { return room->name; }
 CHAR_DATA *get_char_world_pc(char *name) {
   for (auto *ch : char_list) if (!IS_NPC(ch) && !str_cmp(name, ch->name)) return ch;
@@ -268,12 +276,14 @@ int main() {
   emergency = true;
   assert(!public_target_excluded(&attacker, &defender));
   cortex_public_update();
+  assert(char_list.size() == 3);
   for (auto *ch : char_list) if (cortex_public_enforcer(ch)) assert(ch->ttl == 0 && !in_fight(ch));
   cleanup_mobs();
   cortex_public_response(&attacker, &defender); assert(char_list.size() == 3);
   emergency = false;
   cortex_public_response(&attacker, &defender);
   apc.sleeping = 100; cortex_public_update();
+  assert(char_list.size() == 3);
   for (auto *ch : char_list) if (cortex_public_enforcer(ch)) assert(ch->ttl == 0);
   assert(apc.sleeping == 100 && attacker.in_room == &street);
   cleanup_mobs();

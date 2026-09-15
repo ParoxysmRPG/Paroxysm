@@ -2134,6 +2134,9 @@ extern "C" {
   }
 
   void wound_check(CHAR_DATA *ch, CHAR_DATA *victim, int wound) {
+    if (!ch || !victim || !victim->in_room) return;
+    if (!IS_NPC(victim) && victim->pcdata && victim->pcdata->recovery)
+      victim->pcdata->recovery->operation_wound = battleground(victim->in_room);
     if (dissent_crowd(victim) && wound >= 2) {
       dissent_defeated(victim);
       return;
@@ -2202,12 +2205,12 @@ REMOVE_FLAG(victim->act, PLR_SHROUD);
 }
 }
 */
-    if (!IS_NPC(victim) && victim->pcdata->patrol_status == PATROL_WAGINGWAR) {
+    if (!battleground(victim->in_room) && !IS_NPC(victim) && victim->pcdata->patrol_status == PATROL_WAGINGWAR) {
       shroudescape(victim);
       victim->heal_timer /= 25;
       return;
     }
-    if (is_sparring(ch)) {
+    if (!battleground(victim->in_room) && is_sparring(ch)) {
       victim->fighting = FALSE;
       victim->attacking = 0;
       ch->attacking = 0;
@@ -2222,8 +2225,7 @@ REMOVE_FLAG(victim->act, PLR_SHROUD);
     }
     if (battleground(victim->in_room)) {
       defeat_op_pc(victim);
-      victim->fighting = FALSE;
-      victim->attacking = 0;
+      clear_operation_combat(victim);
       if (fight_over(victim->in_room) == TRUE) {
         end_fight(victim->in_room);
       }
@@ -2265,17 +2267,14 @@ REMOVE_FLAG(victim->act, PLR_SHROUD);
           }
         }
       }
-      if (ch->factiontrue > -1) {
-        if (IS_NPC(victim) && ch != NULL && ch->factiontrue != victim->faction && ch->factiontrue != 0 && clan_lookup(ch->factiontrue) != NULL && victim->pIndexData->vnum == 115 && (!IS_NPC(ch) || ch->pIndexData->vnum != victim->pIndexData->vnum))
-        clan_lookup(ch->factiontrue)->defeated_pcs += 2;
-        else if (!IS_NPC(victim) && ch != NULL && ch->factiontrue != victim->faction && ch->factiontrue != 0 && clan_lookup(ch->factiontrue) != NULL && !IS_NPC(ch))
-        clan_lookup(ch->factiontrue)->defeated_pcs++;
-      }
-      else {
-        if (IS_NPC(victim) && ch != NULL && ch->faction != victim->faction && ch->faction != 0 && clan_lookup(ch->faction) != NULL && victim->pIndexData->vnum == 115 && (!IS_NPC(ch) || ch->pIndexData->vnum != victim->pIndexData->vnum))
-        clan_lookup(ch->faction)->defeated_pcs += 2;
-        else if (!IS_NPC(victim) && ch != NULL && ch->faction != victim->faction && ch->faction != 0 && clan_lookup(ch->faction) != NULL && !IS_NPC(ch))
-        clan_lookup(ch->faction)->defeated_pcs++;
+      const int credit = IS_NPC(ch) ? ch->faction : operation_member_faction(activeoperation, ch);
+      FACTION_TYPE *credited = clan_lookup(credit);
+      if (credited && ch->faction != victim->faction) {
+        if (IS_NPC(victim) && victim->pIndexData->vnum == 115 &&
+            (!IS_NPC(ch) || ch->pIndexData->vnum != victim->pIndexData->vnum))
+          credited->defeated_pcs += 2;
+        else if (!IS_NPC(victim) && !IS_NPC(ch))
+          ++credited->defeated_pcs;
       }
       if (!IS_NPC(victim)) {
         reclaim_items(victim);
@@ -2500,14 +2499,28 @@ REMOVE_FLAG(victim->act, PLR_SHROUD);
     return FALSE;
   }
 
+  static void pedestrian_assault(CHAR_DATA *attacker, CHAR_DATA *victim) {
+    if (!pedestrian(victim) || in_fight(victim) || pedestrian_helpless(victim)
+        || !attacker || IS_NPC(attacker) || !in_fight(attacker)) return;
+    // Combat commands can switch to an idle bystander without start_fight.
+    // Explicitly enroll the person struck; unrelated pedestrians stay idle.
+    const bool public_assault = in_public(attacker, victim);
+    join_to_fight(victim);
+    victim->fight_fast = attacker->fight_fast;
+    victim->fight_speed = attacker->fight_speed;
+    add_aggro(attacker, victim, 20);
+    if (public_assault) cortex_public_response(attacker, victim);
+  }
+
   void damage(CHAR_DATA *victim, CHAR_DATA *ch, int amount) {
+    if (!ch || !victim || (!IS_NPC(ch) && !ch->pcdata) ||
+        (!IS_NPC(victim) && !victim->pcdata)) return;
+    if (pedestrian(ch) || (pedestrian(victim) && pedestrian_helpless(victim))) return;
     if (sin_cortex_guard(ch) && !sin_cortex_guard_target(ch, victim)) return;
     if (sin_vigilante(ch) && !sin_vigilante_target(ch, victim)) return;
     if (sin_vigilante(victim) && victim->ttl <= 0) return;
     if (full_moon_pack(ch) && !full_moon_pack_target(ch, victim)) return;
-    if (cortex_public_enforcer(ch)
-        && (ch->ttl <= 0 || IS_NPC(victim) || str_cmp(ch->aggression, victim->name)
-            || is_helpless(victim))) return;
+    if (cortex_enforcer(ch) && !cortex_enforcer_target(ch, victim)) return;
     if (dissent_crowd(victim)) {
       // Resolve the wall-clock deadline before accepting another attack.
       dissent_update();
@@ -2521,6 +2534,8 @@ REMOVE_FLAG(victim->act, PLR_SHROUD);
 
     if (victim->wounds >= 2 && victim->in_room != NULL && battleground(victim->in_room))
     return;
+
+    if (amount > 0) pedestrian_assault(ch, victim);
 
     if (in_fight(ch) && ch != victim && !IS_NPC(ch) && !IS_NPC(victim) && IS_FLAG(ch->comm, COMM_PACIFIST))
     REMOVE_FLAG(ch->comm, COMM_PACIFIST);
@@ -2607,6 +2622,20 @@ REMOVE_FLAG(victim->act, PLR_SHROUD);
     }
 
     if (amount >= victim->hit) {
+      if (battleground(victim->in_room)) {
+        // Operation defeat is a nightmare exit, never a real death or an NPC
+        // extraction through raw_kill. Finish it before normal injury effects.
+        victim->hit = 0;
+        invalidate_wound_treatment(victim);
+        victim->wounds = IS_NPC(victim) || victim->wounds > 0 ? 2 : 1;
+        victim->heal_timer = victim->wounds == 2 ? 115000 : 30000;
+        wound_check(ch, victim, victim->wounds);
+        return;
+      }
+      if (pedestrian(victim) && amount > 0) {
+        pedestrian_knockout(victim);
+        return;
+      }
       if (sin_vigilante(ch)) {
         sin_vigilante_defeat(ch, victim);
         return;
@@ -2731,6 +2760,8 @@ REMOVE_FLAG(victim->act, PLR_SHROUD);
 
       victim->hit -= amount;
     }
+    if (cortex_enforcer(ch) && !IS_NPC(victim) && victim->wounds >= 3)
+      cortex_retire_enforcers(victim);
     add_aggro(victim, ch, amount);
   }
   bool is_peaceful(CHAR_DATA *ch) {
@@ -5767,6 +5798,13 @@ return;
             send_to_char("They're too well defended for that.\n\r", ch);
             return;
           }
+          if (pedestrian(victim)) {
+            if (pedestrian_helpless(victim))
+              send_to_char("They're already subdued.\n\r", ch);
+            else
+              pedestrian_knockout(victim);
+            return;
+          }
           if (IS_NPC(victim)) {
             send_to_char("Only PCs can be knocked out.\n\r", ch);
             return;
@@ -6163,6 +6201,15 @@ return;
             free_string(ch->amove);
             ch->amove = str_dup("");
 
+            return;
+          }
+          if (pedestrian(victim)) {
+            if (pedestrian_helpless(victim))
+              send_to_char("They're already subdued.\n\r", ch);
+            else
+              pedestrian_knockout(victim);
+            free_string(ch->amove);
+            ch->amove = str_dup("");
             return;
           }
           if (IS_NPC(victim)) {
@@ -6610,6 +6657,9 @@ return;
 
   static int aggression_score(CHAR_DATA *ch, CHAR_DATA *victim,
                               AggressionAttackProfile &profile) {
+    if (pedestrian(ch) || (pedestrian(victim) && pedestrian_helpless(victim)))
+    return 0;
+    if (cortex_enforcer(ch) && !cortex_enforcer_target(ch, victim)) return 0;
     if (ch == victim)
     return 0;
     int agg = 0, dis, i, point = 0, dam;
@@ -6689,7 +6739,7 @@ return;
     if ((IS_FLAG(ch->act, ACT_COMBATOBJ) && IS_NPC(ch)) || (IS_FLAG(victim->act, ACT_COMBATOBJ) && IS_NPC(victim)))
     return 0;
 
-    if (IS_NPC(victim) && (victim->race == RACE_HUMAN || victim->race == RACE_ANIMAL))
+    if (IS_NPC(victim) && !pedestrian(victim) && (victim->race == RACE_HUMAN || victim->race == RACE_ANIMAL))
     return 0;
 
     if (IS_NPC(ch) && str_cmp(ch->protecting, "") && agg <= 12 && ch->pIndexData->vnum == MONSTER_TEMPLATE)
@@ -6755,6 +6805,7 @@ return;
   }
 
   CHAR_DATA *get_npc_target(CHAR_DATA *ch) {
+    if (pedestrian(ch)) return NULL;
     if (sin_cortex_guard(ch)) return sin_cortex_guard_prey(ch);
     if (sin_vigilante(ch)) return sin_vigilante_prey(ch);
     if (full_moon_pack(ch)) return full_moon_pack_prey(ch);
@@ -6770,8 +6821,7 @@ return;
       continue;
 
       if (dissent_crowd(rch)) continue;
-      if (cortex_public_enforcer(ch) && (ch->ttl <= 0 || IS_NPC(rch)
-          || str_cmp(ch->aggression, rch->name) || is_helpless(rch))) continue;
+      if (cortex_enforcer(ch) && !cortex_enforcer_target(ch, rch)) continue;
 
       if (!cortex_breach_monster(ch) && in_public(ch, rch) && !IS_FLAG(rch->act, PLR_SHROUD))
       continue;
@@ -6912,6 +6962,7 @@ return;
   }
 
   void npc_combat_attack(CHAR_DATA *ch) {
+    if (pedestrian(ch)) return;
     int i, point = 0, vnum, dam, spec = 0;
     bool protecting = FALSE;
     ch->cfighting = NULL;
@@ -6950,7 +7001,7 @@ return;
     if (victim == NULL)
     return;
     if (full_moon_pack(ch) && !full_moon_pack_target(ch, victim)) return;
-    if (cortex_public_enforcer(ch) && (IS_NPC(victim) || str_cmp(ch->aggression, victim->name)))
+    if (cortex_enforcer(ch) && !cortex_enforcer_target(ch, victim))
     return;
     if (sin_vigilante(ch) && !sin_vigilante_target(ch, victim)) return;
 
@@ -7085,6 +7136,12 @@ return;
       act("$n knocks $N out.\n\r", ch, NULL, victim, TO_NOTVICT);
       act("$n knocks you out.\n\r", ch, NULL, victim, TO_VICT);
       victim->pcdata->sleeping = 240;
+      if (forest_monster(ch) && !in_lair(ch) && find_abductee(ch, true) == NULL) {
+        // Combat callers still hold ch; mobile_update will safely remove it.
+        ch->ttl = 0;
+        ch->attacking = 0;
+        set_combat_state(ch, FALSE);
+      }
       return;
     }
 
@@ -7219,6 +7276,7 @@ return;
   }
 
   void npc_combat_move(CHAR_DATA *ch) {
+    if (pedestrian(ch)) return;
     //    char buf[MSL];
     // sprintf(buf("NPC MOVE: %s", ch->name);
     // log_string(buf);
@@ -7583,6 +7641,35 @@ return;
     return ch && IS_NPC(ch) && IS_FLAG(ch->act, ACT_CORTEX_ENFORCER);
   }
 
+  bool cortex_enforcer_target(CHAR_DATA *mob, CHAR_DATA *victim) {
+    if (!cortex_enforcer(mob) || mob->ttl <= 0 || !mob->in_room
+        || !victim || IS_NPC(victim) || !victim->pcdata || !victim->in_room
+        || str_cmp(mob->aggression, victim->name) || victim->wounds >= 3
+        || is_helpless(victim) || is_ghost(victim)
+        || victim->pcdata->patrol_status == PATROL_KIDNAPPED
+        || IS_FLAG(victim->act, PLR_SHROUD) || IS_FLAG(victim->act, PLR_DEEPSHROUD)) return FALSE;
+    if (cortex_public_enforcer(mob) && (state_of_emergency()
+        || dissent_in_room(mob->in_room) || dissent_in_room(victim->in_room))) return FALSE;
+    return TRUE;
+  }
+
+  void cortex_retire_enforcers(CHAR_DATA *victim) {
+    if (!victim || IS_NPC(victim)) return;
+    // Combat still holds these pointers. Stop every member immediately; the
+    // independent Cortex update safely extracts them once the attack returns.
+    for (CHAR_DATA *mob : char_list) {
+      if (!cortex_enforcer(mob) || str_cmp(mob->aggression, victim->name)) continue;
+      free_string(mob->aggression);
+      mob->aggression = str_dup("");
+      mob->target = mob->target_2 = mob->target_3 = NULL;
+      mob->chattacking = mob->cfighting = NULL;
+      mob->attackdam = mob->attacking = 0;
+      mob->fighting = FALSE;
+      mob->ttl = 0;
+      set_combat_state(mob, FALSE);
+    }
+  }
+
   int cortex_encounter_count(CHAR_DATA *ch) {
     return number_range(1, UMIN(6, URANGE(1, get_tier(ch), 5) + 2));
   }
@@ -7655,15 +7742,12 @@ return;
     if (!cortex_enforcer(mob) || mob->ttl <= 0 || !victim || IS_NPC(victim)
         || !victim->pcdata || !victim->in_room) return;
     bool public_response = cortex_public_enforcer(mob);
-    // Retire this squad without extracting characters during the combat iteration.
+    // Public defenders and alarm squads targeting the same aggressor all retire.
     for (CHAR_DATA *enforcer : char_list) {
       if (!cortex_enforcer(enforcer) || str_cmp(enforcer->aggression, victim->name)) continue;
       if (cortex_public_enforcer(enforcer)) public_response = TRUE;
-      free_string(enforcer->aggression);
-      enforcer->aggression = str_dup("");
-      enforcer->ttl = 0;
-      set_combat_state(enforcer, FALSE);
     }
+    cortex_retire_enforcers(victim);
     set_combat_state(victim, FALSE);
     if (public_response) {
       victim->pcdata->sleeping = UMAX(victim->pcdata->sleeping, 240);
@@ -10490,6 +10574,16 @@ displace(rch, to, size);
     WAIT_STATE(ch, PULSE_PER_SECOND * 3);
   }
   _DOFUN(do_knockout) {
+    if (!in_fight(ch) && ch->in_room) {
+      CHAR_DATA *victim = get_char_room(ch, NULL, argument);
+      if (pedestrian(victim)) {
+        if (pedestrian_helpless(victim))
+          send_to_char("They're already subdued.\n\r", ch);
+        else
+          do_function(ch, &do_knockoutpunch, argument);
+        return;
+      }
+    }
     if (in_fight(ch)) {
       std::string command = std::string(argument) + " knockout";
       do_function(ch, &do_attack, command.data());
@@ -13249,7 +13343,34 @@ SPECIAL_DELAY2) dam = dam*11/10;
     rch->attacking = 1;
   }
 
+  static void public_attack_rumor(CHAR_DATA *attacker, CHAR_DATA *victim) {
+    if (!attacker || !victim || attacker == victim || IS_NPC(attacker)
+        || !attacker->in_room || !victim->in_room
+        || IS_FLAG(attacker->act, PLR_SHROUD) || IS_FLAG(attacker->act, PLR_DEEPSHROUD)
+        || IS_FLAG(victim->act, PLR_SHROUD) || IS_FLAG(victim->act, PLR_DEEPSHROUD)
+        || IS_FLAG(attacker->comm, COMM_SPARRING) || IS_FLAG(victim->comm, COMM_SPARRING)) return;
+
+    // Roll once after a public fight successfully starts, never per combat round.
+    if (number_percent() > 25) return;
+
+    // Public observers only know the current appearance, including masks and cloaks.
+    char *attacker_intro = get_intro(attacker);
+    char *victim_intro = IS_NPC(victim) ? str_dup(victim->short_descr) : get_intro(victim);
+    char *location = roomtitle(victim->in_room, FALSE);
+    std::string rumor = haven::format_text("%s was seen attacking %s %s.",
+        attacker_intro, victim_intro, location);
+    free_string(attacker_intro);
+    free_string(victim_intro);
+    free_string(location);
+    gossip(rumor.data());
+  }
+
   void start_fight(CHAR_DATA *ch, CHAR_DATA *target) {
+    if (pedestrian(ch)) return;
+    if (pedestrian(target) && pedestrian_helpless(target)) {
+      send_to_char("They're already subdued.\n\r", ch);
+      return;
+    }
     if (sin_cortex_guard(ch) && !sin_cortex_guard_target(ch, target)) return;
     if (sin_vigilante(ch) && !sin_vigilante_target(ch, target)) return;
     if (full_moon_pack(ch) && !full_moon_pack_target(ch, target)) return;
@@ -13424,6 +13545,7 @@ SPECIAL_DELAY2) dam = dam*11/10;
       reset_turns(ch);
       next_attacker(ch, TRUE);
     }
+    if (public_start) public_attack_rumor(ch, target);
     if (public_start) cortex_public_response(ch, target);
   }
 
@@ -13610,9 +13732,23 @@ printf_to_char(victim, "Enemy Check: %s, %s, ch->vic aggro: %d, vic->ch aggro
     return FALSE;
   }
 
+  static bool pedestrian_has_enemy(CHAR_DATA *ch) {
+    if (!ch->in_fight || !ch->in_room || pedestrian_helpless(ch)) return FALSE;
+    // Pedestrians only join their own assault. Active combatants are indexed,
+    // so idle commuters never launch the ordinary nested world-wide searches.
+    unsigned long long cursor = 0;
+    CHAR_DATA *attacker;
+    while ((attacker = next_combat_character(&cursor)) != NULL) {
+      if (attacker != ch && !pedestrian(attacker) && is_enemy(ch, attacker))
+        return TRUE;
+    }
+    return FALSE;
+  }
+
   bool has_enemy(CHAR_DATA *ch) {
     if (!ch || !ch->in_room || fight_problem > 0)
     return FALSE;
+    if (pedestrian(ch)) return pedestrian_has_enemy(ch);
     if (IS_NPC(ch) && IS_FLAG(ch->act, ACT_SENTINEL))
     return FALSE;
     if (!IS_NPC(ch) && is_helpless(ch))
@@ -13687,6 +13823,7 @@ printf_to_char(victim, "Enemy Check: %s, %s, ch->vic aggro: %d, vic->ch aggro
   bool check_fight(CHAR_DATA *ch) {
     if (!ch || fight_problem > 0)
     return FALSE;
+    if (pedestrian(ch)) return pedestrian_has_enemy(ch);
     if (is_ghost(ch) || is_gm(ch))
     return FALSE;
 
@@ -14547,7 +14684,7 @@ printf_to_char(victim, "Enemy Check: %s, %s, ch->vic aggro: %d, vic->ch aggro
     return NULL;
   }
 
-  CHAR_DATA *find_abductee(CHAR_DATA *mob) {
+  CHAR_DATA *find_abductee(CHAR_DATA *mob, bool pending) {
     int mindist = 10;
     CHAR_DATA *prey = NULL;
     for (DescList::iterator it = descriptor_list.begin();
@@ -14582,7 +14719,8 @@ printf_to_char(victim, "Enemy Check: %s, %s, ch->vic aggro: %d, vic->ch aggro
         if (pc_in_lair(to))
         continue;
 
-        if (room_fight(to->in_room, FALSE, FALSE, TRUE))
+        // A KO can leave combat active while an otherwise valid abduction waits.
+        if (!pending && room_fight(to->in_room, FALSE, FALSE, TRUE))
         continue;
 
         if (get_dist(to->in_room->x, to->in_room->y, mob->in_room->x, mob->in_room->y) < mindist) {
@@ -14592,9 +14730,10 @@ printf_to_char(victim, "Enemy Check: %s, %s, ch->vic aggro: %d, vic->ch aggro
       }
     }
     if (mindist <= 5) {
-      if (forest_monster(mob) && IS_FLAG(prey->act, PLR_SHROUD) && !IS_FLAG(mob->act, PLR_SHROUD))
+      // Checking for a pending abduction must not change the monster's shroud.
+      if (!pending && forest_monster(mob) && IS_FLAG(prey->act, PLR_SHROUD) && !IS_FLAG(mob->act, PLR_SHROUD))
       SET_FLAG(mob->act, PLR_SHROUD);
-      if (forest_monster(mob) && !IS_FLAG(prey->act, PLR_SHROUD) && IS_FLAG(mob->act, PLR_SHROUD))
+      if (!pending && forest_monster(mob) && !IS_FLAG(prey->act, PLR_SHROUD) && IS_FLAG(mob->act, PLR_SHROUD))
       REMOVE_FLAG(mob->act, PLR_SHROUD);
       return prey;
     }

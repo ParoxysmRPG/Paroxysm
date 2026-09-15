@@ -26,8 +26,8 @@ roster and may change when visible characters change. If the finite two-column
 namespace is exhausted, excess entries use `??`; the roster still includes
 them. These are display labels, not new combat-command targeting aliases.
 
-Visible cover uses a cyan `[]` marker and turrets use `{}`. Both symbols are
-reserved from ordinary actor labels, and take the usual target/aggression
+Visible cover uses its two-character name initials in cyan; turrets use `{}`.
+The turret symbol is reserved from ordinary actor labels. Both take the usual target/aggression
 colors when applicable. The roster identifies cover and turret types and
 retains each object's name and coordinates when the map cell is occupied.
 Protected actors retain their colored identity marker with an underline;

@@ -5479,11 +5479,14 @@ format_string(buftemp); sprintf(buf, "%s", buftemp); strcat(string, buf);
   }
 
   CHAR_DATA *get_patroller(CHAR_DATA *ch) {
+    if (!ch || !ch->in_room) return NULL;
     CHAR_DATA *victim;
     char buf[MSL];
-    sprintf(buf, "GETPATROL: %s, %d, %d", ch->name, ch->pcdata->patrol_status, ch->pcdata->patrol_timer);
-    log_string(buf);
-    if (!IS_NPC(ch) && ch->pcdata->patrol_status > 1 && ch->pcdata->patrol_timer > 0 && !IS_FLAG(ch->comm, COMM_PRIVATE))
+    if (!IS_NPC(ch) && ch->pcdata) {
+      sprintf(buf, "GETPATROL: %s, %d, %d", ch->name, ch->pcdata->patrol_status, ch->pcdata->patrol_timer);
+      log_string(buf);
+    }
+    if (!IS_NPC(ch) && ch->pcdata && ch->pcdata->patrol_status > 1 && ch->pcdata->patrol_timer > 0 && !IS_FLAG(ch->comm, COMM_PRIVATE))
     return ch;
 
     int limit = 0;
@@ -5500,7 +5503,7 @@ format_string(buftemp); sprintf(buf, "%s", buftemp); strcat(string, buf);
       if (IS_NPC(victim))
       continue;
 
-      if (victim->pcdata->patrol_status <= 1 || victim->pcdata->patrol_timer <= 0)
+      if (!victim->pcdata || victim->pcdata->patrol_status <= 1 || victim->pcdata->patrol_timer <= 0)
       continue;
 
       if (IS_FLAG(victim->comm, COMM_PRIVATE))
@@ -5832,6 +5835,7 @@ format_string(buftemp); sprintf(buf, "%s", buftemp); strcat(string, buf);
   }
 
   void logevent_check(CHAR_DATA *ch, char *argument) {
+    if (!ch || !ch->in_room || !argument) return;
     CHAR_DATA *gm = get_gm(ch->in_room, FALSE);
     if (gm != NULL) {
       if (has_adventure(gm) && gm->pcdata->encounter_status != ENCOUNTER_ONGOING) {
@@ -5882,7 +5886,7 @@ format_string(buftemp); sprintf(buf, "%s", buftemp); strcat(string, buf);
         logevent(ch->in_room, LOGEVENT_PATROL, PATROL_BARGAIN, argument, ch);
         return;
       }
-      if (stat == PATROL_BRIBING && ch->in_room == ch->pcdata->patrol_room) {
+      if (stat == PATROL_BRIBING && ch->in_room == pat->pcdata->patrol_room) {
         logevent(ch->in_room, LOGEVENT_PATROL, PATROL_BRIBE, argument, ch);
         return;
       }

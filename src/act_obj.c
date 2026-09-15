@@ -663,6 +663,10 @@ extern "C" {
       send_to_char("They aren't here.\n\r", ch);
       return;
     }
+    if (IS_NPC(victim)) {
+      send_to_char("That command only works on players.\n\r", ch);
+      return;
+    }
 
     if (ch->pcdata->bloodaura > 0) {
       send_to_char("Something compels you not to.\n\r", ch);

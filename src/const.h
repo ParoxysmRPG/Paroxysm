@@ -823,6 +823,7 @@ b#define DECLARE_SPEC_FUN( fun )		bool fun( )
 #define ACT_FULL_MOON_PACK       46
 #define ACT_SIN_VIGILANTE        47
 #define ACT_CORTEX_SIN_GUARD     48
+#define ACT_PEDESTRIAN          49 // Runtime wandering humans only; never shopkeepers.
 
 
 /*

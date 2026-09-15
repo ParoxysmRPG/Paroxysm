@@ -19563,13 +19563,21 @@ return;
   }
 
   void wake_char(CHAR_DATA *ch) {
-    if (ch == NULL || IS_NPC(ch))
+    if (ch == NULL || IS_NPC(ch) || !ch->pcdata || !ch->pcdata->recovery)
     return;
+    const bool operation = battleground(ch->in_room) || ch->pcdata->recovery->operation_dead;
+    ROOM_INDEX_DATA *destination = get_room_index(ch->pcdata->ghost_room);
+    if (!ch->pcdata->recovery->operation_dead && ch->pcdata->ghost_room < 200)
+      destination = get_room_index(ch->pcdata->deploy_from);
+    if (!destination) destination = get_room_index(ch->pcdata->deploy_from);
+    if (!destination) destination = get_room_index(1);
+    if (!destination) return;
+    if (operation) {
+      clear_operation_combat(ch);
+      ch->bagcarrier = 0;
+    }
     char_from_room(ch);
-    if (!ch->pcdata->recovery->operation_dead && ch->pcdata->ghost_room < 200 && ch->pcdata->deploy_from > 200)
-    char_to_room(ch, get_room_index(ch->pcdata->deploy_from));
-    else
-    char_to_room(ch, get_room_index(ch->pcdata->ghost_room));
+    char_to_room(ch, destination);
     if (IS_FLAG(ch->act, PLR_SHROUD))
     REMOVE_FLAG(ch->act, PLR_SHROUD);
     if (IS_FLAG(ch->act, PLR_DEEPSHROUD))
@@ -19604,6 +19612,7 @@ return;
   }
 
   void to_spectre(CHAR_DATA *ch, bool combat) {
+    if (!ch || IS_NPC(ch) || !ch->pcdata || !ch->pcdata->recovery) return;
     if (ch->in_room == NULL || (ch->in_room->vnum < 300 && !ch->pcdata->recovery->operation_dead))
     return;
     if (!IS_FLAG(ch->act, PLR_SHROUD))

@@ -1165,6 +1165,10 @@ int     dream_karma;
       char *  target;
       char *  sign_up[100];
       int   sign_up_type[100];
+      // Launch snapshots: society earning credit and temporary combat team.
+      // These are runtime state; pending signups have zero in both fields.
+      int   deployed_faction[100];
+      int   deployed_team[100];
       int   type;
       int   max_pcs;
       int   speed;

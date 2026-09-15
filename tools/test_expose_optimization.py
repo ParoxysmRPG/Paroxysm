@@ -63,6 +63,7 @@ struct CHAR_DATA {
   bool bath = false, water = false, stream = false;
 };
 bool in_bath(CHAR_DATA *ch) { return ch->bath; }
+bool pedestrian(CHAR_DATA *) { return false; }
 bool deep_water(CHAR_DATA *ch) { return ch->water; }
 bool in_stream(CHAR_DATA *ch) { return ch->stream; }
 bool can_see_obj(CHAR_DATA *, OBJ_DATA *obj) { return obj->visible; }

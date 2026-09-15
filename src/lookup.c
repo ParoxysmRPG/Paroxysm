@@ -344,6 +344,8 @@ extern "C" {
   }
 
   bool is_helpless(CHAR_DATA *ch) {
+    if (pedestrian(ch))
+    return pedestrian_helpless(ch);
     if (IS_NPC(ch))
     return FALSE;
     if (is_forcibly_helpless(ch))
@@ -1448,6 +1450,7 @@ extern "C" {
   }
 
   int get_disc(CHAR_DATA *ch, int disc, bool usingit) {
+    if (pedestrian(ch)) return 0;
     if (ch->race == RACE_CIVILIAN)
     return 0;
 
@@ -2240,6 +2243,7 @@ extern "C" {
   }
 
   int get_skill(CHAR_DATA *ch, int skill) {
+    if (pedestrian(ch)) return 0;
     int value = get_skill_without_territory(ch, skill);
     int bonus = territory_skill_bonus(ch, skill);
     if (bonus == 0) return value;
@@ -6491,6 +6495,7 @@ extern "C" {
   }
 
   bool move_helpless(CHAR_DATA *ch) {
+    if (pedestrian(ch)) return pedestrian_helpless(ch);
     if (IS_FLAG(ch->act, PLR_BOUNDFEET))
     return TRUE;
 

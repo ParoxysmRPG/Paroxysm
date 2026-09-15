@@ -756,6 +756,11 @@ extern "C" {
     if (ch == NULL)
     return;
 
+    if (pedestrian(ch)) {
+      pedestrian_mobile_update(ch);
+      return;
+    }
+
     if (ch->in_room == NULL || !IS_NPC(ch))
     return;
 
@@ -5952,9 +5957,11 @@ obj->value[4] += 3;
   }
 
   bool can_heal(CHAR_DATA *ch) {
+    if (ch && !IS_NPC(ch) && ch->pcdata && ch->pcdata->recovery &&
+        ch->pcdata->recovery->operation_active) return false;
     return ch && (IS_NPC(ch) || ch->wounds < 2
         || (ch->wounds <= 3 && ch->pcdata && ch->pcdata->recovery
-            && ch->pcdata->recovery->wounds_treated));
+            && (ch->pcdata->recovery->wounds_treated || ch->pcdata->recovery->operation_wound)));
   }
 
   void linkdeadtravel(CHAR_DATA *ch) {
@@ -7598,7 +7605,7 @@ write your combat emote.\n\r", ch);
 
     // Add some checks to see jump scale healing up if the character had sex with
     // a demigod recently - Discordance
-    if (ch->wounds > 0 && !in_fight(ch) && has_attendant(ch)) {
+    if (ch->wounds > 0 && !ch->pcdata->recovery->operation_active && !in_fight(ch) && has_attendant(ch)) {
 
       if (ch->wounds == 1) {
         if (can_heal(ch)) {
@@ -7631,13 +7638,13 @@ write your combat emote.\n\r", ch);
           ch->heal_timer -= 3;
           if (ch->heal_timer <= 0) {
             ch->wounds = 1;
-            ch->heal_timer = 25000;
+            ch->heal_timer = operation_heal_timer(ch, 25000);
           }
         }
       }
     }
 
-    if (ch->wounds > 0 && !room_fight(ch->in_room, FALSE, FALSE, TRUE)) {
+    if (ch->wounds > 0 && !ch->pcdata->recovery->operation_active && !room_fight(ch->in_room, FALSE, FALSE, TRUE)) {
       if (ch->wounds == 1) {
         if (higher_power(ch))
         ch->heal_timer -= 500;
@@ -7671,7 +7678,7 @@ write your combat emote.\n\r", ch);
         ch->heal_timer -= 2;
         if (ch->heal_timer <= 0) {
           ch->wounds = 1;
-          ch->heal_timer = 25000;
+          ch->heal_timer = operation_heal_timer(ch, 25000);
         }
       }
       else if (ch->wounds == 3) {
@@ -8899,6 +8906,7 @@ world: %d, room area: %d, desti area: %d\n\r", room->vnum, desti->vnum, vehicle_
     dissent_update();
     cortex_public_update();
     full_moon_pack_update();
+    pedestrian_update();
 
     trolly_timer++;
     if (trolly_timer >= 8 && trolly_moving == 0) {

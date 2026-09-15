@@ -264,7 +264,7 @@ CombatMapSnapshot combat_map_snapshot(CHAR_DATA *viewer) {
     entry.is_cover = IS_NPC(actor) && IS_FLAG(actor->act, ACT_COVER);
     entry.is_turret = IS_NPC(actor) && IS_FLAG(actor->act, ACT_TURRET);
     entry.label = actor == viewer ? "Me" : entry.is_turret ? "{}" :
-                  entry.is_cover ? "[]" : preferred_label(PERS(actor, viewer));
+                  preferred_label(PERS(actor, viewer));
     const char *name = PERS_3(actor, viewer);
     entry.display_name = name == NULL ? "" : name;
     snapshot.entries.push_back(std::move(entry));

@@ -10272,7 +10272,7 @@ extern "C" {
       return;
     }
 
-    if (ch == victim && !room_hostile(ch->in_room) && !in_fight(ch)) {
+    if (ch == victim && !IS_NPC(victim) && !room_hostile(ch->in_room) && !in_fight(ch)) {
       victim->pcdata->selfbondage = 1;
     }
 
@@ -10296,6 +10296,7 @@ extern "C" {
         return;
       }
       SET_FLAG(victim->act, PLR_BOUND);
+      pedestrian_bound(victim);
       act("You bind $N's hands securely.", ch, NULL, victim, TO_CHAR);
       act("$n binds your hands securely.", ch, NULL, victim, TO_VICT);
       act("$n binds $N's hands securely.", ch, NULL, victim, TO_NOTVICT);
@@ -10308,6 +10309,7 @@ extern "C" {
         return;
       }
       SET_FLAG(victim->act, PLR_BOUNDFEET);
+      pedestrian_bound(victim);
       act("You bind $N's feet securely.", ch, NULL, victim, TO_CHAR);
       act("$n binds your feet securely.", ch, NULL, victim, TO_VICT);
       act("$n binds $N's hands securely.", ch, NULL, victim, TO_NOTVICT);
@@ -10317,6 +10319,7 @@ extern "C" {
     SET_FLAG(victim->act, PLR_BOUND);
     if (!IS_FLAG(victim->act, PLR_BOUNDFEET))
     SET_FLAG(victim->act, PLR_BOUNDFEET);
+    pedestrian_bound(victim);
     act("You bind $N securely.", ch, NULL, victim, TO_CHAR);
     act("$n binds $N securely.", ch, NULL, victim, TO_NOTVICT);
     act("$n binds you securely.", ch, NULL, victim, TO_VICT);
@@ -10462,22 +10465,26 @@ extern "C" {
     if (!str_cmp(argument, "hands")) {
       if (IS_FLAG(victim->act, PLR_BOUND))
       REMOVE_FLAG(victim->act, PLR_BOUND);
+      pedestrian_bound(victim);
       act("You untie $N's hands.", ch, NULL, victim, TO_CHAR);
       act("$n unties your hands.", ch, NULL, victim, TO_VICT);
       act("$n unties $N's hands.", ch, NULL, victim, TO_NOTVICT);
+      if (!pedestrian(victim))
       victim->hit = 0;
-      if (victim->in_room != NULL && (victim->in_room->area->vnum >= OUTER_NORTH_FOREST && victim->in_room->area->vnum <= OUTER_WEST_FOREST))
+      if (!IS_NPC(victim) && victim->in_room != NULL && (victim->in_room->area->vnum >= OUTER_NORTH_FOREST && victim->in_room->area->vnum <= OUTER_WEST_FOREST))
       victim->pcdata->spawned_monsters = 400;
       return;
     }
     if (!str_cmp(argument, "feet")) {
       if (IS_FLAG(victim->act, PLR_BOUNDFEET))
       REMOVE_FLAG(victim->act, PLR_BOUNDFEET);
+      pedestrian_bound(victim);
       act("You untie $N's feet.", ch, NULL, victim, TO_CHAR);
       act("$n unties your feet.", ch, NULL, victim, TO_VICT);
       act("$n unties $N's feet.", ch, NULL, victim, TO_NOTVICT);
+      if (!pedestrian(victim))
       victim->hit = 0;
-      if (victim->in_room != NULL && (victim->in_room->area->vnum >= OUTER_NORTH_FOREST && victim->in_room->area->vnum <= OUTER_WEST_FOREST))
+      if (!IS_NPC(victim) && victim->in_room != NULL && (victim->in_room->area->vnum >= OUTER_NORTH_FOREST && victim->in_room->area->vnum <= OUTER_WEST_FOREST))
       victim->pcdata->spawned_monsters = 400;
       return;
     }
@@ -10486,12 +10493,14 @@ extern "C" {
     REMOVE_FLAG(victim->act, PLR_BOUND);
     if (IS_FLAG(victim->act, PLR_BOUNDFEET))
     REMOVE_FLAG(victim->act, PLR_BOUNDFEET);
+    pedestrian_bound(victim);
 
     act("You untie $N.", ch, NULL, victim, TO_CHAR);
     act("$n unties you.", ch, NULL, victim, TO_VICT);
     act("$n unties $N.", ch, NULL, victim, TO_NOTVICT);
+    if (!pedestrian(victim))
     victim->hit = 0;
-    if (victim->in_room != NULL && (victim->in_room->area->vnum >= OUTER_NORTH_FOREST && victim->in_room->area->vnum <= OUTER_WEST_FOREST))
+    if (!IS_NPC(victim) && victim->in_room != NULL && (victim->in_room->area->vnum >= OUTER_NORTH_FOREST && victim->in_room->area->vnum <= OUTER_WEST_FOREST))
     victim->pcdata->spawned_monsters = 400;
   }
 
@@ -10590,6 +10599,10 @@ extern "C" {
     }
     if (is_helpless(ch)) {
       send_to_char("You can't do that.\n\r", ch);
+      return;
+    }
+    if (IS_NPC(victim)) {
+      send_to_char("That command only works on players.\n\r", ch);
       return;
     }
     if (!is_helpless(victim)) {
@@ -10716,6 +10729,10 @@ extern "C" {
     }
     if (is_helpless(ch)) {
       send_to_char("You can't do that.\n\r", ch);
+      return;
+    }
+    if (IS_NPC(victim)) {
+      send_to_char("That command only works on players.\n\r", ch);
       return;
     }
     if (!is_helpless(victim)) {
@@ -14636,7 +14653,7 @@ extern "C" {
       send_to_char("You can't do that.\n\r", ch);
       return FALSE;
     }
-    if (IS_NPC(victim)) {
+    if (IS_NPC(victim) && !pedestrian(victim)) {
       if (show == TRUE)
       send_to_char("Not on NPCS.\n\r", ch);
       return FALSE;
@@ -14650,6 +14667,21 @@ extern "C" {
       if (show == TRUE)
       start_hostilefight(ch);
       return FALSE;
+    }
+    if (pedestrian(victim)) {
+      if (IS_NPC(ch) || !ch->pcdata || is_dreaming(ch) || is_ghost(ch))
+      return FALSE;
+      if (!is_vampire(ch) && ch->race != RACE_WIGHT) {
+        if (show == TRUE)
+        send_to_char("Try sharpening your teeth a little more first.\n\r", ch);
+        return FALSE;
+      }
+      if (!pedestrian_helpless(victim)) {
+        if (show == TRUE)
+        send_to_char("Maybe you should tie them up first.\n\r", ch);
+        return FALSE;
+      }
+      return TRUE;
     }
     if (ch->race == RACE_WIGHT) {
       if (!IS_NPC(victim) && victim->pcdata->trance > 0 && show == TRUE)
@@ -14786,6 +14818,19 @@ extern "C" {
     return;
     if (is_ghost(ch))
     return;
+    if (pedestrian(victim)) {
+      if (argument[0] != '\0' && str_cmp(argument, "mild")
+          && str_cmp(argument, "severe") && str_cmp(argument, "critical")
+          && str_cmp(argument, "fatal")) {
+        send_to_char("Syntax: bite (person) mild/severe/critical/fatal\n\r", ch);
+        return;
+      }
+      if (pedestrian_drain(ch, victim)) {
+        act("You bite $N and take what little sustenance you can.", ch, NULL, victim, TO_CHAR);
+        act("$n bites $N, leaving $M looking sickly and drained.", ch, NULL, victim, TO_NOTVICT);
+      }
+      return;
+    }
     if (ch->race == RACE_WIGHT) {
       int val;
       wound_char(victim, 1, ch);
@@ -18293,6 +18338,10 @@ extern "C" {
     if (!IS_NPC(victim) && victim->pcdata->trance > 0)
     victim->pcdata->trance = -20;
 
+    if (IS_NPC(victim)) {
+      send_to_char("That command only works on players.\n\r", ch);
+      return;
+    }
     if (!is_helpless(victim)) {
       send_to_char("You'd have to subdue them first.\n\r", ch);
       return;
@@ -18392,6 +18441,10 @@ extern "C" {
     }
     if (is_helpless(ch)) {
       send_to_char("You can't do that.\n\r", ch);
+      return;
+    }
+    if (IS_NPC(victim)) {
+      send_to_char("That command only works on players.\n\r", ch);
       return;
     }
     if (!is_helpless(victim)) {
@@ -18832,7 +18885,7 @@ extern "C" {
       return;
     }
     
-    if (IS_NPC(victim))
+    if (IS_NPC(victim) && !pedestrian(victim))
     return;
   
     if (IS_FLAG(ch->act, PLR_SHROUD) != IS_FLAG(victim->act, PLR_SHROUD)) {
@@ -18865,7 +18918,7 @@ extern "C" {
       return;
     }
     
-    if (in_public(ch, victim)) {
+    if (!pedestrian(victim) && in_public(ch, victim)) {
       if (!IS_FLAG(ch->act, PLR_SHROUD) || !room_ambush(ch->in_room)) {
         send_to_char("It's a bit public of an area for kidnappings.\n\r", ch);
         return;
@@ -18904,6 +18957,15 @@ extern "C" {
         send_to_char("You must be prepared to manifest your will.\n\r", ch);
         return;
       }
+    }
+
+    if (pedestrian(victim)) {
+      if (in_public(ch, victim))
+      cortex_public_response(ch, victim);
+      act("You punch $N solidly in the jaw, knocking $M out cold.", ch, NULL, victim, TO_CHAR);
+      pedestrian_knockout(victim);
+      WAIT_STATE(ch, PULSE_PER_SECOND * 2);
+      return;
     }
 
     if (!guestmonster(ch) && !guestmonster(victim)) {
@@ -22449,6 +22511,10 @@ extern "C" {
       send_to_char("You can't do that.\n\r", ch);
       return;
     }
+    if (IS_NPC(victim)) {
+      send_to_char("That command only works on players.\n\r", ch);
+      return;
+    }
     if (!is_helpless(victim)) {
       send_to_char("You'd have to subdue them first.\n\r", ch);
       return;
@@ -22564,6 +22630,10 @@ extern "C" {
     }
     if ((victim = get_char_room(ch, NULL, arg1)) == NULL) {
       send_to_char("They're not here.\n\r", ch);
+      return;
+    }
+    if (IS_NPC(victim)) {
+      send_to_char("That command only works on players.\n\r", ch);
       return;
     }
     if (!is_helpless(victim) && ch != victim) {
@@ -30118,6 +30188,10 @@ extern "C" {
       send_to_char("You can't do that.\n\r", ch);
       return;
     }
+    if (IS_NPC(victim)) {
+      send_to_char("That command only works on players.\n\r", ch);
+      return;
+    }
     if (!is_helpless(victim)) {
       send_to_char("You'd have to subdue them first.\n\r", ch);
       return;
@@ -30656,6 +30730,10 @@ extern "C" {
     }
     if (is_helpless(ch)) {
       send_to_char("You can't do that.\n\r", ch);
+      return;
+    }
+    if (IS_NPC(victim)) {
+      send_to_char("That command only works on players.\n\r", ch);
       return;
     }
     if (!is_helpless(victim)) {
@@ -33096,6 +33174,10 @@ extern "C" {
       send_to_char("They're not here.\n\r", ch);
       return;
     }
+    if (pedestrian(victim)) {
+      pedestrian_hypnotise(ch, victim, arg2);
+      return;
+    }
     if (IS_NPC(victim)) {
       send_to_char("Not on NPCs.\n\r", ch);
       return;
@@ -34592,16 +34674,16 @@ extern "C" {
       send_to_char("You can't do that.\n\r", ch);
       return;
     }
+    if (IS_NPC(victim)) {
+      send_to_char("You can't turn NPCs.\n\r", ch);
+      return;
+    }
     if (!is_helpless(victim) && victim->pcdata->destiny_feature != DEST_FEAT_TURN) {
       send_to_char("You'd have to subdue them first.\n\r", ch);
       return;
     }
     if (room_hostile(ch->in_room)) {
       start_hostilefight(ch);
-      return;
-    }
-    if (IS_NPC(victim)) {
-      send_to_char("You can't turn NPCs.\n\r", ch);
       return;
     }
     if (!is_vampire(ch) && !is_werewolf(ch)) {
@@ -34748,6 +34830,10 @@ extern "C" {
       send_to_char("You can't do that.\n\r", ch);
       return;
     }
+    if (IS_NPC(victim)) {
+      send_to_char("That command only works on players.\n\r", ch);
+      return;
+    }
     if (!is_helpless(victim)) {
       send_to_char("You'd have to subdue them first.\n\r", ch);
       return;
@@ -34786,6 +34872,10 @@ extern "C" {
     }
     if (is_helpless(ch)) {
       send_to_char("You can't do that.\n\r", ch);
+      return;
+    }
+    if (IS_NPC(victim)) {
+      send_to_char("That command only works on players.\n\r", ch);
       return;
     }
     if (!is_helpless(victim)) {

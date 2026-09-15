@@ -627,6 +627,9 @@ static void regeneration_and_operations(FACTION_TYPE *fac) {
   ch = player("Deadoperative"); coverage(ch, RECOVERY_NONE); real_kill(ch, ch);
   ch->faction = fac->vnum;
   auto *op = new_operation(); assign(op->sign_up[0], ch->name);
+  ch->wounds = 2;
+  assert(!can_deploy(ch, op, 0));
+  ch->wounds = 0;
   assert(can_deploy(ch, op, 0));
   operation_recovery_wake(ch); assert(!IS_FLAG(ch->act, PLR_DEAD));
   assert(ch->pcdata->recovery->operation_dead);

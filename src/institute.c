@@ -1783,6 +1783,10 @@ extern "C" {
         send_to_char("They're not here.\n\r", ch);
         return;
       }
+      if (IS_NPC(victim)) {
+        send_to_char("That command only works on players.\n\r", ch);
+        return;
+      }
       if (clinic_patient(ch) || is_helpless(ch) || room_hostile(ch->in_room) || clinic_patient(victim)) {
         send_to_char("You can't do that.\n\r", ch);
         return;
@@ -4850,6 +4854,42 @@ extern "C" {
     CHAR_DATA *victim = get_char_room(ch, NULL, arg1);
     if (is_dreaming(ch))
     victim = get_char_dream(ch, arg1);
+    if (pedestrian(victim)) {
+      if (is_dreaming(ch) || !ch->in_room || ch->in_room != victim->in_room
+          || is_helpless(ch) || is_pinned(ch) || is_ghost(ch)) {
+        send_to_char("You can't do that.\n\r", ch);
+        return;
+      }
+      if (in_fight(ch)) {
+        send_to_char("You're a bit busy.\n\r", ch);
+        return;
+      }
+      if (!pedestrian_helpless(victim)) {
+        send_to_char("Maybe you should tie them up first.\n\r", ch);
+        return;
+      }
+      if (is_safe(ch, victim)) {
+        send_to_char("For some reason you can't bring yourself to do that.\n\r", ch);
+        return;
+      }
+      if (room_hostile(ch->in_room)) {
+        start_hostilefight(ch);
+        return;
+      }
+      bool valid_option = argument[0] == '\0';
+      for (int i = 1; i <= VICTIMIZE_MAX && !valid_option; ++i)
+      valid_option = !str_cmp(argument, victimize_actions[i]);
+      if (!valid_option) {
+        send_to_char("Unknown victimize option. Use victimize to list the options.\n\r", ch);
+        return;
+      }
+      // Pedestrians have no player response state or feeding credit.
+      if (pedestrian_drain(ch, victim)) {
+        act("You victimize $N and draw a little life force from $M.", ch, NULL, victim, TO_CHAR);
+        act("$n victimizes $N, leaving $M looking sickly and drained.", ch, NULL, victim, TO_NOTVICT);
+      }
+      return;
+    }
     if (!victimize_together(ch, victim) || !victimize_restrained(victim) || safe_strlen(argument) < 2) {
       sprintf(buf, "`WSyntax`x: Victimize (target) (option)\n`WOptions`x:\n\r");
       strcat(string, buf);

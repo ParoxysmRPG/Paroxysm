@@ -1959,6 +1959,8 @@ extern "C" {
         missing.push_back("Eyecolor: enter change eyecolor <color>.");
       if (ch->pcdata->hair_genetic == 0 && safe_strlen(ch->pcdata->hair) < 1)
         missing.push_back("Haircolor: enter change haircolor <color>.");
+      if (safe_strlen(ch->pcdata->skin) < 2)
+        missing.push_back("Skin: enter change skin <description>.");
 
       return missing;
     }

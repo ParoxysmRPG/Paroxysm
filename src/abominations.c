@@ -855,6 +855,10 @@ extern "C" {
       send_to_char("They're not here.\n\r", ch);
       return;
     }
+    if (IS_NPC(victim)) {
+      send_to_char("That command only works on players.\n\r", ch);
+      return;
+    }
     if (!is_helpless(victim)) {
       send_to_char("They need to be helpless first.\n\r", ch);
       return;
@@ -915,6 +919,10 @@ extern "C" {
 
     if ((victim = get_char_room(ch, NULL, arg1)) == NULL) {
       send_to_char("They're not here.\n\r", ch);
+      return;
+    }
+    if (IS_NPC(victim)) {
+      send_to_char("That command only works on players.\n\r", ch);
       return;
     }
     if (!IS_NPC(victim) && victim->pcdata->trance > 0)
@@ -1092,6 +1100,10 @@ extern "C" {
 
     if ((victim = get_char_room(ch, NULL, arg1)) == NULL) {
       send_to_char("They're not here.\n\r", ch);
+      return;
+    }
+    if (IS_NPC(victim)) {
+      send_to_char("That command only works on players.\n\r", ch);
       return;
     }
     if (!str_cmp(arg1, "self")) {
@@ -2641,6 +2653,10 @@ extern "C" {
 
     if ((victim = get_char_room(ch, NULL, arg1)) == NULL) {
       send_to_char("They're not here.\n\r", ch);
+      return;
+    }
+    if (IS_NPC(victim)) {
+      send_to_char("That command only works on players.\n\r", ch);
       return;
     }
     if (is_ghost(ch)) {
